@@ -1,0 +1,597 @@
+<launch>
+  <arg name="fly_height" default="1.5" />
+  <arg name="task_height" default="1.2" />
+  <!-- 全程保持的机头朝向，单位度，在 odom 帧下；0 表示机头指向 +x，
+       这也正是出生姿态（iris 出生时不带 yaw）。这个值曾经是"起飞瞬间载具
+       实际朝向的 yaw"，取自一个 EKF 尚未收敛的单帧位姿；现在它是固定的任务
+       常量，因为整个软件栈里没有任何环节会转动载具，而从一次测量里读它只会
+       给 mission 执行的每一次 body->world 变换注入一个恒定偏斜。
+       只有出生姿态的 yaw 变了，才需要改这里。 -->
+  <arg name="fix_heading_deg" default="0.0" />
+  <!-- 起飞（cartographer 开始跟踪）那一刻，机头在**场地系**里的朝向，单位度：
+
+         0    = 机头指向场地 +x（图纸向右，朝危险品任务区）。推荐，也是默认。
+         90   = +y（朝离起飞垫 0.65 m 的那面墙）
+         180  = 负 x
+         负 90 = 负 y
+
+       为什么需要它：下面 rosparam 里那三张航线表是**场地系**数字（图纸毫米数
+       减去原点平移），而 mission 把目标按 odom 帧发出去。仿真里这两个帧是同一
+       个：px4_sensor_rig_node 是 odom 到 base_link 的唯一发布者、取 Gazebo 真值，
+       iris 又出生在场地原点且 yaw 为 0，所以逐点重合。真机上 odom 是
+       cartographer 自己的帧（location/param/ROSSLAM 那份 location 版 lua：
+       provide_odom_frame=true、published_frame=base_link、use_odometry=false），
+       它的 yaw 等于开机那一刻机头朝向，而且没有任何绝对基准钉住它。于是"机头
+       朝哪"直接决定整条航线落在场地的什么位置，这个参数就是把它写下来的地方。
+
+       节点会把每个航点"场地值 -> odom 值"成对打进日志，并在启动时打印"安全场
+       在 odom 里的方框"。起飞前必须拿这个方框和地图核对：它是唯一能区分 0 度
+       和负 90 度的东西，因为开机时的 odom yaw 按构造必然是 0，把 yaw 读回来
+       并不能证明这个角度填对了。方框的四个可能取值：
+         0 度   x [-0.60, 3.30]  y [-3.30, 0.60]
+         负 90  x [-0.60, 3.30]  y [-0.60, 3.30]
+         90     x [-3.30, 0.60]  y [-3.30, 0.60]
+         180    x [-3.30, 0.60]  y [-0.60, 3.30]
+
+       默认 0.0 与以前完全一致。机头对负 y 时用 field_yaw_deg:=-90 启动即可，
+       航线表本身一个数字都不用改，所以门禁 8/10 与
+       tools/check_field_vs_drawing.py 的判据全部继续成立（它们比较的是场地系
+       数字，而场地系没有变）。 -->
+  <arg name="field_yaw_deg" default="0.0" />
+  <!-- 本次跑的是赛题的第几轮。
+
+       stage 1 —— 在危险品任务区投放火灾/危险品物资，随后飞越**每一个**
+                 人员救助任务区再返航。投放一次，不带救助物资。
+       stage 2 —— 同样的航线再加上救助物资，投在当天抽签选出的位置。
+                  投放两次，第二次需要下面两个 rescue_drop_x / rescue_drop_y。
+
+       rescue_drop_enabled 是同一个开关在 2026-09-30 之前的名字，现在仍然被
+       接受；stage:=2 会强制打开它，而单独把它设成 true 会让节点按 stage 2
+       处理（并给出警告）。节点内部会把两者对齐，所以 launch 文件不可能自相
+       矛盾。 -->
+  <arg name="stage" default="1" />
+  <!-- 抽签得到的第二轮投放位置，单位是 odom/场地米：起飞点 (0, 0)，
+       场地 x [-0.65, 3.35]、y [-3.35, 0.65]。999 是"未提供"的哨兵值
+       —— 它落在场地之外，于是忘了填这两个值的 stage 2 任务会**拒绝起飞**，
+       而不是投在 (0, 0)，因为 (0, 0) 是起飞垫，看起来又完全合法。
+
+       例如抽签结果是人员救助任务区 2（图面 x 3350、图面 y 1450）：
+           stage:=2 rescue_drop_x:=2.70 rescue_drop_y:=-1.85 -->
+  <arg name="rescue_drop_x" default="999.0" />
+  <arg name="rescue_drop_y" default="999.0" />
+  <!-- 投放点如何决定，**两次投放都适用**：
+         vision               —— 只用相机；检测不稳定即中止任务
+         waypoint             —— 只用写死的航点；不启用相机
+         vision_with_fallback —— 先相机，失败再退回写死的航点
+       vision_with_fallback 是默认值，也是推荐配置：相机是"目标究竟在哪"的
+       唯一测量，而航点是相机失效时唯一还能工作的东西。保底只在载具已经位于
+       写死航点正上方时才会触发，所以它不可能把一次漏检变成一个投错位置的投放。
+       现场如果检测器表现异常，就切到 waypoint。 -->
+  <arg name="drop_align_mode" default="vision_with_fallback" />
+  <arg name="drop_vision_timeout" default="5.0" />
+  <arg name="drop_waypoint_tolerance" default="0.20" />
+  <!-- 两次投放各自的舵机角度，一种物资对应一个。两者都走舵机 1
+       （drop_channel）；角度才是决定哪个仓开锁的量，所以这两个值**必须**
+       在真机上分别标定，并且彼此差得足够多，机构才不会把两者认混。 -->
+  <arg name="fire_drop_angle" default="90" />
+  <arg name="rescue_drop_angle" default="140" />
+  <arg name="rescue_drop_enabled" default="false" />
+  <arg name="auto_start" default="false" />
+  <!-- 起飞前的视觉就绪门。auto_start 以前只等三件事：飞控连上、舵机 ready、
+       100 个 setpoint（2 s），**不等检测器**。而 Jetson 上 TensorRT 引擎反
+       序列化要 26 s 左右、期间 CPU 吃满（10-07 那次起飞时 cartographer 挨饿
+       就是它），所以自动起飞会在检测器还没出第一帧时就离地。
+       true：在收到 /mission/vision/detection 之前不请求 OFFBOARD、不解锁。
+             "就绪"定义为"2 s 内有检测消息"——检测节点每处理一帧发一条
+             （found=false 也发，ssd 节点空数组即心跳），所以这条消息本身就
+             覆盖了相机、引擎和整条消息链，比新造一个 ready 话题更可信。
+       false：故意不带视觉飞（导航/台架调试）。
+       注意 auto_start=false 时（launch 默认）这个门**只告警不拦截**：手动解锁
+       是操作者的决定，节点不替他拒绝，但会把"解锁时视觉还没起来"写进日志。 -->
+  <arg name="require_vision_ready" default="true" />
+  <arg name="vision_ready_timeout" default="60.0" />
+  <!-- 任务相里视觉链路沉默多久开始报警（见下面同名 param 的注释）。 -->
+  <arg name="vision_silence_timeout" default="2.0" />
+  <arg name="start_foxglove_bridge" default="false" />
+  <arg name="enforce_safe_field" default="false" />
+  <!-- ============================ 图像源 ============================
+       一个开关选来源（use_usb_cam）：
+
+         use_usb_cam=false（默认）  仿真 / 台架。图像来自 Gazebo（两个包装
+                                    launch 显式传 input_image_topic），由
+                                    Python 检测节点订阅。
+         use_usb_cam=true           真机。视觉源是那台 USB 相机，由**检测节点
+                                    用 GStreamer 直采**。不再有 usb_cam 节点，
+                                    不再有 /camera/image_raw。
+
+       为什么真机不再要 usb_cam 节点 + raw 话题：那样一帧图要进 ROS 一次、
+       被两个订阅者各 cv_bridge 一次，MJPEG 还在 CPU 上解；而任务侧真正要的
+       只是一个回传画面。现在真机上**一帧 raw 图都不进 ROS**：
+
+           camera ─GStreamer(MJPEG 硬解, NVMM 零拷贝)→ ssd_detection 节点
+                │                                      │
+                │                  /ssd_detection/image/compressed
+                │                  （唯一的回传画面：红=危险品，蓝=人员；
+                │                    Foxglove 的 Image 面板只订阅它）
+                └→ /ssd_detection/detections → MissionVision → /mission/vision/detection
+                                                 （选靶 + 稳定帧 + 中心，
+                                                  投放对准读的是它）
+
+       检测由谁算也由同一个开关推导（见下面 ssd_detection_launch）：
+       真机 ⇒ C++ detectNet；仿真 ⇒ Python + OpenCV DNN。
+
+       注意这里比的是字符串 'true'：launch 里的 arg 一律是字符串，
+       写成 `if arg('use_usb_cam')` 的话 'false' 也是真值，等于开关失灵。
+  -->
+  <arg name="use_usb_cam" default="false" />
+  <!-- 真机相机（videoSource 的 GStreamer URI）：
+         v4l2:///dev/video0   USB/UVC 相机（本工程用的这台）
+         csi://0              MIPI CSI 相机（摄像头模组直接插排线那种）
+       留空 = 检测节点不建相机，退回订阅 input_image_topic（台架/回放用）。 -->
+  <arg name="camera_uri" default="v4l2:///dev/video0" />
+  <!-- 相机采集参数（只有检测节点用）。USB2 带宽下
+       640x480@15 基本只有 mjpeg 稳；有些 UVC 摄像头只认 yuyv，那时改
+       camera_codec（代价是帧率或分辨率要往下让）。 -->
+  <arg name="camera_width" default="640" />
+  <arg name="camera_height" default="480" />
+  <arg name="camera_fps" default="15" />
+  <arg name="camera_codec" default="mjpeg" />
+  <!-- 仿真/台架的图像话题（Gazebo 相机）。真机留空：检测节点直采相机，
+       不订阅任何图像话题。 -->
+  <arg name="input_image_topic" default="" />
+  <!-- 视觉前端只有 ssd 一条路（2026-10-17：HSV 色窗后端已删除）。
+       检测整条链路归 ssd_detection 包：它出框，也出那一路回传画面
+       （image_topic）；rescue_mission 不开相机、不订阅图像、不发
+       /mission/video/compressed，只消费检测结果发 TargetDetection。
+       ssd 要读到一个 .onnx 才有意义，而 detectNet 节点只能在实机上编，
+       桌面不该被拉进一条自己编译不过的链。 -->
+  <arg name="vision_detection_topic" default="/ssd_detection/detections" />
+  <!-- 与部署端一致的 0.5。检测节点自己也滤一遍同样的阈值，这里是第二道，
+       免得检测节点被指向别的发布者时悄悄多出一堆低分框。 -->
+  <arg name="ssd_score_threshold" default="0.5" />
+  <!-- 回传画面（唯一的图像话题）及其编码参数，由检测节点发。Foxglove 的 Image
+       面板选它；仿真与实机同名同类型，不用记两套。 -->
+  <arg name="vision_image_topic" default="/ssd_detection/image/compressed" />
+  <arg name="vision_video_width" default="640" />
+  <arg name="vision_jpeg_quality" default="70" />
+  <!-- 检测节点的推理限速（Hz），0 = 不限制。相机端（GStreamer framerate）
+       已经是 15，这里是第二道保险：图像源更快时不让 Nano 在推理上吃满 CPU
+       —— cartographer 还在同一个 Nano 上跑。 -->
+  <arg name="vision_max_rate" default="0" />
+  <arg name="scan_topic" default="/scan" />
+  <arg name="use_real_servos" default="true" />
+  <!-- 规划后端只有 EGO 一条路（2026-10-17：DWA / TEB / move_base 已删除）。
+       move_base 的代价地图参数、dwa_local_planner_params.yaml、
+       teb_local_planner_params.yaml、move_base_params.yaml 一并删除 —— 留着
+       它们只会让"改哪个 yaml 才生效"变成一个需要猜的问题。
+       空中的局部地图由 ego_planner_2d 的 GridMap2D 自己维护（下面那组参数）。 -->
+
+  <node pkg="ego_planner_2d"
+        type="ego_planner_2d_node" name="ego_planner_2d" output="screen">
+    <!-- 规划器的目标输入只认 mission 自己的话题，**不要**再挂回
+         /move_base_simple/goal：mavros_extras 的 guided_target 插件也 advertise
+         那一个默认话题，并把飞控每 ~10 Hz 发来的 POSITION_TARGET_GLOBAL_INT
+         转成打 "map" 戳、z 被强制置 0 的 PoseStamped 重新发出来。
+         EgoPlanner2DNode::goalCallback 对 frame_id 不一致的目标一律调
+         clearPlan()，于是"别人发来的目标"能把正在飞的那条腿的计划直接抹掉 ——
+         一个不留任何报错的远程冻结。2026-10-18 的日志里
+             PositionTargetGlobal failed because no origin   (10 Hz)
+         与
+             Ignoring goal in frame 'map'; expected 'odom'.
+         就是同一路消息的两端：前者只是 mavros 在抱怨没有 EKF 原点（纯噪音），
+         后者才是真故障。本行与 rescue_mission.cpp 里 goal_pub_ 的 advertise
+         必须始终同值，tools/check_config.py 第 18 项就是查这个。 -->
+    <remap from="goal" to="/mission/route_goal" />
+    <remap from="scan" to="$(arg scan_topic)" />
+    <param name="max_vel" value="0.35" />
+    <param name="max_acc" value="0.50" />
+    <param name="max_jerk" value="1.50" />
+    <!-- 栅格分辨率。0.10 → 0.05（2026-10-17），原因是"膨胀带边界有多准"：
+         障碍格心可以落在真实表面内外各半个对角，也就是
+             0.10 m ⇒ ±0.071 m      0.05 m ⇒ ±0.035 m
+         0.35 的膨胀带在 0.10 分辨率下最坏只有 0.279 m，比 0.352 m 的桨尖半径
+         短 73 mm；换到 0.05 并把膨胀抬到 0.375（下面），最坏 0.340 m，只短
+         12 mm。同时 B 样条采样步长按"曲线长度 / 分辨率"折算，采样密度也翻倍。
+         代价是栅格数 4 倍（80×80 → 160×160，25 600 格）和 A* 节点 4 倍 ——
+         A* 的步长原本硬编码 0.1，现在跟着这个值走（planner_interface.cpp /
+         bspline_optimizer.cpp 三处调用点），否则地图细了 A* 还是 0.1 的格子，
+         等于只买了一半。
+         再细下去没有意义：0.05 已经把"半格对角"压到 35 mm 量级，而机身半径的
+         不确定性（450 轴距读法、桨径）本身就有 10 mm 级。 -->
+    <param name="map_resolution" value="0.05" />
+    <!-- 局部地图以载具为中心，尺寸是 map_x_size × map_y_size 米，也就是说
+         取 6.0 时是 ±3.0 m。而 sensing_range 曾是 3.5 m，于是每一个位于
+         3.0 m 到 3.5 m 之间的障碍都被节点的距离过滤保留下来、交给了
+         PlannerInterface::setObstacles()，随后又被 GridMap2D::setObstacle()
+         丢掉，并打印
+             "[setObstacle] 警告：栅格索引（64,33）超出范围（最大：(59,59)）"
+         与此同时 GridMap2D::getInflateOccupancy() 对地图外的一切返回 TRUE，
+         所以规划器把 ±3.0 m 以外的整片区域当成实体障碍 —— 一个 4.05 m 的
+         场地配 3.5 m 的传感器，地图就得真的装得下传感器量程。
+         8.0 m = ±4.0 m > 3.5 m。
+         注意 GridMap2D 是用 Eigen::Vector2i 构造的，所以这两个值必须是
+         **整米**：6.5 会被静默截断成 6。 -->
+    <param name="map_x_size" value="8.0" />
+    <param name="map_y_size" value="8.0" />
+    <!-- 膨胀半径。0.35 → 0.375（2026-10-17），和上一项的分辨率是一对：
+         它现在几乎顶到上限。上限由离墙最近的那个航点决定 ——
+             hazard_route[0] 在 x = -0.25，西墙内表面 -0.65 ⇒ 净空 0.40 m
+             航点合法条件：净空 >= inflate + resolution/2
+             ⇒ inflate <= 0.40 - 0.05/2 = 0.375
+         也就是说这个值不是"够不够安全"选出来的，是"航点还挪不挪"选出来的：
+         再高一点 hazard_route[0] 的格子就会落进带里，EGO 会拒绝瞄准它，然后
+         冻在那条腿上（2026-09-25 就是这样烧掉一次）。想再往上必须先挪那个
+         航点，或者把分辨率再减半。
+         另外它现在只比 align_body_clearance(0.35) 大 25 mm，也就是说"带边界
+         和桨尖几乎重合" —— 见 tools/check_config.py 第 8 项那条 warn。 -->
+    <param name="map_inflate_value" value="0.375" />
+    <param name="sensing_range" value="3.5" />
+    <param name="planning_rate" value="5.0" />
+    <param name="path_sample_interval" value="0.20" />
+    <param name="local_window_points" value="20" />
+    <param name="min_traj_points" value="5" />
+    <!-- 交给 B 样条优化器的参考点数量的下限。
+         BsplineOptimizer::rebound_optimize() 计算
+             variable_num_ = 2 * ((K + 2) - 2 * order_),  order_ = 3
+         其中 K 是参考点数量，所以它需要 K >= 5。节点以前是把这一段航程剩下的
+         点原样喂进去 —— 在 0.20 m 间距下，0.4 m 的余量给出 K = 4、
+         variable_num_ = 0，于是 lbfgs 每个周期都返回
+         LBFGSERR_INVALID_N (-1021) "Invalid number of variables specified.
+         Skip this planning."，这就是那次空中冻结。现在短路径会按更密的间距
+         重采样，直到达到这个点数。 -->
+    <param name="min_ref_points" value="8" />
+    <param name="obstacle_accumulate" value="false" />
+    <param name="obstacle_height_band" value="0.0" />
+    <!-- 是 odom，**不是** map。控制链路其余部分迁到 odom 时这个参数被落下了，
+         而这正是当初搞坏 ego 后端的原因：mission 在 /mission/route_goal 上发布的
+         每一个航点都打 "odom" 戳（rescue_mission.cpp publishNextGoal），而
+         EgoPlanner2DNode::goalCallback 的第一句就是
+
+             if (!msg->header.frame_id.empty() &&
+                 msg->header.frame_id != global_frame_) { clearPlan(); return; }
+
+         于是当 global_frame=map 时每一个目标都被拒绝，has_valid_global_path_
+         一直是 false，节点就坐在那儿刷
+             "EGO waiting for inputs: pose=ready global_path=missing points=0"
+         并发布空局部轨迹，同时 mission 的 cmd_vel 超时把载具按在原地。
+         航线数字（-0.25/-1.80/1.50 ...）是场地系数字，而本仿真里场地系**就是**
+         odom（见 publishNextGoal 里的长注释），所以 odom 也确实是这些数字
+         被写进去的那个帧。
+         这里原先的注释说的正好相反 —— 说规划器留在 odom 会"把 map 帧的航线
+         目标当成 odom 点来读"。在控制链路还挂在 map 上时那是对的；现在不对了，
+         而把它留在原处恰恰是这个 bug 一直活下来的原因。
+         本参数和下面控制器的同名参数必须**始终同值**：规划器用 global_frame_
+         给 visual_local_trajectory 打戳，而 EgoTrajectoryController 会拒绝任何
+         frame_id 不一致的轨迹。 -->
+    <param name="global_frame" value="odom" />
+    <param name="pose_source" value="tf" />
+    <param name="base_frame" value="base_link" />
+    <param name="output_traj_height" value="$(arg fly_height)" />
+  </node>
+  <node pkg="navigation_2d"
+        type="ego_trajectory_controller_node" name="ego_trajectory_controller"
+        output="screen">
+    <param name="trajectory_topic" value="/visual_local_trajectory" />
+    <!-- **必须**与上面规划器的 global_frame 相等：本节点会丢弃任何
+         header.frame_id 不一致的轨迹，并靠 TF 查 global_frame -> base_link
+         把轨迹转成 cmd_vel。 -->
+    <param name="global_frame" value="odom" />
+    <param name="base_frame" value="base_link" />
+    <param name="cmd_vel_topic" value="/cmd_vel" />
+    <param name="max_velocity" value="0.35" />
+    <param name="max_acceleration" value="0.50" />
+    <!-- 原来是 0.20，在 max_velocity 下勉强只有半秒钟的行程。
+         纯追踪跟随器的转向角是 atan(cross_track / lookahead)，所以在 0.20 m 时
+         偏离计划 5 cm 就已经命令了 14° 的航向变化；载具修正、过冲到另一侧，
+         结果就是报上来的左右晃动。提到 0.45 m —— 在 0.35 m/s 下约 1.3 s 行程，
+         也是纯追踪通常的下界 —— 同样的偏差下转向角减少一半以上；而且轨迹本身
+         每 0.2 s 就会重生成一次（planning_rate 5 Hz），所以更长的前视距离让
+         指令对这份"每帧重规划"的抖动远不那么敏感。
+         它与 goal_slowdown_distance 有耦合：前视距离更长时，目标点会更早地
+         钳到计划末端，这在航点附近正是想要的行为。 -->
+    <param name="lookahead_distance" value="0.45" />
+    <param name="goal_slowdown_distance" value="0.60" />
+    <param name="goal_tolerance" value="0.10" />
+    <param name="command_timeout" value="0.60" />
+    <param name="control_rate" value="20.0" />
+    <!-- 跟随器在 odom/plan 帧下发 /cmd_vel，mission 原样转发，这样 plan->world
+         的旋转在整个链路里恰好只发生一次。
+         以前这里还有一个 output_frame 开关（body / odom）与 mission 侧的
+         cmd_vel_frame 配对。2026-10-17 两个开关一起删掉了：只剩 odom 一种
+         行为，也就没有"哪边配错"的失败模式了 —— 而那个失败模式的症状是横向
+         推力，两个来自不同估计器的 yaw 相减的残差，从日志里认不出来。 -->
+  </node>
+
+  <node pkg="navigation_2d" type="rescue_mission_node"
+        name="rescue_mission_node" output="screen">
+    <!-- 航线航点在 odom/场地帧下，也就是图面米数减去 0.65 / 3.35 的原点平移
+         （见 gc_2026_field.world）。
+
+         hazard_route 的 x 原本是 1.50，现在是 1.40。图纸上危险品任务区这一列
+         标着 "1950"，是从图面右边缘量的，所以这一列在图面 x 2050 =
+         gazebo x 1.40；把图纸上的红框直接从栅格图上量回来得到图面 x 2053，
+         两者吻合。取 1.50 会让载具偏在这一列右边 0.10 m，投放点就落在卡片外了。
+         world 文件里的两张危险品卡片和这些数字**必须一起改**，否则这个偏移会
+         立刻回来 —— world 文件里 hazard_zone_card_1/2 的注释说的也是这件事。 -->
+    <rosparam param="hazard_route">
+      - {x: -0.25, y: -1.80, z: 1.50}
+      - {x: 1.40, y: -1.80, z: 1.50}
+      - {x: 1.40, y: 0.00, z: 1.50}
+    </rosparam>
+    <!-- 人员救助任务区的巡飞路线，即"飞越每一个人员任务区"。
+         三张卡片都必须出现在这里：要求是返航前全部飞越一遍。
+
+         2026-10-17 实机：飞到 (2.16, -1.12) 时 EGO 一直报
+             EGO braking: the vehicle's own cell (...) is inside the inflated
+             obstacle band
+         然后 6 s 后 mission 以 "Planner never started moving toward the
+         waypoint" 中止，飞机原地悬停。原因不是调参，是这条走廊根本过不去：
+
+             fixed_obstacle_2 的下端 (2.184, -0.516) 与 random_obstacle_2
+             (2.10, -1.45) 之间的表面间隙是 0.788 m；两边各膨胀 0.35 m 之后
+             自由带只剩 0.088 m，而机身直径是 0.44 m。
+
+         也就是说旧路线 (1.50,-0.90) -> (2.70,-0.90) 这一段的每一个点都在
+         某个障碍的膨胀带里，EGO 的 A* 起点/终点检查和 B 样条碰撞检查都会
+         拒绝它。它以前能"飞过去"只是因为实际位置和航线差着几十厘米。
+
+         现在改成从南侧绕：先沿 x=1.50 南下到 y=-2.20（random_obstacle_2
+         东侧 0.60 m，膨胀后仍余 0.15 m），再西东向横穿 y=-2.20 这条走廊
+         （距 fixed_obstacle_4 与 random_obstacle_2 都 >= 0.30 m），然后自南
+         向北依次飞越 卡片3 -> 卡片2 -> 卡片1。
+
+         顺序改成自南向北是有意的：返航要从南侧（y=-2.20）向西，从最北的
+         卡片1 下来这一段正好和返航同向，不会出现"飞过卡片3 再回头 0.65 m"
+         那种折返。 -->
+    <rosparam param="person_route">
+      - {x: 1.50, y: -0.90, z: 1.50}
+      - {x: 1.50, y: -2.20, z: 1.50}
+      - {x: 2.70, y: -2.20, z: 1.50}
+      - {x: 2.70, y: -2.65, z: 1.50}
+      - {x: 2.70, y: -1.85, z: 1.50}
+      - {x: 2.70, y: -1.05, z: 1.50}
+    </rosparam>
+    <!-- 返航第一点从 (2.70, -2.00) 挪到 (2.70, -2.20)：
+         -2.00 落在 person_zone_card_2 的边框范围内（卡片中心 y=-1.85，框
+         半宽 0.2125，即 y 属于 [-2.0625, -1.6375]），而且它到 person_route
+         的旧第 4 点只有 0.15 m，是一段 0.65 m 的回头短腿。-2.20 在卡片框
+         之外，向西横穿时距 random_obstacle_2 与 fixed_obstacle_4 都 >= 0.30 m。 -->
+    <rosparam param="return_route">
+      - {x: 2.70, y: -2.20, z: 1.50}
+      - {x: 0.00, y: -2.20, z: 1.50}
+      - {x: 0.00, y: 0.00, z: 1.50}
+    </rosparam>
+
+    <param name="fly_height" value="$(arg fly_height)" />
+    <param name="task_height" value="$(arg task_height)" />
+    <param name="fix_heading_deg" value="$(arg fix_heading_deg)" />
+    <!-- 场地系 -> odom 的转角。只影响"航线数字怎么发出去"这一步，不改航线本身。 -->
+    <param name="field_yaw_deg" value="$(arg field_yaw_deg)" />
+    <!-- /cmd_vel 的帧约定：只有 odom 一种。跟随器在 odom/plan 帧下发，
+         本节点原样转发（见 ego_trajectory_controller 里那段注释）。 -->
+    <param name="stage" value="$(arg stage)" />
+    <param name="rescue_drop_enabled" value="$(arg rescue_drop_enabled)" />
+    <param name="rescue_drop_x" value="$(arg rescue_drop_x)" />
+    <param name="rescue_drop_y" value="$(arg rescue_drop_y)" />
+    <param name="drop_align_mode" value="$(arg drop_align_mode)" />
+    <param name="drop_vision_timeout" value="$(arg drop_vision_timeout)" />
+    <param name="drop_waypoint_tolerance" value="$(arg drop_waypoint_tolerance)" />
+    <param name="auto_start" value="$(arg auto_start)" />
+    <param name="vision_detection_topic" value="$(arg vision_detection_topic)" />
+    <param name="ssd_score_threshold" value="$(arg ssd_score_threshold)" />
+    <param name="xy_gain" value="0.8" />
+    <param name="z_gain" value="1.0" />
+    <param name="max_velocity" value="0.35" />
+    <param name="position_tolerance" value="0.12" />
+    <param name="altitude_tolerance" value="0.08" />
+    <!-- 航线航点只按 x/y 判定到达；z 由节点自己钉在 fly_height 上。
+         这里如果给一个很紧的 z 窗口，会造成"停住/重发"的循环。 -->
+    <param name="route_altitude_tolerance" value="0.40" />
+    <param name="task_alignment_tolerance" value="0.08" />
+    <param name="waypoint_dwell" value="0.6" />
+    <param name="camera_settle_time" value="0.8" />
+    <param name="task_timeout" value="12.0" />
+    <param name="task_alignment_dwell" value="0.7" />
+    <param name="drop_settle_time" value="1.5" />
+    <param name="navigation_timeout" value="30.0" />
+    <param name="planner_velocity_timeout" value="0.6" />
+    <!-- 起飞前的视觉就绪门，见上面的 arg 注释。 -->
+    <param name="require_vision_ready" value="$(arg require_vision_ready)" />
+    <param name="vision_ready_timeout" value="$(arg vision_ready_timeout)" />
+    <!-- 任务相（HOVER/ALIGN）里 /mission/vision/detection 沉默多久就开始报警。
+         2 s 在任何合理的检测帧率下都是好几帧，又远小于 drop_vision_timeout(5 s)，
+         所以操作者先看到"视觉链路没声音了"，而不是 5 s 后那句分不清责任方的
+         "no stable detection"。见 visionWaitReport()。 -->
+    <param name="vision_silence_timeout" value="$(arg vision_silence_timeout)" />
+    <!-- 一条腿从发目标起**一帧移动指令都没收到**多久就判死。必须小于
+         planner_failure_abort_timeout（10 s）：前者说的是"规划器拒绝了这个
+         目标"（EGO 的 drone is in obstacle / goal_inflated），重发同一个目标
+         只会原样再失败一次，所以要抢在通用超时之前把具体原因打出来并中止。
+         10-17 那次飞机就停在 hazard_route[1] 前 0.15 m，重规划 40 次全失败，
+         而 mission 还在等那个 10 s 的通用计时器。 -->
+    <param name="route_no_motion_timeout" value="6.0" />
+    <!-- DWA 在 "failed to produce path" 之后会下发零速，而
+         planner_motion_received_at_ 只在 0.03 m/s 以上才会刷新，所以这个计时器
+         决定了"一次瞬时的局部规划失败"会不会中止任务。取 5.0 s 时，67.1 s 处的
+         一次失败就耗尽了两次重试并在 72.9 s 中止，而当时距一个无任何障碍的
+         航点还有 1.16 m。请让它比一次 DWA 恢复过程宽裕得多。
+         另外它必须小于 navigation_timeout（30 s）。 -->
+    <param name="planner_failure_abort_timeout" value="10.0" />
+    <!-- 绝对的 map 帧边界。载具出生在 map y=0 附近，所以旧的 0.45 上界几乎不留
+         起飞余量，几厘米的漂移就会中止任务。内壁面是 x [-0.65, 3.35]、
+         y [-3.35, 0.65]；这些限值相对墙面留了 0.05 m 余量。 -->
+    <param name="safe_field_min_x" value="-0.60" />
+    <param name="safe_field_max_x" value="3.30" />
+    <param name="safe_field_min_y" value="-3.30" />
+    <param name="safe_field_max_y" value="0.60" />
+    <param name="abort_land_home_radius" value="0.25" />
+    <!-- 中止之后的行为：离家 0.25 m 内走正常降落序列（含相机前置确认），
+         更远则原地保持 abort_land_settle 秒，然后让 PX4 在当前位置 AUTO.LAND。
+         2026-10-17 之前离家远就只 hold、不降落，那一次飞机在人员区悬停到
+         EKF 高度估计崩掉为止。settle 是为了让规划器刚拒绝目标时残留的速度
+         先收敛，别把它带进降落。retry 是"模式没切过去"时的重发间隔。 -->
+    <param name="abort_land_settle" value="0.5" />
+    <param name="abort_land_retry_interval" value="2.0" />
+    <param name="max_navigation_retries" value="2" />
+    <param name="enforce_safe_field" value="$(arg enforce_safe_field)" />
+    <param name="abort_on_offboard_loss" value="true" />
+
+    <!-- 只在检测消息没带帧尺寸（image_width/height 为 0）时兜底，
+         见 mission_vision.cpp。与上面的 camera_width/camera_height 是同一组
+         arg，不可能对不上。 -->
+    <param name="camera_width" value="$(arg camera_width)" />
+    <param name="camera_height" value="$(arg camera_height)" />
+    <param name="stable_frames_required" value="5" />
+    <param name="stable_pixel_tolerance" value="12.0" />
+    <!-- 像素 -> 机体位移的换算。camera_*_f 是这台相机在 640x480 下的标定值
+         （rad/px 的反比），改分辨率必须重标。 -->
+    <param name="camera_fx" value="874.0" />
+    <param name="camera_fy" value="874.0" />
+    <param name="pixel_to_body_x_sign" value="1.0" />
+    <param name="pixel_to_body_y_sign" value="1.0" />
+    <!-- 单次对准允许的最大水平修正量。
+         原来是 0.45 m，而危险品投放点离北墙只有 0.65 m —— 2026-10-17 实机就是
+         被一次 0.45 m 的修正连桨尖一起推过墙的。0.15 m 下的收敛方式是"每个
+         控制周期按 当前 + 最多 0.15 m 重算 target"，所以大偏差几个周期走完，
+         而不是一步跳过去；单步小到即使方向错了也撞不上东西。 -->
+    <param name="max_task_correction" value="0.15" />
+    <!-- 对准阶段的总时限，从进入 ALIGN 起算，**不**因为"还没到点"而重置。
+         没有它的时候 target 每个周期都被重算成"当前 + 修正"，飞机可以无限追
+         一个到不了的点：2026-10-17 就是这样一路 P 控撞到墙上的。超时即中止
+         （fail-safe 落到 abortMission 的返航降落），不静默改成就地投放。 -->
+    <param name="align_timeout" value="5.0" />
+    <!-- 机架半径（中心到桨尖）。对准的 setpoint 会被夹在"安全场缩进这个距离"
+         的矩形里。
+         注意这与 insideSafeField() 的 abort 判据是两件事：那个判的是"飞机现在
+         在哪"，留 0.05 m 墙距；这个判的是"命令它去哪"，必须把桨尖算进去 ——
+         0.05 m 的墙距对一个 0.35 m 的桨是负余量。
+         tools/check_config.py 第 8 项也用它当 map_inflate_value 的下限。
+
+         **这个数不是拍出来的，是量出来的（2026-10-17 更正）**：
+             轴距 450 mm（电机对电机）/ 2      = 225 mm
+             10 寸桨（254 mm）半径 / 2          = 127 mm
+             中心到桨尖                          = 352 mm = 0.352 m
+         原来填的 0.22 m 是"桨尖对桨尖 450 mm"的读法，比真机小 13 cm；后果不是
+         学术问题：2026-10-17 撞北墙那次，0.45 m 的修正被 clamp 到 0.22 m 的包线
+         里仍然允许桨尖越墙 0.13 m —— 那次修复本身短了 13 cm。
+         换桨只改这一处（9 寸 ⇒ 0.339，8 寸 ⇒ 0.327）。 -->
+    <param name="align_body_clearance" value="0.35" />
+  </node>
+
+  <!-- 真机不再起 usb_cam 节点：相机由上面的检测节点用 GStreamer 直采
+       （MJPEG 硬解 + NVMM 零拷贝），raw 图不进 ROS。2026-10-14 删除，
+       原因是那条链上一帧图要进 ROS 一次、被两个订阅者各 cv_bridge 一次，
+       而任务侧真正需要的只是一个回传画面。
+
+       真机飞前单独确认相机（不启动 ROS）：
+         gst-launch-1.0 v4l2src device=/dev/video0 ! image/jpeg,width=640, \
+             height=480,framerate=15/1 ! jpegparse ! nvv4l2decoder mjpeg=1 ! \
+             nvvidconv ! video/x-raw ! ximagesink
+       或者起检测节点看它日志里的 pipeline string 与 "streaming at WxH"。 -->
+
+  <!-- 检测节点总是随任务一起起来（视觉只有 ssd 一条路）。它有自己的包
+       （ssd_detection），这里只是 include 它的 launch —— 所以它照样可以
+       单独起、单独做飞前验证（README §7.3 阶段 1）。
+
+       两份 launch 接受**同一组参数**，区别只在**谁在算、谁在采**：
+
+         ssd_detection_sim         Python + OpenCV DNN。仿真 PC 上没有 CUDA，
+                                   这是那里唯一跑得起来的一份。它订阅
+                                   input_image_topic（Gazebo 相机）。
+         ssd_detection_real        C++ + jetson-inference detectNet。同一个
+                                   .onnx，engine 由它自己建并缓存。真机上它
+                                   还用 GStreamer 直采相机（camera_uri），
+                                   MJPEG 硬解 + NVMM 零拷贝，raw 图不进 ROS。
+
+       选哪一份由 **use_usb_cam 推出来**，不靠人记：
+
+         use_usb_cam=false（默认）  仿真；图像是 Gazebo 给的 ⇒ Python 那份
+         use_usb_cam=true          真机；相机由检测节点直采 ⇒ detectNet 那份
+
+       这条派生存在的全部理由，就是它必须和上面的图像源开关是**同一个**。
+       真机上开了 usb_cam 却还是拉起 Python 那份，现象是
+           ERROR: cannot launch node of type [ssd_detection/ssd_detection_node.py]
+       外加整条视觉链从此一个字都不出 —— 2026-10-07 的地面测试就是卡在这里。
+
+       ⚠️ 2026-10-17 修：这条派生从写下来那天起就是**死代码**，一直到今天。
+       原来写的是
+           arg('use_usb_cam') == 'true'
+       而 roslaunch 的 $(eval ...) **不是**把 arg 当字符串给你：
+       substitution_args._eval 会先 convert_value(value, 'auto')，'true'/'false'
+       被转成**布尔** True/False，于是表达式成了 True == 'true'，在 Python 里
+       恒为 False ⇒ 不管操作员传什么，永远选 sim 那份。仿真侧看不出来（默认
+       false 本来就该选 sim），真机上就正好是上面那条 10-07 的错误。
+       写 $(eval ...) 时 arg() 直接当布尔用，不要再跟 'true' 比
+       （要显式比较也得跟裸的 true 比，那是 _eval_dict 注入的布尔字面量）。
+       tools/check_config.py 第 13 项按 roslaunch 的语义求值，这条错误它现在
+       会直接判 FAIL。
+
+       要临时换另一份，显式传 ssd_detection_launch:=... 仍然有效（它照旧是个
+       普通 arg）。
+
+       相机参数（camera_uri / camera_width / camera_height / camera_fps /
+       camera_codec）只有真机那份会用；仿真那份声明它们、忽略它们 —— 两份
+       launch 声明同一组参数，这个 include 才能不分叉地转发。 -->
+  <arg name="ssd_detection_launch_sim"
+       default="$(find ssd_detection)/launch/ssd_detection.launch" />
+  <arg name="ssd_detection_launch_real"
+       default="$(find ssd_detection)/launch/ssd_detection_trt.launch" />
+  <!-- arg() 在这里是**布尔**（'true'/'false' 已被 roslaunch 转换过），所以直接
+       用它做条件；写成 == 'true' 会恒假，见上面那段。 -->
+  <arg name="ssd_detection_launch"
+       default="$(eval arg('ssd_detection_launch_real') if arg('use_usb_cam') else arg('ssd_detection_launch_sim'))" />
+  <include file="$(arg ssd_detection_launch)">
+    <!-- 仿真：检测节点订阅它。真机：留空，检测节点直采相机。 -->
+    <arg name="input_image_topic" value="$(arg input_image_topic)" />
+    <arg name="output_topic" value="$(arg vision_detection_topic)" />
+    <arg name="score_threshold" value="$(arg ssd_score_threshold)" />
+    <!-- 真机：GStreamer 直采。仿真：声明了但不用。 -->
+    <arg name="input_URI" value="$(arg camera_uri)" />
+    <arg name="input_width" value="$(arg camera_width)" />
+    <arg name="input_height" value="$(arg camera_height)" />
+    <arg name="input_rate" value="$(arg camera_fps)" />
+    <arg name="input_codec" value="$(arg camera_codec)" />
+    <!-- 唯一的回传画面（仿真与实机同名同类型）。 -->
+    <arg name="image_topic" value="$(arg vision_image_topic)" />
+    <arg name="video_width" value="$(arg vision_video_width)" />
+    <arg name="jpeg_quality" value="$(arg vision_jpeg_quality)" />
+    <arg name="max_rate" value="$(arg vision_max_rate)" />
+  </include>
+
+  <node if="$(arg use_real_servos)" pkg="servo_control" type="servo_controller_node"
+        name="servo_controller_node" output="screen">
+    <param name="i2c_device" value="/dev/i2c-1" />
+    <param name="i2c_address" value="64" />
+    <param name="camera_channel" value="0" />
+    <param name="drop_channel" value="1" />
+    <param name="pwm_frequency" value="50" />
+    <param name="min_pulse_us" value="750" />
+    <param name="max_pulse_us" value="2250" />
+    <param name="front_angle" value="170" />
+    <param name="down_angle" value="55" />
+    <param name="servo_motion_seconds" value="0.8" />
+    <param name="servo_seconds_per_degree" value="0.006" />
+    <param name="startup_settle_seconds" value="1.0" />
+    <param name="drop_safe_angle" value="30" />
+    <!-- 一种物资一个角度；两者都在舵机 1 上。角度才是决定哪个仓开锁的量，
+         所以这就是"两次投放各自的舵机角度"，**必须**在真机上标定，不能从仿真里
+         抄。它们做成 launch 参数，就是为了现场标定不需要改文件。
+         restore_after_drop 保持 false：火灾物资投放之后，载具还在危险品任务区
+         上方时，舵机绝不能反向经过救助物资对应的位置。 -->
+    <param name="fire_drop_angle" value="$(arg fire_drop_angle)" />
+    <param name="rescue_drop_angle" value="$(arg rescue_drop_angle)" />
+    <param name="drop_action_seconds" value="1.0" />
+    <param name="restore_after_drop" value="false" />
+  </node>
+  <param name="/rescue_mission_node/require_servo_ready"
+         value="$(arg use_real_servos)" />
+  <param name="/rescue_mission_node/camera_command_timeout" value="5.0" />
+  <param name="/rescue_mission_node/camera_command_retry_interval" value="1.5" />
+  <param name="/rescue_mission_node/camera_command_down_post_move_settle" value="0.3" />
+  <param name="/rescue_mission_node/landing_camera_post_move_settle" value="0.3" />
+
+  <node if="$(arg start_foxglove_bridge)" pkg="foxglove_bridge"
+        type="foxglove_bridge" name="foxglove_bridge" output="screen">
+    <param name="port" value="8765" />
+  </node>
+</launch>

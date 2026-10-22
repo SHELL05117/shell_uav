@@ -1,0 +1,3247 @@
+{
+  "packages": {
+    "ego_planner_2d": {
+      "directory": "src/ego_planner_2d",
+      "version": "1.0.0",
+      "dependencies": [
+        "catkin",
+        "eigen",
+        "geometry_msgs",
+        "nav_msgs",
+        "roscpp",
+        "sensor_msgs",
+        "std_msgs",
+        "tf2",
+        "tf2_geometry_msgs",
+        "tf2_ros",
+        "visualization_msgs"
+      ],
+      "file_count": 23
+    },
+    "location": {
+      "directory": "src/location",
+      "version": "0.0.0",
+      "dependencies": [
+        "catkin",
+        "geometry_msgs",
+        "message_generation",
+        "message_runtime",
+        "roscpp",
+        "sensor_msgs",
+        "tf"
+      ],
+      "file_count": 31
+    },
+    "navigation_2d": {
+      "directory": "src/navigation_2d",
+      "version": "0.0.0",
+      "dependencies": [
+        "actionlib_msgs",
+        "catkin",
+        "cv_bridge",
+        "dwa_local_planner",
+        "ego_planner_2d",
+        "geometry_msgs",
+        "gtest",
+        "mavros_msgs",
+        "message_generation",
+        "message_runtime",
+        "move_base",
+        "nav_msgs",
+        "roscpp",
+        "sensor_msgs",
+        "servo_control",
+        "ssd_detection",
+        "std_msgs",
+        "teb_local_planner",
+        "tf"
+      ],
+      "file_count": 21
+    },
+    "rplidar_ros": {
+      "directory": "src/rplidar_ros",
+      "version": "2.1.5",
+      "dependencies": [
+        "catkin",
+        "rosconsole",
+        "roscpp",
+        "sensor_msgs",
+        "std_srvs"
+      ],
+      "file_count": 114
+    },
+    "servo_control": {
+      "directory": "src/servo_control",
+      "version": "0.1.0",
+      "dependencies": [
+        "catkin",
+        "roscpp",
+        "std_msgs"
+      ],
+      "file_count": 5
+    },
+    "ssd_detection": {
+      "directory": "src/ssd_detection",
+      "version": "0.0.0",
+      "dependencies": [
+        "catkin",
+        "cv_bridge",
+        "message_generation",
+        "message_runtime",
+        "python3-opencv",
+        "roscpp",
+        "rospy",
+        "sensor_msgs",
+        "std_msgs"
+      ],
+      "file_count": 12
+    }
+  },
+  "launches": [
+    {
+      "file": "src/ego_planner_2d/launch/ego_planner_2d.launch",
+      "args": [
+        {
+          "name": "rviz",
+          "default": "true"
+        },
+        {
+          "name": "rviz_config",
+          "default": "$(find ego_planner_2d)/rviz/ego_planner_2d.rviz"
+        }
+      ],
+      "nodes": [
+        {
+          "pkg": "ego_planner_2d",
+          "type": "ego_planner_2d_node",
+          "name": "ego_planner_2d",
+          "output": "screen"
+        },
+        {
+          "if": "$(arg rviz)",
+          "pkg": "rviz",
+          "type": "rviz",
+          "name": "rviz",
+          "args": "-d $(arg rviz_config)"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": [
+        "ego_planner_2d"
+      ]
+    },
+    {
+      "file": "src/location/launch/cartographer_2d.launch",
+      "args": [
+        {
+          "name": "rplidar_location",
+          "default": "false"
+        },
+        {
+          "name": "node_start_delay",
+          "value": "6.0"
+        }
+      ],
+      "nodes": [
+        {
+          "unless": "$(arg rplidar_location)",
+          "name": "cartographer_node",
+          "pkg": "cartographer_ros",
+          "type": "cartographer_node",
+          "launch-prefix": "bash -c 'sleep $(arg node_start_delay); $0 $@'",
+          "args": "           -configuration_directory  $(find location)/param/ROSSLAM           -configuration_basename cartographer_2Dlidar_mapping_params.lua",
+          "output": "screen"
+        },
+        {
+          "if": "$(arg rplidar_location)",
+          "name": "cartographer_node",
+          "pkg": "cartographer_ros",
+          "type": "cartographer_node",
+          "launch-prefix": "bash -c 'sleep $(arg node_start_delay); $0 $@'",
+          "args": "           -configuration_directory  $(find location)/param/ROSSLAM           -configuration_basename cartographer_2Dlidar_mapping_location_params.lua",
+          "output": "screen"
+        },
+        {
+          "name": "cartographer_occupancy_grid_node",
+          "pkg": "cartographer_ros",
+          "type": "cartographer_occupancy_grid_node",
+          "args": "-resolution 0.05"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": [
+        "location"
+      ]
+    },
+    {
+      "file": "src/location/launch/location.launch",
+      "args": [
+        {
+          "name": "is_simulation",
+          "default": "false"
+        },
+        {
+          "name": "open_rviz",
+          "default": "false"
+        },
+        {
+          "name": "load_model",
+          "default": "false"
+        },
+        {
+          "name": "rplidar_location",
+          "default": "true"
+        },
+        {
+          "name": "drone_frame",
+          "default": "base_link"
+        },
+        {
+          "name": "odom_frame",
+          "default": "odom"
+        },
+        {
+          "name": "S2",
+          "default": "true"
+        },
+        {
+          "name": "lidar_serial_port",
+          "default": "/dev/ttyUSB0"
+        },
+        {
+          "name": "node_start_delay",
+          "default": "6.0"
+        },
+        {
+          "name": "use_tf_mini",
+          "default": "true"
+        },
+        {
+          "name": "tf_mini_type",
+          "default": "i2c"
+        },
+        {
+          "name": "tf_mini_height",
+          "default": "0.09"
+        },
+        {
+          "name": "bus",
+          "default": "0"
+        },
+        {
+          "name": "address",
+          "default": "16"
+        },
+        {
+          "name": "serial_port",
+          "default": "/dev/ttyTHS0"
+        },
+        {
+          "name": "baud_rate",
+          "default": "115200"
+        }
+      ],
+      "nodes": [
+        {
+          "pkg": "location",
+          "type": "location_node",
+          "name": "location_node",
+          "output": "screen",
+          "launch-prefix": "bash -c 'sleep $(arg node_start_delay); $0 $@' "
+        },
+        {
+          "pkg": "tf",
+          "type": "static_transform_publisher",
+          "name": "tf_baselink_to_laserlink",
+          "args": "0 0 0 3.14159 0 0 base_link laser_link 30"
+        },
+        {
+          "name": "joint_state_publisher",
+          "pkg": "joint_state_publisher",
+          "type": "joint_state_publisher"
+        },
+        {
+          "name": "robot_state_publisher",
+          "pkg": "robot_state_publisher",
+          "type": "robot_state_publisher"
+        },
+        {
+          "pkg": "rviz",
+          "type": "rviz",
+          "name": "rviz",
+          "required": "true",
+          "args": "-d $(find location)/rviz/ros_navigation.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "unless": "$(arg rplidar_location)",
+          "file": "$(find location)/launch/rs_t265.launch"
+        },
+        {
+          "if": "$(arg rplidar_location)",
+          "file": "$(find location)/launch/rplidar.launch"
+        },
+        {
+          "file": "$(find mavros)/launch/px4.launch"
+        },
+        {
+          "if": "$(arg rplidar_location)",
+          "file": "$(find location)/launch/cartographer_2d.launch"
+        }
+      ],
+      "referenced_packages": [
+        "location",
+        "mavros",
+        "xacro"
+      ]
+    },
+    {
+      "file": "src/location/launch/mocap-test.launch",
+      "args": [],
+      "nodes": [],
+      "includes": [
+        {
+          "file": "$(find vrpn_client_ros)/launch/sample.launch",
+          "ns": "test"
+        }
+      ],
+      "referenced_packages": [
+        "vrpn_client_ros"
+      ]
+    },
+    {
+      "file": "src/location/launch/rplidar.launch",
+      "args": [
+        {
+          "name": "serial_port",
+          "default": "/dev/ttyUSB0"
+        },
+        {
+          "name": "S2",
+          "default": "true"
+        }
+      ],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        },
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/location/launch/rs_t265.launch",
+      "args": [
+        {
+          "name": "serial_no",
+          "default": ""
+        },
+        {
+          "name": "usb_port_id",
+          "default": ""
+        },
+        {
+          "name": "device_type",
+          "default": "t265"
+        },
+        {
+          "name": "json_file_path",
+          "default": ""
+        },
+        {
+          "name": "camera",
+          "default": "camera"
+        },
+        {
+          "name": "tf_prefix",
+          "default": "$(arg camera)"
+        },
+        {
+          "name": "fisheye_width",
+          "default": "-1"
+        },
+        {
+          "name": "fisheye_height",
+          "default": "-1"
+        },
+        {
+          "name": "enable_fisheye1",
+          "default": "false"
+        },
+        {
+          "name": "enable_fisheye2",
+          "default": "false"
+        },
+        {
+          "name": "fisheye_fps",
+          "default": "-1"
+        },
+        {
+          "name": "gyro_fps",
+          "default": "-1"
+        },
+        {
+          "name": "accel_fps",
+          "default": "-1"
+        },
+        {
+          "name": "enable_gyro",
+          "default": "true"
+        },
+        {
+          "name": "enable_accel",
+          "default": "true"
+        },
+        {
+          "name": "enable_pose",
+          "default": "true"
+        },
+        {
+          "name": "enable_sync",
+          "default": "false"
+        },
+        {
+          "name": "linear_accel_cov",
+          "default": "0.01"
+        },
+        {
+          "name": "initial_reset",
+          "default": "false"
+        },
+        {
+          "name": "reconnect_timeout",
+          "default": "6.0"
+        },
+        {
+          "name": "unite_imu_method",
+          "default": ""
+        },
+        {
+          "name": "publish_odom_tf",
+          "default": "true"
+        },
+        {
+          "name": "base_frame_id",
+          "default": "$(arg tf_prefix)_link"
+        },
+        {
+          "name": "odom_frame_id",
+          "default": "$(arg tf_prefix)_odom_frame"
+        }
+      ],
+      "nodes": [],
+      "includes": [
+        {
+          "file": "$(find realsense2_camera)/launch/includes/nodelet.launch.xml"
+        }
+      ],
+      "referenced_packages": [
+        "realsense2_camera"
+      ]
+    },
+    {
+      "file": "src/navigation_2d/launch/move_base.launch",
+      "args": [
+        {
+          "name": "global_costmap_config",
+          "default": "$(find navigation_2d)/param/global_costmap_params.yaml"
+        },
+        {
+          "name": "odom_topic",
+          "default": "/mavros/local_position/odom"
+        },
+        {
+          "name": "scan_topic",
+          "default": "/scan"
+        },
+        {
+          "name": "move_forward_only",
+          "default": "false"
+        },
+        {
+          "name": "local_planner",
+          "default": "dwa_local_planner/DWAPlannerROS"
+        }
+      ],
+      "nodes": [
+        {
+          "pkg": "move_base",
+          "type": "move_base",
+          "respawn": "false",
+          "name": "move_base",
+          "output": "screen",
+          "if": "$(eval arg('local_planner') == 'dwa_local_planner/DWAPlannerROS' or arg('local_planner') == 'teb_local_planner/TebLocalPlannerROS')"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": [
+        "navigation_2d"
+      ]
+    },
+    {
+      "file": "src/navigation_2d/launch/navigation_2d.launch",
+      "args": [
+        {
+          "name": "fly_height",
+          "default": "1.5"
+        },
+        {
+          "name": "task_height",
+          "default": "1.2"
+        },
+        {
+          "name": "fix_heading_deg",
+          "default": "0.0"
+        },
+        {
+          "name": "stage",
+          "default": "1"
+        },
+        {
+          "name": "rescue_drop_x",
+          "default": "999.0"
+        },
+        {
+          "name": "rescue_drop_y",
+          "default": "999.0"
+        },
+        {
+          "name": "drop_align_mode",
+          "default": "vision_with_fallback"
+        },
+        {
+          "name": "drop_vision_timeout",
+          "default": "5.0"
+        },
+        {
+          "name": "drop_waypoint_tolerance",
+          "default": "0.20"
+        },
+        {
+          "name": "fire_drop_angle",
+          "default": "90"
+        },
+        {
+          "name": "rescue_drop_angle",
+          "default": "140"
+        },
+        {
+          "name": "rescue_drop_enabled",
+          "default": "false"
+        },
+        {
+          "name": "auto_start",
+          "default": "false"
+        },
+        {
+          "name": "camera_device",
+          "default": "/dev/video0"
+        },
+        {
+          "name": "start_foxglove_bridge",
+          "default": "false"
+        },
+        {
+          "name": "global_costmap_config",
+          "default": "$(find navigation_2d)/param/global_costmap_params.yaml"
+        },
+        {
+          "name": "enforce_safe_field",
+          "default": "false"
+        },
+        {
+          "name": "odom_topic",
+          "default": "/mavros/local_position/odom"
+        },
+        {
+          "name": "use_usb_cam",
+          "default": "true"
+        },
+        {
+          "name": "usb_cam_device",
+          "default": "/dev/video0"
+        },
+        {
+          "name": "usb_cam_topic",
+          "default": "/camera/image_raw"
+        },
+        {
+          "name": "usb_cam_width",
+          "default": "640"
+        },
+        {
+          "name": "usb_cam_height",
+          "default": "480"
+        },
+        {
+          "name": "usb_cam_fps",
+          "default": "15"
+        },
+        {
+          "name": "usb_cam_pixel_format",
+          "default": "mjpeg"
+        },
+        {
+          "name": "usb_cam_io_method",
+          "default": "mmap"
+        },
+        {
+          "name": "input_image_topic",
+          "default": "$(eval arg('usb_cam_topic') if arg('use_usb_cam') == 'true' else '')"
+        },
+        {
+          "name": "vision_backend",
+          "default": "ssd"
+        },
+        {
+          "name": "vision_detection_topic",
+          "default": "/ssd_detection/detections"
+        },
+        {
+          "name": "ssd_score_threshold",
+          "default": "0.5"
+        },
+        {
+          "name": "scan_topic",
+          "default": "/scan"
+        },
+        {
+          "name": "use_real_servos",
+          "default": "true"
+        },
+        {
+          "name": "planner_backend",
+          "default": "ego"
+        },
+        {
+          "name": "ssd_detection_launch",
+          "default": "$(find ssd_detection)/launch/ssd_detection_trt.launch"
+        }
+      ],
+      "nodes": [
+        {
+          "if": "$(eval arg('planner_backend') == 'ego')",
+          "pkg": "ego_planner_2d",
+          "type": "ego_planner_2d_node",
+          "name": "ego_planner_2d",
+          "output": "screen"
+        },
+        {
+          "if": "$(eval arg('planner_backend') == 'ego')",
+          "pkg": "navigation_2d",
+          "type": "ego_trajectory_controller_node",
+          "name": "ego_trajectory_controller",
+          "output": "screen"
+        },
+        {
+          "pkg": "navigation_2d",
+          "type": "rescue_mission_node",
+          "name": "rescue_mission_node",
+          "output": "screen"
+        },
+        {
+          "if": "$(arg use_usb_cam)",
+          "pkg": "usb_cam",
+          "type": "usb_cam_node",
+          "name": "usb_cam",
+          "output": "screen"
+        },
+        {
+          "if": "$(arg use_real_servos)",
+          "pkg": "servo_control",
+          "type": "servo_controller_node",
+          "name": "servo_controller_node",
+          "output": "screen"
+        },
+        {
+          "if": "$(arg start_foxglove_bridge)",
+          "pkg": "foxglove_bridge",
+          "type": "foxglove_bridge",
+          "name": "foxglove_bridge",
+          "output": "screen"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find navigation_2d)/launch/move_base.launch",
+          "if": "$(eval arg('planner_backend') == 'dwa' or arg('planner_backend') == 'teb')"
+        },
+        {
+          "if": "$(eval arg('vision_backend') == 'ssd')",
+          "file": "$(arg ssd_detection_launch)"
+        }
+      ],
+      "referenced_packages": [
+        "navigation_2d",
+        "ssd_detection"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a2m12.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a2m7.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a2m8.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a3.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_c1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s1_tcp.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s2.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s2e.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s3.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_t1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/test_rplidar.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        },
+        {
+          "name": "rplidarNodeClient",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNodeClient",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/test_rplidar_a3.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rplidarNode",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNode",
+          "output": "screen"
+        },
+        {
+          "name": "rplidarNodeClient",
+          "pkg": "rplidar_ros",
+          "type": "rplidarNodeClient",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_a1.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a2m12.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_a2m12.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a2m7.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_a2m7.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a2m8.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_a2m8.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a3.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_a3.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_c1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_c1.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_s1.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s1_tcp.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_s1_tcp.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s2.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_s2.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s2e.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_s2e.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s3.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_s3.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_t1.launch",
+      "args": [],
+      "nodes": [
+        {
+          "name": "rviz",
+          "pkg": "rviz",
+          "type": "rviz",
+          "args": "-d $(find rplidar_ros)/rviz/rplidar.rviz"
+        }
+      ],
+      "includes": [
+        {
+          "file": "$(find rplidar_ros)/launch/rplidar_t1.launch"
+        }
+      ],
+      "referenced_packages": [
+        "rplidar_ros"
+      ]
+    },
+    {
+      "file": "src/servo_control/launch/servo_bench.launch",
+      "args": [
+        {
+          "name": "i2c_device",
+          "default": "/dev/i2c-1"
+        },
+        {
+          "name": "i2c_address",
+          "default": "64"
+        },
+        {
+          "name": "camera_channel",
+          "default": "0"
+        },
+        {
+          "name": "drop_channel",
+          "default": "1"
+        },
+        {
+          "name": "pwm_frequency",
+          "default": "50"
+        },
+        {
+          "name": "min_pulse_us",
+          "default": "750"
+        },
+        {
+          "name": "max_pulse_us",
+          "default": "2250"
+        },
+        {
+          "name": "servo_motion_seconds",
+          "default": "0.8"
+        },
+        {
+          "name": "servo_seconds_per_degree",
+          "default": "0.006"
+        },
+        {
+          "name": "startup_settle_seconds",
+          "default": "1.0"
+        },
+        {
+          "name": "front_angle",
+          "default": "170"
+        },
+        {
+          "name": "down_angle",
+          "default": "55"
+        },
+        {
+          "name": "drop_safe_angle",
+          "default": "30"
+        },
+        {
+          "name": "fire_drop_angle",
+          "default": "90"
+        },
+        {
+          "name": "rescue_drop_angle",
+          "default": "140"
+        },
+        {
+          "name": "drop_action_seconds",
+          "default": "1.0"
+        },
+        {
+          "name": "restore_after_drop",
+          "default": "false"
+        }
+      ],
+      "nodes": [
+        {
+          "pkg": "servo_control",
+          "type": "servo_controller_node",
+          "name": "servo_controller_node",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": []
+    },
+    {
+      "file": "src/ssd_detection/launch/ssd_detection.launch",
+      "args": [
+        {
+          "name": "input_image_topic",
+          "default": "/camera/image_raw"
+        },
+        {
+          "name": "output_topic",
+          "default": "/ssd_detection/detections"
+        },
+        {
+          "name": "model_path",
+          "default": "$(find ssd_detection)/../../data/models/real4/ssd-mobilenet.onnx"
+        },
+        {
+          "name": "config_path",
+          "default": ""
+        },
+        {
+          "name": "label_file",
+          "default": "$(find ssd_detection)/../../data/models/real4/labels.txt"
+        },
+        {
+          "name": "score_threshold",
+          "default": "0.5"
+        },
+        {
+          "name": "input_size",
+          "default": "300"
+        },
+        {
+          "name": "max_detections",
+          "default": "100"
+        },
+        {
+          "name": "nms_iou",
+          "default": "0.45"
+        },
+        {
+          "name": "publish_debug_image",
+          "default": "true"
+        },
+        {
+          "name": "debug_image_topic",
+          "default": "/ssd_detection/debug_image/compressed"
+        },
+        {
+          "name": "jpeg_quality",
+          "default": "70"
+        }
+      ],
+      "nodes": [
+        {
+          "pkg": "ssd_detection",
+          "type": "ssd_detection_node.py",
+          "name": "ssd_detection",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": [
+        "ssd_detection"
+      ]
+    },
+    {
+      "file": "src/ssd_detection/launch/ssd_detection_trt.launch",
+      "args": [
+        {
+          "name": "input_image_topic",
+          "default": "/camera/image_raw"
+        },
+        {
+          "name": "output_topic",
+          "default": "/ssd_detection/detections"
+        },
+        {
+          "name": "model_path",
+          "default": "$(find ssd_detection)/../../data/models/real4/ssd-mobilenet.onnx"
+        },
+        {
+          "name": "label_file",
+          "default": "$(find ssd_detection)/../../data/models/real4/labels.txt"
+        },
+        {
+          "name": "score_threshold",
+          "default": "0.5"
+        },
+        {
+          "name": "publish_debug_image",
+          "default": "true"
+        },
+        {
+          "name": "debug_image_topic",
+          "default": "/ssd_detection/debug_image/compressed"
+        },
+        {
+          "name": "jpeg_quality",
+          "default": "70"
+        },
+        {
+          "name": "max_rate",
+          "default": "0"
+        }
+      ],
+      "nodes": [
+        {
+          "pkg": "ssd_detection",
+          "type": "ssd_detection_node",
+          "name": "ssd_detection",
+          "output": "screen"
+        }
+      ],
+      "includes": [],
+      "referenced_packages": [
+        "ssd_detection"
+      ]
+    }
+  ],
+  "external_symlinks": [],
+  "unresolved_symlinks": [],
+  "symlink_checks": [
+    {
+      "name": "catkin_ws/devel/include/ssd_detection/VisionDetection.h",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/include/ssd_detection/VisionDetection.h",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/include/ssd_detection/VisionDetection.h"
+    },
+    {
+      "name": "catkin_ws/devel/include/ssd_detection/VisionDetectionArray.h",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/include/ssd_detection/VisionDetectionArray.h",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/include/ssd_detection/VisionDetectionArray.h"
+    },
+    {
+      "name": "catkin_ws/devel/include/navigation_2d/TargetDetection.h",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/include/navigation_2d/TargetDetection.h",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/include/navigation_2d/TargetDetection.h"
+    },
+    {
+      "name": "catkin_ws/devel/setup.sh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/setup.sh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/setup.sh"
+    },
+    {
+      "name": "catkin_ws/devel/setup.zsh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/setup.zsh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/setup.zsh"
+    },
+    {
+      "name": "catkin_ws/devel/cmake.lock",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/cmake.lock",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/cmake.lock"
+    },
+    {
+      "name": "catkin_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/ssd_detection/msg/VisionDetectionArray.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/msg/VisionDetectionArray.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/msg/VisionDetectionArray.l"
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/ssd_detection/msg/VisionDetection.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/msg/VisionDetection.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/msg/VisionDetection.l"
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/ssd_detection/manifest.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/manifest.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/manifest.l"
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/navigation_2d/msg/TargetDetection.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/roseus/ros/navigation_2d/msg/TargetDetection.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/roseus/ros/navigation_2d/msg/TargetDetection.l"
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/navigation_2d/manifest.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/roseus/ros/navigation_2d/manifest.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/roseus/ros/navigation_2d/manifest.l"
+    },
+    {
+      "name": "catkin_ws/devel/share/location/cmake/locationConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/share/location/cmake/locationConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/location/share/location/cmake/locationConfig-version.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/location/cmake/locationConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/share/location/cmake/locationConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/location/share/location/cmake/locationConfig.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/msg/VisionDetection.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/VisionDetection.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/VisionDetection.js"
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/msg/VisionDetectionArray.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/VisionDetectionArray.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/VisionDetectionArray.js"
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/msg/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/_index.js"
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/_index.js"
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/navigation_2d/msg/TargetDetection.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/msg/TargetDetection.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/msg/TargetDetection.js"
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/navigation_2d/msg/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/msg/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/msg/_index.js"
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/navigation_2d/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/_index.js"
+    },
+    {
+      "name": "catkin_ws/devel/share/ego_planner_2d/cmake/ego_planner_2dConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/share/ego_planner_2d/cmake/ego_planner_2dConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/share/ego_planner_2d/cmake/ego_planner_2dConfig.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/ego_planner_2d/cmake/ego_planner_2dConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/share/ego_planner_2d/cmake/ego_planner_2dConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/share/ego_planner_2d/cmake/ego_planner_2dConfig-version.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detectionConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detectionConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detectionConfig.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detection-msg-paths.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detection-msg-paths.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detection-msg-paths.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detection-msg-extras.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detection-msg-extras.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detection-msg-extras.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detectionConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detectionConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detectionConfig-version.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/rplidar_ros/cmake/rplidar_rosConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig-version.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/rplidar_ros/cmake/rplidar_rosConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/servo_control/cmake/servo_controlConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/share/servo_control/cmake/servo_controlConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/servo_control/share/servo_control/cmake/servo_controlConfig.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/servo_control/cmake/servo_controlConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/share/servo_control/cmake/servo_controlConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/servo_control/share/servo_control/cmake/servo_controlConfig-version.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/_package.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetectionArray.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetectionArray.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetectionArray.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/VisionDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/VisionDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/VisionDetection.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/VisionDetectionArray.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/VisionDetectionArray.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/VisionDetectionArray.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/ssd_detection-msg.asd",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/ssd_detection-msg.asd",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/ssd_detection-msg.asd"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetection.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/_package_TargetDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/_package_TargetDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/_package_TargetDetection.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/navigation_2d-msg.asd",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/navigation_2d-msg.asd",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/navigation_2d-msg.asd"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/_package.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/_package.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/_package.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/TargetDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/TargetDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/TargetDetection.lisp"
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2d-msg-paths.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2d-msg-paths.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2d-msg-paths.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2dConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2dConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2dConfig.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2d-msg-extras.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2d-msg-extras.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2d-msg-extras.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2dConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2dConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2dConfig-version.cmake"
+    },
+    {
+      "name": "catkin_ws/devel/local_setup.zsh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.zsh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.zsh"
+    },
+    {
+      "name": "catkin_ws/devel/local_setup.sh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.sh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.sh"
+    },
+    {
+      "name": "catkin_ws/devel/_setup_util.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/_setup_util.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/_setup_util.py"
+    },
+    {
+      "name": "catkin_ws/devel/env.sh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/env.sh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/env.sh"
+    },
+    {
+      "name": "catkin_ws/devel/local_setup.bash",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.bash",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.bash"
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetection.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetection.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetection.py"
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetectionArray.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetectionArray.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetectionArray.py"
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/msg/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/__init__.py"
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/__init__.py"
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/navigation_2d/msg/_TargetDetection.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/msg/_TargetDetection.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/msg/_TargetDetection.py"
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/navigation_2d/msg/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/msg/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/msg/__init__.py"
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/navigation_2d/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/__init__.py"
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/ssd_detection.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/pkgconfig/ssd_detection.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/lib/pkgconfig/ssd_detection.pc"
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/servo_control.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/lib/pkgconfig/servo_control.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/servo_control/lib/pkgconfig/servo_control.pc"
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/rplidar_ros.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/lib/pkgconfig/rplidar_ros.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/rplidar_ros/lib/pkgconfig/rplidar_ros.pc"
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/location.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/lib/pkgconfig/location.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/location/lib/pkgconfig/location.pc"
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/catkin_tools_prebuild.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/lib/pkgconfig/catkin_tools_prebuild.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/lib/pkgconfig/catkin_tools_prebuild.pc"
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/navigation_2d.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/pkgconfig/navigation_2d.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/lib/pkgconfig/navigation_2d.pc"
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/ego_planner_2d.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/pkgconfig/ego_planner_2d.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/lib/pkgconfig/ego_planner_2d.pc"
+    },
+    {
+      "name": "catkin_ws/devel/lib/location/location_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/lib/location/location_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/location/lib/location/location_node"
+    },
+    {
+      "name": "catkin_ws/devel/lib/location/tfmini_test",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/lib/location/tfmini_test",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/location/lib/location/tfmini_test"
+    },
+    {
+      "name": "catkin_ws/devel/lib/ego_planner_2d/ego_planner_2d_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/ego_planner_2d/ego_planner_2d_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/lib/ego_planner_2d/ego_planner_2d_node"
+    },
+    {
+      "name": "catkin_ws/devel/lib/ssd_detection/ssd_detection_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/ssd_detection/ssd_detection_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ssd_detection/lib/ssd_detection/ssd_detection_node"
+    },
+    {
+      "name": "catkin_ws/devel/lib/rplidar_ros/rplidarNode",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNode",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNode"
+    },
+    {
+      "name": "catkin_ws/devel/lib/rplidar_ros/rplidarNodeClient",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNodeClient",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNodeClient"
+    },
+    {
+      "name": "catkin_ws/devel/lib/libgrid_map_2d.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libgrid_map_2d.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/lib/libgrid_map_2d.a"
+    },
+    {
+      "name": "catkin_ws/devel/lib/servo_control/servo_controller_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/lib/servo_control/servo_controller_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/servo_control/lib/servo_control/servo_controller_node"
+    },
+    {
+      "name": "catkin_ws/devel/lib/navigation_2d/rescue_mission_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/rescue_mission_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/rescue_mission_node"
+    },
+    {
+      "name": "catkin_ws/devel/lib/navigation_2d/ego_trajectory_controller_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/ego_trajectory_controller_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/ego_trajectory_controller_node"
+    },
+    {
+      "name": "catkin_ws/devel/lib/libpath_searching.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libpath_searching.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/lib/libpath_searching.a"
+    },
+    {
+      "name": "catkin_ws/devel/lib/libbspline_opt.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libbspline_opt.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/lib/libbspline_opt.a"
+    },
+    {
+      "name": "catkin_ws/devel/lib/libplan_manage.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libplan_manage.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/ego_planner_2d/lib/libplan_manage.a"
+    },
+    {
+      "name": "catkin_ws/devel/setup.bash",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/setup.bash",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466,
+      "status": "included",
+      "resolved_target": "catkin_ws/devel/.private/catkin_tools_prebuild/setup.bash"
+    }
+  ],
+  "elf_files": [
+    {
+      "file": "devel/.private/ego_planner_2d/lib/ego_planner_2d/ego_planner_2d_node",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/location/lib/location/location_node",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/location/lib/location/tfmini_test",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/navigation_2d/lib/navigation_2d/ego_trajectory_controller_node",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/navigation_2d/lib/navigation_2d/rescue_mission_node",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNode",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNodeClient",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/servo_control/lib/servo_control/servo_controller_node",
+      "machine": 183,
+      "architecture": "AArch64"
+    },
+    {
+      "file": "devel/.private/ssd_detection/lib/ssd_detection/ssd_detection_node",
+      "machine": 183,
+      "architecture": "AArch64"
+    }
+  ],
+  "onnx": {
+    "inputs": [
+      {
+        "name": "input_0",
+        "shape": [
+          1,
+          3,
+          300,
+          300
+        ],
+        "element_type": 1
+      }
+    ],
+    "outputs": [
+      {
+        "name": "scores",
+        "shape": [
+          1,
+          1917,
+          5
+        ],
+        "element_type": 1
+      },
+      {
+        "name": "boxes",
+        "shape": [
+          1,
+          1917,
+          4
+        ],
+        "element_type": 1
+      }
+    ],
+    "external_tensor_entries": 0,
+    "ir_version": 6
+  },
+  "labels": [
+    "BACKGROUND",
+    "person_injured",
+    "hazard_toxic",
+    "hazard_flammable",
+    "hazard_explosive"
+  ],
+  "onnx_sha256": "1dd972a8b7485baafc14480065bf36b2fc3cb503a28dfc052601f5433e43bda3",
+  "onnx_hash_matches_companion": true,
+  "source_file_hashes": [
+    {
+      "file": "src/CMakeLists.txt",
+      "sha256": "c100ae896e616bb6249eca91fd0b2fd85bbf8bbd8f833302adc386f91b380af6"
+    },
+    {
+      "file": "src/ego_planner_2d/CMakeLists.txt",
+      "sha256": "01a4b2e98f2809ac71dd4a23e42e20fef5641016648402743975dec8431d20bd"
+    },
+    {
+      "file": "src/ego_planner_2d/include/bspline_opt/bspline_optimizer.h",
+      "sha256": "ef0efd09865e0a838ad1c7f96b18175768675f12481c8eb22d14348f08e2961c"
+    },
+    {
+      "file": "src/ego_planner_2d/include/bspline_opt/gradient_descent_optimizer.h",
+      "sha256": "8f248b03563c6e112e475a7475b93e01459ea520ee61ff85d6fac6568d3f3af2"
+    },
+    {
+      "file": "src/ego_planner_2d/include/bspline_opt/lbfgs.hpp",
+      "sha256": "39174dfe750b142f448fe8ac637976edc8a1bcf6a6ab8a56930e6543cfdf6b07"
+    },
+    {
+      "file": "src/ego_planner_2d/include/bspline_opt/uniform_bspline.h",
+      "sha256": "6c2dc80d8b87ce7fa6d7e4a7a098296160db83d24e7edf71468ebe371d3f0629"
+    },
+    {
+      "file": "src/ego_planner_2d/include/ego_planner_2d/ego_planner_2d_node.h",
+      "sha256": "4715df80562d78ec26e85c551bd02289df3edfb4bdf7915e37582c319ed67f54"
+    },
+    {
+      "file": "src/ego_planner_2d/include/path_searching/dyn_a_star.h",
+      "sha256": "fb12b9b6f963b700f902a72123c7170540b8c2c453e6d11cb909583d28adedba"
+    },
+    {
+      "file": "src/ego_planner_2d/include/plan_env/grid_map.h",
+      "sha256": "97ff42019164fce438d932dea725eb0ae7e15399300ee96745d46e778cf46b66"
+    },
+    {
+      "file": "src/ego_planner_2d/include/plan_manage/bspline_msg.h",
+      "sha256": "cdbd9079629abab3fb4e44b7af943c163795b5e2440ef32608442546376cbeaf"
+    },
+    {
+      "file": "src/ego_planner_2d/include/plan_manage/plan_container.hpp",
+      "sha256": "96a012f02edc8608deef6b1b69dc64bdfa2da4614a7e03689e4b22d409c4c923"
+    },
+    {
+      "file": "src/ego_planner_2d/include/plan_manage/planner_interface.h",
+      "sha256": "5e8540d40c81e642ce916f9b7c4ab4abd0f69ac363bb4e0cde5fb5411b5f1d8f"
+    },
+    {
+      "file": "src/ego_planner_2d/launch/ego_planner_2d.launch",
+      "sha256": "4d018099c6cb7224ffe308b22185fe88a277968b62c8b571c6a59614a2bd06a6"
+    },
+    {
+      "file": "src/ego_planner_2d/LICENSE",
+      "sha256": "d3c971bfeba1ae45142c684c56aa67f4bf53967d18e36d8def31450a32aaa677"
+    },
+    {
+      "file": "src/ego_planner_2d/package.xml",
+      "sha256": "2f620d3465e2cdbb49d155cf5c4091680138230f53143b74da3e863d40f071cb"
+    },
+    {
+      "file": "src/ego_planner_2d/README.md",
+      "sha256": "1cb13caa4096d00ebaea68aa2a1eeaf123e41462d38d054c58d846dbd469a17e"
+    },
+    {
+      "file": "src/ego_planner_2d/rviz/ego_planner_2d.rviz",
+      "sha256": "233e894156e532e8c127bbecb973654d564d64714dede9c909d76a0c2aa2990d"
+    },
+    {
+      "file": "src/ego_planner_2d/src/bspline_opt/bspline_optimizer.cpp",
+      "sha256": "e9723f4e287d224c54183d021f4e2b6cb6fdab3d3ecd28942eafbcc75b9e0278"
+    },
+    {
+      "file": "src/ego_planner_2d/src/bspline_opt/gradient_descent_optimizer.cpp",
+      "sha256": "1891c663ed801c12a3a2dc97cf2ad8ca19bbe2deaf2261c2c5521eed8d92dd7b"
+    },
+    {
+      "file": "src/ego_planner_2d/src/bspline_opt/uniform_bspline.cpp",
+      "sha256": "3a9ff644d4204248e9a38749e5a7a928d9771a265f38cf3d9ad112a72c2dbf57"
+    },
+    {
+      "file": "src/ego_planner_2d/src/ego_planner_2d_node.cpp",
+      "sha256": "59b2b64b1e58d68a7742690478df29ea1899396e5c9b2c085b4e5e6b7bfb3e41"
+    },
+    {
+      "file": "src/ego_planner_2d/src/path_searching/dyn_a_star.cpp",
+      "sha256": "d8ab10647708b305ff4e296c8186f1b71490fe6ea4d9d7a6febf6cc2c71dd5d2"
+    },
+    {
+      "file": "src/ego_planner_2d/src/plan_env/grid_map.cpp",
+      "sha256": "14770e77d71667b4794c2cee9df6d4759531568770fbda42793e1bd2a727f4f3"
+    },
+    {
+      "file": "src/ego_planner_2d/src/plan_manage/planner_interface.cpp",
+      "sha256": "9c58611e0e0f74bb549a98df411aac9907852406d7995d0412edbc73c15f1ed9"
+    },
+    {
+      "file": "src/location/CMakeLists.txt",
+      "sha256": "04733c680050fe319960e5de678f50c70338e6f4eb8fbbf78cafd479f331f133"
+    },
+    {
+      "file": "src/location/include/i2c.h",
+      "sha256": "ff0785cafe4d4a41b2783a146432e6dfbab136ca809326b7c7b2236c4727203f"
+    },
+    {
+      "file": "src/location/include/tf_mini_i2c.h",
+      "sha256": "1b205c52d27ac5ddbc819cc7318498bf9800e03b78e4fda59fda990cd89470ab"
+    },
+    {
+      "file": "src/location/include/TFplus.h",
+      "sha256": "caca0309d69ee0d0ce938330d9bd5704dc606bde20f6ddd6358bb4ea96d5b0e2"
+    },
+    {
+      "file": "src/location/launch/cartographer_2d.launch",
+      "sha256": "e6cd0f8ab803aad6be680cc2f766e7df052423926fb88a0c9dd6e7b720e0c4b2"
+    },
+    {
+      "file": "src/location/launch/location.launch",
+      "sha256": "b51f399f532526dfc24da81c65a9331a83c32288951854753b87690079f7b0eb"
+    },
+    {
+      "file": "src/location/launch/mocap-test.launch",
+      "sha256": "8bd64c2bac43f7fc12fc494ef49e5a092d6536ceb4252b67fd2f836d312c3261"
+    },
+    {
+      "file": "src/location/launch/rplidar.launch",
+      "sha256": "53146745eae6ebd9e2e80a61327f0c6e6ebb0e1ad908a7e9e697765de58684f6"
+    },
+    {
+      "file": "src/location/launch/rs_t265.launch",
+      "sha256": "fa9835a6e592392d83169fe22156192748ca4094436dffc0a6a44e8f44ef3f43"
+    },
+    {
+      "file": "src/location/package.xml",
+      "sha256": "8a9f147936df106cfc887b97fff3c984b0b7ed8548b764e9906c382860da7573"
+    },
+    {
+      "file": "src/location/param/ROSSLAM/backpack_2d.urdf",
+      "sha256": "33d70e5386e360f619d56602e7e878da3c54d1114951b052bd0bfdf111f55e59"
+    },
+    {
+      "file": "src/location/param/ROSSLAM/cartographer_2Dlidar_location_params.lua",
+      "sha256": "8605854ddaeadb5ae71d165b6aa6f6e34e1e8f9381d10b4e3b79b42cc6cd3341"
+    },
+    {
+      "file": "src/location/param/ROSSLAM/cartographer_2Dlidar_mapping_location_params.lua",
+      "sha256": "6c58aabb669ccee6cf3accc28c4f5b7860f90fb7bbdba7cf58c3ac233ce51ff9"
+    },
+    {
+      "file": "src/location/param/ROSSLAM/cartographer_2Dlidar_mapping_params.lua",
+      "sha256": "0fdd3ea3f4b19a8a66960aeba71953cbaddc35e09f64235d434105b880dffc23"
+    },
+    {
+      "file": "src/location/param/ROSSLAM/cartographer_2Dlidar_mapping_params1.lua",
+      "sha256": "e807f47db6fec7ae4e9d9d419c7d8be31801bff5c9eddd14160b0e6232abc8b7"
+    },
+    {
+      "file": "src/location/param/ROSSLAM/cartographer_3Dlidar_location_params.lua",
+      "sha256": "879edbe283ca26091f9ad76e39caef71dc436915199e1a7b0f3119125d1b2087"
+    },
+    {
+      "file": "src/location/param/ROSSLAM/karto_params.yaml",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "src/location/rviz/ros_navigation.rviz",
+      "sha256": "5223af920b743338a7f1f392c20b078a411a866383825fd0c64b0ce00f3ccd2f"
+    },
+    {
+      "file": "src/location/src/i2c.cpp",
+      "sha256": "c9cbb248f3dc78e92dcccfb90d39da4fb4274992f001dd8433db8df48315a6c9"
+    },
+    {
+      "file": "src/location/src/location_with_ftmini.cpp",
+      "sha256": "f3ffa42cef3332224fb96cfc4b3dfa47936ce8071abf2ba62866cf95e19120ef"
+    },
+    {
+      "file": "src/location/src/tf_mini_i2c.cpp",
+      "sha256": "7d9141498d2f86ff1e559b751208e0c4b4f14538c4b9396a0e5e1e71ea366ffb"
+    },
+    {
+      "file": "src/location/src/tfmini_test.cpp",
+      "sha256": "0d63a14c5d9054f6938d999d7d03326083e83ec948c3b0be3288c61ed27de5ba"
+    },
+    {
+      "file": "src/location/src/TFplus.cpp",
+      "sha256": "8ecd5b23082167e08a327e8528373c3acae458d0a01fdc7987f3b2b6ff568a0d"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/meshes/iris.stl",
+      "sha256": "11a9a1453723182f812e4ca0def829b18272a0dfc1145d2c3e28f8c6210cea7b"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/meshes/iris_prop_ccw.dae",
+      "sha256": "5f8b01668ee24a5b663ca8c4dd56e294fd6480db7eec1e5a7c11e45ba9004e99"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/meshes/iris_prop_cw.dae",
+      "sha256": "6cbc686772dccd46253fb65ece000e7ffa6a74b9c097bda349884bd1e78cd879"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/model.config",
+      "sha256": "d6241f1658e68b73d2edeed0621d3a78614f3a596f66205cfa37bacd951023c0"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/xacro/component_snippets.xacro",
+      "sha256": "66ee841b2ee7baf5d5bf313668459911e6254c4240cbd0fdc55dc9dc24a1f15d"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/xacro/iris.xacro",
+      "sha256": "dcc1491b200e9be43a348c172efb5798114c97e8563c9bb1274fa3186a52d148"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/xacro/iris_base.xacro",
+      "sha256": "ee92ccc55d4885a274ba693c64e9a4fc30f5055d30e18eb5019d9381456f8ebe"
+    },
+    {
+      "file": "src/location/urdf/iris_depth_camera/xacro/multirotor_base.xacro",
+      "sha256": "155fc3900828421f602bd58885916aa6e015f831ba1656cf96d79050a755c7fd"
+    },
+    {
+      "file": "src/navigation_2d/CMakeLists.txt",
+      "sha256": "bc43122ce88e8a08ab352f74995d634fba82f31126d7469fb1f05a7636372f2c"
+    },
+    {
+      "file": "src/navigation_2d/include/ego_path_tracking.h",
+      "sha256": "fa2fb9c92a5247c969f3b503f5aaa9d9c12fb93d82a6e9adab2583238953337c"
+    },
+    {
+      "file": "src/navigation_2d/include/flight_control.h",
+      "sha256": "469abdb66d12cafb4200b96e6305fc72b5fc3e05ab2aadc122263ea0536feacf"
+    },
+    {
+      "file": "src/navigation_2d/include/mission_vision.h",
+      "sha256": "62a47aae8f6e9d133ddc83dde1a2d94d20cca4ab546c112b63b07a2ac7ffd34e"
+    },
+    {
+      "file": "src/navigation_2d/include/mission_with_move_base.h",
+      "sha256": "eaa0834491465f9c9c437dd5a2fa6699cdf9c11c20605c836429d4cd6a55b835"
+    },
+    {
+      "file": "src/navigation_2d/launch/move_base.launch",
+      "sha256": "1e24d1bd542e45b8137d2cfb19a0f7ae1adb71ff58294d8f35c0773c66d67a4f"
+    },
+    {
+      "file": "src/navigation_2d/launch/navigation_2d.launch",
+      "sha256": "3b9a1c7e4606e87e10eae6879bae86b95a0c06d0b60c162ba0aa8cacdd56c2b3"
+    },
+    {
+      "file": "src/navigation_2d/msg/TargetDetection.msg",
+      "sha256": "ffad2bb0885c9ab85c744e0dccc3855ae81e42baa04a1769ca804227a344a863"
+    },
+    {
+      "file": "src/navigation_2d/package.xml",
+      "sha256": "43603590a67ec4c08d34a15010c82c7f127f8a26e3dadc112a8357fd73020675"
+    },
+    {
+      "file": "src/navigation_2d/param/costmap_common_params.yaml",
+      "sha256": "6b2d35c83f5a0383f9ebd921f48b788e8c2499c8c839d325e37c058008ebd9c2"
+    },
+    {
+      "file": "src/navigation_2d/param/dwa_local_planner_params.yaml",
+      "sha256": "df4ac91793973d955f234c71aec36cb25ce2fdec47f8de113bbc8a5dd61ef503"
+    },
+    {
+      "file": "src/navigation_2d/param/global_costmap_params.yaml",
+      "sha256": "e501b139cd4efd8ba1d8e5f6380c8f0ad5ab14d4df38b5e73b0d4a3b750ef8bd"
+    },
+    {
+      "file": "src/navigation_2d/param/local_costmap_params.yaml",
+      "sha256": "d010dc7eb13e68d4c0671c2eede5ddafac858e91f5ece01a45d2632dcdccfa13"
+    },
+    {
+      "file": "src/navigation_2d/param/move_base_params.yaml",
+      "sha256": "77de69b87dc0eae44991b8a0e58ba63faef67485ef31a04e6f288bd3b930697e"
+    },
+    {
+      "file": "src/navigation_2d/param/teb_local_planner_params.yaml",
+      "sha256": "593432426b2ad820adf1ab3c10ec53b45a8008f6247c06707fa68e0633274427"
+    },
+    {
+      "file": "src/navigation_2d/README.md",
+      "sha256": "89c25f1fd1422c125aeb8afbe29695f8833d91279a3566343f88cbed07db0f2b"
+    },
+    {
+      "file": "src/navigation_2d/src/ego_trajectory_controller.cpp",
+      "sha256": "2d6ba2a5876bcef43252fe7862bbbdaa1570f3df49ade7b17e3bbbaf4bd9568a"
+    },
+    {
+      "file": "src/navigation_2d/src/flight_control.cpp",
+      "sha256": "a4e0cedc72111ba6b48046af21b8f0887c8e3b4c9028f6616e320712830a3f76"
+    },
+    {
+      "file": "src/navigation_2d/src/mission_vision.cpp",
+      "sha256": "d6bb1728caf85a758617ea183c3dba7cda0beaba1bf5afa9245a5bbcbc158a22"
+    },
+    {
+      "file": "src/navigation_2d/src/rescue_mission.cpp",
+      "sha256": "6fd6ea5af3f8f99c760970e85eb89cc6433caa0c5e5e8faf8609aa35396bc797"
+    },
+    {
+      "file": "src/navigation_2d/test/ego_path_tracking_test.cpp",
+      "sha256": "9f1763e4871bd0b42188272fe2633a3679de5a4ab7eafad91ddbffa825f7208c"
+    },
+    {
+      "file": "src/rplidar_ros/CHANGELOG.rst",
+      "sha256": "3a603f4fdacc85d1f9fe15a7c864ed74efbe6a44ad767613bdb8c39ef73d127c"
+    },
+    {
+      "file": "src/rplidar_ros/CMakeLists.txt",
+      "sha256": "7fac9fd986fd7b828a78d6f4b41b6ac03d44d4802a6724e5b892adb9f464c5d6"
+    },
+    {
+      "file": "src/rplidar_ros/debian/udev",
+      "sha256": "b29af37c6398eb24cceb94b7bed1cf11f2778c6a1162c0f8c3e9370855b3f4ca"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar.launch",
+      "sha256": "80386f70ff3b4e515df86d7c7d840fe40149f6098e1587bc9d8bd235c9e6a737"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a1.launch",
+      "sha256": "ce04c96e348368263f9dae002ca48883ce949eb969b00feb4804e989fe097bf0"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a2m12.launch",
+      "sha256": "4e70af7cd7f5a44d57299badbf1b8c8fdc5bd3b81a862e04e2cbdccc4acfae6f"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a2m7.launch",
+      "sha256": "4e70af7cd7f5a44d57299badbf1b8c8fdc5bd3b81a862e04e2cbdccc4acfae6f"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a2m8.launch",
+      "sha256": "ce04c96e348368263f9dae002ca48883ce949eb969b00feb4804e989fe097bf0"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_a3.launch",
+      "sha256": "80fb2544546853249f7e1bddf58381726ff7bd93c8376fd0f242afeea090d73c"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_c1.launch",
+      "sha256": "36f50ea5ab52d8e1e90b392df2f5b98062bedf7ec3eccc93c05658d7edcdc00b"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s1.launch",
+      "sha256": "f1f3334f8ff59079405a88dbf48d68712b8eace4274dab13ab0a4109c4d9614f"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s1_tcp.launch",
+      "sha256": "baa4e495c5cf8f7ad2f2f6159e2542953b7f58a637b7df127a44149531e063c6"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s2.launch",
+      "sha256": "885f374ae977d84a94690559fc68fc968ec95ecc7309237c5cc01d842d859887"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s2e.launch",
+      "sha256": "7372b34a24e5f07c19eb6acd758f31e5ec4f341a6c8db814edc533bc982924ad"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_s3.launch",
+      "sha256": "885f374ae977d84a94690559fc68fc968ec95ecc7309237c5cc01d842d859887"
+    },
+    {
+      "file": "src/rplidar_ros/launch/rplidar_t1.launch",
+      "sha256": "cd2ee8acda1fb05d835ec53c56518f5a3587e863193fe08e27a32d150953a94a"
+    },
+    {
+      "file": "src/rplidar_ros/launch/test_rplidar.launch",
+      "sha256": "4c8abd9f6a5ad3c8ab50d648843a339d7c11d0da8dade40e2e03951ab33dc743"
+    },
+    {
+      "file": "src/rplidar_ros/launch/test_rplidar_a3.launch",
+      "sha256": "84c8cae713131a0c3d86655d4b56f9090684de97df57fc092888a1beab63fbda"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar.launch",
+      "sha256": "100aa8efac47dfd336574096223f977433d7c4b0cec784a0374c447ba3860088"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a1.launch",
+      "sha256": "2a20eacc02913844f280b1c2ae3ead7c0234dc6612553859910678e6cbe4d767"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a2m12.launch",
+      "sha256": "5e27b1449791a3ff05c4fc9b1d52ce88c064ed2f3c9868d4fa39cae0c1480b05"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a2m7.launch",
+      "sha256": "8e45d11985c7523735e99f912ae78b502cca5829217fd208342a4618346cf07d"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a2m8.launch",
+      "sha256": "dec08399df6a59d9ca702d952f1df01a676e1fbad45bd65a6b5e00eff0cdc308"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_a3.launch",
+      "sha256": "1fe77f0cbdf3122823b549109bca2656eaaee33fe37a3e4ade4796e7b98dba59"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_c1.launch",
+      "sha256": "e716f1f47ee036a903a9a704d1acf5cecdd1fbe959dbff40429cd9b7d249016d"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s1.launch",
+      "sha256": "8e38d9e547c26106de719149e47092036a3cc4351d940960fa23aaa29575f6f7"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s1_tcp.launch",
+      "sha256": "15daa2b54f9d42b7e0854f18cf2a419dced90c779bfa87d3bff9c0acd5c44060"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s2.launch",
+      "sha256": "b7d1f1c5130e7785e5fae7808d2c2288dea54264d995797b42c36649576c69bc"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s2e.launch",
+      "sha256": "305e296a0691e4b8d0b95b36fe921c5d050b521bdcc46a6062a87fd4acea0b65"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_s3.launch",
+      "sha256": "48ae9637a40e9797db88aa520081536bc3b0c156963cd40ebd3a6663be7c6eb3"
+    },
+    {
+      "file": "src/rplidar_ros/launch/view_rplidar_t1.launch",
+      "sha256": "2309b5647191eb2df17f8f21b4cd374db0f9faec1b99b8f24932757bdd41ff68"
+    },
+    {
+      "file": "src/rplidar_ros/LICENSE",
+      "sha256": "deb25b093dae2f00953a603e20c65d71404b45e636e9a8efb2dc633ad3ed794a"
+    },
+    {
+      "file": "src/rplidar_ros/package.xml",
+      "sha256": "f0dd69f8ee4e68f50b211dc5ddd8798b4743ecf61570f0b62e91c138638b1268"
+    },
+    {
+      "file": "src/rplidar_ros/README.md",
+      "sha256": "e503331ae9faff3ffca345ccd6fe97564e500b19742d61637b7fe24d812c7ff4"
+    },
+    {
+      "file": "src/rplidar_ros/rplidar_A1.png",
+      "sha256": "20a0a87fe0938095532007079ceb489755293eb7ee1fc2d41409b4d832ca7280"
+    },
+    {
+      "file": "src/rplidar_ros/rplidar_A2.png",
+      "sha256": "58e3399cc01acb6759462e9983800a63756856f7c914d8d925fc011b2c29a3f7"
+    },
+    {
+      "file": "src/rplidar_ros/rviz/rplidar.rviz",
+      "sha256": "a66a391fbd204b3ec40ebfab9017f1e4a209b42899d57f33003c5a394e6f3c1d"
+    },
+    {
+      "file": "src/rplidar_ros/scripts/create_udev_rules.sh",
+      "sha256": "e1c05f22e7e68c637dbd77acea4f96edd5587627739fabad0a6fdb1c1dc7ea0b"
+    },
+    {
+      "file": "src/rplidar_ros/scripts/delete_udev_rules.sh",
+      "sha256": "39ff3e1f8ea0e36e6543c46a160dda93535a9a989866660f56e058df9b551073"
+    },
+    {
+      "file": "src/rplidar_ros/scripts/rplidar.rules",
+      "sha256": "d2a64567f565ce4aba225b2cc7a3370d267faff02bfd332b1df63fddfafae3a7"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/rplidar.h",
+      "sha256": "cf002a996c552e1490b0e195bc6bc87f9b1b610c8fd6b2de0f54f463dc6817f7"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/rplidar_cmd.h",
+      "sha256": "18c44cee533d1591d12599b85334025832d6e45f50349ae85c685f1fbd936d77"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/rplidar_driver.h",
+      "sha256": "f73d79e5da2318931522286677b12d208dda6d731bebcc778c40333c394c138d"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/rplidar_protocol.h",
+      "sha256": "2dc5b8d0e0360f0d473834b930b27bd0e88532803095fb94f6285895b9e71e98"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/rptypes.h",
+      "sha256": "4e8906336377cfd4aabdbf47efe1f753f2ce4a605505db575c7c972e2ab0d15e"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/sl_crc.h",
+      "sha256": "09e9e062484fc758714aec6c365890e1cde1a378d8a8f59b3e6fedb48e79a9e3"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/sl_lidar.h",
+      "sha256": "9707c76d7c971efee8e70bfc1d7e8046cebf33bf27d7cc7aabb815beb888f122"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/sl_lidar_cmd.h",
+      "sha256": "c40c4f6f8700010a5e4e84c9d8cedd4e78298ba3e9475e036c034eadce9bee7d"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/sl_lidar_driver.h",
+      "sha256": "2877e6cebd784eb07839e5ae26cb06d9492be8610073bbc7f0f024538775fef9"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/sl_lidar_driver_impl.h",
+      "sha256": "92466ee28e54b971c97a3d36a4a508f703f53630fe0592f03472ce819c5396cb"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/sl_lidar_protocol.h",
+      "sha256": "e64fce78bc22397fdec5ba03605bc717375d9847fc5c1b28129443f65e9973e4"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/include/sl_types.h",
+      "sha256": "e49baa48cada66e8b21a98706d90ca22c31bdf27a9f59ea85fa373c4f269dc54"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/Makefile",
+      "sha256": "ed5c31ec05bce480307b158e0e93555ef1b1938b146098a609735ceab8088b45"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/README.txt",
+      "sha256": "c5a1bcd1f3a2984c85868ca76b6ba70b6f0b9b4e4978f343ab14bb595e2faa6f"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/linux/arch_linux.h",
+      "sha256": "880a64b315c28f9f945af89c241b2d6a81e1ffb3c90406ce2350a6e091508943"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/linux/net_serial.cpp",
+      "sha256": "7d53c79ce64325d793ab1e5d8ad0d17e7646e257c8bbcb671d78b1a2e51bad3e"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/linux/net_serial.h",
+      "sha256": "b4b153e9ec9df8d1dea790fe504d97273d01b7fe5b9c5e90c6bee99ec8ff2983"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/linux/net_socket.cpp",
+      "sha256": "0c4ff5e2bbde6df8712aa48600237b70a1342101133b35964fc64f55a4ca3421"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/linux/thread.hpp",
+      "sha256": "ff1a8190bbc8bb28b53b866175e227331e591bb72b8579ef619d47accbb1137a"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/linux/timer.cpp",
+      "sha256": "d20b1f8eba04e8b98f024adb8fec222569a922a4c18d60f1956f1d3b3abef1f2"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/linux/timer.h",
+      "sha256": "77a996bc3be234ceea764d15d688c0ff094d5c017dfec9623b14fc8267811621"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/macOS/arch_macOS.h",
+      "sha256": "5d35ae770735a325fe1a0548fdd2c93b3fd4aece3c45e819fd81bba88fee1865"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/macOS/net_serial.cpp",
+      "sha256": "2848fe25f3507073d1bc5985cf2213a8fc6ecf61de96294903861713b9b31f87"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/macOS/net_serial.h",
+      "sha256": "e365beddc703c053694c369bffeadf29dfa20e536531e48effbc87f2ec49bed4"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/macOS/net_socket.cpp",
+      "sha256": "bbb72f5f7a49349fc22ff753b688fa140860d0cffebd07ad30543965a44cc73f"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/macOS/thread.hpp",
+      "sha256": "b62f5cb558f9e7fe85428806d3f18124c9f07b4cf0549772106064085d27d525"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/macOS/timer.cpp",
+      "sha256": "b663d225d25b4f0de7166c5c1bb3c299b133ffbbaf4b268ecf5e7d6ec1208a99"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/macOS/timer.h",
+      "sha256": "ac7d926cf562bfada7dc0ae122ecfade75a04d1ecf5c37c8b9b77c2a51f4cd3f"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/win32/arch_win32.h",
+      "sha256": "9120f68da5d7e3367605c2e77dfe8628444ba533977216a349b76b8df95800ba"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/win32/net_serial.cpp",
+      "sha256": "b554c1af4acd1f4c5b1fb4579c33c4bed4279ffecda8ee8715c226a134a0a4bb"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/win32/net_serial.h",
+      "sha256": "854ab5395c9a77d622815bec4442dc2a0e43cf338584b3655849b35420bdd934"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/win32/net_socket.cpp",
+      "sha256": "85756e8d54d522cd0e3f80091b42f78f5fe4f95c46e2d472b1812cb59c391c3f"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/win32/timer.cpp",
+      "sha256": "2f0a8a8ad5f9221defe6d509febe8d0e3f01c8dafa398582282ef6a811265983"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/win32/timer.h",
+      "sha256": "3af2272a4a4aecea9b47169ccb925ee2ce7985171c83a74b123a4eba464cadb3"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/arch/win32/winthread.hpp",
+      "sha256": "65e8ce75bfdcf68414b8c8b0aa3ffa8e4f7577429912674d603569db3137d3aa"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/dataunnpacker_commondef.h",
+      "sha256": "979a1987b2baff2b36fa6e065e6f9a893230f09620aca52d184c6ddf972d2175"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/dataunnpacker_internal.h",
+      "sha256": "593ab3d9ad304cac46cf3ab5d12fa86d81b47717046bb807b245ff37901e0b57"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/dataunpacker.cpp",
+      "sha256": "1cdce75055a34fad38141f18271c6e64fd3180c99ac55277479c9372fcdb5c05"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/dataunpacker.h",
+      "sha256": "1a040b333dd08171260a5a4b3a5d99ba0a10ac401765d420663feb4ee016d4cc"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/dataupacker_namespace.h",
+      "sha256": "e1bd8e9e09f2dc1d421df89630981c406317070affdd293cdb25f25956b9d01d"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/unpacker/handler_capsules.cpp",
+      "sha256": "f897c7bade7d368c716bea568b9875a5d0f45301e6b881cd5aa1ec27638d97ca"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/unpacker/handler_capsules.h",
+      "sha256": "3427b840f5eef14ec2bc0aa82e1c4acfa57c1f8b4f3a700b3c2d51c5f714bbfc"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp",
+      "sha256": "3b5fb91199af312c8299a309da662a5b3313f27039187f516b6c7e190991a4ae"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/unpacker/handler_hqnode.h",
+      "sha256": "1d7ccc48e0e4178750ea3a17a1cc3b789c1cf8bc385f27a5a9f76952774b0035"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp",
+      "sha256": "cac7697458e140443612dff6d084b9c0e33f683eb279aa1fbe65a88e538e75a2"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/dataunpacker/unpacker/handler_normalnode.h",
+      "sha256": "a74cceb0551442ac42e0ec359430ee30cf0a697bcd29442f7141c807abe3e872"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/abs_rxtx.h",
+      "sha256": "ea52ffeb7b6e3a704ff00995d5500866111cc5fbbdd91ad3d6df771b835fc3eb"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/assert.h",
+      "sha256": "af13ab09c694ae47593abead7df298c30c9c7f5405e8c03a243652b3fc48db26"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/byteops.h",
+      "sha256": "2ec60074effb1878a5e167f7d5e49d01be205bc27cf30f90ceabfcaa3bb74a51"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/byteorder.h",
+      "sha256": "ba3147b33fb86a722469b5aade5344f323091a6920897dbc2e3febe67eca8ce1"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/event.h",
+      "sha256": "5370c4f9511517d54c639e547a4ccb898f23f192721b52c8d7ebda2b6a9f92e5"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/locker.h",
+      "sha256": "6e4cf8063dc0070928866b865ada2954d0c2b91c43b6047badeac8f9ff079b1a"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/socket.h",
+      "sha256": "7c210686a475aacfbd8eab9a9700cd78fd3aa917ffb691e0151f129d1f6daa08"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/thread.cpp",
+      "sha256": "d1aa4a76334f968d8486fca017ae812a12c1679434a9b42b97ecfaf2105e1550"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/thread.h",
+      "sha256": "5f029013bbb0b3437ea463a8b6309f938e1b572026109025697285827283409d"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/types.h",
+      "sha256": "dbe5f3d2a116d830fdf423145641626e45329c2ec176d5e6de6532772f82db91"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/util.h",
+      "sha256": "859eef543c8837d9bfa71eed33db4e4a649ac35c0ce974bb0480e9939dd5ba09"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/hal/waiter.h",
+      "sha256": "19a7fba76f1427baf6c09363a1ef24069a69aa72dcc5e3d153fbfbf6831736ac"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/rplidar_driver.cpp",
+      "sha256": "be2078c09426ea49e2413324bb7ee22014e76f24f152428e678bc84fe3235027"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/rplidar_driver_impl.h",
+      "sha256": "8fd240c30a58c87adcfd3ab47e6d2c51d5d68c970a1730fdcae5960e8ed208e1"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/rplidar_driver_serial.h",
+      "sha256": "fe726c6bb6a362f65ac04fd8a64433881387cb9ff5798ac4f23ba81f4dd5414b"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/rplidar_driver_TCP.h",
+      "sha256": "0529d97cb9416b55fb1d41a6a79d1c2bdfd3f04faeccbc08fd41655612b30186"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sdkcommon.h",
+      "sha256": "84c63f3fcd2ee5a6c7575f4cb409706f0391932e3442cbc56583074c51f23ec4"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_async_transceiver.cpp",
+      "sha256": "fc12e58e5ea004d818c3cc9f57975c1f087ccbb5f86bbea93d9b2f7d0658ab37"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_async_transceiver.h",
+      "sha256": "db967cfe733dc4f42be3ce47b798719d8e047557eb346ea903ce18fe1769813a"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_crc.cpp",
+      "sha256": "968b0c9d7fc958da9a579f96089fbede1887a73722a993b567491ba68c8df680"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_lidar_driver.cpp",
+      "sha256": "58f9bbcbee28cf4a9c9a3a578e38e879c8bf833286f6e06ae9e34930850abbe7"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_lidarprotocol_codec.cpp",
+      "sha256": "a7737fab13725b3cd5a10bb02fff2d57f3e231ca9e7e5596a83795d5d0f0deb4"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_lidarprotocol_codec.h",
+      "sha256": "4c65eb13214c6e0b798f93ba882a04fd0fd63946db4cef8db6c0b5edb4966de3"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_serial_channel.cpp",
+      "sha256": "a8081ece500f6f40f8d2162ba410c6afe191494c89840d7483c8e0c397a5ea3c"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_tcp_channel.cpp",
+      "sha256": "d7ba5d32d730b0428064b8f5179dae2282e8fd03b32c09d2802260457c82fb1c"
+    },
+    {
+      "file": "src/rplidar_ros/sdk/src/sl_udp_channel.cpp",
+      "sha256": "bb4758b4b91c98f7dd7fc4c83c759396463db71120b557d4b3011c76f26a354e"
+    },
+    {
+      "file": "src/rplidar_ros/src/client.cpp",
+      "sha256": "04cf43f93266c3806fa688780bb225bbbbc6ea4777aa6e6ac58bfbc6c457d058"
+    },
+    {
+      "file": "src/rplidar_ros/src/node.cpp",
+      "sha256": "eff76c070b6b1eaa7742723d212d9b2a0f8cf3f7d9185cf503a536c5d8883951"
+    },
+    {
+      "file": "src/servo_control/CMakeLists.txt",
+      "sha256": "61a2f6f347498d60af6018c0b2aeafdae90fd2ce13c063f43f15fb59f0571d38"
+    },
+    {
+      "file": "src/servo_control/launch/servo_bench.launch",
+      "sha256": "c4a4ade411de94c656b0cab2f11f00297db71d3eec540b4457a2cb579a29d5f0"
+    },
+    {
+      "file": "src/servo_control/package.xml",
+      "sha256": "b267f0344f5ea669cfecf93080c0950297d521b5fa770ffb531f205285013ea9"
+    },
+    {
+      "file": "src/servo_control/script/servo_debug.py",
+      "sha256": "861ad15eca5b1a14a91d86b5d795cbf4c0049a481f73dacc2268e200023a6660"
+    },
+    {
+      "file": "src/servo_control/src/servo_controller_node.cpp",
+      "sha256": "b7a1027fea3b2a080366aeef085cd1a06f4e5d38cb1879d8b8ed433922a917fc"
+    },
+    {
+      "file": "src/ssd_detection/CMakeLists.txt",
+      "sha256": "30841ad3202feff51d49f3f322975fb0a58ffc11ea1227cef9d81ea9fc243387"
+    },
+    {
+      "file": "src/ssd_detection/include/ssd_detection/jetson_detector.h",
+      "sha256": "db712847d3f0aab1f9bc915c33581df112b72e0a50d1a0fb1444c6186b8ce10c"
+    },
+    {
+      "file": "src/ssd_detection/launch/ssd_detection.launch",
+      "sha256": "65c2a4ffeed7256db840e5da0907e80ee51fb9679bb0701006cec22ff0c9789e"
+    },
+    {
+      "file": "src/ssd_detection/launch/ssd_detection_trt.launch",
+      "sha256": "8dc332de039d0b757ca88c1371e24bf83ee2a1c45ee555cb2209beac743d1f74"
+    },
+    {
+      "file": "src/ssd_detection/msg/VisionDetection.msg",
+      "sha256": "74e35a879209a29bff051255c11f5d3286cedc446732c4a669cb8713bfdfeb12"
+    },
+    {
+      "file": "src/ssd_detection/msg/VisionDetectionArray.msg",
+      "sha256": "6f4bfee5e7f111883eebe18176f35ac46b6b998ca234371e164efad2ce480269"
+    },
+    {
+      "file": "src/ssd_detection/package.xml",
+      "sha256": "61b9f283243a7a5305351dc95f36d7490c4bf7e1f7f180dbb799ccc144e6bae4"
+    },
+    {
+      "file": "src/ssd_detection/scripts/__pycache__/ssd_detection_node.cpython-311.pyc",
+      "sha256": "fc9e7abbce852fd2f34ac418cdf9990f9aae9751db7cf7bf654baa1830943f55"
+    },
+    {
+      "file": "src/ssd_detection/scripts/__pycache__/ssd_detection_node.cpython-313.pyc",
+      "sha256": "90d1cabcdcb23dbc42168abda70f1a41fefd24fbe914d1e2a169485645289c2e"
+    },
+    {
+      "file": "src/ssd_detection/scripts/ssd_detection_node.py",
+      "sha256": "fb25d2a7eab481bdd0bc2cd0283736c800f6965fc5eefd303b85566b24aaf228"
+    },
+    {
+      "file": "src/ssd_detection/src/jetson_detector.cpp",
+      "sha256": "d3336139346dec1090b6d5bb3415da73c399c6584ddf59b6cf8209649c79497a"
+    },
+    {
+      "file": "src/ssd_detection/src/ssd_detection_node.cpp",
+      "sha256": "86b698f7eb900cae027831344336607a60bc612fc16518457ddf758d7142b0d7"
+    }
+  ]
+}

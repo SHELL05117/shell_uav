@@ -1,0 +1,11 @@
+BACKGROUND
+hazard_flammable
+hazard_explosive
+hazard_corrosive
+hazard_toxic
+hazard_biohazard
+hazard_ionizing_radiation
+hazard_fissionable
+hazard_oxidizer
+hazard_gas_cylinder
+person_injured

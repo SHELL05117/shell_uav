@@ -1,0 +1,22 @@
+{
+  "project_date": "2026-10-13",
+  "application": "Lichtblick 1.29.1 Windows",
+  "observation_method": "Native Computer Use GUI import followed by fresh window text and screenshot observation",
+  "layout_file": "开发工作区/配置/监看/monitor_layout.json",
+  "layout_sha256": "ab4763338748b5c2dd651c2c9d04899cced56302f1c5f9c429617fec8ad601ac",
+  "gui_import_validated": true,
+  "layout_name_visible": "monitor_layout",
+  "panels_observed": {
+    "left": "3D, overhead rectangular grid",
+    "upper_right": "/monitor/camera/image/compressed; Image topic does not exist.",
+    "lower_right": "/mavros/state; Waiting for next message..."
+  },
+  "data_source_observed": "No data source",
+  "display_frame_and_follow_mode_basis": "Layout JSON and official v1.29.1 fields; settings controls not separately inspected",
+  "ros_connected": false,
+  "live_map_validated": false,
+  "live_video_validated": false,
+  "wireless_performance_validated": false,
+  "user_device_status": "Nano under repair and cannot boot; follow-up steps delivered for user operation",
+  "scope": "Client installation and local layout import only; no Nano deployment or flight/hardware execution"
+}

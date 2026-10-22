@@ -1,0 +1,61 @@
+<launch>
+  <arg name="gui" default="true" />
+  <arg name="paused" default="false" />
+  <arg name="spawn_visual_drone" default="true" />
+  <arg name="auto_start" default="true" />
+  <arg name="rescue_drop_enabled" default="false" />
+  <arg name="stage" default="1" />
+  <arg name="rescue_drop_x" default="999.0" />
+  <arg name="rescue_drop_y" default="999.0" />
+  <arg name="drop_align_mode" default="vision_with_fallback" />
+  <arg name="start_foxglove_bridge" default="false" />
+
+  <!-- gc_2026_field.world 引用了 model://gc_task_markers（材质脚本 + 卡片贴图），
+       它就在本包里。Gazebo 会到 GAZEBO_MODEL_PATH 里找它；而一个本地找不到的
+       model:// 会被转投给**在线模型库**，一旦在线库不可达或被关闭，这个 world
+       就永远加载不完 —— GUI 停在 "Preparing your world"，且没有任何报错。
+
+       这里是追加而不是替换：$(optenv ...) 会保留调用方 shell 里已经导出的内容
+       （PX4 的 setup_gazebo.bash 会把自己的模型目录放进去），所以本 launch 在
+       一个 source 过 PX4 的 shell 里同样可用。 -->
+  <env name="GAZEBO_MODEL_PATH"
+       value="$(find gc_2026_sim)/gazebo/models:$(optenv GAZEBO_MODEL_PATH)" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find gc_2026_sim)/gazebo/worlds/gc_2026_field.world" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="gui" value="$(arg gui)" />
+    <!-- arg('gui') 是**布尔**（roslaunch 的 $(eval) 先 convert_value(...,'auto')），
+         所以用 not 取反；写成 arg('gui') == 'false' 会恒假，headless 永远传 false，
+         gui:=false 静默地照样开界面（与 navigation_2d.launch 里那个检测器开关
+         是同一个坑，2026-10-17 一并修）。 -->
+    <arg name="headless" value="$(eval not arg('gui'))" />
+    <arg name="verbose" value="false" />
+  </include>
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_sim_quadrotor"
+        if="$(arg spawn_visual_drone)" output="screen"
+        args="-file $(find gc_2026_sim)/gazebo/models/sim_quadrotor/model.sdf -sdf -model sim_quadrotor -x 0 -y 0 -z 0" />
+
+  <node pkg="gc_2026_sim" type="gazebo_simulation_vehicle_node"
+        name="gazebo_simulation_vehicle" output="screen">
+    <param name="model_name" value="sim_quadrotor" />
+    <param name="start_x" value="0.0" />
+    <param name="start_y" value="0.0" />
+    <param name="start_z" value="0.0" />
+  </node>
+
+  <include file="$(find navigation_2d)/launch/navigation_2d.launch">
+    <arg name="enforce_safe_field" value="true" />
+    <arg name="input_image_topic" value="/sim_camera/image_raw" />
+    <arg name="use_real_servos" value="false" />
+    <arg name="auto_start" value="$(arg auto_start)" />
+    <arg name="rescue_drop_enabled" value="$(arg rescue_drop_enabled)" />
+    <arg name="stage" value="$(arg stage)" />
+    <arg name="rescue_drop_x" value="$(arg rescue_drop_x)" />
+    <arg name="rescue_drop_y" value="$(arg rescue_drop_y)" />
+    <arg name="drop_align_mode" value="$(arg drop_align_mode)" />
+    <arg name="start_foxglove_bridge" value="$(arg start_foxglove_bridge)" />
+  </include>
+</launch>

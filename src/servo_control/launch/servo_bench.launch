@@ -1,0 +1,84 @@
+<launch>
+  <!-- ==========================================================================
+       台架标定专用 —— **不要**用它飞。
+
+       它存在的唯一理由：navigation_2d.launch 里 servo_controller_node 的
+       angle_debug 是 false（故意，门禁 12 守着它），而 angle_debug 才是
+       /servo_debug_cmd 这张台架手柄的总开关。
+       navigation_2d.launch 没有把 angle_debug 声明成 launch arg，所以命令行上
+       写 angle_debug:=true 会被 roslaunch **静默丢弃** —— 节点照样读到 false，
+       现象是 "舵机不动，且没有任何报错"。
+
+       所以标定走这个独立 launch：飞行那条链一个字不动，angle_debug 的 true
+       只存在于这里。两个 launch 不能同时跑（同一块 PCA9685、同一组话题）。
+
+       用法（三步，全在注释里，注意本注释内不能出现连续两个减号）
+         1) 空载，或把两个仓机械隔离，直到确认开锁角在哪
+            roslaunch servo_control servo_bench.launch
+         2) 另开一个终端，跑 tools/servo_debug.py 的 status 与 sweep 子命令
+            （具体参数见该脚本开头的 Usage，或加它的 help 参数）
+         3) 把括出来的两个角写回 navigation_2d.launch 的 arg default
+            （fire_drop_angle / rescue_drop_angle，两者差值必须 >= 5 度）
+
+       安全
+         * 带负载扫角度会真开仓。空载测，或机械隔离，直到确认两个开锁角。
+         * 标定完不必"关掉"什么 —— 这个 launch 不参与飞行链，
+           navigation_2d.launch 里 angle_debug 始终是 false。
+         * 通道映射（drop_channel=1）与脉宽范围必须与飞行 launch 一致，
+           否则标出来的角度在飞时是另一个位置。改这两个值时两边一起改。
+  ========================================================================== -->
+
+  <!-- 硬件配置：默认值与 navigation_2d.launch **逐字相同**。 -->
+  <arg name="i2c_device" default="/dev/i2c-1" />
+  <arg name="i2c_address" default="64" />
+  <arg name="camera_channel" default="0" />
+  <arg name="drop_channel" default="1" />
+  <arg name="pwm_frequency" default="50" />
+  <arg name="min_pulse_us" default="750" />
+  <arg name="max_pulse_us" default="2250" />
+  <arg name="servo_motion_seconds" default="0.8" />
+  <arg name="servo_seconds_per_degree" default="0.006" />
+  <arg name="startup_settle_seconds" default="1.0" />
+
+  <!-- 相机两个姿态角：camera_channel 上的 front / down。 -->
+  <arg name="front_angle" default="170" />
+  <arg name="down_angle" default="55" />
+
+  <!-- 投放舵机（channel 1）的三个角。
+       drop_safe_angle 是停放位，标定时先 PARK 到这里再开始扫。
+       下面两个是**占位值**，必须用本 launch 括出真值后写回
+       navigation_2d.launch；STATUS 会把它们一起打出来，方便对照。 -->
+  <arg name="drop_safe_angle" default="30" />
+  <arg name="fire_drop_angle" default="90" />
+  <arg name="rescue_drop_angle" default="140" />
+  <arg name="drop_action_seconds" default="1.0" />
+
+  <!-- 台架期间固定 false：投放后不要反向经过另一个仓的角度。 -->
+  <arg name="restore_after_drop" default="false" />
+
+  <node pkg="servo_control" type="servo_controller_node"
+        name="servo_controller_node" output="screen">
+    <param name="i2c_device" value="$(arg i2c_device)" />
+    <param name="i2c_address" value="$(arg i2c_address)" />
+    <param name="camera_channel" value="$(arg camera_channel)" />
+    <param name="drop_channel" value="$(arg drop_channel)" />
+    <param name="pwm_frequency" value="$(arg pwm_frequency)" />
+    <param name="min_pulse_us" value="$(arg min_pulse_us)" />
+    <param name="max_pulse_us" value="$(arg max_pulse_us)" />
+    <param name="front_angle" value="$(arg front_angle)" />
+    <param name="down_angle" value="$(arg down_angle)" />
+    <param name="drop_safe_angle" value="$(arg drop_safe_angle)" />
+    <param name="fire_drop_angle" value="$(arg fire_drop_angle)" />
+    <param name="rescue_drop_angle" value="$(arg rescue_drop_angle)" />
+    <param name="servo_motion_seconds" value="$(arg servo_motion_seconds)" />
+    <param name="servo_seconds_per_degree" value="$(arg servo_seconds_per_degree)" />
+    <param name="startup_settle_seconds" value="$(arg startup_settle_seconds)" />
+    <param name="drop_action_seconds" value="$(arg drop_action_seconds)" />
+    <param name="restore_after_drop" value="$(arg restore_after_drop)" />
+
+    <!-- 这个 launch 存在的全部理由。节点会打
+         "angle_debug is ON: /servo_debug_cmd accepts ..."
+         并订阅 /servo_debug_cmd、发布 /servo_debug_ack。 -->
+    <param name="angle_debug" value="true" />
+  </node>
+</launch>

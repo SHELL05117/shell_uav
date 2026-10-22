@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ssd_detection</name>
+  <version>0.0.0</version>
+  <!-- 检测只做一件事：相机帧 -> 检测框。任务逻辑不在这里。
+
+       它刻意独立成包，而不是塞进 navigation_2d：navigation_2d 是飞行任务
+       （航点、投放、舵机、规划器），一个推理节点混在里面，会让"任务代码
+       动了没有"和"检测器换了没有"这两件事再也分不开。
+
+       两个后端发同一个消息（VisionDetectionArray），并且读**同一个 .onnx**：
+         * Jetson  : src/ssd_detection_node.cpp + src/jetson_detector.cpp
+                     (C++, jetson-inference detectNet，engine 由它自己建并缓存)
+         * 仿真 PC : scripts/ssd_detection_node.py（OpenCV DNN，不需要 TF/CUDA） -->
+  <description>SSD detector as a standalone node: images in, detections out.
+  jetson-inference detectNet on the Jetson, OpenCV DNN in the simulator, one
+  message and one .onnx model either way.</description>
+
+  <maintainer email="expload233@gmail.com">Bingo</maintainer>
+  <author email="expload233@gmail.com">Bingo</author>
+  <license>pirvate-nbut</license>
+
+  <url type="website">http://www.9h.pw/</url>
+  <url type="repository">https://github.com/expload233/26zjgc.git</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <!-- detectNet 节点的编译依赖。即使某台机器上不构建那个节点（没有
+       jetson-inference 时 CMake 会跳过），这里也照常声明：
+       package.xml 是"这个包需要什么"，不是"这次构建用了什么"。
+       jetson-inference 由它自己的 CMake config 提供（需要先 sudo make install），
+       所以这里不写具体的库名。 -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+
+  <build_export_depend>message_generation</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>cv_bridge</build_export_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <!-- Python/OpenCV 后端（仿真 PC）用 cv2.dnn 读 frozen graph，因此不需要
+       TensorFlow；cv_bridge 已经保证 OpenCV 本体在位，这里额外声明 python 绑定。 -->
+  <exec_depend>python3-opencv</exec_depend>
+
+  <export>
+  </export>
+</package>

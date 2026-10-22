@@ -1,0 +1,66 @@
+{
+  "record_date": "2026-10-11",
+  "transport": "User-authenticated FinalShell SFTP file panel",
+  "nano_output_directory": "/var/backups/nano_protected_backup_20251024_193005_o389hv",
+  "local_directory": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\权限补档\\nano_protected_backup_20251024_193005_o389hv",
+  "raw_generated_file_count": 28,
+  "requested_paths_count": 38,
+  "selected_paths_count": 38,
+  "requested_paths_absent_from_tar": [],
+  "source_missing_paths": 0,
+  "source_final_status": "COMPLETE_FOR_LISTED_PATHS",
+  "device_finished_exit": 0,
+  "source_report_user_sha256": "3697a7d278661dcc1b98af6fd7e316c6a3606eb6a50721adc1f054fc3df29748",
+  "local_report_matches_user_sha256": true,
+  "archive_bytes": 131082,
+  "archive_sha256": "e5fc0d2f7485dcc32f2a8c90326c3801962b8aee630a0d106d928cb69d58e952",
+  "archive_expected_sha256": "e5fc0d2f7485dcc32f2a8c90326c3801962b8aee630a0d106d928cb69d58e952",
+  "all_hash_gzip_tar_checks_passed": true,
+  "archive_member_count": 49,
+  "critical_file_headers": {
+    "boot/wx-bg-gc-jetson-nano-3251.dtb": {
+      "regular": true,
+      "symlink": false,
+      "hardlink": false,
+      "bytes": 243530,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0
+    },
+    "boot/dtb/kernel_wx-bg-gc-jetson-nano-3251.dtb": {
+      "regular": true,
+      "symlink": false,
+      "hardlink": false,
+      "bytes": 243530,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0
+    },
+    "home/jcfh/Desktop/plink-ai_carrier_board_tools/bsp-update": {
+      "regular": true,
+      "symlink": false,
+      "hardlink": false,
+      "bytes": 15312,
+      "mode": "0o77",
+      "uid": 1000,
+      "gid": 1000
+    }
+  },
+  "original_report": {
+    "local_path": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档\\00_backup_report.tar.gz",
+    "sha256": "840f35461b790e4f28462f78dc017a670552a5cd970f7e7bd58cce4d1eae06a4",
+    "matches_independent_nano_hash_in_verified_supplement": true,
+    "prior_report_create_exit_still": 1,
+    "boundary": "Source hash now verified; historical report creation warning remains recorded. Original five source tar_exit values are not rewritten."
+  },
+  "verification_record": "Nano补充导出\\2026-10-11\\权限补档\\verification\\nano_archive_verification_20261011_203937_00cfe0006f.json",
+  "closed_gap": "38 listed ordinary-account Permission denied paths captured in the separate root supplement. Original incomplete archives are retained and require this supplement.",
+  "full_drone_backup_complete": false,
+  "restore_validated": false,
+  "remaining": [
+    "Live file archives do not prove an offline consistent filesystem snapshot.",
+    "Other mounted filesystems, unlisted root/HOME/var runtime state and package-manager database need separate coverage.",
+    "SD/eMMC boot partitions and independent medium/PX4 firmware parameters/calibration recovery remain separate."
+  ],
+  "device_changes": "Backup outputs only; no program/configuration modification, hardware launch or block-device backup performed."
+}

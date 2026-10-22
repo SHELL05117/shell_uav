@@ -1,0 +1,3139 @@
+{
+  "record_date": "2026-10-11",
+  "source_archive": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档\\01_home_projects.tar.gz",
+  "source_hash_verified_in": "验证记录/nano_supplement_download_2026-10-11.json",
+  "destination": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\源码分析副本\\jetson-inference",
+  "regular_source_file_count": 512,
+  "files": [
+    {
+      "source_path": "python/python/jetson/inference/__init__.py",
+      "analysis_relative_path": "python/python/jetson/inference/__init__.py",
+      "bytes": 332,
+      "sha256": "870a9e8cea066670dc8418d5c63cd46081e4b5f5824333098dc31bb5b99c905d"
+    },
+    {
+      "source_path": "python/python/jetson/__init__.py",
+      "analysis_relative_path": "python/python/jetson/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "python/python/jetson_inference/__init__.py",
+      "analysis_relative_path": "python/python/jetson_inference/__init__.py",
+      "bytes": 227,
+      "sha256": "eaccb702f396c8fbab17efe31cfb44a0fec04b2f5da66c353c28ded6ae721366"
+    },
+    {
+      "source_path": "python/python/Jetson/Inference/__init__.py",
+      "analysis_relative_path": "python/python/Jetson/Inference/__init__.py.__posixcase_45c9afa7fc0d",
+      "bytes": 332,
+      "sha256": "2cae5b0e610716e155ef7ca04413c5bd8d863cd38ea5017eec933e7f7f59bfdc"
+    },
+    {
+      "source_path": "python/python/Jetson/__init__.py",
+      "analysis_relative_path": "python/python/Jetson/__init__.py.__posixcase_beb43b1308cd",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "python/CMakeLists.txt",
+      "analysis_relative_path": "python/CMakeLists.txt",
+      "bytes": 1753,
+      "sha256": "4e1c986f1e39b352c4d8a88c77b81c0143f107bbddb749ebdf38c3df29ce0ab9"
+    },
+    {
+      "source_path": "python/training/classification/onnx_validate.py",
+      "analysis_relative_path": "python/training/classification/onnx_validate.py",
+      "bytes": 1056,
+      "sha256": "f37c5adc660c2eea8df1c49004c01f576fcdf85075954dd5f2f8fb9ad45113df"
+    },
+    {
+      "source_path": "python/training/classification/requirements.txt",
+      "analysis_relative_path": "python/training/classification/requirements.txt",
+      "bytes": 29,
+      "sha256": "c141f0d92f6b710121788a9f4bd4e0fde4d892603a617a67d86f358af38f902c"
+    },
+    {
+      "source_path": "python/training/classification/README.md",
+      "analysis_relative_path": "python/training/classification/README.md",
+      "bytes": 4443,
+      "sha256": "b2dbb2202bfc98d2b710f734cb747281f34cbbd6e44574219ebba829357fe4e3"
+    },
+    {
+      "source_path": "python/training/classification/reshape.py",
+      "analysis_relative_path": "python/training/classification/reshape.py",
+      "bytes": 2227,
+      "sha256": "cad889f0bb1cba9d2b7a404aa5d6dd18ce08d5f1885b84109bee03be5663702e"
+    },
+    {
+      "source_path": "python/training/classification/onnx_export.py",
+      "analysis_relative_path": "python/training/classification/onnx_export.py",
+      "bytes": 2564,
+      "sha256": "3702095edfe5d1e0e536a0b4640bf5f2026493fe7b1e98045281c9c4d71996fe"
+    },
+    {
+      "source_path": "python/training/classification/train.py",
+      "analysis_relative_path": "python/training/classification/train.py",
+      "bytes": 19589,
+      "sha256": "efd29d66b395d8c915d2a65ee0435460e23da220400ded8826b6b98dc9e65ab6"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/corrupt_images.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/corrupt_images.py",
+      "bytes": 1885,
+      "sha256": "6f31980b326636a130f00a5fba0d484fda86d48d0e8973fa364954be9345c734"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/mhp_remap.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/mhp_remap.py",
+      "bytes": 5367,
+      "sha256": "8fce194bf0160dae993c925147071a7f899ac3952338959b8a0ce518f1215938"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/mhp_utils.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/mhp_utils.py",
+      "bytes": 422,
+      "sha256": "e9e1ce7e875e63ec6915ff75f7c3e9af751c77dd8f791189dd3e1fba2f0f48b3"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/coco_utils.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/coco_utils.py",
+      "bytes": 3745,
+      "sha256": "bc9df40d36b87415e15cf5737c622e9b0f05d76ed952ce91e42e464790e7ee74"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/mhp.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/mhp.py",
+      "bytes": 1426,
+      "sha256": "731b3912f7c1e9e10db618e505ce2ae260e27c097d172ee765cc77d497656974"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/__init__.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/__init__.py",
+      "bytes": 72,
+      "sha256": "5086a9d5b4c71dcdd57b9480268198e5fb62d713c9d2581f705fbab684726da8"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/cityscapes_utils.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/cityscapes_utils.py",
+      "bytes": 1264,
+      "sha256": "6e8ee11324922eb36bce3374737103922ed1c9c3d929b8064f1b912e7f999336"
+    },
+    {
+      "source_path": "python/training/segmentation/datasets/cityscapes_remap.py",
+      "analysis_relative_path": "python/training/segmentation/datasets/cityscapes_remap.py",
+      "bytes": 3074,
+      "sha256": "1b00dc0341562e26d7b6d7f3bfaa279e57f84f6569afc52539d8835d0bf389e2"
+    },
+    {
+      "source_path": "python/training/segmentation/onnx_validate.py",
+      "analysis_relative_path": "python/training/segmentation/onnx_validate.py",
+      "bytes": 1056,
+      "sha256": "f37c5adc660c2eea8df1c49004c01f576fcdf85075954dd5f2f8fb9ad45113df"
+    },
+    {
+      "source_path": "python/training/segmentation/README.md",
+      "analysis_relative_path": "python/training/segmentation/README.md",
+      "bytes": 79,
+      "sha256": "7b56186e93097abda38823c85fa35dd7710801bea6f8841f50ccfa6246be5c02"
+    },
+    {
+      "source_path": "python/training/segmentation/onnx_export.py",
+      "analysis_relative_path": "python/training/segmentation/onnx_export.py",
+      "bytes": 2324,
+      "sha256": "860058d9a599b142f231f0d8cb7fbc1da079157c2aba699b841683fcc957b1d6"
+    },
+    {
+      "source_path": "python/training/segmentation/train.py",
+      "analysis_relative_path": "python/training/segmentation/train.py",
+      "bytes": 12446,
+      "sha256": "859269c48f8273f11db4703544d8055723576314ffcce439f6edaccb078ec450"
+    },
+    {
+      "source_path": "python/training/segmentation/utils.py",
+      "analysis_relative_path": "python/training/segmentation/utils.py",
+      "bytes": 8575,
+      "sha256": "d0a9e94e863a9ce7b7b87bac78045b4826cc0f587f607e41f5094616b912ed2f"
+    },
+    {
+      "source_path": "python/training/segmentation/transforms.py",
+      "analysis_relative_path": "python/training/segmentation/transforms.py",
+      "bytes": 2811,
+      "sha256": "fcbd573f8fa786f78b60a1eeca4c1efb51f69da81145af182e308188fe67ad97"
+    },
+    {
+      "source_path": "python/training/detection/README.md",
+      "analysis_relative_path": "python/training/detection/README.md",
+      "bytes": 189,
+      "sha256": "84e8bd0c2c8846c9e3d6cc72218d8a5291b0b3caf5befa58fe19b08e6d70a14f"
+    },
+    {
+      "source_path": "python/training/detection/.gitmodules",
+      "analysis_relative_path": "python/training/detection/.gitmodules",
+      "bytes": 77,
+      "sha256": "a113532ce50f1044c6e00b51741679570f50a4192c3cb1d940292a98083e275f"
+    },
+    {
+      "source_path": "python/examples/detectnet.py",
+      "analysis_relative_path": "python/examples/detectnet.py",
+      "bytes": 3601,
+      "sha256": "0fe0771efd393a567a323169d08f98a5c85de2d743294e1cb917ef2ae7adb2f2"
+    },
+    {
+      "source_path": "python/examples/my-detection.py",
+      "analysis_relative_path": "python/examples/my-detection.py",
+      "bytes": 1608,
+      "sha256": "f3804879b7184907dcd052f2cd3f5cb3646dcf53ef0189a3b53f4e0d50868387"
+    },
+    {
+      "source_path": "python/examples/segnet.py",
+      "analysis_relative_path": "python/examples/segnet.py",
+      "bytes": 4636,
+      "sha256": "090b9e11b28c8e9caaac675dde5b1e127b6f3de0fc47f80c8e7f435862f0e9d9"
+    },
+    {
+      "source_path": "python/examples/my-recognition.py",
+      "analysis_relative_path": "python/examples/my-recognition.py",
+      "bytes": 1957,
+      "sha256": "dcdfadd8bfe40255308acfe688ee91f8332d869df84bbfbe7739d60bf66aac7f"
+    },
+    {
+      "source_path": "python/examples/README.md",
+      "analysis_relative_path": "python/examples/README.md",
+      "bytes": 791,
+      "sha256": "3194624af7eb092a2c94c5143781ebe1e017f0a9e40f9d2f35b0f2c63b644698"
+    },
+    {
+      "source_path": "python/examples/imagenet.py",
+      "analysis_relative_path": "python/examples/imagenet.py",
+      "bytes": 3297,
+      "sha256": "125ee8eb5dca565d63e7bf46529db7e2ed8db5bf7ff57d8025c130e9cd1b238d"
+    },
+    {
+      "source_path": "python/examples/posenet.py",
+      "analysis_relative_path": "python/examples/posenet.py",
+      "bytes": 3273,
+      "sha256": "5b75eaab1654882cd110181cf6a11da606ca66748ba9aedfad9af3a7da154f1a"
+    },
+    {
+      "source_path": "python/examples/detectnet-snap.py",
+      "analysis_relative_path": "python/examples/detectnet-snap.py",
+      "bytes": 4534,
+      "sha256": "3cda890887629f47e7580207d2f7565b653ab9ecebdb0169ae3987d93d77f8b8"
+    },
+    {
+      "source_path": "python/examples/depthnet_utils.py",
+      "analysis_relative_path": "python/examples/depthnet_utils.py",
+      "bytes": 2186,
+      "sha256": "119dd3de0c347ff1125dc7ccf1d450b655d525bb745a3e129fda8a0c3c083517"
+    },
+    {
+      "source_path": "python/examples/depthnet.py",
+      "analysis_relative_path": "python/examples/depthnet.py",
+      "bytes": 4262,
+      "sha256": "8e3af6f39347f0b6332d65beab8438f612baacd231e6b2273279b28a979d46d9"
+    },
+    {
+      "source_path": "python/examples/segnet_utils.py",
+      "analysis_relative_path": "python/examples/segnet_utils.py",
+      "bytes": 4032,
+      "sha256": "cfb0d889fb1324efdeb51cca6701a8e08819a69afc767eaebbbea13cdb0d3ad8"
+    },
+    {
+      "source_path": "python/bindings/PySegNet.cpp",
+      "analysis_relative_path": "python/bindings/PySegNet.cpp",
+      "bytes": 21943,
+      "sha256": "a6857561ccde59da3de7ad2a61b329485d4d877ded63305cdfa818cfc8ad4244"
+    },
+    {
+      "source_path": "python/bindings/PyDetectNet.h",
+      "analysis_relative_path": "python/bindings/PyDetectNet.h",
+      "bytes": 1366,
+      "sha256": "0a502e2f204099e3cb54524d89ce884fd9ce2783753fb0f962b950280fdb41fb"
+    },
+    {
+      "source_path": "python/bindings/PyInference.h",
+      "analysis_relative_path": "python/bindings/PyInference.h",
+      "bytes": 2727,
+      "sha256": "e9459a1000ada58bc6893dd54a5985bdf20a44e9db80c9f65809218ddbafb531"
+    },
+    {
+      "source_path": "python/bindings/PyImageNet.cpp",
+      "analysis_relative_path": "python/bindings/PyImageNet.cpp",
+      "bytes": 13193,
+      "sha256": "df0594867f63b2b2f8162d9076d84dfbeb1473c22fad058be9125a328d78e0e2"
+    },
+    {
+      "source_path": "python/bindings/PySegNet.h",
+      "analysis_relative_path": "python/bindings/PySegNet.h",
+      "bytes": 1357,
+      "sha256": "58cebc127aa29f635c00f3f5a0695823c23adf51ee9ca979ed752c13bc961821"
+    },
+    {
+      "source_path": "python/bindings/PyDetectNet.cpp",
+      "analysis_relative_path": "python/bindings/PyDetectNet.cpp",
+      "bytes": 34149,
+      "sha256": "70a6b3637a203eef2ac328383d4816b25bdfe720becde2142dd7c4d4aebd18a9"
+    },
+    {
+      "source_path": "python/bindings/CMakeLists.txt",
+      "analysis_relative_path": "python/bindings/CMakeLists.txt",
+      "bytes": 3287,
+      "sha256": "28b24fd34d9750dd6e139c61a0aedb70f5334af10fdf659048b8969be4ed997b"
+    },
+    {
+      "source_path": "python/bindings/PyTensorNet.h",
+      "analysis_relative_path": "python/bindings/PyTensorNet.h",
+      "bytes": 1607,
+      "sha256": "5313c40b7a7ebf8d7050fa9e40b6ef25ce7b165c1aa560e15d866b0150e36269"
+    },
+    {
+      "source_path": "python/bindings/PyTensorNet.cpp",
+      "analysis_relative_path": "python/bindings/PyTensorNet.cpp",
+      "bytes": 6956,
+      "sha256": "2f74d3abdf2143b7aab55985635256c995e39dc33978af607d3eb68173d84b8d"
+    },
+    {
+      "source_path": "python/bindings/PyDepthNet.cpp",
+      "analysis_relative_path": "python/bindings/PyDepthNet.cpp",
+      "bytes": 14355,
+      "sha256": "04449c849a08a15a5cedc7b6328d99cfd8627d6bf82193b7ef3f1fcce47b3b6f"
+    },
+    {
+      "source_path": "python/bindings/PyImageNet.h",
+      "analysis_relative_path": "python/bindings/PyImageNet.h",
+      "bytes": 1363,
+      "sha256": "cf931ec914db7e76593327dd0ef7c8cbd67b2dbb1a48380b1f30fb8c7c6ad42c"
+    },
+    {
+      "source_path": "python/bindings/PyDepthNet.h",
+      "analysis_relative_path": "python/bindings/PyDepthNet.h",
+      "bytes": 1363,
+      "sha256": "c586d0a9af2c487f97f87af2098fd709541e3991e499e7e7530d18907c9198f3"
+    },
+    {
+      "source_path": "python/bindings/PyPoseNet.cpp",
+      "analysis_relative_path": "python/bindings/PyPoseNet.cpp",
+      "bytes": 43828,
+      "sha256": "2332cc4e8cdc9e661e707b20d7c5c1f04ff3c28c35100b34d3306fbc27c681e3"
+    },
+    {
+      "source_path": "python/bindings/PyPoseNet.h",
+      "analysis_relative_path": "python/bindings/PyPoseNet.h",
+      "bytes": 1360,
+      "sha256": "923c1aa2379250343680e0d04acfda72ffc8ed88a4473d470dab74811629cfe5"
+    },
+    {
+      "source_path": "python/bindings/PyInference.cpp",
+      "analysis_relative_path": "python/bindings/PyInference.cpp",
+      "bytes": 3657,
+      "sha256": "0bba6dd638b1921d5150d282f4fa1cff7e319ae78fe8bb11ca4e66441b354bc7"
+    },
+    {
+      "source_path": "plugins/interleaving/intreleavingPlugin.cpp",
+      "analysis_relative_path": "plugins/interleaving/intreleavingPlugin.cpp",
+      "bytes": 2165,
+      "sha256": "fdddf9cc62f8ae8a1efb9a4405ffbbc8a07e3aeaa6d9e7702f7c0e213746c489"
+    },
+    {
+      "source_path": "plugins/interleaving/interleaving.cu",
+      "analysis_relative_path": "plugins/interleaving/interleaving.cu",
+      "bytes": 2232,
+      "sha256": "2b22b7c56444f259c00a066797e6c2837ba8427b24ee24607ff832691dac36fe"
+    },
+    {
+      "source_path": "plugins/interleaving/interleaving.h",
+      "analysis_relative_path": "plugins/interleaving/interleaving.h",
+      "bytes": 430,
+      "sha256": "656df61bae876b2947f6a14e109ea9408ef275430ed65a35740f2f9d5850282b"
+    },
+    {
+      "source_path": "plugins/interleaving/interleavingPlugin.h",
+      "analysis_relative_path": "plugins/interleaving/interleavingPlugin.h",
+      "bytes": 6792,
+      "sha256": "76c87a438bfb8715760f48dc36b208cd42ceccaf0825fb06935f37b29852e10f"
+    },
+    {
+      "source_path": "plugins/FlattenConcat.cpp",
+      "analysis_relative_path": "plugins/FlattenConcat.cpp",
+      "bytes": 10136,
+      "sha256": "eb2d4d6bc8b7449b70dbf1014386a8a4a89e9e449e5fa86575e905740ad06a31"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/draw_objects.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/draw_objects.py",
+      "bytes": 1407,
+      "sha256": "d73b542938f94296dfc22def9cad594abd47b2ce7f76a0adb4f0bfa282948e15"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/train/generate_paf.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/train/generate_paf.cpp",
+      "bytes": 3605,
+      "sha256": "ec98b98d68adde9670d3c3622cc74d381d3c973ab91ce66a99f14e9f77e59921"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/train/generate_cmap.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/train/generate_cmap.hpp",
+      "bytes": 323,
+      "sha256": "9933d8c02fb15ccf355708b6df3402b91409815e642b19c3df835f9cc5a54b90"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/train/generate_cmap.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/train/generate_cmap.cpp",
+      "bytes": 2249,
+      "sha256": "86a2b05795ab5502f1590d1bef2fe2c3173115d64cec73ab40898d95dc841a36"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/train/generate_paf.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/train/generate_paf.hpp",
+      "bytes": 363,
+      "sha256": "b1bc3bfa6282eb57a1fbe583437b726d722a242b23b1a8986916c1523c898dd2"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse_objects.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse_objects.py",
+      "bytes": 1232,
+      "sha256": "6c93dc4c4aed5eca8e5d8ef8be68cc552862305673476e5a6b3823b26f9a287c"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/models/densenet.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/models/densenet.py",
+      "bytes": 3532,
+      "sha256": "68cec5da6ccc68af85a01210acda8879902b9a524d5d217464d19bca2007a400"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/models/dla.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/models/dla.py",
+      "bytes": 1070,
+      "sha256": "5af9e8298d96138e0baa28e64bde12e8f545b20579445500aefcb704a3da0654"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/models/mnasnet.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/models/mnasnet.py",
+      "bytes": 3493,
+      "sha256": "4c070d9178fe33910731838ba4ef0339a54deb5ebbe874b14132871e6d0c48c4"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/models/__init__.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/models/__init__.py",
+      "bytes": 1398,
+      "sha256": "1e9cec6b424f6c8929ce8b2a9af27d5fccd0f96f633ef0c62b341c9e06f0dae0"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/models/resnet.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/models/resnet.py",
+      "bytes": 4604,
+      "sha256": "4add61a121346f568a447b902a9aa5a1226d5eba8e27363a7eb765e91fe6a269"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/models/common.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/models/common.py",
+      "bytes": 3323,
+      "sha256": "d3ea2c307c1d1efa4390f91d00d28094112b7e65e54c26cece16dc79323abafb"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/coco.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/coco.py",
+      "bytes": 16146,
+      "sha256": "8d857a1f8bbe7402a5494a0af6e47c9c3a689fe65ae44bbed1bcee6bf9451a2f"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/utils/__init__.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/utils/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/utils/export_for_isaac.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/utils/export_for_isaac.py",
+      "bytes": 8601,
+      "sha256": "165c8ebf38f6ed19119a6402eb7c78d05f6fd6bfa78f4b21c0d594b649a34384"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/plugins.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/plugins.cpp",
+      "bytes": 8122,
+      "sha256": "0557ac2471cce84d05b807b7a116c7aebd14003a464893fc1da7000aeb93ef86"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/__init__.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/__init__.py",
+      "bytes": 12,
+      "sha256": "cf1070d3a16f24b230d83777452aa96250d11504c641f4eb878cc10f347d1afa"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/train.py",
+      "analysis_relative_path": "plugins/pose/trt_pose/train.py",
+      "bytes": 6323,
+      "sha256": "49011f890375b910876cebe4597a222976617785b4caa464d5a535432132d816"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/find_peaks.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/find_peaks.cpp",
+      "bytes": 2538,
+      "sha256": "afb7ffff2dc1ff738eb6d447be6678ec2a02da24fbe76882f45e707afeb78f28"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/refine_peaks.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/refine_peaks.cpp",
+      "bytes": 2675,
+      "sha256": "45f98f5d62d61cfdbafe396906816f2747bcc2a75836b5af1b4f386d00aee4b0"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/munkres.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/munkres.hpp",
+      "bytes": 1144,
+      "sha256": "d95f085ad9b6af22206b7e390c86fdb65f735d855a05cbe5a02fd49d720176bf"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/munkres.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/munkres.cpp",
+      "bytes": 7505,
+      "sha256": "4bbb8e8c32b1038983b25131a3e023a29b3d82b03fa3c1c9bf76a5ad169e834c"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/README.md",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/README.md",
+      "bytes": 2991,
+      "sha256": "02652d373df9f57af1a78198d8cba6e3c36e98009f5feaa626a24a1bfe6b2485"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/utils/CoverTable.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/utils/CoverTable.hpp",
+      "bytes": 1080,
+      "sha256": "6dea5d1b9c7d4d15aecec1ddf1502b64b0cb1d7282d3f03020c4ed035e28fbf8"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/utils/PairGraph.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/utils/PairGraph.hpp",
+      "bytes": 1917,
+      "sha256": "6840b1a742585f9b0f0648590d39986b6b0d331b4196e58bc24ddc3b12e7f601"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/connect_parts.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/connect_parts.cpp",
+      "bytes": 2758,
+      "sha256": "9618f9cd911f3cdb6592ced646e9c5ffae06d96e94a46efc1656b01416c23fb6"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/connect_parts.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/connect_parts.hpp",
+      "bytes": 1017,
+      "sha256": "4407b7a6c69b8b7432167681d061b1404af548b1fe462d5ff6491f98f00f94bc"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/paf_score_graph.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/paf_score_graph.cpp",
+      "bytes": 4389,
+      "sha256": "36f2234bb3258aac59718e911a4129282efcdfece8b7edf2c1759a134615e799"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/test_all.cpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/test_all.cpp",
+      "bytes": 3576,
+      "sha256": "203ff996ba5903e61bc1d705d9eff76200a6015d75c0d6d0a9e1a219a047a0b6"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/refine_peaks.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/refine_peaks.hpp",
+      "bytes": 1108,
+      "sha256": "2d529519aa878ff3c764a3c71aa2fd2ae559bcff7ed842f72a230e06ecad236e"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/find_peaks.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/find_peaks.hpp",
+      "bytes": 1035,
+      "sha256": "1780d3389ae12f71a95dbee758fe6d95f150108b6745510e5f04184d865486ce"
+    },
+    {
+      "source_path": "plugins/pose/trt_pose/parse/paf_score_graph.hpp",
+      "analysis_relative_path": "plugins/pose/trt_pose/parse/paf_score_graph.hpp",
+      "bytes": 1527,
+      "sha256": "ee0b1715e98470a2b716f619fbe146dfdd978a9ad1d8060d5c6b1420cf662678"
+    },
+    {
+      "source_path": "plugins/pose/onnx_export.sh",
+      "analysis_relative_path": "plugins/pose/onnx_export.sh",
+      "bytes": 562,
+      "sha256": "634f86793751b90857cecf296bffe5ecfc45811778340a87e0f86cd7f0c37651"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/download_coco.sh",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/download_coco.sh",
+      "bytes": 182,
+      "sha256": "e50d8a7899037624032cfed529fad695f10b7defd5be0a629a2a52dde45f5c30"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/eval.ipynb",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/eval.ipynb",
+      "bytes": 12027,
+      "sha256": "42107bc91b7f81debfed7e92c8b8a2486cddb711f787d42dc9d0069b7a055759"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/densenet169_baseline_att_256x256_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/densenet169_baseline_att_256x256_A.json",
+      "bytes": 1770,
+      "sha256": "4134a7ab8a3a1c5bf9c4050b612159e86315856b7eedf0767fa383a380a3c6e8"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_256x256_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_256x256_A.json",
+      "bytes": 1768,
+      "sha256": "d456fb25b5405591bd8092640a68b008fad6a84cf5b45e5ede12787bb3eedefc"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_368x368_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_368x368_A.json",
+      "bytes": 1764,
+      "sha256": "f5126d5b9c3d58d96288237b7193f71ac4a59ebc03c2a6ba641a8c8567df0335"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet50_baseline_att_384x384_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet50_baseline_att_384x384_A.json",
+      "bytes": 1762,
+      "sha256": "230ea8926eb8581d3d6261f40cc4fb44a86623878f6858fe20550ed61105205d"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/densenet169_baseline_att_368x368_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/densenet169_baseline_att_368x368_A.json",
+      "bytes": 1768,
+      "sha256": "19337528bd24621a1e086dbd150fa4c6cecbad0852c9a41c757a45ecca685ae5"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet50_baseline_att_368x368_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet50_baseline_att_368x368_A.json",
+      "bytes": 1764,
+      "sha256": "ecf77257bd13ef75cb4523ca6353738f00b9610a31b7bafde247d9926d6ebb81"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_224x224_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_224x224_A.json",
+      "bytes": 1768,
+      "sha256": "7d5f2d6d0143cac723f4e59986c55c59ca088ea959f1b3aad4a15b5d228b9669"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/mnasnet0_5_baseline_att_224x224_keepAR.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/mnasnet0_5_baseline_att_224x224_keepAR.json",
+      "bytes": 2068,
+      "sha256": "cf06d04fc27d628e7b752457990e581753c3fbe46d9d1647dfee9a54a42756ab"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_256x256_B.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_256x256_B.json",
+      "bytes": 1796,
+      "sha256": "ddec540db5c6960594dea01d78a5328d7b51c2015c00896b074086f76a9fb8f6"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_224x224_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_224x224_A.json",
+      "bytes": 1764,
+      "sha256": "d4cb4f9b112921b8222091c07b586e7cbe6dc00a55d0faa734103d3bb4d3b3ef"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_224x224_B.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_224x224_B.json",
+      "bytes": 1865,
+      "sha256": "7ebb817899e887caa9b7dcdf86913ab61098bb3f6a218d656cd001a34c71f08a"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_224x224_B.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_224x224_B.json",
+      "bytes": 1796,
+      "sha256": "19ab856f2efff7c936e30a51bea9c36113a4ccdf9f7278c90fdbf3485173ed2a"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_224x224_keepAR.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_224x224_keepAR.json",
+      "bytes": 1834,
+      "sha256": "d3e9bbc8b1d12e0bc9178fc5fc19f264a04273db15a0b52ec50e85c5912d6794"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/dla34up_pose_256x256_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/dla34up_pose_256x256_A.json",
+      "bytes": 1690,
+      "sha256": "632aef0000b1da44dab35b72eaf1655c976d4e06d2f2545c22a863d3c67a2ca7"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_256x256_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet18_baseline_att_256x256_A.json",
+      "bytes": 1764,
+      "sha256": "71e3cede8b5f802dc4116bc49c652d0a485555f0aecea7dce8e8e267b021b724"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_320x320_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/densenet121_baseline_att_320x320_A.json",
+      "bytes": 1768,
+      "sha256": "47fdf298aa122a5a7e073470f6d5f8a5f38eb50f5410c9d46e4e72d3237b84ff"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/experiments/resnet50_baseline_att_256x256_A.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/experiments/resnet50_baseline_att_256x256_A.json",
+      "bytes": 1764,
+      "sha256": "a2b901b1910a1b14cdac43fb7a5d05b51a6b9e373e3786b67c0ebd781819844a"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/live_demo.ipynb",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/live_demo.ipynb",
+      "bytes": 10177,
+      "sha256": "8d45beb8a466134d89ca2e74feb270c4a1082caebeec998ee4e188a40527f09b"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/preprocess_coco_person.py",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/preprocess_coco_person.py",
+      "bytes": 2521,
+      "sha256": "657e2f8a79da3d2ffb2bd8da5e903193d4002334e6e755db8446da6c0bdd4b64"
+    },
+    {
+      "source_path": "plugins/pose/tasks/human_pose/human_pose.json",
+      "analysis_relative_path": "plugins/pose/tasks/human_pose/human_pose.json",
+      "bytes": 510,
+      "sha256": "86704ad74020e1c329bd1c73f41da37f98e7728948a1285375a437756bae1bcd"
+    },
+    {
+      "source_path": "plugins/pose/CMakeLists.txt",
+      "analysis_relative_path": "plugins/pose/CMakeLists.txt",
+      "bytes": 368,
+      "sha256": "9c705a1a230e657f6514d8709d4732ed6abf20c7d153838ce5259a4aff2155bf"
+    },
+    {
+      "source_path": "plugins/pose/README.md",
+      "analysis_relative_path": "plugins/pose/README.md",
+      "bytes": 3901,
+      "sha256": "c95c2337b8943b11290f5f1e52698b45d82f7dfc01618ece3ab29d1b77742432"
+    },
+    {
+      "source_path": "plugins/pose/onnx_benchmark.sh",
+      "analysis_relative_path": "plugins/pose/onnx_benchmark.sh",
+      "bytes": 480,
+      "sha256": "48148549cac39d77e7d6fbc2f6c7bafbfc5b8bbe9d7da087ba66015ac3b4505b"
+    },
+    {
+      "source_path": "plugins/pose/onnx_export.py",
+      "analysis_relative_path": "plugins/pose/onnx_export.py",
+      "bytes": 2256,
+      "sha256": "d6ef4a9123b45d7cc9a81a6966b0a80338d870dd6db02c87b70ad3280806a871"
+    },
+    {
+      "source_path": "plugins/pose/setup.py",
+      "analysis_relative_path": "plugins/pose/setup.py",
+      "bytes": 982,
+      "sha256": "5b0fcff4d760956cefeb199b314f34d131b7f50cfeeff0532fb5dde1ca589369"
+    },
+    {
+      "source_path": "plugins/pose/LICENSE.md",
+      "analysis_relative_path": "plugins/pose/LICENSE.md",
+      "bytes": 1085,
+      "sha256": "703a5382132f0f4118df909d5da7614a4d089871fb51e1d6efa516596238fbd5"
+    },
+    {
+      "source_path": "plugins/stereo/resnet18_2D_513x257_net.cpp",
+      "analysis_relative_path": "plugins/stereo/resnet18_2D_513x257_net.cpp",
+      "bytes": 44156,
+      "sha256": "05b0103d7917fe3801e58e63a699eaae3742d4520154b4bafd5635d091d52657"
+    },
+    {
+      "source_path": "plugins/stereo/resnet18_1025x321_net.cpp",
+      "analysis_relative_path": "plugins/stereo/resnet18_1025x321_net.cpp",
+      "bytes": 60015,
+      "sha256": "5ea8b5d2666c493e84f518868fbfb645dd285e8826ac303737d7ef718a4d6f94"
+    },
+    {
+      "source_path": "plugins/stereo/padding_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/padding_plugin.cpp",
+      "bytes": 3805,
+      "sha256": "9008a1356e512f0bca8ba58b658b175f6e71fe072d69b9de07e847f46f105199"
+    },
+    {
+      "source_path": "plugins/stereo/internal_macros.h",
+      "analysis_relative_path": "plugins/stereo/internal_macros.h",
+      "bytes": 1441,
+      "sha256": "630629a23768295803f00cabdcc0a585de9a758f4e2a4a5d4362409b4a7e97f4"
+    },
+    {
+      "source_path": "plugins/stereo/networks.h",
+      "analysis_relative_path": "plugins/stereo/networks.h",
+      "bytes": 1650,
+      "sha256": "a6d436c28746b8ed92057ae63c6fe1cef87d5a3b6015a018d7ddf7e157992cf8"
+    },
+    {
+      "source_path": "plugins/stereo/conv3d_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/conv3d_plugin.cpp",
+      "bytes": 15359,
+      "sha256": "3c5f5afcbad833d5066d6f1e35049b2797382048feb4241628f2c3106e4c19a2"
+    },
+    {
+      "source_path": "plugins/stereo/nvtiny_513x161_net.cpp",
+      "analysis_relative_path": "plugins/stereo/nvtiny_513x161_net.cpp",
+      "bytes": 21929,
+      "sha256": "2ad0bf7288bf13030723b5009b7c6c14da0294960d106c39f35051192a45b0b2"
+    },
+    {
+      "source_path": "plugins/stereo/internal_utils.cpp",
+      "analysis_relative_path": "plugins/stereo/internal_utils.cpp",
+      "bytes": 11239,
+      "sha256": "a0f372ad93b455002b62550c8f5bff9f4a9da4ec185d81d23c369565cd43e59a"
+    },
+    {
+      "source_path": "plugins/stereo/conv_utils.h",
+      "analysis_relative_path": "plugins/stereo/conv_utils.h",
+      "bytes": 4999,
+      "sha256": "af7ec9cc2a73a6ded789a988b82f569af14dc323e89fa096ef82379f6b4d6fc9"
+    },
+    {
+      "source_path": "plugins/stereo/kernels.cu",
+      "analysis_relative_path": "plugins/stereo/kernels.cu",
+      "bytes": 13043,
+      "sha256": "2631d982124cc9eacd5cfaf12d84df18f1fb1bb79542550783fd7a75e46e92ce"
+    },
+    {
+      "source_path": "plugins/stereo/elu_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/elu_plugin.cpp",
+      "bytes": 7429,
+      "sha256": "2d40d535f387116d77f3879abb955758e642fe355d33f4b5ea604ea6924f4768"
+    },
+    {
+      "source_path": "plugins/stereo/internal_utils.h",
+      "analysis_relative_path": "plugins/stereo/internal_utils.h",
+      "bytes": 6377,
+      "sha256": "2bde1412686498e9361fc1fbbbc4219c1aa165b89aa10a00352bd1cc52f1b7ad"
+    },
+    {
+      "source_path": "plugins/stereo/cost_volume_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/cost_volume_plugin.cpp",
+      "bytes": 7341,
+      "sha256": "079b2d23e51de77a446984186a85cc64d8e29e3100195262b23322696c47c7f4"
+    },
+    {
+      "source_path": "plugins/stereo/slice_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/slice_plugin.cpp",
+      "bytes": 3723,
+      "sha256": "7b0b2f1f58de4c298116597db9c4d23649549d20ecf0e6c88893781f2a14ec7d"
+    },
+    {
+      "source_path": "plugins/stereo/redtail_tensorrt_plugins.h",
+      "analysis_relative_path": "plugins/stereo/redtail_tensorrt_plugins.h",
+      "bytes": 6371,
+      "sha256": "0cb335b80d546f82840c11ac306c948e4be980e3c6038a2578481d010b818601"
+    },
+    {
+      "source_path": "plugins/stereo/conv3d_transpose_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/conv3d_transpose_plugin.cpp",
+      "bytes": 16868,
+      "sha256": "c76f670ed06d63c56796f92dd9c672a732dc050b715aa19a301861020e6c2650"
+    },
+    {
+      "source_path": "plugins/stereo/softargmax_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/softargmax_plugin.cpp",
+      "bytes": 12315,
+      "sha256": "83af33a75af175aa70ea1f9d8c83898f626da88aa861fe5440c249ee174aa253"
+    },
+    {
+      "source_path": "plugins/stereo/transform_plugin.cpp",
+      "analysis_relative_path": "plugins/stereo/transform_plugin.cpp",
+      "bytes": 6256,
+      "sha256": "44f1e1cf9612bff517552b6441bebfb1addc161e2c8094b047d0ba6b1a020503"
+    },
+    {
+      "source_path": "plugins/stereo/nvsmall_1025x321_net.cpp",
+      "analysis_relative_path": "plugins/stereo/nvsmall_1025x321_net.cpp",
+      "bytes": 21941,
+      "sha256": "1746c1b5ec17e196cb2dec59ccc55051c82001eef6aac13cbd56f9f2f7f4dc81"
+    },
+    {
+      "source_path": "plugins/stereo/conv_utils.cpp",
+      "analysis_relative_path": "plugins/stereo/conv_utils.cpp",
+      "bytes": 3851,
+      "sha256": "ba420d59788d7aa0edf1cead279d7223827a82849878325f9ec16ecab87fbed5"
+    },
+    {
+      "source_path": "plugins/upsampling/upsamplingPlugin.cpp",
+      "analysis_relative_path": "plugins/upsampling/upsamplingPlugin.cpp",
+      "bytes": 1534,
+      "sha256": "389c0035b1163319219f006d4cffd4a6d6b59f8296f3e8832f3616329f812b52"
+    },
+    {
+      "source_path": "plugins/upsampling/upsampling.h",
+      "analysis_relative_path": "plugins/upsampling/upsampling.h",
+      "bytes": 673,
+      "sha256": "c716cc459046bcb2f41b9ef62049f20b5bf2b473ec442ee06b44845575a15675"
+    },
+    {
+      "source_path": "plugins/upsampling/upsamplingPlugin.h",
+      "analysis_relative_path": "plugins/upsampling/upsamplingPlugin.h",
+      "bytes": 6969,
+      "sha256": "05e0d212e640a7817604a5654c9795fc479f08d54e661fd6064629e0780ba7e4"
+    },
+    {
+      "source_path": "plugins/upsampling/upsampling.cu",
+      "analysis_relative_path": "plugins/upsampling/upsampling.cu",
+      "bytes": 2290,
+      "sha256": "595d814b79519fc85a40cce69307555a06cf516fde62dfc8eb6157030e745556"
+    },
+    {
+      "source_path": "plugins/slice/stridedSlice.cu",
+      "analysis_relative_path": "plugins/slice/stridedSlice.cu",
+      "bytes": 1664,
+      "sha256": "43afeeac1372bfaf94a9107ec7f759334e8b6ef69ecc8a6fb045cc89128b152c"
+    },
+    {
+      "source_path": "plugins/slice/stridedSlice.h",
+      "analysis_relative_path": "plugins/slice/stridedSlice.h",
+      "bytes": 379,
+      "sha256": "b5785db120ba11fcdd351e6ff63b630f71e346015ffaceadff25d8953b7af6af"
+    },
+    {
+      "source_path": "plugins/slice/slicePlugin.cpp",
+      "analysis_relative_path": "plugins/slice/slicePlugin.cpp",
+      "bytes": 1229,
+      "sha256": "08c8bf9075b2b3e3691c113af9a3449ad48a952a6f36a9d5ea29ea41046ee29f"
+    },
+    {
+      "source_path": "plugins/slice/slicePlugin.h",
+      "analysis_relative_path": "plugins/slice/slicePlugin.h",
+      "bytes": 6586,
+      "sha256": "0b83246e98670782ca0d447e0694772e4f6339817e2c0a2c118b1c231906661a"
+    },
+    {
+      "source_path": "c/detectNet.cu",
+      "analysis_relative_path": "c/detectNet.cu",
+      "bytes": 4827,
+      "sha256": "3facd101ee9cf023ad124d83b6a8120b105b11249b63810d7d8c8c13ed6559fe"
+    },
+    {
+      "source_path": "c/poseNet.cpp",
+      "analysis_relative_path": "c/poseNet.cpp",
+      "bytes": 22997,
+      "sha256": "2dec37176a65790782215b4a3d6cdd50a65c223a96c1cdd64e92a45329362447"
+    },
+    {
+      "source_path": "c/imageNet.h",
+      "analysis_relative_path": "c/imageNet.h",
+      "bytes": 9839,
+      "sha256": "e68f36ab0575ef7b45b886707c98b8ffe91ce60a7ef85b48a740a323c4cb6b4d"
+    },
+    {
+      "source_path": "c/depthNet.h",
+      "analysis_relative_path": "c/depthNet.h",
+      "bytes": 11821,
+      "sha256": "a78479988c95c4cd891e200157553acf8a41af380807e21572172b344b5e262f"
+    },
+    {
+      "source_path": "c/depthNet.cpp",
+      "analysis_relative_path": "c/depthNet.cpp",
+      "bytes": 18975,
+      "sha256": "8ad6e73c4633f03ccd64c2cd298808036bc9bafe4831133309f9bc3ead87ff66"
+    },
+    {
+      "source_path": "c/segNet.cu",
+      "analysis_relative_path": "c/segNet.cu",
+      "bytes": 7199,
+      "sha256": "7c84f828dd2c7363fdf45c216a3852f0cb8c4c6e209b0420510c5fc24b496484"
+    },
+    {
+      "source_path": "c/detectNet.cpp",
+      "analysis_relative_path": "c/detectNet.cpp",
+      "bytes": 40619,
+      "sha256": "d56adaf081e4fe5814f151bf5b4810fe89704ed31a4968ae76744206e11ebf35"
+    },
+    {
+      "source_path": "c/tensorConvert.h",
+      "analysis_relative_path": "c/tensorConvert.h",
+      "bytes": 2930,
+      "sha256": "bd0ec9108941dbc40eeddb5ed51b4f3cc48b542462320f5dd8f2b5421ad3c200"
+    },
+    {
+      "source_path": "c/tensorNet.h",
+      "analysis_relative_path": "c/tensorNet.h",
+      "bytes": 27384,
+      "sha256": "1ba7800013afeb19e158201089a8412f4f5339010f63501f93c2df89aa354975"
+    },
+    {
+      "source_path": "c/imageNet.cpp",
+      "analysis_relative_path": "c/imageNet.cpp",
+      "bytes": 15565,
+      "sha256": "fda071c2f2bad8e5fb7c4b0c2f88d171a755e43c62134450c6b46628451b268f"
+    },
+    {
+      "source_path": "c/poseNet.h",
+      "analysis_relative_path": "c/poseNet.h",
+      "bytes": 17306,
+      "sha256": "30af924e6087ab3f2a3504220396e2df0f8ebd5ed61848fe54ca7c08f4333f0c"
+    },
+    {
+      "source_path": "c/detectNet.h",
+      "analysis_relative_path": "c/detectNet.h",
+      "bytes": 27398,
+      "sha256": "abc141a5fbb2011c7e10b38acbc0641ff135e6d0df637364573266f3abb78452"
+    },
+    {
+      "source_path": "c/depthNet.cu",
+      "analysis_relative_path": "c/depthNet.cu",
+      "bytes": 9196,
+      "sha256": "a94853aea21e7bca9fbe80f4b5a7bfd0d9b2a370a5140c138f8cc6bd85ae08b8"
+    },
+    {
+      "source_path": "c/tensorNet.cpp",
+      "analysis_relative_path": "c/tensorNet.cpp",
+      "bytes": 57986,
+      "sha256": "19494acd1c673a020d9d4691ad78861e225e1e2bda7e47a03d60afb9b14e7f77"
+    },
+    {
+      "source_path": "c/segNet.cpp",
+      "analysis_relative_path": "c/segNet.cpp",
+      "bytes": 35109,
+      "sha256": "428a0624654f653caccb75b8837da0c6d09aa662799f81aa97ffe2f6d1ad27cd"
+    },
+    {
+      "source_path": "c/tensorConvert.cu",
+      "analysis_relative_path": "c/tensorConvert.cu",
+      "bytes": 11307,
+      "sha256": "d4c19cffa533aa3daa2c540f5307eec31296acb5f57908077eae53a357cbefdf"
+    },
+    {
+      "source_path": "c/segNet.h",
+      "analysis_relative_path": "c/segNet.h",
+      "bytes": 17821,
+      "sha256": "ea3d022cc94a516709a97e83a23256b8275b694e5c347533a5618eb06665128e"
+    },
+    {
+      "source_path": "c/experimental/homographyNet.cu",
+      "analysis_relative_path": "c/experimental/homographyNet.cu",
+      "bytes": 3301,
+      "sha256": "b5c12996a44d3188fe2dee784e485cbe4be46d6b50591b4cf8edafa4551911be"
+    },
+    {
+      "source_path": "c/experimental/odometryNet.cu",
+      "analysis_relative_path": "c/experimental/odometryNet.cu",
+      "bytes": 4390,
+      "sha256": "970826e7a89867375f506bcfeb319b1f52749fb14bb42c15add0283e11743253"
+    },
+    {
+      "source_path": "c/experimental/stereoNet.cpp",
+      "analysis_relative_path": "c/experimental/stereoNet.cpp",
+      "bytes": 15583,
+      "sha256": "9ede5bdc7d4d157074e465da5fa261a919ab528d90a71f1c3b6cdf3fde355d5b"
+    },
+    {
+      "source_path": "c/experimental/flowNet.h",
+      "analysis_relative_path": "c/experimental/flowNet.h",
+      "bytes": 6809,
+      "sha256": "ef5c6bae20006125c0cee14b13895bc3786da61ec9ba4d520b8fa2f238c4a95f"
+    },
+    {
+      "source_path": "c/experimental/superResNet.cu",
+      "analysis_relative_path": "c/experimental/superResNet.cu",
+      "bytes": 4994,
+      "sha256": "251587b60ae89d54b7bf97d963c687d09c442d7e60c86cf2d5af8b07e1f940c6"
+    },
+    {
+      "source_path": "c/experimental/actionNet.cpp",
+      "analysis_relative_path": "c/experimental/actionNet.cpp",
+      "bytes": 12057,
+      "sha256": "4af982e332ce8ed246ecbe169cbd2ec9bd4137fc2fc2a5fabc081d97742f79fe"
+    },
+    {
+      "source_path": "c/experimental/superResNet.cpp",
+      "analysis_relative_path": "c/experimental/superResNet.cpp",
+      "bytes": 4499,
+      "sha256": "e2aa577a379db062f8ad727aed003597cb31c7c72055753951cceed57a11331c"
+    },
+    {
+      "source_path": "c/experimental/featureNet.h",
+      "analysis_relative_path": "c/experimental/featureNet.h",
+      "bytes": 9555,
+      "sha256": "a1d4b75f8e223461b4c9b5649f5f602fd87a5b37403ff892d7016d305089a438"
+    },
+    {
+      "source_path": "c/experimental/backgroundNet.cu",
+      "analysis_relative_path": "c/experimental/backgroundNet.cu",
+      "bytes": 4847,
+      "sha256": "4ebed334928f9b3dfa2dd3b4abbf6f36c1a9f68532e0ae1c14ae91a37475b479"
+    },
+    {
+      "source_path": "c/experimental/stereoNet.h",
+      "analysis_relative_path": "c/experimental/stereoNet.h",
+      "bytes": 5916,
+      "sha256": "0c3ad6bbba9f42687884e29a5d062072740daab025f6635225862fcd80352a0b"
+    },
+    {
+      "source_path": "c/experimental/flowNet.cpp",
+      "analysis_relative_path": "c/experimental/flowNet.cpp",
+      "bytes": 9949,
+      "sha256": "bde273ff8dbd9775629eef9191f200a29911511ffe04791288c5039dc1d1c483"
+    },
+    {
+      "source_path": "c/experimental/homographyNet.h",
+      "analysis_relative_path": "c/experimental/homographyNet.h",
+      "bytes": 5692,
+      "sha256": "da8a76d9fbfe9cad603e42b12ee959b58cf9efc3e5a8c7f49ed5736419ecd326"
+    },
+    {
+      "source_path": "c/experimental/superResNet.h",
+      "analysis_relative_path": "c/experimental/superResNet.h",
+      "bytes": 2513,
+      "sha256": "53056da1aba795ae247054d18a634e3e7707539f82510ecefc24b851c8b0a65f"
+    },
+    {
+      "source_path": "c/experimental/odometryNet.cpp",
+      "analysis_relative_path": "c/experimental/odometryNet.cpp",
+      "bytes": 6570,
+      "sha256": "07e0ae422141b2252c3524eaad1822cade9ab8b5654bf2a30ccfbed0c6be444b"
+    },
+    {
+      "source_path": "c/experimental/backgroundNet.h",
+      "analysis_relative_path": "c/experimental/backgroundNet.h",
+      "bytes": 8326,
+      "sha256": "6469d07a209e82e6810037156e598123b12a33973fab8a2c6207d6080d364c78"
+    },
+    {
+      "source_path": "c/experimental/backgroundNet.cpp",
+      "analysis_relative_path": "c/experimental/backgroundNet.cpp",
+      "bytes": 6712,
+      "sha256": "5f0298ee8665021dac29178d8b4ce76b81f277362a499ce6510cf185cc0dc0e8"
+    },
+    {
+      "source_path": "c/experimental/odometryNet.h",
+      "analysis_relative_path": "c/experimental/odometryNet.h",
+      "bytes": 6817,
+      "sha256": "6ab73450017f893fa87452aa9493c155c9338cd05e2074c3e93758b1748b78cd"
+    },
+    {
+      "source_path": "c/experimental/homographyNet.cpp",
+      "analysis_relative_path": "c/experimental/homographyNet.cpp",
+      "bytes": 14415,
+      "sha256": "163a5a8567cee31c72c709aa782a04678d4c56626ad737a33783077383fba4d5"
+    },
+    {
+      "source_path": "c/experimental/featureNet.cpp",
+      "analysis_relative_path": "c/experimental/featureNet.cpp",
+      "bytes": 15996,
+      "sha256": "fe6869eb2c31736150af7e7101f8aa350fa2f0cd77598a2b869eb6ea6e75b4fc"
+    },
+    {
+      "source_path": "c/experimental/actionNet.h",
+      "analysis_relative_path": "c/experimental/actionNet.h",
+      "bytes": 8159,
+      "sha256": "31def8d0c34b0a5ca033be716ad1a3c4a06931e11eec1914dd7bcb4e897355fa"
+    },
+    {
+      "source_path": "calibration/randInt8Calibrator.cpp",
+      "analysis_relative_path": "calibration/randInt8Calibrator.cpp",
+      "bytes": 3458,
+      "sha256": "48005cbdbfd493cce4dd0862b935ad5689a130b415992fded6aef3ff1f616452"
+    },
+    {
+      "source_path": "calibration/randInt8Calibrator.h",
+      "analysis_relative_path": "calibration/randInt8Calibrator.h",
+      "bytes": 2446,
+      "sha256": "713cbaa31356815a8fb8e4affc04502c6fd3ee140295a2ec0082456d69a6b479"
+    },
+    {
+      "source_path": "tools/download-models.rc",
+      "analysis_relative_path": "tools/download-models.rc",
+      "bytes": 3037,
+      "sha256": "c5af5997f0f9ad49c003ab52bc1058beaddb327516389cce68ff3621f191b426"
+    },
+    {
+      "source_path": "tools/download-models.sh",
+      "analysis_relative_path": "tools/download-models.sh",
+      "bytes": 27798,
+      "sha256": "b7dde41eae3517604add9993094a476d8410c84b09fe75aa0a3e0a5a57386630"
+    },
+    {
+      "source_path": "tools/install-pytorch.rc",
+      "analysis_relative_path": "tools/install-pytorch.rc",
+      "bytes": 3037,
+      "sha256": "c5af5997f0f9ad49c003ab52bc1058beaddb327516389cce68ff3621f191b426"
+    },
+    {
+      "source_path": "tools/test-models.py",
+      "analysis_relative_path": "tools/test-models.py",
+      "bytes": 6974,
+      "sha256": "1fbb955b7f0b32b55809101b5ea333e03e91f429fc080ec075ec9411bc2f9b75"
+    },
+    {
+      "source_path": "tools/benchmark-models.sh",
+      "analysis_relative_path": "tools/benchmark-models.sh",
+      "bytes": 1802,
+      "sha256": "ec543238d401481ce3763768690df90ef3ba0a1949b87f3c1e1d3cf951d89f9e"
+    },
+    {
+      "source_path": "tools/synthia-seq-prepare.sh",
+      "analysis_relative_path": "tools/synthia-seq-prepare.sh",
+      "bytes": 949,
+      "sha256": "99809384e2ca55a13c0607b53afc1bddabae99bc9b4cfa7aa40d63433e46262e"
+    },
+    {
+      "source_path": "tools/cityscapes-prep2.sh",
+      "analysis_relative_path": "tools/cityscapes-prep2.sh",
+      "bytes": 136,
+      "sha256": "3732ba651779fd50fd0986c002df19f673b04a718b34da13954d03400d3dabdb"
+    },
+    {
+      "source_path": "tools/cityscapes-prep.sh",
+      "analysis_relative_path": "tools/cityscapes-prep.sh",
+      "bytes": 1163,
+      "sha256": "21fc92c657b0e1aa913e2bb93fc4683db10055b749c3b8257e289073b0754582"
+    },
+    {
+      "source_path": "tools/depthnet-batch.sh",
+      "analysis_relative_path": "tools/depthnet-batch.sh",
+      "bytes": 266,
+      "sha256": "395bed4adb721e59759d07dcbba7eb241ba0582fbad6cba1aa202a61ec694a2d"
+    },
+    {
+      "source_path": "tools/depallet-images.sh",
+      "analysis_relative_path": "tools/depallet-images.sh",
+      "bytes": 147,
+      "sha256": "30853ca79548147637a218efdc574855a8c71642bd1383f14048fffe51c6cc41"
+    },
+    {
+      "source_path": "tools/trt-console/CMakeLists.txt",
+      "analysis_relative_path": "tools/trt-console/CMakeLists.txt",
+      "bytes": 201,
+      "sha256": "e9919f18e982855224612967febbb8e1b69b081e25ba9bb620a0082204f6109b"
+    },
+    {
+      "source_path": "tools/trt-console/trt-console.cpp",
+      "analysis_relative_path": "tools/trt-console/trt-console.cpp",
+      "bytes": 1241,
+      "sha256": "4b05a6430369d27dcb56520d7477406622fd8513f94858b527104f2d8e6fa051"
+    },
+    {
+      "source_path": "tools/CMakeLists.txt",
+      "analysis_relative_path": "tools/CMakeLists.txt",
+      "bytes": 475,
+      "sha256": "dcee70859d64a1c11d2ac0bf0bf683365bf84c2b259a91e075c7bace9e2c5905"
+    },
+    {
+      "source_path": "tools/imagenet-download.py",
+      "analysis_relative_path": "tools/imagenet-download.py",
+      "bytes": 8393,
+      "sha256": "302cf5a4da6d80eb75dc3bebfa9eb8134776d4000130584ee935384b69e8bbc8"
+    },
+    {
+      "source_path": "tools/seg-img-tool/CMakeLists.txt",
+      "analysis_relative_path": "tools/seg-img-tool/CMakeLists.txt",
+      "bytes": 376,
+      "sha256": "ff5e0ecc9bc579d0dfa7443a5a61d39ec844a26c007484c74159be837965fbb9"
+    },
+    {
+      "source_path": "tools/seg-img-tool/seg-img-tool.cpp",
+      "analysis_relative_path": "tools/seg-img-tool/seg-img-tool.cpp",
+      "bytes": 9205,
+      "sha256": "15721a4aed977aa6ff488b50f339c75c8e7032d06b792ee5e3b6e7710a632a14"
+    },
+    {
+      "source_path": "tools/coco2kitti.py",
+      "analysis_relative_path": "tools/coco2kitti.py",
+      "bytes": 2512,
+      "sha256": "2b7c1f852a612959129102f7febca079a2c7bd0e0c0258aa1f909b09cc29a3c4"
+    },
+    {
+      "source_path": "tools/segnet-batch.sh",
+      "analysis_relative_path": "tools/segnet-batch.sh",
+      "bytes": 124,
+      "sha256": "d74313872795db5bdde3f5018203b1569211b14a1b04d1ffadbcbf184102d612"
+    },
+    {
+      "source_path": "tools/cat-dog-dataset.sh",
+      "analysis_relative_path": "tools/cat-dog-dataset.sh",
+      "bytes": 2373,
+      "sha256": "bf21c6dfe07df7a6d78f80664c7a05c7349ab72befc25470fd60945484f1f39c"
+    },
+    {
+      "source_path": "tools/synthia-seq-remap-labels.sh",
+      "analysis_relative_path": "tools/synthia-seq-remap-labels.sh",
+      "bytes": 511,
+      "sha256": "f5d351862823ed3696f6aaaee08e76c0d5544a48595ea2678d9a5ea4e2a4f50b"
+    },
+    {
+      "source_path": "tools/camera-capture/controlDetection.h",
+      "analysis_relative_path": "tools/camera-capture/controlDetection.h",
+      "bytes": 2854,
+      "sha256": "0f679d5d0929a74ccc0b6da7c30ba8bfc0e4f5a6721f4459df3d320920be9699"
+    },
+    {
+      "source_path": "tools/camera-capture/controlDetection.cpp",
+      "analysis_relative_path": "tools/camera-capture/controlDetection.cpp",
+      "bytes": 19176,
+      "sha256": "b17d044eb562e1ae8c3de5aea320157b41906f03fd466dd0ff44d3e8d1b434dc"
+    },
+    {
+      "source_path": "tools/camera-capture/controlWindow.cpp",
+      "analysis_relative_path": "tools/camera-capture/controlWindow.cpp",
+      "bytes": 6815,
+      "sha256": "7b488d5c3ebdffe1431d2191b9bb6abae913f65282037d349ecc7cf2f9bf0eb4"
+    },
+    {
+      "source_path": "tools/camera-capture/controlClassify.h",
+      "analysis_relative_path": "tools/camera-capture/controlClassify.h",
+      "bytes": 2045,
+      "sha256": "42bebbae0999c652f3bc01d3d851691bfff9645f70aeaacf5c196a7a19195c98"
+    },
+    {
+      "source_path": "tools/camera-capture/controlClassify.cpp",
+      "analysis_relative_path": "tools/camera-capture/controlClassify.cpp",
+      "bytes": 9445,
+      "sha256": "f920ab4d95e199a16a465e4446cd3ceb03f9b566cba3cba6358da1313424de99"
+    },
+    {
+      "source_path": "tools/camera-capture/captureWindow.cpp",
+      "analysis_relative_path": "tools/camera-capture/captureWindow.cpp",
+      "bytes": 4854,
+      "sha256": "2ffdd25cc7c7ed5afd554fb1c40ce634862ca33080debd2bf05eb0cc47ec04c6"
+    },
+    {
+      "source_path": "tools/camera-capture/CMakeLists.txt",
+      "analysis_relative_path": "tools/camera-capture/CMakeLists.txt",
+      "bytes": 2050,
+      "sha256": "dc348e05efd3b163e022f78f0aa723087ae83a66da8ae9492bb81a74601edc43"
+    },
+    {
+      "source_path": "tools/camera-capture/README.md",
+      "analysis_relative_path": "tools/camera-capture/README.md",
+      "bytes": 83,
+      "sha256": "6122d3e129b58180e22a9e7c625c8fb0c2ee6bac8670c1a8af6251c5c835abe9"
+    },
+    {
+      "source_path": "tools/camera-capture/controlWindow.h",
+      "analysis_relative_path": "tools/camera-capture/controlWindow.h",
+      "bytes": 2040,
+      "sha256": "cf05d3d731fccbf2eff67e1f2b36d95722d0623a1f1f43a827e9537c62ea0c9e"
+    },
+    {
+      "source_path": "tools/camera-capture/camera-capture.cpp",
+      "analysis_relative_path": "tools/camera-capture/camera-capture.cpp",
+      "bytes": 2964,
+      "sha256": "4d07dfaca4ff57f4e5265cfe54dbbf55b5ec46d98965937bad38b287340b230f"
+    },
+    {
+      "source_path": "tools/camera-capture/captureWindow.h",
+      "analysis_relative_path": "tools/camera-capture/captureWindow.h",
+      "bytes": 2501,
+      "sha256": "93cdf9d816fb7996007287055f02ff0fa77e7843d9119daaa318a3729695d740"
+    },
+    {
+      "source_path": "tools/camera-capture/LICENSE.md",
+      "analysis_relative_path": "tools/camera-capture/LICENSE.md",
+      "bytes": 1147,
+      "sha256": "cddaa9d5583a7705cd4734a6af4b421bca9016ba6af854c51efbfcbe19a4a893"
+    },
+    {
+      "source_path": "tools/resize-images.sh",
+      "analysis_relative_path": "tools/resize-images.sh",
+      "bytes": 178,
+      "sha256": "59658470a69fe1a49aaa612b0f9a52fec3ec5b0d23959640f408926689587ed0"
+    },
+    {
+      "source_path": "tools/synthia-all-prepare.sh",
+      "analysis_relative_path": "tools/synthia-all-prepare.sh",
+      "bytes": 969,
+      "sha256": "9849f4164a707fea87274d12882c02736d2b0003ec5e3f8f344b645e4056802b"
+    },
+    {
+      "source_path": "tools/depth-viewer/depth-viewer.cpp",
+      "analysis_relative_path": "tools/depth-viewer/depth-viewer.cpp",
+      "bytes": 4466,
+      "sha256": "c1f8a0305ab6305825f12d6455faa8d590f876bcc2ef6e7bbf9944a62f66cfc9"
+    },
+    {
+      "source_path": "tools/depth-viewer/CMakeLists.txt",
+      "analysis_relative_path": "tools/depth-viewer/CMakeLists.txt",
+      "bytes": 267,
+      "sha256": "4002d7cc5b94063cbcca3945dc7577e231498df5d64a8e98186b89bf77743902"
+    },
+    {
+      "source_path": "tools/depth-viewer/depthWindow.cpp",
+      "analysis_relative_path": "tools/depth-viewer/depthWindow.cpp",
+      "bytes": 8991,
+      "sha256": "c0585cc01252961ca8c300ffb091112e733786bdeb8d63a526be6957e9953993"
+    },
+    {
+      "source_path": "tools/depth-viewer/depthWindow.h",
+      "analysis_relative_path": "tools/depth-viewer/depthWindow.h",
+      "bytes": 2288,
+      "sha256": "d86c893f179db5aa2a50ee8bdc557dc5196b9f77478b9eff811fece4d0a05377"
+    },
+    {
+      "source_path": "tools/install-pytorch.sh",
+      "analysis_relative_path": "tools/install-pytorch.sh",
+      "bytes": 22039,
+      "sha256": "038d595776e91ed4049ac7104608d30e19e297cbf018d97a9d91db5d3e22fa1f"
+    },
+    {
+      "source_path": "tools/resize-images2.sh",
+      "analysis_relative_path": "tools/resize-images2.sh",
+      "bytes": 154,
+      "sha256": "d0b8a93443ad924d8a693ce8980d909269945a7af103ff5278e90d6d1ebe3717"
+    },
+    {
+      "source_path": "tools/imagenet-subset.sh",
+      "analysis_relative_path": "tools/imagenet-subset.sh",
+      "bytes": 13268,
+      "sha256": "5c8cb11f687e50378c871af47ddaf4fb1bc7d8b3b830aef096896ee1be914776"
+    },
+    {
+      "source_path": "tools/trt-bench/trt-bench.cpp",
+      "analysis_relative_path": "tools/trt-bench/trt-bench.cpp",
+      "bytes": 6570,
+      "sha256": "fb8c1d6290cf3696e8b2ea3e87c72d4c9ee6f2b9def5ab34b17b19047f495d5d"
+    },
+    {
+      "source_path": "tools/trt-bench/CMakeLists.txt",
+      "analysis_relative_path": "tools/trt-bench/CMakeLists.txt",
+      "bytes": 191,
+      "sha256": "e579c12c8bc947c02c751b95229524b2ede9e95f36587c461e1ef02bb5d98d23"
+    },
+    {
+      "source_path": "tools/make-legends.sh",
+      "analysis_relative_path": "tools/make-legends.sh",
+      "bytes": 848,
+      "sha256": "e94f5b06016b31f7e510e87376dda6fb7bb48b8529053d14d1aa037604ab0a09"
+    },
+    {
+      "source_path": "CMakeLists.txt",
+      "analysis_relative_path": "CMakeLists.txt",
+      "bytes": 8566,
+      "sha256": "c58d5f902550aadd1ccbee46cd91956dff6c27fec96510f8bd43fcb3e5d11fb6"
+    },
+    {
+      "source_path": "README.md",
+      "analysis_relative_path": "README.md",
+      "bytes": 23284,
+      "sha256": "e05c1f84200035cb6832fc33b6f16940804c25a1c083a5a814d9f9cf372537fe"
+    },
+    {
+      "source_path": "CHANGELOG.md",
+      "analysis_relative_path": "CHANGELOG.md",
+      "bytes": 6507,
+      "sha256": "f128f710db9fca5d9b530e5c6daa54d0003f7d152ce4a189903574c9a737b91e"
+    },
+    {
+      "source_path": "CMakePreBuild.sh",
+      "analysis_relative_path": "CMakePreBuild.sh",
+      "bytes": 1399,
+      "sha256": "8d1f95cdfd92ebbfe89d928f3e8d64f888a5ec55fde96f09439cba85f81f9b65"
+    },
+    {
+      "source_path": "utils/csvWriter.hpp",
+      "analysis_relative_path": "utils/csvWriter.hpp",
+      "bytes": 3701,
+      "sha256": "b8ca0b6c72315a10f33977fc55835943260230e651f46011c02d20e410ef0bc4"
+    },
+    {
+      "source_path": "utils/mat33.h",
+      "analysis_relative_path": "utils/mat33.h",
+      "bytes": 9424,
+      "sha256": "770475678f07c213f13e1d598f1442661afc6d49f9310aa9380d3224002e36f6"
+    },
+    {
+      "source_path": "utils/python/python/jetson/utils/__init__.py",
+      "analysis_relative_path": "utils/python/python/jetson/utils/__init__.py",
+      "bytes": 187,
+      "sha256": "b5ebaf1918651bf17c4785c26b10eafe964b97c60cca53a4433718f716b6b017"
+    },
+    {
+      "source_path": "utils/python/python/jetson/__init__.py",
+      "analysis_relative_path": "utils/python/python/jetson/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "utils/python/python/jetson_utils/__init__.py",
+      "analysis_relative_path": "utils/python/python/jetson_utils/__init__.py",
+      "bytes": 90,
+      "sha256": "2eb9ce83efd27be1ea721653c96e93a2727197fa4750106ee68edf04b971b46d"
+    },
+    {
+      "source_path": "utils/python/python/Jetson/Utils/__init__.py",
+      "analysis_relative_path": "utils/python/python/Jetson/Utils/__init__.py.__posixcase_f8980a5f37b5",
+      "bytes": 187,
+      "sha256": "bbf9110da3936bf94752ff81542f6323756d5b918cfc89b29ff4ea748a52c2ca"
+    },
+    {
+      "source_path": "utils/python/python/Jetson/__init__.py",
+      "analysis_relative_path": "utils/python/python/Jetson/__init__.py.__posixcase_7ec33f40f134",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "utils/python/CMakeLists.txt",
+      "analysis_relative_path": "utils/python/CMakeLists.txt",
+      "bytes": 951,
+      "sha256": "645b63e1d6f38e2b81244fa32f1e30a3e349f75b248222b459952d9c23649e7a"
+    },
+    {
+      "source_path": "utils/python/examples/video-viewer.py",
+      "analysis_relative_path": "utils/python/examples/video-viewer.py",
+      "bytes": 2173,
+      "sha256": "8289c1960eaac1dc734a3acdb096cd7d3ee791c1bc0e890e98ae3d2c1a18efa3"
+    },
+    {
+      "source_path": "utils/python/examples/cuda-from-cv.py",
+      "analysis_relative_path": "utils/python/examples/cuda-from-cv.py",
+      "bytes": 2437,
+      "sha256": "9067747f21cfad26291ccd967a80f8ed96d19c86e3a74fbc3be5a8f9c674778a"
+    },
+    {
+      "source_path": "utils/python/examples/cuda-from-numpy.py",
+      "analysis_relative_path": "utils/python/examples/cuda-from-numpy.py",
+      "bytes": 2733,
+      "sha256": "dd05f806e0c7d1061ac23b536333ff52f37eb24b4727344d1e5627e663b01e68"
+    },
+    {
+      "source_path": "utils/python/examples/cuda-examples.py",
+      "analysis_relative_path": "utils/python/examples/cuda-examples.py",
+      "bytes": 4354,
+      "sha256": "d3c806fb3fc43359f073e518da68f5497931b1d02ff981701f4d5e69a540aba3"
+    },
+    {
+      "source_path": "utils/python/examples/cuda-to-cv.py",
+      "analysis_relative_path": "utils/python/examples/cuda-to-cv.py",
+      "bytes": 2517,
+      "sha256": "ad0271dd1ec99e345831eaabd8f1185c32f010d876894301292d9dafa32cc686"
+    },
+    {
+      "source_path": "utils/python/examples/camera-viewer.py",
+      "analysis_relative_path": "utils/python/examples/camera-viewer.py",
+      "bytes": 2390,
+      "sha256": "4febd99ad3399fe7c1be8cbd815ee3a42cd17c009beb402efa00d419f4dde31b"
+    },
+    {
+      "source_path": "utils/python/examples/cuda-array-interface.py",
+      "analysis_relative_path": "utils/python/examples/cuda-array-interface.py",
+      "bytes": 4935,
+      "sha256": "090a7b862ff42d8fe8d5491ebb0f2126491f098f35d4a3d716f16602007f0073"
+    },
+    {
+      "source_path": "utils/python/examples/cuda-to-numpy.py",
+      "analysis_relative_path": "utils/python/examples/cuda-to-numpy.py",
+      "bytes": 2134,
+      "sha256": "82ea6e82f560a226beb6d649992991abd29b277afef5e82d4d7d6bdec188d4a4"
+    },
+    {
+      "source_path": "utils/python/examples/gl-display-test.py",
+      "analysis_relative_path": "utils/python/examples/gl-display-test.py",
+      "bytes": 2626,
+      "sha256": "d0ef7f4a6a6a97a4bbefc2b56d89b429768156a2bf713dac98f7b2b55e85b925"
+    },
+    {
+      "source_path": "utils/python/examples/logging-test.py",
+      "analysis_relative_path": "utils/python/examples/logging-test.py",
+      "bytes": 1659,
+      "sha256": "3cb1a7fd440167888b4fbb78248e6306f6122a77891a5f3883b74b5d846c8685"
+    },
+    {
+      "source_path": "utils/python/bindings/PyCamera.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyCamera.cpp",
+      "bytes": 10784,
+      "sha256": "8fe9a5a02d28f7832cf23a393e89009a4489287c8a240ccc5ac0f940d0d04c19"
+    },
+    {
+      "source_path": "utils/python/bindings/PyImageIO.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyImageIO.cpp",
+      "bytes": 8124,
+      "sha256": "959868825d4d73b63aed06d0f5f5163cd9fdd08161c49ce4738c0c1586b16fdb"
+    },
+    {
+      "source_path": "utils/python/bindings/PyNumpy.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyNumpy.cpp",
+      "bytes": 9028,
+      "sha256": "ebd99624a756daeea3be7949d90340807817adda6211552cd2ef3234adb7a8a7"
+    },
+    {
+      "source_path": "utils/python/bindings/PyNumpy.h",
+      "analysis_relative_path": "utils/python/bindings/PyNumpy.h",
+      "bytes": 1417,
+      "sha256": "ba2484fe332cfd85da3e39f45cfe7c0f41d5a0923ef41356968fed7f2f093d39"
+    },
+    {
+      "source_path": "utils/python/bindings/PyUtils.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyUtils.cpp",
+      "bytes": 5271,
+      "sha256": "d4f4bf271dd2935a96ced62f5ee041a668dbc045341034a9790ef00211098682"
+    },
+    {
+      "source_path": "utils/python/bindings/PyUtils.h",
+      "analysis_relative_path": "utils/python/bindings/PyUtils.h",
+      "bytes": 2977,
+      "sha256": "869c6e20b84922d9202ccd21a9842215946cc8dc9a54f7a91a1a9b2d00649398"
+    },
+    {
+      "source_path": "utils/python/bindings/PyGL.h",
+      "analysis_relative_path": "utils/python/bindings/PyGL.h",
+      "bytes": 1413,
+      "sha256": "87905c1d9e8aeb4b74040f797abf969a6db14fd96342d9892c98b36b36e37984"
+    },
+    {
+      "source_path": "utils/python/bindings/PyLogging.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyLogging.cpp",
+      "bytes": 6275,
+      "sha256": "ff918dbe49d5ca937955638b4594bfe25214fdf104643a8fe6680186ca9f83bf"
+    },
+    {
+      "source_path": "utils/python/bindings/PyVideo.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyVideo.cpp",
+      "bytes": 20705,
+      "sha256": "8824df55c1b0fffb39dd2c716f548f0c6022ac8148cab0c6508b56d5ebf8e158"
+    },
+    {
+      "source_path": "utils/python/bindings/PyLogging.h",
+      "analysis_relative_path": "utils/python/bindings/PyLogging.h",
+      "bytes": 1425,
+      "sha256": "72ad431cea3c0e5b9daed82c0189056457c6d169c9d837fb1d42b5b2c212648a"
+    },
+    {
+      "source_path": "utils/python/bindings/CMakeLists.txt",
+      "analysis_relative_path": "utils/python/bindings/CMakeLists.txt",
+      "bytes": 3134,
+      "sha256": "d97feafbceed5b3b7049af6087104e10dd59a23f4a11c94a730ff6339832a0ed"
+    },
+    {
+      "source_path": "utils/python/bindings/PyCUDA.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyCUDA.cpp",
+      "bytes": 61058,
+      "sha256": "eebdd01c2a6d6021ea5f6d7c0088a12c137478ed964654b3cda579104503b1d5"
+    },
+    {
+      "source_path": "utils/python/bindings/PyGL.cpp",
+      "analysis_relative_path": "utils/python/bindings/PyGL.cpp",
+      "bytes": 14300,
+      "sha256": "e6e0f3811f863bc8eeb15b4468a8054c6a5c4c32232506a690f5340c1bf1910c"
+    },
+    {
+      "source_path": "utils/python/bindings/PyVideo.h",
+      "analysis_relative_path": "utils/python/bindings/PyVideo.h",
+      "bytes": 1417,
+      "sha256": "ff24d217c258b8202b999f26c105b3831f694777f4e23eaa98f6535bfa0ddb2c"
+    },
+    {
+      "source_path": "utils/python/bindings/PyImageIO.h",
+      "analysis_relative_path": "utils/python/bindings/PyImageIO.h",
+      "bytes": 1427,
+      "sha256": "cb90a25bfcced77d550c7f9f342634d54f3b7122bcc7a17e51787be73b3b6434"
+    },
+    {
+      "source_path": "utils/python/bindings/PyCamera.h",
+      "analysis_relative_path": "utils/python/bindings/PyCamera.h",
+      "bytes": 1421,
+      "sha256": "342a179c378cb29223d44b2443bc600c0539cb94d16c69f6a38807693d778fd6"
+    },
+    {
+      "source_path": "utils/python/bindings/FindNumPy.cmake",
+      "analysis_relative_path": "utils/python/bindings/FindNumPy.cmake",
+      "bytes": 2247,
+      "sha256": "2fb6fb7acf7434491623ea50957ecb87df955df0d50d0de00d43f46735c2c20f"
+    },
+    {
+      "source_path": "utils/python/bindings/PyCUDA.h",
+      "analysis_relative_path": "utils/python/bindings/PyCUDA.h",
+      "bytes": 2829,
+      "sha256": "a62f372ca3e7b15603134826cb3bcdeb796102d8c0e73368ab044a879b6823eb"
+    },
+    {
+      "source_path": "utils/threads/Mutex.h",
+      "analysis_relative_path": "utils/threads/Mutex.h",
+      "bytes": 2472,
+      "sha256": "83082bdaee2fb6150467d3127dd8bc8edc22d79ce38b03b52b8956e276eaa875"
+    },
+    {
+      "source_path": "utils/threads/Mutex.inl",
+      "analysis_relative_path": "utils/threads/Mutex.inl",
+      "bytes": 1855,
+      "sha256": "709c72ae8eac6ed741acbc0823d5c1cdf555cdfb9af6fda8b067d09d6f38fea6"
+    },
+    {
+      "source_path": "utils/threads/Thread.cpp",
+      "analysis_relative_path": "utils/threads/Thread.cpp",
+      "bytes": 6528,
+      "sha256": "2a081ff8300e41e348e42b8d9fe8774c44be1036b970967bca2443f25f252c19"
+    },
+    {
+      "source_path": "utils/threads/Event.inl",
+      "analysis_relative_path": "utils/threads/Event.inl",
+      "bytes": 3057,
+      "sha256": "0f96316dafad99ba41de93227ad3374468d825fceb4574ee3a03de2ab8f0de13"
+    },
+    {
+      "source_path": "utils/threads/Process.cpp",
+      "analysis_relative_path": "utils/threads/Process.cpp",
+      "bytes": 2097,
+      "sha256": "241f207b6a763827ef1f958cb7348f159dcf67c48446ef66db50f93d5f9e8806"
+    },
+    {
+      "source_path": "utils/threads/RingBuffer.h",
+      "analysis_relative_path": "utils/threads/RingBuffer.h",
+      "bytes": 3694,
+      "sha256": "760eeda25e13e90868da7a7ad9cc5a199ff1e0cbdd30288e38de00bd53841bca"
+    },
+    {
+      "source_path": "utils/threads/Thread.h",
+      "analysis_relative_path": "utils/threads/Thread.h",
+      "bytes": 4373,
+      "sha256": "b413540f094ebf02b1937e48cc0db6d177ba186e3c78c55bbbdcb209d60413bf"
+    },
+    {
+      "source_path": "utils/threads/Process.h",
+      "analysis_relative_path": "utils/threads/Process.h",
+      "bytes": 2075,
+      "sha256": "eb33135acfb7b9067cb7327e02e832269f277c863dcba1da87631fd604ffad3e"
+    },
+    {
+      "source_path": "utils/threads/RingBuffer.inl",
+      "analysis_relative_path": "utils/threads/RingBuffer.inl",
+      "bytes": 5282,
+      "sha256": "f6c550a1c8451f71fc883c8a32a23bee7afca06ac48262255610c20c7609b8f8"
+    },
+    {
+      "source_path": "utils/threads/Event.h",
+      "analysis_relative_path": "utils/threads/Event.h",
+      "bytes": 3036,
+      "sha256": "4c3fe69358bc8c58cd6e644ab2db18400c7932574daa49b47b95d37748565fb7"
+    },
+    {
+      "source_path": "utils/input/devJoystick.h",
+      "analysis_relative_path": "utils/input/devJoystick.h",
+      "bytes": 1794,
+      "sha256": "99c74305a7c63671607983db95a89670a678f8003649ba7f41fa1cad740ffece"
+    },
+    {
+      "source_path": "utils/input/devKeyboard.cpp",
+      "analysis_relative_path": "utils/input/devKeyboard.cpp",
+      "bytes": 3172,
+      "sha256": "64bc14fe6733d6420407d0b6471a52cdfd8069706a74f6d626f96a232f601809"
+    },
+    {
+      "source_path": "utils/input/devJoystick.cpp",
+      "analysis_relative_path": "utils/input/devJoystick.cpp",
+      "bytes": 3453,
+      "sha256": "132669bbd48c4ee8e6cb39cfab3cbd23201d718fe51a868feedac0d3f1d61a57"
+    },
+    {
+      "source_path": "utils/input/devInput.cpp",
+      "analysis_relative_path": "utils/input/devInput.cpp",
+      "bytes": 3510,
+      "sha256": "37f9b5e949faab6eba4ce7d0745f28d983eeb8cf6c59066b61f2dd9de385e61c"
+    },
+    {
+      "source_path": "utils/input/devInput.h",
+      "analysis_relative_path": "utils/input/devInput.h",
+      "bytes": 2224,
+      "sha256": "f2f6e2bcc000269536b8fc338eb5e0c4166357c24dfa82b38ef3c52042d80439"
+    },
+    {
+      "source_path": "utils/input/devKeyboard.h",
+      "analysis_relative_path": "utils/input/devKeyboard.h",
+      "bytes": 1895,
+      "sha256": "9594a760d67878b331a9ee8e2a2637647829192e0d6b6fbf0fb36faf04ce29a9"
+    },
+    {
+      "source_path": "utils/alphanum.h",
+      "analysis_relative_path": "utils/alphanum.h",
+      "bytes": 13564,
+      "sha256": "772198c92de7b041514e67a36d86b05d7b917dbc0ec3d8e2a8b6580caf10c5f9"
+    },
+    {
+      "source_path": "utils/csvReader.hpp",
+      "analysis_relative_path": "utils/csvReader.hpp",
+      "bytes": 5831,
+      "sha256": "3373348da8540d6ff137b0e94cd664b80d6202d4d854863448556fb1745ebc84"
+    },
+    {
+      "source_path": "utils/video/videoSource.h",
+      "analysis_relative_path": "utils/video/videoSource.h",
+      "bytes": 14776,
+      "sha256": "c318aa77094c4f393019391e4637fa8b12971833d9280951d21ef61f0726ece7"
+    },
+    {
+      "source_path": "utils/video/videoSource.cpp",
+      "analysis_relative_path": "utils/video/videoSource.cpp",
+      "bytes": 3900,
+      "sha256": "b499c1c2a46bae36de4260b78e4434bc88ce10225a62c2d780172987eefa5c95"
+    },
+    {
+      "source_path": "utils/video/videoOptions.h",
+      "analysis_relative_path": "utils/video/videoOptions.h",
+      "bytes": 8784,
+      "sha256": "b409e88507baf7bbbc3b1b9e11f80cc07565c5a612b9d1690c1f75882691a71f"
+    },
+    {
+      "source_path": "utils/video/video-viewer/CMakeLists.txt",
+      "analysis_relative_path": "utils/video/video-viewer/CMakeLists.txt",
+      "bytes": 221,
+      "sha256": "c6794ec3f368aec9840502e9ee60818ff649f6872cd1f397b152b358654e0669"
+    },
+    {
+      "source_path": "utils/video/video-viewer/video-viewer.cpp",
+      "analysis_relative_path": "utils/video/video-viewer/video-viewer.cpp",
+      "bytes": 3724,
+      "sha256": "ab49437b08da4c03735002ddb86614fdaea99222ae8fe3446b219717846cb2a4"
+    },
+    {
+      "source_path": "utils/video/videoOutput.cpp",
+      "analysis_relative_path": "utils/video/videoOutput.cpp",
+      "bytes": 5215,
+      "sha256": "9faf464e0459d257d28f7b0d236393dd9fd295767bf8fcff7745aedc0dfd13d5"
+    },
+    {
+      "source_path": "utils/video/videoOptions.cpp",
+      "analysis_relative_path": "utils/video/videoOptions.cpp",
+      "bytes": 8934,
+      "sha256": "0d6417e06720d4f3a266792fb3dee3d962947bae853bbac3b17abcef8fe1e3e3"
+    },
+    {
+      "source_path": "utils/video/videoOutput.h",
+      "analysis_relative_path": "utils/video/videoOutput.h",
+      "bytes": 12353,
+      "sha256": "e651a835b7f61fe18f9c83af0656f06cb0e930977916c0d790ed18dd78100d4b"
+    },
+    {
+      "source_path": "utils/logging.cpp",
+      "analysis_relative_path": "utils/logging.cpp",
+      "bytes": 3231,
+      "sha256": "0b4c12e952919d8393897dd6793491700b82c3f2533f1d0baf667cede43ac74e"
+    },
+    {
+      "source_path": "utils/cuda/cudaNormalize.h",
+      "analysis_relative_path": "utils/cuda/cudaNormalize.h",
+      "bytes": 3485,
+      "sha256": "c026151a3dea2dd4fc3d05b84a1abe9499c0b0950459284bd502add28014fcf2"
+    },
+    {
+      "source_path": "utils/cuda/cudaUtility.h",
+      "analysis_relative_path": "utils/cuda/cudaUtility.h",
+      "bytes": 4217,
+      "sha256": "4e7cf45446d116fad61d8a3a7353b84b62310dbfe9c15d22211c60f5c2a75043"
+    },
+    {
+      "source_path": "utils/cuda/cudaGrayscale.cu",
+      "analysis_relative_path": "utils/cuda/cudaGrayscale.cu",
+      "bytes": 11927,
+      "sha256": "c9170902ea208b8a594741f9735fae4ec2f9586e04571fc67c49ffe154226ac5"
+    },
+    {
+      "source_path": "utils/cuda/cudaWarp-fisheye.cu",
+      "analysis_relative_path": "utils/cuda/cudaWarp-fisheye.cu",
+      "bytes": 3319,
+      "sha256": "75fcce7d0c9120dcd942bd8c8135c9d10dc42d9c37b666270e9ee89fb0faa4c8"
+    },
+    {
+      "source_path": "utils/cuda/cudaPointCloud.cpp",
+      "analysis_relative_path": "utils/cuda/cudaPointCloud.cpp",
+      "bytes": 8072,
+      "sha256": "dd7a902c9f4dbbd42af8f0e9e1677dfdb7b12b79be1a2b85548c1f97f0800e8e"
+    },
+    {
+      "source_path": "utils/cuda/cudaWarp-intrinsic.cu",
+      "analysis_relative_path": "utils/cuda/cudaWarp-intrinsic.cu",
+      "bytes": 3887,
+      "sha256": "65828d443d834772f4176d49b10e7f629ddd3f9a24f59abe0d6ede36b0f5c68f"
+    },
+    {
+      "source_path": "utils/cuda/cudaWarp.h",
+      "analysis_relative_path": "utils/cuda/cudaWarp.h",
+      "bytes": 5747,
+      "sha256": "b239c44d4a827bf218db2bf737346403a32f82d6413034ceb6348571060a1624"
+    },
+    {
+      "source_path": "utils/cuda/cudaDraw.cu",
+      "analysis_relative_path": "utils/cuda/cudaDraw.cu",
+      "bytes": 9735,
+      "sha256": "b8411a5d90b29a9c7bcd259a34b3f5fb8777f95f6a2a6028dee3878c8c4a2b63"
+    },
+    {
+      "source_path": "utils/cuda/cudaVector.h",
+      "analysis_relative_path": "utils/cuda/cudaVector.h",
+      "bytes": 6562,
+      "sha256": "5d451535159c9c2bd82e374aa0a437737b06b6f2df9326d3e6cd8f9b05742be6"
+    },
+    {
+      "source_path": "utils/cuda/cudaMath.h",
+      "analysis_relative_path": "utils/cuda/cudaMath.h",
+      "bytes": 43025,
+      "sha256": "c3da396a3160f618a4011f89221b88906e06226e2f2454f85f71b733db9aa7c8"
+    },
+    {
+      "source_path": "utils/cuda/cudaPointCloud.h",
+      "analysis_relative_path": "utils/cuda/cudaPointCloud.h",
+      "bytes": 4456,
+      "sha256": "7008ee215e1d9499ceb53433721c1af20ffeb108a1e5afe15b80bff90657a5eb"
+    },
+    {
+      "source_path": "utils/cuda/cudaFilterMode.h",
+      "analysis_relative_path": "utils/cuda/cudaFilterMode.h",
+      "bytes": 2178,
+      "sha256": "a8a2a04bce86d22f4a5d37756789415feb15e0137d6af58217e13e8dad66ccc5"
+    },
+    {
+      "source_path": "utils/cuda/cudaRGB.cu",
+      "analysis_relative_path": "utils/cuda/cudaRGB.cu",
+      "bytes": 10112,
+      "sha256": "ea266c67c3dc0ab2b921265068fccd247830441609c16ebc980e39ee2a45d9d5"
+    },
+    {
+      "source_path": "utils/cuda/cudaFilterMode.cuh",
+      "analysis_relative_path": "utils/cuda/cudaFilterMode.cuh",
+      "bytes": 6361,
+      "sha256": "f1e641e7b11c9be2d5aa62c1d2f322c1a01199533589fd5300ed58134bc76e6f"
+    },
+    {
+      "source_path": "utils/cuda/cudaBayer.cpp",
+      "analysis_relative_path": "utils/cuda/cudaBayer.cpp",
+      "bytes": 2301,
+      "sha256": "dbb4307522cee892749fa8f24031def5b30338333ce44d209c4f8185eb4a6455"
+    },
+    {
+      "source_path": "utils/cuda/cudaColormap.cu",
+      "analysis_relative_path": "utils/cuda/cudaColormap.cu",
+      "bytes": 86748,
+      "sha256": "6fd4d0b49e8bbab3e2025ca8699739bc0857c38d6ebc52bbbe415c938d2d4fc1"
+    },
+    {
+      "source_path": "utils/cuda/cudaColorspace.h",
+      "analysis_relative_path": "utils/cuda/cudaColorspace.h",
+      "bytes": 4782,
+      "sha256": "1f92f9fa40b909d50c93f77c1af3a25b739b4cecc174d15e2daf460399f54c90"
+    },
+    {
+      "source_path": "utils/cuda/cudaWarp-affine.cu",
+      "analysis_relative_path": "utils/cuda/cudaWarp-affine.cu",
+      "bytes": 8295,
+      "sha256": "fc6f7a5b6d9bbd683c0358e6c0b9ab279cf90fad79d3f9ff1443726e934c877b"
+    },
+    {
+      "source_path": "utils/cuda/cudaOverlay.cu",
+      "analysis_relative_path": "utils/cuda/cudaOverlay.cu",
+      "bytes": 6942,
+      "sha256": "55c8029841397ce486a048b7a56a76150ce8c458d538b7533d69a83bd24693b1"
+    },
+    {
+      "source_path": "utils/cuda/cudaYUV.h",
+      "analysis_relative_path": "utils/cuda/cudaYUV.h",
+      "bytes": 9001,
+      "sha256": "ebf21714210fdab7f1075b93e2fac419298c495eda841e830a6c723f36af1353"
+    },
+    {
+      "source_path": "utils/cuda/cudaYUV-YUYV.cu",
+      "analysis_relative_path": "utils/cuda/cudaYUV-YUYV.cu",
+      "bytes": 8689,
+      "sha256": "6f172618381474c2687b3c35531605fd68fb6d793e79a56fd1f1589e31d2dec4"
+    },
+    {
+      "source_path": "utils/cuda/FindCUDA/run_nvcc.cmake",
+      "analysis_relative_path": "utils/cuda/FindCUDA/run_nvcc.cmake",
+      "bytes": 11839,
+      "sha256": "c2450dca65ab71d335c004c2ad69f241922311aafb548ef54609751c4f00a306"
+    },
+    {
+      "source_path": "utils/cuda/FindCUDA/parse_cubin.cmake",
+      "analysis_relative_path": "utils/cuda/FindCUDA/parse_cubin.cmake",
+      "bytes": 3441,
+      "sha256": "46df3d8e4748f087149043b0ffe14f726313f08e441e6f31c2bc6dbefa3134d1"
+    },
+    {
+      "source_path": "utils/cuda/FindCUDA/make2cmake.cmake",
+      "analysis_relative_path": "utils/cuda/FindCUDA/make2cmake.cmake",
+      "bytes": 3924,
+      "sha256": "72b96f4b1a536755495bf33d9be114387e62726129c2b885c30f540acf185c27"
+    },
+    {
+      "source_path": "utils/cuda/FindCUDA/select_compute_arch.cmake",
+      "analysis_relative_path": "utils/cuda/FindCUDA/select_compute_arch.cmake",
+      "bytes": 7922,
+      "sha256": "22bcb4f025731c994aaff108545a3b5f4da13854c845a235737d60c1e1ab6377"
+    },
+    {
+      "source_path": "utils/cuda/cudaYUV-YV12.cu",
+      "analysis_relative_path": "utils/cuda/cudaYUV-YV12.cu",
+      "bytes": 12435,
+      "sha256": "8622470405f1746560c75db4ddf36575c79f7403e7ad83776a13189b3fa67fc7"
+    },
+    {
+      "source_path": "utils/cuda/cudaMappedMemory.h",
+      "analysis_relative_path": "utils/cuda/cudaMappedMemory.h",
+      "bytes": 5948,
+      "sha256": "ad7a45267b46a0e599a66eef9126b586403bb26bff1bd774e6aa776a11150055"
+    },
+    {
+      "source_path": "utils/cuda/FindCUDA.cmake",
+      "analysis_relative_path": "utils/cuda/FindCUDA.cmake",
+      "bytes": 85882,
+      "sha256": "d44354f16c68da5db63242a10e04693160d18fc7d6431471c68091c3fd8d4cde"
+    },
+    {
+      "source_path": "utils/cuda/cudaColorspace.cpp",
+      "analysis_relative_path": "utils/cuda/cudaColorspace.cpp",
+      "bytes": 18764,
+      "sha256": "014c06561038a7d199bbe6c5a160f42ede5fd89637539bc307c49eba217b4b76"
+    },
+    {
+      "source_path": "utils/cuda/cudaOverlay.h",
+      "analysis_relative_path": "utils/cuda/cudaOverlay.h",
+      "bytes": 3308,
+      "sha256": "8fc2acd20b76c6f2e913caa4af96052e9ef009b1b3c79feab1078051d4eff985"
+    },
+    {
+      "source_path": "utils/cuda/cudaResize.h",
+      "analysis_relative_path": "utils/cuda/cudaResize.h",
+      "bytes": 2875,
+      "sha256": "c61696c5f4bc4a7731df5e5eeda20e14b2f4fbec6eb323c259291730fb207a79"
+    },
+    {
+      "source_path": "utils/cuda/cudaFont.h",
+      "analysis_relative_path": "utils/cuda/cudaFont.h",
+      "bytes": 5222,
+      "sha256": "d25adc8011e82ac526e150228af74dca94e7e2ed02ba13d9a3a64f99ed084f2a"
+    },
+    {
+      "source_path": "utils/cuda/cudaBayer.h",
+      "analysis_relative_path": "utils/cuda/cudaBayer.h",
+      "bytes": 2251,
+      "sha256": "59c471160a1c1fc22baebb03026d23fd184de6fa6b315ebd05193f6f73022bf5"
+    },
+    {
+      "source_path": "utils/cuda/cudaCrop.cu",
+      "analysis_relative_path": "utils/cuda/cudaCrop.cu",
+      "bytes": 5513,
+      "sha256": "08d3fcf2f0dc167ca1651a66233ee7467987427a5ac73917f2ca6e19f965817a"
+    },
+    {
+      "source_path": "utils/cuda/cudaYUV-NV12.cu",
+      "analysis_relative_path": "utils/cuda/cudaYUV-NV12.cu",
+      "bytes": 8556,
+      "sha256": "256e5b065e730aef25dab75e335d1dd742b1ef3e0d9d08ab421c0a75f9880070"
+    },
+    {
+      "source_path": "utils/cuda/cudaGrayscale.h",
+      "analysis_relative_path": "utils/cuda/cudaGrayscale.h",
+      "bytes": 9938,
+      "sha256": "06c1ad4664aa76e951a4aa63b70b12f06cfff1c3f5d84a28130cae9080a34db6"
+    },
+    {
+      "source_path": "utils/cuda/cudaCrop.h",
+      "analysis_relative_path": "utils/cuda/cudaCrop.h",
+      "bytes": 8142,
+      "sha256": "137d8b65644ee25fc884961058402b4dc0d29d735eac42df1ad61e74bb07cf7b"
+    },
+    {
+      "source_path": "utils/cuda/cudaDraw.h",
+      "analysis_relative_path": "utils/cuda/cudaDraw.h",
+      "bytes": 5011,
+      "sha256": "556228424aa58e91ff88b35289b9f31d48d73d80c4be1b3ee6d8b4be8507fbe4"
+    },
+    {
+      "source_path": "utils/cuda/cudaFont.cu",
+      "analysis_relative_path": "utils/cuda/cudaFont.cu",
+      "bytes": 17106,
+      "sha256": "025697ae7791ff2f76fa25616639e3b06f5e8f9f3cf67e80ab96239ec5d0c105"
+    },
+    {
+      "source_path": "utils/cuda/cudaAlphaBlend.cuh",
+      "analysis_relative_path": "utils/cuda/cudaAlphaBlend.cuh",
+      "bytes": 1866,
+      "sha256": "b814dcf99750a46a9e7731eaf09bbc077d77feb17a380dd7f6d1decb056865ef"
+    },
+    {
+      "source_path": "utils/cuda/cudaResize.cu",
+      "analysis_relative_path": "utils/cuda/cudaResize.cu",
+      "bytes": 5713,
+      "sha256": "ebd2b5dd525359e3bcc114a457a7cee8fe60f771946bca20a6b747c43d3b8d03"
+    },
+    {
+      "source_path": "utils/cuda/cudaPointCloud.cu",
+      "analysis_relative_path": "utils/cuda/cudaPointCloud.cu",
+      "bytes": 4891,
+      "sha256": "ee17fcc61eff08730f60ec80aab53a7117148bed2d856ed4dea5213d10936f23"
+    },
+    {
+      "source_path": "utils/cuda/cudaRGB.h",
+      "analysis_relative_path": "utils/cuda/cudaRGB.h",
+      "bytes": 11328,
+      "sha256": "bc641ed63c413597662ed35ccf251f712aab443d110125f200976cecf56c1fac"
+    },
+    {
+      "source_path": "utils/cuda/cudaColormap.h",
+      "analysis_relative_path": "utils/cuda/cudaColormap.h",
+      "bytes": 8386,
+      "sha256": "cd655462036610fdf5d1e39eebfc1787b5824cd1070d5542d7da24abea91ef4b"
+    },
+    {
+      "source_path": "utils/cuda/cudaFilterMode.cu",
+      "analysis_relative_path": "utils/cuda/cudaFilterMode.cu",
+      "bytes": 1696,
+      "sha256": "46be885551a35b99f0520072e1f7e5ed5532bd64769c6b31be37a820b651da06"
+    },
+    {
+      "source_path": "utils/cuda/cudaNormalize.cu",
+      "analysis_relative_path": "utils/cuda/cudaNormalize.cu",
+      "bytes": 5463,
+      "sha256": "4bfde450e694e9d048a300a6f9ae376358ae311334d9d649bdf72bfb7df4f3a3"
+    },
+    {
+      "source_path": "utils/logging.h",
+      "analysis_relative_path": "utils/logging.h",
+      "bytes": 7380,
+      "sha256": "9cf267366d64459c18cf0142cbb36ce9fc2b55c909841e7153d085f7147731fa"
+    },
+    {
+      "source_path": "utils/rand.h",
+      "analysis_relative_path": "utils/rand.h",
+      "bytes": 2048,
+      "sha256": "75ae6f49736f10ccab70786f6b726745caad3f1116e2830baef2ffe92516ba40"
+    },
+    {
+      "source_path": "utils/json.hpp",
+      "analysis_relative_path": "utils/json.hpp",
+      "bytes": 959900,
+      "sha256": "6057477f30512902f6e5ae461e333618dfb860d6d433de758212596b37c1f9a0"
+    },
+    {
+      "source_path": "utils/XML.cpp",
+      "analysis_relative_path": "utils/XML.cpp",
+      "bytes": 73431,
+      "sha256": "96658fb34f7221663193feed0283652ffa1564139575cdfec7f3c6d739876c86"
+    },
+    {
+      "source_path": "utils/network/Socket.cpp",
+      "analysis_relative_path": "utils/network/Socket.cpp",
+      "bytes": 10730,
+      "sha256": "797dc8a1901a4c9113e6a2f355f8138222b5c0c16de0a72799ca4354011e8cd6"
+    },
+    {
+      "source_path": "utils/network/IPv4.h",
+      "analysis_relative_path": "utils/network/IPv4.h",
+      "bytes": 1947,
+      "sha256": "23917dd3543f8def0f6d07fecbe66a25b1a3c2e0f2790ff74296e63dd99d7998"
+    },
+    {
+      "source_path": "utils/network/Endian.h",
+      "analysis_relative_path": "utils/network/Endian.h",
+      "bytes": 2228,
+      "sha256": "f8c17c4a533f4a80ac5fc9d36c13209ba1c54b090ee97081d18a430e2011e152"
+    },
+    {
+      "source_path": "utils/network/IPv4.cpp",
+      "analysis_relative_path": "utils/network/IPv4.cpp",
+      "bytes": 2034,
+      "sha256": "42907845c04fe7bb35ace5c82cfda49d9ed754f50935219d0de77a481df07890"
+    },
+    {
+      "source_path": "utils/network/Socket.h",
+      "analysis_relative_path": "utils/network/Socket.h",
+      "bytes": 5874,
+      "sha256": "6c3aaf64019dfe986857cd7a887c71943675db7a02ec545db719f11b96a5c8f0"
+    },
+    {
+      "source_path": "utils/network/NetworkAdapter.cpp",
+      "analysis_relative_path": "utils/network/NetworkAdapter.cpp",
+      "bytes": 2326,
+      "sha256": "8e60d14c5372e402695f820e24a8d9bc97931a865d1c4436b72aad1a33bcb8ac"
+    },
+    {
+      "source_path": "utils/network/NetworkAdapter.h",
+      "analysis_relative_path": "utils/network/NetworkAdapter.h",
+      "bytes": 1734,
+      "sha256": "cdcd0ba645535e44e80932aa21975c8ccef114e14d68648147ece23c31a7132a"
+    },
+    {
+      "source_path": "utils/camera/v4l2-display/CMakeLists.txt",
+      "analysis_relative_path": "utils/camera/v4l2-display/CMakeLists.txt",
+      "bytes": 174,
+      "sha256": "b0d13bd2b9d6ff2567bcca2611ae06af1d8d9f0e6a6912e14422356b2326f085"
+    },
+    {
+      "source_path": "utils/camera/v4l2-display/v4l2-display.cpp",
+      "analysis_relative_path": "utils/camera/v4l2-display/v4l2-display.cpp",
+      "bytes": 3290,
+      "sha256": "e3f6bf4c7c9b76770e696f6369dd41066a29f395341f9c75727e500725f6d1cb"
+    },
+    {
+      "source_path": "utils/camera/camera-viewer/CMakeLists.txt",
+      "analysis_relative_path": "utils/camera/camera-viewer/CMakeLists.txt",
+      "bytes": 218,
+      "sha256": "f0af38ca19fd82e3dd3a3da401c69c920972bb6751c1d5641006633234d63024"
+    },
+    {
+      "source_path": "utils/camera/camera-viewer/camera-viewer.cpp",
+      "analysis_relative_path": "utils/camera/camera-viewer/camera-viewer.cpp",
+      "bytes": 3224,
+      "sha256": "74cef4e00f97fb9dfd77221f8a8e4ccf4cd62157ab9cde4ea6a8da775a98b35f"
+    },
+    {
+      "source_path": "utils/camera/gstCamera.h",
+      "analysis_relative_path": "utils/camera/gstCamera.h",
+      "bytes": 9985,
+      "sha256": "65e8e739df10c1f11a56ffc8de7b8d398f91baa506225236366fbc47728fbd5b"
+    },
+    {
+      "source_path": "utils/camera/gstCamera.cpp",
+      "analysis_relative_path": "utils/camera/gstCamera.cpp",
+      "bytes": 21682,
+      "sha256": "37ab00fcac5e372ea5793bd39ef6d5035fb72c75f78edc1a7b63c872f1f34617"
+    },
+    {
+      "source_path": "utils/camera/v4l2Camera.cpp",
+      "analysis_relative_path": "utils/camera/v4l2Camera.cpp",
+      "bytes": 12192,
+      "sha256": "7f3b338a8161d4aed3900bca0fa146831b05a31dc676240a1495eb6e5a7b7456"
+    },
+    {
+      "source_path": "utils/camera/v4l2Camera.h",
+      "analysis_relative_path": "utils/camera/v4l2Camera.h",
+      "bytes": 3133,
+      "sha256": "154611137933098668f487c16c63f5f618eea45d7aab58aac2686ae02a0eeb2c"
+    },
+    {
+      "source_path": "utils/camera/v4l2-console/CMakeLists.txt",
+      "analysis_relative_path": "utils/camera/v4l2-console/CMakeLists.txt",
+      "bytes": 174,
+      "sha256": "1a966360902761588edebfe9629bea8efebb724a95ccc9f607c80bb13ccf846c"
+    },
+    {
+      "source_path": "utils/camera/v4l2-console/v4l2-console.cpp",
+      "analysis_relative_path": "utils/camera/v4l2-console/v4l2-console.cpp",
+      "bytes": 3867,
+      "sha256": "a82199e436111dd377bda2444bf96ef77f97461425b3d40af0f9791840c9d988"
+    },
+    {
+      "source_path": "utils/CMakeLists.txt",
+      "analysis_relative_path": "utils/CMakeLists.txt",
+      "bytes": 4522,
+      "sha256": "f5b97065bced25b8a75c918e86600c7501ef5f21cfb6ca118242bdbb0057bb93"
+    },
+    {
+      "source_path": "utils/README.md",
+      "analysis_relative_path": "utils/README.md",
+      "bytes": 122,
+      "sha256": "9456af40adf304a0c32f5b95d734c38b411a5eac29d95ca759e228216210fda8"
+    },
+    {
+      "source_path": "utils/display/glDisplay.h",
+      "analysis_relative_path": "utils/display/glDisplay.h",
+      "bytes": 21720,
+      "sha256": "b5a99039ce5ccd7f3b822bd7479988b41beed2b54c233fa039faad3ca368258a"
+    },
+    {
+      "source_path": "utils/display/glTexture.h",
+      "analysis_relative_path": "utils/display/glTexture.h",
+      "bytes": 6407,
+      "sha256": "adb56074595be493cdbf47ef51f786dcf7ff3f8e87a58dca189007604dc7a5bf"
+    },
+    {
+      "source_path": "utils/display/glCamera.cpp",
+      "analysis_relative_path": "utils/display/glCamera.cpp",
+      "bytes": 9041,
+      "sha256": "742091755ef3fa26120bbe43db9356ef5773094bb2f10c30ce31cdbed7aeac21"
+    },
+    {
+      "source_path": "utils/display/glBuffer.cpp",
+      "analysis_relative_path": "utils/display/glBuffer.cpp",
+      "bytes": 7222,
+      "sha256": "9d4c10bd55ab477a788f5a6dbc8ec303f2bfea7298e3046665459d8fb7479376"
+    },
+    {
+      "source_path": "utils/display/glEvents.cpp",
+      "analysis_relative_path": "utils/display/glEvents.cpp",
+      "bytes": 1723,
+      "sha256": "89523a283dc010d616cf9c917d3ea86ed3e954a8d45dc00a7ebfcec1cecf8457"
+    },
+    {
+      "source_path": "utils/display/glUtility.h",
+      "analysis_relative_path": "utils/display/glUtility.h",
+      "bytes": 5995,
+      "sha256": "7b8d8824e9f12a698cd82d032024f475095d2715dce461b6f8ab9bb3e7ce1305"
+    },
+    {
+      "source_path": "utils/display/glWidget.h",
+      "analysis_relative_path": "utils/display/glWidget.h",
+      "bytes": 8991,
+      "sha256": "143be206853f8098495839becd3c8538a37c61f127a25665713e739b5408190a"
+    },
+    {
+      "source_path": "utils/display/glDisplay.cpp",
+      "analysis_relative_path": "utils/display/glDisplay.cpp",
+      "bytes": 35176,
+      "sha256": "9a88433d62995bd7b0bd2c63cf4ede169f0b715f8062e6584bae135b44f467a3"
+    },
+    {
+      "source_path": "utils/display/glCamera.h",
+      "analysis_relative_path": "utils/display/glCamera.h",
+      "bytes": 5294,
+      "sha256": "3a95369ddde833fa4e67b182c75165b1a9e93ed3762c3e66e4038d55e927d02c"
+    },
+    {
+      "source_path": "utils/display/glTexture.cpp",
+      "analysis_relative_path": "utils/display/glTexture.cpp",
+      "bytes": 18300,
+      "sha256": "7868388219dfc75fa0639846693a67fe736997bc9b8d1c06218a91bc6f7db232"
+    },
+    {
+      "source_path": "utils/display/glBuffer.h",
+      "analysis_relative_path": "utils/display/glBuffer.h",
+      "bytes": 8024,
+      "sha256": "3898b2dab7924834a38c9313473dfcc70130f39efff39049da9997e78d66d94e"
+    },
+    {
+      "source_path": "utils/display/glWidget.cpp",
+      "analysis_relative_path": "utils/display/glWidget.cpp",
+      "bytes": 8443,
+      "sha256": "2dbe062ffe41d3e82c3307c04cb4d33c564b733beb0e410a738a459fe5071c63"
+    },
+    {
+      "source_path": "utils/display/gl-display-test/cudaInteropKernels.cu",
+      "analysis_relative_path": "utils/display/gl-display-test/cudaInteropKernels.cu",
+      "bytes": 2323,
+      "sha256": "a4db9e0b784d7a1e1be2c6189df0902c8c5c17765338065b27ccd19e03d9b8e4"
+    },
+    {
+      "source_path": "utils/display/gl-display-test/CMakeLists.txt",
+      "analysis_relative_path": "utils/display/gl-display-test/CMakeLists.txt",
+      "bytes": 246,
+      "sha256": "d27b5e1469fc78ecf2cb0453a84a61abb61a5887951456c86730860bdb221709"
+    },
+    {
+      "source_path": "utils/display/gl-display-test/gl-display-test.cpp",
+      "analysis_relative_path": "utils/display/gl-display-test/gl-display-test.cpp",
+      "bytes": 5800,
+      "sha256": "f10676680dbe88c6e9c1f77d4a1bd94e4619c1341595de6186a187f8edcaeacc"
+    },
+    {
+      "source_path": "utils/display/gl-display-test/cudaInteropKernels.h",
+      "analysis_relative_path": "utils/display/gl-display-test/cudaInteropKernels.h",
+      "bytes": 1562,
+      "sha256": "4c3f0b641c48185c97916189d766d4c803b154d380aade2d98f86e555a517c94"
+    },
+    {
+      "source_path": "utils/display/glEvents.h",
+      "analysis_relative_path": "utils/display/glEvents.h",
+      "bytes": 9299,
+      "sha256": "61ae1e6cb2eb2307247cd3877f8669cfc5e1133226694281cad369915263b9d7"
+    },
+    {
+      "source_path": "utils/URI.cpp",
+      "analysis_relative_path": "utils/URI.cpp",
+      "bytes": 5246,
+      "sha256": "fdd113bc0491b57d4f0daf26a3fd3518ddbe26fccf56c6d8d0893871df73f34e"
+    },
+    {
+      "source_path": "utils/codec/gstEncoder.cpp",
+      "analysis_relative_path": "utils/codec/gstEncoder.cpp",
+      "bytes": 18228,
+      "sha256": "95eab5483a4abd582e88f486326bb7dbc6ac7550ae61298990d7fc7630531265"
+    },
+    {
+      "source_path": "utils/codec/gstUtility.cpp",
+      "analysis_relative_path": "utils/codec/gstUtility.cpp",
+      "bytes": 11786,
+      "sha256": "d44e39d02c6bab81d688b713a8caf5256f4f4b73fb43362a7281299a5562c10f"
+    },
+    {
+      "source_path": "utils/codec/gstDecoder.cpp",
+      "analysis_relative_path": "utils/codec/gstDecoder.cpp",
+      "bytes": 26620,
+      "sha256": "3f212155b3623b9a415a55c9ba6d9d24afe88efd2c6069efe0423ae9cc0a7700"
+    },
+    {
+      "source_path": "utils/codec/gstDecoder.h",
+      "analysis_relative_path": "utils/codec/gstDecoder.h",
+      "bytes": 4885,
+      "sha256": "d59aeffd35f13b137ad0c0bebd5c8adbb4149fe26497b0d09705aa47dc9b458b"
+    },
+    {
+      "source_path": "utils/codec/nvbuf_utils.h",
+      "analysis_relative_path": "utils/codec/nvbuf_utils.h",
+      "bytes": 30740,
+      "sha256": "39322f3c6441c4dd04db6b1442ab5589691b10ea3a07c4e52789918a2671c652"
+    },
+    {
+      "source_path": "utils/codec/gstBufferManager.cpp",
+      "analysis_relative_path": "utils/codec/gstBufferManager.cpp",
+      "bytes": 13701,
+      "sha256": "f41076e046326ff48519093b1702d7c62fbd6f60498dccffdef1f5d385b077b4"
+    },
+    {
+      "source_path": "utils/codec/gstBufferManager.h",
+      "analysis_relative_path": "utils/codec/gstBufferManager.h",
+      "bytes": 4016,
+      "sha256": "1f71175aaa510cc83e9b33c9bdc1a696e8ec3cf3031b8f4e2a7fbf9371aece34"
+    },
+    {
+      "source_path": "utils/codec/gstUtility.h",
+      "analysis_relative_path": "utils/codec/gstUtility.h",
+      "bytes": 5003,
+      "sha256": "6bf8e249fddf9bb5b110e621bdbcc3cd0e16c9df3c2a541f3bf2ecaa347d6f92"
+    },
+    {
+      "source_path": "utils/codec/gstEncoder.h",
+      "analysis_relative_path": "utils/codec/gstEncoder.h",
+      "bytes": 4389,
+      "sha256": "6dca606d1697185696aad34a65967e2a1c1df85c3bd78d43cf7c54d7bab06ec8"
+    },
+    {
+      "source_path": "utils/timespec.h",
+      "analysis_relative_path": "utils/timespec.h",
+      "bytes": 6576,
+      "sha256": "49b854b90f11c728f92cde6b1e59dfcb375cbffad96e9e9e5c12a4d7104ffd8a"
+    },
+    {
+      "source_path": "utils/csvWriter.h",
+      "analysis_relative_path": "utils/csvWriter.h",
+      "bytes": 2914,
+      "sha256": "23da63c6b015ca447bcd96e0471aa8cf216f540c51a2381d0fba89eab3f9a60e"
+    },
+    {
+      "source_path": "utils/timespec.cpp",
+      "analysis_relative_path": "utils/timespec.cpp",
+      "bytes": 1299,
+      "sha256": "f2a74d8187d34179d63ac7365f342584660fc8a46120af57c7ed1c2435d149a4"
+    },
+    {
+      "source_path": "utils/csvReader.h",
+      "analysis_relative_path": "utils/csvReader.h",
+      "bytes": 4125,
+      "sha256": "00238d416b6223f0942bf4e4c9c817360b6cbde00edaff91ec62d564fff72c19"
+    },
+    {
+      "source_path": "utils/XML.h",
+      "analysis_relative_path": "utils/XML.h",
+      "bytes": 71064,
+      "sha256": "f0460640155bceacbb35387253fb62c1fe057553b1583175f2838a95d713ee8a"
+    },
+    {
+      "source_path": "utils/pi.h",
+      "analysis_relative_path": "utils/pi.h",
+      "bytes": 1798,
+      "sha256": "e7e8be123fd9f2729316de10cfe58df31bf439efdaaa01c98ec9e8d290c99b9a"
+    },
+    {
+      "source_path": "utils/commandLine.h",
+      "analysis_relative_path": "utils/commandLine.h",
+      "bytes": 6111,
+      "sha256": "026b0506a4e6b704e66efb625ba09050a437623c00992ff2f0de6cf0d92075b9"
+    },
+    {
+      "source_path": "utils/URI.h",
+      "analysis_relative_path": "utils/URI.h",
+      "bytes": 7211,
+      "sha256": "be084a836242907ddda11696f81f060f5120cbb80c95ed6b7975a2d1847f9e55"
+    },
+    {
+      "source_path": "utils/LICENSE.md",
+      "analysis_relative_path": "utils/LICENSE.md",
+      "bytes": 1147,
+      "sha256": "6f48a8d53ffa0a9ec5c6d4db7191389e097a4e7254ca8f3de88775497106131e"
+    },
+    {
+      "source_path": "utils/filesystem.cpp",
+      "analysis_relative_path": "utils/filesystem.cpp",
+      "bytes": 9093,
+      "sha256": "00e1609d78c0ad645e4d88fbbc85481edfb5aedbf020f9d967f9f658c01a27d0"
+    },
+    {
+      "source_path": "utils/image/imageFormat.inl",
+      "analysis_relative_path": "utils/image/imageFormat.inl",
+      "bytes": 6929,
+      "sha256": "84e09e4f7761b15599eb2beb4cf3d72bd60bbb0c74c3cc44ba30ff4043c488f0"
+    },
+    {
+      "source_path": "utils/image/imageLoader.h",
+      "analysis_relative_path": "utils/image/imageLoader.h",
+      "bytes": 4582,
+      "sha256": "658d86e089229c2bfbd872ce09f9d6047ecc0dc0af15f93ae3a7685bfe2fd444"
+    },
+    {
+      "source_path": "utils/image/imageWriter.cpp",
+      "analysis_relative_path": "utils/image/imageWriter.cpp",
+      "bytes": 3526,
+      "sha256": "cca4ff3e2eff63a35be0c75626555778d8ffc7a5ade411936ed588fcee19a993"
+    },
+    {
+      "source_path": "utils/image/stb/stb_image.h",
+      "analysis_relative_path": "utils/image/stb/stb_image.h",
+      "bytes": 263262,
+      "sha256": "0e28238d865510073b5740ae8eba8cd8032cc5b25f94e0f7505fac8036864909"
+    },
+    {
+      "source_path": "utils/image/stb/stb_image_write.h",
+      "analysis_relative_path": "utils/image/stb/stb_image_write.h",
+      "bytes": 66570,
+      "sha256": "0e8b3d80bc6eb8fdb64abc4db9fec608b489bc73418eaf14beda102a0699a4c9"
+    },
+    {
+      "source_path": "utils/image/stb/stb_image_resize.h",
+      "analysis_relative_path": "utils/image/stb/stb_image_resize.h",
+      "bytes": 116069,
+      "sha256": "8ccae59e7826502791140b4074cb3bf6bb85246d06b384093c4efd52fbb4d638"
+    },
+    {
+      "source_path": "utils/image/stb/stb_truetype.h",
+      "analysis_relative_path": "utils/image/stb/stb_truetype.h",
+      "bytes": 191325,
+      "sha256": "921fdc6a2d024747187153d8b393a510ec472afdcf68ebaeddc2ccb5dba8392c"
+    },
+    {
+      "source_path": "utils/image/imageLoader.cpp",
+      "analysis_relative_path": "utils/image/imageLoader.cpp",
+      "bytes": 4664,
+      "sha256": "a84e13a9b1990782aa79cac780b8a63648fd3052aedd958787994d4d06eeac93"
+    },
+    {
+      "source_path": "utils/image/loadImage.h",
+      "analysis_relative_path": "utils/image/loadImage.h",
+      "bytes": 1347,
+      "sha256": "6495fb99f55f14439950dc05144b5392a264230aad23fc01e6acf95ef8d91691"
+    },
+    {
+      "source_path": "utils/image/imageIO.cpp",
+      "analysis_relative_path": "utils/image/imageIO.cpp",
+      "bytes": 11297,
+      "sha256": "758d53e31dc8b560c94e04bb9b8951b6beb0758b98afb0e8de5040a85282aa5f"
+    },
+    {
+      "source_path": "utils/image/imageIO.h",
+      "analysis_relative_path": "utils/image/imageIO.h",
+      "bytes": 9872,
+      "sha256": "00fbccad305cb67608d53ae00b56a50e6009d8f8bc24360cd4bfe711acc4e61a"
+    },
+    {
+      "source_path": "utils/image/imageFormat.h",
+      "analysis_relative_path": "utils/image/imageFormat.h",
+      "bytes": 9019,
+      "sha256": "15be616126f0f225614d022bcedb119924451d2b7bb64dcf128fe07bcbc29d60"
+    },
+    {
+      "source_path": "utils/image/imageWriter.h",
+      "analysis_relative_path": "utils/image/imageWriter.h",
+      "bytes": 3867,
+      "sha256": "bf40ee0762c69b264ba72ce3a11d774167cd0b0ef8e5a5b2d0acb17920d14b31"
+    },
+    {
+      "source_path": "utils/filesystem.h",
+      "analysis_relative_path": "utils/filesystem.h",
+      "bytes": 7930,
+      "sha256": "82670b86588b67545adaaa4b1b4f3e01b03977ff7e8d982153998e1f8ddfe091"
+    },
+    {
+      "source_path": "utils/commandLine.cpp",
+      "analysis_relative_path": "utils/commandLine.cpp",
+      "bytes": 8803,
+      "sha256": "ea92b3f2ac7110f81ad65277e9836ce6e83b7c421e0dba6da2c80fd78158469a"
+    },
+    {
+      "source_path": "docs/detectnet-example-2.md",
+      "analysis_relative_path": "docs/detectnet-example-2.md",
+      "bytes": 9495,
+      "sha256": "43caf2dcbcbb0dc399cf5221106f5c1426c105b0538571cc35a48ee80e5007dd"
+    },
+    {
+      "source_path": "docs/imagenet-console.md",
+      "analysis_relative_path": "docs/imagenet-console.md",
+      "bytes": 7245,
+      "sha256": "46a1af01a60c54ec913ba1f2eda92a2673d738c53899369884c645af8f6a1d5b"
+    },
+    {
+      "source_path": "docs/digits-native.md",
+      "analysis_relative_path": "docs/digits-native.md",
+      "bytes": 5544,
+      "sha256": "adb3628ace4be148a6c45a5983df98ed7aa9cd147d987912166a6d67c69fd522"
+    },
+    {
+      "source_path": "docs/detectnet-console-2.md",
+      "analysis_relative_path": "docs/detectnet-console-2.md",
+      "bytes": 11685,
+      "sha256": "135b4ad05b3f12ec7946fee852d2575dbd54e0be4d7046d812ec9df5602cc9f3"
+    },
+    {
+      "source_path": "docs/posenet.md",
+      "analysis_relative_path": "docs/posenet.md",
+      "bytes": 8009,
+      "sha256": "cc41c3dff530d75f7c71b9d78dcc8bb95a326f876281fcf99f2525ab8e9c4f5e"
+    },
+    {
+      "source_path": "docs/jetpack-setup.md",
+      "analysis_relative_path": "docs/jetpack-setup.md",
+      "bytes": 4518,
+      "sha256": "347ffc45c09a2d1ee0be59af0f4e6aa3ef38b5547bf14abfde187729536df3fc"
+    },
+    {
+      "source_path": "docs/detectnet-camera-2.md",
+      "analysis_relative_path": "docs/detectnet-camera-2.md",
+      "bytes": 3955,
+      "sha256": "a71a8df190fe86e4c05d8741d8856d040d0c928df6eeaeefe3e91584b0e9bdeb"
+    },
+    {
+      "source_path": "docs/jetpack-setup-2.md",
+      "analysis_relative_path": "docs/jetpack-setup-2.md",
+      "bytes": 3519,
+      "sha256": "c2f4f9a03a54a8674834d58c620485e7f90af3f5b0d5af745fd9168151703582"
+    },
+    {
+      "source_path": "docs/building-repo.md",
+      "analysis_relative_path": "docs/building-repo.md",
+      "bytes": 14650,
+      "sha256": "4f49fa84c52b84f0ccd93e4224df5a60caf08637df042e8b46d25308b1015246"
+    },
+    {
+      "source_path": "docs/deep-learning.md",
+      "analysis_relative_path": "docs/deep-learning.md",
+      "bytes": 3225,
+      "sha256": "af0e77f3e1f433503b9d8006e22ba9f2c63088533523b47c65c090c57ce8b6a4"
+    },
+    {
+      "source_path": "docs/pytorch-ssd.md",
+      "analysis_relative_path": "docs/pytorch-ssd.md",
+      "bytes": 13772,
+      "sha256": "b6a3085a4dba65bde3e8c8fa0179af5c85cfcd722f83397196afbb2f16bb6e1d"
+    },
+    {
+      "source_path": "docs/segnet-pretrained.md",
+      "analysis_relative_path": "docs/segnet-pretrained.md",
+      "bytes": 1973,
+      "sha256": "2301bf1cabf1d915696cdbc0642428f87e1c76e9487a4df75fa859985676b182"
+    },
+    {
+      "source_path": "docs/digits-setup.md",
+      "analysis_relative_path": "docs/digits-setup.md",
+      "bytes": 6310,
+      "sha256": "cf6b6e351f42550efdfa00deb254b08adeeb67ecfc2301bbec4c48f8e83ccb82"
+    },
+    {
+      "source_path": "docs/segnet-console-2.md",
+      "analysis_relative_path": "docs/segnet-console-2.md",
+      "bytes": 11861,
+      "sha256": "f8f03f3697020f19e92c0e3986bb0ba83c4d2848416ef26e3acc29d831fdd3a5"
+    },
+    {
+      "source_path": "docs/detectnet-camera.md",
+      "analysis_relative_path": "docs/detectnet-camera.md",
+      "bytes": 4477,
+      "sha256": "e05c0633b334d5d99d626882c1f9209ccb38dda566829dafd09b212b4c88c786"
+    },
+    {
+      "source_path": "docs/detectnet-console.md",
+      "analysis_relative_path": "docs/detectnet-console.md",
+      "bytes": 6602,
+      "sha256": "6e31e0dd0448d862b692077dbf1c552a3937d34c62da9dd6d23b80764713d287"
+    },
+    {
+      "source_path": "docs/depthnet.md",
+      "analysis_relative_path": "docs/depthnet.md",
+      "bytes": 8094,
+      "sha256": "477d87f91123e1ed85f443dd0f29d9e57b45c965e1e9c59c27c40af2fe36c401"
+    },
+    {
+      "source_path": "docs/aux-docker.md",
+      "analysis_relative_path": "docs/aux-docker.md",
+      "bytes": 6143,
+      "sha256": "1eb555823166a82f2f535bcfacb36c368c3f11daf97a30df9256668df9626f27"
+    },
+    {
+      "source_path": "docs/aux-image.md",
+      "analysis_relative_path": "docs/aux-image.md",
+      "bytes": 24579,
+      "sha256": "a3d6fc849c2813668d1cacf4d163269bb194d1cb560224701a3bac26e82892d6"
+    },
+    {
+      "source_path": "docs/aux-streaming.md",
+      "analysis_relative_path": "docs/aux-streaming.md",
+      "bytes": 21155,
+      "sha256": "c7a2c7c33ea1e5e7ba780e07b79b8bfa35a6e52433cf98564aecd96fd8c3b80b"
+    },
+    {
+      "source_path": "docs/segnet-console.md",
+      "analysis_relative_path": "docs/segnet-console.md",
+      "bytes": 1736,
+      "sha256": "5ccd55a4502239642c8603c0caba45ab5d79589e2985253975a8a086b021ee50"
+    },
+    {
+      "source_path": "docs/other-examples.md",
+      "analysis_relative_path": "docs/other-examples.md",
+      "bytes": 2502,
+      "sha256": "e9b0d26afe8929f51f66d5c6a943e77db8e87f05cddc3587d776567fb1199ac2"
+    },
+    {
+      "source_path": "docs/segnet-patches.md",
+      "analysis_relative_path": "docs/segnet-patches.md",
+      "bytes": 1785,
+      "sha256": "0998de559ac615373fdf0c38e2f26638e2b374e3a092262f0b3c5d3e35920eaf"
+    },
+    {
+      "source_path": "docs/CMakeLists.txt",
+      "analysis_relative_path": "docs/CMakeLists.txt",
+      "bytes": 1350,
+      "sha256": "e60996ae3a47b2beb11fd3fb3169f15c795240565337b7d0f90d91b10109834a"
+    },
+    {
+      "source_path": "docs/pytorch-cat-dog.md",
+      "analysis_relative_path": "docs/pytorch-cat-dog.md",
+      "bytes": 15197,
+      "sha256": "a14c5d1bdacf787a3fab223b3956f7c411133cb7e1acceefc23c9ee4c09071b9"
+    },
+    {
+      "source_path": "docs/imagenet-snapshot.md",
+      "analysis_relative_path": "docs/imagenet-snapshot.md",
+      "bytes": 1722,
+      "sha256": "f9c150f0c38c2e6d39ea647d8138db81a1daaf6b9ffd11abb3fbd3c671536dc0"
+    },
+    {
+      "source_path": "docs/doc-groups.h",
+      "analysis_relative_path": "docs/doc-groups.h",
+      "bytes": 5281,
+      "sha256": "624f596a51ac20d91d14f02ee4f169e038e8dd6e91459929e3e83d757dd092c0"
+    },
+    {
+      "source_path": "docs/doc-pages.h",
+      "analysis_relative_path": "docs/doc-pages.h",
+      "bytes": 4,
+      "sha256": "bf1c44b705463ca1acb44a5bdf9d0ff653b71944bcb93d894f9d993776d80199"
+    },
+    {
+      "source_path": "docs/building-repo-2.md",
+      "analysis_relative_path": "docs/building-repo-2.md",
+      "bytes": 14605,
+      "sha256": "0e34ecd98a2604d111f336b14b3b60f1d04b5dd27ce8ed69abf384e1e035d6ee"
+    },
+    {
+      "source_path": "docs/aux-contents.md",
+      "analysis_relative_path": "docs/aux-contents.md",
+      "bytes": 663,
+      "sha256": "a17b2d21f510935f8874f54e071c62d95f2438f3b4c60a13229ffbe682e88d8d"
+    },
+    {
+      "source_path": "docs/pytorch-transfer-learning.md",
+      "analysis_relative_path": "docs/pytorch-transfer-learning.md",
+      "bytes": 6652,
+      "sha256": "87693e04329c1a1962b3cf705326404ef22e411a21e9fce7fae7f52da7810039"
+    },
+    {
+      "source_path": "docs/imagenet-example-python-2.md",
+      "analysis_relative_path": "docs/imagenet-example-python-2.md",
+      "bytes": 11076,
+      "sha256": "078a7b2403e849cbad3dfd124a56d7efa6be6a1ac13db076478038bb4556137a"
+    },
+    {
+      "source_path": "docs/digits-workflow.md",
+      "analysis_relative_path": "docs/digits-workflow.md",
+      "bytes": 2058,
+      "sha256": "ba9e06b25420846816419d7808be6ff0d769ac93ef01bfea135a7d01da7d0b72"
+    },
+    {
+      "source_path": "docs/pytorch-plants.md",
+      "analysis_relative_path": "docs/pytorch-plants.md",
+      "bytes": 11254,
+      "sha256": "403933688bf215e7e17fa6e48d530cce13a684330be23bdb5b31a77565ee1a72"
+    },
+    {
+      "source_path": "docs/imagenet-example-2.md",
+      "analysis_relative_path": "docs/imagenet-example-2.md",
+      "bytes": 14676,
+      "sha256": "d383107d5387904428155f8fe8fb769d0df5302b811b72f76e244f13959a296c"
+    },
+    {
+      "source_path": "docs/imagenet-example.md",
+      "analysis_relative_path": "docs/imagenet-example.md",
+      "bytes": 13128,
+      "sha256": "de99dae1a1e0d836c40205ec9b2c9e548415ea91ef70cd145ef412104be90df0"
+    },
+    {
+      "source_path": "docs/imagenet-console-2.md",
+      "analysis_relative_path": "docs/imagenet-console-2.md",
+      "bytes": 8255,
+      "sha256": "01ee25f4e6a950fab4baea8ea91a8be81449db992c8e202ddabcc82e0d7fd967"
+    },
+    {
+      "source_path": "docs/imagenet-custom.md",
+      "analysis_relative_path": "docs/imagenet-custom.md",
+      "bytes": 1920,
+      "sha256": "98766d045dcc7a25d4d2d030fe873f8fb4ed35d6866085576c5a96bb2a6547c1"
+    },
+    {
+      "source_path": "docs/detectnet-snapshot.md",
+      "analysis_relative_path": "docs/detectnet-snapshot.md",
+      "bytes": 2376,
+      "sha256": "9daaf1c22eca2f3134154210454944bb13e0c735b9f107544a9f21483aff6319"
+    },
+    {
+      "source_path": "docs/pytorch-collect.md",
+      "analysis_relative_path": "docs/pytorch-collect.md",
+      "bytes": 8324,
+      "sha256": "2b24cec24ce6903a3d074497181321ee2d2d0513ffde370fdacbee7982936871"
+    },
+    {
+      "source_path": "docs/pytorch-collect-detection.md",
+      "analysis_relative_path": "docs/pytorch-collect-detection.md",
+      "bytes": 8170,
+      "sha256": "76fa16133d5e1cda2166745e82ab1dc7b600bac71ec589d150eebc8b618e0379"
+    },
+    {
+      "source_path": "docs/imagenet-training.md",
+      "analysis_relative_path": "docs/imagenet-training.md",
+      "bytes": 8630,
+      "sha256": "22aaf8a384ca621ceba0ba6ef4d4646c944a89d59bfa51cf3c746a3228c66985"
+    },
+    {
+      "source_path": "docs/segnet-camera-2.md",
+      "analysis_relative_path": "docs/segnet-camera-2.md",
+      "bytes": 4308,
+      "sha256": "1d19b2bde4d1a383599bdf1dafbc79b2f15c3a1f5d45fedbd8693215ff57d0f9"
+    },
+    {
+      "source_path": "docs/imagenet-camera-2.md",
+      "analysis_relative_path": "docs/imagenet-camera-2.md",
+      "bytes": 3714,
+      "sha256": "1ad43494236ecdc347626cfaa27ac4c8098d8a948cc85b1970332b19d0f6a403"
+    },
+    {
+      "source_path": "docs/segnet-training.md",
+      "analysis_relative_path": "docs/segnet-training.md",
+      "bytes": 3016,
+      "sha256": "1c704d151d41b0991073a0954734402c23ca16cd0d6a2f9f845ab145ff5318e4"
+    },
+    {
+      "source_path": "docs/segnet-dataset.md",
+      "analysis_relative_path": "docs/segnet-dataset.md",
+      "bytes": 4357,
+      "sha256": "b61f17b94b32817dfb39407cc1857042c709303e13b41a2f285873d0c9d54d4d"
+    },
+    {
+      "source_path": "docs/building-nvcaffe.md",
+      "analysis_relative_path": "docs/building-nvcaffe.md",
+      "bytes": 2957,
+      "sha256": "518e7b5fecb2adf0ebe6b4dcada1a46c230868daf6f9228871acd6984ff5315f"
+    },
+    {
+      "source_path": "docs/detectnet-training.md",
+      "analysis_relative_path": "docs/detectnet-training.md",
+      "bytes": 9689,
+      "sha256": "c929168fe41dfcd99f926287c1c3e723b5aa710313d1c79a7b401b475c3343aa"
+    },
+    {
+      "source_path": "docs/DoxygenLayout.xml",
+      "analysis_relative_path": "docs/DoxygenLayout.xml",
+      "bytes": 6091,
+      "sha256": "df93ea892b07516cf7c2f34ae8a3ec643bc851ee5e6df2d6c2d74d7444636659"
+    },
+    {
+      "source_path": "docs/imagenet-camera.md",
+      "analysis_relative_path": "docs/imagenet-camera.md",
+      "bytes": 5125,
+      "sha256": "cb7f546abc595f8187127bfbbf7b6452ace5d620048867fae7b572dd4508f536"
+    },
+    {
+      "source_path": "Dockerfile",
+      "analysis_relative_path": "Dockerfile",
+      "bytes": 3119,
+      "sha256": "8c2a23622f767a0a5eab82dddca36bb9a5d31554cc08c48ef759ac832afbe1f5"
+    },
+    {
+      "source_path": "examples/posenet/posenet.cpp",
+      "analysis_relative_path": "examples/posenet/posenet.cpp",
+      "bytes": 4326,
+      "sha256": "2bf82a6ee2e873fcb8b321ab0a799decfa3569e7508f10304ad5713b4925d877"
+    },
+    {
+      "source_path": "examples/posenet/CMakeLists.txt",
+      "analysis_relative_path": "examples/posenet/CMakeLists.txt",
+      "bytes": 203,
+      "sha256": "37f8f21b450e95903540da344b5e459f54d666bea20bb827f58ad7c56e1df24b"
+    },
+    {
+      "source_path": "examples/depthnet/depthnet.cpp",
+      "analysis_relative_path": "examples/depthnet/depthnet.cpp",
+      "bytes": 8368,
+      "sha256": "3a62c7724070eebbf654ef59a310b123fdf2a3052c61aaf3cf90d3caf0a9d318"
+    },
+    {
+      "source_path": "examples/depthnet/CMakeLists.txt",
+      "analysis_relative_path": "examples/depthnet/CMakeLists.txt",
+      "bytes": 210,
+      "sha256": "9d15af99e697a0f204a7ef9991866cc832b2ec752bc638708d9bf57b8a0f5694"
+    },
+    {
+      "source_path": "examples/my-recognition/CMakeLists.txt",
+      "analysis_relative_path": "examples/my-recognition/CMakeLists.txt",
+      "bytes": 675,
+      "sha256": "1e3dde3f593c529d0b7be2127e4853a7b18812fb4f6be49804979283fde56a49"
+    },
+    {
+      "source_path": "examples/my-recognition/README.md",
+      "analysis_relative_path": "examples/my-recognition/README.md",
+      "bytes": 304,
+      "sha256": "3d8a0eb492da46904073b934cb1af6587dc5f313ad0e8962ecb8e1f929218419"
+    },
+    {
+      "source_path": "examples/my-recognition/my-recognition.cpp",
+      "analysis_relative_path": "examples/my-recognition/my-recognition.cpp",
+      "bytes": 3455,
+      "sha256": "dbf878afcec8a42c49b282d75c37842ed4344ceaf5ab6df512a2497b5fab87d1"
+    },
+    {
+      "source_path": "examples/imagenet/imagenet.cpp",
+      "analysis_relative_path": "examples/imagenet/imagenet.cpp",
+      "bytes": 4822,
+      "sha256": "c96c7feb95aecd563e9d1e5d80dcbbe69aa829a42f676033ba15bdd80c428d48"
+    },
+    {
+      "source_path": "examples/imagenet/CMakeLists.txt",
+      "analysis_relative_path": "examples/imagenet/CMakeLists.txt",
+      "bytes": 733,
+      "sha256": "3985bb61d3e300fe51458633a80539a5b3f3f1adc882010ff6799b9283fc46bc"
+    },
+    {
+      "source_path": "examples/CMakeLists.txt",
+      "analysis_relative_path": "examples/CMakeLists.txt",
+      "bytes": 753,
+      "sha256": "ee60df0bf4d93d4a99975b61badfb82668f4478c032ea44e26cd967f859d1d18"
+    },
+    {
+      "source_path": "examples/README.md",
+      "analysis_relative_path": "examples/README.md",
+      "bytes": 509,
+      "sha256": "48c336432903a79f59a98fb6cae22b99fedd26d949631e251a9e45ce6f077fd9"
+    },
+    {
+      "source_path": "examples/detectnet/detectnet.cpp",
+      "analysis_relative_path": "examples/detectnet/detectnet.cpp",
+      "bytes": 4937,
+      "sha256": "b18865196a7a17d693ba8cf3fad25ad900408c9a6498c1fb1b8ae22f16ebdcbf"
+    },
+    {
+      "source_path": "examples/detectnet/CMakeLists.txt",
+      "analysis_relative_path": "examples/detectnet/CMakeLists.txt",
+      "bytes": 750,
+      "sha256": "28cbcb63436b8ba683e765326a9c45dbe60cf4070748303af3d91f15bac2815a"
+    },
+    {
+      "source_path": "examples/segnet/CMakeLists.txt",
+      "analysis_relative_path": "examples/segnet/CMakeLists.txt",
+      "bytes": 699,
+      "sha256": "7833b278672fc0d562de182fb9dc3369d40839937858d8c40de220710886effe"
+    },
+    {
+      "source_path": "examples/segnet/segnet.cpp",
+      "analysis_relative_path": "examples/segnet/segnet.cpp",
+      "bytes": 8255,
+      "sha256": "5d782eb9f6317ad00b48c131dc03b515f7aef6c7dcea8f13b5d06af32d10e562"
+    },
+    {
+      "source_path": "examples/experimental/flownet-camera/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/flownet-camera/CMakeLists.txt",
+      "bytes": 243,
+      "sha256": "42ac3bf55bb03a3d109b63e5862905ede8ae0d836fb153dbc6155769c37fdd97"
+    },
+    {
+      "source_path": "examples/experimental/flownet-camera/flownet-camera.cpp",
+      "analysis_relative_path": "examples/experimental/flownet-camera/flownet-camera.cpp",
+      "bytes": 6088,
+      "sha256": "9b53e60a486d037eabc7744c4e438851b92d0dc23cc990bf303a2b25501d0061"
+    },
+    {
+      "source_path": "examples/experimental/stereonet-console/stereonet-console.cpp",
+      "analysis_relative_path": "examples/experimental/stereonet-console/stereonet-console.cpp",
+      "bytes": 5315,
+      "sha256": "8fb8a8f50c36b481d174db2bbbeeb282b801b4526c678ae9d0a90c18d1d852ed"
+    },
+    {
+      "source_path": "examples/experimental/stereonet-console/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/stereonet-console/CMakeLists.txt",
+      "bytes": 261,
+      "sha256": "9a699f715c8e2b4a57407c5d479d84b5387e7dd76705addcc6757d32019e109a"
+    },
+    {
+      "source_path": "examples/experimental/featurenet/featurenet-images/featurenet-images.cpp",
+      "analysis_relative_path": "examples/experimental/featurenet/featurenet-images/featurenet-images.cpp",
+      "bytes": 5568,
+      "sha256": "5c12be8a3cd4b207cf22814d87a450507256b9e07596d349542a05e785f047ab"
+    },
+    {
+      "source_path": "examples/experimental/featurenet/featurenet-images/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/featurenet/featurenet-images/CMakeLists.txt",
+      "bytes": 259,
+      "sha256": "0fd217056decc09cbf928918a459045807126b4cafb071f6f38b05af44c04a42"
+    },
+    {
+      "source_path": "examples/experimental/featurenet/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/featurenet/CMakeLists.txt",
+      "bytes": 116,
+      "sha256": "0957f673bec8b0721b287f090c20537d18d63221f9f60b7bd7eab5df6fc31b02"
+    },
+    {
+      "source_path": "examples/experimental/superres-console/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/superres-console/CMakeLists.txt",
+      "bytes": 255,
+      "sha256": "42b6b1ff89400edf3d81e9cc504cfe2e3c21e4ad136c59c4a8ff81d40a0e8593"
+    },
+    {
+      "source_path": "examples/experimental/superres-console/superres-console.cpp",
+      "analysis_relative_path": "examples/experimental/superres-console/superres-console.cpp",
+      "bytes": 3754,
+      "sha256": "d8ae90a4475e990950d17e5acf90b384396682b3bb2001aebad8936ecfa08db3"
+    },
+    {
+      "source_path": "examples/experimental/backgroundnet/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/backgroundnet/CMakeLists.txt",
+      "bytes": 238,
+      "sha256": "13987795f2a32fc7a1b3b2e3d578dfef8022b41734a44d95bffb752db3c78552"
+    },
+    {
+      "source_path": "examples/experimental/backgroundnet/backgroundnet.cpp",
+      "analysis_relative_path": "examples/experimental/backgroundnet/backgroundnet.cpp",
+      "bytes": 4549,
+      "sha256": "0b2bef454a59f18609f2556a92fd706f0807cb3663708984b76c17df8f71329f"
+    },
+    {
+      "source_path": "examples/experimental/homography-console/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/homography-console/CMakeLists.txt",
+      "bytes": 267,
+      "sha256": "d27fd9078a403f8a0f87c4e14852db843cfb028e62db20c0210a26d1477e9117"
+    },
+    {
+      "source_path": "examples/experimental/homography-console/homography-console.cpp",
+      "analysis_relative_path": "examples/experimental/homography-console/homography-console.cpp",
+      "bytes": 4418,
+      "sha256": "93f99376bf019fd7ece46694d55bf8192510b22f44c1d9ac56d807635b0ae416"
+    },
+    {
+      "source_path": "examples/experimental/homography-camera/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/homography-camera/CMakeLists.txt",
+      "bytes": 261,
+      "sha256": "76f33cecd2048964fc39a75f15c1e9500666fd7195010c336494c65933582b98"
+    },
+    {
+      "source_path": "examples/experimental/homography-camera/homography-camera.cpp",
+      "analysis_relative_path": "examples/experimental/homography-camera/homography-camera.cpp",
+      "bytes": 5523,
+      "sha256": "7d26b7d872f849d325ba7dae8012b62c96ddf441e309859b0bf5c0c4b69b734c"
+    },
+    {
+      "source_path": "examples/experimental/stereonet-camera/stereonet-camera.cpp",
+      "analysis_relative_path": "examples/experimental/stereonet-camera/stereonet-camera.cpp",
+      "bytes": 8153,
+      "sha256": "539716ad818a8a06516cd1b00d33a446c7fe3feb64ca516c2719128a461d848f"
+    },
+    {
+      "source_path": "examples/experimental/stereonet-camera/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/stereonet-camera/CMakeLists.txt",
+      "bytes": 255,
+      "sha256": "0f5ae1bb2fb23768a1dd9e924ab29a84573822efdab69623a6ba34057ca8dafc"
+    },
+    {
+      "source_path": "examples/experimental/flownet-console/flownet-console.cpp",
+      "analysis_relative_path": "examples/experimental/flownet-console/flownet-console.cpp",
+      "bytes": 4887,
+      "sha256": "7356e175afeb754a77b73fb0deb116ed7471edfd6b125e27e85aea6038a84f31"
+    },
+    {
+      "source_path": "examples/experimental/flownet-console/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/flownet-console/CMakeLists.txt",
+      "bytes": 249,
+      "sha256": "53d035cfef63a54b90fc353c442c7a14f71d896cc5a167146898d1be8a88499b"
+    },
+    {
+      "source_path": "examples/experimental/odometry-plot/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/odometry-plot/CMakeLists.txt",
+      "bytes": 237,
+      "sha256": "d4f90eb6218e12692114e5eb225966300d98ea8d7312e52cfb67bd99df14a460"
+    },
+    {
+      "source_path": "examples/experimental/odometry-plot/odometry-plot.cpp",
+      "analysis_relative_path": "examples/experimental/odometry-plot/odometry-plot.cpp",
+      "bytes": 9025,
+      "sha256": "53dcace337e97cfaa0f6b005dd913770e76c5ca5509212c22a7200dac7ec6f8c"
+    },
+    {
+      "source_path": "examples/experimental/odometry-console/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/odometry-console/CMakeLists.txt",
+      "bytes": 255,
+      "sha256": "b5d9d10e69d54cc1a3e15be546564eb73a3ed352405aacec08c2924109ced9f1"
+    },
+    {
+      "source_path": "examples/experimental/odometry-console/odometry-console.cpp",
+      "analysis_relative_path": "examples/experimental/odometry-console/odometry-console.cpp",
+      "bytes": 3796,
+      "sha256": "4e8d927f189576f88ba29386c71c6ed92ede0e2d255ffc704aa30c9f568044e5"
+    },
+    {
+      "source_path": "examples/experimental/actionnet/CMakeLists.txt",
+      "analysis_relative_path": "examples/experimental/actionnet/CMakeLists.txt",
+      "bytes": 214,
+      "sha256": "29c43b20cc754e053df4161cf76a6717b2826c3c8361f94b73dbefd860423003"
+    },
+    {
+      "source_path": "examples/experimental/actionnet/actionnet.cpp",
+      "analysis_relative_path": "examples/experimental/actionnet/actionnet.cpp",
+      "bytes": 4887,
+      "sha256": "ab54456ac42f7cc918a480bf49397318fa250eed9c20a1b1b3a3d9dc528d5221"
+    },
+    {
+      "source_path": ".gitmodules",
+      "analysis_relative_path": ".gitmodules",
+      "bytes": 906,
+      "sha256": "6591892cb79b7257c28e32377eb175393a98b5280fd2242b445e4437c3896d67"
+    },
+    {
+      "source_path": "LICENSE.md",
+      "analysis_relative_path": "LICENSE.md",
+      "bytes": 1147,
+      "sha256": "cddaa9d5583a7705cd4734a6af4b421bca9016ba6af854c51efbfcbe19a4a893"
+    }
+  ],
+  "case_collisions_mapped": [
+    {
+      "first": "python/python/jetson/inference/__init__.py",
+      "later": "python/python/Jetson/Inference/__init__.py",
+      "later_analysis_path": "python/python/Jetson/Inference/__init__.py.__posixcase_45c9afa7fc0d"
+    },
+    {
+      "first": "python/python/jetson/__init__.py",
+      "later": "python/python/Jetson/__init__.py",
+      "later_analysis_path": "python/python/Jetson/__init__.py.__posixcase_beb43b1308cd"
+    },
+    {
+      "first": "utils/python/python/jetson/utils/__init__.py",
+      "later": "utils/python/python/Jetson/Utils/__init__.py",
+      "later_analysis_path": "utils/python/python/Jetson/Utils/__init__.py.__posixcase_f8980a5f37b5"
+    },
+    {
+      "first": "utils/python/python/jetson/__init__.py",
+      "later": "utils/python/python/Jetson/__init__.py",
+      "later_analysis_path": "utils/python/python/Jetson/__init__.py.__posixcase_7ec33f40f134"
+    }
+  ],
+  "git_head_and_submodule_pointer_metadata": {
+    "python/training/classification/.git": "gitdir: ../../../.git/modules/python/training/classification",
+    "python/training/segmentation/.git": "gitdir: ../../../.git/modules/python/training/segmentation",
+    "python/training/detection/.git": "gitdir: ../../../.git/modules/python/training/detection",
+    "plugins/pose/.git": "gitdir: ../../.git/modules/plugins/pose",
+    "docker/containers/.git": "gitdir: ../../.git/modules/docker/containers",
+    "tools/camera-capture/.git": "gitdir: ../../.git/modules/tools/camera-capture",
+    "utils/.git": "gitdir: ../.git/modules/utils",
+    ".git/refs/heads/master": "c7ca374dbaa1417fbdb5fe0836d5ae843d7365eb",
+    ".git/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master",
+    ".git/HEAD": "ref: refs/heads/master",
+    ".git/modules/python/training/classification/refs/heads/master": "dd2548357acb46e376543a3475942075f4a5ce88",
+    ".git/modules/python/training/classification/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master",
+    ".git/modules/python/training/segmentation/refs/heads/master": "16882772bc767511d892d134918722011d1ea771",
+    ".git/modules/python/training/segmentation/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master",
+    ".git/modules/python/training/detection/refs/heads/master": "8e83c6f0ff5f0c7af5593561d38f07dd6e7bd254",
+    ".git/modules/python/training/detection/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master",
+    ".git/modules/plugins/pose/refs/heads/master": "6fa5f5d36c9be4bdf314838d840a82dd1f2960d3",
+    ".git/modules/plugins/pose/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master",
+    ".git/modules/docker/containers/refs/heads/master": "eb2307d40f0884d66310e9ac34633a4c5ef2e083",
+    ".git/modules/docker/containers/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master",
+    ".git/modules/tools/camera-capture/refs/heads/master": "48c47cdb778c844d4786b7dd08dcc31a2e715867",
+    ".git/modules/tools/camera-capture/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master",
+    ".git/modules/utils/refs/heads/master": "35593c5ad2c1c62f6f0166d6581945fb58fd1f7b",
+    ".git/modules/utils/refs/remotes/origin/HEAD": "ref: refs/remotes/origin/master"
+  },
+  "selected_key_inputs_found": [
+    "python/CMakeLists.txt",
+    "c/detectNet.cpp",
+    "c/detectNet.h",
+    "tools/CMakeLists.txt",
+    "tools/camera-capture/CMakeLists.txt",
+    "CMakePreBuild.sh",
+    "utils/CMakeLists.txt"
+  ],
+  "boundary": "Read-only source/config/docs analysis copy. Windows case collisions mapped to unique names, not a build or restore tree. Original repo with exact POSIX names, .git/build/data remains in tar. No symlinks/specials/binaries instantiated; no code executed."
+}

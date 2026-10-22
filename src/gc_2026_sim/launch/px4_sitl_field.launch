@@ -1,0 +1,111 @@
+<launch>
+  <!-- 请先用自定义场地 world 单独启动 PX4 SITL/Gazebo。 -->
+  <arg name="fcu_url" default="udp://:14540@127.0.0.1:14580" />
+  <arg name="gcs_url" default="" />
+  <arg name="auto_start" default="false" />
+  <arg name="camera_topic" default="/camera/image_raw" />
+  <arg name="scan_topic" default="/scan" />
+  <arg name="start_sensor_rig" default="true" />
+  <arg name="px4_vehicle_model" default="iris" />
+  <arg name="sensor_rig_model" default="px4_sensor_rig" />
+  <arg name="start_foxglove_bridge" default="true" />
+  <arg name="start_mission" default="true" />
+  <arg name="start_slam" default="true" />
+  <arg name="rescue_drop_enabled" default="false" />
+  <!-- 赛题轮次以及抽签得到的第二轮投放位置；含义与失效方式记录在
+       navigation_2d.launch 里。这里只是透传，好让 SITL 演练能跑任意一轮。 -->
+  <arg name="stage" default="1" />
+  <arg name="rescue_drop_x" default="999.0" />
+  <arg name="rescue_drop_y" default="999.0" />
+  <arg name="drop_align_mode" default="vision_with_fallback" />
+  <!-- 场地系到 odom 的转角，含义与失效方式记录在 navigation_2d.launch 里。
+       仿真里 odom 就是场地系（rig 用 Gazebo 真值发 odom 到 base_link，iris
+       出生 yaw 为 0），所以这里设成非 0 只会让航线在**场地里**整体转过去，
+       也就是复现实机上那个 bug，用来验证这个参数确实生效。默认 0.0 保持
+       仿真原有行为。 -->
+  <arg name="field_yaw_deg" default="0.0" />
+  <param name="/use_sim_time" value="true" />
+
+  <include file="$(find mavros)/launch/px4.launch">
+    <arg name="fcu_url" value="$(arg fcu_url)" />
+    <arg name="gcs_url" value="$(arg gcs_url)" />
+  </include>
+  <!-- Gazebo 与 PX4 已经共享锁步时间；这里使用 ROS 的 /clock 时间戳。 -->
+  <param name="/mavros/time/timesync_mode" value="NONE" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher"
+        name="base_to_laser" args="0 0 0.25 0 0 0 base_link laser_link" />
+
+  <!-- 生成传感器 rig **并启动它的驱动**，都要在 cartographer 之前。
+       这里的顺序是有意义的。cartographer 对每一帧扫描做一次 odom -> base_link
+       的 TF 查询，用的是该扫描自己的时间戳。由于 simulation_slam.launch 过去是被
+       先 include 的，cartographer 打开 /scan 订阅时 rig 还不存在；等到 rig 起来
+       并广播出第一帧 odom->base_link（t=53.0 s）时，前端手里已经攥着一帧打戳
+       t=39.5 s 的扫描，于是每次查询都失败并报
+         "Lookup would require extrapolation 13.524s into the past"
+       而那帧没人消费的扫描就把 ordered_multi_queue 永久钉在 "(0, scan)" 上。
+       先启动 rig 从源头上消除了这 13.5 s 的窗口，所以
+       simulation_slam.launch 里的延时现在只是一道安全余量，而不再是保命的东西。 -->
+  <node if="$(arg start_sensor_rig)" pkg="gazebo_ros" type="spawn_model"
+        name="spawn_px4_sensor_rig" output="screen"
+        args="-file $(find gc_2026_sim)/gazebo/models/px4_sensor_rig/model.sdf -sdf -model $(arg sensor_rig_model) -x 0 -y 0 -z 0" />
+
+  <node if="$(arg start_sensor_rig)" pkg="gc_2026_sim"
+        type="px4_sensor_rig_node" name="px4_sensor_rig" output="screen">
+    <param name="vehicle_model" value="$(arg px4_vehicle_model)" />
+    <param name="sensor_model" value="$(arg sensor_rig_model)" />
+    <!-- 本节点是 odom->base_link 的唯一发布者。Cartographer 配置为
+         provide_odom_frame=false，两者因此永远不会不一致。 -->
+    <param name="publish_odom_tf" value="true" />
+    <!-- Gazebo 世界系 / PX4 本地系之间的原点偏移。只要 auto_odom_origin 保持
+         默认值 true，这三个参数就是**惰性的**：那时 rig 自己从第一帧
+         /mavros/local_position/pose 里测出偏移，并忽略这三个值。它们存在的唯一
+         意义，是在 auto_odom_origin 被设成 false 之后还能手工把偏移钉住。
+         只在这里改它们**不会**改变 odom，除非同时设 auto_odom_origin=false。 -->
+    <param name="odom_offset_x" value="0.0" />
+    <param name="odom_offset_y" value="0.0" />
+    <param name="odom_offset_z" value="0.0" />
+    <!-- 仿真里的投放物。任务结束 HAZARD_DROP / RESCUE_DROP 的唯一依据是舵机
+         回了 /gpio_ack，而仿真下 use_real_servos=false、舵机节点根本不启动，
+         于是本节点就是那个 ack 的来源 —— 没有这一行，任务会认为自己投了，
+         而 Gazebo 里什么都没发生，且日志里一个字都不会提（2026-10-18 就是
+         这样被读成"识别到了但没投放"）。
+
+         做法是在收到 DROP_FIRE / DROP_RESCUE 的那一刻，按机体真值位姿往下
+         0.30 m **生成**一个 80 mm 立方体，然后交给重力。不是"机体上挂一个
+         link、投放时断开 joint"：机体是 PX4 自带的 iris.sdf（不在本仓库），
+         而且 Gazebo Classic 没有断 joint 的 ROS 服务（detachable joint 属于
+         Gazebo Sim）。生成式投放的观感与真机一致，且不开投时没有东西挂在
+         下视相机视野里，任务区卡片的取景不受影响。
+
+         payload_on_drop 刻意写成字面量而不是 arg：这个开关一旦被上层静默
+         关掉，现象与"没实现"完全一样。release_depth 是投放点相对机体中心的
+         下移量，0.30 m 在起落架之下、又离相机(-0.15 m)够远。 -->
+    <param name="payload_on_drop" value="true" />
+    <param name="payload_release_depth" value="0.30" />
+  </node>
+
+  <include if="$(arg start_slam)" file="$(find gc_2026_sim)/launch/simulation_slam.launch">
+    <arg name="scan_topic" value="$(arg scan_topic)" />
+  </include>
+  <node if="$(arg start_foxglove_bridge)" pkg="foxglove_bridge"
+        type="foxglove_bridge" name="foxglove_bridge" output="screen">
+    <param name="port" value="8765" />
+    <param name="address" value="0.0.0.0" />
+  </node>
+
+  <include if="$(arg start_mission)" file="$(find navigation_2d)/launch/navigation_2d.launch">
+    <arg name="enforce_safe_field" value="true" />
+    <arg name="input_image_topic" value="$(arg camera_topic)" />
+    <arg name="scan_topic" value="$(arg scan_topic)" />
+    <arg name="use_real_servos" value="false" />
+    <arg name="auto_start" value="$(arg auto_start)" />
+    <arg name="rescue_drop_enabled" value="$(arg rescue_drop_enabled)" />
+    <arg name="stage" value="$(arg stage)" />
+    <arg name="rescue_drop_x" value="$(arg rescue_drop_x)" />
+    <arg name="rescue_drop_y" value="$(arg rescue_drop_y)" />
+    <arg name="drop_align_mode" value="$(arg drop_align_mode)" />
+    <arg name="field_yaw_deg" value="$(arg field_yaw_deg)" />
+    <arg name="start_foxglove_bridge" value="false" />
+  </include>
+</launch>

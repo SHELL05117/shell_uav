@@ -1,0 +1,6 @@
+<launch>
+
+  <include file="$(find vrpn_client_ros)/launch/sample.launch" ns="test">
+    <arg name="server" value="192.168.2.5" />
+  </include>
+</launch>

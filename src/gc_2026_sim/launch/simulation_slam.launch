@@ -1,0 +1,54 @@
+<launch>
+  <arg name="scan_topic" default="/scan" />
+  <!-- 抄自基线工作空间（catkin_ws_bak）的 location/launch/cartographer_2d.launch，
+       它把 cartographer 延迟 6.0 s 启动，好让 odom->base_link 的广播者先起来。
+       我们的 rig 比真机需要更久：这段延时还必须在覆盖 SITL 启动、rig 的第一次
+       /gazebo/model_states 回调，以及它第一次（阻塞式的）set_model_state。
+       没有它，第一帧扫描就会在 odom->base_link 还不存在时去查变换、失败
+       （"Lookup would require extrapolation 13.524s into the past"），
+       而由于那帧扫描永远没人消费，ordered_multi_queue 会把它永久卡在 (0, scan) 队首。 -->
+  <arg name="node_start_delay" default="15.0" />
+  <!-- 坐标系归属：cartographer **只**发布 map->odom
+       （cartographer_sim.lua 里 published_frame=odom、provide_odom_frame=false ——
+       也就是基线 cartographer_2Dlidar_mapping_params.lua 的布局）。
+       px4_sensor_rig_node 由 Gazebo 地面真值发布 odom->base_link，
+       base_to_laser 发布 base_link->laser_link。每条边恰好一个节点，所以这棵树
+       不可能分叉。**不要**再让 cartographer 也提供 odom 帧；一条边上两个发布者，
+       就是早先让 odom 与 base_link 两棵树断开的原因。 -->
+  <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node"
+        output="screen" required="true"
+        launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'"
+        args="-configuration_directory $(find gc_2026_sim)/param -configuration_basename cartographer_sim.lua">
+    <remap from="scan" to="$(arg scan_topic)" />
+    <!-- 与基线保持一致：location/launch/cartographer_2d.launch 把 imu 重映射到
+         /mavros/imu/data。cartographer_sim.lua 跑的是
+         use_imu_data = true / use_odometry = false，也就是基线的 rplidar 那一支，
+         而那正是在真机上跑完整场任务的配置。
+         这里试过用 Gazebo 位姿构造一个"同源"IMU，已回退：它什么也没改变，
+         还把频率从 50 Hz 拉到 17-22 Hz，因为它是由 /gazebo/model_states 驱动的。 -->
+    <remap from="imu" to="/mavros/imu/data" />
+    <!-- **不做** odom 重映射，与基线的 rplidar 那一支一致（它也没有重映射 odom）。
+         有两个可选的来源，两个都作为地雷记录在这里：
+           * /mavros/local_position/odom —— 基线 T265 那一支用的就是它。
+             在 Gazebo 锁步下 mavros 的发布速度快于仿真时钟推进，于是两个样本
+             共享同一个时间戳，OptimizationProblem2D::AddOdometryData 在第二个上中止：
+               F0924 map_by_time.h:43] Check failed:
+                 data.time > std::prev(trajectory.end())->first
+             2026-09-24 19:15 试过，节点 0.5 s 内死亡。
+           * /simulation/ground_truth/odom —— rig 自己的话题，由构造保证严格递增
+             （它会丢弃时间戳与前一个样本相同的样本），所以能通过那句断言。
+             2026-09-24 19:40 试过，确实没有崩 —— 但它把前端卡死了。
+             里程计是一个**被收集的**传感器，打开它就意味着往 OrderedMultiQueue 里
+             塞进一个 odom 队列；而 rig 的 odom 是突发式到达的
+             （"odom rate: 31.25 Hz ... pulsed at 0.20% real time"，
+             对照健康的 "scan rate: 10.00 Hz ... pulsed at 99.00% real time"），
+             队列饿死之后下游再也没被派发，地图在 (-0.42, -2.89) 上冻住，
+             而仿真时间从 44.804 s 一路走到 60.6 s。
+         所以重新打开里程计是一次**真正的实验**，不是改个配置：它需要一个在仿真时间下
+         **既严格递增、又节拍均匀**的 odom 源。 -->
+  </node>
+  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
+        type="cartographer_occupancy_grid_node" output="screen"
+        launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'"
+        args="-resolution 0.05 -publish_period_sec 1.0" />
+</launch>

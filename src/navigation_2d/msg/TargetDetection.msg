@@ -1,0 +1,13 @@
+Header header
+string mode
+bool found
+bool stable
+float32 center_x
+float32 center_y
+float32 width
+float32 height
+float32 pixel_dx
+float32 pixel_dy
+float32 confidence
+uint32 image_width
+uint32 image_height

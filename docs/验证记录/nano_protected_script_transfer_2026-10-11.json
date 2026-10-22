@@ -1,0 +1,21 @@
+{
+  "record_date": "2026-10-11",
+  "transport": "User-authenticated FinalShell SFTP file panel",
+  "source": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\工具\\backup_nano_protected_files.sh",
+  "nano_path": "/home/jcfh/backup_nano_protected_files.sh",
+  "roundtrip_copy": "C:\\Users\\alexh\\Desktop\\fsdownload\\backup_nano_protected_files.sh",
+  "bytes": 16185,
+  "sha256": "b1c56ca7837c42cd3609ff9bbe524b643035ea48aa9fce5d403d7f6d78d842a1",
+  "uploaded": true,
+  "source_and_roundtrip_bytes_match": true,
+  "encoding": "UTF-8 without BOM; LF",
+  "device_execution_confirmed": true,
+  "device_completion_confirmed": true,
+  "scope": "Only the 38 hardcoded Permission denied paths in the five-bundle source report; directories recurse on their own filesystem. Output in fresh root-owned /var/backups/nano_protected_backup_* with fixed files published for jcfh SFTP read.",
+  "review": "验证记录/nano_protected_backup_review_2026-10-11.json",
+  "boundary": "Manual Nano root execution and SFTP output integrity confirmed. Listed 38 paths are present; filesystem metadata restoration, full source path coverage and runtime behavior are not tested.",
+  "device_finished_exit": 0,
+  "data_archive_downloaded": true,
+  "device_output_directory": "/var/backups/nano_protected_backup_20251024_193005_o389hv",
+  "download_evidence": "验证记录/nano_protected_download_2026-10-11.json"
+}

@@ -1,0 +1,189 @@
+{
+  "prepared_for_date": "2026-10-13",
+  "checked_at_utc": "2026-10-12T16:28:22.127909+00:00",
+  "scope": "Local configuration only; no source/model/archive changed and no Nano/ROS execution",
+  "original_archive": "Nano补充导出/2026-10-11/软件补档/02_opt_runtime.tar.gz",
+  "archived_members": {
+    "opt/ros/melodic/share/image_transport/package.xml": {
+      "bytes": 1447,
+      "sha256": "5532b036d0da0ff97484f3010ca7c152054f1c805d4fcffa6e49c295a41696ed",
+      "package_name": "image_transport",
+      "package_version": "1.11.13"
+    },
+    "opt/ros/melodic/share/compressed_image_transport/package.xml": {
+      "bytes": 1034,
+      "sha256": "fe0d4a37e76291ae9b61c5e7db23fd42261b9d2b54bf6abe15a5c315cfd00f37",
+      "package_name": "compressed_image_transport",
+      "package_version": "1.9.6"
+    },
+    "opt/ros/melodic/share/foxglove_bridge/launch/foxglove_bridge.launch": {
+      "bytes": 2413,
+      "sha256": "01ff139ea522372125ec70a20eff4e4c83345618c2167339f36358d3a447f00a"
+    },
+    "opt/ros/melodic/share/foxglove_bridge/package.xml": {
+      "bytes": 2383,
+      "sha256": "eea5846e3b06cc8f7d7d54682dc1fe21ca7e5d5e849148386a776f521f3b0aea",
+      "package_name": "foxglove_bridge",
+      "package_version": "0.6.3"
+    },
+    "opt/ros/melodic/share/usb_cam/package.xml": {
+      "bytes": 1496,
+      "sha256": "3cac34ec022923fe1aba64bec0199b68383a33ce89ff8f3770e757fdffd05ea7",
+      "package_name": "usb_cam",
+      "package_version": "0.3.7"
+    }
+  },
+  "checks": {
+    "two_launch_files_xml_parsed": true,
+    "forwarded_arguments_exist_in_archived_bridge_0_6_3_launch": true,
+    "capabilities_client_param_service_lists_empty": true,
+    "exact_topic_whitelist_for_each_of_three_image_selections": true,
+    "exactly_one_jpeg_channel_per_selection": true,
+    "invalid_jpeg_selection_rejected_by_expression": true,
+    "bridge_only_includes_original_bridge_no_data_sources": true,
+    "optional_preview_only_usb_cam_and_image_transport_republish": true,
+    "readme_local_links_resolve": true,
+    "bash_syntax_check": {
+      "runtime": "GNU Bash 5.2.37(1)-release x86_64-pc-msys, bundled sh.exe",
+      "operation": "-n start_monitor_bridge.sh",
+      "exit_code": 0,
+      "script_executed": false
+    }
+  },
+  "image_selections": {
+    "preview": {
+      "jpeg_topic": "/monitor/camera/image/compressed",
+      "topic_regexes": [
+        "^/map$",
+        "^/scan$",
+        "^/tf$",
+        "^/tf_static$",
+        "^/visual_global_path$",
+        "^/visual_local_trajectory$",
+        "^/trajectories$",
+        "^/visual_obstacles$",
+        "^/visual_local_obstacles$",
+        "^/monitor/camera/image/compressed$",
+        "^/ssd_detection/detections$",
+        "^/mission/vision/detection$",
+        "^/mavros/local_position/pose$",
+        "^/mavros/local_position/odom$",
+        "^/mavros/state$",
+        "^/servo_ready$",
+        "^/gpio_ack$"
+      ],
+      "denied_control_topics_checked": [
+        "/cmd_vel",
+        "/gpio_cmd",
+        "/move_base_simple/goal",
+        "/move_base/cancel",
+        "/trigger_plan",
+        "/mavros/setpoint_raw/local",
+        "/mavros/setpoint_position/local",
+        "/map_extra",
+        "/mavros/local_position/pose_extra"
+      ]
+    },
+    "mission": {
+      "jpeg_topic": "/mission/video/compressed",
+      "topic_regexes": [
+        "^/map$",
+        "^/scan$",
+        "^/tf$",
+        "^/tf_static$",
+        "^/visual_global_path$",
+        "^/visual_local_trajectory$",
+        "^/trajectories$",
+        "^/visual_obstacles$",
+        "^/visual_local_obstacles$",
+        "^/mission/video/compressed$",
+        "^/ssd_detection/detections$",
+        "^/mission/vision/detection$",
+        "^/mavros/local_position/pose$",
+        "^/mavros/local_position/odom$",
+        "^/mavros/state$",
+        "^/servo_ready$",
+        "^/gpio_ack$"
+      ],
+      "denied_control_topics_checked": [
+        "/cmd_vel",
+        "/gpio_cmd",
+        "/move_base_simple/goal",
+        "/move_base/cancel",
+        "/trigger_plan",
+        "/mavros/setpoint_raw/local",
+        "/mavros/setpoint_position/local",
+        "/map_extra",
+        "/mavros/local_position/pose_extra"
+      ]
+    },
+    "ssd": {
+      "jpeg_topic": "/ssd_detection/debug_image/compressed",
+      "topic_regexes": [
+        "^/map$",
+        "^/scan$",
+        "^/tf$",
+        "^/tf_static$",
+        "^/visual_global_path$",
+        "^/visual_local_trajectory$",
+        "^/trajectories$",
+        "^/visual_obstacles$",
+        "^/visual_local_obstacles$",
+        "^/ssd_detection/debug_image/compressed$",
+        "^/ssd_detection/detections$",
+        "^/mission/vision/detection$",
+        "^/mavros/local_position/pose$",
+        "^/mavros/local_position/odom$",
+        "^/mavros/state$",
+        "^/servo_ready$",
+        "^/gpio_ack$"
+      ],
+      "denied_control_topics_checked": [
+        "/cmd_vel",
+        "/gpio_cmd",
+        "/move_base_simple/goal",
+        "/move_base/cancel",
+        "/trigger_plan",
+        "/mavros/setpoint_raw/local",
+        "/mavros/setpoint_position/local",
+        "/map_extra",
+        "/mavros/local_position/pose_extra"
+      ]
+    }
+  },
+  "local_files": {
+    "bridge_readonly.launch": {
+      "bytes": 1460,
+      "sha256": "f83f0b190b0809580810e3b9c2a08ef9d3094c79d1dc574cb679579bfef06edf",
+      "utf8_no_bom": true,
+      "lf_only": true
+    },
+    "camera_preview.launch": {
+      "bytes": 1836,
+      "sha256": "506123f7b3a8f45ed459b47b3f6892aa8769dd600b478d82f9fd68e8e66f6acd",
+      "utf8_no_bom": true,
+      "lf_only": true
+    },
+    "start_monitor_bridge.sh": {
+      "bytes": 2664,
+      "sha256": "f48d399e603af406fe18278fcccf930a40e30297fb8e563953047ed7de1ce1bc",
+      "utf8_no_bom": true,
+      "lf_only": true
+    },
+    "README.md": {
+      "bytes": 8871,
+      "sha256": "53937380e68d33012b2b07ba068575b8c69683243355e7a8945e6a766638e7c3",
+      "utf8_no_bom": true,
+      "lf_only": true
+    }
+  },
+  "runtime_status": {
+    "uploaded_to_nano": false,
+    "roslaunch_executed": false,
+    "camera_or_bridge_started": false,
+    "websocket_handshake_and_disabled_capabilities_verified": false,
+    "map_or_video_received_in_lichtblick": false,
+    "wireless_or_latency_acceptance": false,
+    "note": "XML and expression/static checks are not ROS substitution, plugin loading, device, or runtime acceptance"
+  }
+}

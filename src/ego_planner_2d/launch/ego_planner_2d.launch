@@ -1,0 +1,36 @@
+<launch>
+  <arg name="rviz" default="true"/>
+  <arg name="rviz_config" default="$(find ego_planner_2d)/rviz/ego_planner_2d.rviz"/>
+
+  <!-- 2D Ego-Planner 局部规划器节点。
+       所有话题都可重映射，例如：
+         <remap from="odom" to="/mavros/local_position/odom"/>
+         <remap from="obstacles" to="/cloud_obstacles"/> -->
+  <node pkg="ego_planner_2d" type="ego_planner_2d_node" name="ego_planner_2d" output="screen">
+    <!-- 规划器限幅 -->
+    <param name="max_vel" value="2.0"/>
+    <param name="max_acc" value="3.0"/>
+    <param name="max_jerk" value="4.0"/>
+    <!-- 局部栅格地图 -->
+    <param name="map_resolution" value="0.1"/>
+    <param name="map_x_size" value="50.0"/>
+    <param name="map_y_size" value="50.0"/>
+    <param name="map_inflate_value" value="0.5"/>
+    <!-- 局部规划行为 -->
+    <param name="planning_rate" value="5.0"/>
+    <param name="sensing_range" value="10.0"/>
+    <param name="path_sample_interval" value="0.3"/>
+    <param name="local_window_points" value="50"/>
+    <param name="min_traj_points" value="10"/>
+    <!-- 障碍输入来自 sensor_msgs/PointCloud2（map 帧）或 sensor_msgs/LaserScan（scan） -->
+    <param name="obstacle_accumulate" value="true"/>
+    <param name="obstacle_height_band" value="1.0"/>
+    <param name="global_frame" value="map"/>
+    <!-- 位姿来源："odom"（nav_msgs/Odometry 话题，默认）或 "tf"（map -> base_frame，
+         例如 cartographer 这种只发布 TF 的后端） -->
+    <!-- <param name="pose_source" value="tf"/> -->
+    <!-- <param name="base_frame" value="base_link"/> -->
+  </node>
+
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config)"/>
+</launch>

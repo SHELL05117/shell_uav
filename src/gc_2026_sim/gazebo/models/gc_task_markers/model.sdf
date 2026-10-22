@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <!-- Resource container only.  Nothing includes this model; the world file
+       points its <material><script><uri> at this directory.  The single link
+       exists so the directory is still a loadable Gazebo model (handy for
+       `gz model -m` sanity checks). -->
+  <model name="gc_task_markers">
+    <static>true</static>
+    <link name="marker_link">
+      <visual name="marker_face">
+        <pose>0 0 0.004 0 0 0</pose>
+        <geometry><box><size>0.40 0.40 0.008</size></box></geometry>
+        <material>
+          <script>
+            <uri>model://gc_task_markers/materials/scripts</uri>
+            <uri>model://gc_task_markers/materials/textures</uri>
+            <name>GC/Sign/Flammable</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

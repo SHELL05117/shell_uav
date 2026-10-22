@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>servo_control</name>
+  <version>0.1.0</version>
+  <description>Lightweight C++ PCA9685 servo controller using Linux I2C.</description>
+  <maintainer email="expload233@gmail.com">Bingo</maintainer>
+  <license>proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+</package>

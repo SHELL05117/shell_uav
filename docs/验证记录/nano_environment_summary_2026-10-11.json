@@ -1,0 +1,1189 @@
+{
+  "schema_version": 1,
+  "analysis_date": "2026-10-11",
+  "generated_at_utc": "2026-10-11T13:06:10.439517+00:00",
+  "scope": "Offline analysis of transferred environment inventory; no device connection, UI interaction, program execution or original-file modification in this summary task.",
+  "evidence_root": "Nano补充导出/2026-10-11/环境采集/analysis_copy/nano_inventory_20251024_195237_8acNSP",
+  "source_artifacts": {
+    "inventory_archive": "Nano补充导出/2026-10-11/环境采集/nano_inventory_20251024_195237_8acNSP.tar.gz",
+    "inventory_archive_bytes": 49342,
+    "inventory_archive_sha256": "10abd57218d6656c58d5d1547d569dff7ff2bba90360ec676da96445c1eeb872",
+    "user_reported_inventory_sha256": "10abd57218d6656c58d5d1547d569dff7ff2bba90360ec676da96445c1eeb872",
+    "inventory_hash_matches_user_report": true,
+    "inventory_verification_record": "Nano补充导出/2026-10-11/环境采集/inventory_verification.json",
+    "original_workspace_archive": "Nano导出/2026-10-11/nano_catkin_ws_20251024_201602.tar.gz",
+    "original_workspace_archive_sha256": "5764ea536dcb4d6b4d18d564e7ea430b21c2f3f015e0d3198628d17c0d0b3eb8",
+    "evidence_files_sha256": {
+      "dpkg_packages.tsv": "81ebb26c77f132cc0a7ae6d9905e6c0d340408dd774ca7229db904a5b7a8012f",
+      "package_paths.tsv": "9fefd92577f0aeb6a514161677f94f6f7a7ba622b9132c061fda40e86e2e65f6",
+      "python2_packages.txt": "285ca51ec0bb68d700238e060bc83aa97e337980e90f5c69a7af3a0d447a590e",
+      "python3_packages.txt": "931849ff17b383e46ddf0aa092aad59af7e5bd0b8f06058ba152f4762d8ffd3c",
+      "python_packages.txt": "285ca51ec0bb68d700238e060bc83aa97e337980e90f5c69a7af3a0d447a590e",
+      "report.txt": "383a241a40fe593d5496927a03dbaf216b8568bb551b9cdeb6e1606dae473d6e",
+      "rospack_list.txt": "13fd2abe19d665aca2b50aed8799623f89a29ccfb6719c63a22dee5528dbea39"
+    }
+  },
+  "capture_clock": {
+    "nano_local_timestamp": "2025-10-24T19:52:37+08:00",
+    "nano_utc_timestamp": "2025-10-24T11:52:37+00:00",
+    "mismatches_analysis_date": true,
+    "interpretation": "Nano file timestamps do not establish stable-version chronology; no clock setting was changed.",
+    "evidence": {
+      "file": "report.txt",
+      "line_start": 3,
+      "line_end": 4
+    }
+  },
+  "environment": {
+    "ubuntu": {
+      "version": "18.04.6 LTS",
+      "codename": "bionic",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 8,
+        "line_end": 20
+      }
+    },
+    "kernel": {
+      "version": "4.9.201-tegra",
+      "architecture": "aarch64",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 6,
+        "line_end": 6
+      }
+    },
+    "l4t": {
+      "version": "32.5.2",
+      "board_string": "t210ref",
+      "evidence": [
+        {
+          "file": "report.txt",
+          "line_start": 23,
+          "line_end": 23
+        },
+        {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2327,
+          "line_end": 2327
+        }
+      ]
+    },
+    "device_tree_model": {
+      "value": "NVIDIA Jetson Nano Developer Kit",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 28,
+        "line_end": 35
+      },
+      "does_not_confirm_custom_carrier_model": true
+    },
+    "cuda": {
+      "version": "10.2.89",
+      "root": "/usr/local/cuda-10.2",
+      "installed_package": {
+        "version": "10.2.89-1",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 128,
+          "line_end": 128
+        }
+      },
+      "evidence": [
+        {
+          "file": "report.txt",
+          "line_start": 26,
+          "line_end": 26
+        },
+        {
+          "file": "report.txt",
+          "line_start": 82,
+          "line_end": 82
+        }
+      ]
+    },
+    "tensorrt": {
+      "library_version": "7.1.3",
+      "installed_package": {
+        "version": "7.1.3-1+cuda10.2",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 1542,
+          "line_end": 1542
+        }
+      },
+      "python2_package_version": "7.1.3.0"
+    },
+    "cudnn": {
+      "version": "8.0.0.180",
+      "installed_package": {
+        "version": "8.0.0.180-1+cuda10.2",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 875,
+          "line_end": 875
+        }
+      }
+    },
+    "opencv": {
+      "system_version_families": [
+        "3.2",
+        "4.1"
+      ],
+      "installed_main_package": {
+        "version": "4.1.1-2-gd5a58aa75",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 1567,
+          "line_end": 1567
+        }
+      },
+      "installed_core_3_2_package": {
+        "version": "3.2.0+dfsg-4ubuntu0.1",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 1569,
+          "line_end": 1569
+        }
+      },
+      "pkg_config_opencv4": "4.1.1",
+      "pkg_config_opencv_unavailable": true,
+      "ssd_node_has_both_3_2_and_4_1_needed_entries": true,
+      "no_runtime_failure_claimed": true,
+      "evidence": [
+        {
+          "file": "report.txt",
+          "line_start": 563,
+          "line_end": 600
+        },
+        {
+          "file": "report.txt",
+          "line_start": 612,
+          "line_end": 616
+        },
+        {
+          "file": "report.txt",
+          "line_start": 865,
+          "line_end": 879
+        }
+      ]
+    },
+    "ros": {
+      "distribution": "melodic",
+      "major_version": "1",
+      "workspace_prefixes": [
+        "/home/jcfh/catkin_ws/devel",
+        "/opt/ros/melodic"
+      ],
+      "other_active_overlays_found_in_inherited_environment": false,
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 78,
+        "line_end": 82
+      },
+      "boundary": "Inherited collection-terminal environment; not proof of actual launch arguments or running-process environment."
+    },
+    "python": {
+      "python_and_python2_actual_version": "2.7.17",
+      "python3_actual_version": "3.7.15",
+      "also_installed_python36": {
+        "version": "3.6.9-1~18.04ubuntu1.12",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2637,
+          "line_end": 2637
+        }
+      },
+      "installed_python37": {
+        "version": "3.7.15-1+bionic1",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2640,
+          "line_end": 2640
+        }
+      },
+      "pip_list_exit_codes": {
+        "python": 0,
+        "python2": 0,
+        "python3": 0
+      },
+      "selected_packages": {
+        "python_packages.txt": [
+          {
+            "name": "catkin-tools",
+            "version": "0.6.1",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 15,
+              "line_end": 15
+            }
+          },
+          {
+            "name": "jetson-stats",
+            "version": "3.1.4",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 54,
+              "line_end": 54
+            }
+          },
+          {
+            "name": "numpy",
+            "version": "1.13.3",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 68,
+              "line_end": 68
+            }
+          },
+          {
+            "name": "pip",
+            "version": "9.0.1",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 75,
+              "line_end": 75
+            }
+          },
+          {
+            "name": "rospkg",
+            "version": "1.4.0",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 126,
+              "line_end": 126
+            }
+          },
+          {
+            "name": "rospkg-modules",
+            "version": "1.5.1",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 127,
+              "line_end": 127
+            }
+          },
+          {
+            "name": "setuptools",
+            "version": "44.1.1",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 171,
+              "line_end": 171
+            }
+          },
+          {
+            "name": "tensorrt",
+            "version": "7.1.3.0",
+            "evidence": {
+              "file": "python_packages.txt",
+              "line_start": 177,
+              "line_end": 177
+            }
+          }
+        ],
+        "python3_packages.txt": [
+          {
+            "name": "Adafruit-Blinka",
+            "version": "8.6.0",
+            "evidence": {
+              "file": "python3_packages.txt",
+              "line_start": 2,
+              "line_end": 2
+            }
+          },
+          {
+            "name": "adafruit-circuitpython-pca9685",
+            "version": "3.4.6",
+            "evidence": {
+              "file": "python3_packages.txt",
+              "line_start": 5,
+              "line_end": 5
+            }
+          },
+          {
+            "name": "adafruit-circuitpython-servokit",
+            "version": "1.3.13",
+            "evidence": {
+              "file": "python3_packages.txt",
+              "line_start": 8,
+              "line_end": 8
+            }
+          },
+          {
+            "name": "numpy",
+            "version": "1.21.6",
+            "evidence": {
+              "file": "python3_packages.txt",
+              "line_start": 75,
+              "line_end": 75
+            }
+          },
+          {
+            "name": "opencv-python",
+            "version": "4.6.0.66",
+            "evidence": {
+              "file": "python3_packages.txt",
+              "line_start": 79,
+              "line_end": 79
+            }
+          },
+          {
+            "name": "pip",
+            "version": "22.3",
+            "evidence": {
+              "file": "python3_packages.txt",
+              "line_start": 82,
+              "line_end": 82
+            }
+          },
+          {
+            "name": "setuptools",
+            "version": "65.5.0",
+            "evidence": {
+              "file": "python3_packages.txt",
+              "line_start": 170,
+              "line_end": 170
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 555,
+        "line_end": 560
+      },
+      "unresolved": "Executable paths, interpreter link/alternatives, site-packages paths and wheel/deb package payloads not captured."
+    }
+  },
+  "ros_packages": [
+    {
+      "name": "location",
+      "path": "/home/jcfh/catkin_ws/src/location",
+      "package_xml_version": "0.0.0",
+      "package_xml_sha256": "8a9f147936df106cfc887b97fff3c984b0b7ed8548b764e9906c382860da7573",
+      "source_group": "project_workspace",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 1,
+          "line_end": 1
+        },
+        {
+          "file": "report.txt",
+          "line_start": 94,
+          "line_end": 97
+        }
+      ],
+      "original_archive_package_xml_sha256": "8a9f147936df106cfc887b97fff3c984b0b7ed8548b764e9906c382860da7573",
+      "package_xml_matches_original_archive": true
+    },
+    {
+      "name": "navigation_2d",
+      "path": "/home/jcfh/catkin_ws/src/navigation_2d",
+      "package_xml_version": "0.0.0",
+      "package_xml_sha256": "43603590a67ec4c08d34a15010c82c7f127f8a26e3dadc112a8357fd73020675",
+      "source_group": "project_workspace",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 2,
+          "line_end": 2
+        },
+        {
+          "file": "report.txt",
+          "line_start": 99,
+          "line_end": 102
+        }
+      ],
+      "original_archive_package_xml_sha256": "43603590a67ec4c08d34a15010c82c7f127f8a26e3dadc112a8357fd73020675",
+      "package_xml_matches_original_archive": true
+    },
+    {
+      "name": "ego_planner_2d",
+      "path": "/home/jcfh/catkin_ws/src/ego_planner_2d",
+      "package_xml_version": "1.0.0",
+      "package_xml_sha256": "2f620d3465e2cdbb49d155cf5c4091680138230f53143b74da3e863d40f071cb",
+      "source_group": "project_workspace",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 3,
+          "line_end": 3
+        },
+        {
+          "file": "report.txt",
+          "line_start": 104,
+          "line_end": 107
+        }
+      ],
+      "original_archive_package_xml_sha256": "2f620d3465e2cdbb49d155cf5c4091680138230f53143b74da3e863d40f071cb",
+      "package_xml_matches_original_archive": true
+    },
+    {
+      "name": "ssd_detection",
+      "path": "/home/jcfh/catkin_ws/src/ssd_detection",
+      "package_xml_version": "0.0.0",
+      "package_xml_sha256": "61b9f283243a7a5305351dc95f36d7490c4bf7e1f7f180dbb799ccc144e6bae4",
+      "source_group": "project_workspace",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 4,
+          "line_end": 4
+        },
+        {
+          "file": "report.txt",
+          "line_start": 109,
+          "line_end": 112
+        }
+      ],
+      "original_archive_package_xml_sha256": "61b9f283243a7a5305351dc95f36d7490c4bf7e1f7f180dbb799ccc144e6bae4",
+      "package_xml_matches_original_archive": true
+    },
+    {
+      "name": "servo_control",
+      "path": "/home/jcfh/catkin_ws/src/servo_control",
+      "package_xml_version": "0.1.0",
+      "package_xml_sha256": "b267f0344f5ea669cfecf93080c0950297d521b5fa770ffb531f205285013ea9",
+      "source_group": "project_workspace",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 5,
+          "line_end": 5
+        },
+        {
+          "file": "report.txt",
+          "line_start": 114,
+          "line_end": 117
+        }
+      ],
+      "original_archive_package_xml_sha256": "b267f0344f5ea669cfecf93080c0950297d521b5fa770ffb531f205285013ea9",
+      "package_xml_matches_original_archive": true
+    },
+    {
+      "name": "rplidar_ros",
+      "path": "/home/jcfh/catkin_ws/src/rplidar_ros",
+      "package_xml_version": "2.1.5",
+      "package_xml_sha256": "f0dd69f8ee4e68f50b211dc5ddd8798b4743ecf61570f0b62e91c138638b1268",
+      "source_group": "project_workspace",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 6,
+          "line_end": 6
+        },
+        {
+          "file": "report.txt",
+          "line_start": 119,
+          "line_end": 122
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-rplidar-ros",
+        "version": "1.7.0-0bionic.20221025.222625",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2852,
+          "line_end": 2852
+        }
+      },
+      "original_archive_package_xml_sha256": "f0dd69f8ee4e68f50b211dc5ddd8798b4743ecf61570f0b62e91c138638b1268",
+      "package_xml_matches_original_archive": true
+    },
+    {
+      "name": "mavros",
+      "path": "/opt/ros/melodic/share/mavros",
+      "package_xml_version": "1.16.0",
+      "package_xml_sha256": "954d761d094746b6b43945b41633d5bf75cf21e565046bc664d1a1d20acf25da",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 7,
+          "line_end": 7
+        },
+        {
+          "file": "report.txt",
+          "line_start": 124,
+          "line_end": 127
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-mavros",
+        "version": "1.16.0-1bionic.20230605.155036",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2768,
+          "line_end": 2768
+        }
+      }
+    },
+    {
+      "name": "cartographer_ros",
+      "path": "/opt/ros/melodic/share/cartographer_ros",
+      "package_xml_version": "1.0.0",
+      "package_xml_sha256": "7e769bff11079288e66c58a45f02df2ce4148dae5aa6734523452f2d49cd6dcf",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 8,
+          "line_end": 8
+        },
+        {
+          "file": "report.txt",
+          "line_start": 129,
+          "line_end": 132
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-cartographer-ros",
+        "version": "1.0.0-1bionic.20221025.224527",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2690,
+          "line_end": 2690
+        }
+      }
+    },
+    {
+      "name": "cartographer",
+      "path": "/opt/ros/melodic/share/cartographer",
+      "package_xml_version": "1.0.0",
+      "package_xml_sha256": "c01f2f81332c95326cc0515845f475d48dd28fe0c23ba8527705939b48673bce",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 9,
+          "line_end": 9
+        },
+        {
+          "file": "report.txt",
+          "line_start": 134,
+          "line_end": 137
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-cartographer",
+        "version": "1.0.0-0bionic.20200802.063543",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2689,
+          "line_end": 2689
+        }
+      }
+    },
+    {
+      "name": "usb_cam",
+      "path": "/opt/ros/melodic/share/usb_cam",
+      "package_xml_version": "0.3.7",
+      "package_xml_sha256": "3cac34ec022923fe1aba64bec0199b68383a33ce89ff8f3770e757fdffd05ea7",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 10,
+          "line_end": 10
+        },
+        {
+          "file": "report.txt",
+          "line_start": 139,
+          "line_end": 142
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-usb-cam",
+        "version": "0.3.7-1bionic.20230322.235948",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2927,
+          "line_end": 2927
+        }
+      }
+    },
+    {
+      "name": "tf",
+      "path": "/opt/ros/melodic/share/tf",
+      "package_xml_version": "1.12.1",
+      "package_xml_sha256": "284bd5c7a420581c142001ca5f72fbeecd422bd10f85253c43fd178ba6fee72a",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 11,
+          "line_end": 11
+        },
+        {
+          "file": "report.txt",
+          "line_start": 144,
+          "line_end": 147
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-tf",
+        "version": "1.12.1-1bionic.20221025.195522",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2905,
+          "line_end": 2905
+        }
+      }
+    },
+    {
+      "name": "tf2_ros",
+      "path": "/opt/ros/melodic/share/tf2_ros",
+      "package_xml_version": "0.6.5",
+      "package_xml_sha256": "cf47e7b3fc40d91c873a76b0a97d5fd251fcd1ebdfd9f5159ff90529bf402dbc",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 12,
+          "line_end": 12
+        },
+        {
+          "file": "report.txt",
+          "line_start": 149,
+          "line_end": 152
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-tf2-ros",
+        "version": "0.6.5-0bionic.20221025.194946",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2913,
+          "line_end": 2913
+        }
+      }
+    },
+    {
+      "name": "cv_bridge",
+      "path": "/opt/ros/melodic/share/cv_bridge",
+      "package_xml_version": "1.13.1",
+      "package_xml_sha256": "69f9fd7bc5e56c0d93778dc7b6e876416b3e11007912c39dfbd43285e2a5bc18",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 13,
+          "line_end": 13
+        },
+        {
+          "file": "report.txt",
+          "line_start": 154,
+          "line_end": 157
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-cv-bridge",
+        "version": "1.13.1-1bionic.20221025.193650",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2707,
+          "line_end": 2707
+        }
+      }
+    },
+    {
+      "name": "move_base",
+      "path": "/opt/ros/melodic/share/move_base",
+      "package_xml_version": "1.16.7",
+      "package_xml_sha256": "51754dfd9a6b74f68fd4b69d9ee3048a959fd978396dbf474ab1cc3a3e8ef923",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 14,
+          "line_end": 14
+        },
+        {
+          "file": "report.txt",
+          "line_start": 159,
+          "line_end": 162
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-move-base",
+        "version": "1.16.7-1bionic.20221025.215246",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2776,
+          "line_end": 2776
+        }
+      }
+    },
+    {
+      "name": "dwa_local_planner",
+      "path": "/opt/ros/melodic/share/dwa_local_planner",
+      "package_xml_version": "1.16.7",
+      "package_xml_sha256": "bb4b0a69d34a77318fe99b9bbd3bf77bf2ecebf7635df43c7f195c29b1b6f98d",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 15,
+          "line_end": 15
+        },
+        {
+          "file": "report.txt",
+          "line_start": 164,
+          "line_end": 167
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-dwa-local-planner",
+        "version": "1.16.7-1bionic.20221025.214639",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2718,
+          "line_end": 2718
+        }
+      }
+    },
+    {
+      "name": "foxglove_bridge",
+      "path": "/opt/ros/melodic/share/foxglove_bridge",
+      "package_xml_version": "0.6.3",
+      "package_xml_sha256": "eea5846e3b06cc8f7d7d54682dc1fe21ca7e5d5e849148386a776f521f3b0aea",
+      "source_group": "opt_ros_melodic",
+      "evidence": [
+        {
+          "file": "package_paths.tsv",
+          "line_start": 16,
+          "line_end": 16
+        },
+        {
+          "file": "report.txt",
+          "line_start": 173,
+          "line_end": 176
+        }
+      ],
+      "installed_deb_package": {
+        "name": "ros-melodic-foxglove-bridge",
+        "version": "0.6.3-1bionic.20230620.181421",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 2724,
+          "line_end": 2724
+        }
+      }
+    }
+  ],
+  "compiled_nodes": {
+    "comparison_count": 7,
+    "all_match_original_archive": true,
+    "method": "SHA256 of local original-archive analysis files compared with readelf inventory report hashes; binaries were not executed.",
+    "comparisons": [
+      {
+        "nano_path": "/home/jcfh/catkin_ws/devel/.private/location/lib/location/location_node",
+        "original_archive_member": "catkin_ws/devel/.private/location/lib/location/location_node",
+        "local_analysis_file": "Nano导出/2026-10-11/analysis_copy/catkin_ws/devel/.private/location/lib/location/location_node",
+        "nano_report_sha256": "fd5ed5dfda0c6f2d6bb99fcfe1731501b8e17c9078ee7af31fc6a5e7e2814407",
+        "original_archive_analysis_copy_sha256": "fd5ed5dfda0c6f2d6bb99fcfe1731501b8e17c9078ee7af31fc6a5e7e2814407",
+        "matches": true,
+        "evidence": {
+          "file": "report.txt",
+          "line_start": 632,
+          "line_end": 632
+        }
+      },
+      {
+        "nano_path": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/rescue_mission_node",
+        "original_archive_member": "catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/rescue_mission_node",
+        "local_analysis_file": "Nano导出/2026-10-11/analysis_copy/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/rescue_mission_node",
+        "nano_report_sha256": "7c64eb4ff093c99b1f6382fda81a0fcf53f99cdbb648d61169bb33b8e5955384",
+        "original_archive_analysis_copy_sha256": "7c64eb4ff093c99b1f6382fda81a0fcf53f99cdbb648d61169bb33b8e5955384",
+        "matches": true,
+        "evidence": {
+          "file": "report.txt",
+          "line_start": 679,
+          "line_end": 679
+        }
+      },
+      {
+        "nano_path": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/ego_trajectory_controller_node",
+        "original_archive_member": "catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/ego_trajectory_controller_node",
+        "local_analysis_file": "Nano导出/2026-10-11/analysis_copy/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/ego_trajectory_controller_node",
+        "nano_report_sha256": "d5cb2202e1d10571a2f68ce338a5fc19f1785007f067aff67fd15dc89099e81c",
+        "original_archive_analysis_copy_sha256": "d5cb2202e1d10571a2f68ce338a5fc19f1785007f067aff67fd15dc89099e81c",
+        "matches": true,
+        "evidence": {
+          "file": "report.txt",
+          "line_start": 730,
+          "line_end": 730
+        }
+      },
+      {
+        "nano_path": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/ego_planner_2d/ego_planner_2d_node",
+        "original_archive_member": "catkin_ws/devel/.private/ego_planner_2d/lib/ego_planner_2d/ego_planner_2d_node",
+        "local_analysis_file": "Nano导出/2026-10-11/analysis_copy/catkin_ws/devel/.private/ego_planner_2d/lib/ego_planner_2d/ego_planner_2d_node",
+        "nano_report_sha256": "78f05a62c9bc826be808352918d0c4cfdc86d5521fdb6d7495fa00af92c20612",
+        "original_archive_analysis_copy_sha256": "78f05a62c9bc826be808352918d0c4cfdc86d5521fdb6d7495fa00af92c20612",
+        "matches": true,
+        "evidence": {
+          "file": "report.txt",
+          "line_start": 774,
+          "line_end": 774
+        }
+      },
+      {
+        "nano_path": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNode",
+        "original_archive_member": "catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNode",
+        "local_analysis_file": "Nano导出/2026-10-11/analysis_copy/catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNode",
+        "nano_report_sha256": "366de5a7d997f6101fd1cd8448c9f79f896d95b0cac45171675432f25f4fd9eb",
+        "original_archive_analysis_copy_sha256": "366de5a7d997f6101fd1cd8448c9f79f896d95b0cac45171675432f25f4fd9eb",
+        "matches": true,
+        "evidence": {
+          "file": "report.txt",
+          "line_start": 819,
+          "line_end": 819
+        }
+      },
+      {
+        "nano_path": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/ssd_detection/ssd_detection_node",
+        "original_archive_member": "catkin_ws/devel/.private/ssd_detection/lib/ssd_detection/ssd_detection_node",
+        "local_analysis_file": "Nano导出/2026-10-11/analysis_copy/catkin_ws/devel/.private/ssd_detection/lib/ssd_detection/ssd_detection_node",
+        "nano_report_sha256": "f24de37c124ec0fadb352c0630aaa7b8e24a42bdcbc529095d6bded05252ef2c",
+        "original_archive_analysis_copy_sha256": "f24de37c124ec0fadb352c0630aaa7b8e24a42bdcbc529095d6bded05252ef2c",
+        "matches": true,
+        "evidence": {
+          "file": "report.txt",
+          "line_start": 861,
+          "line_end": 861
+        }
+      },
+      {
+        "nano_path": "/home/jcfh/catkin_ws/devel/.private/servo_control/lib/servo_control/servo_controller_node",
+        "original_archive_member": "catkin_ws/devel/.private/servo_control/lib/servo_control/servo_controller_node",
+        "local_analysis_file": "Nano导出/2026-10-11/analysis_copy/catkin_ws/devel/.private/servo_control/lib/servo_control/servo_controller_node",
+        "nano_report_sha256": "ea0065077816f20700f32478013cc958f2e29e793cc823ceb6ff59fbeb5468a6",
+        "original_archive_analysis_copy_sha256": "ea0065077816f20700f32478013cc958f2e29e793cc823ceb6ff59fbeb5468a6",
+        "matches": true,
+        "evidence": {
+          "file": "report.txt",
+          "line_start": 913,
+          "line_end": 913
+        }
+      }
+    ],
+    "boundary": "Matching binaries do not prove source-to-binary reproducibility or flight acceptance."
+  },
+  "actual_external_paths": {
+    "jetson_inference_source_candidate": {
+      "path": "/home/jcfh/jetson-inference",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 964,
+        "line_end": 965
+      },
+      "commit_submodules_and_modifications_not_captured": true
+    },
+    "jetson_installed_libraries": {
+      "paths": [
+        "/usr/local/lib/libjetson-inference.so",
+        "/usr/local/lib/libjetson-utils.so"
+      ],
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 608,
+        "line_end": 609
+      }
+    },
+    "jetson_installed_headers": {
+      "paths": [
+        "/usr/local/include/jetson-inference",
+        "/usr/local/include/jetson-utils"
+      ],
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 620,
+        "line_end": 621
+      }
+    },
+    "jetson_installed_cmake_and_share": {
+      "paths": [
+        "/usr/local/share/jetson-inference",
+        "/usr/local/share/jetson-utils"
+      ],
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 622,
+        "line_end": 627
+      }
+    },
+    "cuda": {
+      "path": "/usr/local/cuda-10.2",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 884,
+        "line_end": 884
+      }
+    },
+    "nvidia_opencv_i2c_library_directory": {
+      "path": "/usr/lib/aarch64-linux-gnu",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 563,
+        "line_end": 611
+      }
+    },
+    "tegra_library_directory_from_node_runpath": {
+      "path": "/usr/lib/aarch64-linux-gnu/tegra",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 884,
+        "line_end": 884
+      }
+    },
+    "ros_installation": {
+      "path": "/opt/ros/melodic",
+      "evidence": [
+        {
+          "file": "report.txt",
+          "line_start": 125,
+          "line_end": 167
+        },
+        {
+          "file": "report.txt",
+          "line_start": 174,
+          "line_end": 176
+        }
+      ]
+    }
+  },
+  "storage": {
+    "root_device": "/dev/mmcblk1p1",
+    "root_filesystem": "ext4",
+    "root_disk_type": "SD",
+    "root_disk_size_reported": "119.4G",
+    "root_used_reported": "17G",
+    "root_available_reported": "93G",
+    "emmc_device": "/dev/mmcblk0",
+    "emmc_type": "MMC",
+    "emmc_disk_size_reported": "14.7G",
+    "emmc_p1_mountpoint_reported": "/media/jcfh/09f02f1d-fd23-423c-af64-e72e01af7ced17",
+    "emmc_partition_count_shown": 17,
+    "emmc_extra_regions_shown": [
+      "mmcblk0boot0",
+      "mmcblk0boot1",
+      "mmcblk0rpmb"
+    ],
+    "emmc_boot_role_confirmed": false,
+    "evidence": {
+      "file": "report.txt",
+      "line_start": 38,
+      "line_end": 75
+    },
+    "still_needed": [
+      "/proc/cmdline",
+      "/boot/extlinux/extlinux.conf",
+      "/etc/fstab",
+      "/etc/nv_boot_control.conf if present",
+      "partition labels/PARTUUID/partition-table evidence",
+      "carrier-board and recovery-layout confirmation",
+      "offline consistent storage backup and restore validation"
+    ]
+  },
+  "collection_gaps": [
+    {
+      "item": "teb_local_planner",
+      "status": "not_found_in_collected_ros_environment",
+      "exit_code": 1,
+      "confirmed_timeout": false,
+      "required_by_default_ego_path": false,
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 169,
+        "line_end": 171
+      }
+    },
+    {
+      "item": "realsense2_camera",
+      "status": "not_found_in_collected_ros_environment",
+      "exit_code": 1,
+      "confirmed_timeout": false,
+      "required_by_default_usb_cam_path": false,
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 178,
+        "line_end": 180
+      }
+    },
+    {
+      "item": "opencv.pc",
+      "status": "not_found_by_pkg_config; opencv4 metadata succeeds",
+      "not_proof_of_missing_opencv_libraries": true,
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 612,
+        "line_end": 616
+      }
+    },
+    {
+      "item": "home_directory_search",
+      "status": "depth5_only; selected directories pruned; permission errors for .gvfs/.dbus",
+      "evidence": [
+        {
+          "file": "report.txt",
+          "line_start": 955,
+          "line_end": 972
+        },
+        {
+          "file_relative_to_project_root": "Nano导出/2026-10-11/collect_nano_inventory.sh",
+          "scope": "find HOME -maxdepth 5 and prune rules"
+        }
+      ],
+      "all_other_resources_excluded_claimed": false
+    },
+    {
+      "item": "timeout_statuses",
+      "status": "Some timeout-wrapped commands do not record exit status; no exhaustive no-timeout claim possible."
+    },
+    {
+      "item": "environment_configuration_content",
+      "status": ".bashrc/.profile metadata and hashes only",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 85,
+        "line_end": 89
+      }
+    },
+    {
+      "item": "udev_service_autostart_content",
+      "status": "udev names/hashes and service/autostart filenames only",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 987,
+        "line_end": 1121
+      }
+    },
+    {
+      "item": "flight_controller_device",
+      "status": "/dev/ttyACM0 absent from selected-device list at capture time; flight-controller connectivity not validated",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 974,
+        "line_end": 985
+      }
+    },
+    {
+      "item": "geographiclib_data",
+      "status": "Tools/libraries installed; dataset files and actual configured dataset path not captured",
+      "installed_tools": {
+        "version": "1.49-2",
+        "architecture": "arm64",
+        "status": "ii",
+        "evidence": {
+          "file": "dpkg_packages.tsv",
+          "line_start": 347,
+          "line_end": 347
+        }
+      }
+    },
+    {
+      "item": "emmc_old_root_resources",
+      "status": "Mounted eMMC p1 outside HOME search; old projects/configuration not inspected",
+      "evidence": {
+        "file": "report.txt",
+        "line_start": 41,
+        "line_end": 41
+      }
+    },
+    {
+      "item": "source_and_stable_version_provenance",
+      "status": "Jetson source commit/submodule state, launch overrides, senior stable-version identity and reconstruction validation not captured."
+    }
+  ],
+  "supplemental_backup_priorities": [
+    {
+      "priority": "P1",
+      "scope": "/home/jcfh/jetson-inference with actual submodules/custom files and usable build/install evidence",
+      "reason": "Confirmed candidate custom-source directory; preserve exact current version before recreating environment."
+    },
+    {
+      "priority": "P1",
+      "scope": "Actual /usr/local jetson-inference and jetson-utils lib/include/share trees including symbolic-link targets",
+      "reason": "Current native SSD dependency and CMake/header installation payloads outside catkin archive."
+    },
+    {
+      "priority": "P1",
+      "scope": "Actual environment selectors, relevant udev/service/autostart contents, /boot configuration and /etc/fstab",
+      "reason": "Inventory records names/hashes only; startup, permissions and environment content still missing."
+    },
+    {
+      "priority": "P2",
+      "scope": "/opt/ros/melodic complete installation tree",
+      "reason": "All identified default external ROS packages and libraries resolve there."
+    },
+    {
+      "priority": "P2",
+      "scope": "CUDA/TensorRT/cuDNN/OpenCV/tegra/I2C dependency payloads and actual Python installs",
+      "reason": "Version inventories are not offline installation payloads; archive/system image must preserve dependencies and Linux metadata."
+    },
+    {
+      "priority": "P2",
+      "scope": "Actual external geographic data, calibration, maps/models and tools after targeted location checks",
+      "reason": "Prior HOME search is not exhaustive and not all data live in HOME."
+    },
+    {
+      "priority": "P3",
+      "scope": "Old project copies in HOME trash and mounted eMMC p1 after directory/size inspection",
+      "reason": "Useful provenance; must not misidentify old copies as active runtime."
+    },
+    {
+      "priority": "separate_restore_phase",
+      "scope": "Consistent SD plus confirmed eMMC/boot recovery backup, PX4 firmware/parameters/calibration export, independent storage copy and restore checks",
+      "reason": "Not covered by project tar, inventory tar or local Git."
+    }
+  ],
+  "backup_boundary": {
+    "inventory_is_metadata_only": true,
+    "this_summary_creates_no_dependency_backup": true,
+    "ordinary_sftp_suitable_for_readable_archives_and_files": true,
+    "linux_tree_restore_requires_preserved_symlinks_modes_ownership_and_relevant_acls_xattrs": true,
+    "version_lists_are_not_dependency_payloads": true,
+    "system_or_whole_drone_backup_complete": false,
+    "whole_drone_recovery_validated": false,
+    "flight_and_hardware_acceptance_complete": false
+  }
+}

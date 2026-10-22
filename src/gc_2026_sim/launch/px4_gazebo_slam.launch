@@ -1,0 +1,59 @@
+<launch>
+  <arg name="px4_root" default="$(env HOME)/PX4-Autopilot" />
+  <arg name="gui" default="true" />
+  <arg name="auto_start" default="false" />
+  <arg name="sitl_no_rc" default="true" />
+  <arg name="start_mission" default="true" />
+  <arg name="start_foxglove_bridge" default="true" />
+  <arg name="rescue_drop_enabled" default="false" />
+  <arg name="stage" default="1" />
+  <arg name="rescue_drop_x" default="999.0" />
+  <arg name="rescue_drop_y" default="999.0" />
+  <arg name="drop_align_mode" default="vision_with_fallback" />
+  <arg name="world" default="$(find gc_2026_sim)/gazebo/worlds/gc_2026_field.world" />
+  <env name="PX4_SIM_MODEL" value="iris" />
+  <env name="PX4_ESTIMATOR" value="ekf2" />
+  <!-- world 引用 model://gc_task_markers 来取任务区材质脚本与卡片贴图。
+       Gazebo 靠搜索 GAZEBO_MODEL_PATH 来解析 model://，而它在里面找不到的任何东西
+       都会被转投给**在线模型库** —— 而 start_px4_slam.sh 用
+       GAZEBO_MODEL_DATABASE_URI="" 把在线库关掉了。这个失败是静默的：
+       gzserver 永远加载不完 world，GUI 就一直停在 "Preparing your world"。
+
+       那个 model 就在本包里，而**本 launch 才是 start_px4_slam.sh 实际运行的那个**。
+       它直接 include gazebo_ros/empty_world.launch —— 而 gazebo_field.launch
+       （在此之前是唯一导出 GAZEBO_MODEL_PATH 的文件）根本不在这条链路上。
+
+       追加，不要替换：Tools/setup_gazebo.bash 已经把 PX4 自己的模型目录导出到
+       GAZEBO_MODEL_PATH 里了，而下面那个 iris 生成步骤依赖这套环境的其余部分。
+       <env> 会作用于本 launch 中的每个节点、以及它 include 的一切，
+       empty_world.launch 里的 gzserver 就是这样看到它的。 -->
+  <env name="GAZEBO_MODEL_PATH"
+       value="$(find gc_2026_sim)/gazebo/models:$(optenv GAZEBO_MODEL_PATH)" />
+
+  <!-- 与 world 一起启动全部 ROS 接口。绝不要在 PX4 之下重置时间。 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world)" />
+    <arg name="paused" value="true" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="verbose" value="true" />
+  </include>
+  <node name="sitl" pkg="px4" type="px4" output="screen" required="true"
+        args="$(arg px4_root)/build/px4_sitl_default/etc -s $(find gc_2026_sim)/scripts/px4_field_rcS.sh -d">
+    <env name="GC_SITL_NO_RC" value="$(eval '1' if arg('sitl_no_rc') else '0')" />
+  </node>
+  <!-- 旧的 make target 把坐标写死成 (1.01, 0.98)，落在这个下限之外。 -->
+  <node name="spawn_iris" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-sdf -file $(arg px4_root)/Tools/sitl_gazebo/models/iris/iris.sdf -model iris -x 0 -y 0 -z 0.25 -unpause" />
+
+  <include file="$(find gc_2026_sim)/launch/px4_sitl_field.launch">
+    <arg name="auto_start" value="$(arg auto_start)" />
+    <arg name="start_mission" value="$(arg start_mission)" />
+    <arg name="start_foxglove_bridge" value="$(arg start_foxglove_bridge)" />
+    <arg name="rescue_drop_enabled" value="$(arg rescue_drop_enabled)" />
+    <arg name="stage" value="$(arg stage)" />
+    <arg name="rescue_drop_x" value="$(arg rescue_drop_x)" />
+    <arg name="rescue_drop_y" value="$(arg rescue_drop_y)" />
+    <arg name="drop_align_mode" value="$(arg drop_align_mode)" />
+  </include>
+</launch>

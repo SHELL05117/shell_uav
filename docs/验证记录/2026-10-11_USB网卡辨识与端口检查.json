@@ -1,0 +1,52 @@
+{
+  "client_date": "2026-10-11",
+  "timezone": "Asia/Shanghai",
+  "purpose": "Explain how the working Nano USB network interface was identified",
+  "operations": "Read adapter/address/route/device metadata and test TCP port 22; no configuration changes or authenticated remote login",
+  "adapters": [
+    {
+      "name": "以太网 3",
+      "description": "Remote NDIS Compatible Device",
+      "interface_index": 11,
+      "ipv4": "192.168.55.100",
+      "ipv4_prefix_length": 24,
+      "usb_vendor_product": "VID_0955&PID_7020",
+      "usb_interface": "MI_00"
+    },
+    {
+      "name": "以太网 2",
+      "description": "UsbNcm Host Device",
+      "interface_index": 4,
+      "ipv4": "169.254.207.46",
+      "ipv4_prefix_length": 16,
+      "usb_vendor_product": "VID_0955&PID_7020",
+      "usb_interface": "MI_05"
+    }
+  ],
+  "tcp_checks": [
+    {
+      "target": "fe80::1%11",
+      "port": 22,
+      "reachable": true
+    },
+    {
+      "target": "fe80::1%4",
+      "port": 22,
+      "reachable": false,
+      "wait_limit_ms": 3000
+    },
+    {
+      "target": "192.168.55.1",
+      "port": 22,
+      "reachable": true
+    }
+  ],
+  "ipv4_route": {
+    "destination": "192.168.55.0/24",
+    "interface_name": "以太网 3",
+    "interface_index": 11,
+    "next_hop": "0.0.0.0"
+  },
+  "device_document": "E:/README-usb-dev-mode.txt",
+  "interpretation": "Both interfaces are exposed by the Nano USB device. RNDIS is the interface verified to work in this setup. The NCM test timeout does not establish universal incompatibility."
+}

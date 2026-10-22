@@ -1,0 +1,51 @@
+{
+  "checked_at_utc": "2026-10-11T13:00:35.109041+00:00",
+  "archive": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\环境采集\\nano_inventory_20251024_195237_8acNSP.tar.gz",
+  "bytes": 49342,
+  "sha256": "10abd57218d6656c58d5d1547d569dff7ff2bba90360ec676da96445c1eeb872",
+  "matches_user_report": true,
+  "gzip_stream_bytes": 245760,
+  "destination": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\环境采集\\analysis_copy",
+  "members": [
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP",
+      "bytes": 0,
+      "type": "directory"
+    },
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP/report.txt",
+      "bytes": 65595,
+      "type": "file"
+    },
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP/python2_packages.txt",
+      "bytes": 3604,
+      "type": "file"
+    },
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP/package_paths.tsv",
+      "bytes": 756,
+      "type": "file"
+    },
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP/rospack_list.txt",
+      "bytes": 11876,
+      "type": "file"
+    },
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP/python_packages.txt",
+      "bytes": 3604,
+      "type": "file"
+    },
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP/dpkg_packages.tsv",
+      "bytes": 146562,
+      "type": "file"
+    },
+    {
+      "name": "nano_inventory_20251024_195237_8acNSP/python3_packages.txt",
+      "bytes": 4150,
+      "type": "file"
+    }
+  ]
+}

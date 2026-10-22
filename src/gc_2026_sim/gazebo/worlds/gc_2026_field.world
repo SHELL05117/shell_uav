@@ -1,0 +1,625 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <!-- Older PX4 sitl_run.sh spawns before Gazebo namespace discovery is ready.
+       Match gz model's fallback namespace; the filename still selects the map.
+
+       Geometry key (all values in metres, field 4.00 x 4.00):
+         mat x = 0 .. 4   ->  gazebo x = -0.65 .. 3.35
+         mat y = 0 .. 4   ->  gazebo y = -3.35 .. 0.65   (mat y is measured from
+         the bottom edge of the printed mat, i.e. gazebo y = mat_y/1000 - 3.35)
+       Takeoff pad is at mat (0.65, 3.35) -> gazebo (0.00, 0.00).
+
+       The mat drawing annotates everything in MILLIMETRES.  Every element in
+       this file has been reconciled against it - see
+       tools/check_field_vs_drawing.py, which re-reads this file and prints
+       "drawing value vs world value vs difference" for each one; it should
+       report 0 FAIL.  tools/render_field.py draws the whole thing top-down
+       with the drawing's dimension chain over it, which is the fastest way to
+       see a mistake.
+
+       The only element that did NOT match the drawing was the 危险品任务区
+       column: the "1950" callout is measured from the right mat edge, so the
+       column is mat x 2050 = gazebo x 1.40, while this file used to put it at
+       1.50.  Cards and hazard_route were corrected together - they are a pair,
+       change both or the aircraft hovers beside the card. -->
+  <world name="default">
+    <gravity>0 0 -9.81</gravity>
+    <magnetic_field>6.0e-6 2.3e-5 -4.2e-5</magnetic_field>
+    <!-- Match PX4 1c8ab2a0d7's lockstep assumptions from empty.world. -->
+    <physics name="default_physics" default="0" type="ode">
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>10</iters>
+          <sor>1.3</sor>
+          <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <gui fullscreen="0">
+      <camera name="field_camera">
+        <pose>-3.5 -7.0 7.0 0 0.7 0.85</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+
+    <scene>
+      <ambient>0.55 0.55 0.55 1</ambient>
+      <background>0.72 0.76 0.82 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="competition_floor">
+      <static>true</static>
+      <link name="floor_link">
+        <collision name="floor_collision">
+          <geometry>
+            <box><size>4.0 4.0 0.04</size></box>
+          </geometry>
+          <pose>1.35 -1.35 -0.02 0 0 0</pose>
+        </collision>
+        <visual name="floor_visual">
+          <geometry>
+            <box><size>4.0 4.0 0.04</size></box>
+          </geometry>
+          <pose>1.35 -1.35 -0.02 0 0 0</pose>
+          <material>
+            <ambient>0.72 0.72 0.72 1</ambient>
+            <diffuse>0.72 0.72 0.72 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ===================================================================
+         ALTITUDE BAND - read this before touching any z below.
+         ===================================================================
+         Every wall and every obstacle in this file now spans z 0.00 -> 3.00 m
+         (pose z = 1.50, height/length = 3.00). Their xy footprints are
+         untouched, so every route, waypoint and costmap in navigation_2d is
+         still valid. Only the vertical extent moved.
+
+         Why. Where the lidar actually flies, in metres:
+
+             PX4 local z commanded by navigation_2d .... 1.500
+           + iris model-origin offset in Gazebo ........ 0.116  (measured at
+             arm time by px4_sensor_rig_node; see "odom origin aligned to PX4
+             local frame: offset=(-0.007, 0.011, 0.116)")
+           = iris model origin z ....................... 1.616
+           + rig lidar mount (px4_sensor_rig/model.sdf,
+             <pose>0 0 0.25</pose> above base_link) ..... 0.250
+           = lidar plane, intended ..................... 1.866
+
+         The same chain, but with the altitude bias this stack actually shows
+         in the log ("Rig check: iris=(-0.39, -0.22, 1.90)" held at 1.89-1.91
+         for the whole flight instead of 1.616), gives lidar plane = 2.150 m.
+
+         The previous revision stopped every wall and obstacle at 2.00 m, i.e.
+         0.15 m BELOW the 2.150 m plane - and only 0.134 m above the 1.866 m
+         one. Gazebo's ray sensor does not drop an unmatched beam and does not
+         return inf: it returns range_max (3.50). So Cartographer was handed a
+         scan of 360 max-range phantoms with no wall, no obstacle and no loop
+         closure. The front end then had nothing to constrain translation, the
+         map grew to 5.55 x 7.85 m for a 4.05 x 4.05 m field ("Resizing
+         costmap to 111 X 157 at 0.050000 m/pix"), map->odom drifted without
+         bound until the odom route targets landed outside the costmap, DWA
+         reported "failed to produce path", and the safety field finally
+         tripped on the drifted map value.
+
+         This band is 3.00 m tall, and it is 3.00 m for a reason that has
+         nothing to do with the lidar: THE REAL VENUE'S FENCE IS 3 m TALL.
+         Confirmed by the operator on 2026-09-25. So 3.00 m here is the
+         faithful value and must NOT be "corrected" back to 2.00 m - the 2.00 m
+         in the previous revision was simply wrong about the venue, and it
+         happened to also sit below the lidar plane. Those are two independent
+         facts, and treating them as one is what made this look like an
+         altitude bug with an altitude fix. It never was: the fence was too
+         short AND the revision had the wrong venue dimension, and fixing the
+         dimension is what let the lidar see it.
+         The lidar-plane numbers above are therefore kept only as evidence for
+         why the old value was fatal; they are not the reason for the value.
+
+         STILL OPEN: the six obstacles (fixed_obstacle_1..4, random_obstacle_1
+         and _2) were raised to 3.00 m in the same edit, but the drawing
+         annotates those bars at 2.00 m high. If the real bars are 2.00 m and
+         the real lidar flies at ~1.75 m they are still seen, so this changes
+         no behaviour in either 2D navigation or scan matching - which is why
+         they were left at 3.00 m rather than churned. Confirm the venue's bar
+         height before treating 3.00 as authoritative for them; the walls are
+         confirmed, the bars are not.
+
+         Walls: thickness 0.05 m, sitting just outside the mat edge, so the
+         clear inner area is exactly x [-0.65, 3.35], y [-3.35, 0.65] - i.e.
+         the printed 4x4 mat and the 0.20 m safety margin used by
+         navigation_2d are unchanged.
+         =================================================================== -->
+    <model name="perimeter_wall_north">
+      <static>true</static>
+      <pose>1.35 0.675 1.50 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="collision">
+          <geometry><box><size>4.00 0.05 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>4.00 0.05 3.00</size></box></geometry>
+          <material>
+            <ambient>0.34 0.37 0.41 1</ambient>
+            <diffuse>0.44 0.47 0.52 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="perimeter_wall_south">
+      <static>true</static>
+      <pose>1.35 -3.375 1.50 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="collision">
+          <geometry><box><size>4.00 0.05 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>4.00 0.05 3.00</size></box></geometry>
+          <material>
+            <ambient>0.34 0.37 0.41 1</ambient>
+            <diffuse>0.44 0.47 0.52 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="perimeter_wall_west">
+      <static>true</static>
+      <pose>-0.675 -1.35 1.50 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="collision">
+          <geometry><box><size>0.05 4.10 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.05 4.10 3.00</size></box></geometry>
+          <material>
+            <ambient>0.34 0.37 0.41 1</ambient>
+            <diffuse>0.44 0.47 0.52 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="perimeter_wall_east">
+      <static>true</static>
+      <pose>3.375 -1.35 1.50 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="collision">
+          <geometry><box><size>0.05 4.10 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.05 4.10 3.00</size></box></geometry>
+          <material>
+            <ambient>0.34 0.37 0.41 1</ambient>
+            <diffuse>0.44 0.47 0.52 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Fixed obstacle 1 (固定障碍物1): 0.10 m wide, 1.70 m long, 3.00 m tall
+         (see ALTITUDE BAND above - the drawing says 2.00 m, the lidar flies at
+         1.87-2.15 m, so 2.00 m is invisible to it).
+         Drawing: bar left face 1300 mm from the left mat edge, top flush with
+         the field edge -> mat x 1300..1400, mat y 2300..4000.
+         Gazebo centre = (0.70, -0.20). -->
+    <model name="fixed_obstacle_1">
+      <static>true</static>
+      <pose>0.70 -0.20 1.50 0 0 0</pose>
+      <link name="obstacle_link">
+        <collision name="collision">
+          <geometry><box><size>0.10 1.70 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.10 1.70 3.00</size></box></geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1</ambient>
+            <diffuse>0.24 0.24 0.28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Fixed obstacle 2 (固定障碍物2): 1.60 m long, 45 deg, 3.00 m tall
+         (see ALTITUDE BAND above).
+         Drawing: 45 deg bar nested in the top-right corner - its lower-left end
+         corner sits at mat (2800, 2800) and its upper-right end corners touch
+         the top and right mat edges.  The bounding square of such a bar is
+         (1600 + 100)/sqrt(2) = 1202 mm, centred on mat (3400, 3400).
+         Gazebo centre = (2.75, 0.048) -> rounded to (2.75, 0.05). -->
+    <model name="fixed_obstacle_2">
+      <static>true</static>
+      <pose>2.75 0.05 1.50 0 0 0.785398</pose>
+      <link name="obstacle_link">
+        <collision name="collision">
+          <geometry><box><size>1.60 0.10 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.60 0.10 3.00</size></box></geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1</ambient>
+            <diffuse>0.24 0.24 0.28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Fixed obstacles 3 and 4 (固定障碍物3 / 固定障碍物4): 0.10 m wide, 0.50 m
+         deep, 3.00 m tall (see ALTITUDE BAND above; the old comment here said
+         "0.50 m high" but 0.50 is the y extent - they were 2.00 m high, and
+         2.00 m is below the lidar plane).
+         Both are flush with the bottom mat edge: mat y 3500..4000 -> gazebo
+         y -3.10.
+         Drawing bottom chain "1300 | 1400 | 100 | 1200" = 4000:
+           obstacle 3 left face  1300 mm -> centre mat x 1350 -> gazebo 0.70
+           obstacle 4 left face  2700 mm -> centre mat x 2750 -> gazebo 2.10 -->
+    <model name="fixed_obstacle_3">
+      <static>true</static>
+      <pose>0.70 -3.10 1.50 0 0 0</pose>
+      <link name="obstacle_link">
+        <collision name="collision">
+          <geometry><box><size>0.10 0.50 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.10 0.50 3.00</size></box></geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1</ambient>
+            <diffuse>0.24 0.24 0.28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="fixed_obstacle_4">
+      <static>true</static>
+      <pose>2.10 -3.10 1.50 0 0 0</pose>
+      <link name="obstacle_link">
+        <collision name="collision">
+          <geometry><box><size>0.10 0.50 3.00</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.10 0.50 3.00</size></box></geometry>
+          <material>
+            <ambient>0.20 0.20 0.22 1</ambient>
+            <diffuse>0.24 0.24 0.28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Random obstacles (随机障碍物1 / 随机障碍物2): 0.10 m radius, 3.00 m tall
+         (see ALTITUDE BAND above - 2.00 m is below the lidar plane).
+         The mat marks two candidate
+         positions per column, 1000 mm / 500 mm apart on a 500 mm grid measured
+         from the bottom mat edge:
+             left  column, mat x 1350 -> gazebo x 0.70
+                     "1" mat y 1900 -> gazebo y -1.45   (used below)
+                     "2" mat y  900 -> gazebo y -2.45
+             right column, mat x 2750 -> gazebo x 2.10
+                     "1" mat y 1900 -> gazebo y -1.45   (used below)
+                     "2" mat y 1400 -> gazebo y -1.95
+         This world ships the both-"1" draw; swap in the "2" poses if the live
+         draw differs. -->
+    <model name="random_obstacle_1">
+      <static>true</static>
+      <pose>0.70 -1.45 1.50 0 0 0</pose>
+      <link name="obstacle_link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.10</radius><length>3.00</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.10</radius><length>3.00</length></cylinder></geometry>
+          <material>
+            <ambient>0.85 0.30 0.10 1</ambient>
+            <diffuse>0.90 0.35 0.10 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="random_obstacle_2">
+      <static>true</static>
+      <pose>2.10 -1.45 1.50 0 0 0</pose>
+      <link name="obstacle_link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.10</radius><length>3.00</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.10</radius><length>3.00</length></cylinder></geometry>
+          <material>
+            <ambient>0.85 0.30 0.10 1</ambient>
+            <diffuse>0.90 0.35 0.10 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Start pad (起飞点): mat (650, 3350) = the takeoff cross on the drawing,
+         which is the PX4 home position -> gazebo (0, 0). -->
+    <model name="takeoff_pad">
+      <static>true</static>
+      <pose>0 0 0.006 0 0 0</pose>
+      <link name="pad_link">
+        <visual name="pad">
+          <geometry><cylinder><radius>0.20</radius><length>0.012</length></cylinder></geometry>
+          <material>
+            <ambient>0.10 0.55 0.20 1</ambient>
+            <diffuse>0.10 0.65 0.25 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ===================================================================
+         TASK-ZONE MARKERS - 危险品任务区 / 人员救助任务区
+         ===================================================================
+         Both task zones carry a printed marker on the mat: a framed square
+         card.  The drawing draws each of them twice over - a thick coloured
+         border with an obvious edge, and the sign face inside it:
+
+             危险品任务区   厚红框 + 白底 + 黄底黑边三角形警告标志 (GB 2894)
+             人员救助任务区 厚浅蓝框 + 白底 + 人像卡
+
+         So each marker here is built the same way, in two pieces:
+
+           frame_*   real geometry, not a texture.  Outer 0.45 x 0.45 m,
+                     0.025 m wide bars, 0.010 m tall, so the border stands
+                     2 mm proud of the card and reads as an edge marking from
+                     any camera angle - a flat printed border disappears at a
+                     raking angle, which is why the frames were not visible
+                     before.
+           face      a 0.40 x 0.40 x 0.008 m box textured from
+                     model://gc_task_markers.  That model is a resource
+                     container (textures + OGRE material script); the markers
+                     stay inline here so tools/check_config.py can still read
+                     their footprints straight out of this file.
+
+         NO <collision> anywhere in these markers.  They are 10 mm tall, the
+         aircraft flies at 1.20-1.50 m, and the costmap must not see a 0.45 m
+         obstacle sitting on a task waypoint.  check_config.py's
+         _world_footprints() drops them on height for the same reason.
+
+         COLOUR CONTRACT with navigation_2d/src/mission_vision.cpp - do not
+         "tidy" the textures without re-reading it:
+           hazard  mask = HSV H[15,40] S>=70 V>=70   -> the safety yellow of
+                   the triangle.  The black pictogram and the black triangle
+                   border are holes inside that yellow, and RETR_EXTERNAL
+                   ignores holes, so the blob stays one big triangle.
+           person  mask = HSV H[75,125] S>=55 V>=70  -> the blue frame ring.
+                   Its external contour is the full 0.45 m square, ~4x10^4 px
+                   at the 1.2 m task height, far above person_min_area=500.
+         =================================================================== -->
+
+    <!-- 危险品任务区 #1: 易燃 (GB 2894 当心火灾 / 易燃).
+         Drawing: "1950" callout from the right mat edge -> mat x 2050.
+         Hazards are a column, unlike the obstacles. -->
+    <model name="hazard_zone_card_1">
+      <static>true</static>
+      <pose>1.40 0.00 0 0 0 0</pose>
+      <link name="card_link">
+        <visual name="sign_face">
+          <pose>0 0 0.004 0 0 0</pose>
+          <geometry><box><size>0.40 0.40 0.008</size></box></geometry>
+          <material>
+            <script>
+              <uri>model://gc_task_markers/materials/scripts</uri>
+              <uri>model://gc_task_markers/materials/textures</uri>
+              <name>GC/Sign/Flammable</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="frame_south">
+          <pose>0 -0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+        <visual name="frame_north">
+          <pose>0 0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+        <visual name="frame_west">
+          <pose>-0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+        <visual name="frame_east">
+          <pose>0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 危险品任务区 #2: 易爆 (GB 2894 当心爆炸).
+         Drawing: the two red frames sit 454 mm apart centre to centre and are
+         nearly touching; the frame here is 0.45 m so the centres are 0.45 m
+         apart -> gazebo y 0.00 / -0.45.
+         Swap the material name to make this card whichever hazard the task
+         sheet names.  All nine ship:
+           GC/Sign/Flammable          1-02 当心火灾
+           GC/Sign/Explosive          1-03 当心爆炸
+           GC/Sign/Corrosive          1-04 当心腐蚀
+           GC/Sign/Toxic              1-05 当心中毒
+           GC/Sign/Biohazard          1-06 当心生物危害
+           GC/Sign/IonizingRadiation  1-27 当心电离辐射
+           GC/Sign/Fissionable        1-28 当心裂变物质
+           GC/Sign/Oxidizer           1-42 当心氧化物
+           GC/Sign/GasCylinder        1-43 当心高压气瓶
+         (tools/make_task_markers.py regenerates all of them from the standard;
+         tools/assets/gb2894/reference/ holds the originals to compare against.) -->
+    <model name="hazard_zone_card_2">
+      <static>true</static>
+      <pose>1.40 -0.45 0 0 0 0</pose>
+      <link name="card_link">
+        <visual name="sign_face">
+          <pose>0 0 0.004 0 0 0</pose>
+          <geometry><box><size>0.40 0.40 0.008</size></box></geometry>
+          <material>
+            <script>
+              <uri>model://gc_task_markers/materials/scripts</uri>
+              <uri>model://gc_task_markers/materials/textures</uri>
+              <name>GC/Sign/Explosive</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="frame_south">
+          <pose>0 -0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+        <visual name="frame_north">
+          <pose>0 0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+        <visual name="frame_west">
+          <pose>-0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+        <visual name="frame_east">
+          <pose>0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.70 0.02 0.02 1</ambient><diffuse>0.90 0.05 0.05 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 人员救助任务区: three portrait cards in a column, drawing "650"
+         from the right mat edge -> mat x 3350 -> gazebo x 2.70, and the outer
+         frame of card 3 sits on the "500" line -> mat y 500 -> card centre
+         gazebo y -2.65, cards then pitched 0.80 m.
+         navigation_2d.launch routes person_route to exactly those three y. -->
+    <model name="person_zone_card_1">
+      <static>true</static>
+      <pose>2.70 -1.05 0 0 0 0</pose>
+      <link name="card_link">
+        <visual name="sign_face">
+          <pose>0 0 0.004 0 0 0</pose>
+          <geometry><box><size>0.40 0.40 0.008</size></box></geometry>
+          <material>
+            <script>
+              <uri>model://gc_task_markers/materials/scripts</uri>
+              <uri>model://gc_task_markers/materials/textures</uri>
+              <name>GC/Sign/Person</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="frame_south">
+          <pose>0 -0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_north">
+          <pose>0 0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_west">
+          <pose>-0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_east">
+          <pose>0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="person_zone_card_2">
+      <static>true</static>
+      <pose>2.70 -1.85 0 0 0 0</pose>
+      <link name="card_link">
+        <visual name="sign_face">
+          <pose>0 0 0.004 0 0 0</pose>
+          <geometry><box><size>0.40 0.40 0.008</size></box></geometry>
+          <material>
+            <script>
+              <uri>model://gc_task_markers/materials/scripts</uri>
+              <uri>model://gc_task_markers/materials/textures</uri>
+              <name>GC/Sign/Person</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="frame_south">
+          <pose>0 -0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_north">
+          <pose>0 0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_west">
+          <pose>-0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_east">
+          <pose>0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="person_zone_card_3">
+      <static>true</static>
+      <pose>2.70 -2.65 0 0 0 0</pose>
+      <link name="card_link">
+        <visual name="sign_face">
+          <pose>0 0 0.004 0 0 0</pose>
+          <geometry><box><size>0.40 0.40 0.008</size></box></geometry>
+          <material>
+            <script>
+              <uri>model://gc_task_markers/materials/scripts</uri>
+              <uri>model://gc_task_markers/materials/textures</uri>
+              <name>GC/Sign/Person</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="frame_south">
+          <pose>0 -0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_north">
+          <pose>0 0.2125 0.005 0 0 0</pose>
+          <geometry><box><size>0.45 0.025 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_west">
+          <pose>-0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+        <visual name="frame_east">
+          <pose>0.2125 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.025 0.40 0.010</size></box></geometry>
+          <material><ambient>0.22 0.58 0.88 1</ambient><diffuse>0.30 0.70 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

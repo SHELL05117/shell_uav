@@ -1,0 +1,353 @@
+{
+  "record_date": "2026-10-11",
+  "nano_output_directory": "/home/jcfh/nano_software_backup_20251024_211909_mHyTGi",
+  "transport": "User-authenticated FinalShell SFTP file panel",
+  "local_directory": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档",
+  "data_archive_count": 5,
+  "data_archive_bytes": 8121772950,
+  "all_five_hashes_match_nano_manifest": true,
+  "all_five_gzip_tar_full_read_passed": true,
+  "nano_manifest_downloaded_separately_matches_report": true,
+  "report": {
+    "bytes": 1755859,
+    "local_sha256": "840f35461b790e4f28462f78dc017a670552a5cd970f7e7bd58cce4d1eae06a4",
+    "source_sha256_available": false,
+    "gzip_tar_passed": true,
+    "nano_create_exit": 1,
+    "error": "tar: .: file changed as we read it",
+    "boundary": "Directory metadata changed during report creation; original report preserved. No independent Nano report SHA was generated."
+  },
+  "verification_records": [
+    "Nano补充导出\\2026-10-11\\软件补档\\verification\\nano_archive_verification_20261011_002602_6025a3860e.json",
+    "Nano补充导出\\2026-10-11\\软件补档\\verification\\nano_archive_verification_20261011_002800_a45dc30a8d.json"
+  ],
+  "archives": [
+    {
+      "path": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档\\01_home_projects.tar.gz",
+      "expected_sha256": "c57bdd53a1c56e17e9f01745d6440003a6fd9a1ed8911b681258b8467a62c360",
+      "sha256": "c57bdd53a1c56e17e9f01745d6440003a6fd9a1ed8911b681258b8467a62c360",
+      "hash_status": "MATCH",
+      "status": "PASSED",
+      "member_count": 27810,
+      "member_types": {
+        "directory": 5223,
+        "regular": 22452,
+        "sparse_regular": 10,
+        "symlink": 125
+      },
+      "regular_logical_bytes": 3009898787,
+      "source_backup_status": "INCOMPLETE",
+      "source_backup_result": {
+        "bundle": "01_home_projects",
+        "tar_exit": 2,
+        "read_check_exit": 0,
+        "hash_exit": 0,
+        "missing_paths": 0,
+        "bytes": 1751221884,
+        "status": "INCOMPLETE_CHECK_ERRORS"
+      }
+    },
+    {
+      "path": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档\\02_opt_runtime.tar.gz",
+      "expected_sha256": "b7f04be28d49f73998b2b21df272064f858cd52a816fc0e138e9605677f70c54",
+      "sha256": "b7f04be28d49f73998b2b21df272064f858cd52a816fc0e138e9605677f70c54",
+      "hash_status": "MATCH",
+      "status": "PASSED",
+      "member_count": 13219,
+      "member_types": {
+        "directory": 1758,
+        "regular": 11453,
+        "symlink": 8
+      },
+      "regular_logical_bytes": 567652770,
+      "source_backup_status": "INCOMPLETE",
+      "source_backup_result": {
+        "bundle": "02_opt_runtime",
+        "tar_exit": 2,
+        "read_check_exit": 0,
+        "hash_exit": 0,
+        "missing_paths": 0,
+        "bytes": 236813604,
+        "status": "INCOMPLETE_CHECK_ERRORS"
+      }
+    },
+    {
+      "path": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档\\03_usr_local.tar.gz",
+      "expected_sha256": "026e1681b66a49b86aa3ae3cd70e619d18284195d040868d07b8d74987096e8c",
+      "sha256": "026e1681b66a49b86aa3ae3cd70e619d18284195d040868d07b8d74987096e8c",
+      "hash_status": "MATCH",
+      "status": "PASSED",
+      "member_count": 11079,
+      "member_types": {
+        "directory": 893,
+        "regular": 10129,
+        "symlink": 57
+      },
+      "regular_logical_bytes": 2760118408,
+      "source_backup_status": "COMPLETE_FOR_LISTED_PATHS",
+      "source_backup_result": {
+        "bundle": "03_usr_local",
+        "tar_exit": 0,
+        "read_check_exit": 0,
+        "hash_exit": 0,
+        "missing_paths": 0,
+        "bytes": 1553622006,
+        "status": "COMPLETE_FOR_LISTED_PATHS"
+      }
+    },
+    {
+      "path": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档\\05_boot_and_config.tar.gz",
+      "expected_sha256": "8a5f417ce38766a49369bf4012bcf174f4e815be94ac4ea66d432338bf32d53c",
+      "sha256": "8a5f417ce38766a49369bf4012bcf174f4e815be94ac4ea66d432338bf32d53c",
+      "hash_status": "MATCH",
+      "status": "PASSED",
+      "member_count": 3086,
+      "member_types": {
+        "directory": 412,
+        "regular": 1797,
+        "symlink": 877
+      },
+      "regular_logical_bytes": 66052187,
+      "source_backup_status": "INCOMPLETE",
+      "source_backup_result": {
+        "bundle": "05_boot_and_config",
+        "tar_exit": 2,
+        "read_check_exit": 0,
+        "hash_exit": 0,
+        "missing_paths": 0,
+        "bytes": 36945024,
+        "status": "INCOMPLETE_CHECK_ERRORS"
+      }
+    },
+    {
+      "path": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano补充导出\\2026-10-11\\软件补档\\04_system_runtime.tar.gz",
+      "expected_sha256": "b51dd7672d6b6983e6d8d3546cd38176130a0c290d652fd3babf8af2f0c5af76",
+      "sha256": "b51dd7672d6b6983e6d8d3546cd38176130a0c290d652fd3babf8af2f0c5af76",
+      "hash_status": "MATCH",
+      "status": "PASSED",
+      "member_count": 234997,
+      "member_types": {
+        "directory": 20140,
+        "hardlink": 272,
+        "regular": 162709,
+        "sparse_regular": 1,
+        "symlink": 51875
+      },
+      "regular_logical_bytes": 10218415785,
+      "source_backup_status": "INCOMPLETE",
+      "source_backup_result": {
+        "bundle": "04_system_runtime",
+        "tar_exit": 2,
+        "read_check_exit": 0,
+        "hash_exit": 0,
+        "missing_paths": 0,
+        "bytes": 4543170432,
+        "status": "INCOMPLETE_CHECK_ERRORS"
+      }
+    }
+  ],
+  "permission_denied_paths": [
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/f06c0df0-eef1-42d6-87f4-495043b648e9-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/b6c3a7dd-7fda-475e-9bcc-5d6616de30ff-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/be5be646-df6b-43a4-9838-d84b1e24c03a-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/f0289fe2-dcdb-4984-a557-651106ddf666-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/05841bec-42eb-4472-9f63-c111c475a916-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/6809af8c-514f-4a74-a61b-b4f758490724-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/92eab65d-25d1-4055-a369-cb50025aac86-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/b52cd490-bbcd-4612-aaad-d45286ea72cf-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.nx/fonts/d75b1b70-ac2d-4eb2-acb9-01d5503a9e79-le64.cache-7"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/Desktop/plink-ai_carrier_board_tools/bsp-update"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.cache/dconf"
+    },
+    {
+      "bundle": "01_home_projects",
+      "path": "home/jcfh/.gnupg/pubring.kbx"
+    },
+    {
+      "bundle": "02_opt_runtime",
+      "path": "opt/containerd"
+    },
+    {
+      "bundle": "04_system_runtime",
+      "path": "usr/share/glvnd/egl_vendor.d/sedDBxShD"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "boot/wx-bg-gc-jetson-nano-3251.dtb"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "boot/dtb/kernel_wx-bg-gc-jetson-nano-3251.dtb"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/xrdp/rsakeys.ini"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/shadow"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/cni"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/ppp/pap-secrets"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/ppp/chap-secrets"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/security/opasswd"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/docker/key.json"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/NetworkManager/system-connections/Wired connection 1"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/NetworkManager/system-connections/TP-LINK_CDE7"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/sudoers.d/README"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/dhcp/ddns-keys"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/shadow-"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/sudoers"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/.pwd.lock"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/brlapi.key"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/gshadow-"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/gshadow"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/ssl/private"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/ssh/ssh_host_ed25519_key"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/ssh/ssh_host_ecdsa_key"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/ssh/ssh_host_rsa_key"
+    },
+    {
+      "bundle": "05_boot_and_config",
+      "path": "etc/polkit-1/localauthority"
+    }
+  ],
+  "nano_member_list_coverage": {
+    "cuda": {
+      "prefix": "usr/local/cuda-10.2/",
+      "nano_reported_members": 8651,
+      "bundle": "03_usr_local"
+    },
+    "jetson_install": {
+      "prefix": "usr/local/lib/libjetson-",
+      "nano_reported_members": 2,
+      "bundle": "03_usr_local"
+    },
+    "home_source": {
+      "prefix": "home/jcfh/jetson-inference/",
+      "nano_reported_members": 3554,
+      "bundle": "01_home_projects"
+    },
+    "project": {
+      "prefix": "home/jcfh/catkin_ws/",
+      "nano_reported_members": 3993,
+      "bundle": "01_home_projects"
+    },
+    "trt": {
+      "prefix": "usr/lib/aarch64-linux-gnu/libnvinfer",
+      "nano_reported_members": 8,
+      "bundle": "04_system_runtime"
+    },
+    "cudnn": {
+      "prefix": "usr/lib/aarch64-linux-gnu/libcudnn",
+      "nano_reported_members": 35,
+      "bundle": "04_system_runtime"
+    },
+    "opencv": {
+      "prefix": "usr/lib/aarch64-linux-gnu/libopencv",
+      "nano_reported_members": 63,
+      "bundle": "04_system_runtime"
+    },
+    "ros": {
+      "prefix": "opt/ros/melodic/",
+      "nano_reported_members": 12898,
+      "bundle": "02_opt_runtime"
+    }
+  },
+  "backup_complete": false,
+  "restore_validated": false,
+  "boundaries": [
+    "Four source bundles have tar permission errors; local integrity does not remove missing files.",
+    "Source paths covered by this script are not the entire disk or all mounted filesystems.",
+    "SD/eMMC/PX4 recovery and independent media copy remain unverified.",
+    "No archived code or hardware program executed."
+  ]
+}

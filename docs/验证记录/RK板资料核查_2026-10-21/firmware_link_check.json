@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-10-21T16:05:32.4930835+00:00",
+  "checked_at_asia_shanghai": "2026-10-22T00:05:32.4930835+08:00",
+  "engineering_record_date": "2026-10-21",
+  "official_download_entry": "https://t.rock-chips.com/en/wiki.php?filename=Downloads/Downloads",
+  "official_prod_share_link": "https://console.box.lenovo.com/l/Jon9Cy",
+  "redirected_public_page": "https://meta.box.lenovo.com/link/view/928d92ca9beb4ff786c8f34880a8923a",
+  "page_http_status": 200,
+  "share_display_name": "TB-RK3399ProD Image",
+  "protected": false,
+  "access_method": "Anonymous read-only HTTP GET to page and the metadata endpoint explicitly constructed by its referenced JavaScript; no login, extraction code, authentication token or bypass used",
+  "script_trace": [
+    {
+      "url": "https://meta.box.lenovo.com/js/config.js?ver=web_main_20261009_20261012152550",
+      "role": "SeaJS module path mapping and asset version"
+    },
+    {
+      "url": "https://meta.box.lenovo.com/js/link_share/LinkFolderPc.js?web_main_20261009_20261012152550",
+      "role": "Page loads LinkFolderPc; root path /; calls DeliveryModel.metadata with share id, ordering name/asc, offset 0 and limit 50"
+    },
+    {
+      "url": "https://meta.box.lenovo.com/js/lenovodata/model/DeliveryManager.js?web_main_20261009_20261012152550",
+      "role": "metadata constructs URL_PREFIX + /metadata/ + code and GET request"
+    },
+    {
+      "url": "https://meta.box.lenovo.com/js/lenovodata/util.js?web_main_20261009_20261012152550",
+      "role": "getApiVersion returns /v2"
+    }
+  ],
+  "metadata_request_url": "https://meta.box.lenovo.com/v2/delivery/metadata/928d92ca9beb4ff786c8f34880a8923a/?orderby=name&sort=asc&offset=0&limit=50",
+  "metadata_http_status": 200,
+  "metadata_total_entries": 2,
+  "returned_entries": 2,
+  "files": [
+    {
+      "filename": "rootfs_V3.0.rar",
+      "relative_path": "/TB-RK3399ProD Image/rootfs_V3.0.rar",
+      "size_bytes": 3140118187,
+      "modified_as_reported": "2023-10-13T08:51:45+08:00",
+      "is_directory": false,
+      "version_claim_scope": "Version string appears in filename only; archive contents, distribution, driver and SDK versions not inspected",
+      "sha256": null
+    },
+    {
+      "filename": "TB-RK3399ProD_Release_V3.1.rar",
+      "relative_path": "/TB-RK3399ProD Image/TB-RK3399ProD_Release_V3.1.rar",
+      "size_bytes": 3164384881,
+      "modified_as_reported": "2023-10-13T08:51:45+08:00",
+      "is_directory": false,
+      "version_claim_scope": "Version string appears in filename only; archive contents, distribution, driver and SDK versions not inspected",
+      "sha256": null
+    }
+  ],
+  "conclusions": [
+    "Public directory listing is accessible without login as checked; HTML invalid-link templates do not establish expiration",
+    "Two public archive filenames are listed: rootfs_V3.0.rar and TB-RK3399ProD_Release_V3.1.rar",
+    "Filename versions do not establish actual Debian, kernel, RKNN, NPU driver or image build versions",
+    "Large archives were not downloaded, opened, flashed or SHA256-verified",
+    "The metadata response can include signed download URLs and unrelated account fields; these are intentionally not stored"
+  ],
+  "large_archive_downloaded": false,
+  "permissions_bypassed": false
+}

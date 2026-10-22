@@ -1,0 +1,15 @@
+tar: home/jcfh/.nx/nxdevice/D-1001-601B37D520DB9A92B5A00787D2A684D0/audio/native.socket: socket ignored
+tar: home/jcfh/.nx/nxdevice/D-1001-601B37D520DB9A92B5A00787D2A684D0/audio/cli.socket: socket ignored
+tar: home/jcfh/.nx/nxdevice/D-1001-0DD5A71C26E92E87ADBDB8133E213395/audio/native.socket: socket ignored
+tar: home/jcfh/.nx/nxdevice/D-1001-0DD5A71C26E92E87ADBDB8133E213395/audio/cli.socket: socket ignored
+tar: home/jcfh/.nx/nxdevice/D-1001-2D38E2E3663F1AB82ECCF0F29328150F/audio/native.socket: socket ignored
+tar: home/jcfh/.nx/nxdevice/D-1001-2D38E2E3663F1AB82ECCF0F29328150F/audio/cli.socket: socket ignored
+tar: home/jcfh/.nx/fonts/f06c0df0-eef1-42d6-87f4-495043b648e9-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/b6c3a7dd-7fda-475e-9bcc-5d6616de30ff-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/be5be646-df6b-43a4-9838-d84b1e24c03a-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/f0289fe2-dcdb-4984-a557-651106ddf666-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/05841bec-42eb-4472-9f63-c111c475a916-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/6809af8c-514f-4a74-a61b-b4f758490724-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/92eab65d-25d1-4055-a369-cb50025aac86-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/b52cd490-bbcd-4612-aaad-d45286ea72cf-le64.cache-7: Cannot open: Permission denied
+tar: home/jcfh/.nx/fonts/d75b1b70-ac2d-4eb2-acb9-01d5503a9e79-le64.cache-7: Cannot open: Permission denied

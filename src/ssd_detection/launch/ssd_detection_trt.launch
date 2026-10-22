@@ -1,0 +1,88 @@
+<launch>
+  <!-- Jetson / jetson-inference 版的检测节点（C++，见 src/ssd_detection_node.cpp）。
+       发的是与 Python 版**同一个消息**，任务侧不用区分是谁算的。
+
+       这条路不需要 .plan、不需要 graphsurgeon、不需要在 Jetson 上装 TensorFlow。
+       模型停在 ONNX：detectNet 自己解析并建 TensorRT engine，缓存到模型旁边
+       （<model>.onnx.<设备>.<精度>.engine），换 TensorRT 版本会自动重建。
+
+       模型的契约（三个输出名/顺序、类数、预处理通道序）见
+       tools/ssd_training/check_onnx_contract.py 的文件头；**拷上机之前先跑它**：
+         python3 tools/ssd_training/check_onnx_contract.py
+             (参数 onnx 指向模型、labels 指向标签文件)
+       它挡的是那种"引擎正常、帧率正常、永远零检出且不报错"的失效。
+
+       真机上离线预览（不启动 ROS，只跑图），命令行参数为
+       model / labels / dir / out（模型就在包内的 models/ 目录）：
+         rosrun ssd_detection ssd_detection_node
+             (model=$(find ssd_detection)/models/ssd-mobilenet.onnx
+              labels=$(find ssd_detection)/models/labels.txt
+              dir=<图片目录> out=/tmp/ssd_preview)
+       第一次会建 engine，Nano 上几分钟是正常的；之后直接读缓存。
+
+       ==================== 相机（本 launch 与仿真版最大的区别） ====================
+       input_URI 非空时，节点**自己用 GStreamer 抓相机**，不订阅任何图像话题：
+
+           v4l2src ! image/jpeg caps ! jpegparse ! nvv4l2decoder mjpeg=1
+                  ! nvvidconv ! video/x-raw(memory:NVMM) ! appsink
+
+       MJPEG 走硬件解码，终点是 NVMM 显存，Capture() 交回来的指针映射到 CPU
+       （零拷贝）── 一帧 raw 图从头到尾不进 ROS，usb_cam 节点与
+       /camera/image_raw 都不存在了。回传画面只有一路：
+       /ssd_detection/image/compressed（红=危险品，蓝=人员）。
+       想让它改回"订阅一个图像话题"（台架 / rosbag 回放），把 input_URI 传空串。
+  -->
+  <arg name="input_URI" default="v4l2:///dev/video0" />
+  <!-- 采集参数。<=0 的值不传给 GStreamer（让它协商）。相机实际接受的尺寸以
+       启动日志里的 "streaming at WxH" 为准，别假设这里写的值生效了。 -->
+  <arg name="input_width" default="640" />
+  <arg name="input_height" default="480" />
+  <arg name="input_rate" default="15" />
+  <!-- mjpeg：USB2 带宽下 640x480@15 基本只有它稳。相机只认 yuyv 时才换。 -->
+  <arg name="input_codec" default="mjpeg" />
+  <!-- input_URI 为空时的订阅话题（台架/回放）。真机不用。 -->
+  <arg name="input_image_topic" default="" />
+  <arg name="output_topic" default="/ssd_detection/detections" />
+  <!-- 模型与标签放在**包内的 models/ 目录**（随包走，$(find ssd_detection)/models/）。
+       换模型 = 把新 .onnx 与 labels.txt 覆盖到 src/ssd_detection/models/，
+       然后重跑 tools/ssd_training/check_onnx_contract.py；engine 缓存由 detectNet
+       首帧自己建在模型旁边，不用管。 -->
+  <arg name="model_path"
+       default="$(find ssd_detection)/models/ssd-mobilenet.onnx" />
+  <!-- 行 0 必须是 BACKGROUND，行数必须等于模型 scores 的类维（10 类任务模型 = 11 行）。
+       detectNet 从**张量**读类数、从这个文件读名字，两者从不核对 ⇒ 不一致时
+       类名整体错位、被 GetClassDesc() 判成 "void" 后逐条丢弃，不报错。
+       check_onnx_contract.py 就是为了在上机之前把这件事查出来。 -->
+  <arg name="label_file"
+       default="$(find ssd_detection)/models/labels.txt" />
+  <arg name="score_threshold" default="0.5" />
+  <!-- 唯一的回传画面：画了框的检测结果。关掉它（false）只在纯台架、
+       没人看画面时才有意义。 -->
+  <arg name="publish_image" default="true" />
+  <arg name="image_topic" default="/ssd_detection/image/compressed" />
+  <!-- 出图前把长边压到这个宽度（0 = 原尺寸）。检测始终在原图上跑。 -->
+  <arg name="video_width" default="640" />
+  <arg name="jpeg_quality" default="70" />
+  <!-- 推理限速（Hz），0 = 不限制。相机端（GStreamer framerate）已经是 15，
+       这里是第二道保险：图像源更快时不让 Nano 在推理上吃满 CPU。 -->
+  <arg name="max_rate" default="0" />
+
+  <node pkg="ssd_detection" type="ssd_detection_node"
+        name="ssd_detection" output="screen">
+    <param name="input_URI" value="$(arg input_URI)" />
+    <param name="input_width" value="$(arg input_width)" />
+    <param name="input_height" value="$(arg input_height)" />
+    <param name="input_rate" value="$(arg input_rate)" />
+    <param name="input_codec" value="$(arg input_codec)" />
+    <param name="input_image_topic" value="$(arg input_image_topic)" />
+    <param name="output_topic" value="$(arg output_topic)" />
+    <param name="model_path" value="$(arg model_path)" />
+    <param name="label_file" value="$(arg label_file)" />
+    <param name="score_threshold" value="$(arg score_threshold)" />
+    <param name="publish_image" value="$(arg publish_image)" />
+    <param name="image_topic" value="$(arg image_topic)" />
+    <param name="video_width" value="$(arg video_width)" />
+    <param name="jpeg_quality" value="$(arg jpeg_quality)" />
+    <param name="max_rate" value="$(arg max_rate)" />
+  </node>
+</launch>

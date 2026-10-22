@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-11T20:32:35+08:00",
+  "timezone": "Asia/Shanghai",
+  "ref": "baseline/nano-2026-10-11",
+  "commit": "c897dc353563c962df2abdbc9df7dd97285fbeac",
+  "tracked_development_files": 209,
+  "untracked_environment_caches": 3,
+  "executable_files": 115,
+  "mismatches": [],
+  "unexpected_development_paths": [],
+  "passed": true
+}

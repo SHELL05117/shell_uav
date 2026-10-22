@@ -1,0 +1,25 @@
+tar: boot/wx-bg-gc-jetson-nano-3251.dtb: Cannot open: Permission denied
+tar: boot/dtb/kernel_wx-bg-gc-jetson-nano-3251.dtb: Cannot open: Permission denied
+tar: etc/xrdp/rsakeys.ini: Cannot open: Permission denied
+tar: etc/shadow: Cannot open: Permission denied
+tar: etc/cni: Cannot open: Permission denied
+tar: etc/ppp/pap-secrets: Cannot open: Permission denied
+tar: etc/ppp/chap-secrets: Cannot open: Permission denied
+tar: etc/security/opasswd: Cannot open: Permission denied
+tar: etc/docker/key.json: Cannot open: Permission denied
+tar: etc/NetworkManager/system-connections/Wired connection 1: Cannot open: Permission denied
+tar: etc/NetworkManager/system-connections/TP-LINK_CDE7: Cannot open: Permission denied
+tar: etc/sudoers.d/README: Cannot open: Permission denied
+tar: etc/dhcp/ddns-keys: Cannot open: Permission denied
+tar: etc/shadow-: Cannot open: Permission denied
+tar: etc/sudoers: Cannot open: Permission denied
+tar: etc/.pwd.lock: Cannot open: Permission denied
+tar: etc/brlapi.key: Cannot open: Permission denied
+tar: etc/gshadow-: Cannot open: Permission denied
+tar: etc/gshadow: Cannot open: Permission denied
+tar: etc/ssl/private: Cannot open: Permission denied
+tar: etc/ssh/ssh_host_ed25519_key: Cannot open: Permission denied
+tar: etc/ssh/ssh_host_ecdsa_key: Cannot open: Permission denied
+tar: etc/ssh/ssh_host_rsa_key: Cannot open: Permission denied
+tar: etc/polkit-1/localauthority: Cannot open: Permission denied
+tar: Exiting with failure status due to previous errors

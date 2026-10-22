@@ -1,0 +1,31 @@
+{
+  "recordDate": "2026-10-13",
+  "sourceExport": "验证记录/Lichtblick安装_2026-10-13/default_layout_export.json",
+  "appVersion": "1.29.1",
+  "layoutFile": "开发工作区/配置/监看/monitor_layout.json",
+  "sha256": "ab4763338748b5c2dd651c2c9d04899cced56302f1c5f9c429617fec8ad601ac",
+  "panelIds": [
+    "3D!18i6zy7",
+    "Image!3mnp456",
+    "RawMessagesVirtual!os6rgs"
+  ],
+  "displayFrame": "map",
+  "followMode": "follow-none",
+  "orthographic": true,
+  "phi": 0,
+  "imageTopic": "/monitor/camera/image/compressed",
+  "rawTopic": "/mavros/state",
+  "checks": {
+    "jsonParse": true,
+    "layoutLeafReferences": true,
+    "noDuplicatePanels": true,
+    "onlyDisplayPanelTypes": true,
+    "noUserNodes": true,
+    "allSelectedTopicsInPreviewBridgeWhitelist": true,
+    "publishTopicsReservedAndDenied": true,
+    "bridgeCapabilitiesEmpty": true
+  },
+  "guiImportValidated": false,
+  "rosConnected": false,
+  "liveDataValidated": false
+}

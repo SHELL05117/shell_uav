@@ -1,0 +1,93 @@
+# ROS/catkin workspace outputs. logs/ contains shared engineering records.
+/build/
+/devel/
+/install/
+/.catkin_tools/
+/.catkin
+/.ros/
+/log/
+
+# Python bytecode, caches and local virtual environments.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Native compiler intermediates.
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.obj
+
+# TensorRT caches depend on the target environment. Keep deployable ONNX models.
+*.engine
+*.plan
+
+# Generated datasets and training outputs; keep tools/assets/ as shared inputs.
+/data/task_ds/
+/data/voc_task/
+/data/models/
+/datasets/
+/runs/
+/outputs/
+/checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Raw recordings and telemetry; keep selected reports/screenshots in docs/logs.
+/recordings/
+/bags/
+*.bag
+*.bag.active
+*.db3
+*.db3-shm
+*.db3-wal
+*.mcap
+*.tlog
+*.ulg
+
+# Full backup archives and firmware downloads; retain manifests/reports.
+/backups/
+/firmware/
+/nanooutput_origin/**/*.tar
+/nanooutput_origin/**/*.tar.gz
+/nanooutput_origin/**/*.tgz
+/nanooutput_origin/**/*.zip
+/nanooutput_origin/**/*.rar
+
+# Credentials stay local. Sanitized environment examples may be shared.
+.env
+.env.*
+!.env.example
+!.env.*.example
+.ssh/
+id_rsa
+id_ed25519
+*.pem
+*.key
+*.local.yaml
+*.local.yml
+*.local.json
+
+# Personal editor state; allow the team's shared VS Code configuration.
+.idea/
+.obsidian/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Operating-system files and temporary editor files.
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+*~

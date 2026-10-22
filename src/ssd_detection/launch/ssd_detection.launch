@@ -1,0 +1,79 @@
+<launch>
+  <!-- 仿真 PC 上的检测节点（Python + OpenCV DNN，没有 CUDA）。
+       它只做"图像 -> 检测框 + 一路回传画面"。2026-10-17 之后这是唯一的
+       视觉入口：navigation_2d 的 vision_backend 开关已删，include 无条件
+       加它，所以不存在"起了检测节点但任务侧没接上"这种配置。
+
+       默认读的是**与 Jetson 上同一个 .onnx**：节点按后缀自动选后端（.onnx 走
+       onnxruntime，没装才退回 cv2.dnn.readNetFromONNX；.pb 走
+       readNetFromTensorflow）。所以"仿真里过的哪套权重"与"飞的时候用的哪套
+       权重"不可能是两件东西。
+       ⚠️ 为什么不是无条件 cv2.dnn：训练导出的图是 opset 17，Noetic 自带的
+       OpenCV 4.2 读不了 opset>=10 的 Slice，启动就抛 "Required argument
+       starts not found" 然后退出。仿真机上先装 onnxruntime，装法与校验
+       见 tools/ssd_training/README.md 第 6.4 节。
+       $(find ssd_detection) 是 <ws>/src/ssd_detection，往上一级就是工程根。
+
+       真机上不要用这个 launch，用 ssd_detection_trt.launch（C++ detectNet）。
+       两个 launch 接受**同一组参数**（input_image_topic / output_topic /
+       score_threshold / image_topic / video_width / jpeg_quality / max_rate），
+       所以 navigation_2d.launch 里那个 ssd_detection_launch 参数可以在真机上
+       换过去，不用改 include 的转发列表。
+
+       下面 input_URI / input_width / input_height / input_rate / input_codec
+       是真机那份才有的（GStreamer 直采相机）；这里声明出来**只是为了被
+       navigation_2d.launch 的那个 include 统一转发**，本launch 不使用它们 ——
+       仿真的图像来自 Gazebo，走 input_image_topic 订阅。
+  -->
+  <arg name="input_URI" default="" />
+  <arg name="input_width" default="640" />
+  <arg name="input_height" default="480" />
+  <arg name="input_rate" default="15" />
+  <arg name="input_codec" default="mjpeg" />
+  <arg name="input_image_topic" default="/camera/image_raw" />
+  <arg name="output_topic" default="/ssd_detection/detections" />
+  <!-- 模型与标签放在**包内的 models/ 目录**（随包走，$(find ssd_detection)/models/），
+       与真机那份 launch 同路径 —— 仿真与实机读同一个文件，不用记两套。 -->
+  <arg name="model_path"
+       default="$(find ssd_detection)/models/ssd-mobilenet.onnx" />
+  <arg name="config_path" default="" />
+  <arg name="label_file"
+       default="$(find ssd_detection)/models/labels.txt" />
+  <!-- 行 0 必须是 BACKGROUND，行数必须等于模型 scores 的类维（10 类任务模型 = 11 行）。
+       节点启动时会比对这两个数并打印警告：不一致时类名整体错位，而 Jetson 侧
+       的表现是"永远零检出且不报错"。用 tools/ssd_training/check_onnx_contract.py
+       在上机之前查。 -->
+  <arg name="score_threshold" default="0.5" />
+  <arg name="input_size" default="300" />
+  <arg name="max_detections" default="100" />
+  <arg name="nms_iou" default="0.45" />
+  <!-- 唯一的回传画面：画了框的检测结果（红=危险品，蓝=人员）。ssd 后端下
+       任务链里只有这一路图像话题 —— MissionVision 不再发视频。与真机那份
+       同名同默认值，Foxglove 面板在仿真与实机上选同一个话题。 -->
+  <arg name="publish_image" default="true" />
+  <arg name="image_topic" default="/ssd_detection/image/compressed" />
+  <arg name="video_width" default="640" />
+  <arg name="jpeg_quality" default="70" />
+  <arg name="max_rate" default="0" />
+
+  <node pkg="ssd_detection" type="ssd_detection_node.py"
+        name="ssd_detection" output="screen">
+    <param name="input_image_topic" value="$(arg input_image_topic)" />
+    <param name="output_topic" value="$(arg output_topic)" />
+    <param name="model_path" value="$(arg model_path)" />
+    <param name="config_path" value="$(arg config_path)" />
+    <param name="label_file" value="$(arg label_file)" />
+    <param name="score_threshold" value="$(arg score_threshold)" />
+    <param name="input_size" value="$(arg input_size)" />
+    <param name="max_detections" value="$(arg max_detections)" />
+    <param name="nms_iou" value="$(arg nms_iou)" />
+    <!-- .pb 路径专用的开关：模型要 RGB，节点内部默认换一次。固定 true 不给
+         参数，免得有人关掉之后模型"偶尔能认"。.onnx 恒为 RGB，不受影响。 -->
+    <param name="swap_rb" value="true" />
+    <param name="publish_image" value="$(arg publish_image)" />
+    <param name="image_topic" value="$(arg image_topic)" />
+    <param name="video_width" value="$(arg video_width)" />
+    <param name="jpeg_quality" value="$(arg jpeg_quality)" />
+    <param name="max_rate" value="$(arg max_rate)" />
+  </node>
+</launch>

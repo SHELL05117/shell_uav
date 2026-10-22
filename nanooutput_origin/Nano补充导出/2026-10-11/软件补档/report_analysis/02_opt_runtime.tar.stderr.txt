@@ -1,0 +1,2 @@
+tar: opt/containerd: Cannot open: Permission denied
+tar: Exiting with failure status due to previous errors

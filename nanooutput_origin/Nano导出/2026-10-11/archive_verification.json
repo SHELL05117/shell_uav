@@ -1,0 +1,816 @@
+{
+  "archive": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano导出\\2026-10-11\\nano_catkin_ws_20251024_201602.tar.gz",
+  "archive_bytes": 38345031,
+  "sha256": "5764ea536dcb4d6b4d18d564e7ea430b21c2f3f015e0d3198628d17c0d0b3eb8",
+  "matches_reported_hash": true,
+  "gzip_stream_bytes": 66099200,
+  "regular_file_bytes": 63041528,
+  "member_count": 3993,
+  "counts": {
+    "directory": 821,
+    "symlink": 79,
+    "file": 3093
+  },
+  "analysis_copy": "D:\\SHELL\\低空消防\\ChatGPTworkingenviroment\\Nano导出\\2026-10-11\\analysis_copy",
+  "links_instantiated": false,
+  "packages": [
+    "catkin_ws/src/location/package.xml",
+    "catkin_ws/src/ego_planner_2d/package.xml",
+    "catkin_ws/src/ssd_detection/package.xml",
+    "catkin_ws/src/rplidar_ros/package.xml",
+    "catkin_ws/src/servo_control/package.xml",
+    "catkin_ws/src/navigation_2d/package.xml"
+  ],
+  "links": [
+    {
+      "name": "catkin_ws/devel/include/ssd_detection/VisionDetection.h",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/include/ssd_detection/VisionDetection.h",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/include/ssd_detection/VisionDetectionArray.h",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/include/ssd_detection/VisionDetectionArray.h",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/include/navigation_2d/TargetDetection.h",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/include/navigation_2d/TargetDetection.h",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/setup.sh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/setup.sh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/setup.zsh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/setup.zsh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/cmake.lock",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/cmake.lock",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/ssd_detection/msg/VisionDetectionArray.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/msg/VisionDetectionArray.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/ssd_detection/msg/VisionDetection.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/msg/VisionDetection.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/ssd_detection/manifest.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/roseus/ros/ssd_detection/manifest.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/navigation_2d/msg/TargetDetection.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/roseus/ros/navigation_2d/msg/TargetDetection.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/roseus/ros/navigation_2d/manifest.l",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/roseus/ros/navigation_2d/manifest.l",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/location/cmake/locationConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/share/location/cmake/locationConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514
+    },
+    {
+      "name": "catkin_ws/devel/share/location/cmake/locationConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/share/location/cmake/locationConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/msg/VisionDetection.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/VisionDetection.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/msg/VisionDetectionArray.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/VisionDetectionArray.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/msg/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/msg/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/ssd_detection/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/gennodejs/ros/ssd_detection/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/navigation_2d/msg/TargetDetection.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/msg/TargetDetection.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/navigation_2d/msg/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/msg/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/gennodejs/ros/navigation_2d/_index.js",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/gennodejs/ros/navigation_2d/_index.js",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/ego_planner_2d/cmake/ego_planner_2dConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/share/ego_planner_2d/cmake/ego_planner_2dConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/share/ego_planner_2d/cmake/ego_planner_2dConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/share/ego_planner_2d/cmake/ego_planner_2dConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detectionConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detectionConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detection-msg-paths.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detection-msg-paths.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detection-msg-extras.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detection-msg-extras.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/ssd_detection/cmake/ssd_detectionConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/ssd_detection/cmake/ssd_detectionConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/rplidar_ros/cmake/rplidar_rosConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519
+    },
+    {
+      "name": "catkin_ws/devel/share/rplidar_ros/cmake/rplidar_rosConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519
+    },
+    {
+      "name": "catkin_ws/devel/share/servo_control/cmake/servo_controlConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/share/servo_control/cmake/servo_controlConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488
+    },
+    {
+      "name": "catkin_ws/devel/share/servo_control/cmake/servo_controlConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/share/servo_control/cmake/servo_controlConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/_package.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetectionArray.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetectionArray.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/VisionDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/VisionDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/VisionDetectionArray.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/VisionDetectionArray.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/ssd_detection-msg.asd",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/ssd_detection-msg.asd",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/share/common-lisp/ros/ssd_detection/msg/_package_VisionDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/_package_TargetDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/_package_TargetDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/navigation_2d-msg.asd",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/navigation_2d-msg.asd",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/_package.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/_package.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/common-lisp/ros/navigation_2d/msg/TargetDetection.lisp",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/common-lisp/ros/navigation_2d/msg/TargetDetection.lisp",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2d-msg-paths.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2d-msg-paths.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2dConfig.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2dConfig.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2d-msg-extras.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2d-msg-extras.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/share/navigation_2d/cmake/navigation_2dConfig-version.cmake",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/share/navigation_2d/cmake/navigation_2dConfig-version.cmake",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/local_setup.zsh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.zsh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/local_setup.sh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.sh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/_setup_util.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/_setup_util.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/env.sh",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/env.sh",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/local_setup.bash",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/local_setup.bash",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetection.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetection.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetectionArray.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/_VisionDetectionArray.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/msg/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/msg/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/ssd_detection/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/python2.7/dist-packages/ssd_detection/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/navigation_2d/msg/_TargetDetection.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/msg/_TargetDetection.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/navigation_2d/msg/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/msg/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/lib/python2.7/dist-packages/navigation_2d/__init__.py",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/python2.7/dist-packages/navigation_2d/__init__.py",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/ssd_detection.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/pkgconfig/ssd_detection.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/servo_control.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/lib/pkgconfig/servo_control.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/rplidar_ros.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/lib/pkgconfig/rplidar_ros.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/location.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/lib/pkgconfig/location.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/catkin_tools_prebuild.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/lib/pkgconfig/catkin_tools_prebuild.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/navigation_2d.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/pkgconfig/navigation_2d.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/lib/pkgconfig/ego_planner_2d.pc",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/pkgconfig/ego_planner_2d.pc",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/lib/location/location_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/lib/location/location_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514
+    },
+    {
+      "name": "catkin_ws/devel/lib/location/tfmini_test",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/location/lib/location/tfmini_test",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363514
+    },
+    {
+      "name": "catkin_ws/devel/lib/ego_planner_2d/ego_planner_2d_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/ego_planner_2d/ego_planner_2d_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/lib/ssd_detection/ssd_detection_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ssd_detection/lib/ssd_detection/ssd_detection_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364589
+    },
+    {
+      "name": "catkin_ws/devel/lib/rplidar_ros/rplidarNode",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNode",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519
+    },
+    {
+      "name": "catkin_ws/devel/lib/rplidar_ros/rplidarNodeClient",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/rplidar_ros/lib/rplidar_ros/rplidarNodeClient",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363519
+    },
+    {
+      "name": "catkin_ws/devel/lib/libgrid_map_2d.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libgrid_map_2d.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/lib/servo_control/servo_controller_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/servo_control/lib/servo_control/servo_controller_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363488
+    },
+    {
+      "name": "catkin_ws/devel/lib/navigation_2d/rescue_mission_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/rescue_mission_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/lib/navigation_2d/ego_trajectory_controller_node",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/navigation_2d/lib/navigation_2d/ego_trajectory_controller_node",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791364657
+    },
+    {
+      "name": "catkin_ws/devel/lib/libpath_searching.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libpath_searching.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/lib/libbspline_opt.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libbspline_opt.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/lib/libplan_manage.a",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/ego_planner_2d/lib/libplan_manage.a",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363575
+    },
+    {
+      "name": "catkin_ws/devel/setup.bash",
+      "type": "symlink",
+      "size": 0,
+      "link_target": "/home/jcfh/catkin_ws/devel/.private/catkin_tools_prebuild/setup.bash",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "mtime": 1791363466
+    }
+  ]
+}

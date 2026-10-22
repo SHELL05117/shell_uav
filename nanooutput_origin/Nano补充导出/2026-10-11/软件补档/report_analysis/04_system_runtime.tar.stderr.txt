@@ -1,0 +1,2 @@
+tar: usr/share/glvnd/egl_vendor.d/sedDBxShD: Cannot open: Permission denied
+tar: Exiting with failure status due to previous errors

@@ -1,0 +1,61 @@
+2026-10-01 Nano连接排障实测摘要
+日期采用SHELL时区 Asia/Shanghai。
+来源：本会话助手实际执行的Windows命令与工具输出、SHELLNano端输出及登录截图。
+本文件是证据摘要，不是完整终端逐字导出；未保存账户密码。
+
+一、早期USB识别与端口探测
+Get-NetAdapter / Get-PnpDevice -PresentOnly：当时没有Nano USB网卡、串口或VID_0955设备。
+电脑WLAN：NBUT-WLAN，IPv4 10.41.16.36，网关10.41.255.254。
+Test-NetConnection 192.168.55.1 -Port 22：TcpTestSucceeded=False；InterfaceAlias=WLAN。
+重新插拔后仍未识别；未发现相关PnP历史或Nano驱动安装失败记录。
+这不证明线材损坏、Nano不支持USB网络或板卡故障。
+
+二、后期成功枚举
+NVIDIA USB：VID_0955 / PID_7020。
+RNDIS：以太网3，Remote NDIS Compatible Device，ifIndex 42，Up。
+NCM：以太网2，UsbNcm Host Device，ifIndex 38，Up。
+串口：USB串行设备(COM5)。
+只读卷：E:，标签L4T-README。
+最初RNDIS IPv4 169.254.1.199/16；NCM 169.254.207.46/16。
+COM5以115200、8N1短暂打开，仅发送回车并读取，随后关闭；没有串口账户登录。
+串口输出：Ubuntu 18.04.6 LTS jcfh-desktop ttyGS0；jcfh-desktop login:。
+
+三、DHCP续租和短租约
+助手执行：ipconfig /renew "以太网 3"
+得到：192.168.55.100/24，无默认网关。
+助手无交互认证探测：ssh -o ConnectTimeout=5 -o BatchMode=yes -o StrictHostKeyChecking=accept-new jcfh@192.168.55.1
+返回：Permission denied (publickey,password)。该次SSH服务可达；未完成账户认证。
+稍后IPv4丢失，SSH重新超时；再次续租又得到192.168.55.100并恢复SSH响应。
+RNDIS租约记录1：2026-10-01 22:12:08取得，22:12:23到期，15秒。
+RNDIS租约记录2：2026-10-01 22:12:42取得，22:12:57到期，15秒。
+DHCPServer=192.168.55.1。
+没有证据把续租失败归因于CPU负载、双网卡、地址冲突或某一dnsmasq配置。
+22:03:08 DHCP事件1001、错误0x79对应NCM，不是RNDIS。
+
+四、权限限制和临时静态地址
+助手尝试New-NetIPAddress（仅ActiveStore）被Windows拒绝：Windows System Error 5 / 拒绝访问。
+SHELL在管理员PowerShell执行：
+netsh interface ipv4 set address name="以太网 3" source=static address=192.168.55.100 mask=255.255.255.0 gateway=none store=active
+助手复查：IPAddress=192.168.55.100；PrefixLength=24；PrefixOrigin=Manual；AddressState=Preferred；Dhcp=Disabled。
+间隔20秒后复查地址仍在，SSH仍返回认证失败响应，没有在该次复测中超时。
+store=active仅到Windows下次重启；这是本次观察窗口的验证，不是长时间压力测试。
+未同时配置NCM网卡，也未更改WLAN网关或DNS。
+
+五、Nano本地输出与SHELL登录
+SHELL运行hostname -I：192.168.1.101 192.168.55.1 192.168.1.102 172.17.0.1
+SHELL运行systemctl is-active ssh：active。
+除USB 192.168.55.1外，各地址所属接口尚未从ip addr核对。
+SHELL登录截图：首次密码尝试Permission denied, please try again；再次输入后成功。
+欢迎信息：Ubuntu 18.04.6 LTS，GNU/Linux 4.9.201-tegra aarch64。
+登录提示符：jcfh@jcfh-desktop:~$。
+截图Last login的2025年时间是历史上次登录记录，不是今天测试时间。
+
+六、测试结果与边界
+SHELL确认：Nano有无线网卡，具体型号未提供。
+SHELL报告：Nano接电视，出现NVIDIA标识，随后进入Ubuntu桌面。
+SHELL报告：Terminal点击不打开或立即关闭，后来可打开；具体原因与恢复原因未确定。
+iPhone热点与TP-Link路由器方案已讨论，没有收到其SSH连通验收结果。
+SHELL通过已登录SSH窗口读取并提供servo_controller.py源码。
+SHELL确认：舵机空载、未连接机构，接线与供电已核对。
+SHELL最后补充：两个舵机测试结果均正常，角度控制正常。
+没有逐条指令执行日志、实际角度测量、负载或机构限位验收证据。
