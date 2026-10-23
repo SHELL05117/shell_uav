@@ -1,0 +1,7067 @@
+{
+  "source": "D:\\SHELL\\TargetDelection1.1.zip",
+  "source_bytes": 866460635,
+  "sha256": "6a9d4537ce546ae5bb0c429f565edaf3f0e44c6e0bd628b7faf5a061c9666b41",
+  "checked_at": "2026-10-24T04:00:23+0800",
+  "scope": "Read-only archive, XML, JPEG headers and exact-duplicate check; no training or conversion",
+  "errors": [],
+  "images": [
+    {
+      "stem": "IMG_2682",
+      "image": "JPEGImages/IMG_2682.jpg",
+      "sha256": "65297781eda2fa0931bb886f29c2dfb9f678ae7f6c03465b6e1ffca29a24aeeb",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1429.0,
+            1819.0,
+            3236.0,
+            4325.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2682.xml",
+      "xml_filename": "IMG_2682.jpg"
+    },
+    {
+      "stem": "IMG_2683",
+      "image": "JPEGImages/IMG_2683.jpg",
+      "sha256": "d456c1c3ebd9a668b01fb79d5b0af6f07608782a18a2f3cc2a7bb40101473083",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1153.0,
+            1594.0,
+            3814.0,
+            4099.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2683.xml",
+      "xml_filename": "IMG_2683.jpg"
+    },
+    {
+      "stem": "IMG_2684",
+      "image": "JPEGImages/IMG_2684.jpg",
+      "sha256": "e6e2f06d0aec20ed7da6dda92afbf8196943628923d4282d3c1dfcce219a8546",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            521.0,
+            1365.0,
+            3173.0,
+            3918.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2684.xml",
+      "xml_filename": "IMG_2684.jpg"
+    },
+    {
+      "stem": "IMG_2685",
+      "image": "JPEGImages/IMG_2685.jpg",
+      "sha256": "a275275b12bb2098590a1992e31dc68bb25f032f01c3fa8e0b3392feeee2de7b",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1365.0,
+            2549.0,
+            3633.0,
+            5315.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2685.xml",
+      "xml_filename": "IMG_2685.jpg"
+    },
+    {
+      "stem": "IMG_2686",
+      "image": "JPEGImages/IMG_2686.jpg",
+      "sha256": "6cc59f5029bdf0538ab450a3e33a78db062b0918a7d24ea630773870a4d26bcd",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1796.0,
+            2145.0,
+            4284.0,
+            5243.0
+          ],
+          "difficult": "0",
+          "truncated": "1"
+        }
+      ],
+      "annotation": "Annotations/IMG_2686.xml",
+      "xml_filename": "IMG_2686.jpg"
+    },
+    {
+      "stem": "IMG_2687",
+      "image": "JPEGImages/IMG_2687.jpg",
+      "sha256": "0cface2fae5ce1c8d45c6f05d12abc87c8512699b104eaff8a94da8735d480e3",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1219.0,
+            2606.0,
+            3696.0,
+            5178.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2687.xml",
+      "xml_filename": "IMG_2687.jpg"
+    },
+    {
+      "stem": "IMG_2688",
+      "image": "JPEGImages/IMG_2688.jpg",
+      "sha256": "11016b6372d74328f1d28ac5aa05f2cf97df2b1a7fee78143dac98527e523438",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1464.0,
+            3593.0,
+            2497.0,
+            4721.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2688.xml",
+      "xml_filename": "IMG_2688.jpg"
+    },
+    {
+      "stem": "IMG_2689",
+      "image": "JPEGImages/IMG_2689.jpg",
+      "sha256": "f7568a00ea016af754f08e93d27617d0af3834e9fb80f2e71046e679509370a6",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1597.0,
+            2736.0,
+            2668.0,
+            3569.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2689.xml",
+      "xml_filename": "IMG_2689.jpg"
+    },
+    {
+      "stem": "IMG_2690",
+      "image": "JPEGImages/IMG_2690.jpg",
+      "sha256": "36d106960fba0b5dd0ab8d7ee2d0a72ba101cf8ba32f05bce362e4f898fb06b8",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2247.0,
+            2761.0,
+            3268.0,
+            3639.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2690.xml",
+      "xml_filename": "IMG_2690.jpg"
+    },
+    {
+      "stem": "IMG_2691",
+      "image": "JPEGImages/IMG_2691.jpg",
+      "sha256": "5fe6324f12dea28d18a2e00de363fd74a55eaae03ee6baeaac101c2b9a249506",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2336.0,
+            2926.0,
+            3173.0,
+            3579.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2691.xml",
+      "xml_filename": "IMG_2691.jpg"
+    },
+    {
+      "stem": "IMG_2692",
+      "image": "JPEGImages/IMG_2692.jpg",
+      "sha256": "3490235457da148a98c508f5fed0b1c8aa03414e3050918754d25541553af925",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2806.0,
+            1863.0,
+            3531.0,
+            2754.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2692.xml",
+      "xml_filename": "IMG_2692.jpg"
+    },
+    {
+      "stem": "IMG_2693",
+      "image": "JPEGImages/IMG_2693.jpg",
+      "sha256": "09fea9a72fa82788cbcff1a82ac4411fa0e0b411f69fdedfa44dc8a3171678a4",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2596.0,
+            2438.0,
+            3147.0,
+            3255.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2693.xml",
+      "xml_filename": "IMG_2693.jpg"
+    },
+    {
+      "stem": "IMG_2694",
+      "image": "JPEGImages/IMG_2694.jpg",
+      "sha256": "146e0a511e992e41e80fb30d47fe0e3a2037d88257cd8369c3f3beea7a581923",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2495.0,
+            2800.0,
+            3312.0,
+            3807.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2694.xml",
+      "xml_filename": "IMG_2694.jpg"
+    },
+    {
+      "stem": "IMG_2695",
+      "image": "JPEGImages/IMG_2695.jpg",
+      "sha256": "e624997f2ec4dd88a234b1de075053033ec7ecb341b1e9cf72d197274a697a4e",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2660.0,
+            1584.0,
+            3319.0,
+            2160.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2695.xml",
+      "xml_filename": "IMG_2695.jpg"
+    },
+    {
+      "stem": "IMG_2696",
+      "image": "JPEGImages/IMG_2696.jpg",
+      "sha256": "0af006a3a00641850cdebb884f3f9293549e3490a3d5db652c7a17e4f92c0b48",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2257.0,
+            1689.0,
+            2646.0,
+            2160.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2696.xml",
+      "xml_filename": "IMG_2696.jpg"
+    },
+    {
+      "stem": "IMG_2697",
+      "image": "JPEGImages/IMG_2697.jpg",
+      "sha256": "cb2081e237eed37862661e65ddb027a970ed06e3f73bf073fadf13d056d8755e",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2203.0,
+            2044.0,
+            2662.0,
+            2487.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2697.xml",
+      "xml_filename": "IMG_2697.jpg"
+    },
+    {
+      "stem": "IMG_2698",
+      "image": "JPEGImages/IMG_2698.jpg",
+      "sha256": "091883fa2061ba94e8aefe1212b4556d48a9c9a0d963156a36e47afab54950d3",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2146.0,
+            1898.0,
+            2551.0,
+            2195.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2698.xml",
+      "xml_filename": "IMG_2698.jpg"
+    },
+    {
+      "stem": "IMG_2699",
+      "image": "JPEGImages/IMG_2699.jpg",
+      "sha256": "75ab3052e01a7bdd46b2819af341d71a09634cc0a1d4551f32aa0afa1ff5af25",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2105.0,
+            2701.0,
+            2513.0,
+            2998.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2699.xml",
+      "xml_filename": "IMG_2699.jpg"
+    },
+    {
+      "stem": "IMG_2700",
+      "image": "JPEGImages/IMG_2700.jpg",
+      "sha256": "d059ea51546903e38d634ac54677a0a8a0320222da72440bfe7e4645ae60e924",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1895.0,
+            3145.0,
+            2475.0,
+            3519.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2700.xml",
+      "xml_filename": "IMG_2700.jpg"
+    },
+    {
+      "stem": "IMG_2701",
+      "image": "JPEGImages/IMG_2701.jpg",
+      "sha256": "e8178164b041e6ca21efe362a2dcef540f664439d696e0a5abcb8d76fb26c182",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2028.0,
+            3187.0,
+            2541.0,
+            3461.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2701.xml",
+      "xml_filename": "IMG_2701.jpg"
+    },
+    {
+      "stem": "IMG_2702",
+      "image": "JPEGImages/IMG_2702.jpg",
+      "sha256": "6c2b15c27f93be105c609fbb7a88c43adc19d499b8e8388b3d7bef1c5cbcef67",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1654.0,
+            2190.0,
+            2703.0,
+            3014.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2702.xml",
+      "xml_filename": "IMG_2702.jpg"
+    },
+    {
+      "stem": "IMG_2703",
+      "image": "JPEGImages/IMG_2703.jpg",
+      "sha256": "c8e53d90dec8d518b25bf35a2ea58eda85c754c5adb73a074c72bda084750a50",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1619.0,
+            2155.0,
+            2614.0,
+            3201.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2703.xml",
+      "xml_filename": "IMG_2703.jpg"
+    },
+    {
+      "stem": "IMG_2704",
+      "image": "JPEGImages/IMG_2704.jpg",
+      "sha256": "03d54e342f002f6ecc85b445a6ba65ec80cf73f0197575280bd769144ee1ba82",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1343.0,
+            2527.0,
+            2408.0,
+            3791.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2704.xml",
+      "xml_filename": "IMG_2704.jpg"
+    },
+    {
+      "stem": "IMG_2705",
+      "image": "JPEGImages/IMG_2705.jpg",
+      "sha256": "b6cc16508a91a88688f13a4a002acb0561c5836625d839e73a7fbe508f83ce10",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1314.0,
+            2692.0,
+            2567.0,
+            3684.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2705.xml",
+      "xml_filename": "IMG_2705.jpg"
+    },
+    {
+      "stem": "IMG_2706",
+      "image": "JPEGImages/IMG_2706.jpg",
+      "sha256": "eb576ef761f0919aad0346ad95599d40c049747e76378cbab9cfb3a6161403b3",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            2266.0,
+            2168.0,
+            3116.0,
+            3112.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2706.xml",
+      "xml_filename": "IMG_2706.jpg"
+    },
+    {
+      "stem": "IMG_2707",
+      "image": "JPEGImages/IMG_2707.jpg",
+      "sha256": "fe322a47e074e01cc9adcdd09e7b91646a6c1c87df1f0c6c4c9eb122f8096e28",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            962.0,
+            1705.0,
+            2297.0,
+            2487.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2707.xml",
+      "xml_filename": "IMG_2707.jpg"
+    },
+    {
+      "stem": "IMG_2708",
+      "image": "JPEGImages/IMG_2708.jpg",
+      "sha256": "339e47c965a56f0e6f5162b2796dd0bb8b4381edf70161e63ae99d5c5f91d9c0",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1600.0,
+            2168.0,
+            2951.0,
+            3433.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2708.xml",
+      "xml_filename": "IMG_2708.jpg"
+    },
+    {
+      "stem": "IMG_2709",
+      "image": "JPEGImages/IMG_2709.jpg",
+      "sha256": "75c4e205474a27b87fe1f3010d4d654e26d9b334b7a950914a4ea2afd88af390",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1286.0,
+            886.0,
+            3744.0,
+            2513.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2709.xml",
+      "xml_filename": "IMG_2709.jpg"
+    },
+    {
+      "stem": "IMG_2710",
+      "image": "JPEGImages/IMG_2710.jpg",
+      "sha256": "171bbf1b1ca3f7d9f941d14d76e2a6781085b99a9cfb63f1a5cbee32d6f26ef4",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1505.0,
+            1362.0,
+            2608.0,
+            2106.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2710.xml",
+      "xml_filename": "IMG_2710.jpg"
+    },
+    {
+      "stem": "IMG_2711",
+      "image": "JPEGImages/IMG_2711.jpg",
+      "sha256": "4eb6c07f00033f61b9628114d52091b64949b72400b0d6ca21766914c43fa6b1",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "人员",
+          "box_xyxy": [
+            1013.0,
+            2654.0,
+            2779.0,
+            3820.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2711.xml",
+      "xml_filename": "IMG_2711.jpg"
+    },
+    {
+      "stem": "IMG_2712",
+      "image": "JPEGImages/IMG_2712.jpg",
+      "sha256": "7ba7f6f8f23a05db792ef7ac5ffb62a33fc2ed38a44eef53d6c921d13fa4a99b",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1464.0,
+            1978.0,
+            3071.0,
+            3363.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2712.xml",
+      "xml_filename": "IMG_2712.jpg"
+    },
+    {
+      "stem": "IMG_2713",
+      "image": "JPEGImages/IMG_2713.jpg",
+      "sha256": "33c156fed13795a5d83eb273cfe5fe4405d1c00baeeda2ff57381fd126cb55e3",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1584.0,
+            2412.0,
+            2751.0,
+            3417.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2713.xml",
+      "xml_filename": "IMG_2713.jpg"
+    },
+    {
+      "stem": "IMG_2714",
+      "image": "JPEGImages/IMG_2714.jpg",
+      "sha256": "0e6271e840d5953506bfe78d5671070897d014062ab9a1f21ffcabd04b599e27",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            899.0,
+            2339.0,
+            1995.0,
+            3623.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2714.xml",
+      "xml_filename": "IMG_2714.jpg"
+    },
+    {
+      "stem": "IMG_2715",
+      "image": "JPEGImages/IMG_2715.jpg",
+      "sha256": "37c3447d62288c76f8b89d9d7624791a76cf61bda31719921f47b754f4ece35e",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            978.0,
+            1876.0,
+            2186.0,
+            3065.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2715.xml",
+      "xml_filename": "IMG_2715.jpg"
+    },
+    {
+      "stem": "IMG_2716",
+      "image": "JPEGImages/IMG_2716.jpg",
+      "sha256": "0c95143cc2baeaf1389810661b67d515800acc885aa4a454e4ef353fdefb41ca",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            781.0,
+            1971.0,
+            2103.0,
+            3125.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2716.xml",
+      "xml_filename": "IMG_2716.jpg"
+    },
+    {
+      "stem": "IMG_2717",
+      "image": "JPEGImages/IMG_2717.jpg",
+      "sha256": "c90e71f58c443d5ddbce6f34e5f5c7014e6e52338305896c7ca3d661fc8dab70",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1721.0,
+            1848.0,
+            2871.0,
+            2909.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2717.xml",
+      "xml_filename": "IMG_2717.jpg"
+    },
+    {
+      "stem": "IMG_2718",
+      "image": "JPEGImages/IMG_2718.jpg",
+      "sha256": "64548222dd72a14584bd11e415a4f0b33d24ffdf5919e23058c36b2450e59b68",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1832.0,
+            2860.0,
+            2659.0,
+            3439.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2718.xml",
+      "xml_filename": "IMG_2718.jpg"
+    },
+    {
+      "stem": "IMG_2719",
+      "image": "JPEGImages/IMG_2719.jpg",
+      "sha256": "cfb5ac2345adf490b921f8d924e31782f0f545aa5e05ce0b768534da4a383c11",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            2079.0,
+            3145.0,
+            2833.0,
+            3757.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2719.xml",
+      "xml_filename": "IMG_2719.jpg"
+    },
+    {
+      "stem": "IMG_2720",
+      "image": "JPEGImages/IMG_2720.jpg",
+      "sha256": "76a4b071f735f6c0df26ec47fc456483b4fe927456abd6d854e8726161fc619c",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            2238.0,
+            2911.0,
+            2966.0,
+            3395.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2720.xml",
+      "xml_filename": "IMG_2720.jpg"
+    },
+    {
+      "stem": "IMG_2721",
+      "image": "JPEGImages/IMG_2721.jpg",
+      "sha256": "280082b92b8ed2a522e47da3d8867104825b4bd9f8d791352074cd863c59a308",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            2365.0,
+            3079.0,
+            3011.0,
+            3620.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2721.xml",
+      "xml_filename": "IMG_2721.jpg"
+    },
+    {
+      "stem": "IMG_2722",
+      "image": "JPEGImages/IMG_2722.jpg",
+      "sha256": "e44a6f82e3cf2c416a352355881079c4386d6d20b3297892707254d3d2cce22b",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1654.0,
+            3272.0,
+            2332.0,
+            3833.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2722.xml",
+      "xml_filename": "IMG_2722.jpg"
+    },
+    {
+      "stem": "IMG_2723",
+      "image": "JPEGImages/IMG_2723.jpg",
+      "sha256": "cb48ed98b7167d735564bb07eac8038a35eb4da6145287cddcda8eb12b9ee530",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1832.0,
+            2834.0,
+            2557.0,
+            3274.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2723.xml",
+      "xml_filename": "IMG_2723.jpg"
+    },
+    {
+      "stem": "IMG_2724",
+      "image": "JPEGImages/IMG_2724.jpg",
+      "sha256": "f244336533b1c384fe0ce0ac4143c006b09f6b55099cdaaedcb06c24193b68c1",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1987.0,
+            3345.0,
+            2684.0,
+            3988.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2724.xml",
+      "xml_filename": "IMG_2724.jpg"
+    },
+    {
+      "stem": "IMG_2725",
+      "image": "JPEGImages/IMG_2725.jpg",
+      "sha256": "165b8fe5eeb69030f40a41127757d34b7a7fca58faf203381a13750519f78828",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1943.0,
+            3034.0,
+            2697.0,
+            3734.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2725.xml",
+      "xml_filename": "IMG_2725.jpg"
+    },
+    {
+      "stem": "IMG_2726",
+      "image": "JPEGImages/IMG_2726.jpg",
+      "sha256": "2ac71fa764792eeb7910bb8196cad238cd416bc38da17d2f37d7576f2ee216da",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1790.0,
+            2708.0,
+            2481.0,
+            3141.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2726.xml",
+      "xml_filename": "IMG_2726.jpg"
+    },
+    {
+      "stem": "IMG_2727",
+      "image": "JPEGImages/IMG_2727.jpg",
+      "sha256": "cc78770aacbcec482d0bce88cd5343e0807e08b046f1c321677acf79efe09e82",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1876.0,
+            2819.0,
+            2506.0,
+            3242.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2727.xml",
+      "xml_filename": "IMG_2727.jpg"
+    },
+    {
+      "stem": "IMG_2728",
+      "image": "JPEGImages/IMG_2728.jpg",
+      "sha256": "aada648dd949076795dca330a22a948d25726dcca1c6aacbb5b4b82c5ce03709",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1895.0,
+            2685.0,
+            2836.0,
+            3442.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2728.xml",
+      "xml_filename": "IMG_2728.jpg"
+    },
+    {
+      "stem": "IMG_2729",
+      "image": "JPEGImages/IMG_2729.jpg",
+      "sha256": "c8b4ebbbe09a4464f13c6a09f26fac3ec4707cdcf09470e8cb915b46c47bd4a9",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            2035.0,
+            2888.0,
+            3036.0,
+            3842.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2729.xml",
+      "xml_filename": "IMG_2729.jpg"
+    },
+    {
+      "stem": "IMG_2730",
+      "image": "JPEGImages/IMG_2730.jpg",
+      "sha256": "16177a0b9e71b428247ab9087e1abf50fe69fb645e495277cdf3808a59d47532",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1974.0,
+            2314.0,
+            2947.0,
+            3081.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2730.xml",
+      "xml_filename": "IMG_2730.jpg"
+    },
+    {
+      "stem": "IMG_2731",
+      "image": "JPEGImages/IMG_2731.jpg",
+      "sha256": "1208ae6a7daf524b483caf97fe0586c48ac5d227c20f755481887dd4756a3dba",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1686.0,
+            2498.0,
+            2560.0,
+            3392.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2731.xml",
+      "xml_filename": "IMG_2731.jpg"
+    },
+    {
+      "stem": "IMG_2732",
+      "image": "JPEGImages/IMG_2732.jpg",
+      "sha256": "f82c0e51c2093523d37cb15005e17c928ce5333d21e95ba0bc4775e3874ce3f1",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1768.0,
+            2463.0,
+            2636.0,
+            3366.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2732.xml",
+      "xml_filename": "IMG_2732.jpg"
+    },
+    {
+      "stem": "IMG_2733",
+      "image": "JPEGImages/IMG_2733.jpg",
+      "sha256": "45d1e1fc2150a53a33e654056dc06d5afe8f21883bba64dce611792fcaae6277",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1873.0,
+            2701.0,
+            2808.0,
+            3661.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2733.xml",
+      "xml_filename": "IMG_2733.jpg"
+    },
+    {
+      "stem": "IMG_2734",
+      "image": "JPEGImages/IMG_2734.jpg",
+      "sha256": "9ba155c5755ebc5433b9f841182d42169b53455fd1a571742fe2ce4cba614751",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            873.0,
+            1848.0,
+            2855.0,
+            3531.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2734.xml",
+      "xml_filename": "IMG_2734.jpg"
+    },
+    {
+      "stem": "IMG_2735",
+      "image": "JPEGImages/IMG_2735.jpg",
+      "sha256": "50bf38767c8e1b23cedf8763aca66367df0bf5c07ad3ab68548ee58eabc92ffd",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1775.0,
+            2673.0,
+            3782.0,
+            5156.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2735.xml",
+      "xml_filename": "IMG_2735.jpg"
+    },
+    {
+      "stem": "IMG_2736",
+      "image": "JPEGImages/IMG_2736.jpg",
+      "sha256": "52ee5511cbcf2548340ceefe251c6aa0a677065b2d090b777b2d48695a15a138",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1130.0,
+            2060.0,
+            3125.0,
+            3718.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2736.xml",
+      "xml_filename": "IMG_2736.jpg"
+    },
+    {
+      "stem": "IMG_2737",
+      "image": "JPEGImages/IMG_2737.jpg",
+      "sha256": "eda68916ceb0380e0639545e9f183d890b20fac8f302afd819854b22b3650053",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            2251.0,
+            3088.0,
+            3344.0,
+            4804.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2737.xml",
+      "xml_filename": "IMG_2737.jpg"
+    },
+    {
+      "stem": "IMG_2738",
+      "image": "JPEGImages/IMG_2738.jpg",
+      "sha256": "5e7e7203b369e1fcc8fbf5d177b71a3b933ab2de7f13ec84dcaf17c6e69e6e4d",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1676.0,
+            2473.0,
+            3192.0,
+            4337.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2738.xml",
+      "xml_filename": "IMG_2738.jpg"
+    },
+    {
+      "stem": "IMG_2739",
+      "image": "JPEGImages/IMG_2739.jpg",
+      "sha256": "032d8f1b5a95e14ff39f8f58948defac0263acfe3f9087ec92d35d74a082c492",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            1543.0,
+            1578.0,
+            2903.0,
+            3712.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2739.xml",
+      "xml_filename": "IMG_2739.jpg"
+    },
+    {
+      "stem": "IMG_2740",
+      "image": "JPEGImages/IMG_2740.jpg",
+      "sha256": "e45180290fb717377a2430b8bbe6022ac5c2dcf88a00d28d4734d6130beac91f",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            807.0,
+            1917.0,
+            2995.0,
+            3801.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2740.xml",
+      "xml_filename": "IMG_2740.jpg"
+    },
+    {
+      "stem": "IMG_2741",
+      "image": "JPEGImages/IMG_2741.jpg",
+      "sha256": "dc667eb2352b66018517e09657bed770b53f153de219c382c9f4cce2c5db7c1f",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-有毒",
+          "box_xyxy": [
+            515.0,
+            642.0,
+            3014.0,
+            2300.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2741.xml",
+      "xml_filename": "IMG_2741.jpg"
+    },
+    {
+      "stem": "IMG_2742",
+      "image": "JPEGImages/IMG_2742.jpg",
+      "sha256": "8fca12bcbe2da2f2d6d70885e2b9f0a1b24da021a017f5233531f2138eddc166",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1194.0,
+            2219.0,
+            2944.0,
+            3490.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2742.xml",
+      "xml_filename": "IMG_2742.jpg"
+    },
+    {
+      "stem": "IMG_2743",
+      "image": "JPEGImages/IMG_2743.jpg",
+      "sha256": "7cc564e33bc0c5a7f0f1a8f54c42dd52e17316c76f3a6da091295348d6656862",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1803.0,
+            2282.0,
+            3369.0,
+            3861.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2743.xml",
+      "xml_filename": "IMG_2743.jpg"
+    },
+    {
+      "stem": "IMG_2744",
+      "image": "JPEGImages/IMG_2744.jpg",
+      "sha256": "f9f2953cab4d8ab4c86fe6cd15159c0b9873468b950b338f9a4db36adb1cee26",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1635.0,
+            2508.0,
+            3052.0,
+            3918.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2744.xml",
+      "xml_filename": "IMG_2744.jpg"
+    },
+    {
+      "stem": "IMG_2745",
+      "image": "JPEGImages/IMG_2745.jpg",
+      "sha256": "1d9f6489fe7b3b525e187b58140f900fa3ccaeb4bfda58b51220c970d789dc11",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1302.0,
+            2311.0,
+            3049.0,
+            3893.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2745.xml",
+      "xml_filename": "IMG_2745.jpg"
+    },
+    {
+      "stem": "IMG_2746",
+      "image": "JPEGImages/IMG_2746.jpg",
+      "sha256": "a2aa8748eca237e68ea53f2813c3ffb29fbda469e3f59010981a4cf2ee6c4cd5",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1308.0,
+            2492.0,
+            2922.0,
+            4039.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2746.xml",
+      "xml_filename": "IMG_2746.jpg"
+    },
+    {
+      "stem": "IMG_2747",
+      "image": "JPEGImages/IMG_2747.jpg",
+      "sha256": "22ef0843a39c107e94fb756bd9877e01fce949ec7bbeffedc5892391b73b03f0",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1819.0,
+            2174.0,
+            3347.0,
+            3420.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2747.xml",
+      "xml_filename": "IMG_2747.jpg"
+    },
+    {
+      "stem": "IMG_2748",
+      "image": "JPEGImages/IMG_2748.jpg",
+      "sha256": "7bce9855bb3394f16a60c96d9c48cbb8af1648e5caef4979c05c6e400917056e",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2098.0,
+            3847.0,
+            2935.0,
+            4715.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2748.xml",
+      "xml_filename": "IMG_2748.jpg"
+    },
+    {
+      "stem": "IMG_2749",
+      "image": "JPEGImages/IMG_2749.jpg",
+      "sha256": "fefb030ef916015ce624bb4b07c8e3b23bff9e0d260637b895ea9703a39f0d00",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2926.0,
+            3269.0,
+            3934.0,
+            4109.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2749.xml",
+      "xml_filename": "IMG_2749.jpg"
+    },
+    {
+      "stem": "IMG_2750",
+      "image": "JPEGImages/IMG_2750.jpg",
+      "sha256": "45fca00eb29cac767877db278389c75cfa5b0e7401cb29abc0951d69601cc175",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2577.0,
+            2892.0,
+            3354.0,
+            3541.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2750.xml",
+      "xml_filename": "IMG_2750.jpg"
+    },
+    {
+      "stem": "IMG_2751",
+      "image": "JPEGImages/IMG_2751.jpg",
+      "sha256": "067d7c6e1f6fd748a1e15f877e4279d209bb84627080ac12bb5c449399857ce9",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2000.0,
+            2854.0,
+            2722.0,
+            3363.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2751.xml",
+      "xml_filename": "IMG_2751.jpg"
+    },
+    {
+      "stem": "IMG_2752",
+      "image": "JPEGImages/IMG_2752.jpg",
+      "sha256": "eada2e8afd6b12ca7712a96718ff1c415d7d88b974e918faaf744f616ee79be8",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2060.0,
+            3161.0,
+            2684.0,
+            3734.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2752.xml",
+      "xml_filename": "IMG_2752.jpg"
+    },
+    {
+      "stem": "IMG_2753",
+      "image": "JPEGImages/IMG_2753.jpg",
+      "sha256": "c656577dec4350b92541cfe9eda53a77275cd0ec197bd84194d31c9922c4ceb9",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1435.0,
+            2457.0,
+            2179.0,
+            3062.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2753.xml",
+      "xml_filename": "IMG_2753.jpg"
+    },
+    {
+      "stem": "IMG_2754",
+      "image": "JPEGImages/IMG_2754.jpg",
+      "sha256": "0909b075c7034c3e01361eabbd8fc4da4ba9ebb2295ed0c78c493feccd7a97e5",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1733.0,
+            3241.0,
+            2544.0,
+            3991.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2754.xml",
+      "xml_filename": "IMG_2754.jpg"
+    },
+    {
+      "stem": "IMG_2755",
+      "image": "JPEGImages/IMG_2755.jpg",
+      "sha256": "be1c3d1955c1bda2d5237c57b7e6b75b482ce5e22e140e891abb727098d574d3",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1542.0,
+            2748.0,
+            2063.0,
+            3037.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2755.xml",
+      "xml_filename": "IMG_2755.jpg"
+    },
+    {
+      "stem": "IMG_2756",
+      "image": "JPEGImages/IMG_2756.jpg",
+      "sha256": "48bb84ba33b3c0c7b61d20ef26934d3483fb38dab3eea7119ef2f75a6f265bdf",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2145.0,
+            3014.0,
+            2615.0,
+            3297.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2756.xml",
+      "xml_filename": "IMG_2756.jpg"
+    },
+    {
+      "stem": "IMG_2757",
+      "image": "JPEGImages/IMG_2757.jpg",
+      "sha256": "c4b9c2e3d8ed8c406bd97e77afd2da096902a1d0c1ea8122ff659421c76a99de",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1644.0,
+            3114.0,
+            2411.0,
+            3626.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2757.xml",
+      "xml_filename": "IMG_2757.jpg"
+    },
+    {
+      "stem": "IMG_2758",
+      "image": "JPEGImages/IMG_2758.jpg",
+      "sha256": "f0f66386026361fe941611e39c7428beea8c75ae967d9882808b50aa710f429a",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2536.0,
+            3967.0,
+            3373.0,
+            4721.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2758.xml",
+      "xml_filename": "IMG_2758.jpg"
+    },
+    {
+      "stem": "IMG_2759",
+      "image": "JPEGImages/IMG_2759.jpg",
+      "sha256": "4772e11ad837fcd66c7b65dfe855dd709e195bd31041f40764450c8a4e1f105f",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1016.0,
+            2466.0,
+            1735.0,
+            2890.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2759.xml",
+      "xml_filename": "IMG_2759.jpg"
+    },
+    {
+      "stem": "IMG_2760",
+      "image": "JPEGImages/IMG_2760.jpg",
+      "sha256": "ead84e0ca404bc415ed3df545a6bcd2c0893f648dd6c6214d83ef9aba84b38be",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            908.0,
+            2822.0,
+            1945.0,
+            3830.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2760.xml",
+      "xml_filename": "IMG_2760.jpg"
+    },
+    {
+      "stem": "IMG_2761",
+      "image": "JPEGImages/IMG_2761.jpg",
+      "sha256": "73994bfebb13b8f8fc286b3c5a6fd2d3b2a9a046735d3b022e8696427cf03bbf",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2057.0,
+            2987.0,
+            3052.0,
+            4064.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2761.xml",
+      "xml_filename": "IMG_2761.jpg"
+    },
+    {
+      "stem": "IMG_2762",
+      "image": "JPEGImages/IMG_2762.jpg",
+      "sha256": "539e2efb7a431f4f88ad8a43aa314a6b6cb2da91d9b70d627dc2d8d0e0029c5f",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1952.0,
+            2479.0,
+            2820.0,
+            3255.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2762.xml",
+      "xml_filename": "IMG_2762.jpg"
+    },
+    {
+      "stem": "IMG_2763",
+      "image": "JPEGImages/IMG_2763.jpg",
+      "sha256": "6df39a752d5ccfc79f2faf3a057bd824a238b7c4a51c4d5e57520f1a9304dda1",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1159.0,
+            2926.0,
+            2100.0,
+            3906.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2763.xml",
+      "xml_filename": "IMG_2763.jpg"
+    },
+    {
+      "stem": "IMG_2764",
+      "image": "JPEGImages/IMG_2764.jpg",
+      "sha256": "4cd4e17f849c866d2258940858b4c792f06d4d2d1cf6af5aadf6f9c959ffd9b9",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1679.0,
+            2466.0,
+            2490.0,
+            3242.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2764.xml",
+      "xml_filename": "IMG_2764.jpg"
+    },
+    {
+      "stem": "IMG_2765",
+      "image": "JPEGImages/IMG_2765.jpg",
+      "sha256": "cf618716ecac184090390fc488b09987f7ef2fc78383eb1286961e8917d7b41b",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            499.0,
+            2336.0,
+            2579.0,
+            4448.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2765.xml",
+      "xml_filename": "IMG_2765.jpg"
+    },
+    {
+      "stem": "IMG_2766",
+      "image": "JPEGImages/IMG_2766.jpg",
+      "sha256": "536c840fb14970a08177ace89abab974ab0fc668536417b5bc5e9d539f0be6c2",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            328.0,
+            458.0,
+            3116.0,
+            3055.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2766.xml",
+      "xml_filename": "IMG_2766.jpg"
+    },
+    {
+      "stem": "IMG_2767",
+      "image": "JPEGImages/IMG_2767.jpg",
+      "sha256": "828d7f11654419afe45ef1d6341a5530e5e4977f3287d7f7adcfe2d6310f1623",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1057.0,
+            2784.0,
+            3055.0,
+            4743.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2767.xml",
+      "xml_filename": "IMG_2767.jpg"
+    },
+    {
+      "stem": "IMG_2768",
+      "image": "JPEGImages/IMG_2768.jpg",
+      "sha256": "5f567d7eb51a7824647ce3b29accc5c7bc3925f29da10b053b6798efcaa51a88",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            1324.0,
+            3276.0,
+            3017.0,
+            5362.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2768.xml",
+      "xml_filename": "IMG_2768.jpg"
+    },
+    {
+      "stem": "IMG_2769",
+      "image": "JPEGImages/IMG_2769.jpg",
+      "sha256": "dc84683c624f634d17f9bdea5ea5535cc46bda93f7619815cc1530f720fca421",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2539.0,
+            1400.0,
+            4531.0,
+            2468.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2769.xml",
+      "xml_filename": "IMG_2769.jpg"
+    },
+    {
+      "stem": "IMG_2770",
+      "image": "JPEGImages/IMG_2770.jpg",
+      "sha256": "5a95105661dcf45f0b584aed1819efcaa6820a0fb96d4567da3ee1f2756632f8",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            2019.0,
+            1556.0,
+            3731.0,
+            2551.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2770.xml",
+      "xml_filename": "IMG_2770.jpg"
+    },
+    {
+      "stem": "IMG_2771",
+      "image": "JPEGImages/IMG_2771.jpg",
+      "sha256": "a7b7706f8eb8e914c66e1e32bc584be094a55bb14857a1fb86b337838ee84fbc",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易燃",
+          "box_xyxy": [
+            691.0,
+            745.0,
+            3636.0,
+            2976.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2771.xml",
+      "xml_filename": "IMG_2771.jpg"
+    },
+    {
+      "stem": "IMG_2773",
+      "image": "JPEGImages/IMG_2773.jpg",
+      "sha256": "f241a84bd3d7f1fef5a1ff41f9934738126a1187fe6ce98f72e12992a36a6475",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1667.0,
+            2441.0,
+            3242.0,
+            3601.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2773.xml",
+      "xml_filename": "IMG_2773.jpg"
+    },
+    {
+      "stem": "IMG_2774",
+      "image": "JPEGImages/IMG_2774.jpg",
+      "sha256": "e1c02830c45ebb20ddd5a3810afa36b00c3fbe356eab398db79892f42827ce75",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1581.0,
+            2654.0,
+            2951.0,
+            3896.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2774.xml",
+      "xml_filename": "IMG_2774.jpg"
+    },
+    {
+      "stem": "IMG_2775",
+      "image": "JPEGImages/IMG_2775.jpg",
+      "sha256": "ad3dcbd3848b1950a06e856b0cef820fa9743be7ac51db4f2426108d20b58b28",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            2251.0,
+            2708.0,
+            3560.0,
+            3795.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2775.xml",
+      "xml_filename": "IMG_2775.jpg"
+    },
+    {
+      "stem": "IMG_2776",
+      "image": "JPEGImages/IMG_2776.jpg",
+      "sha256": "5a428ff425764ceaf8897ecd94cc468f6a95fc4219d8329f367ac83a0ee5c60b",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            2079.0,
+            1987.0,
+            3471.0,
+            3166.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2776.xml",
+      "xml_filename": "IMG_2776.jpg"
+    },
+    {
+      "stem": "IMG_2777",
+      "image": "JPEGImages/IMG_2777.jpg",
+      "sha256": "04f8ddc13e1e47ec3daff0ac64dea50aade71bb5ab30485bae0713de063a296d",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1327.0,
+            2032.0,
+            2725.0,
+            3341.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2777.xml",
+      "xml_filename": "IMG_2777.jpg"
+    },
+    {
+      "stem": "IMG_2778",
+      "image": "JPEGImages/IMG_2778.jpg",
+      "sha256": "4ac094d20f4058427f9e7c6aa393c4f786fc3af0869e584d337a4aca5e845b4e",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1746.0,
+            2530.0,
+            2906.0,
+            3712.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2778.xml",
+      "xml_filename": "IMG_2778.jpg"
+    },
+    {
+      "stem": "IMG_2779",
+      "image": "JPEGImages/IMG_2779.jpg",
+      "sha256": "3f458e970b184cc1e895730f85e4146e200f8d2fe642a105c14228258b41e62f",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1054.0,
+            2784.0,
+            2417.0,
+            4169.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2779.xml",
+      "xml_filename": "IMG_2779.jpg"
+    },
+    {
+      "stem": "IMG_2780",
+      "image": "JPEGImages/IMG_2780.jpg",
+      "sha256": "4bb725ab215528c05de4250af0485c31b9b570f061992d0acb59d6974ebe4287",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1333.0,
+            2819.0,
+            3039.0,
+            4271.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2780.xml",
+      "xml_filename": "IMG_2780.jpg"
+    },
+    {
+      "stem": "IMG_2781",
+      "image": "JPEGImages/IMG_2781.jpg",
+      "sha256": "0a7b6d021e29427cf6808ff39be2b6aa34b674418a5a991a38b241d93c2d73e9",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1473.0,
+            3609.0,
+            2538.0,
+            4547.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2781.xml",
+      "xml_filename": "IMG_2781.jpg"
+    },
+    {
+      "stem": "IMG_2782",
+      "image": "JPEGImages/IMG_2782.jpg",
+      "sha256": "4b615bb980a06c7db052ad2e193ddfe8434a95edbcdcaa0ea10b48446a948cc7",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            2120.0,
+            2660.0,
+            3249.0,
+            3490.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2782.xml",
+      "xml_filename": "IMG_2782.jpg"
+    },
+    {
+      "stem": "IMG_2783",
+      "image": "JPEGImages/IMG_2783.jpg",
+      "sha256": "6b4664ce5673006b7ad4b2d19322a5cf51c9573bdd4d8af34ddfe2a4d5aa6262",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            2003.0,
+            2790.0,
+            3141.0,
+            3598.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2783.xml",
+      "xml_filename": "IMG_2783.jpg"
+    },
+    {
+      "stem": "IMG_2784",
+      "image": "JPEGImages/IMG_2784.jpg",
+      "sha256": "c6e282047d0b97ec0adcc4cce8ef8713e3bfedc3f4a4f9ecd87d7fefea058886",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1809.0,
+            3111.0,
+            2878.0,
+            3969.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2784.xml",
+      "xml_filename": "IMG_2784.jpg"
+    },
+    {
+      "stem": "IMG_2785",
+      "image": "JPEGImages/IMG_2785.jpg",
+      "sha256": "5b3f95e1f452dd255c8eb67c7629fa331370fcae07ad6ea37d68021c97f15cc2",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1403.0,
+            3155.0,
+            2528.0,
+            4001.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2785.xml",
+      "xml_filename": "IMG_2785.jpg"
+    },
+    {
+      "stem": "IMG_2786",
+      "image": "JPEGImages/IMG_2786.jpg",
+      "sha256": "11d54e924358222cef52981731a8f2d23ccee5efcf30c3cb5bd0df601caba2b7",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            2193.0,
+            3263.0,
+            3135.0,
+            4090.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2786.xml",
+      "xml_filename": "IMG_2786.jpg"
+    },
+    {
+      "stem": "IMG_2787",
+      "image": "JPEGImages/IMG_2787.jpg",
+      "sha256": "8d629c5ab0f3ad43df387404f1bcbb4ec820a92bbe30c7c59a8a4ff58a0ecbde",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1644.0,
+            2635.0,
+            2614.0,
+            3465.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2787.xml",
+      "xml_filename": "IMG_2787.jpg"
+    },
+    {
+      "stem": "IMG_2788",
+      "image": "JPEGImages/IMG_2788.jpg",
+      "sha256": "0f8c5cc0beafc3927d230b9b154d06f29ae198f489be3aca39c2d63e00a15bfa",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1105.0,
+            3168.0,
+            2382.0,
+            4144.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2788.xml",
+      "xml_filename": "IMG_2788.jpg"
+    },
+    {
+      "stem": "IMG_2789",
+      "image": "JPEGImages/IMG_2789.jpg",
+      "sha256": "88fc63e8c42b15f8f2138293d197408875a0f88f19e2445c755ba37c858729c0",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            842.0,
+            1794.0,
+            2836.0,
+            3696.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2789.xml",
+      "xml_filename": "IMG_2789.jpg"
+    },
+    {
+      "stem": "IMG_2790",
+      "image": "JPEGImages/IMG_2790.jpg",
+      "sha256": "d24341a12d2a7a5b551097243d435da9a0a3363a2f7e1a8f6815b8da694dfb7e",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1606.0,
+            2241.0,
+            3553.0,
+            4134.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2790.xml",
+      "xml_filename": "IMG_2790.jpg"
+    },
+    {
+      "stem": "IMG_2791",
+      "image": "JPEGImages/IMG_2791.jpg",
+      "sha256": "0824912d60917cf81c360029da18eba87f4316dd491865e5d209770a46fb221f",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1505.0,
+            2447.0,
+            3373.0,
+            4318.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2791.xml",
+      "xml_filename": "IMG_2791.jpg"
+    },
+    {
+      "stem": "IMG_2792",
+      "image": "JPEGImages/IMG_2792.jpg",
+      "sha256": "725b9db652a17f5891bdd3d9d3f9bcc6861794da253556fb246c3577253fa548",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1108.0,
+            2781.0,
+            2944.0,
+            4620.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2792.xml",
+      "xml_filename": "IMG_2792.jpg"
+    },
+    {
+      "stem": "IMG_2793",
+      "image": "JPEGImages/IMG_2793.jpg",
+      "sha256": "1bc12032974216f5035be97c12b47eb39b72da1f79c20bef863f650bac755912",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1448.0,
+            2457.0,
+            3154.0,
+            4325.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2793.xml",
+      "xml_filename": "IMG_2793.jpg"
+    },
+    {
+      "stem": "IMG_2794",
+      "image": "JPEGImages/IMG_2794.jpg",
+      "sha256": "06889d7d321d075a1221aeab3131bff907ed70413dd48958c2d679e70e93bd07",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            956.0,
+            3729.0,
+            1913.0,
+            4518.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2794.xml",
+      "xml_filename": "IMG_2794.jpg"
+    },
+    {
+      "stem": "IMG_2795",
+      "image": "JPEGImages/IMG_2795.jpg",
+      "sha256": "16941ff1673b5129a8b7e8ee33cf34b6613b5fe5f29ca035abfa15c03a06c05c",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            2330.0,
+            3161.0,
+            3204.0,
+            3788.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2795.xml",
+      "xml_filename": "IMG_2795.jpg"
+    },
+    {
+      "stem": "IMG_2796",
+      "image": "JPEGImages/IMG_2796.jpg",
+      "sha256": "77dbadea810f50bc2ff5dee400cac96de2b953df6798f29a69b2d77c8c1cfc44",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1518.0,
+            2631.0,
+            2833.0,
+            3442.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2796.xml",
+      "xml_filename": "IMG_2796.jpg"
+    },
+    {
+      "stem": "IMG_2797",
+      "image": "JPEGImages/IMG_2797.jpg",
+      "sha256": "2db57b6948aa590224a9a12a611a4363842f03122fc7f4cc32bc954b541fe031",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            1734.0,
+            3880.0,
+            2343.0,
+            4260.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2797.xml",
+      "xml_filename": "IMG_2797.jpg"
+    },
+    {
+      "stem": "IMG_2798",
+      "image": "JPEGImages/IMG_2798.jpg",
+      "sha256": "5ce9da4595c51eabf12cffffe547e6ad5fafc106852aa85eb1f320eae1fe5b6b",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            773.0,
+            1174.0,
+            2601.0,
+            3103.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2798.xml",
+      "xml_filename": "IMG_2798.jpg"
+    },
+    {
+      "stem": "IMG_2799",
+      "image": "JPEGImages/IMG_2799.jpg",
+      "sha256": "f34b1b122db89eb3bdb444a7a5f1352670d48de42e96da10189cf007fd3fa46e",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            844.0,
+            1698.0,
+            2565.0,
+            3235.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2799.xml",
+      "xml_filename": "IMG_2799.jpg"
+    },
+    {
+      "stem": "IMG_2800",
+      "image": "JPEGImages/IMG_2800.jpg",
+      "sha256": "dcb37d45328a840b2eab6d1b44effb410df6299025ebcc74f5ee37e5f4e7e7f4",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            849.0,
+            2128.0,
+            1994.0,
+            3199.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2800.xml",
+      "xml_filename": "IMG_2800.jpg"
+    },
+    {
+      "stem": "IMG_2801",
+      "image": "JPEGImages/IMG_2801.jpg",
+      "sha256": "9f417daf6a04bbf8a853acc0f39161eaf9b70a6903162882df3d7143017e82e8",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            405.0,
+            627.0,
+            2729.0,
+            2496.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2801.xml",
+      "xml_filename": "IMG_2801.jpg"
+    },
+    {
+      "stem": "IMG_2802",
+      "image": "JPEGImages/IMG_2802.jpg",
+      "sha256": "28ffebb7bb18c1473b31e7c69a5d4e94b20e03d35f251e9e65fb822f78174038",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "识别项-易爆",
+          "box_xyxy": [
+            660.0,
+            1021.0,
+            2875.0,
+            4032.0
+          ],
+          "difficult": "0",
+          "truncated": "1"
+        }
+      ],
+      "annotation": "Annotations/IMG_2802.xml",
+      "xml_filename": "IMG_2802.jpg"
+    },
+    {
+      "stem": "IMG_2803",
+      "image": "JPEGImages/IMG_2803.jpg",
+      "sha256": "23a8de31baa0ee88eec2a691c2bdc20f8e3ddc507263aae10e60372318ce3f4d",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1464.0,
+            1860.0,
+            3017.0,
+            3531.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2803.xml",
+      "xml_filename": "IMG_2803.jpg"
+    },
+    {
+      "stem": "IMG_2804",
+      "image": "JPEGImages/IMG_2804.jpg",
+      "sha256": "659940e3b46ae819693f04f5f25287cb8724b26d3abd14b1d6e45c7979726b18",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1895.0,
+            3041.0,
+            3195.0,
+            4544.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2804.xml",
+      "xml_filename": "IMG_2804.jpg"
+    },
+    {
+      "stem": "IMG_2805",
+      "image": "JPEGImages/IMG_2805.jpg",
+      "sha256": "192a6ae5b91cc5882c33fb5273fb7741bf3e7490a340ff046d10b7116cf84475",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1610.0,
+            2806.0,
+            2766.0,
+            4017.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2805.xml",
+      "xml_filename": "IMG_2805.jpg"
+    },
+    {
+      "stem": "IMG_2806",
+      "image": "JPEGImages/IMG_2806.jpg",
+      "sha256": "48e9747bc98d92c46a8d441ad4e47386f72c07c56d4174f8962c83cd3d12b4bf",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1762.0,
+            2946.0,
+            2798.0,
+            4058.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2806.xml",
+      "xml_filename": "IMG_2806.jpg"
+    },
+    {
+      "stem": "IMG_2807",
+      "image": "JPEGImages/IMG_2807.jpg",
+      "sha256": "58d3341eb05ece159b7421b249aa451da6b004783d6579ac438eccd6a7442d48",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1575.0,
+            2993.0,
+            2570.0,
+            4074.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2807.xml",
+      "xml_filename": "IMG_2807.jpg"
+    },
+    {
+      "stem": "IMG_2808",
+      "image": "JPEGImages/IMG_2808.jpg",
+      "sha256": "5446d74a864782db20a40be2eaf991bfcfc4bc6a86ffc8cae15f48aa585f4758",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            2114.0,
+            2873.0,
+            3173.0,
+            3858.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2808.xml",
+      "xml_filename": "IMG_2808.jpg"
+    },
+    {
+      "stem": "IMG_2809",
+      "image": "JPEGImages/IMG_2809.jpg",
+      "sha256": "0dfb30ed1978ccddbef087378c02c49447b6cd1c4a8640018c044dde19f3331a",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            2174.0,
+            3250.0,
+            3100.0,
+            4131.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2809.xml",
+      "xml_filename": "IMG_2809.jpg"
+    },
+    {
+      "stem": "IMG_2810",
+      "image": "JPEGImages/IMG_2810.jpg",
+      "sha256": "a1e55137bdb6401ec5429abb7b357ddd69d5411fd46e7a7cef8a34819d39c892",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            2174.0,
+            2676.0,
+            3144.0,
+            3474.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2810.xml",
+      "xml_filename": "IMG_2810.jpg"
+    },
+    {
+      "stem": "IMG_2811",
+      "image": "JPEGImages/IMG_2811.jpg",
+      "sha256": "85b0505173875b61371eaf15357926d7facb23c0e165b11825e70fb0a0c639e5",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            823.0,
+            2305.0,
+            2367.0,
+            3525.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2811.xml",
+      "xml_filename": "IMG_2811.jpg"
+    },
+    {
+      "stem": "IMG_2812",
+      "image": "JPEGImages/IMG_2812.jpg",
+      "sha256": "adde999de3046f97150db451ff7bc143f6700100187ea3687d77c9d954852088",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1235.0,
+            2669.0,
+            2744.0,
+            4194.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2812.xml",
+      "xml_filename": "IMG_2812.jpg"
+    },
+    {
+      "stem": "IMG_2813",
+      "image": "JPEGImages/IMG_2813.jpg",
+      "sha256": "17a20daad170c5b206a2b31470c23102d7e19cd119f1ce0f6b083bb0d9bb6020",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1222.0,
+            2917.0,
+            2766.0,
+            4544.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2813.xml",
+      "xml_filename": "IMG_2813.jpg"
+    },
+    {
+      "stem": "IMG_2814",
+      "image": "JPEGImages/IMG_2814.jpg",
+      "sha256": "23b1ce39e8118666d1bb888a5ee17bb12a23fb39c46e867fcd99b95d7bc838db",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1790.0,
+            3504.0,
+            2747.0,
+            4610.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2814.xml",
+      "xml_filename": "IMG_2814.jpg"
+    },
+    {
+      "stem": "IMG_2815",
+      "image": "JPEGImages/IMG_2815.jpg",
+      "sha256": "c2f9aa56cb2593975ed37319d7ce250760bbf7cf973cd260e837580070dcbd85",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1654.0,
+            3206.0,
+            2402.0,
+            3934.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2815.xml",
+      "xml_filename": "IMG_2815.jpg"
+    },
+    {
+      "stem": "IMG_2816",
+      "image": "JPEGImages/IMG_2816.jpg",
+      "sha256": "55d8b5cfbb0263d43b51065d88136e5fbbe303406886fa584320c969b45dc555",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1256.0,
+            2469.0,
+            1863.0,
+            2929.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2816.xml",
+      "xml_filename": "IMG_2816.jpg"
+    },
+    {
+      "stem": "IMG_2817",
+      "image": "JPEGImages/IMG_2817.jpg",
+      "sha256": "b3aa071efeefe437b3da49b23c9202340d7b997f8b183c52cd35b78d0484aad8",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1898.0,
+            2936.0,
+            2532.0,
+            3338.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2817.xml",
+      "xml_filename": "IMG_2817.jpg"
+    },
+    {
+      "stem": "IMG_2818",
+      "image": "JPEGImages/IMG_2818.jpg",
+      "sha256": "5d72bdefdc5207ec8a9b34a6946ad2e1faad3deaee2f1b19bdff4563c10e03d6",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1644.0,
+            2301.0,
+            2332.0,
+            2789.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2818.xml",
+      "xml_filename": "IMG_2818.jpg"
+    },
+    {
+      "stem": "IMG_2820",
+      "image": "JPEGImages/IMG_2820.jpg",
+      "sha256": "d1953339a3dbba89aa72a306def5ed6c419fb601653bfac7e8dd3516a1ca3c71",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1375.0,
+            2895.0,
+            2002.0,
+            3309.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2820.xml",
+      "xml_filename": "IMG_2820.jpg"
+    },
+    {
+      "stem": "IMG_2821",
+      "image": "JPEGImages/IMG_2821.jpg",
+      "sha256": "96ed1a040ea67e4595ef856354ba9c3d38b153839d7708152fa012b6de8ae19e",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1797.0,
+            2765.0,
+            2481.0,
+            3347.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2821.xml",
+      "xml_filename": "IMG_2821.jpg"
+    },
+    {
+      "stem": "IMG_2822",
+      "image": "JPEGImages/IMG_2822.jpg",
+      "sha256": "d40f9b2e4a2b3201d8ca9b37ac985f76ba6b4828699d9c6bc913579155dae8ab",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1622.0,
+            2987.0,
+            2300.0,
+            3547.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2822.xml",
+      "xml_filename": "IMG_2822.jpg"
+    },
+    {
+      "stem": "IMG_2823",
+      "image": "JPEGImages/IMG_2823.jpg",
+      "sha256": "59b6d9ad5f662d0be6cfba635fff2a6327f68b70eb683f49c9436d56b254cd46",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1118.0,
+            2514.0,
+            2256.0,
+            3772.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2823.xml",
+      "xml_filename": "IMG_2823.jpg"
+    },
+    {
+      "stem": "IMG_2824",
+      "image": "JPEGImages/IMG_2824.jpg",
+      "sha256": "037c9da07fe582fd6b9f022519c7c742d4fa36c276f3e8df1a907e9e9a9c257a",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            896.0,
+            1940.0,
+            2839.0,
+            4182.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2824.xml",
+      "xml_filename": "IMG_2824.jpg"
+    },
+    {
+      "stem": "IMG_2825",
+      "image": "JPEGImages/IMG_2825.jpg",
+      "sha256": "3dc3b0687794411dce2bd139a4dbdfd15e7a9150763fe82959b459b3b7341b35",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1184.0,
+            2330.0,
+            2763.0,
+            3928.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2825.xml",
+      "xml_filename": "IMG_2825.jpg"
+    },
+    {
+      "stem": "IMG_2826",
+      "image": "JPEGImages/IMG_2826.jpg",
+      "sha256": "89046b179048138b9af6c971147b1c95ffec482ee2efc42417d1c2f09f05ff48",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1606.0,
+            2800.0,
+            2922.0,
+            4204.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2826.xml",
+      "xml_filename": "IMG_2826.jpg"
+    },
+    {
+      "stem": "IMG_2827",
+      "image": "JPEGImages/IMG_2827.jpg",
+      "sha256": "49cd59bd80041dafd979cb4d3b80fba44ea92f499977e068ae0a3e851de318a7",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1264.0,
+            2635.0,
+            2836.0,
+            4271.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2827.xml",
+      "xml_filename": "IMG_2827.jpg"
+    },
+    {
+      "stem": "IMG_2828",
+      "image": "JPEGImages/IMG_2828.jpg",
+      "sha256": "52015e03b75280bb35f7e4fa8b5d3bcdb414e0b3bc1d1d6e41f19ff8088b282a",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1441.0,
+            2041.0,
+            3198.0,
+            3626.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2828.xml",
+      "xml_filename": "IMG_2828.jpg"
+    },
+    {
+      "stem": "IMG_2829",
+      "image": "JPEGImages/IMG_2829.jpg",
+      "sha256": "9da09079af7eb58f01d058807defde7b8ceafe7962245b69ba1766b20e1d731c",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            930.0,
+            1860.0,
+            2252.0,
+            3230.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2829.xml",
+      "xml_filename": "IMG_2829.jpg"
+    },
+    {
+      "stem": "IMG_2830",
+      "image": "JPEGImages/IMG_2830.jpg",
+      "sha256": "e3f1b1842ea5da23d2f1700a2e172fe3919cf9a83b6048c4eefe98cb688e8d19",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1321.0,
+            3038.0,
+            2214.0,
+            3826.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2830.xml",
+      "xml_filename": "IMG_2830.jpg"
+    },
+    {
+      "stem": "IMG_2831",
+      "image": "JPEGImages/IMG_2831.jpg",
+      "sha256": "1bacea250fcda78a372230e49fa49a802cde5aa7e42217419542e4de07b8b72c",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            388.0,
+            1889.0,
+            2455.0,
+            3941.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2831.xml",
+      "xml_filename": "IMG_2831.jpg"
+    },
+    {
+      "stem": "IMG_2832",
+      "image": "JPEGImages/IMG_2832.jpg",
+      "sha256": "adc856bd56fa3319fe4570ae8568c91007e59b57112cfb36cb3541b81b7c1957",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            705.0,
+            2571.0,
+            2617.0,
+            4407.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2832.xml",
+      "xml_filename": "IMG_2832.jpg"
+    },
+    {
+      "stem": "IMG_2833",
+      "image": "JPEGImages/IMG_2833.jpg",
+      "sha256": "d966d1215a3c57e4b301eb19f266ced1ec05d6ef0ad5d48ab74fb20f8cd9bf88",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项1",
+          "box_xyxy": [
+            1765.0,
+            4209.0,
+            2638.0,
+            4876.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2833.xml",
+      "xml_filename": "IMG_2833.jpg"
+    },
+    {
+      "stem": "IMG_2834",
+      "image": "JPEGImages/IMG_2834.jpg",
+      "sha256": "d6fb29e2fab5cf254936a9d030dba1d28df74dccc63b48fb9825fd0ad7a1f99b",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1083.0,
+            2314.0,
+            3141.0,
+            4058.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2834.xml",
+      "xml_filename": "IMG_2834.jpg"
+    },
+    {
+      "stem": "IMG_2835",
+      "image": "JPEGImages/IMG_2835.jpg",
+      "sha256": "647fa566aaee3f31cf5026fdb66b954338729cb9ff4e073d560b3b4a50df32f9",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            2949.0,
+            1435.0,
+            4674.0,
+            2862.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2835.xml",
+      "xml_filename": "IMG_2835.jpg"
+    },
+    {
+      "stem": "IMG_2836",
+      "image": "JPEGImages/IMG_2836.jpg",
+      "sha256": "69f746d9fb5685579c43533538c51487b8b2cb1901b25b877fd9d0682d73d7dc",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1178.0,
+            2825.0,
+            2719.0,
+            4252.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2836.xml",
+      "xml_filename": "IMG_2836.jpg"
+    },
+    {
+      "stem": "IMG_2837",
+      "image": "JPEGImages/IMG_2837.jpg",
+      "sha256": "6b7775c6385598f8d712543530b213c42f4018420e82bb5d4c1e7fe8d04489f4",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            2222.0,
+            1305.0,
+            3741.0,
+            2205.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2837.xml",
+      "xml_filename": "IMG_2837.jpg"
+    },
+    {
+      "stem": "IMG_2838",
+      "image": "JPEGImages/IMG_2838.jpg",
+      "sha256": "04a55fae02703a6ffb2ca7e45b71471cad27362bcd0112f1f24febe876eb0209",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1406.0,
+            2041.0,
+            2925.0,
+            3477.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2838.xml",
+      "xml_filename": "IMG_2838.jpg"
+    },
+    {
+      "stem": "IMG_2839",
+      "image": "JPEGImages/IMG_2839.jpg",
+      "sha256": "f5823cf59ce00d2e443abe7b89c6790116790022a936af14c439c2eeb82f0ee4",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            759.0,
+            2187.0,
+            2217.0,
+            3436.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2839.xml",
+      "xml_filename": "IMG_2839.jpg"
+    },
+    {
+      "stem": "IMG_2840",
+      "image": "JPEGImages/IMG_2840.jpg",
+      "sha256": "76bdaf7af1ff5591237b239eec47c1c6a15a37d4190223f683e065bb59cb95f3",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            937.0,
+            2384.0,
+            2408.0,
+            3598.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2840.xml",
+      "xml_filename": "IMG_2840.jpg"
+    },
+    {
+      "stem": "IMG_2841",
+      "image": "JPEGImages/IMG_2841.jpg",
+      "sha256": "a65a4645058925424cde5a10b44fe33574eb14b5a1bd5a527402d8d9bdb55043",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1257.0,
+            2514.0,
+            2836.0,
+            3633.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2841.xml",
+      "xml_filename": "IMG_2841.jpg"
+    },
+    {
+      "stem": "IMG_2842",
+      "image": "JPEGImages/IMG_2842.jpg",
+      "sha256": "78a0c84cd02322d8a2f646a27e1335efcc7c815e9ede65f1621648436ba5662f",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            550.0,
+            2647.0,
+            1916.0,
+            4179.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2842.xml",
+      "xml_filename": "IMG_2842.jpg"
+    },
+    {
+      "stem": "IMG_2843",
+      "image": "JPEGImages/IMG_2843.jpg",
+      "sha256": "7b392e5a20fca3bc6d45bf00e3311ad9ce3543e21d3c5924c4936b4c8864079f",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1476.0,
+            3260.0,
+            2449.0,
+            4204.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2843.xml",
+      "xml_filename": "IMG_2843.jpg"
+    },
+    {
+      "stem": "IMG_2844",
+      "image": "JPEGImages/IMG_2844.jpg",
+      "sha256": "f62e89f8970bfa43022c196b7c7e5ea8220376e1a73eca432bb1cee25e942354",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1637.0,
+            2519.0,
+            2196.0,
+            2952.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2844.xml",
+      "xml_filename": "IMG_2844.jpg"
+    },
+    {
+      "stem": "IMG_2845",
+      "image": "JPEGImages/IMG_2845.jpg",
+      "sha256": "b039244d49dcb3b3319aab78aae0f2484886fe7d8965fe6bd628754c3ab112ee",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            2016.0,
+            2806.0,
+            2674.0,
+            3252.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2845.xml",
+      "xml_filename": "IMG_2845.jpg"
+    },
+    {
+      "stem": "IMG_2846",
+      "image": "JPEGImages/IMG_2846.jpg",
+      "sha256": "de9407cf7734c3d4ee5c10a17eb40c3150ad6d56d9c64761c5b9bb3d3f67190c",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            2016.0,
+            2847.0,
+            2687.0,
+            3360.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2846.xml",
+      "xml_filename": "IMG_2846.jpg"
+    },
+    {
+      "stem": "IMG_2847",
+      "image": "JPEGImages/IMG_2847.jpg",
+      "sha256": "fd6f0b8495bf9d7db30a14dc2e860535ff6eaa3aefa682d18221d3d0f7245cce",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1926.0,
+            2405.0,
+            2495.0,
+            2796.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2847.xml",
+      "xml_filename": "IMG_2847.jpg"
+    },
+    {
+      "stem": "IMG_2848",
+      "image": "JPEGImages/IMG_2848.jpg",
+      "sha256": "8c02345f02eabbd4cba0969ed88698725e8a8d04dbd8690ecc9fde260461f1b0",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1732.0,
+            2630.0,
+            2330.0,
+            3015.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2848.xml",
+      "xml_filename": "IMG_2848.jpg"
+    },
+    {
+      "stem": "IMG_2849",
+      "image": "JPEGImages/IMG_2849.jpg",
+      "sha256": "d4a26eee7d55db5b9b82aa9a404969a39da505ef4c57aa2bec552a43146eb6c0",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1695.0,
+            2666.0,
+            2313.0,
+            3125.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2849.xml",
+      "xml_filename": "IMG_2849.jpg"
+    },
+    {
+      "stem": "IMG_2850",
+      "image": "JPEGImages/IMG_2850.jpg",
+      "sha256": "0ef2156f2c4fe3a4ffe2bf3b256d8af0ea7ce576b6cba741fc71980c7999a561",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1860.0,
+            3031.0,
+            2427.0,
+            3373.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2850.xml",
+      "xml_filename": "IMG_2850.jpg"
+    },
+    {
+      "stem": "IMG_2851",
+      "image": "JPEGImages/IMG_2851.jpg",
+      "sha256": "3a94467be725e8b49a9229035a1083e3700ac5227b2f7bafc3cfade5fc87a900",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            2301.0,
+            2305.0,
+            3230.0,
+            3058.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2851.xml",
+      "xml_filename": "IMG_2851.jpg"
+    },
+    {
+      "stem": "IMG_2852",
+      "image": "JPEGImages/IMG_2852.jpg",
+      "sha256": "ddaef1e99f27c9bf5c0c8b8dc3f9e18b7a86930de70d9b81f337b636db70e089",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1621.0,
+            1970.0,
+            2218.0,
+            2412.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2852.xml",
+      "xml_filename": "IMG_2852.jpg"
+    },
+    {
+      "stem": "IMG_2853",
+      "image": "JPEGImages/IMG_2853.jpg",
+      "sha256": "4c5d8c1496a07c624d745c17218a747a34dd503198b8d6d59345c9679d288455",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1472.0,
+            2535.0,
+            1990.0,
+            2812.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2853.xml",
+      "xml_filename": "IMG_2853.jpg"
+    },
+    {
+      "stem": "IMG_2854",
+      "image": "JPEGImages/IMG_2854.jpg",
+      "sha256": "0044a1efca9923fa18c44532d4321649c0fcf419f71f97b8f960472fadb74b40",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1495.0,
+            1254.0,
+            3363.0,
+            2938.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2854.xml",
+      "xml_filename": "IMG_2854.jpg"
+    },
+    {
+      "stem": "IMG_2855",
+      "image": "JPEGImages/IMG_2855.jpg",
+      "sha256": "9878b2844ca26f27f85dde566f42c88d9ee7864de1717372e3408b11bfab9122",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1314.0,
+            1981.0,
+            2998.0,
+            3684.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2855.xml",
+      "xml_filename": "IMG_2855.jpg"
+    },
+    {
+      "stem": "IMG_2856",
+      "image": "JPEGImages/IMG_2856.jpg",
+      "sha256": "39396c50856e1949ff33b2872f363624ead6e8aac3d6f36fa97efd648b28a7f1",
+      "width": 4284,
+      "height": 5712,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            578.0,
+            1552.0,
+            3290.0,
+            4226.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2856.xml",
+      "xml_filename": "IMG_2856.jpg"
+    },
+    {
+      "stem": "IMG_2857",
+      "image": "JPEGImages/IMG_2857.jpg",
+      "sha256": "17d4927e067386278969a2695c51e73391bdc4bf912ac0c3082411e1350272a7",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            435.0,
+            880.0,
+            3265.0,
+            2865.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2857.xml",
+      "xml_filename": "IMG_2857.jpg"
+    },
+    {
+      "stem": "IMG_2858",
+      "image": "JPEGImages/IMG_2858.jpg",
+      "sha256": "a838b8705d746092c222db4606f335ca081790dc7fd3d350ad48571bb2432d0f",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1387.0,
+            2200.0,
+            3674.0,
+            4283.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2858.xml",
+      "xml_filename": "IMG_2858.jpg"
+    },
+    {
+      "stem": "IMG_2859",
+      "image": "JPEGImages/IMG_2859.jpg",
+      "sha256": "4300f289c7912f4710896fccd4c819dbe63cef5ef86a0325b350a3ea69e846cb",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            1387.0,
+            1254.0,
+            4432.0,
+            4071.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2859.xml",
+      "xml_filename": "IMG_2859.jpg"
+    },
+    {
+      "stem": "IMG_2860",
+      "image": "JPEGImages/IMG_2860.jpg",
+      "sha256": "e65af9a3db6a4382c0decfcae34f1da908f2954c47ac26235f44298bd4256137",
+      "width": 5712,
+      "height": 4284,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            2076.0,
+            1343.0,
+            5029.0,
+            3366.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2860.xml",
+      "xml_filename": "IMG_2860.jpg"
+    },
+    {
+      "stem": "IMG_2861",
+      "image": "JPEGImages/IMG_2861.jpg",
+      "sha256": "8d15394180c794a99ed20cf02aa63d8d674910a32a6d92ccb18eb58d473c1e83",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            351.0,
+            1109.0,
+            2249.0,
+            3150.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2861.xml",
+      "xml_filename": "IMG_2861.jpg"
+    },
+    {
+      "stem": "IMG_2862",
+      "image": "JPEGImages/IMG_2862.jpg",
+      "sha256": "a0be01bdfa3115431966a75587680f4de6ed81de599cf0b07f6d594d8d2f6559",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            638.0,
+            1129.0,
+            2260.0,
+            2890.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2862.xml",
+      "xml_filename": "IMG_2862.jpg"
+    },
+    {
+      "stem": "IMG_2863",
+      "image": "JPEGImages/IMG_2863.jpg",
+      "sha256": "8490db60ae42bba8657e23b6397a473f432939443434159cf545599cd70e8bbd",
+      "width": 3024,
+      "height": 4032,
+      "exif_orientation": 1,
+      "objects": [
+        {
+          "class": "干扰项2",
+          "box_xyxy": [
+            631.0,
+            1664.0,
+            2086.0,
+            3006.0
+          ],
+          "difficult": "0",
+          "truncated": "0"
+        }
+      ],
+      "annotation": "Annotations/IMG_2863.xml",
+      "xml_filename": "IMG_2863.jpg"
+    }
+  ],
+  "zip_entries": 362,
+  "expanded_bytes": 876192894,
+  "zip_crc_error_member": null,
+  "image_count": 180,
+  "annotation_count": 180,
+  "missing_annotations": [],
+  "missing_images": [],
+  "duplicate_entry_names": [],
+  "entries": [
+    {
+      "name": "Annotations/IMG_2682.xml",
+      "bytes": 538,
+      "crc32": "60769828"
+    },
+    {
+      "name": "Annotations/IMG_2683.xml",
+      "bytes": 538,
+      "crc32": "038a449f"
+    },
+    {
+      "name": "Annotations/IMG_2684.xml",
+      "bytes": 537,
+      "crc32": "ddec80df"
+    },
+    {
+      "name": "Annotations/IMG_2685.xml",
+      "bytes": 538,
+      "crc32": "ba3542f7"
+    },
+    {
+      "name": "Annotations/IMG_2686.xml",
+      "bytes": 538,
+      "crc32": "8bb99fea"
+    },
+    {
+      "name": "Annotations/IMG_2687.xml",
+      "bytes": 538,
+      "crc32": "3ac2ff9b"
+    },
+    {
+      "name": "Annotations/IMG_2688.xml",
+      "bytes": 538,
+      "crc32": "94fe294f"
+    },
+    {
+      "name": "Annotations/IMG_2689.xml",
+      "bytes": 538,
+      "crc32": "bd5b3c87"
+    },
+    {
+      "name": "Annotations/IMG_2690.xml",
+      "bytes": 538,
+      "crc32": "779e05e3"
+    },
+    {
+      "name": "Annotations/IMG_2691.xml",
+      "bytes": 538,
+      "crc32": "781be765"
+    },
+    {
+      "name": "Annotations/IMG_2692.xml",
+      "bytes": 538,
+      "crc32": "86bb82c7"
+    },
+    {
+      "name": "Annotations/IMG_2693.xml",
+      "bytes": 538,
+      "crc32": "bab352f7"
+    },
+    {
+      "name": "Annotations/IMG_2694.xml",
+      "bytes": 538,
+      "crc32": "bb8ce950"
+    },
+    {
+      "name": "Annotations/IMG_2695.xml",
+      "bytes": 538,
+      "crc32": "b4b8cb4f"
+    },
+    {
+      "name": "Annotations/IMG_2696.xml",
+      "bytes": 538,
+      "crc32": "e273223d"
+    },
+    {
+      "name": "Annotations/IMG_2697.xml",
+      "bytes": 538,
+      "crc32": "05b40fd3"
+    },
+    {
+      "name": "Annotations/IMG_2698.xml",
+      "bytes": 538,
+      "crc32": "1777424f"
+    },
+    {
+      "name": "Annotations/IMG_2699.xml",
+      "bytes": 538,
+      "crc32": "06bd10b9"
+    },
+    {
+      "name": "Annotations/IMG_2700.xml",
+      "bytes": 538,
+      "crc32": "6ee1aba8"
+    },
+    {
+      "name": "Annotations/IMG_2701.xml",
+      "bytes": 538,
+      "crc32": "7e36d7fb"
+    },
+    {
+      "name": "Annotations/IMG_2702.xml",
+      "bytes": 538,
+      "crc32": "656e2174"
+    },
+    {
+      "name": "Annotations/IMG_2703.xml",
+      "bytes": 538,
+      "crc32": "431bae6f"
+    },
+    {
+      "name": "Annotations/IMG_2704.xml",
+      "bytes": 538,
+      "crc32": "e10bc346"
+    },
+    {
+      "name": "Annotations/IMG_2705.xml",
+      "bytes": 538,
+      "crc32": "b25f89ab"
+    },
+    {
+      "name": "Annotations/IMG_2706.xml",
+      "bytes": 538,
+      "crc32": "3ff57935"
+    },
+    {
+      "name": "Annotations/IMG_2707.xml",
+      "bytes": 537,
+      "crc32": "ab851f28"
+    },
+    {
+      "name": "Annotations/IMG_2708.xml",
+      "bytes": 538,
+      "crc32": "abc2dd0b"
+    },
+    {
+      "name": "Annotations/IMG_2709.xml",
+      "bytes": 537,
+      "crc32": "3a7b790a"
+    },
+    {
+      "name": "Annotations/IMG_2710.xml",
+      "bytes": 538,
+      "crc32": "b4d20b7b"
+    },
+    {
+      "name": "Annotations/IMG_2711.xml",
+      "bytes": 538,
+      "crc32": "2f0f9c8f"
+    },
+    {
+      "name": "Annotations/IMG_2712.xml",
+      "bytes": 548,
+      "crc32": "bdc0d1f5"
+    },
+    {
+      "name": "Annotations/IMG_2713.xml",
+      "bytes": 548,
+      "crc32": "e0c2a06e"
+    },
+    {
+      "name": "Annotations/IMG_2714.xml",
+      "bytes": 547,
+      "crc32": "22c90c8b"
+    },
+    {
+      "name": "Annotations/IMG_2715.xml",
+      "bytes": 547,
+      "crc32": "8903d503"
+    },
+    {
+      "name": "Annotations/IMG_2716.xml",
+      "bytes": 547,
+      "crc32": "2b210f8f"
+    },
+    {
+      "name": "Annotations/IMG_2717.xml",
+      "bytes": 548,
+      "crc32": "06197560"
+    },
+    {
+      "name": "Annotations/IMG_2718.xml",
+      "bytes": 548,
+      "crc32": "1c5b8de4"
+    },
+    {
+      "name": "Annotations/IMG_2719.xml",
+      "bytes": 548,
+      "crc32": "ec86c6d8"
+    },
+    {
+      "name": "Annotations/IMG_2720.xml",
+      "bytes": 548,
+      "crc32": "1193c4bf"
+    },
+    {
+      "name": "Annotations/IMG_2721.xml",
+      "bytes": 548,
+      "crc32": "f4eaf07f"
+    },
+    {
+      "name": "Annotations/IMG_2722.xml",
+      "bytes": 548,
+      "crc32": "945f7f28"
+    },
+    {
+      "name": "Annotations/IMG_2723.xml",
+      "bytes": 548,
+      "crc32": "69d3a61a"
+    },
+    {
+      "name": "Annotations/IMG_2724.xml",
+      "bytes": 548,
+      "crc32": "0cf0a55a"
+    },
+    {
+      "name": "Annotations/IMG_2725.xml",
+      "bytes": 548,
+      "crc32": "6bb630b1"
+    },
+    {
+      "name": "Annotations/IMG_2726.xml",
+      "bytes": 548,
+      "crc32": "c6e664e4"
+    },
+    {
+      "name": "Annotations/IMG_2727.xml",
+      "bytes": 548,
+      "crc32": "9071376f"
+    },
+    {
+      "name": "Annotations/IMG_2728.xml",
+      "bytes": 548,
+      "crc32": "f8778743"
+    },
+    {
+      "name": "Annotations/IMG_2729.xml",
+      "bytes": 548,
+      "crc32": "2658a59e"
+    },
+    {
+      "name": "Annotations/IMG_2730.xml",
+      "bytes": 548,
+      "crc32": "6c7b8a7c"
+    },
+    {
+      "name": "Annotations/IMG_2731.xml",
+      "bytes": 548,
+      "crc32": "bd3f305e"
+    },
+    {
+      "name": "Annotations/IMG_2732.xml",
+      "bytes": 548,
+      "crc32": "e115f6d6"
+    },
+    {
+      "name": "Annotations/IMG_2733.xml",
+      "bytes": 548,
+      "crc32": "e8ebef62"
+    },
+    {
+      "name": "Annotations/IMG_2734.xml",
+      "bytes": 547,
+      "crc32": "bcf905de"
+    },
+    {
+      "name": "Annotations/IMG_2735.xml",
+      "bytes": 548,
+      "crc32": "cbaabc16"
+    },
+    {
+      "name": "Annotations/IMG_2736.xml",
+      "bytes": 548,
+      "crc32": "0b59a469"
+    },
+    {
+      "name": "Annotations/IMG_2737.xml",
+      "bytes": 548,
+      "crc32": "27f65094"
+    },
+    {
+      "name": "Annotations/IMG_2738.xml",
+      "bytes": 548,
+      "crc32": "c8b45c6a"
+    },
+    {
+      "name": "Annotations/IMG_2739.xml",
+      "bytes": 548,
+      "crc32": "f3f59536"
+    },
+    {
+      "name": "Annotations/IMG_2740.xml",
+      "bytes": 547,
+      "crc32": "e0d4a0b8"
+    },
+    {
+      "name": "Annotations/IMG_2741.xml",
+      "bytes": 546,
+      "crc32": "3361fea7"
+    },
+    {
+      "name": "Annotations/IMG_2742.xml",
+      "bytes": 548,
+      "crc32": "4a2f86e8"
+    },
+    {
+      "name": "Annotations/IMG_2743.xml",
+      "bytes": 548,
+      "crc32": "7707c29f"
+    },
+    {
+      "name": "Annotations/IMG_2744.xml",
+      "bytes": 548,
+      "crc32": "90d6b7c2"
+    },
+    {
+      "name": "Annotations/IMG_2745.xml",
+      "bytes": 548,
+      "crc32": "6a531c43"
+    },
+    {
+      "name": "Annotations/IMG_2746.xml",
+      "bytes": 548,
+      "crc32": "1860098d"
+    },
+    {
+      "name": "Annotations/IMG_2747.xml",
+      "bytes": 548,
+      "crc32": "6fb45802"
+    },
+    {
+      "name": "Annotations/IMG_2748.xml",
+      "bytes": 548,
+      "crc32": "3bb6746b"
+    },
+    {
+      "name": "Annotations/IMG_2749.xml",
+      "bytes": 548,
+      "crc32": "28908fb2"
+    },
+    {
+      "name": "Annotations/IMG_2750.xml",
+      "bytes": 548,
+      "crc32": "00717eef"
+    },
+    {
+      "name": "Annotations/IMG_2751.xml",
+      "bytes": 548,
+      "crc32": "8812b9be"
+    },
+    {
+      "name": "Annotations/IMG_2752.xml",
+      "bytes": 548,
+      "crc32": "b35876fa"
+    },
+    {
+      "name": "Annotations/IMG_2753.xml",
+      "bytes": 548,
+      "crc32": "3194a0f4"
+    },
+    {
+      "name": "Annotations/IMG_2754.xml",
+      "bytes": 548,
+      "crc32": "3f027c46"
+    },
+    {
+      "name": "Annotations/IMG_2755.xml",
+      "bytes": 548,
+      "crc32": "0c9cc793"
+    },
+    {
+      "name": "Annotations/IMG_2756.xml",
+      "bytes": 548,
+      "crc32": "d7fa705a"
+    },
+    {
+      "name": "Annotations/IMG_2757.xml",
+      "bytes": 548,
+      "crc32": "2b56c313"
+    },
+    {
+      "name": "Annotations/IMG_2758.xml",
+      "bytes": 548,
+      "crc32": "f72b9b23"
+    },
+    {
+      "name": "Annotations/IMG_2759.xml",
+      "bytes": 548,
+      "crc32": "1fc288d5"
+    },
+    {
+      "name": "Annotations/IMG_2760.xml",
+      "bytes": 547,
+      "crc32": "4c7ea3af"
+    },
+    {
+      "name": "Annotations/IMG_2761.xml",
+      "bytes": 548,
+      "crc32": "f462bf19"
+    },
+    {
+      "name": "Annotations/IMG_2762.xml",
+      "bytes": 548,
+      "crc32": "94b33476"
+    },
+    {
+      "name": "Annotations/IMG_2763.xml",
+      "bytes": 548,
+      "crc32": "00d57c87"
+    },
+    {
+      "name": "Annotations/IMG_2764.xml",
+      "bytes": 548,
+      "crc32": "4cfde016"
+    },
+    {
+      "name": "Annotations/IMG_2765.xml",
+      "bytes": 547,
+      "crc32": "a208e233"
+    },
+    {
+      "name": "Annotations/IMG_2766.xml",
+      "bytes": 546,
+      "crc32": "7a94e647"
+    },
+    {
+      "name": "Annotations/IMG_2767.xml",
+      "bytes": 548,
+      "crc32": "490987ac"
+    },
+    {
+      "name": "Annotations/IMG_2768.xml",
+      "bytes": 548,
+      "crc32": "2c7f7622"
+    },
+    {
+      "name": "Annotations/IMG_2769.xml",
+      "bytes": 548,
+      "crc32": "4edc60c9"
+    },
+    {
+      "name": "Annotations/IMG_2770.xml",
+      "bytes": 548,
+      "crc32": "58f27243"
+    },
+    {
+      "name": "Annotations/IMG_2771.xml",
+      "bytes": 546,
+      "crc32": "fc9e5ec1"
+    },
+    {
+      "name": "Annotations/IMG_2773.xml",
+      "bytes": 548,
+      "crc32": "5598a269"
+    },
+    {
+      "name": "Annotations/IMG_2774.xml",
+      "bytes": 548,
+      "crc32": "3ce2fa92"
+    },
+    {
+      "name": "Annotations/IMG_2775.xml",
+      "bytes": 548,
+      "crc32": "a6370b2a"
+    },
+    {
+      "name": "Annotations/IMG_2776.xml",
+      "bytes": 548,
+      "crc32": "cae40bae"
+    },
+    {
+      "name": "Annotations/IMG_2777.xml",
+      "bytes": 548,
+      "crc32": "cef2e094"
+    },
+    {
+      "name": "Annotations/IMG_2778.xml",
+      "bytes": 548,
+      "crc32": "9a498470"
+    },
+    {
+      "name": "Annotations/IMG_2779.xml",
+      "bytes": 548,
+      "crc32": "eb4d9a85"
+    },
+    {
+      "name": "Annotations/IMG_2780.xml",
+      "bytes": 548,
+      "crc32": "10d00e0e"
+    },
+    {
+      "name": "Annotations/IMG_2781.xml",
+      "bytes": 548,
+      "crc32": "0baaa392"
+    },
+    {
+      "name": "Annotations/IMG_2782.xml",
+      "bytes": 548,
+      "crc32": "fce60374"
+    },
+    {
+      "name": "Annotations/IMG_2783.xml",
+      "bytes": 548,
+      "crc32": "81e345f0"
+    },
+    {
+      "name": "Annotations/IMG_2784.xml",
+      "bytes": 548,
+      "crc32": "7e373624"
+    },
+    {
+      "name": "Annotations/IMG_2785.xml",
+      "bytes": 548,
+      "crc32": "ebcbb61b"
+    },
+    {
+      "name": "Annotations/IMG_2786.xml",
+      "bytes": 548,
+      "crc32": "772d6580"
+    },
+    {
+      "name": "Annotations/IMG_2787.xml",
+      "bytes": 548,
+      "crc32": "e9e6d3a4"
+    },
+    {
+      "name": "Annotations/IMG_2788.xml",
+      "bytes": 548,
+      "crc32": "774da4fb"
+    },
+    {
+      "name": "Annotations/IMG_2789.xml",
+      "bytes": 547,
+      "crc32": "c7c9b5d0"
+    },
+    {
+      "name": "Annotations/IMG_2790.xml",
+      "bytes": 548,
+      "crc32": "b84adf76"
+    },
+    {
+      "name": "Annotations/IMG_2791.xml",
+      "bytes": 548,
+      "crc32": "e5b8eb07"
+    },
+    {
+      "name": "Annotations/IMG_2792.xml",
+      "bytes": 548,
+      "crc32": "de81a0fc"
+    },
+    {
+      "name": "Annotations/IMG_2793.xml",
+      "bytes": 548,
+      "crc32": "29678add"
+    },
+    {
+      "name": "Annotations/IMG_2794.xml",
+      "bytes": 547,
+      "crc32": "d63e96e4"
+    },
+    {
+      "name": "Annotations/IMG_2795.xml",
+      "bytes": 548,
+      "crc32": "547f334e"
+    },
+    {
+      "name": "Annotations/IMG_2796.xml",
+      "bytes": 548,
+      "crc32": "70db4cbf"
+    },
+    {
+      "name": "Annotations/IMG_2797.xml",
+      "bytes": 548,
+      "crc32": "2a7db971"
+    },
+    {
+      "name": "Annotations/IMG_2798.xml",
+      "bytes": 547,
+      "crc32": "bb436a5b"
+    },
+    {
+      "name": "Annotations/IMG_2799.xml",
+      "bytes": 547,
+      "crc32": "2951d188"
+    },
+    {
+      "name": "Annotations/IMG_2800.xml",
+      "bytes": 547,
+      "crc32": "998079c4"
+    },
+    {
+      "name": "Annotations/IMG_2801.xml",
+      "bytes": 546,
+      "crc32": "750a7929"
+    },
+    {
+      "name": "Annotations/IMG_2802.xml",
+      "bytes": 547,
+      "crc32": "3252dacc"
+    },
+    {
+      "name": "Annotations/IMG_2803.xml",
+      "bytes": 542,
+      "crc32": "23e2cae9"
+    },
+    {
+      "name": "Annotations/IMG_2804.xml",
+      "bytes": 542,
+      "crc32": "353839cf"
+    },
+    {
+      "name": "Annotations/IMG_2805.xml",
+      "bytes": 542,
+      "crc32": "e3e7cfe4"
+    },
+    {
+      "name": "Annotations/IMG_2806.xml",
+      "bytes": 542,
+      "crc32": "a4476246"
+    },
+    {
+      "name": "Annotations/IMG_2807.xml",
+      "bytes": 542,
+      "crc32": "5ea9f03e"
+    },
+    {
+      "name": "Annotations/IMG_2808.xml",
+      "bytes": 542,
+      "crc32": "91eb956f"
+    },
+    {
+      "name": "Annotations/IMG_2809.xml",
+      "bytes": 542,
+      "crc32": "a9694319"
+    },
+    {
+      "name": "Annotations/IMG_2810.xml",
+      "bytes": 542,
+      "crc32": "d7be5d97"
+    },
+    {
+      "name": "Annotations/IMG_2811.xml",
+      "bytes": 541,
+      "crc32": "7111e57e"
+    },
+    {
+      "name": "Annotations/IMG_2812.xml",
+      "bytes": 542,
+      "crc32": "cdf95d06"
+    },
+    {
+      "name": "Annotations/IMG_2813.xml",
+      "bytes": 542,
+      "crc32": "77ccab31"
+    },
+    {
+      "name": "Annotations/IMG_2814.xml",
+      "bytes": 542,
+      "crc32": "22149999"
+    },
+    {
+      "name": "Annotations/IMG_2815.xml",
+      "bytes": 542,
+      "crc32": "a093a07f"
+    },
+    {
+      "name": "Annotations/IMG_2816.xml",
+      "bytes": 542,
+      "crc32": "b883505e"
+    },
+    {
+      "name": "Annotations/IMG_2817.xml",
+      "bytes": 542,
+      "crc32": "5adf264f"
+    },
+    {
+      "name": "Annotations/IMG_2818.xml",
+      "bytes": 542,
+      "crc32": "e4ca6f1d"
+    },
+    {
+      "name": "Annotations/IMG_2820.xml",
+      "bytes": 542,
+      "crc32": "a938ac74"
+    },
+    {
+      "name": "Annotations/IMG_2821.xml",
+      "bytes": 542,
+      "crc32": "ef7d4e73"
+    },
+    {
+      "name": "Annotations/IMG_2822.xml",
+      "bytes": 542,
+      "crc32": "c982405d"
+    },
+    {
+      "name": "Annotations/IMG_2823.xml",
+      "bytes": 542,
+      "crc32": "6a6b4911"
+    },
+    {
+      "name": "Annotations/IMG_2824.xml",
+      "bytes": 541,
+      "crc32": "3e07ab81"
+    },
+    {
+      "name": "Annotations/IMG_2825.xml",
+      "bytes": 542,
+      "crc32": "dbeea18b"
+    },
+    {
+      "name": "Annotations/IMG_2826.xml",
+      "bytes": 542,
+      "crc32": "855fca54"
+    },
+    {
+      "name": "Annotations/IMG_2827.xml",
+      "bytes": 542,
+      "crc32": "3e32b490"
+    },
+    {
+      "name": "Annotations/IMG_2828.xml",
+      "bytes": 542,
+      "crc32": "20fd9019"
+    },
+    {
+      "name": "Annotations/IMG_2829.xml",
+      "bytes": 541,
+      "crc32": "313762f4"
+    },
+    {
+      "name": "Annotations/IMG_2830.xml",
+      "bytes": 542,
+      "crc32": "e6ecc889"
+    },
+    {
+      "name": "Annotations/IMG_2831.xml",
+      "bytes": 541,
+      "crc32": "14d74bea"
+    },
+    {
+      "name": "Annotations/IMG_2832.xml",
+      "bytes": 541,
+      "crc32": "636abd25"
+    },
+    {
+      "name": "Annotations/IMG_2833.xml",
+      "bytes": 542,
+      "crc32": "9b9c6145"
+    },
+    {
+      "name": "Annotations/IMG_2834.xml",
+      "bytes": 542,
+      "crc32": "ec927681"
+    },
+    {
+      "name": "Annotations/IMG_2835.xml",
+      "bytes": 542,
+      "crc32": "8b6e6f6a"
+    },
+    {
+      "name": "Annotations/IMG_2836.xml",
+      "bytes": 542,
+      "crc32": "4b575fb7"
+    },
+    {
+      "name": "Annotations/IMG_2837.xml",
+      "bytes": 542,
+      "crc32": "825af377"
+    },
+    {
+      "name": "Annotations/IMG_2838.xml",
+      "bytes": 542,
+      "crc32": "ebc9b22a"
+    },
+    {
+      "name": "Annotations/IMG_2839.xml",
+      "bytes": 541,
+      "crc32": "a8b5e0b0"
+    },
+    {
+      "name": "Annotations/IMG_2840.xml",
+      "bytes": 541,
+      "crc32": "b8d9fac9"
+    },
+    {
+      "name": "Annotations/IMG_2841.xml",
+      "bytes": 542,
+      "crc32": "749d448e"
+    },
+    {
+      "name": "Annotations/IMG_2842.xml",
+      "bytes": 541,
+      "crc32": "5219e7e9"
+    },
+    {
+      "name": "Annotations/IMG_2843.xml",
+      "bytes": 542,
+      "crc32": "3411702a"
+    },
+    {
+      "name": "Annotations/IMG_2844.xml",
+      "bytes": 542,
+      "crc32": "e3990156"
+    },
+    {
+      "name": "Annotations/IMG_2845.xml",
+      "bytes": 542,
+      "crc32": "86942299"
+    },
+    {
+      "name": "Annotations/IMG_2846.xml",
+      "bytes": 542,
+      "crc32": "8f2898a5"
+    },
+    {
+      "name": "Annotations/IMG_2847.xml",
+      "bytes": 542,
+      "crc32": "40aed1bc"
+    },
+    {
+      "name": "Annotations/IMG_2848.xml",
+      "bytes": 542,
+      "crc32": "e5104555"
+    },
+    {
+      "name": "Annotations/IMG_2849.xml",
+      "bytes": 542,
+      "crc32": "cd3478dc"
+    },
+    {
+      "name": "Annotations/IMG_2850.xml",
+      "bytes": 542,
+      "crc32": "3b4e2a5d"
+    },
+    {
+      "name": "Annotations/IMG_2851.xml",
+      "bytes": 542,
+      "crc32": "d544aecb"
+    },
+    {
+      "name": "Annotations/IMG_2852.xml",
+      "bytes": 542,
+      "crc32": "9949fa85"
+    },
+    {
+      "name": "Annotations/IMG_2853.xml",
+      "bytes": 542,
+      "crc32": "8c9c0dae"
+    },
+    {
+      "name": "Annotations/IMG_2854.xml",
+      "bytes": 542,
+      "crc32": "0586e145"
+    },
+    {
+      "name": "Annotations/IMG_2855.xml",
+      "bytes": 542,
+      "crc32": "d8d9e9e2"
+    },
+    {
+      "name": "Annotations/IMG_2856.xml",
+      "bytes": 541,
+      "crc32": "fb2ecef2"
+    },
+    {
+      "name": "Annotations/IMG_2857.xml",
+      "bytes": 540,
+      "crc32": "2a12d905"
+    },
+    {
+      "name": "Annotations/IMG_2858.xml",
+      "bytes": 542,
+      "crc32": "81669f6f"
+    },
+    {
+      "name": "Annotations/IMG_2859.xml",
+      "bytes": 542,
+      "crc32": "7cf255cc"
+    },
+    {
+      "name": "Annotations/IMG_2860.xml",
+      "bytes": 542,
+      "crc32": "10f93d14"
+    },
+    {
+      "name": "Annotations/IMG_2861.xml",
+      "bytes": 541,
+      "crc32": "d7544b5d"
+    },
+    {
+      "name": "Annotations/IMG_2862.xml",
+      "bytes": 541,
+      "crc32": "3bbc911f"
+    },
+    {
+      "name": "Annotations/IMG_2863.xml",
+      "bytes": 541,
+      "crc32": "f0b56989"
+    },
+    {
+      "name": "JPEGImages/IMG_2682.jpg",
+      "bytes": 5085301,
+      "crc32": "ea686b1d"
+    },
+    {
+      "name": "JPEGImages/IMG_2683.jpg",
+      "bytes": 5115992,
+      "crc32": "cef959cc"
+    },
+    {
+      "name": "JPEGImages/IMG_2684.jpg",
+      "bytes": 4948090,
+      "crc32": "d95108c2"
+    },
+    {
+      "name": "JPEGImages/IMG_2685.jpg",
+      "bytes": 4556281,
+      "crc32": "f747edb8"
+    },
+    {
+      "name": "JPEGImages/IMG_2686.jpg",
+      "bytes": 4730735,
+      "crc32": "f0b7f26c"
+    },
+    {
+      "name": "JPEGImages/IMG_2687.jpg",
+      "bytes": 4790129,
+      "crc32": "c8bd36ac"
+    },
+    {
+      "name": "JPEGImages/IMG_2688.jpg",
+      "bytes": 4781322,
+      "crc32": "d74612f3"
+    },
+    {
+      "name": "JPEGImages/IMG_2689.jpg",
+      "bytes": 5600368,
+      "crc32": "be9a21a3"
+    },
+    {
+      "name": "JPEGImages/IMG_2690.jpg",
+      "bytes": 4861578,
+      "crc32": "cea0e291"
+    },
+    {
+      "name": "JPEGImages/IMG_2691.jpg",
+      "bytes": 4706846,
+      "crc32": "4ab21fbc"
+    },
+    {
+      "name": "JPEGImages/IMG_2692.jpg",
+      "bytes": 4329406,
+      "crc32": "bdd049f9"
+    },
+    {
+      "name": "JPEGImages/IMG_2693.jpg",
+      "bytes": 4856257,
+      "crc32": "8c1c6bb3"
+    },
+    {
+      "name": "JPEGImages/IMG_2694.jpg",
+      "bytes": 4892119,
+      "crc32": "fe6bf303"
+    },
+    {
+      "name": "JPEGImages/IMG_2695.jpg",
+      "bytes": 4548144,
+      "crc32": "8a4feffb"
+    },
+    {
+      "name": "JPEGImages/IMG_2696.jpg",
+      "bytes": 5623713,
+      "crc32": "f365da6b"
+    },
+    {
+      "name": "JPEGImages/IMG_2697.jpg",
+      "bytes": 6121670,
+      "crc32": "37025ad2"
+    },
+    {
+      "name": "JPEGImages/IMG_2698.jpg",
+      "bytes": 5620157,
+      "crc32": "6444cdfb"
+    },
+    {
+      "name": "JPEGImages/IMG_2699.jpg",
+      "bytes": 6589719,
+      "crc32": "62faad92"
+    },
+    {
+      "name": "JPEGImages/IMG_2700.jpg",
+      "bytes": 5900161,
+      "crc32": "88f21953"
+    },
+    {
+      "name": "JPEGImages/IMG_2701.jpg",
+      "bytes": 5575701,
+      "crc32": "89e172ff"
+    },
+    {
+      "name": "JPEGImages/IMG_2702.jpg",
+      "bytes": 4723145,
+      "crc32": "fc3a3e68"
+    },
+    {
+      "name": "JPEGImages/IMG_2703.jpg",
+      "bytes": 4795129,
+      "crc32": "7d8d198f"
+    },
+    {
+      "name": "JPEGImages/IMG_2704.jpg",
+      "bytes": 5371119,
+      "crc32": "56bf3b08"
+    },
+    {
+      "name": "JPEGImages/IMG_2705.jpg",
+      "bytes": 5346187,
+      "crc32": "d79ff230"
+    },
+    {
+      "name": "JPEGImages/IMG_2706.jpg",
+      "bytes": 4649436,
+      "crc32": "606fde45"
+    },
+    {
+      "name": "JPEGImages/IMG_2707.jpg",
+      "bytes": 5719378,
+      "crc32": "caac81b7"
+    },
+    {
+      "name": "JPEGImages/IMG_2708.jpg",
+      "bytes": 5233367,
+      "crc32": "48bcb61f"
+    },
+    {
+      "name": "JPEGImages/IMG_2709.jpg",
+      "bytes": 4395763,
+      "crc32": "7cd8076c"
+    },
+    {
+      "name": "JPEGImages/IMG_2710.jpg",
+      "bytes": 4780525,
+      "crc32": "8de2bbcc"
+    },
+    {
+      "name": "JPEGImages/IMG_2711.jpg",
+      "bytes": 5181731,
+      "crc32": "cc2eacaf"
+    },
+    {
+      "name": "JPEGImages/IMG_2712.jpg",
+      "bytes": 5734368,
+      "crc32": "b96ac636"
+    },
+    {
+      "name": "JPEGImages/IMG_2713.jpg",
+      "bytes": 4798615,
+      "crc32": "85187764"
+    },
+    {
+      "name": "JPEGImages/IMG_2714.jpg",
+      "bytes": 4742870,
+      "crc32": "b3d772ce"
+    },
+    {
+      "name": "JPEGImages/IMG_2715.jpg",
+      "bytes": 4818200,
+      "crc32": "055322ce"
+    },
+    {
+      "name": "JPEGImages/IMG_2716.jpg",
+      "bytes": 4568182,
+      "crc32": "5c4ff826"
+    },
+    {
+      "name": "JPEGImages/IMG_2717.jpg",
+      "bytes": 4609571,
+      "crc32": "07bff59a"
+    },
+    {
+      "name": "JPEGImages/IMG_2718.jpg",
+      "bytes": 4893445,
+      "crc32": "b9096f6b"
+    },
+    {
+      "name": "JPEGImages/IMG_2719.jpg",
+      "bytes": 5097702,
+      "crc32": "41590f32"
+    },
+    {
+      "name": "JPEGImages/IMG_2720.jpg",
+      "bytes": 5975277,
+      "crc32": "3d6448f5"
+    },
+    {
+      "name": "JPEGImages/IMG_2721.jpg",
+      "bytes": 5770690,
+      "crc32": "d15f85b7"
+    },
+    {
+      "name": "JPEGImages/IMG_2722.jpg",
+      "bytes": 5245759,
+      "crc32": "93dd58fe"
+    },
+    {
+      "name": "JPEGImages/IMG_2723.jpg",
+      "bytes": 4914302,
+      "crc32": "f1d2a6ff"
+    },
+    {
+      "name": "JPEGImages/IMG_2724.jpg",
+      "bytes": 4754113,
+      "crc32": "e948e5af"
+    },
+    {
+      "name": "JPEGImages/IMG_2725.jpg",
+      "bytes": 4683763,
+      "crc32": "2e9c8ba4"
+    },
+    {
+      "name": "JPEGImages/IMG_2726.jpg",
+      "bytes": 4984833,
+      "crc32": "b83d4e18"
+    },
+    {
+      "name": "JPEGImages/IMG_2727.jpg",
+      "bytes": 5841373,
+      "crc32": "8c8dd8cf"
+    },
+    {
+      "name": "JPEGImages/IMG_2728.jpg",
+      "bytes": 5827963,
+      "crc32": "22bc5449"
+    },
+    {
+      "name": "JPEGImages/IMG_2729.jpg",
+      "bytes": 4686788,
+      "crc32": "4c550cc3"
+    },
+    {
+      "name": "JPEGImages/IMG_2730.jpg",
+      "bytes": 4626461,
+      "crc32": "9996e430"
+    },
+    {
+      "name": "JPEGImages/IMG_2731.jpg",
+      "bytes": 4570791,
+      "crc32": "36b64b42"
+    },
+    {
+      "name": "JPEGImages/IMG_2732.jpg",
+      "bytes": 5012157,
+      "crc32": "fdbcdc56"
+    },
+    {
+      "name": "JPEGImages/IMG_2733.jpg",
+      "bytes": 5572062,
+      "crc32": "ca5eef09"
+    },
+    {
+      "name": "JPEGImages/IMG_2734.jpg",
+      "bytes": 5180353,
+      "crc32": "a6e1cd4a"
+    },
+    {
+      "name": "JPEGImages/IMG_2735.jpg",
+      "bytes": 4914787,
+      "crc32": "54006360"
+    },
+    {
+      "name": "JPEGImages/IMG_2736.jpg",
+      "bytes": 4763482,
+      "crc32": "93371513"
+    },
+    {
+      "name": "JPEGImages/IMG_2737.jpg",
+      "bytes": 4520124,
+      "crc32": "b8517b8f"
+    },
+    {
+      "name": "JPEGImages/IMG_2738.jpg",
+      "bytes": 4849266,
+      "crc32": "76cdc269"
+    },
+    {
+      "name": "JPEGImages/IMG_2739.jpg",
+      "bytes": 4515602,
+      "crc32": "b803d760"
+    },
+    {
+      "name": "JPEGImages/IMG_2740.jpg",
+      "bytes": 4918925,
+      "crc32": "24b311fb"
+    },
+    {
+      "name": "JPEGImages/IMG_2741.jpg",
+      "bytes": 4456769,
+      "crc32": "7a4424fb"
+    },
+    {
+      "name": "JPEGImages/IMG_2742.jpg",
+      "bytes": 5216511,
+      "crc32": "124e7f9b"
+    },
+    {
+      "name": "JPEGImages/IMG_2743.jpg",
+      "bytes": 5306012,
+      "crc32": "771d41f3"
+    },
+    {
+      "name": "JPEGImages/IMG_2744.jpg",
+      "bytes": 4773080,
+      "crc32": "887503b5"
+    },
+    {
+      "name": "JPEGImages/IMG_2745.jpg",
+      "bytes": 5202913,
+      "crc32": "14ec5a3b"
+    },
+    {
+      "name": "JPEGImages/IMG_2746.jpg",
+      "bytes": 4626553,
+      "crc32": "c32029d4"
+    },
+    {
+      "name": "JPEGImages/IMG_2747.jpg",
+      "bytes": 4568566,
+      "crc32": "ee935a0a"
+    },
+    {
+      "name": "JPEGImages/IMG_2748.jpg",
+      "bytes": 4532456,
+      "crc32": "802d8721"
+    },
+    {
+      "name": "JPEGImages/IMG_2749.jpg",
+      "bytes": 4320300,
+      "crc32": "9c68c45d"
+    },
+    {
+      "name": "JPEGImages/IMG_2750.jpg",
+      "bytes": 4830925,
+      "crc32": "0a593dd9"
+    },
+    {
+      "name": "JPEGImages/IMG_2751.jpg",
+      "bytes": 5483933,
+      "crc32": "2b2d752f"
+    },
+    {
+      "name": "JPEGImages/IMG_2752.jpg",
+      "bytes": 6052846,
+      "crc32": "35ba0fac"
+    },
+    {
+      "name": "JPEGImages/IMG_2753.jpg",
+      "bytes": 4658779,
+      "crc32": "a7a5d202"
+    },
+    {
+      "name": "JPEGImages/IMG_2754.jpg",
+      "bytes": 4389449,
+      "crc32": "6abf7985"
+    },
+    {
+      "name": "JPEGImages/IMG_2755.jpg",
+      "bytes": 5360812,
+      "crc32": "e4ae4e57"
+    },
+    {
+      "name": "JPEGImages/IMG_2756.jpg",
+      "bytes": 5855545,
+      "crc32": "d1853507"
+    },
+    {
+      "name": "JPEGImages/IMG_2757.jpg",
+      "bytes": 6047244,
+      "crc32": "0e8c5748"
+    },
+    {
+      "name": "JPEGImages/IMG_2758.jpg",
+      "bytes": 5270997,
+      "crc32": "4c769797"
+    },
+    {
+      "name": "JPEGImages/IMG_2759.jpg",
+      "bytes": 5471362,
+      "crc32": "8011528b"
+    },
+    {
+      "name": "JPEGImages/IMG_2760.jpg",
+      "bytes": 5342726,
+      "crc32": "2591e023"
+    },
+    {
+      "name": "JPEGImages/IMG_2761.jpg",
+      "bytes": 5191149,
+      "crc32": "5ae0e32a"
+    },
+    {
+      "name": "JPEGImages/IMG_2762.jpg",
+      "bytes": 4975414,
+      "crc32": "a96ef609"
+    },
+    {
+      "name": "JPEGImages/IMG_2763.jpg",
+      "bytes": 5128077,
+      "crc32": "a82137bf"
+    },
+    {
+      "name": "JPEGImages/IMG_2764.jpg",
+      "bytes": 4676726,
+      "crc32": "eb937eb1"
+    },
+    {
+      "name": "JPEGImages/IMG_2765.jpg",
+      "bytes": 5070047,
+      "crc32": "b02ae03f"
+    },
+    {
+      "name": "JPEGImages/IMG_2766.jpg",
+      "bytes": 4553304,
+      "crc32": "516733f5"
+    },
+    {
+      "name": "JPEGImages/IMG_2767.jpg",
+      "bytes": 4899707,
+      "crc32": "b8edd407"
+    },
+    {
+      "name": "JPEGImages/IMG_2768.jpg",
+      "bytes": 4915720,
+      "crc32": "4b3e0d41"
+    },
+    {
+      "name": "JPEGImages/IMG_2769.jpg",
+      "bytes": 4707134,
+      "crc32": "3a9f7371"
+    },
+    {
+      "name": "JPEGImages/IMG_2770.jpg",
+      "bytes": 4406541,
+      "crc32": "740c7de9"
+    },
+    {
+      "name": "JPEGImages/IMG_2771.jpg",
+      "bytes": 4257175,
+      "crc32": "393250ba"
+    },
+    {
+      "name": "JPEGImages/IMG_2773.jpg",
+      "bytes": 4183644,
+      "crc32": "c6ddebda"
+    },
+    {
+      "name": "JPEGImages/IMG_2774.jpg",
+      "bytes": 4213369,
+      "crc32": "4e3329a9"
+    },
+    {
+      "name": "JPEGImages/IMG_2775.jpg",
+      "bytes": 3856775,
+      "crc32": "54faba6e"
+    },
+    {
+      "name": "JPEGImages/IMG_2776.jpg",
+      "bytes": 5198233,
+      "crc32": "489cb87f"
+    },
+    {
+      "name": "JPEGImages/IMG_2777.jpg",
+      "bytes": 4738883,
+      "crc32": "4685d840"
+    },
+    {
+      "name": "JPEGImages/IMG_2778.jpg",
+      "bytes": 4176450,
+      "crc32": "cd2113ec"
+    },
+    {
+      "name": "JPEGImages/IMG_2779.jpg",
+      "bytes": 4372066,
+      "crc32": "5df0331b"
+    },
+    {
+      "name": "JPEGImages/IMG_2780.jpg",
+      "bytes": 4029598,
+      "crc32": "3134e87a"
+    },
+    {
+      "name": "JPEGImages/IMG_2781.jpg",
+      "bytes": 4265836,
+      "crc32": "c1382311"
+    },
+    {
+      "name": "JPEGImages/IMG_2782.jpg",
+      "bytes": 4207810,
+      "crc32": "d69687cd"
+    },
+    {
+      "name": "JPEGImages/IMG_2783.jpg",
+      "bytes": 4229204,
+      "crc32": "aed1c7e8"
+    },
+    {
+      "name": "JPEGImages/IMG_2784.jpg",
+      "bytes": 5181655,
+      "crc32": "84316556"
+    },
+    {
+      "name": "JPEGImages/IMG_2785.jpg",
+      "bytes": 4832722,
+      "crc32": "bc19fc64"
+    },
+    {
+      "name": "JPEGImages/IMG_2786.jpg",
+      "bytes": 4255577,
+      "crc32": "1f3d9c46"
+    },
+    {
+      "name": "JPEGImages/IMG_2787.jpg",
+      "bytes": 4107967,
+      "crc32": "2e985ec5"
+    },
+    {
+      "name": "JPEGImages/IMG_2788.jpg",
+      "bytes": 3936290,
+      "crc32": "904715b8"
+    },
+    {
+      "name": "JPEGImages/IMG_2789.jpg",
+      "bytes": 4521903,
+      "crc32": "442bcd0b"
+    },
+    {
+      "name": "JPEGImages/IMG_2790.jpg",
+      "bytes": 4696756,
+      "crc32": "d42dbc4e"
+    },
+    {
+      "name": "JPEGImages/IMG_2791.jpg",
+      "bytes": 4607291,
+      "crc32": "4ab11164"
+    },
+    {
+      "name": "JPEGImages/IMG_2792.jpg",
+      "bytes": 5083963,
+      "crc32": "d9789789"
+    },
+    {
+      "name": "JPEGImages/IMG_2793.jpg",
+      "bytes": 4265864,
+      "crc32": "22171325"
+    },
+    {
+      "name": "JPEGImages/IMG_2794.jpg",
+      "bytes": 4528503,
+      "crc32": "22c79068"
+    },
+    {
+      "name": "JPEGImages/IMG_2795.jpg",
+      "bytes": 4531674,
+      "crc32": "3bedaa2f"
+    },
+    {
+      "name": "JPEGImages/IMG_2796.jpg",
+      "bytes": 4434596,
+      "crc32": "cec72c39"
+    },
+    {
+      "name": "JPEGImages/IMG_2797.jpg",
+      "bytes": 6456576,
+      "crc32": "ddcde66f"
+    },
+    {
+      "name": "JPEGImages/IMG_2798.jpg",
+      "bytes": 2791706,
+      "crc32": "a0c988eb"
+    },
+    {
+      "name": "JPEGImages/IMG_2799.jpg",
+      "bytes": 2577929,
+      "crc32": "4216ee9a"
+    },
+    {
+      "name": "JPEGImages/IMG_2800.jpg",
+      "bytes": 2561738,
+      "crc32": "502d4866"
+    },
+    {
+      "name": "JPEGImages/IMG_2801.jpg",
+      "bytes": 2671273,
+      "crc32": "26f3411c"
+    },
+    {
+      "name": "JPEGImages/IMG_2802.jpg",
+      "bytes": 2578903,
+      "crc32": "12198e10"
+    },
+    {
+      "name": "JPEGImages/IMG_2803.jpg",
+      "bytes": 4847293,
+      "crc32": "34ff93a5"
+    },
+    {
+      "name": "JPEGImages/IMG_2804.jpg",
+      "bytes": 5982765,
+      "crc32": "5ba0ddf5"
+    },
+    {
+      "name": "JPEGImages/IMG_2805.jpg",
+      "bytes": 5050663,
+      "crc32": "fae08781"
+    },
+    {
+      "name": "JPEGImages/IMG_2806.jpg",
+      "bytes": 4661226,
+      "crc32": "0d4f3267"
+    },
+    {
+      "name": "JPEGImages/IMG_2807.jpg",
+      "bytes": 4846886,
+      "crc32": "3ad776f3"
+    },
+    {
+      "name": "JPEGImages/IMG_2808.jpg",
+      "bytes": 4473781,
+      "crc32": "d5be743b"
+    },
+    {
+      "name": "JPEGImages/IMG_2809.jpg",
+      "bytes": 4705910,
+      "crc32": "10d60fbd"
+    },
+    {
+      "name": "JPEGImages/IMG_2810.jpg",
+      "bytes": 5076462,
+      "crc32": "8bdb0959"
+    },
+    {
+      "name": "JPEGImages/IMG_2811.jpg",
+      "bytes": 5637793,
+      "crc32": "4959e460"
+    },
+    {
+      "name": "JPEGImages/IMG_2812.jpg",
+      "bytes": 5181182,
+      "crc32": "002a0dba"
+    },
+    {
+      "name": "JPEGImages/IMG_2813.jpg",
+      "bytes": 4592882,
+      "crc32": "7ccc84d4"
+    },
+    {
+      "name": "JPEGImages/IMG_2814.jpg",
+      "bytes": 4573160,
+      "crc32": "64c2e4e7"
+    },
+    {
+      "name": "JPEGImages/IMG_2815.jpg",
+      "bytes": 4665415,
+      "crc32": "8be569a7"
+    },
+    {
+      "name": "JPEGImages/IMG_2816.jpg",
+      "bytes": 5098675,
+      "crc32": "7be79e0d"
+    },
+    {
+      "name": "JPEGImages/IMG_2817.jpg",
+      "bytes": 5952935,
+      "crc32": "26ae51a6"
+    },
+    {
+      "name": "JPEGImages/IMG_2818.jpg",
+      "bytes": 5133186,
+      "crc32": "0dac3716"
+    },
+    {
+      "name": "JPEGImages/IMG_2820.jpg",
+      "bytes": 5456807,
+      "crc32": "0bcce81b"
+    },
+    {
+      "name": "JPEGImages/IMG_2821.jpg",
+      "bytes": 4550971,
+      "crc32": "a58e5eb1"
+    },
+    {
+      "name": "JPEGImages/IMG_2822.jpg",
+      "bytes": 4840983,
+      "crc32": "86325c54"
+    },
+    {
+      "name": "JPEGImages/IMG_2823.jpg",
+      "bytes": 5321306,
+      "crc32": "684aea74"
+    },
+    {
+      "name": "JPEGImages/IMG_2824.jpg",
+      "bytes": 4762683,
+      "crc32": "ca688e7d"
+    },
+    {
+      "name": "JPEGImages/IMG_2825.jpg",
+      "bytes": 4688157,
+      "crc32": "da72bef3"
+    },
+    {
+      "name": "JPEGImages/IMG_2826.jpg",
+      "bytes": 4943618,
+      "crc32": "93a940cb"
+    },
+    {
+      "name": "JPEGImages/IMG_2827.jpg",
+      "bytes": 4893027,
+      "crc32": "66d2caa1"
+    },
+    {
+      "name": "JPEGImages/IMG_2828.jpg",
+      "bytes": 5547676,
+      "crc32": "05af4933"
+    },
+    {
+      "name": "JPEGImages/IMG_2829.jpg",
+      "bytes": 5294368,
+      "crc32": "317026c1"
+    },
+    {
+      "name": "JPEGImages/IMG_2830.jpg",
+      "bytes": 5633034,
+      "crc32": "db8a6853"
+    },
+    {
+      "name": "JPEGImages/IMG_2831.jpg",
+      "bytes": 4734763,
+      "crc32": "8cb16aa9"
+    },
+    {
+      "name": "JPEGImages/IMG_2832.jpg",
+      "bytes": 5110471,
+      "crc32": "cc0e70ce"
+    },
+    {
+      "name": "JPEGImages/IMG_2833.jpg",
+      "bytes": 5360197,
+      "crc32": "75b98aaf"
+    },
+    {
+      "name": "JPEGImages/IMG_2834.jpg",
+      "bytes": 4707577,
+      "crc32": "0f254b24"
+    },
+    {
+      "name": "JPEGImages/IMG_2835.jpg",
+      "bytes": 4736768,
+      "crc32": "ba16cea7"
+    },
+    {
+      "name": "JPEGImages/IMG_2836.jpg",
+      "bytes": 4909786,
+      "crc32": "c31f345a"
+    },
+    {
+      "name": "JPEGImages/IMG_2837.jpg",
+      "bytes": 4428854,
+      "crc32": "7a83ecef"
+    },
+    {
+      "name": "JPEGImages/IMG_2838.jpg",
+      "bytes": 4811394,
+      "crc32": "e9abf208"
+    },
+    {
+      "name": "JPEGImages/IMG_2839.jpg",
+      "bytes": 5033332,
+      "crc32": "5f7f26c9"
+    },
+    {
+      "name": "JPEGImages/IMG_2840.jpg",
+      "bytes": 4859059,
+      "crc32": "90d0d2ce"
+    },
+    {
+      "name": "JPEGImages/IMG_2841.jpg",
+      "bytes": 5309422,
+      "crc32": "c2272acc"
+    },
+    {
+      "name": "JPEGImages/IMG_2842.jpg",
+      "bytes": 5156391,
+      "crc32": "e3018ecc"
+    },
+    {
+      "name": "JPEGImages/IMG_2843.jpg",
+      "bytes": 5415745,
+      "crc32": "78633baf"
+    },
+    {
+      "name": "JPEGImages/IMG_2844.jpg",
+      "bytes": 5070180,
+      "crc32": "dd719374"
+    },
+    {
+      "name": "JPEGImages/IMG_2845.jpg",
+      "bytes": 4860285,
+      "crc32": "bc8d774e"
+    },
+    {
+      "name": "JPEGImages/IMG_2846.jpg",
+      "bytes": 5860117,
+      "crc32": "9e819d45"
+    },
+    {
+      "name": "JPEGImages/IMG_2847.jpg",
+      "bytes": 5666592,
+      "crc32": "df7d2a67"
+    },
+    {
+      "name": "JPEGImages/IMG_2848.jpg",
+      "bytes": 5635261,
+      "crc32": "00fa223d"
+    },
+    {
+      "name": "JPEGImages/IMG_2849.jpg",
+      "bytes": 4976890,
+      "crc32": "b2ad8b92"
+    },
+    {
+      "name": "JPEGImages/IMG_2850.jpg",
+      "bytes": 5648275,
+      "crc32": "e8e96940"
+    },
+    {
+      "name": "JPEGImages/IMG_2851.jpg",
+      "bytes": 4530632,
+      "crc32": "2d26141d"
+    },
+    {
+      "name": "JPEGImages/IMG_2852.jpg",
+      "bytes": 4974248,
+      "crc32": "382ec631"
+    },
+    {
+      "name": "JPEGImages/IMG_2853.jpg",
+      "bytes": 5646866,
+      "crc32": "e509da2e"
+    },
+    {
+      "name": "JPEGImages/IMG_2854.jpg",
+      "bytes": 6112706,
+      "crc32": "da6e34b1"
+    },
+    {
+      "name": "JPEGImages/IMG_2855.jpg",
+      "bytes": 5385184,
+      "crc32": "2c98a017"
+    },
+    {
+      "name": "JPEGImages/IMG_2856.jpg",
+      "bytes": 4496107,
+      "crc32": "4d1c10b1"
+    },
+    {
+      "name": "JPEGImages/IMG_2857.jpg",
+      "bytes": 4630598,
+      "crc32": "14df2d9b"
+    },
+    {
+      "name": "JPEGImages/IMG_2858.jpg",
+      "bytes": 4394344,
+      "crc32": "f561a7ad"
+    },
+    {
+      "name": "JPEGImages/IMG_2859.jpg",
+      "bytes": 4869610,
+      "crc32": "96743f58"
+    },
+    {
+      "name": "JPEGImages/IMG_2860.jpg",
+      "bytes": 4210790,
+      "crc32": "1959d720"
+    },
+    {
+      "name": "JPEGImages/IMG_2861.jpg",
+      "bytes": 2792699,
+      "crc32": "6313ce19"
+    },
+    {
+      "name": "JPEGImages/IMG_2862.jpg",
+      "bytes": 3056060,
+      "crc32": "633297e5"
+    },
+    {
+      "name": "JPEGImages/IMG_2863.jpg",
+      "bytes": 2826086,
+      "crc32": "9373f1f9"
+    }
+  ],
+  "classes_by_objects": {
+    "人员": 30,
+    "识别项-有毒": 30,
+    "识别项-易燃": 30,
+    "识别项-易爆": 30,
+    "干扰项1": 30,
+    "干扰项2": 30
+  },
+  "classes_by_images": {
+    "人员": 30,
+    "识别项-有毒": 30,
+    "识别项-易燃": 30,
+    "识别项-易爆": 30,
+    "干扰项1": 30,
+    "干扰项2": 30
+  },
+  "object_count": 180,
+  "empty_annotation_images": [],
+  "jpeg_dimensions": {
+    "(4284, 5712)": 155,
+    "(5712, 4284)": 17,
+    "(3024, 4032)": 8
+  },
+  "exact_duplicate_groups": [],
+  "object_sizes_at_640_letterbox": [
+    {
+      "image": "IMG_2682",
+      "class": "人员",
+      "width_at_640": 202.46,
+      "height_at_640": 280.78
+    },
+    {
+      "image": "IMG_2683",
+      "class": "人员",
+      "width_at_640": 298.15,
+      "height_at_640": 280.67
+    },
+    {
+      "image": "IMG_2684",
+      "class": "人员",
+      "width_at_640": 297.14,
+      "height_at_640": 286.05
+    },
+    {
+      "image": "IMG_2685",
+      "class": "人员",
+      "width_at_640": 254.12,
+      "height_at_640": 309.92
+    },
+    {
+      "image": "IMG_2686",
+      "class": "人员",
+      "width_at_640": 278.77,
+      "height_at_640": 347.11
+    },
+    {
+      "image": "IMG_2687",
+      "class": "人员",
+      "width_at_640": 277.54,
+      "height_at_640": 288.18
+    },
+    {
+      "image": "IMG_2688",
+      "class": "人员",
+      "width_at_640": 115.74,
+      "height_at_640": 126.39
+    },
+    {
+      "image": "IMG_2689",
+      "class": "人员",
+      "width_at_640": 120.0,
+      "height_at_640": 93.33
+    },
+    {
+      "image": "IMG_2690",
+      "class": "人员",
+      "width_at_640": 114.4,
+      "height_at_640": 98.38
+    },
+    {
+      "image": "IMG_2691",
+      "class": "人员",
+      "width_at_640": 93.78,
+      "height_at_640": 73.17
+    },
+    {
+      "image": "IMG_2692",
+      "class": "人员",
+      "width_at_640": 81.23,
+      "height_at_640": 99.83
+    },
+    {
+      "image": "IMG_2693",
+      "class": "人员",
+      "width_at_640": 61.74,
+      "height_at_640": 91.54
+    },
+    {
+      "image": "IMG_2694",
+      "class": "人员",
+      "width_at_640": 91.54,
+      "height_at_640": 112.83
+    },
+    {
+      "image": "IMG_2695",
+      "class": "人员",
+      "width_at_640": 73.84,
+      "height_at_640": 64.54
+    },
+    {
+      "image": "IMG_2696",
+      "class": "人员",
+      "width_at_640": 43.59,
+      "height_at_640": 52.77
+    },
+    {
+      "image": "IMG_2697",
+      "class": "人员",
+      "width_at_640": 51.43,
+      "height_at_640": 49.64
+    },
+    {
+      "image": "IMG_2698",
+      "class": "人员",
+      "width_at_640": 45.38,
+      "height_at_640": 33.28
+    },
+    {
+      "image": "IMG_2699",
+      "class": "人员",
+      "width_at_640": 45.71,
+      "height_at_640": 33.28
+    },
+    {
+      "image": "IMG_2700",
+      "class": "人员",
+      "width_at_640": 64.99,
+      "height_at_640": 41.9
+    },
+    {
+      "image": "IMG_2701",
+      "class": "人员",
+      "width_at_640": 57.48,
+      "height_at_640": 30.7
+    },
+    {
+      "image": "IMG_2702",
+      "class": "人员",
+      "width_at_640": 117.54,
+      "height_at_640": 92.32
+    },
+    {
+      "image": "IMG_2703",
+      "class": "人员",
+      "width_at_640": 111.48,
+      "height_at_640": 117.2
+    },
+    {
+      "image": "IMG_2704",
+      "class": "人员",
+      "width_at_640": 119.33,
+      "height_at_640": 141.62
+    },
+    {
+      "image": "IMG_2705",
+      "class": "人员",
+      "width_at_640": 140.39,
+      "height_at_640": 111.15
+    },
+    {
+      "image": "IMG_2706",
+      "class": "人员",
+      "width_at_640": 95.24,
+      "height_at_640": 105.77
+    },
+    {
+      "image": "IMG_2707",
+      "class": "人员",
+      "width_at_640": 149.58,
+      "height_at_640": 87.62
+    },
+    {
+      "image": "IMG_2708",
+      "class": "人员",
+      "width_at_640": 151.37,
+      "height_at_640": 141.74
+    },
+    {
+      "image": "IMG_2709",
+      "class": "人员",
+      "width_at_640": 275.41,
+      "height_at_640": 182.3
+    },
+    {
+      "image": "IMG_2710",
+      "class": "人员",
+      "width_at_640": 123.59,
+      "height_at_640": 83.36
+    },
+    {
+      "image": "IMG_2711",
+      "class": "人员",
+      "width_at_640": 197.87,
+      "height_at_640": 130.64
+    },
+    {
+      "image": "IMG_2712",
+      "class": "识别项-有毒",
+      "width_at_640": 180.06,
+      "height_at_640": 155.18
+    },
+    {
+      "image": "IMG_2713",
+      "class": "识别项-有毒",
+      "width_at_640": 130.76,
+      "height_at_640": 112.61
+    },
+    {
+      "image": "IMG_2714",
+      "class": "识别项-有毒",
+      "width_at_640": 122.8,
+      "height_at_640": 143.87
+    },
+    {
+      "image": "IMG_2715",
+      "class": "识别项-有毒",
+      "width_at_640": 135.35,
+      "height_at_640": 133.22
+    },
+    {
+      "image": "IMG_2716",
+      "class": "识别项-有毒",
+      "width_at_640": 148.12,
+      "height_at_640": 129.3
+    },
+    {
+      "image": "IMG_2717",
+      "class": "识别项-有毒",
+      "width_at_640": 128.85,
+      "height_at_640": 118.88
+    },
+    {
+      "image": "IMG_2718",
+      "class": "识别项-有毒",
+      "width_at_640": 92.66,
+      "height_at_640": 64.87
+    },
+    {
+      "image": "IMG_2719",
+      "class": "识别项-有毒",
+      "width_at_640": 84.48,
+      "height_at_640": 68.57
+    },
+    {
+      "image": "IMG_2720",
+      "class": "识别项-有毒",
+      "width_at_640": 81.57,
+      "height_at_640": 54.23
+    },
+    {
+      "image": "IMG_2721",
+      "class": "识别项-有毒",
+      "width_at_640": 72.38,
+      "height_at_640": 60.62
+    },
+    {
+      "image": "IMG_2722",
+      "class": "识别项-有毒",
+      "width_at_640": 75.97,
+      "height_at_640": 62.86
+    },
+    {
+      "image": "IMG_2723",
+      "class": "识别项-有毒",
+      "width_at_640": 81.23,
+      "height_at_640": 49.3
+    },
+    {
+      "image": "IMG_2724",
+      "class": "识别项-有毒",
+      "width_at_640": 78.1,
+      "height_at_640": 72.04
+    },
+    {
+      "image": "IMG_2725",
+      "class": "识别项-有毒",
+      "width_at_640": 84.48,
+      "height_at_640": 78.43
+    },
+    {
+      "image": "IMG_2726",
+      "class": "识别项-有毒",
+      "width_at_640": 77.42,
+      "height_at_640": 48.52
+    },
+    {
+      "image": "IMG_2727",
+      "class": "识别项-有毒",
+      "width_at_640": 70.59,
+      "height_at_640": 47.39
+    },
+    {
+      "image": "IMG_2728",
+      "class": "识别项-有毒",
+      "width_at_640": 105.43,
+      "height_at_640": 84.82
+    },
+    {
+      "image": "IMG_2729",
+      "class": "识别项-有毒",
+      "width_at_640": 112.16,
+      "height_at_640": 106.89
+    },
+    {
+      "image": "IMG_2730",
+      "class": "识别项-有毒",
+      "width_at_640": 109.02,
+      "height_at_640": 85.94
+    },
+    {
+      "image": "IMG_2731",
+      "class": "识别项-有毒",
+      "width_at_640": 97.93,
+      "height_at_640": 100.17
+    },
+    {
+      "image": "IMG_2732",
+      "class": "识别项-有毒",
+      "width_at_640": 97.25,
+      "height_at_640": 101.18
+    },
+    {
+      "image": "IMG_2733",
+      "class": "识别项-有毒",
+      "width_at_640": 104.76,
+      "height_at_640": 107.56
+    },
+    {
+      "image": "IMG_2734",
+      "class": "识别项-有毒",
+      "width_at_640": 222.07,
+      "height_at_640": 188.57
+    },
+    {
+      "image": "IMG_2735",
+      "class": "识别项-有毒",
+      "width_at_640": 224.87,
+      "height_at_640": 278.21
+    },
+    {
+      "image": "IMG_2736",
+      "class": "识别项-有毒",
+      "width_at_640": 223.53,
+      "height_at_640": 185.77
+    },
+    {
+      "image": "IMG_2737",
+      "class": "识别项-有毒",
+      "width_at_640": 122.46,
+      "height_at_640": 192.27
+    },
+    {
+      "image": "IMG_2738",
+      "class": "识别项-有毒",
+      "width_at_640": 169.86,
+      "height_at_640": 208.85
+    },
+    {
+      "image": "IMG_2739",
+      "class": "识别项-有毒",
+      "width_at_640": 152.38,
+      "height_at_640": 239.1
+    },
+    {
+      "image": "IMG_2740",
+      "class": "识别项-有毒",
+      "width_at_640": 245.15,
+      "height_at_640": 211.09
+    },
+    {
+      "image": "IMG_2741",
+      "class": "识别项-有毒",
+      "width_at_640": 280.0,
+      "height_at_640": 185.77
+    },
+    {
+      "image": "IMG_2742",
+      "class": "识别项-易燃",
+      "width_at_640": 196.08,
+      "height_at_640": 142.41
+    },
+    {
+      "image": "IMG_2743",
+      "class": "识别项-易燃",
+      "width_at_640": 175.46,
+      "height_at_640": 176.92
+    },
+    {
+      "image": "IMG_2744",
+      "class": "识别项-易燃",
+      "width_at_640": 158.77,
+      "height_at_640": 157.98
+    },
+    {
+      "image": "IMG_2745",
+      "class": "识别项-易燃",
+      "width_at_640": 195.74,
+      "height_at_640": 177.25
+    },
+    {
+      "image": "IMG_2746",
+      "class": "识别项-易燃",
+      "width_at_640": 180.84,
+      "height_at_640": 173.33
+    },
+    {
+      "image": "IMG_2747",
+      "class": "识别项-易燃",
+      "width_at_640": 171.2,
+      "height_at_640": 139.61
+    },
+    {
+      "image": "IMG_2748",
+      "class": "识别项-易燃",
+      "width_at_640": 93.78,
+      "height_at_640": 97.25
+    },
+    {
+      "image": "IMG_2749",
+      "class": "识别项-易燃",
+      "width_at_640": 112.94,
+      "height_at_640": 94.12
+    },
+    {
+      "image": "IMG_2750",
+      "class": "识别项-易燃",
+      "width_at_640": 87.06,
+      "height_at_640": 72.72
+    },
+    {
+      "image": "IMG_2751",
+      "class": "识别项-易燃",
+      "width_at_640": 80.9,
+      "height_at_640": 57.03
+    },
+    {
+      "image": "IMG_2752",
+      "class": "识别项-易燃",
+      "width_at_640": 69.92,
+      "height_at_640": 64.2
+    },
+    {
+      "image": "IMG_2753",
+      "class": "识别项-易燃",
+      "width_at_640": 83.36,
+      "height_at_640": 67.79
+    },
+    {
+      "image": "IMG_2754",
+      "class": "识别项-易燃",
+      "width_at_640": 90.87,
+      "height_at_640": 84.03
+    },
+    {
+      "image": "IMG_2755",
+      "class": "识别项-易燃",
+      "width_at_640": 58.38,
+      "height_at_640": 32.38
+    },
+    {
+      "image": "IMG_2756",
+      "class": "识别项-易燃",
+      "width_at_640": 52.66,
+      "height_at_640": 31.71
+    },
+    {
+      "image": "IMG_2757",
+      "class": "识别项-易燃",
+      "width_at_640": 85.94,
+      "height_at_640": 57.37
+    },
+    {
+      "image": "IMG_2758",
+      "class": "识别项-易燃",
+      "width_at_640": 93.78,
+      "height_at_640": 84.48
+    },
+    {
+      "image": "IMG_2759",
+      "class": "识别项-易燃",
+      "width_at_640": 80.56,
+      "height_at_640": 47.51
+    },
+    {
+      "image": "IMG_2760",
+      "class": "识别项-易燃",
+      "width_at_640": 116.19,
+      "height_at_640": 112.94
+    },
+    {
+      "image": "IMG_2761",
+      "class": "识别项-易燃",
+      "width_at_640": 111.48,
+      "height_at_640": 120.67
+    },
+    {
+      "image": "IMG_2762",
+      "class": "识别项-易燃",
+      "width_at_640": 97.25,
+      "height_at_640": 86.95
+    },
+    {
+      "image": "IMG_2763",
+      "class": "识别项-易燃",
+      "width_at_640": 105.43,
+      "height_at_640": 109.8
+    },
+    {
+      "image": "IMG_2764",
+      "class": "识别项-易燃",
+      "width_at_640": 90.87,
+      "height_at_640": 86.95
+    },
+    {
+      "image": "IMG_2765",
+      "class": "识别项-易燃",
+      "width_at_640": 233.05,
+      "height_at_640": 236.64
+    },
+    {
+      "image": "IMG_2766",
+      "class": "识别项-易燃",
+      "width_at_640": 312.38,
+      "height_at_640": 290.98
+    },
+    {
+      "image": "IMG_2767",
+      "class": "识别项-易燃",
+      "width_at_640": 223.87,
+      "height_at_640": 219.5
+    },
+    {
+      "image": "IMG_2768",
+      "class": "识别项-易燃",
+      "width_at_640": 189.69,
+      "height_at_640": 233.73
+    },
+    {
+      "image": "IMG_2769",
+      "class": "识别项-易燃",
+      "width_at_640": 223.19,
+      "height_at_640": 119.66
+    },
+    {
+      "image": "IMG_2770",
+      "class": "识别项-易燃",
+      "width_at_640": 191.82,
+      "height_at_640": 111.48
+    },
+    {
+      "image": "IMG_2771",
+      "class": "识别项-易燃",
+      "width_at_640": 329.97,
+      "height_at_640": 249.97
+    },
+    {
+      "image": "IMG_2773",
+      "class": "识别项-易爆",
+      "width_at_640": 176.47,
+      "height_at_640": 129.97
+    },
+    {
+      "image": "IMG_2774",
+      "class": "识别项-易爆",
+      "width_at_640": 153.5,
+      "height_at_640": 139.16
+    },
+    {
+      "image": "IMG_2775",
+      "class": "识别项-易爆",
+      "width_at_640": 146.67,
+      "height_at_640": 121.79
+    },
+    {
+      "image": "IMG_2776",
+      "class": "识别项-易爆",
+      "width_at_640": 155.97,
+      "height_at_640": 132.1
+    },
+    {
+      "image": "IMG_2777",
+      "class": "识别项-易爆",
+      "width_at_640": 156.64,
+      "height_at_640": 146.67
+    },
+    {
+      "image": "IMG_2778",
+      "class": "识别项-易爆",
+      "width_at_640": 129.97,
+      "height_at_640": 132.44
+    },
+    {
+      "image": "IMG_2779",
+      "class": "识别项-易爆",
+      "width_at_640": 152.72,
+      "height_at_640": 155.18
+    },
+    {
+      "image": "IMG_2780",
+      "class": "识别项-易爆",
+      "width_at_640": 191.15,
+      "height_at_640": 162.69
+    },
+    {
+      "image": "IMG_2781",
+      "class": "识别项-易爆",
+      "width_at_640": 119.33,
+      "height_at_640": 105.1
+    },
+    {
+      "image": "IMG_2782",
+      "class": "识别项-易爆",
+      "width_at_640": 126.5,
+      "height_at_640": 93.0
+    },
+    {
+      "image": "IMG_2783",
+      "class": "识别项-易爆",
+      "width_at_640": 127.51,
+      "height_at_640": 90.53
+    },
+    {
+      "image": "IMG_2784",
+      "class": "识别项-易爆",
+      "width_at_640": 119.78,
+      "height_at_640": 96.13
+    },
+    {
+      "image": "IMG_2785",
+      "class": "识别项-易爆",
+      "width_at_640": 126.05,
+      "height_at_640": 94.79
+    },
+    {
+      "image": "IMG_2786",
+      "class": "识别项-易爆",
+      "width_at_640": 105.55,
+      "height_at_640": 92.66
+    },
+    {
+      "image": "IMG_2787",
+      "class": "识别项-易爆",
+      "width_at_640": 108.68,
+      "height_at_640": 93.0
+    },
+    {
+      "image": "IMG_2788",
+      "class": "识别项-易爆",
+      "width_at_640": 143.08,
+      "height_at_640": 109.36
+    },
+    {
+      "image": "IMG_2789",
+      "class": "识别项-易爆",
+      "width_at_640": 223.42,
+      "height_at_640": 213.11
+    },
+    {
+      "image": "IMG_2790",
+      "class": "识别项-易爆",
+      "width_at_640": 218.15,
+      "height_at_640": 212.1
+    },
+    {
+      "image": "IMG_2791",
+      "class": "识别项-易爆",
+      "width_at_640": 209.3,
+      "height_at_640": 209.64
+    },
+    {
+      "image": "IMG_2792",
+      "class": "识别项-易爆",
+      "width_at_640": 205.71,
+      "height_at_640": 206.05
+    },
+    {
+      "image": "IMG_2793",
+      "class": "识别项-易爆",
+      "width_at_640": 191.15,
+      "height_at_640": 209.3
+    },
+    {
+      "image": "IMG_2794",
+      "class": "识别项-易爆",
+      "width_at_640": 107.23,
+      "height_at_640": 88.4
+    },
+    {
+      "image": "IMG_2795",
+      "class": "识别项-易爆",
+      "width_at_640": 97.93,
+      "height_at_640": 70.25
+    },
+    {
+      "image": "IMG_2796",
+      "class": "识别项-易爆",
+      "width_at_640": 147.34,
+      "height_at_640": 90.87
+    },
+    {
+      "image": "IMG_2797",
+      "class": "识别项-易爆",
+      "width_at_640": 68.24,
+      "height_at_640": 42.58
+    },
+    {
+      "image": "IMG_2798",
+      "class": "识别项-易爆",
+      "width_at_640": 290.16,
+      "height_at_640": 306.19
+    },
+    {
+      "image": "IMG_2799",
+      "class": "识别项-易爆",
+      "width_at_640": 273.17,
+      "height_at_640": 243.97
+    },
+    {
+      "image": "IMG_2800",
+      "class": "识别项-易爆",
+      "width_at_640": 181.75,
+      "height_at_640": 170.0
+    },
+    {
+      "image": "IMG_2801",
+      "class": "识别项-易爆",
+      "width_at_640": 368.89,
+      "height_at_640": 296.67
+    },
+    {
+      "image": "IMG_2802",
+      "class": "识别项-易爆",
+      "width_at_640": 351.59,
+      "height_at_640": 477.94
+    },
+    {
+      "image": "IMG_2803",
+      "class": "干扰项1",
+      "width_at_640": 174.01,
+      "height_at_640": 187.23
+    },
+    {
+      "image": "IMG_2804",
+      "class": "干扰项1",
+      "width_at_640": 145.66,
+      "height_at_640": 168.4
+    },
+    {
+      "image": "IMG_2805",
+      "class": "干扰项1",
+      "width_at_640": 129.52,
+      "height_at_640": 135.69
+    },
+    {
+      "image": "IMG_2806",
+      "class": "干扰项1",
+      "width_at_640": 116.08,
+      "height_at_640": 124.59
+    },
+    {
+      "image": "IMG_2807",
+      "class": "干扰项1",
+      "width_at_640": 111.48,
+      "height_at_640": 121.12
+    },
+    {
+      "image": "IMG_2808",
+      "class": "干扰项1",
+      "width_at_640": 118.66,
+      "height_at_640": 110.36
+    },
+    {
+      "image": "IMG_2809",
+      "class": "干扰项1",
+      "width_at_640": 103.75,
+      "height_at_640": 98.71
+    },
+    {
+      "image": "IMG_2810",
+      "class": "干扰项1",
+      "width_at_640": 108.68,
+      "height_at_640": 89.41
+    },
+    {
+      "image": "IMG_2811",
+      "class": "干扰项1",
+      "width_at_640": 173.0,
+      "height_at_640": 136.69
+    },
+    {
+      "image": "IMG_2812",
+      "class": "干扰项1",
+      "width_at_640": 169.08,
+      "height_at_640": 170.87
+    },
+    {
+      "image": "IMG_2813",
+      "class": "干扰项1",
+      "width_at_640": 173.0,
+      "height_at_640": 182.3
+    },
+    {
+      "image": "IMG_2814",
+      "class": "干扰项1",
+      "width_at_640": 107.23,
+      "height_at_640": 123.92
+    },
+    {
+      "image": "IMG_2815",
+      "class": "干扰项1",
+      "width_at_640": 83.81,
+      "height_at_640": 81.57
+    },
+    {
+      "image": "IMG_2816",
+      "class": "干扰项1",
+      "width_at_640": 68.01,
+      "height_at_640": 51.54
+    },
+    {
+      "image": "IMG_2817",
+      "class": "干扰项1",
+      "width_at_640": 71.04,
+      "height_at_640": 45.04
+    },
+    {
+      "image": "IMG_2818",
+      "class": "干扰项1",
+      "width_at_640": 77.09,
+      "height_at_640": 54.68
+    },
+    {
+      "image": "IMG_2820",
+      "class": "干扰项1",
+      "width_at_640": 70.25,
+      "height_at_640": 46.39
+    },
+    {
+      "image": "IMG_2821",
+      "class": "干扰项1",
+      "width_at_640": 76.64,
+      "height_at_640": 65.21
+    },
+    {
+      "image": "IMG_2822",
+      "class": "干扰项1",
+      "width_at_640": 75.97,
+      "height_at_640": 62.75
+    },
+    {
+      "image": "IMG_2823",
+      "class": "干扰项1",
+      "width_at_640": 127.51,
+      "height_at_640": 140.95
+    },
+    {
+      "image": "IMG_2824",
+      "class": "干扰项1",
+      "width_at_640": 217.7,
+      "height_at_640": 251.2
+    },
+    {
+      "image": "IMG_2825",
+      "class": "干扰项1",
+      "width_at_640": 176.92,
+      "height_at_640": 179.05
+    },
+    {
+      "image": "IMG_2826",
+      "class": "干扰项1",
+      "width_at_640": 147.45,
+      "height_at_640": 157.31
+    },
+    {
+      "image": "IMG_2827",
+      "class": "干扰项1",
+      "width_at_640": 176.13,
+      "height_at_640": 183.31
+    },
+    {
+      "image": "IMG_2828",
+      "class": "干扰项1",
+      "width_at_640": 196.86,
+      "height_at_640": 177.59
+    },
+    {
+      "image": "IMG_2829",
+      "class": "干扰项1",
+      "width_at_640": 148.12,
+      "height_at_640": 153.5
+    },
+    {
+      "image": "IMG_2830",
+      "class": "干扰项1",
+      "width_at_640": 100.06,
+      "height_at_640": 88.29
+    },
+    {
+      "image": "IMG_2831",
+      "class": "干扰项1",
+      "width_at_640": 231.6,
+      "height_at_640": 229.92
+    },
+    {
+      "image": "IMG_2832",
+      "class": "干扰项1",
+      "width_at_640": 214.23,
+      "height_at_640": 205.71
+    },
+    {
+      "image": "IMG_2833",
+      "class": "干扰项1",
+      "width_at_640": 97.82,
+      "height_at_640": 74.73
+    },
+    {
+      "image": "IMG_2834",
+      "class": "干扰项2",
+      "width_at_640": 230.59,
+      "height_at_640": 195.41
+    },
+    {
+      "image": "IMG_2835",
+      "class": "干扰项2",
+      "width_at_640": 193.28,
+      "height_at_640": 159.89
+    },
+    {
+      "image": "IMG_2836",
+      "class": "干扰项2",
+      "width_at_640": 172.66,
+      "height_at_640": 159.89
+    },
+    {
+      "image": "IMG_2837",
+      "class": "干扰项2",
+      "width_at_640": 170.2,
+      "height_at_640": 100.84
+    },
+    {
+      "image": "IMG_2838",
+      "class": "干扰项2",
+      "width_at_640": 170.2,
+      "height_at_640": 160.9
+    },
+    {
+      "image": "IMG_2839",
+      "class": "干扰项2",
+      "width_at_640": 163.36,
+      "height_at_640": 139.94
+    },
+    {
+      "image": "IMG_2840",
+      "class": "干扰项2",
+      "width_at_640": 164.82,
+      "height_at_640": 136.02
+    },
+    {
+      "image": "IMG_2841",
+      "class": "干扰项2",
+      "width_at_640": 176.92,
+      "height_at_640": 125.38
+    },
+    {
+      "image": "IMG_2842",
+      "class": "干扰项2",
+      "width_at_640": 153.05,
+      "height_at_640": 171.65
+    },
+    {
+      "image": "IMG_2843",
+      "class": "干扰项2",
+      "width_at_640": 109.02,
+      "height_at_640": 105.77
+    },
+    {
+      "image": "IMG_2844",
+      "class": "干扰项2",
+      "width_at_640": 62.63,
+      "height_at_640": 48.52
+    },
+    {
+      "image": "IMG_2845",
+      "class": "干扰项2",
+      "width_at_640": 73.73,
+      "height_at_640": 49.97
+    },
+    {
+      "image": "IMG_2846",
+      "class": "干扰项2",
+      "width_at_640": 75.18,
+      "height_at_640": 57.48
+    },
+    {
+      "image": "IMG_2847",
+      "class": "干扰项2",
+      "width_at_640": 63.75,
+      "height_at_640": 43.81
+    },
+    {
+      "image": "IMG_2848",
+      "class": "干扰项2",
+      "width_at_640": 67.0,
+      "height_at_640": 43.14
+    },
+    {
+      "image": "IMG_2849",
+      "class": "干扰项2",
+      "width_at_640": 69.24,
+      "height_at_640": 51.43
+    },
+    {
+      "image": "IMG_2850",
+      "class": "干扰项2",
+      "width_at_640": 63.53,
+      "height_at_640": 38.32
+    },
+    {
+      "image": "IMG_2851",
+      "class": "干扰项2",
+      "width_at_640": 104.09,
+      "height_at_640": 84.37
+    },
+    {
+      "image": "IMG_2852",
+      "class": "干扰项2",
+      "width_at_640": 66.89,
+      "height_at_640": 49.52
+    },
+    {
+      "image": "IMG_2853",
+      "class": "干扰项2",
+      "width_at_640": 58.04,
+      "height_at_640": 31.04
+    },
+    {
+      "image": "IMG_2854",
+      "class": "干扰项2",
+      "width_at_640": 209.3,
+      "height_at_640": 188.68
+    },
+    {
+      "image": "IMG_2855",
+      "class": "干扰项2",
+      "width_at_640": 188.68,
+      "height_at_640": 190.81
+    },
+    {
+      "image": "IMG_2856",
+      "class": "干扰项2",
+      "width_at_640": 303.87,
+      "height_at_640": 299.61
+    },
+    {
+      "image": "IMG_2857",
+      "class": "干扰项2",
+      "width_at_640": 317.09,
+      "height_at_640": 222.41
+    },
+    {
+      "image": "IMG_2858",
+      "class": "干扰项2",
+      "width_at_640": 256.25,
+      "height_at_640": 233.39
+    },
+    {
+      "image": "IMG_2859",
+      "class": "干扰项2",
+      "width_at_640": 341.18,
+      "height_at_640": 315.63
+    },
+    {
+      "image": "IMG_2860",
+      "class": "干扰项2",
+      "width_at_640": 330.87,
+      "height_at_640": 226.67
+    },
+    {
+      "image": "IMG_2861",
+      "class": "干扰项2",
+      "width_at_640": 301.27,
+      "height_at_640": 323.97
+    },
+    {
+      "image": "IMG_2862",
+      "class": "干扰项2",
+      "width_at_640": 257.46,
+      "height_at_640": 279.52
+    },
+    {
+      "image": "IMG_2863",
+      "class": "干扰项2",
+      "width_at_640": 230.95,
+      "height_at_640": 213.02
+    }
+  ],
+  "nondefault_exif_orientation": []
+}
