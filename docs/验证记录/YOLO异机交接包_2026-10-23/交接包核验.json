@@ -1,0 +1,20 @@
+{
+  "archive": "D:\\SHELL\\YOLO异机训练交接包_2026-10-24.zip",
+  "bytes": 866639581,
+  "sha256": "90f3af6ffdcd81063c9637cb389755632bc63910d1477976c6df8f044e230015",
+  "root_directory": "YOLO异机训练交接包_2026-10-24",
+  "archive_entries": 14,
+  "manifest_files": 13,
+  "local_links_checked": 18,
+  "missing_links": [],
+  "all_archive_member_crc_and_sha256_verified": true,
+  "receiver_verifier": {
+    "passed": true,
+    "files_checked": 13,
+    "inner_zip_crc_checked": false,
+    "failures": []
+  },
+  "source_sha256": "6a9d4537ce546ae5bb0c429f565edaf3f0e44c6e0bd628b7faf5a061c9666b41",
+  "training_performed": false,
+  "source_modified": false
+}

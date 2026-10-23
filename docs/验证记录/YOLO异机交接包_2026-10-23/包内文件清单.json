@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "package": "YOLO异机训练交接包_2026-10-24",
+  "built_at": "2026-10-24T04:47:14+0800",
+  "training_performed_on_sender": false,
+  "dataset_sha256": "6a9d4537ce546ae5bb0c429f565edaf3f0e44c6e0bd628b7faf5a061c9666b41",
+  "files": [
+    {
+      "path": "00_开始阅读.md",
+      "bytes": 3349,
+      "sha256": "9e697dc7042c817d9c0274e8a395aede65891fa2d9c20b376a69d0215ce192ce"
+    },
+    {
+      "path": "01_训练方案.md",
+      "bytes": 15921,
+      "sha256": "542eeff5da0e61fa3e0e57e8ba631b06fba19470d6734f83ee4a848b3cc7627f"
+    },
+    {
+      "path": "02_给训练助手的提示词.md",
+      "bytes": 10368,
+      "sha256": "f9d60bb39ee48b23bb1c48832ab4fa57c3abdf47549987a433e8cbc64589342c"
+    },
+    {
+      "path": "03_成果交回清单.md",
+      "bytes": 2287,
+      "sha256": "f3c8ff745e42bd1b3829854b4a36164554cb81e79572db20c8f909c01adc36fd"
+    },
+    {
+      "path": "config/class_map.json",
+      "bytes": 1023,
+      "sha256": "21b062adfed65bdb8cf245d97e4f6531486e134fa5ff7081065978cf693a3746"
+    },
+    {
+      "path": "config/data.yaml.example",
+      "bytes": 355,
+      "sha256": "3c7028c317304dd9a7249a7160436b4aac8252847c84e64a856b7b8ef44d9cb5"
+    },
+    {
+      "path": "config/upstream_sources.json",
+      "bytes": 923,
+      "sha256": "c5b391c9e7a239e0aa135b1fae1824e208a252348b4aaa9b7dc5660393314bfe"
+    },
+    {
+      "path": "data/TargetDelection1.1.zip",
+      "bytes": 866460635,
+      "sha256": "6a9d4537ce546ae5bb0c429f565edaf3f0e44c6e0bd628b7faf5a061c9666b41"
+    },
+    {
+      "path": "evidence/README.md",
+      "bytes": 1736,
+      "sha256": "b34bd0e9b4a4d7cc3b3f2442c156da2b146289771c236f065a3499046ec5ad07"
+    },
+    {
+      "path": "evidence/RK_NPU只读盘点.txt",
+      "bytes": 689,
+      "sha256": "542c3b7e3415ccfa68ff6713dd94af5b54dfbdaf46a76899b8a88259c3466ed6"
+    },
+    {
+      "path": "evidence/标注抽样预览.jpg",
+      "bytes": 133308,
+      "sha256": "5af74f369d124af28c8bf0fe790ba03ba402d9002362016bb785f2f025fcd507"
+    },
+    {
+      "path": "evidence/素材只读核查.json",
+      "bytes": 172336,
+      "sha256": "9e41255d0ec22df7e1a5cf5c9d655099bb3fe3f1114271892e52f19696220b0a"
+    },
+    {
+      "path": "verify_package.py",
+      "bytes": 1864,
+      "sha256": "167be8e9fb1ae9c106b0588f2aabe2a2714784f33a8c5ecbc30c6b5e4c837aa3"
+    }
+  ],
+  "manifest_note": "The outer ZIP hash is provided separately; manifest does not hash itself."
+}
