@@ -1,0 +1,129 @@
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_nodejs
+[ 24%] Built target rplidarNode
+[ 27%] Built target rplidarNodeClient
+[ 27%] Built target _ssd_detection_generate_messages_check_deps_VisionDetection
+[ 27%] Built target _ssd_detection_generate_messages_check_deps_VisionDetectionArray
+[ 27%] Built target nav_msgs_generate_messages_lisp
+[ 27%] Built target sensor_msgs_generate_messages_py
+[ 27%] Built target geometry_msgs_generate_messages_cpp
+[ 27%] Built target sensor_msgs_generate_messages_nodejs
+[ 27%] Built target sensor_msgs_generate_messages_cpp
+[ 27%] Built target sensor_msgs_generate_messages_eus
+[ 27%] Built target sensor_msgs_generate_messages_lisp
+[ 27%] Built target geometry_msgs_generate_messages_py
+[ 27%] Built target geometry_msgs_generate_messages_nodejs
+[ 27%] Built target geometry_msgs_generate_messages_lisp
+[ 27%] Built target geometry_msgs_generate_messages_eus
+[ 27%] Built target visualization_msgs_generate_messages_py
+[ 27%] Built target visualization_msgs_generate_messages_nodejs
+[ 27%] Built target visualization_msgs_generate_messages_lisp
+[ 27%] Built target visualization_msgs_generate_messages_eus
+[ 27%] Built target visualization_msgs_generate_messages_cpp
+[ 27%] Built target tf2_msgs_generate_messages_nodejs
+[ 27%] Built target tf2_msgs_generate_messages_py
+[ 27%] Built target tf2_msgs_generate_messages_lisp
+[ 27%] Built target tf2_msgs_generate_messages_eus
+[ 27%] Built target actionlib_generate_messages_py
+[ 27%] Built target tf2_msgs_generate_messages_cpp
+[ 27%] Built target actionlib_generate_messages_eus
+[ 27%] Built target actionlib_generate_messages_cpp
+[ 27%] Built target tf_generate_messages_nodejs
+[ 27%] Built target tf_generate_messages_py
+[ 27%] Built target tf_generate_messages_lisp
+[ 27%] Built target tf_generate_messages_eus
+[ 27%] Built target tf_generate_messages_cpp
+[ 27%] Built target actionlib_msgs_generate_messages_nodejs
+[ 27%] Built target actionlib_msgs_generate_messages_py
+[ 27%] Built target actionlib_msgs_generate_messages_lisp
+[ 27%] Built target std_srvs_generate_messages_py
+[ 27%] Built target actionlib_msgs_generate_messages_eus
+[ 27%] Built target actionlib_generate_messages_lisp
+[ 27%] Built target std_srvs_generate_messages_nodejs
+[ 27%] Built target gazebo_msgs_generate_messages_cpp
+[ 27%] Built target std_srvs_generate_messages_lisp
+[ 27%] Built target nav_msgs_generate_messages_py
+[ 27%] Built target std_srvs_generate_messages_eus
+[ 27%] Built target std_srvs_generate_messages_cpp
+[ 27%] Built target actionlib_msgs_generate_messages_cpp
+[ 27%] Built target trajectory_msgs_generate_messages_nodejs
+[ 27%] Built target trajectory_msgs_generate_messages_lisp
+[ 27%] Built target gazebo_msgs_generate_messages_nodejs
+[ 27%] Built target gazebo_msgs_generate_messages_lisp
+[ 27%] Built target trajectory_msgs_generate_messages_py
+[ 27%] Built target gazebo_msgs_generate_messages_py
+[ 27%] Built target trajectory_msgs_generate_messages_eus
+[ 27%] Built target mavros_msgs_generate_messages_cpp
+[ 27%] Built target trajectory_msgs_generate_messages_cpp
+[ 27%] Built target nav_msgs_generate_messages_cpp
+[ 27%] Built target gazebo_msgs_generate_messages_eus
+[ 27%] Built target mavros_msgs_generate_messages_eus
+[ 27%] Built target uuid_msgs_generate_messages_cpp
+[ 27%] Built target mavros_msgs_generate_messages_nodejs
+[ 27%] Built target nav_msgs_generate_messages_nodejs
+[ 27%] Built target geographic_msgs_generate_messages_cpp
+[ 27%] Built target mavros_msgs_generate_messages_py
+[ 27%] Built target actionlib_generate_messages_nodejs
+[ 27%] Built target geographic_msgs_generate_messages_nodejs
+[ 27%] Built target geographic_msgs_generate_messages_eus
+[ 27%] Built target geographic_msgs_generate_messages_lisp
+[ 27%] Built target geographic_msgs_generate_messages_py
+[ 27%] Built target uuid_msgs_generate_messages_eus
+[ 27%] Built target mavros_msgs_generate_messages_lisp
+[ 27%] Built target uuid_msgs_generate_messages_py
+[ 27%] Built target uuid_msgs_generate_messages_lisp
+[ 27%] Built target uuid_msgs_generate_messages_nodejs
+[ 27%] Built target nav_msgs_generate_messages_eus
+[ 34%] Built target tfmini_test
+Scanning dependencies of target location_node
+[ 35%] Building CXX object location/CMakeFiles/location_node.dir/src/location_with_ftmini.cpp.o
+[ 35%] Built target _navigation_2d_generate_messages_check_deps_TargetDetection
+[ 35%] Built target _catkin_empty_exported_target
+[ 38%] Built target path_searching
+[ 43%] Built target bspline_opt
+[ 46%] Built target grid_map_2d
+[ 49%] Built target servo_controller_node
+[ 53%] Built target ssd_detection_generate_messages_py
+[ 56%] Built target ssd_detection_generate_messages_cpp
+[ 58%] Built target ssd_detection_generate_messages_lisp
+[ 63%] Built target ssd_detection_generate_messages_eus
+[ 65%] Built target ssd_detection_generate_messages_nodejs
+[ 68%] Built target px4_sensor_rig_node
+[ 71%] Built target gazebo_simulation_vehicle_node
+[ 73%] Built target navigation_2d_generate_messages_py
+[ 76%] Built target navigation_2d_generate_messages_eus
+[ 78%] Built target navigation_2d_generate_messages_cpp
+[ 79%] Built target navigation_2d_generate_messages_lisp
+[ 80%] Built target navigation_2d_generate_messages_nodejs
+[ 83%] Built target ego_trajectory_controller_node
+[ 86%] Built target plan_manage
+[ 86%] Built target ssd_detection_generate_messages
+[ 86%] Built target navigation_2d_generate_messages
+[ 91%] Built target rescue_mission_node
+[ 94%] Built target ego_planner_2d_node
+[ 95%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/location_node
+[100%] Built target location_node
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make -j2 -l2" in "/home/jcfh/catkin_ws/build"
+####

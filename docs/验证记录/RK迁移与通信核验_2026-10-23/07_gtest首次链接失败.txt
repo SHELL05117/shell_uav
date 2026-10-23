@@ -1,0 +1,90 @@
+-- Using CATKIN_DEVEL_PREFIX: /home/jcfh/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /home/jcfh/catkin_ws/devel;/opt/ros/melodic
+-- This workspace overlays: /home/jcfh/catkin_ws/devel;/opt/ros/melodic
+-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/jcfh/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.29
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 7 packages in topological order:
+-- ~~  - servo_control
+-- ~~  - rplidar_ros
+-- ~~  - ssd_detection
+-- ~~  - gc_2026_sim
+-- ~~  - location
+-- ~~  - navigation_2d
+-- ~~  - ego_planner_2d
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'servo_control'
+-- ==> add_subdirectory(servo_control)
+-- +++ processing catkin package: 'rplidar_ros'
+-- ==> add_subdirectory(rplidar_ros)
+-- +++ processing catkin package: 'ssd_detection'
+-- ==> add_subdirectory(ssd_detection)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- ssd_detection: 2 messages, 0 services
+-- ssd_detection: jetson-inference not found -> skipping the detectNet node (this is expected off the Jetson; the Python node covers the simulator, and both read the same .onnx)
+-- +++ processing catkin package: 'gc_2026_sim'
+-- ==> add_subdirectory(gc_2026_sim)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'location'
+-- ==> add_subdirectory(location)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'navigation_2d'
+-- ==> add_subdirectory(navigation_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+CMake Warning at navigation_2d/CMakeLists.txt:24 (message):
+  OpenCV_VERSION: 3.2.0
+
+
+-- navigation_2d: 1 messages, 0 services
+-- +++ processing catkin package: 'ego_planner_2d'
+-- ==> add_subdirectory(ego_planner_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jcfh/catkin_ws/build
+Scanning dependencies of target clean_test_results_navigation_2d
+Scanning dependencies of target gtest
+Removing test result files from '/home/jcfh/catkin_ws/build/test_results/navigation_2d'
+[  0%] Built target clean_test_results_navigation_2d
+[ 25%] Building CXX object gtest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 50%] Linking CXX shared library libgtest.so
+[ 50%] Built target gtest
+Scanning dependencies of target ego_path_tracking_test
+[ 75%] Building CXX object navigation_2d/CMakeFiles/ego_path_tracking_test.dir/test/ego_path_tracking_test.cpp.o
+[100%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/navigation_2d/ego_path_tracking_test
+navigation_2d/CMakeFiles/ego_path_tracking_test.dir/build.make:122: recipe for target '/home/jcfh/catkin_ws/devel/lib/navigation_2d/ego_path_tracking_test' failed
+CMakeFiles/Makefile2:5118: recipe for target 'navigation_2d/CMakeFiles/ego_path_tracking_test.dir/all' failed
+CMakeFiles/Makefile2:138: recipe for target 'CMakeFiles/run_tests.dir/rule' failed
+/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x18): undefined reference to `main'
+(.text+0x1c): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make[3]: *** [/home/jcfh/catkin_ws/devel/lib/navigation_2d/ego_path_tracking_test] Error 1
+make[2]: *** [navigation_2d/CMakeFiles/ego_path_tracking_test.dir/all] Error 2
+make[1]: *** [CMakeFiles/run_tests.dir/rule] Error 2
+Makefile:201: recipe for target 'run_tests' failed
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "cmake /home/jcfh/catkin_ws/src -DCATKIN_DEVEL_PREFIX=/home/jcfh/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jcfh/catkin_ws/install -G Unix Makefiles" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make run_tests -j2 -l2" in "/home/jcfh/catkin_ws/build"
+####
+make: *** [run_tests] Error 2
+Invoking "make run_tests -j2 -l2" failed

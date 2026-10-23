@@ -125,3 +125,9 @@ TEST(EgoPathTracking, RejectsNonFinitePoseAndPathPoints)
       makePath({{0.0, 0.0}, {nan, 0.0}}),
       0.0, 0.0, 0.4, 0.1, target, remaining));
 }
+
+int main(int argc, char **argv)
+{
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

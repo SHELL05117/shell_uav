@@ -1,0 +1,514 @@
+
+===== Audit scope and identity =====
+Read-only dependency inventory; no hardware protocol test.
+
+$ date --iso-8601=seconds
+2026-10-24T02:16:29+08:00
+[exit=0]
+
+$ date -u --iso-8601=seconds
+2026-10-23T18:16:29+00:00
+[exit=0]
+
+$ id
+uid=1001(jcfh) gid=1001(jcfh) groups=1001(jcfh),27(sudo)
+[exit=0]
+
+$ uname -a
+Linux toybrick 4.4.194 #1 SMP Tue Oct 20 18:43:31 Asia 2026 aarch64 aarch64 aarch64 GNU/Linux
+[exit=0]
+
+$ dpkg --print-architecture
+arm64
+[exit=0]
+
+$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="18.04 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+[exit=0]
+
+===== Clock, storage, memory, and swap =====
+
+$ timedatectl show -p Timezone -p LocalRTC -p NTPSynchronized -p NTP
+timedatectl: invalid option -- 'p'
+[exit=1]
+
+$ uptime
+ 02:16:29 up 8 min,  2 users,  load average: 0.48, 0.18, 0.06
+[exit=0]
+
+$ df -hT / /boot /home/jcfh
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/root      ext4   29G  3.2G   26G  12% /
+/dev/root      ext4   29G  3.2G   26G  12% /
+/dev/root      ext4   29G  3.2G   26G  12% /
+[exit=0]
+
+$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           3.8G         54M        3.6G        6.9M         84M        3.7G
+Swap:            0B          0B          0B
+[exit=0]
+
+$ swapon --show
+[exit=0]
+
+===== dpkg audit (empty output normally means no incomplete packages) =====
+
+$ dpkg --audit
+[exit=0]
+
+===== Declared deployment dependencies: status, version, architecture =====
+PACKAGE	STATUS	VERSION	ARCHITECTURE
+build-essential	install ok installed	12.4ubuntu1	arm64
+cmake	install ok installed	3.10.2-1ubuntu2.18.04.2	arm64
+pkg-config	install ok installed	0.29.1-0ubuntu2	arm64
+git	install ok installed	1:2.17.1-1ubuntu0.18	arm64
+rsync	install ok installed	3.1.2-2.1ubuntu1.6	arm64
+libeigen3-dev	install ok installed	3.3.4-4	all
+libopencv-dev	install ok installed	3.2.0+dfsg-4ubuntu0.1	arm64
+libi2c-dev	install ok installed	4.0-2	arm64
+i2c-tools	install ok installed	4.0-2	arm64
+v4l-utils	install ok installed	1.14.2-1	arm64
+usbutils	install ok installed	1:007-4build1	arm64
+openssh-server	install ok installed	1:7.6p1-4ubuntu0.7	arm64
+python-rosdep	install ok installed	0.23.1-1	all
+geographiclib-tools	install ok installed	1.49-2	arm64
+python-numpy	install ok installed	1:1.13.3-2ubuntu1	arm64
+python3-numpy	unknown ok not-installed		
+ros-melodic-ros-base	install ok installed	1.4.1-0bionic.20230216.105845	arm64
+ros-melodic-catkin	install ok installed	0.7.29-1bionic.20201014.191647	arm64
+ros-melodic-mavros	install ok installed	1.16.0-1bionic.20230605.155036	arm64
+ros-melodic-mavros-extras	install ok installed	1.16.0-1bionic.20230605.160238	arm64
+ros-melodic-mavros-msgs	install ok installed	1.16.0-1bionic.20230505.180431	arm64
+ros-melodic-mavlink	install ok installed	2022.12.30-1bionic.20230605.154004	arm64
+ros-melodic-cmake-modules	install ok installed	0.4.2-0bionic.20200802.113658	arm64
+ros-melodic-message-generation	install ok installed	0.4.1-1bionic.20221025.174821	arm64
+ros-melodic-message-runtime	install ok installed	0.4.12-0bionic.20221025.174748	arm64
+ros-melodic-tf	install ok installed	1.12.1-1bionic.20221025.195522	arm64
+ros-melodic-tf2	install ok installed	0.6.5-0bionic.20221025.181843	arm64
+ros-melodic-tf2-ros	install ok installed	0.6.5-0bionic.20221025.194946	arm64
+ros-melodic-tf2-geometry-msgs	install ok installed	0.6.5-0bionic.20221025.203321	arm64
+ros-melodic-cv-bridge	install ok installed	1.13.1-1bionic.20221025.193650	arm64
+ros-melodic-cartographer-ros	install ok installed	1.0.0-1bionic.20221025.224527	arm64
+ros-melodic-gazebo-msgs	install ok installed	2.8.7-1bionic.20221025.214250	arm64
+ros-melodic-usb-cam	install ok installed	0.3.7-1bionic.20230322.235948	arm64
+ros-melodic-foxglove-bridge	install ok installed	0.6.3-1bionic.20230620.181421	arm64
+ros-melodic-roscpp	install ok installed	1.14.13-1bionic.20221025.182332	arm64
+ros-melodic-rospy	install ok installed	1.14.13-1bionic.20221025.183903	arm64
+ros-melodic-rosconsole	install ok installed	1.13.18-1bionic.20221025.175407	arm64
+ros-melodic-std-msgs	install ok installed	0.5.12-0bionic.20221025.175123	arm64
+ros-melodic-std-srvs	install ok installed	1.11.2-0bionic.20221025.175135	arm64
+ros-melodic-geometry-msgs	install ok installed	1.12.8-1bionic.20221025.180147	arm64
+ros-melodic-nav-msgs	install ok installed	1.12.8-1bionic.20221025.180311	arm64
+ros-melodic-sensor-msgs	install ok installed	1.12.8-1bionic.20221025.192749	arm64
+ros-melodic-visualization-msgs	install ok installed	1.12.8-1bionic.20221025.181059	arm64
+ros-melodic-actionlib-msgs	install ok installed	1.12.8-1bionic.20221025.175455	arm64
+
+===== ROS Melodic environment and package resolution =====
+[Melodic setup source exit=0]
+
+$ rosversion -d
+melodic
+[exit=0]
+
+$ rosversion roslaunch
+1.14.13
+[exit=0]
+
+$ rosversion catkin
+0.7.29
+[exit=0]
+
+$ rosversion mavros
+1.16.0
+[exit=0]
+
+$ rosversion cv_bridge
+1.13.1
+[exit=0]
+
+rospack find roscpp
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.TyIiAE: Not a directory
+/opt/ros/melodic/share/roscpp
+[exit=0]
+
+rospack find rospy
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.5IhPYI: Not a directory
+/opt/ros/melodic/share/rospy
+[exit=0]
+
+rospack find rosconsole
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.zUN1kL: Not a directory
+/opt/ros/melodic/share/rosconsole
+[exit=0]
+
+rospack find roslaunch
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.i1ybMJ: Not a directory
+/opt/ros/melodic/share/roslaunch
+[exit=0]
+
+rospack find catkin
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.Jw2pIM: Not a directory
+/opt/ros/melodic/share/catkin
+[exit=0]
+
+rospack find cmake_modules
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.Ww0GGP: Not a directory
+/opt/ros/melodic/share/cmake_modules
+[exit=0]
+
+rospack find std_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.NLaLmS: Not a directory
+/opt/ros/melodic/share/std_msgs
+[exit=0]
+
+rospack find std_srvs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.WBsDiR: Not a directory
+/opt/ros/melodic/share/std_srvs
+[exit=0]
+
+rospack find geometry_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.hSFIST: Not a directory
+/opt/ros/melodic/share/geometry_msgs
+[exit=0]
+
+rospack find nav_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.qMDi0S: Not a directory
+/opt/ros/melodic/share/nav_msgs
+[exit=0]
+
+rospack find sensor_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.dJXHEV: Not a directory
+/opt/ros/melodic/share/sensor_msgs
+[exit=0]
+
+rospack find visualization_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.oyKEsZ: Not a directory
+/opt/ros/melodic/share/visualization_msgs
+[exit=0]
+
+rospack find actionlib_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.xe6bxX: Not a directory
+/opt/ros/melodic/share/actionlib_msgs
+[exit=0]
+
+rospack find tf
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.8uYUh1: Not a directory
+/opt/ros/melodic/share/tf
+[exit=0]
+
+rospack find tf2
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.XihGU3: Not a directory
+/opt/ros/melodic/share/tf2
+[exit=0]
+
+rospack find tf2_ros
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.cEr712: Not a directory
+/opt/ros/melodic/share/tf2_ros
+[exit=0]
+
+rospack find tf2_geometry_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.PnrMG5: Not a directory
+/opt/ros/melodic/share/tf2_geometry_msgs
+[exit=0]
+
+rospack find message_generation
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.S4bKI8: Not a directory
+/opt/ros/melodic/share/message_generation
+[exit=0]
+
+rospack find message_runtime
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.Rx5sP7: Not a directory
+/opt/ros/melodic/share/message_runtime
+[exit=0]
+
+rospack find mavros
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.OJnIua: Not a directory
+/opt/ros/melodic/share/mavros
+[exit=0]
+
+rospack find mavros_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.zToGB9: Not a directory
+/opt/ros/melodic/share/mavros_msgs
+[exit=0]
+
+rospack find mavlink
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.KwjTbc: Not a directory
+/opt/ros/melodic/share/mavlink
+[exit=0]
+
+rospack find cv_bridge
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.hbYx1f: Not a directory
+/opt/ros/melodic/share/cv_bridge
+[exit=0]
+
+rospack find cartographer_ros
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.UM4l4d: Not a directory
+/opt/ros/melodic/share/cartographer_ros
+[exit=0]
+
+rospack find gazebo_msgs
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.lEbLSh: Not a directory
+/opt/ros/melodic/share/gazebo_msgs
+[exit=0]
+
+rospack find usb_cam
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.44ILsk: Not a directory
+/opt/ros/melodic/share/usb_cam
+[exit=0]
+
+rospack find foxglove_bridge
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Warning: cannot create rospack cache directory /dev/null: boost::filesystem::create_directory: File exists: "/dev/null"
+[rospack] Unable to create temporary cache file /dev/null/.rospack_cache.6RTCrc: Not a directory
+/opt/ros/melodic/share/foxglove_bridge
+[exit=0]
+
+===== Python 2 and Python 3 imports after Melodic setup =====
+
+$ python2 --version
+Python 2.7.17
+[exit=0]
+executable=/usr/bin/python2
+rospy: OK file=/opt/ros/melodic/lib/python2.7/dist-packages/rospy/__init__.pyc version=(not exposed)
+cv_bridge: OK file=/opt/ros/melodic/lib/python2.7/dist-packages/cv_bridge/__init__.pyc version=(not exposed)
+cv_bridge.boost.cv_bridge_boost: OK
+numpy: OK file=/usr/lib/python2.7/dist-packages/numpy/__init__.pyc version=1.13.3
+[python2 import-check exit=0]
+
+$ python3 --version
+Python 3.6.9
+[exit=0]
+executable=/usr/bin/python3
+rospy: IMPORT ERROR
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/__init__.py", line 49, in <module>
+    from .client import spin, myargv, init_node, \
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/client.py", line 52, in <module>
+    import roslib
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslib/__init__.py", line 50, in <module>
+    from roslib.launcher import load_manifest  # noqa: F401
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslib/launcher.py", line 42, in <module>
+    import rospkg
+ModuleNotFoundError: No module named 'rospkg'
+cv_bridge: OK file=/opt/ros/melodic/lib/python2.7/dist-packages/cv_bridge/__init__.py version=(not exposed)
+cv_bridge: IMPORT ERROR
+Traceback (most recent call last):
+  File "<stdin>", line 16, in <module>
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 658, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 922, in create_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+ImportError: dynamic module does not define module export function (PyInit_cv_bridge_boost)
+numpy: IMPORT ERROR
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'numpy'
+[python3 import-check exit=0]
+
+===== GeographicLib dataset files (metadata only) =====
+
+$ find /usr/share/GeographicLib -maxdepth 2 -type f -printf %M\ %u\ %g\ %s\ %p\\n
+-rw-r--r-- root root 18671448 /usr/share/GeographicLib/geoids/egm96-5.pgm
+-rw-r--r-- root root 1080 /usr/share/GeographicLib/geoids/egm96-5.pgm.aux.xml
+-rw-r--r-- root root 50 /usr/share/GeographicLib/geoids/egm96-5.wld
+[exit=0]
+[missing directory: /usr/local/share/GeographicLib]
+[nonempty geoid: /usr/share/GeographicLib/geoids/egm96-5.pgm]
+[missing or empty geoid: /usr/local/share/GeographicLib/geoids/egm96-5.pgm]
+
+===== IP addresses and routes (no network authentication files) =====
+
+$ ip -br address
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             DOWN           fe80::12dc:b6ff:fe91:a0f/64 
+wlan0            UP             192.168.1.102/24 fe80::16f5:f9ff:fee6:cd08/64 
+p2p0             DOWN           
+usb0             UP             192.168.77.1/24 fe80::53:48ff:fe45:4c01/64 
+[exit=0]
+
+$ ip route show
+default via 192.168.1.1 dev wlan0 proto dhcp src 192.168.1.102 metric 600 
+192.168.1.0/24 dev wlan0 proto kernel scope link src 192.168.1.102 
+192.168.1.1 dev wlan0 proto dhcp scope link src 192.168.1.102 metric 600 
+192.168.77.0/24 dev usb0 proto kernel scope link src 192.168.77.1 
+[exit=0]
+
+$ ip -6 route show
+fe80::/64 dev eth0 proto kernel metric 256 linkdown pref medium
+fe80::/64 dev usb0 proto kernel metric 256 pref medium
+fe80::/64 dev wlan0 proto kernel metric 256 pref medium
+ff00::/8 dev usb0 metric 256 pref medium
+ff00::/8 dev wlan0 metric 256 pref medium
+[exit=0]
+
+===== USB enumeration and SSH / USB-network service states =====
+
+$ lsusb
+Bus 004 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 005 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[exit=0]
+
+$ ls -l /sys/class/udc
+total 0
+lrwxrwxrwx 1 root root 0 Mar  2  2023 fe800000.dwc3 -> ../../devices/platform/usb0/fe800000.dwc3/udc/fe800000.dwc3
+[exit=0]
+
+$ systemctl is-enabled ssh.service
+Failed to connect to bus: No such file or directory
+[exit=1]
+
+$ systemctl is-active ssh.service
+Failed to connect to bus: No such file or directory
+[exit=1]
+
+$ systemctl is-enabled rk-usb-ssh.service
+Failed to connect to bus: No such file or directory
+[exit=1]
+
+$ systemctl is-active rk-usb-ssh.service
+Failed to connect to bus: No such file or directory
+[exit=1]
+
+===== Serial, I2C and camera node permissions (metadata only) =====
+[missing: /dev/serial/by-id]
+[no /dev/ttyACM* nodes]
+[no /dev/ttyUSB* nodes]
+
+$ stat -c %A\ %a\ %U\ %G\ major_minor=%t:%T\ %n /dev/i2c-0 /dev/i2c-1 /dev/i2c-2 /dev/i2c-4 /dev/i2c-6 /dev/i2c-7 /dev/i2c-8 /dev/i2c-9
+crw-rw---- 660 root i2c major_minor=59:0 /dev/i2c-0
+crw-rw---- 660 root i2c major_minor=59:1 /dev/i2c-1
+crw-rw---- 660 root i2c major_minor=59:2 /dev/i2c-2
+crw-rw---- 660 root i2c major_minor=59:4 /dev/i2c-4
+crw-rw---- 660 root i2c major_minor=59:6 /dev/i2c-6
+crw-rw---- 660 root i2c major_minor=59:7 /dev/i2c-7
+crw-rw---- 660 root i2c major_minor=59:8 /dev/i2c-8
+crw-rw---- 660 root i2c major_minor=59:9 /dev/i2c-9
+[exit=0]
+
+$ stat -c %A\ %a\ %U\ %G\ major_minor=%t:%T\ %n /dev/video0 /dev/video1 /dev/video2 /dev/video3 /dev/video4 /dev/video5 /dev/video6 /dev/video7 /dev/video8 /dev/video9
+crw-rw---- 660 root video major_minor=51:0 /dev/video0
+crw-rw---- 660 root video major_minor=51:1 /dev/video1
+crw-rw---- 660 root video major_minor=51:2 /dev/video2
+crw-rw---- 660 root video major_minor=51:3 /dev/video3
+crw-rw---- 660 root video major_minor=51:4 /dev/video4
+crw-rw---- 660 root video major_minor=51:5 /dev/video5
+crw-rw---- 660 root video major_minor=51:6 /dev/video6
+crw-rw---- 660 root video major_minor=51:7 /dev/video7
+crw-rw---- 660 root video major_minor=51:8 /dev/video8
+crw-rw---- 660 root video major_minor=51:9 /dev/video9
+[exit=0]
+
+$ i2cdetect -l
+i2c-0	unknown   	rk3x-i2c                        	N/A
+i2c-1	unknown   	rk3x-i2c                        	N/A
+i2c-2	unknown   	rk3x-i2c                        	N/A
+i2c-4	unknown   	rk3x-i2c                        	N/A
+i2c-6	unknown   	rk3x-i2c                        	N/A
+i2c-7	unknown   	rk3x-i2c                        	N/A
+i2c-8	unknown   	rk3x-i2c                        	N/A
+i2c-9	unknown   	DesignWare HDMI                 	N/A
+[exit=0]
+Only adapter listing was requested; no I2C bus was scanned.
+
+===== Selected running processes (PID and comm only; no arguments) =====
+  324 sshd
+  496 sshd
+  514 sshd
+ 1028 sshd
+ 1046 sshd
+
+===== Existing home catkin workspace (top level only) =====
+[missing directory: /home/jcfh/catkin_ws]
+
+===== Audit complete =====
+Inventory complete. Individual failures above are findings, not a system acceptance result.

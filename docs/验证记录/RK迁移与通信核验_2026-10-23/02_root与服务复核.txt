@@ -1,0 +1,52 @@
+[sudo] password for jcfh: uid=0(root) gid=0(root) groups=0(root)
+  PID COMMAND         COMMAND
+    1 systemd         /sbin/init
+/bin/systemctl
+/usr/bin/timedatectl
+systemd 237
++PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid
+-rwxr-xr-x 1 root root 170320 Mar  2  2023 /bin/systemctl
+srwxrwxrwx 1 root root      0 Mar  2  2023 /run/systemd/private
+lrwxrwxrwx 1 root root     20 Mar  2  2023 /sbin/init -> /lib/systemd/systemd
+-rwxr-xr-x 1 root root  18352 Mar  2  2023 /usr/bin/timedatectl
+active
+active
+ls: cannot access '/run/dbus/system_bus_socket': No such file or directory
+enabled
+enabled
+  File: /run/systemd
+  Size: 460       	Blocks: 0          IO Block: 4096   directory
+Device: 13h/19d	Inode: 11308       Links: 19
+Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2023-03-02 20:58:02.047000000 +0800
+Modify: 2023-03-02 20:58:03.216000000 +0800
+Change: 2023-03-02 20:58:03.216000000 +0800
+ Birth: -
+dialout:x:20:
+video:x:44:
+i2c:x:108:
+total 0
+lrwxrwxrwx 1 root root 0 Mar  2  2023 v4l-subdev0 -> ../../devices/platform/ff910000.rkisp1/video4linux/v4l-subdev0
+lrwxrwxrwx 1 root root 0 Mar  2  2023 v4l-subdev1 -> ../../devices/platform/ff910000.rkisp1/video4linux/v4l-subdev1
+lrwxrwxrwx 1 root root 0 Mar  2  2023 v4l-subdev2 -> ../../devices/platform/ff920000.rkisp1/video4linux/v4l-subdev2
+lrwxrwxrwx 1 root root 0 Mar  2  2023 v4l-subdev3 -> ../../devices/platform/ff920000.rkisp1/video4linux/v4l-subdev3
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video0 -> ../../devices/platform/ff910000.rkisp1/video4linux/video0
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video1 -> ../../devices/platform/ff910000.rkisp1/video4linux/video1
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video2 -> ../../devices/platform/ff910000.rkisp1/video4linux/video2
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video3 -> ../../devices/platform/ff910000.rkisp1/video4linux/video3
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video4 -> ../../devices/platform/ff910000.rkisp1/video4linux/video4
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video5 -> ../../devices/platform/ff920000.rkisp1/video4linux/video5
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video6 -> ../../devices/platform/ff920000.rkisp1/video4linux/video6
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video7 -> ../../devices/platform/ff920000.rkisp1/video4linux/video7
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video8 -> ../../devices/platform/ff920000.rkisp1/video4linux/video8
+lrwxrwxrwx 1 root root 0 Mar  2  2023 video9 -> ../../devices/platform/ff920000.rkisp1/video4linux/video9
+/home/jcfh
+/home/jcfh/.cache
+/home/toybrick
+/home/toybrick/.cache
+Netid  State    Recv-Q   Send-Q      Local Address:Port     Peer Address:Port                                                                                   
+udp    UNCONN   0        0              127.0.0.53:53            0.0.0.0:*       users:(("systemd-resolve",pid=286,fd=12))                                      
+udp    UNCONN   0        0           192.168.1.102:68            0.0.0.0:*       users:(("systemd-network",pid=213,fd=17))                                      
+tcp    LISTEN   0        0              127.0.0.53:53            0.0.0.0:*       users:(("systemd-resolve",pid=286,fd=13))                                      
+tcp    LISTEN   0        0                 0.0.0.0:22            0.0.0.0:*       users:(("sshd",pid=324,fd=3))                                                  
+tcp    LISTEN   0        0                       *:22                  *:*       users:(("sshd",pid=324,fd=4))                                                  

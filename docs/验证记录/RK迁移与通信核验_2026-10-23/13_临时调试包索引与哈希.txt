@@ -1,0 +1,15 @@
+Package: gdb
+Version: 8.1.1-0ubuntu1
+Filename: pool/main/g/gdb/gdb_8.1.1-0ubuntu1_arm64.deb
+Size: 2912312
+SHA256: c801697a083f2179af01870a6405e5d6a1f135cf16eea70f7fe100ac184350a4
+Package: libdw1
+Version: 0.170-0.4ubuntu0.1
+Filename: pool/main/e/elfutils/libdw1_0.170-0.4ubuntu0.1_arm64.deb
+Size: 179228
+SHA256: 23b023e0a1cd2c5a3650fb5d8d84ab7b04bd20235d8080a6415707887dff1aa0
+Package: libbabeltrace1
+Version: 1.5.5-1
+Filename: pool/main/b/babeltrace/libbabeltrace1_1.5.5-1_arm64.deb
+Size: 127628
+SHA256: 09fc68050c468c29e2ec8ac23a63ef2630ed37ab3d4857764133f6ae3f5b67a6

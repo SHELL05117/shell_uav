@@ -1,0 +1,56 @@
+[ 50%] Built target gtest
+Removing test result files from '/home/jcfh/catkin_ws/build/test_results/navigation_2d'
+[ 50%] Built target clean_test_results_navigation_2d
+Scanning dependencies of target ego_path_tracking_test
+[ 75%] Building CXX object navigation_2d/CMakeFiles/ego_path_tracking_test.dir/test/ego_path_tracking_test.cpp.o
+[100%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/navigation_2d/ego_path_tracking_test
+[100%] Built target ego_path_tracking_test
+Scanning dependencies of target tests
+[100%] Built target tests
+Scanning dependencies of target _run_tests_navigation_2d_gtest_ego_path_tracking_test
+[==========] Running 8 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 8 tests from EgoPathTracking
+[ RUN      ] EgoPathTracking.LooksAheadAlongStraightPath
+[       OK ] EgoPathTracking.LooksAheadAlongStraightPath (0 ms)
+[ RUN      ] EgoPathTracking.FollowsCurvedPathByArcLength
+[       OK ] EgoPathTracking.FollowsCurvedPathByArcLength (0 ms)
+[ RUN      ] EgoPathTracking.OvershootTargetsTheRemainingEndpoint
+[       OK ] EgoPathTracking.OvershootTargetsTheRemainingEndpoint (0 ms)
+[ RUN      ] EgoPathTracking.TracksObstacleDetourInsteadOfCuttingCorner
+[       OK ] EgoPathTracking.TracksObstacleDetourInsteadOfCuttingCorner (0 ms)
+[ RUN      ] EgoPathTracking.EmptyPathAndReachedGoalDoNotCommandMotion
+[       OK ] EgoPathTracking.EmptyPathAndReachedGoalDoNotCommandMotion (0 ms)
+[ RUN      ] EgoPathTracking.CrossTrackIsPerpendicularOffsetNotDistanceToTarget
+[       OK ] EgoPathTracking.CrossTrackIsPerpendicularOffsetNotDistanceToTarget (0 ms)
+[ RUN      ] EgoPathTracking.CrossTrackIsNanWhenTheCommandIsRejected
+[       OK ] EgoPathTracking.CrossTrackIsNanWhenTheCommandIsRejected (0 ms)
+[ RUN      ] EgoPathTracking.RejectsNonFinitePoseAndPathPoints
+[       OK ] EgoPathTracking.RejectsNonFinitePoseAndPathPoints (0 ms)
+[----------] 8 tests from EgoPathTracking (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test case ran. (2 ms total)
+[  PASSED  ] 8 tests.
+-- run_tests.py: execute commands
+  /home/jcfh/catkin_ws/devel/lib/navigation_2d/ego_path_tracking_test --gtest_output=xml:/home/jcfh/catkin_ws/build/test_results/navigation_2d/gtest-ego_path_tracking_test.xml
+-- run_tests.py: verify result "/home/jcfh/catkin_ws/build/test_results/navigation_2d/gtest-ego_path_tracking_test.xml"
+[100%] Built target _run_tests_navigation_2d_gtest_ego_path_tracking_test
+Scanning dependencies of target _run_tests_navigation_2d_gtest
+[100%] Built target _run_tests_navigation_2d_gtest
+Scanning dependencies of target _run_tests_navigation_2d
+[100%] Built target _run_tests_navigation_2d
+Scanning dependencies of target run_tests
+[100%] Built target run_tests
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make run_tests -j2 -l2" in "/home/jcfh/catkin_ws/build"
+####
+Summary: 16 tests, 0 errors, 0 failures, 0 skipped

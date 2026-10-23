@@ -1,0 +1,42 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7fb4c82180 (LWP 14562)]
+[New Thread 0x7faffff180 (LWP 14563)]
+[New Thread 0x7faf7fe180 (LWP 14564)]
+[New Thread 0x7faeffd180 (LWP 14570)]
+[New Thread 0x7fae7fc180 (LWP 14607)]
+[New Thread 0x7fadffb180 (LWP 14608)]
+[New Thread 0x7fad7fa180 (LWP 14610)]
+[New Thread 0x7facff9180 (LWP 14611)]
+[New Thread 0x7f97fff180 (LWP 14612)]
+[Thread 0x7faeffd180 (LWP 14570) exited]
+[Thread 0x7faf7fe180 (LWP 14564) exited]
+[Thread 0x7faffff180 (LWP 14563) exited]
+[Thread 0x7facff9180 (LWP 14611) exited]
+[Thread 0x7fad7fa180 (LWP 14610) exited]
+[Thread 0x7fb4c82180 (LWP 14562) exited]
+[Thread 0x7f97fff180 (LWP 14612) exited]
+[Thread 0x7fae7fc180 (LWP 14607) exited]
+[Thread 0x7fadffb180 (LWP 14608) exited]
+terminate called after throwing an instance of 'boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::lock_error> >'
+  what():  boost: mutex lock failed in pthread_mutex_lock: Invalid argument
+
+Thread 1 "location_node" received signal SIGABRT, Aborted.
+0x0000007fb7880598 in raise () from /lib/aarch64-linux-gnu/libc.so.6
+
+Thread 1 (Thread 0x7fb5497e00 (LWP 14515)):
+#0  0x0000007fb7880598 in raise () from /lib/aarch64-linux-gnu/libc.so.6
+#1  0x0000007fb7881974 in abort () from /lib/aarch64-linux-gnu/libc.so.6
+#2  0x0000007fb7b1710c in __gnu_cxx::__verbose_terminate_handler() () from /usr/lib/aarch64-linux-gnu/libstdc++.so.6
+#3  0x0000007fb7b14c54 in ?? () from /usr/lib/aarch64-linux-gnu/libstdc++.so.6
+#4  0x0000007fb7b13b5c in ?? () from /usr/lib/aarch64-linux-gnu/libstdc++.so.6
+#5  0x0000007fb7b14340 in __gxx_personality_v0 () from /usr/lib/aarch64-linux-gnu/libstdc++.so.6
+#6  0x0000007fb79b49b4 in ?? () from /lib/aarch64-linux-gnu/libgcc_s.so.1
+#7  0x0000007fb79b4f6c in _Unwind_Resume () from /lib/aarch64-linux-gnu/libgcc_s.so.1
+#8  0x0000007fb7e29c4c in ros::TimerManager<ros::Time, ros::Duration, ros::TimerEvent>::remove(int) () from /opt/ros/melodic/lib/libroscpp.so
+#9  0x0000007fb7e27954 in ros::Timer::Impl::stop() () from /opt/ros/melodic/lib/libroscpp.so
+#10 0x0000007fb7e27a20 in ros::Timer::Impl::~Impl() () from /opt/ros/melodic/lib/libroscpp.so
+#11 0x0000007fb7e2aa5c in boost::detail::sp_counted_impl_p<ros::Timer::Impl>::dispose() () from /opt/ros/melodic/lib/libroscpp.so
+#12 0x0000007fb7e278b4 in ros::Timer::~Timer() () from /opt/ros/melodic/lib/libroscpp.so
+#13 0x0000007fb7882ef4 in ?? () from /lib/aarch64-linux-gnu/libc.so.6
+Backtrace stopped: previous frame identical to this frame (corrupt stack?)

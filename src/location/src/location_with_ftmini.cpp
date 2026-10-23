@@ -17,7 +17,6 @@ using namespace std;
 ros::Publisher position_pub;
 tf2_ros::Buffer tfBuffer;
 // ros::Subscriber pose_sub, height_sub;
-ros::Timer timer, height_timer;
 geometry_msgs::PoseStamped position;
 tf2::Quaternion quat_body;
 std::unique_ptr<benewake::TFplus> tfplus_obj;      // 改为智能指针
@@ -317,7 +316,9 @@ int main(int argc, char **argv)
   // cout << "use_tf_mini:" << use_tf_mini << endl;
 
   tf2_ros::TransformListener tfListener(tfBuffer);
-  timer = nh_private.createTimer(ros::Duration(1.0 / publish_rate), &position_listener); // Define timer for constant loop rate
+  // Release timer handles inside main, before the static ROS TimerManager.
+  ros::Timer height_timer;
+  ros::Timer timer = nh_private.createTimer(ros::Duration(1.0 / publish_rate), &position_listener); // Define timer for constant loop rate
 
   // ros::Duration(1.0).sleep();
   if (!is_simulation)

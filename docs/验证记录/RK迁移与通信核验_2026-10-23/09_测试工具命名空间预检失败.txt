@@ -1,0 +1,1 @@
+{"checks": [], "error": "Unexpected ROS node namespace: /probe", "master_uri": "http://127.0.0.1:11321", "namespace": "/rk_validation/a0f4e4b02ac4444c9a168160477d31aa", "passed": false, "scope": "synthetic TCPROS message transport only; no hardware or FCU"}

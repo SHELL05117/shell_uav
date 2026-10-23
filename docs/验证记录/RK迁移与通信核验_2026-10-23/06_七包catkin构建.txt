@@ -1,0 +1,398 @@
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CATKIN_DEVEL_PREFIX: /home/jcfh/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+-- This workspace overlays: /opt/ros/melodic
+-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/jcfh/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.29
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 7 packages in topological order:
+-- ~~  - servo_control
+-- ~~  - rplidar_ros
+-- ~~  - ssd_detection
+-- ~~  - gc_2026_sim
+-- ~~  - location
+-- ~~  - navigation_2d
+-- ~~  - ego_planner_2d
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'servo_control'
+-- ==> add_subdirectory(servo_control)
+-- +++ processing catkin package: 'rplidar_ros'
+-- ==> add_subdirectory(rplidar_ros)
+-- +++ processing catkin package: 'ssd_detection'
+-- ==> add_subdirectory(ssd_detection)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- ssd_detection: 2 messages, 0 services
+-- ssd_detection: jetson-inference not found -> skipping the detectNet node (this is expected off the Jetson; the Python node covers the simulator, and both read the same .onnx)
+-- +++ processing catkin package: 'gc_2026_sim'
+-- ==> add_subdirectory(gc_2026_sim)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'location'
+-- ==> add_subdirectory(location)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'navigation_2d'
+-- ==> add_subdirectory(navigation_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Found OpenCV: /usr (found version "3.2.0") 
+CMake Warning at navigation_2d/CMakeLists.txt:24 (message):
+  OpenCV_VERSION: 3.2.0
+
+
+-- navigation_2d: 1 messages, 0 services
+-- +++ processing catkin package: 'ego_planner_2d'
+-- ==> add_subdirectory(ego_planner_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jcfh/catkin_ws/build
+Scanning dependencies of target std_msgs_generate_messages_py
+Scanning dependencies of target roscpp_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_py
+Scanning dependencies of target roscpp_generate_messages_lisp
+Scanning dependencies of target roscpp_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_eus
+Scanning dependencies of target rosgraph_msgs_generate_messages_cpp
+Scanning dependencies of target std_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+Scanning dependencies of target rosgraph_msgs_generate_messages_eus
+Scanning dependencies of target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+Scanning dependencies of target rosgraph_msgs_generate_messages_nodejs
+Scanning dependencies of target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+Scanning dependencies of target rosgraph_msgs_generate_messages_py
+Scanning dependencies of target std_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+Scanning dependencies of target roscpp_generate_messages_cpp
+Scanning dependencies of target std_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+Scanning dependencies of target roscpp_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_nodejs
+Scanning dependencies of target rplidarNodeClient
+Scanning dependencies of target rplidarNode
+[  1%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/src/node.cpp.o
+[  2%] Building CXX object rplidar_ros/CMakeFiles/rplidarNodeClient.dir/src/client.cpp.o
+[  4%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/rplidar_ros/rplidarNodeClient
+[  4%] Built target rplidarNodeClient
+[  5%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/arch/linux/net_serial.cpp.o
+/home/jcfh/catkin_ws/src/rplidar_ros/sdk/src/arch/linux/net_serial.cpp: In member function ‘virtual void rp::arch::net::raw_serial::cancelOperation()’:
+/home/jcfh/catkin_ws/src/rplidar_ros/sdk/src/arch/linux/net_serial.cpp:427:5: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’, declared with attribute warn_unused_result [-Wunused-result]
+     (int)::write(_selfpipe[1], "x", 1);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  6%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/arch/linux/net_socket.cpp.o
+[  8%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/arch/linux/timer.cpp.o
+[  9%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/dataunpacker/dataunpacker.cpp.o
+[ 10%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/dataunpacker/unpacker/handler_capsules.cpp.o
+[ 12%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp.o
+[ 13%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp.o
+[ 15%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/hal/thread.cpp.o
+[ 16%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/rplidar_driver.cpp.o
+[ 17%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/sl_async_transceiver.cpp.o
+[ 19%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/sl_crc.cpp.o
+[ 20%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/sl_lidar_driver.cpp.o
+[ 21%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/sl_lidarprotocol_codec.cpp.o
+[ 23%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/sl_serial_channel.cpp.o
+[ 24%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/sl_tcp_channel.cpp.o
+[ 26%] Building CXX object rplidar_ros/CMakeFiles/rplidarNode.dir/sdk/src/sl_udp_channel.cpp.o
+Scanning dependencies of target _ssd_detection_generate_messages_check_deps_VisionDetection
+[ 26%] Built target _ssd_detection_generate_messages_check_deps_VisionDetection
+Scanning dependencies of target _ssd_detection_generate_messages_check_deps_VisionDetectionArray
+[ 26%] Built target _ssd_detection_generate_messages_check_deps_VisionDetectionArray
+Scanning dependencies of target nav_msgs_generate_messages_lisp
+[ 26%] Built target nav_msgs_generate_messages_lisp
+Scanning dependencies of target sensor_msgs_generate_messages_py
+[ 26%] Built target sensor_msgs_generate_messages_py
+Scanning dependencies of target sensor_msgs_generate_messages_nodejs
+[ 26%] Built target sensor_msgs_generate_messages_nodejs
+Scanning dependencies of target geometry_msgs_generate_messages_cpp
+[ 26%] Built target geometry_msgs_generate_messages_cpp
+Scanning dependencies of target sensor_msgs_generate_messages_cpp
+[ 26%] Built target sensor_msgs_generate_messages_cpp
+Scanning dependencies of target sensor_msgs_generate_messages_eus
+[ 26%] Built target sensor_msgs_generate_messages_eus
+Scanning dependencies of target sensor_msgs_generate_messages_lisp
+[ 26%] Built target sensor_msgs_generate_messages_lisp
+Scanning dependencies of target geometry_msgs_generate_messages_py
+[ 26%] Built target geometry_msgs_generate_messages_py
+Scanning dependencies of target geometry_msgs_generate_messages_lisp
+[ 26%] Built target geometry_msgs_generate_messages_lisp
+Scanning dependencies of target geometry_msgs_generate_messages_nodejs
+[ 26%] Built target geometry_msgs_generate_messages_nodejs
+Scanning dependencies of target geometry_msgs_generate_messages_eus
+[ 26%] Built target geometry_msgs_generate_messages_eus
+Scanning dependencies of target visualization_msgs_generate_messages_py
+[ 26%] Built target visualization_msgs_generate_messages_py
+Scanning dependencies of target visualization_msgs_generate_messages_nodejs
+[ 26%] Built target visualization_msgs_generate_messages_nodejs
+Scanning dependencies of target visualization_msgs_generate_messages_lisp
+[ 26%] Built target visualization_msgs_generate_messages_lisp
+Scanning dependencies of target visualization_msgs_generate_messages_eus
+[ 26%] Built target visualization_msgs_generate_messages_eus
+Scanning dependencies of target visualization_msgs_generate_messages_cpp
+[ 26%] Built target visualization_msgs_generate_messages_cpp
+Scanning dependencies of target tf2_msgs_generate_messages_nodejs
+[ 26%] Built target tf2_msgs_generate_messages_nodejs
+Scanning dependencies of target tf2_msgs_generate_messages_py
+[ 26%] Built target tf2_msgs_generate_messages_py
+Scanning dependencies of target tf2_msgs_generate_messages_lisp
+[ 26%] Built target tf2_msgs_generate_messages_lisp
+Scanning dependencies of target tf2_msgs_generate_messages_eus
+[ 26%] Built target tf2_msgs_generate_messages_eus
+Scanning dependencies of target tf2_msgs_generate_messages_cpp
+[ 26%] Built target tf2_msgs_generate_messages_cpp
+Scanning dependencies of target actionlib_generate_messages_py
+[ 26%] Built target actionlib_generate_messages_py
+Scanning dependencies of target actionlib_generate_messages_eus
+[ 26%] Built target actionlib_generate_messages_eus
+Scanning dependencies of target actionlib_generate_messages_cpp
+[ 26%] Built target actionlib_generate_messages_cpp
+Scanning dependencies of target tf_generate_messages_py
+[ 26%] Built target tf_generate_messages_py
+Scanning dependencies of target tf_generate_messages_nodejs
+[ 26%] Built target tf_generate_messages_nodejs
+Scanning dependencies of target tf_generate_messages_lisp
+[ 26%] Built target tf_generate_messages_lisp
+Scanning dependencies of target tf_generate_messages_eus
+[ 26%] Built target tf_generate_messages_eus
+Scanning dependencies of target tf_generate_messages_cpp
+[ 26%] Built target tf_generate_messages_cpp
+Scanning dependencies of target actionlib_msgs_generate_messages_py
+[ 26%] Built target actionlib_msgs_generate_messages_py
+Scanning dependencies of target actionlib_msgs_generate_messages_nodejs
+[ 26%] Built target actionlib_msgs_generate_messages_nodejs
+Scanning dependencies of target actionlib_msgs_generate_messages_lisp
+[ 26%] Built target actionlib_msgs_generate_messages_lisp
+Scanning dependencies of target actionlib_msgs_generate_messages_eus
+[ 26%] Built target actionlib_msgs_generate_messages_eus
+Scanning dependencies of target std_srvs_generate_messages_py
+[ 26%] Built target std_srvs_generate_messages_py
+Scanning dependencies of target actionlib_generate_messages_lisp
+[ 26%] Built target actionlib_generate_messages_lisp
+Scanning dependencies of target std_srvs_generate_messages_nodejs
+[ 27%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/rplidar_ros/rplidarNode
+[ 27%] Built target std_srvs_generate_messages_nodejs
+Scanning dependencies of target gazebo_msgs_generate_messages_cpp
+[ 27%] Built target gazebo_msgs_generate_messages_cpp
+Scanning dependencies of target std_srvs_generate_messages_lisp
+[ 27%] Built target std_srvs_generate_messages_lisp
+Scanning dependencies of target nav_msgs_generate_messages_py
+[ 27%] Built target nav_msgs_generate_messages_py
+Scanning dependencies of target std_srvs_generate_messages_eus
+[ 27%] Built target std_srvs_generate_messages_eus
+Scanning dependencies of target std_srvs_generate_messages_cpp
+[ 27%] Built target std_srvs_generate_messages_cpp
+Scanning dependencies of target actionlib_msgs_generate_messages_cpp
+[ 27%] Built target rplidarNode
+[ 27%] Built target actionlib_msgs_generate_messages_cpp
+Scanning dependencies of target trajectory_msgs_generate_messages_nodejs
+Scanning dependencies of target trajectory_msgs_generate_messages_lisp
+[ 27%] Built target trajectory_msgs_generate_messages_nodejs
+[ 27%] Built target trajectory_msgs_generate_messages_lisp
+Scanning dependencies of target gazebo_msgs_generate_messages_nodejs
+Scanning dependencies of target gazebo_msgs_generate_messages_lisp
+[ 27%] Built target gazebo_msgs_generate_messages_nodejs
+[ 27%] Built target gazebo_msgs_generate_messages_lisp
+Scanning dependencies of target trajectory_msgs_generate_messages_py
+Scanning dependencies of target gazebo_msgs_generate_messages_py
+[ 27%] Built target trajectory_msgs_generate_messages_py
+[ 27%] Built target gazebo_msgs_generate_messages_py
+Scanning dependencies of target trajectory_msgs_generate_messages_eus
+Scanning dependencies of target mavros_msgs_generate_messages_cpp
+[ 27%] Built target trajectory_msgs_generate_messages_eus
+[ 27%] Built target mavros_msgs_generate_messages_cpp
+Scanning dependencies of target trajectory_msgs_generate_messages_cpp
+Scanning dependencies of target nav_msgs_generate_messages_cpp
+[ 27%] Built target trajectory_msgs_generate_messages_cpp
+[ 27%] Built target nav_msgs_generate_messages_cpp
+Scanning dependencies of target gazebo_msgs_generate_messages_eus
+Scanning dependencies of target mavros_msgs_generate_messages_eus
+[ 27%] Built target gazebo_msgs_generate_messages_eus
+[ 27%] Built target mavros_msgs_generate_messages_eus
+Scanning dependencies of target uuid_msgs_generate_messages_cpp
+[ 27%] Built target uuid_msgs_generate_messages_cpp
+Scanning dependencies of target mavros_msgs_generate_messages_nodejs
+Scanning dependencies of target nav_msgs_generate_messages_nodejs
+[ 27%] Built target mavros_msgs_generate_messages_nodejs
+[ 27%] Built target nav_msgs_generate_messages_nodejs
+Scanning dependencies of target mavros_msgs_generate_messages_py
+Scanning dependencies of target geographic_msgs_generate_messages_cpp
+[ 27%] Built target mavros_msgs_generate_messages_py
+[ 27%] Built target geographic_msgs_generate_messages_cpp
+Scanning dependencies of target geographic_msgs_generate_messages_nodejs
+Scanning dependencies of target actionlib_generate_messages_nodejs
+[ 27%] Built target geographic_msgs_generate_messages_nodejs
+[ 27%] Built target actionlib_generate_messages_nodejs
+Scanning dependencies of target geographic_msgs_generate_messages_eus
+[ 27%] Built target geographic_msgs_generate_messages_eus
+Scanning dependencies of target geographic_msgs_generate_messages_lisp
+Scanning dependencies of target uuid_msgs_generate_messages_eus
+[ 27%] Built target uuid_msgs_generate_messages_eus
+[ 27%] Built target geographic_msgs_generate_messages_lisp
+Scanning dependencies of target geographic_msgs_generate_messages_py
+Scanning dependencies of target mavros_msgs_generate_messages_lisp
+[ 27%] Built target geographic_msgs_generate_messages_py
+[ 27%] Built target mavros_msgs_generate_messages_lisp
+Scanning dependencies of target uuid_msgs_generate_messages_py
+Scanning dependencies of target uuid_msgs_generate_messages_lisp
+[ 27%] Built target uuid_msgs_generate_messages_py
+[ 27%] Built target uuid_msgs_generate_messages_lisp
+Scanning dependencies of target uuid_msgs_generate_messages_nodejs
+Scanning dependencies of target nav_msgs_generate_messages_eus
+[ 27%] Built target uuid_msgs_generate_messages_nodejs
+[ 27%] Built target nav_msgs_generate_messages_eus
+Scanning dependencies of target tfmini_test
+Scanning dependencies of target location_node
+[ 28%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/tfmini_test.cpp.o
+[ 30%] Building CXX object location/CMakeFiles/location_node.dir/src/location_with_ftmini.cpp.o
+[ 31%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/TFplus.cpp.o
+[ 32%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/i2c.cpp.o
+[ 34%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/tf_mini_i2c.cpp.o
+[ 35%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/tfmini_test
+[ 35%] Built target tfmini_test
+[ 36%] Building CXX object location/CMakeFiles/location_node.dir/src/TFplus.cpp.o
+[ 38%] Building CXX object location/CMakeFiles/location_node.dir/src/i2c.cpp.o
+[ 39%] Building CXX object location/CMakeFiles/location_node.dir/src/tf_mini_i2c.cpp.o
+Scanning dependencies of target _navigation_2d_generate_messages_check_deps_TargetDetection
+[ 39%] Built target _navigation_2d_generate_messages_check_deps_TargetDetection
+Scanning dependencies of target _catkin_empty_exported_target
+[ 39%] Built target _catkin_empty_exported_target
+Scanning dependencies of target path_searching
+[ 41%] Building CXX object ego_planner_2d/CMakeFiles/path_searching.dir/src/path_searching/dyn_a_star.cpp.o
+[ 42%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/location_node
+[ 42%] Built target location_node
+Scanning dependencies of target bspline_opt
+[ 43%] Building CXX object ego_planner_2d/CMakeFiles/bspline_opt.dir/src/bspline_opt/uniform_bspline.cpp.o
+[ 45%] Linking CXX static library /home/jcfh/catkin_ws/devel/lib/libpath_searching.a
+[ 45%] Built target path_searching
+[ 46%] Building CXX object ego_planner_2d/CMakeFiles/bspline_opt.dir/src/bspline_opt/bspline_optimizer.cpp.o
+[ 47%] Building CXX object ego_planner_2d/CMakeFiles/bspline_opt.dir/src/bspline_opt/gradient_descent_optimizer.cpp.o
+Scanning dependencies of target grid_map_2d
+[ 49%] Building CXX object ego_planner_2d/CMakeFiles/grid_map_2d.dir/src/plan_env/grid_map.cpp.o
+[ 50%] Linking CXX static library /home/jcfh/catkin_ws/devel/lib/libbspline_opt.a
+[ 50%] Built target bspline_opt
+Scanning dependencies of target servo_controller_node
+[ 52%] Building CXX object servo_control/CMakeFiles/servo_controller_node.dir/src/servo_controller_node.cpp.o
+[ 53%] Linking CXX static library /home/jcfh/catkin_ws/devel/lib/libgrid_map_2d.a
+[ 53%] Built target grid_map_2d
+Scanning dependencies of target ssd_detection_generate_messages_py
+[ 54%] Generating Python from MSG ssd_detection/VisionDetection
+[ 56%] Generating Python from MSG ssd_detection/VisionDetectionArray
+[ 57%] Generating Python msg __init__.py for ssd_detection
+[ 57%] Built target ssd_detection_generate_messages_py
+Scanning dependencies of target ssd_detection_generate_messages_cpp
+[ 58%] Generating C++ code from ssd_detection/VisionDetection.msg
+[ 60%] Generating C++ code from ssd_detection/VisionDetectionArray.msg
+[ 60%] Built target ssd_detection_generate_messages_cpp
+Scanning dependencies of target ssd_detection_generate_messages_lisp
+[ 61%] Generating Lisp code from ssd_detection/VisionDetection.msg
+[ 63%] Generating Lisp code from ssd_detection/VisionDetectionArray.msg
+[ 63%] Built target ssd_detection_generate_messages_lisp
+Scanning dependencies of target ssd_detection_generate_messages_eus
+[ 64%] Generating EusLisp code from ssd_detection/VisionDetection.msg
+[ 65%] Generating EusLisp code from ssd_detection/VisionDetectionArray.msg
+[ 67%] Generating EusLisp manifest code for ssd_detection
+[ 67%] Built target ssd_detection_generate_messages_eus
+Scanning dependencies of target ssd_detection_generate_messages_nodejs
+[ 68%] Generating Javascript code from ssd_detection/VisionDetection.msg
+[ 69%] Generating Javascript code from ssd_detection/VisionDetectionArray.msg
+[ 69%] Built target ssd_detection_generate_messages_nodejs
+Scanning dependencies of target px4_sensor_rig_node
+[ 71%] Building CXX object gc_2026_sim/CMakeFiles/px4_sensor_rig_node.dir/src/px4_sensor_rig.cpp.o
+[ 72%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/servo_control/servo_controller_node
+[ 72%] Built target servo_controller_node
+Scanning dependencies of target gazebo_simulation_vehicle_node
+[ 73%] Building CXX object gc_2026_sim/CMakeFiles/gazebo_simulation_vehicle_node.dir/src/simulation_vehicle.cpp.o
+[ 75%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/gc_2026_sim/px4_sensor_rig_node
+[ 75%] Built target px4_sensor_rig_node
+[ 76%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/gc_2026_sim/gazebo_simulation_vehicle_node
+[ 76%] Built target gazebo_simulation_vehicle_node
+Scanning dependencies of target navigation_2d_generate_messages_py
+[ 78%] Generating Python from MSG navigation_2d/TargetDetection
+[ 79%] Generating Python msg __init__.py for navigation_2d
+[ 79%] Built target navigation_2d_generate_messages_py
+Scanning dependencies of target navigation_2d_generate_messages_eus
+[ 80%] Generating EusLisp code from navigation_2d/TargetDetection.msg
+[ 82%] Generating EusLisp manifest code for navigation_2d
+[ 82%] Built target navigation_2d_generate_messages_eus
+Scanning dependencies of target navigation_2d_generate_messages_cpp
+[ 83%] Generating C++ code from navigation_2d/TargetDetection.msg
+[ 83%] Built target navigation_2d_generate_messages_cpp
+Scanning dependencies of target navigation_2d_generate_messages_lisp
+[ 84%] Generating Lisp code from navigation_2d/TargetDetection.msg
+[ 84%] Built target navigation_2d_generate_messages_lisp
+Scanning dependencies of target navigation_2d_generate_messages_nodejs
+[ 86%] Generating Javascript code from navigation_2d/TargetDetection.msg
+[ 86%] Built target navigation_2d_generate_messages_nodejs
+Scanning dependencies of target ego_trajectory_controller_node
+[ 87%] Building CXX object navigation_2d/CMakeFiles/ego_trajectory_controller_node.dir/src/ego_trajectory_controller.cpp.o
+[ 89%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/navigation_2d/ego_trajectory_controller_node
+[ 89%] Built target ego_trajectory_controller_node
+Scanning dependencies of target ssd_detection_generate_messages
+[ 89%] Built target ssd_detection_generate_messages
+Scanning dependencies of target navigation_2d_generate_messages
+Scanning dependencies of target plan_manage
+[ 89%] Built target navigation_2d_generate_messages
+[ 90%] Building CXX object ego_planner_2d/CMakeFiles/plan_manage.dir/src/plan_manage/planner_interface.cpp.o
+Scanning dependencies of target rescue_mission_node
+[ 91%] Building CXX object navigation_2d/CMakeFiles/rescue_mission_node.dir/src/mission_vision.cpp.o
+[ 93%] Linking CXX static library /home/jcfh/catkin_ws/devel/lib/libplan_manage.a
+[ 93%] Built target plan_manage
+Scanning dependencies of target ego_planner_2d_node
+[ 94%] Building CXX object ego_planner_2d/CMakeFiles/ego_planner_2d_node.dir/src/ego_planner_2d_node.cpp.o
+[ 95%] Building CXX object navigation_2d/CMakeFiles/rescue_mission_node.dir/src/flight_control.cpp.o
+[ 97%] Building CXX object navigation_2d/CMakeFiles/rescue_mission_node.dir/src/rescue_mission.cpp.o
+[ 98%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/ego_planner_2d/ego_planner_2d_node
+[ 98%] Built target ego_planner_2d_node
+[100%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/navigation_2d/rescue_mission_node
+[100%] Built target rescue_mission_node
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "cmake /home/jcfh/catkin_ws/src -DCMAKE_BUILD_TYPE=Release -DCATKIN_ENABLE_TESTING=ON -DCATKIN_DEVEL_PREFIX=/home/jcfh/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jcfh/catkin_ws/install -G Unix Makefiles" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make -j2 -l2" in "/home/jcfh/catkin_ws/build"
+####

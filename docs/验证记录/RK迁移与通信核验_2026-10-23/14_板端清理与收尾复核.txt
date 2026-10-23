@@ -1,0 +1,28 @@
+{"passed": true, "remaining": [], "removed": ["/home/jcfh/.cache/uav1018-validation-20261023", "/home/jcfh/rk_dependency_audit.sh", "/home/jcfh/uav1018-src-20261023.tar.gz", "/home/jcfh/dbus_1.12.2-1ubuntu1.4_arm64.deb", "/home/jcfh/catkin_ws/build/test_results", "/home/jcfh/catkin_ws/devel/lib/navigation_2d/ego_path_tracking_test", "/home/jcfh/catkin_ws/build/navigation_2d/CMakeFiles/ego_path_tracking_test.dir/test/ego_path_tracking_test.cpp.o", "/home/jcfh/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o", "/home/jcfh/catkin_ws/build/gtest/googlemock/gtest/libgtest.so"]}
+active
+active
+active
+enabled
+enabled
+uid=1001(jcfh) gid=1001(jcfh) groups=1001(jcfh),20(dialout),27(sudo),44(video),108(i2c)
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             DOWN           fe80::12dc:b6ff:fe91:a0f/64 
+wlan0            UP             192.168.1.102/24 fe80::16f5:f9ff:fee6:cd08/64 
+p2p0             DOWN           
+usb0             UP             192.168.77.1/24 fe80::53:48ff:fe45:4c01/64 
+2026-10-24T03:26:03+08:00
+No validation ROS or debugger processes remain.
+State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    
+LISTEN   0         0                127.0.0.53:53               0.0.0.0:*       
+LISTEN   0         0                   0.0.0.0:22               0.0.0.0:*       
+LISTEN   0         0                         *:22                     *:*       
+/home/jcfh/catkin_ws/.catkin_workspace 98 bytes
+/home/jcfh/.profile 807 bytes
+/home/jcfh/.cache/motd.legal-displayed 0 bytes
+/home/jcfh/.bash_history 1787 bytes
+/home/jcfh/rk_usb_ssh.sh 3703 bytes
+/home/jcfh/.bashrc 3865 bytes
+/home/jcfh/rk-usb-ssh.service 626 bytes
+/home/jcfh/.bash_logout 220 bytes
+/home/jcfh/.wget-hsts 169 bytes
+/home/jcfh/.sudo_as_admin_successful 0 bytes
