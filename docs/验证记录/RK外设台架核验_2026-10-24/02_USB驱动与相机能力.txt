@@ -1,0 +1,354 @@
+4.4.194
+modinfo: ERROR: Module cdc_acm not found.
+modprobe: FATAL: Module cdc_acm not found in directory /lib/modules/4.4.194
+modinfo: ERROR: Module cp210x not found.
+modinfo: ERROR: Module ch341 not found.
+modprobe: FATAL: Module ch341 not found in directory /lib/modules/4.4.194
+modinfo: ERROR: Module ftdi_sio not found.
+
+Bus 003 Device 006: ID 3185:0038  
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            2 Communications
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x3185 
+  idProduct          0x0038 
+  bcdDevice            1.01
+  iManufacturer           1 Auterion
+  iProduct                2 PX4 FMU v6C.x
+  iSerial                 3 0
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength           62
+    bNumInterfaces          2
+    bConfigurationValue     1
+    iConfiguration          4 Bulk
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              500mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         2 Communications
+      bInterfaceSubClass      2 Abstract (modem)
+      bInterfaceProtocol      1 AT-commands (v.25ter)
+      iInterface              0 
+      CDC Header:
+        bcdCDC               1.10
+      CDC ACM:
+        bmCapabilities       0x06
+          sends break
+          line coding and serial state
+      CDC Call Management:
+        bmCapabilities       0x03
+          call management
+          use DataInterface
+        bDataInterface          1
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval              10
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        1
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass        10 CDC Data
+      bInterfaceSubClass      0 Unused
+      bInterfaceProtocol      0 
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x03  EP 3 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               1
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               1
+Device Status:     0x0000
+  (Bus Powered)
+rkisp1-statistics (platform: rkisp1):
+	/dev/video3
+	/dev/video4
+	/dev/video8
+	/dev/video9
+
+rkisp1_mainpath (platform:ff910000.rkisp1):
+	/dev/video0
+	/dev/video1
+	/dev/video2
+
+rkisp1_mainpath (platform:ff920000.rkisp1):
+	/dev/video5
+	/dev/video6
+	/dev/video7
+
+USB Camera (usb-xhci-hcd.10.auto-1.2):
+	/dev/video10
+	/dev/video11
+
+Driver Info (not using libv4l2):
+	Driver name   : uvcvideo
+	Card type     : USB Camera
+	Bus info      : usb-xhci-hcd.10.auto-1.2
+	Driver version: 4.4.194
+	Capabilities  : 0x84A00001
+		Video Capture
+		Metadata Capture
+		Streaming
+		Extended Pix Format
+		Device Capabilities
+	Device Caps   : 0x04200001
+		Video Capture
+		Streaming
+		Extended Pix Format
+Priority: 2
+Video input : 0 (Camera 1: ok)
+Format Video Capture:
+	Width/Height      : 1280/720
+	Pixel Format      : 'MJPG'
+	Field             : None
+	Bytes per Line    : 0
+	Size Image        : 1843200
+	Colorspace        : sRGB
+	Transfer Function : Default (maps to sRGB)
+	YCbCr/HSV Encoding: Default (maps to ITU-R 601)
+	Quantization      : Default (maps to Full Range)
+	Flags             : 
+Crop Capability Video Capture:
+	Bounds      : Left 0, Top 0, Width 1280, Height 720
+	Default     : Left 0, Top 0, Width 1280, Height 720
+	Pixel Aspect: 1/1
+Selection: crop_default, Left 0, Top 0, Width 1280, Height 720
+Selection: crop_bounds, Left 0, Top 0, Width 1280, Height 720
+Streaming Parameters Video Capture:
+	Capabilities     : timeperframe
+	Frames per second: 60.000 (60/1)
+	Read buffers     : 0
+                     brightness 0x00980900 (int)    : min=-64 max=64 step=1 default=0 value=0
+                       contrast 0x00980901 (int)    : min=0 max=100 step=1 default=50 value=50
+                     saturation 0x00980902 (int)    : min=0 max=100 step=1 default=64 value=64
+                            hue 0x00980903 (int)    : min=-180 max=180 step=1 default=0 value=0
+ white_balance_temperature_auto 0x0098090c (bool)   : default=1 value=1
+                          gamma 0x00980910 (int)    : min=100 max=500 step=1 default=300 value=300
+           power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1
+      white_balance_temperature 0x0098091a (int)    : min=2800 max=6500 step=10 default=4600 value=4600 flags=inactive
+                      sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=80 value=80
+         backlight_compensation 0x0098091c (int)    : min=0 max=2 step=1 default=0 value=0
+                  exposure_auto 0x009a0901 (menu)   : min=0 max=3 default=3 value=3
+              exposure_absolute 0x009a0902 (int)    : min=1 max=10000 step=1 default=166 value=166 flags=inactive
+         exposure_auto_priority 0x009a0903 (bool)   : default=0 value=0
+                   pan_absolute 0x009a0908 (int)    : min=-57600 max=57600 step=3600 default=0 value=0
+                  tilt_absolute 0x009a0909 (int)    : min=-43200 max=43200 step=3600 default=0 value=0
+                  zoom_absolute 0x009a090d (int)    : min=0 max=3 step=1 default=0 value=0
+ioctl: VIDIOC_ENUM_FMT
+	Index       : 0
+	Type        : Video Capture
+	Pixel Format: 'MJPG' (compressed)
+	Name        : Motion-JPEG
+		Size: Discrete 1280x720
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 800x600
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 640x480
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 352x288
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 320x240
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 176x144
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+
+	Index       : 1
+	Type        : Video Capture
+	Pixel Format: 'YUYV'
+	Name        : YUYV 4:2:2
+		Size: Discrete 1280x720
+			Interval: Discrete 0.100s (10.000 fps)
+			Interval: Discrete 0.200s (5.000 fps)
+		Size: Discrete 800x600
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+			Interval: Discrete 0.200s (5.000 fps)
+		Size: Discrete 640x480
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 352x288
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 320x240
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 176x144
+			Interval: Discrete 0.033s (30.000 fps)
+			Interval: Discrete 0.040s (25.000 fps)
+			Interval: Discrete 0.050s (20.000 fps)
+			Interval: Discrete 0.067s (15.000 fps)
+			Interval: Discrete 0.100s (10.000 fps)
+
+/dev/v4l/by-id:
+total 0
+lrwxrwxrwx 1 root root 13 Oct 24 02:08 usb-RYS_USB_Camera_200901010001-video-index0 -> ../../video10
+lrwxrwxrwx 1 root root 13 Oct 24 02:08 usb-RYS_USB_Camera_200901010001-video-index1 -> ../../video11
+
+/dev/v4l/by-path:
+total 0
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff910000.rkisp1-video-index0 -> ../../video0
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff910000.rkisp1-video-index1 -> ../../video1
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff910000.rkisp1-video-index2 -> ../../video2
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff910000.rkisp1-video-index3 -> ../../video3
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff910000.rkisp1-video-index4 -> ../../video4
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff920000.rkisp1-video-index0 -> ../../video5
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff920000.rkisp1-video-index1 -> ../../video6
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff920000.rkisp1-video-index2 -> ../../video7
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff920000.rkisp1-video-index3 -> ../../video8
+lrwxrwxrwx 1 root root 12 Mar  2  2023 platform-ff920000.rkisp1-video-index4 -> ../../video9
+lrwxrwxrwx 1 root root 13 Oct 24 02:08 platform-xhci-hcd.10.auto-usb-0:1.2:1.0-video-index0 -> ../../video10
+lrwxrwxrwx 1 root root 13 Oct 24 02:08 platform-xhci-hcd.10.auto-usb-0:1.2:1.0-video-index1 -> ../../video11
+[    2.121983] usb usb1: Manufacturer: Linux 4.4.194 xhci-hcd
+[    2.130226] usb usb1: SerialNumber: xhci-hcd.9.auto
+[    2.165767] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.170576] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003
+[    2.175200] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.179882] usb usb2: Product: xHCI Host Controller
+[    2.184336] usb usb2: Manufacturer: Linux 4.4.194 xhci-hcd
+[    2.188829] usb usb2: SerialNumber: xhci-hcd.9.auto
+[    2.208386] usb usb2: USB disconnect, device number 1
+[    2.258258] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002
+[    2.261537] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.264841] usb usb3: Product: xHCI Host Controller
+[    2.267754] usb usb3: Manufacturer: Linux 4.4.194 xhci-hcd
+[    2.270384] usb usb3: SerialNumber: xhci-hcd.10.auto
+[    2.283871] usb usb1: USB disconnect, device number 1
+[    2.292030] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.294666] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003
+[    2.297087] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.299496] usb usb4: Product: xHCI Host Controller
+[    2.301637] usb usb4: Manufacturer: Linux 4.4.194 xhci-hcd
+[    2.303835] usb usb4: SerialNumber: xhci-hcd.10.auto
+[    2.331563] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    2.334621] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.337718] usb usb1: Product: EHCI Host Controller
+[    2.340597] usb usb1: Manufacturer: Linux 4.4.194 ehci_hcd
+[    2.343559] usb usb1: SerialNumber: fe380000.usb
+[    2.371103] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+[    2.373649] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.376231] usb usb2: Product: EHCI Host Controller
+[    2.378645] usb usb2: Manufacturer: Linux 4.4.194 ehci_hcd
+[    2.381092] usb usb2: SerialNumber: fe3c0000.usb
+[    2.452208] usb usb5: New USB device found, idVendor=1d6b, idProduct=0001
+[    2.463732] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.475204] usb usb5: Product: Generic Platform OHCI controller
+[    2.486463] usb usb5: Manufacturer: Linux 4.4.194 ohci_hcd
+[    2.509109] usb usb5: SerialNumber: fe3a0000.usb
+[    2.603801] usb usb6: New USB device found, idVendor=1d6b, idProduct=0001
+[    2.603816] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.603828] usb usb6: Product: Generic Platform OHCI controller
+[    2.603840] usb usb6: Manufacturer: Linux 4.4.194 ohci_hcd
+[    2.603851] usb usb6: SerialNumber: fe3e0000.usb
+[    2.691327] usb 1-1: new high-speed USB device number 2 using ehci-platform
+[    2.890594] usb 1-1: New USB device found, idVendor=0bda, idProduct=d723
+[    2.894809] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    2.899073] usb 1-1: Product: 802.11n WLAN Adapter
+[    2.903090] usb 1-1: Manufacturer: Realtek
+[    3.001464] usb 1-1: SerialNumber: 00e04c000001
+[    3.013748] usb 1-1: Direct firmware load for rtl8723du_config failed with error -2
+[    3.013815] usb 1-1: Direct firmware load for rtl8723du_fw failed with error -2
+[    3.105735] usb 4-1: new SuperSpeed USB device number 2 using xhci-hcd
+[    3.123385] usb 4-1: New USB device found, idVendor=05e3, idProduct=0616
+[    3.133356] usb 4-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    3.143666] usb 4-1: Product: USB3.0 Hub
+[    3.153278] usb 4-1: Manufacturer: GenesysLogic
+[    3.225321] usb 3-1: new high-speed USB device number 2 using xhci-hcd
+[    3.457387] usb 3-1: New USB device found, idVendor=05e3, idProduct=0610
+[    3.457393] usb 3-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    3.457398] usb 3-1: Product: USB2.0 Hub
+[    3.457403] usb 3-1: Manufacturer: GenesysLogic
+[   30.138468] usb 3-1.2: new high-speed USB device number 4 using xhci-hcd
+[   30.270576] usb 3-1.2: New USB device found, idVendor=0bda, idProduct=9143
+[   30.270613] usb 3-1.2: New USB device strings: Mfr=3, Product=1, SerialNumber=2
+[   30.270638] usb 3-1.2: Product: USB Camera
+[   30.270661] usb 3-1.2: Manufacturer: RYS
+[   30.270683] usb 3-1.2: SerialNumber: 200901010001
+[  209.661630] usb 3-1.4: new full-speed USB device number 5 using xhci-hcd
+[  209.741967] usb 3-1.4: New USB device found, idVendor=3185, idProduct=0038
+[  209.742009] usb 3-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  209.742034] usb 3-1.4: Product: PX4 BL FMU v6C.x
+[  209.742057] usb 3-1.4: Manufacturer: Auterion
+[  209.742080] usb 3-1.4: SerialNumber: 0
+[  209.749942] usb 3-1.4: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[  214.517382] usb 3-1.4: USB disconnect, device number 5
+[  215.068461] usb 3-1.4: new full-speed USB device number 6 using xhci-hcd
+[  215.144543] usb 3-1.4: New USB device found, idVendor=3185, idProduct=0038
+[  215.144582] usb 3-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  215.144608] usb 3-1.4: Product: PX4 FMU v6C.x
+[  215.144631] usb 3-1.4: Manufacturer: Auterion
+[  215.144653] usb 3-1.4: SerialNumber: 0
+[  215.155943] usb 3-1.4: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes

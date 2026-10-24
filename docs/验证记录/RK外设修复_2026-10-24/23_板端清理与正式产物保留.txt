@@ -1,0 +1,17 @@
+Removed bounded temporary build/test cache: /home/jcfh/.cache/rk-fixes-20261024
+Removed test artifact: /home/jcfh/catkin_ws/devel/lib/usb_cam/usb_cam_lifecycle_test
+Removed test artifact: /home/jcfh/catkin_ws/build/usb_cam/CMakeFiles/usb_cam_lifecycle_test.dir/test/lifecycle_test.cpp.o
+Removed test artifact: /home/jcfh/catkin_ws/build/gtest/googlemock/gtest/libgtest.so
+Removed test artifact: /home/jcfh/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+Removed test artifact: /home/jcfh/catkin_ws/build/test_results/usb_cam/gtest-usb_cam_lifecycle_test.xml
+
+FORMAL_ARTIFACTS
+-rw-r--r-- 1 root root     77 Oct 24 22:27 /etc/modules-load.d/rk-cdc-acm.conf
+-rwxrwxr-x 1 jcfh jcfh 146648 Oct 24 22:04 /home/jcfh/catkin_ws/devel/lib/libusb_cam.so
+-rwxrwxr-x 1 jcfh jcfh 115256 Oct 24 22:04 /home/jcfh/catkin_ws/devel/lib/usb_cam/usb_cam_node
+-rw-r--r-- 1 root root 444384 Oct 24 22:27 /lib/modules/4.4.194/extra/cdc-acm.ko
+
+PROCESS_CHECK
+active
+active
+2026-10-24T22:45:14+08:00

@@ -1,0 +1,27 @@
+crw-rw---- 1 root dialout 166, 0 Oct 24 22:25 /dev/ttyACM0
+
+/dev/serial/by-id:
+total 0
+lrwxrwxrwx 1 root root 13 Oct 24 22:25 usb-Auterion_PX4_FMU_v6C.x_0-if00 -> ../../ttyACM0
+lrwxrwxrwx 1 root root 13 Mar  2  2023 usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_909394b23877ed11907beefafdf7b791-if00-port0 -> ../../ttyUSB0
+/:  Bus 06.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 05.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 2: Dev 3, If 0, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 2: Dev 3, If 1, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 3: Dev 4, If 0, Class=Vendor Specific Class, Driver=cp210x, 12M
+        |__ Port 4: Dev 6, If 0, Class=Communications, Driver=cdc_acm, 12M
+        |__ Port 4: Dev 6, If 1, Class=CDC Data, Driver=cdc_acm, 12M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 1, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 2, Class=Vendor Specific Class, Driver=rtl8723du, 480M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 5000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M
+4096
+[  386.667721] cdc_acm: loading out-of-tree module taints kernel.
+[  386.673301] cdc_acm 3-1.4:1.0: ttyACM0: USB ACM device
+[  386.673902] usbcore: registered new interface driver cdc_acm
+[  386.673912] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters

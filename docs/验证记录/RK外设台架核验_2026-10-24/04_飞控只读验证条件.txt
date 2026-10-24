@@ -1,0 +1,56 @@
+
+USERSPACE_USB_CAPABILITY
+	libusb-1.0.so.0 (libc6,AArch64) => /lib/aarch64-linux-gnu/libusb-1.0.so.0
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ImportError: No module named pymavlink
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'pymavlink'
+crw-rw-r-- 1 root root 189, 261 Oct 24 02:15 /dev/bus/usb/003/006
+
+KERNEL_IDENTITY
+Linux version 4.4.194 (builder@rkbuild) (gcc version 6.3.1 20170404 (Linaro GCC 6.3-2017.05) ) #1 SMP Tue Oct 20 18:43:31 Asia 2026
+ftdi_sio
+/lib/modules/4.4.194/kernel/drivers/net/wireless/rockchip_wlan/rtl8188eu/8188eu.ko
+/lib/modules/4.4.194/kernel/drivers/net/wireless/mwifiex/mwifiex_sdio.ko
+/lib/modules/4.4.194/kernel/drivers/net/wireless/mwifiex/mwifiex.ko
+/lib/modules/4.4.194/kernel/net/bridge/br_netfilter.ko
+
+CAMERA_AFTER_CAPTURE
+Streaming Parameters Video Capture:
+	Capabilities     : timeperframe
+	Frames per second: 30.000 (30/1)
+	Read buffers     : 0
+
+USB_RECENT
+[    3.457403] usb 3-1: Manufacturer: GenesysLogic
+[   30.138468] usb 3-1.2: new high-speed USB device number 4 using xhci-hcd
+[   30.270576] usb 3-1.2: New USB device found, idVendor=0bda, idProduct=9143
+[   30.270613] usb 3-1.2: New USB device strings: Mfr=3, Product=1, SerialNumber=2
+[   30.270638] usb 3-1.2: Product: USB Camera
+[   30.270661] usb 3-1.2: Manufacturer: RYS
+[   30.270683] usb 3-1.2: SerialNumber: 200901010001
+[  209.661630] usb 3-1.4: new full-speed USB device number 5 using xhci-hcd
+[  209.741967] usb 3-1.4: New USB device found, idVendor=3185, idProduct=0038
+[  209.742009] usb 3-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  209.742034] usb 3-1.4: Product: PX4 BL FMU v6C.x
+[  209.742057] usb 3-1.4: Manufacturer: Auterion
+[  209.742080] usb 3-1.4: SerialNumber: 0
+[  209.749942] usb 3-1.4: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[  214.517382] usb 3-1.4: USB disconnect, device number 5
+[  215.068461] usb 3-1.4: new full-speed USB device number 6 using xhci-hcd
+[  215.144543] usb 3-1.4: New USB device found, idVendor=3185, idProduct=0038
+[  215.144582] usb 3-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  215.144608] usb 3-1.4: Product: PX4 FMU v6C.x
+[  215.144631] usb 3-1.4: Manufacturer: Auterion
+[  215.144653] usb 3-1.4: SerialNumber: 0
+[  215.155943] usb 3-1.4: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[  708.260625] usb 3-1.3: new full-speed USB device number 7 using xhci-hcd
+[  708.341610] usb 3-1.3: New USB device found, idVendor=10c4, idProduct=ea60
+[  708.341653] usb 3-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  708.341678] usb 3-1.3: Product: CP2102N USB to UART Bridge Controller
+[  708.341702] usb 3-1.3: Manufacturer: Silicon Labs
+[  708.341725] usb 3-1.3: SerialNumber: 909394b23877ed11907beefafdf7b791
+[  708.356755] cp210x 3-1.3:1.0: cp210x converter detected
+[  708.357480] usb 3-1.3: cp210x converter now attached to ttyUSB0

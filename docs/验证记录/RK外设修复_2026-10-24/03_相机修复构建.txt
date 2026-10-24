@@ -1,0 +1,86 @@
+2fab693768b9b51929a76a0d1c5f0fc1cc1f3c5dd3b5e56e28246e8463edbab5  project-usb-cam.tar.gz
+-- Using CATKIN_DEVEL_PREFIX: /home/jcfh/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+-- This workspace overlays: /opt/ros/melodic
+-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/jcfh/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.29
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 8 packages in topological order:
+-- ~~  - servo_control
+-- ~~  - rplidar_ros
+-- ~~  - ssd_detection
+-- ~~  - gc_2026_sim
+-- ~~  - location
+-- ~~  - navigation_2d
+-- ~~  - ego_planner_2d
+-- ~~  - usb_cam
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'servo_control'
+-- ==> add_subdirectory(servo_control)
+-- +++ processing catkin package: 'rplidar_ros'
+-- ==> add_subdirectory(rplidar_ros)
+-- +++ processing catkin package: 'ssd_detection'
+-- ==> add_subdirectory(ssd_detection)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- ssd_detection: 2 messages, 0 services
+-- ssd_detection: jetson-inference not found -> skipping the detectNet node (this is expected off the Jetson; the Python node covers the simulator, and both read the same .onnx)
+-- +++ processing catkin package: 'gc_2026_sim'
+-- ==> add_subdirectory(gc_2026_sim)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'location'
+-- ==> add_subdirectory(location)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'navigation_2d'
+-- ==> add_subdirectory(navigation_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+CMake Warning at navigation_2d/CMakeLists.txt:24 (message):
+  OpenCV_VERSION: 3.2.0
+
+
+-- navigation_2d: 1 messages, 0 services
+-- +++ processing catkin package: 'ego_planner_2d'
+-- ==> add_subdirectory(ego_planner_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'usb_cam'
+-- ==> add_subdirectory(usb_cam)
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- Checking for module 'libavcodec'
+--   Found libavcodec, version 57.107.100
+-- Checking for module 'libavutil'
+--   Found libavutil, version 55.78.100
+-- Checking for module 'libswscale'
+--   Found libswscale, version 4.8.100
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jcfh/catkin_ws/build
+Scanning dependencies of target usb_cam
+[ 25%] Building CXX object usb_cam/CMakeFiles/usb_cam.dir/src/usb_cam.cpp.o
+[ 50%] Linking CXX shared library /home/jcfh/catkin_ws/devel/lib/libusb_cam.so
+[ 50%] Built target usb_cam
+Scanning dependencies of target usb_cam_node
+[ 75%] Building CXX object usb_cam/CMakeFiles/usb_cam_node.dir/nodes/usb_cam_node.cpp.o
+[100%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/usb_cam/usb_cam_node
+[100%] Built target usb_cam_node
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "cmake /home/jcfh/catkin_ws/src -DCMAKE_BUILD_TYPE=Release -DCATKIN_ENABLE_TESTING=ON -DCATKIN_DEVEL_PREFIX=/home/jcfh/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jcfh/catkin_ws/install -G Unix Makefiles" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make -j2 -l2" in "/home/jcfh/catkin_ws/build/usb_cam"
+####

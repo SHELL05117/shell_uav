@@ -1,0 +1,8 @@
+interface=0 kernel_driver_active=0
+interface=1 kernel_driver_active=0
+claim_interface=0 result=0
+claim_interface=1 result=0
+cdc_line_coding_result=7 cdc_dtr_result=0
+SUMMARY seconds=22.058 bytes=0 usb_errors=0
+parser_received=0 parser_drop=0 parser_errors=0
+cdc_dtr_release_result=0

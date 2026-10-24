@@ -1,0 +1,124 @@
+interface=0 kernel_driver_active=0
+interface=1 kernel_driver_active=0
+claim_interface=0 result=0
+claim_interface=1 result=0
+cdc_line_coding_result=7 cdc_dtr_result=0
+MESSAGE id=36 sys=1 comp=1 payload_length=12
+MESSAGE id=74 sys=1 comp=1 payload_length=17
+MESSAGE id=0 sys=1 comp=1 HEARTBEAT type=2 autopilot=12 base_mode=81 armed=0 custom_mode=65536 system_status=3
+MESSAGE id=331 sys=1 comp=1 payload_length=232
+MESSAGE id=140 sys=1 comp=1 payload_length=40
+MESSAGE id=30 sys=1 comp=1 ATTITUDE roll=0.02356 pitch=0.01821 yaw=-3.08016
+MESSAGE id=31 sys=1 comp=1 payload_length=32
+MESSAGE id=105 sys=1 comp=1 HIGHRES_IMU accel=(0.1521,-0.2229,-9.8188) gyro=(-0.0061,0.0004,0.0010)
+MESSAGE id=26 sys=1 comp=1 payload_length=24
+MESSAGE id=116 sys=1 comp=1 payload_length=24
+MESSAGE id=111 sys=1 comp=1 payload_length=14
+MESSAGE id=141 sys=1 comp=1 payload_length=32
+MESSAGE id=241 sys=1 comp=1 payload_length=20
+MESSAGE id=83 sys=1 comp=1 payload_length=32
+MESSAGE id=230 sys=1 comp=1 payload_length=41
+MESSAGE id=8 sys=1 comp=1 payload_length=32
+MESSAGE id=245 sys=1 comp=1 payload_length=2
+MESSAGE id=410 sys=1 comp=1 payload_length=13
+MESSAGE id=411 sys=1 comp=1 payload_length=2
+MESSAGE id=253 sys=1 comp=1 STATUSTEXT severity=6 text=Data link regained	
+MESSAGE id=1 sys=1 comp=1 SYS_STATUS present=2452127756 enabled=2452127756 health=2184085519 voltage_battery_mV=65535
+MESSAGE id=4 sys=1 comp=1 payload_length=10
+READ_ONLY_SHELL_QUERY result=0 command=
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=47 text=
+NuttShell (NSH) NuttX-11.0.0
+nsh> [K
+nsh> [K
+MESSAGE id=147 sys=1 comp=1 payload_length=49
+READ_ONLY_SHELL_QUERY result=0 command=ver all
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ver all
+HW arch: PX4_FMU_V6C
+HW type: V6C01
+HW version: 0x00000000
+HW
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= revision: 0x00000001
+FW git-hash: 1c8ab2a0d7db2d14a6f320ebd8766b5ffa
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ea28fa
+FW version: Release 1.13.3 (17630207)
+OS: NuttX
+OS version: Re
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=lease 11.0.0 (184549631)
+OS git-hash: 4a1dd8680cd29f51fb0fe66dcfbf6f6
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=9bec747cf
+Build datetime: Mar 14 2023 01:46:35
+Build uri: localhost
+B
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=uild variant: default
+Toolchain: GNU GCC, 9.3.1 20200408 (release)
+PX
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=4GUID: 000600000000323736363133510f001e002b
+MCU: STM32H7[4|5]xxx, rev
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=12 text=. V
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=gps status
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=43 text=gps status
+INFO  [gps] not running
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show GPS_1_CONFIG
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show GPS_1_CONFIG
+Symbols: x = used, + = saved, * = unsaved
+x +
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=64 text= GPS_1_CONFIG [346,691] : 0
+
+ 892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show GPS_2_CONFIG
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show GPS_2_CONFIG
+Symbols: x = used, + = saved, * = unsaved
+x  
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=64 text= GPS_2_CONFIG [347,694] : 0
+
+ 892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show GPS_1_PROTOCOL
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show GPS_1_PROTOCOL
+Symbols: x = used, + = saved, * = unsaved
+
+
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=35 text= 892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show SYS_HAS_GPS
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show SYS_HAS_GPS
+Symbols: x = used, + = saved, * = unsaved
+x + 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=63 text=SYS_HAS_GPS [849,1464] : 0
+
+ 892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=listener sensor_gps -n 1
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=49 text=listener sensor_gps -n 1
+never published
+nsh> [K
+SUMMARY seconds=30.003 bytes=632053 gcs_heartbeat_bytes=630 gps_query_bytes=0 usb_errors=0
+COUNT id=0 count=31
+COUNT id=1 count=30
+COUNT id=4 count=30
+COUNT id=8 count=31
+COUNT id=26 count=743
+COUNT id=30 count=1486
+COUNT id=31 count=1485
+COUNT id=36 count=595
+COUNT id=74 count=594
+COUNT id=83 count=237
+COUNT id=105 count=1485
+COUNT id=111 count=297
+COUNT id=116 count=743
+COUNT id=126 count=19
+COUNT id=140 count=892
+COUNT id=141 count=296
+COUNT id=147 count=15
+COUNT id=230 count=150
+COUNT id=241 count=76
+COUNT id=245 count=60
+COUNT id=253 count=1
+COUNT id=331 count=891
+COUNT id=410 count=2
+COUNT id=411 count=10
+parser_received=10199 parser_drop=0 parser_errors=0
+cdc_dtr_release_result=0

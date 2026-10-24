@@ -1,0 +1,8 @@
+Verified PX4 heartbeat: disarmed
+SHELL_COMMAND '\n'
+
+NuttShell (NSH) NuttX-11.0.0
+nsh> [K
+nsh> [KSHELL_COMMAND 'reboot\n'
+reboot
+Expected firmware USB restart

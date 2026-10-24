@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '/proc/1967/task/1967/children'
+VIDIOC_S_FMT: failed: Device or resource busy
+VIDIOC_S_PARM: failed: Device or resource busy

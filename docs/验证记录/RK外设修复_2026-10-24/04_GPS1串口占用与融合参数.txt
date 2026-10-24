@@ -1,0 +1,244 @@
+interface=0 kernel_driver_active=0
+interface=1 kernel_driver_active=0
+claim_interface=0 result=0
+claim_interface=1 result=0
+cdc_line_coding_result=7 cdc_dtr_result=0
+MESSAGE id=74 sys=1 comp=1 payload_length=17
+MESSAGE id=0 sys=1 comp=1 HEARTBEAT type=2 autopilot=12 base_mode=81 armed=0 custom_mode=65536 system_status=3
+MESSAGE id=8 sys=1 comp=1 payload_length=32
+MESSAGE id=30 sys=1 comp=1 ATTITUDE roll=0.02473 pitch=0.01734 yaw=-3.07763
+MESSAGE id=31 sys=1 comp=1 payload_length=32
+MESSAGE id=105 sys=1 comp=1 HIGHRES_IMU accel=(0.1890,-0.2540,-9.8180) gyro=(-0.0013,-0.0017,-0.0031)
+MESSAGE id=331 sys=1 comp=1 payload_length=232
+MESSAGE id=140 sys=1 comp=1 payload_length=40
+MESSAGE id=411 sys=1 comp=1 payload_length=2
+MESSAGE id=83 sys=1 comp=1 payload_length=32
+MESSAGE id=26 sys=1 comp=1 payload_length=24
+MESSAGE id=116 sys=1 comp=1 payload_length=24
+MESSAGE id=111 sys=1 comp=1 payload_length=14
+MESSAGE id=141 sys=1 comp=1 payload_length=32
+MESSAGE id=36 sys=1 comp=1 payload_length=12
+MESSAGE id=245 sys=1 comp=1 payload_length=2
+MESSAGE id=1 sys=1 comp=1 SYS_STATUS present=2452127756 enabled=2452127756 health=2184085519 voltage_battery_mV=65535
+MESSAGE id=230 sys=1 comp=1 payload_length=41
+MESSAGE id=241 sys=1 comp=1 payload_length=20
+MESSAGE id=410 sys=1 comp=1 payload_length=13
+MESSAGE id=253 sys=1 comp=1 STATUSTEXT severity=6 text=Data link regained	
+MESSAGE id=4 sys=1 comp=1 payload_length=10
+MESSAGE id=147 sys=1 comp=1 payload_length=49
+READ_ONLY_SHELL_QUERY result=0 command=
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=47 text=
+NuttShell (NSH) NuttX-11.0.0
+nsh> [K
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show EKF2_AID_MASK
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show EKF2_AID_MASK
+Symbols: x = used, + = saved, * = unsaved
+x 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=67 text=+ EKF2_AID_MASK [211,437] : 24
+
+ 892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show SER_GPS1_BAUD
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show SER_GPS1_BAUD
+Symbols: x = used, + = saved, * = unsaved
+
+ 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=34 text=892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show MAV_*_CONFIG
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show MAV_*_CONFIG
+Symbols: x = used, + = saved, * = unsaved
+WAR
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=N  [param] * symbol only allowed at end of search string
+WARN  [param
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=] * symbol only allowed at end of search string
+WARN  [param] * symbo
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=l only allowed at end of search string
+WARN  [param] * symbol only al
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=lowed at end of search string
+WARN  [param] * symbol only allowed at 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=end of search string
+WARN  [param] * symbol only allowed at end of se
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=arch string
+WARN  [param] * symbol only allowed at end of search stri
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ng
+WARN  [param] * symbol only allowed at end of search string
+WARN  
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=[param] * symbol only allowed at end of search string
+WARN  [param] *
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= symbol only allowed at end of search string
+WARN  [param] * symbol o
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=nly allowed at end of search string
+WARN  [param] * symbol only allow
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ed at end of search string
+WARN  [param] * symbol only allowed at end
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= of search string
+WARN  [param] * symbol only allowed at end of searc
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=h string
+WARN  [param] * symbol only allowed at end of search string
+
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=WARN  [param] * symbol only allowed at end of search string
+WARN  [pa
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ram] * symbol only allowed at end of search string
+WARN  [param] * sy
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=mbol only allowed at end of search string
+WARN  [param] * symbol only
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= allowed at end of search string
+WARN  [param] * symbol only allowed 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=at end of search string
+WARN  [param] * symbol only allowed at end of
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= search string
+WARN  [param] * symbol only allowed at end of search s
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=42 text=tring
+
+ 892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=gps
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=gps
+Usage: gps <command> [arguments...]
+ Commands:
+
+   start
+     [-d
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= <val>]  GPS device
+                 values: <file:dev>, default: /de
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=v/ttyS3
+     [-b <val>]  Baudrate (can also be p:<param_name>)
+      
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=           default: 0
+     [-e <val>]  Optional secondary GPS device
+
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=                 values: <file:dev>
+     [-g <val>]  Baudrate (second
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ary GPS, can also be p:<param_name>)
+                 default: 0
+    
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= [-i <val>]  GPS interface
+                 values: spi|uart, default
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=: uart
+     [-j <val>]  secondary GPS interface
+                 valu
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=es: spi|uart, default: uart
+     [-p <val>]  GPS Protocol (default=au
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=to select)
+                 values: ubx|mtk|ash|eml|fem|nmea
+
+   stop
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=
+
+   status        print status info
+
+   reset         Reset GPS devi
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=49 text=ce
+     cold|warm|hot Specify reset type
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=param show GPS_*
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show GPS_*
+Symbols: x = used, + = saved, * = unsaved
+x + GPS_1_
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=CONFIG [346,691] : 0
+x   GPS_2_CONFIG [347,694] : 0
+x   GPS_UBX_DYNMO
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=54 text=DEL [348,699] : 6
+
+ 892/1803 parameters used.
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=ls /dev/ttyS0
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=34 text=ls /dev/ttyS0
+ /dev/ttyS0
+nsh> [K
+READ_ONLY_SHELL_QUERY result=0 command=ps
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ps
+  PID PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK   STACK 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=  USED  FILLED COMMAND
+    0   0 FIFO     Kthread N-- Ready          
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=    00000000 000726 000416  57.3%  Idle Task
+    1 249 FIFO     Kthre
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ad --- Waiting  Signal    00000000 001264 000332  26.2%  hpwork
+    2
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=  50 FIFO     Kthread --- Waiting  Signal    00000000 001616 000852  
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=52.7%  lpwork
+    3 100 FIFO     Task    --- Waiting  Semaphore 00000
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=000 002928 002276  77.7%  init
+    4 255 FIFO     Task    --- Waiting
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=  Semaphore 00000000 001256 000444  35.3%  wq:manager
+  389 246 FIFO 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=    pthread --- Waiting  Semaphore 00000000 002336 000884  37.8%  wq:
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=I2C1 0x81e121c
+  102 205 FIFO     pthread --- Waiting  Semaphore 0000
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=0000 001920 001028  53.5%  wq:lp_default 0x817dce8
+  871 100 FIFO    
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= Task    --- Waiting  Signal    00000000 002824 001852  65.5%  mavlin
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=k_if1 mavlink start -d /dev/ttyACM0
+  552 240 FIFO     pthread --- Wa
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=iting  Semaphore 00000000 006000 004260  71.0%  wq:INS1 0x81e1244
+  8
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=41 230 FIFO     Task    --- Waiting  Semaphore 00000000 003648 002548
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=  69.8%  logger start -b 64 -t
+  554 140 FIFO     Task    --- Waiting
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=  Signal    00000000 003224 001332  41.3%  commander start
+  875 175 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=FIFO     pthread --- Waiting  Semaphore 00000000 004712 001456  30.8%
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=  mavlink_rcv_if1 0x30017008
+  908 100 FIFO     Task    --- Running  
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=          00000000 002024 001196  59.0%  mavlink_shell
+   79 237 FIFO
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=     pthread --- Waiting  Semaphore 00000000 001904 001096  57.5%  wq
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=:hp_default 0x8177918
+  752 100 FIFO     Task    --- Waiting  Signal 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=   00000000 002728 001932  70.8%  mavlink_if0 mavlink start -d /dev/t
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=tyS5 -b p:SER_TEL1_BAUD -m p:MAV_0_MODE -r p:MAV_0_RATE -f -s -x
+  75
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=3 175 FIFO     pthread --- Waiting  Semaphore 00000000 004712 001316 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= 27.9%  mavlink_rcv_if0 0x300036f8
+  788 105 FIFO     Task    --- Wai
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ting  Semaphore 00000000 001920 001036  53.9%  navigator start
+  853 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=236 FIFO     pthread --- Waiting  Semaphore 00000000 003624 001700  4
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=6.9%  wq:uavcan 0x8178ed0
+  854  60 FIFO     pthread --- Waiting  Sem
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=aphore 00000000 001176 000372  31.6%  log_writer_file 0x3000d390
+  37
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=5 253 FIFO     pthread --- Waiting  Semaphore 00000000 002336 001792 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= 76.7%  wq:SPI1 0x81e1264
+  538 242 FIFO     pthread --- Waiting  Sem
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=aphore 00000000 002240 001204  53.7%  wq:nav_and_controllers 0x819233
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=c
+  379 243 FIFO     pthread --- Waiting  Semaphore 00000000 002336 0
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=00900  38.5%  wq:I2C4 0x81e1234
+  540 255 FIFO     pthread --- Waitin
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=g  Semaphore 00000000 003152 001416  44.9%  wq:rate_ctrl 0x81d3f38
+  
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=541 241 FIFO     pthread --- Waiting  Semaphore 00000000 006000 00426
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=0  71.0%  wq:INS0 0x81e123c
+   94  90 FIFO     Task    --- Waiting  S
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=56 text=emaphore 00000000 001208 000828  68.5%  dataman
+nsh> [K
+SUMMARY seconds=30.003 bytes=638561 gcs_heartbeat_bytes=630 gps_query_bytes=0 usb_errors=0
+COUNT id=0 count=32
+COUNT id=1 count=31
+COUNT id=4 count=30
+COUNT id=8 count=31
+COUNT id=26 count=743
+COUNT id=30 count=1488
+COUNT id=31 count=1487
+COUNT id=36 count=595
+COUNT id=74 count=596
+COUNT id=83 count=238
+COUNT id=105 count=1487
+COUNT id=111 count=299
+COUNT id=116 count=743
+COUNT id=126 count=81
+COUNT id=140 count=892
+COUNT id=141 count=299
+COUNT id=147 count=15
+COUNT id=230 count=149
+COUNT id=241 count=74
+COUNT id=245 count=60
+COUNT id=253 count=1
+COUNT id=331 count=892
+COUNT id=410 count=2
+COUNT id=411 count=11
+parser_received=10276 parser_drop=0 parser_errors=0
+cdc_dtr_release_result=0

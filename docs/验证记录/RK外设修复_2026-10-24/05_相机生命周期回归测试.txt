@@ -1,0 +1,104 @@
+-- Using CATKIN_DEVEL_PREFIX: /home/jcfh/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /home/jcfh/catkin_ws/devel;/opt/ros/melodic
+-- This workspace overlays: /home/jcfh/catkin_ws/devel;/opt/ros/melodic
+-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/jcfh/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.29
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 8 packages in topological order:
+-- ~~  - servo_control
+-- ~~  - rplidar_ros
+-- ~~  - ssd_detection
+-- ~~  - gc_2026_sim
+-- ~~  - location
+-- ~~  - navigation_2d
+-- ~~  - ego_planner_2d
+-- ~~  - usb_cam
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'servo_control'
+-- ==> add_subdirectory(servo_control)
+-- +++ processing catkin package: 'rplidar_ros'
+-- ==> add_subdirectory(rplidar_ros)
+-- +++ processing catkin package: 'ssd_detection'
+-- ==> add_subdirectory(ssd_detection)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- ssd_detection: 2 messages, 0 services
+-- ssd_detection: jetson-inference not found -> skipping the detectNet node (this is expected off the Jetson; the Python node covers the simulator, and both read the same .onnx)
+-- +++ processing catkin package: 'gc_2026_sim'
+-- ==> add_subdirectory(gc_2026_sim)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'location'
+-- ==> add_subdirectory(location)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'navigation_2d'
+-- ==> add_subdirectory(navigation_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+CMake Warning at navigation_2d/CMakeLists.txt:24 (message):
+  OpenCV_VERSION: 3.2.0
+
+
+-- navigation_2d: 1 messages, 0 services
+-- +++ processing catkin package: 'ego_planner_2d'
+-- ==> add_subdirectory(ego_planner_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'usb_cam'
+-- ==> add_subdirectory(usb_cam)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jcfh/catkin_ws/build
+[ 16%] Building CXX object gtest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 50%] Built target usb_cam
+[ 66%] Linking CXX shared library libgtest.so
+[ 66%] Built target gtest
+Scanning dependencies of target usb_cam_lifecycle_test
+[ 83%] Building CXX object usb_cam/CMakeFiles/usb_cam_lifecycle_test.dir/test/lifecycle_test.cpp.o
+[100%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/usb_cam/usb_cam_lifecycle_test
+[100%] Built target usb_cam_lifecycle_test
+Scanning dependencies of target run_tests_usb_cam_gtest_usb_cam_lifecycle_test
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from UsbCamLifecycle
+[ RUN      ] UsbCamLifecycle.ShutdownWithoutStartingIsRepeatable
+[       OK ] UsbCamLifecycle.ShutdownWithoutStartingIsRepeatable (0 ms)
+[----------] 1 test from UsbCamLifecycle (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (3 ms total)
+[  PASSED  ] 1 test.
+-- run_tests.py: execute commands
+  /home/jcfh/catkin_ws/devel/lib/usb_cam/usb_cam_lifecycle_test --gtest_output=xml:/home/jcfh/catkin_ws/build/test_results/usb_cam/gtest-usb_cam_lifecycle_test.xml
+-- run_tests.py: verify result "/home/jcfh/catkin_ws/build/test_results/usb_cam/gtest-usb_cam_lifecycle_test.xml"
+[100%] Built target run_tests_usb_cam_gtest_usb_cam_lifecycle_test
+Scanning dependencies of target run_tests_usb_cam_gtest
+[100%] Built target run_tests_usb_cam_gtest
+Scanning dependencies of target run_tests_usb_cam
+[100%] Built target run_tests_usb_cam
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "cmake /home/jcfh/catkin_ws/src -DCATKIN_DEVEL_PREFIX=/home/jcfh/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jcfh/catkin_ws/install -G Unix Makefiles" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make run_tests_usb_cam -j2 -l2" in "/home/jcfh/catkin_ws/build"
+####
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" disabled="0" errors="0" timestamp="2026-10-24T22:06:18" time="0.003" name="AllTests">
+  <testsuite name="UsbCamLifecycle" tests="1" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="ShutdownWithoutStartingIsRepeatable" status="run" time="0" classname="UsbCamLifecycle" />
+  </testsuite>
+</testsuites>
+	libusb_cam.so => /home/jcfh/catkin_ws/devel/lib/libusb_cam.so (0x0000007fa37f6000)

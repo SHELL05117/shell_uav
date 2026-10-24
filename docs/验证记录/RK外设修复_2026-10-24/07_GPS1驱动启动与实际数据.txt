@@ -1,0 +1,203 @@
+interface=0 kernel_driver_active=0
+interface=1 kernel_driver_active=0
+claim_interface=0 result=0
+claim_interface=1 result=0
+cdc_line_coding_result=7 cdc_dtr_result=0
+MESSAGE id=8 sys=1 comp=1 payload_length=32
+MESSAGE id=30 sys=1 comp=1 ATTITUDE roll=0.02441 pitch=0.01708 yaw=-3.07809
+MESSAGE id=31 sys=1 comp=1 payload_length=32
+MESSAGE id=105 sys=1 comp=1 HIGHRES_IMU accel=(0.1675,-0.2240,-9.8086) gyro=(0.0019,0.0010,-0.0017)
+MESSAGE id=26 sys=1 comp=1 payload_length=24
+MESSAGE id=116 sys=1 comp=1 payload_length=24
+MESSAGE id=83 sys=1 comp=1 payload_length=32
+MESSAGE id=331 sys=1 comp=1 payload_length=232
+MESSAGE id=140 sys=1 comp=1 payload_length=40
+MESSAGE id=411 sys=1 comp=1 payload_length=2
+MESSAGE id=36 sys=1 comp=1 payload_length=12
+MESSAGE id=74 sys=1 comp=1 payload_length=17
+MESSAGE id=111 sys=1 comp=1 payload_length=14
+MESSAGE id=141 sys=1 comp=1 payload_length=32
+MESSAGE id=230 sys=1 comp=1 payload_length=41
+MESSAGE id=241 sys=1 comp=1 payload_length=20
+MESSAGE id=4 sys=1 comp=1 payload_length=10
+MESSAGE id=245 sys=1 comp=1 payload_length=2
+MESSAGE id=0 sys=1 comp=1 HEARTBEAT type=2 autopilot=12 base_mode=81 armed=0 custom_mode=65536 system_status=3
+MESSAGE id=410 sys=1 comp=1 payload_length=13
+MESSAGE id=253 sys=1 comp=1 STATUSTEXT severity=6 text=Data link regained	
+MESSAGE id=147 sys=1 comp=1 payload_length=49
+MESSAGE id=1 sys=1 comp=1 SYS_STATUS present=2452127756 enabled=2452127756 health=2184085519 voltage_battery_mV=65535
+SHELL_QUERY result=0 command=
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=47 text=
+NuttShell (NSH) NuttX-11.0.0
+nsh> [K
+nsh> [K
+SHELL_QUERY result=0 command=gps status
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=43 text=gps status
+INFO  [gps] not running
+nsh> [K
+SHELL_QUERY result=0 command=param show MAV_0_CONFIG
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show MAV_0_CONFIG
+Symbols: x = used, + = saved, * = unsaved
+x  
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=66 text= MAV_0_CONFIG [382,780] : 101
+
+ 892/1803 parameters used.
+nsh> [K
+SHELL_QUERY result=0 command=param show MAV_1_CONFIG
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show MAV_1_CONFIG
+Symbols: x = used, + = saved, * = unsaved
+x  
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=64 text= MAV_1_CONFIG [388,786] : 0
+
+ 892/1803 parameters used.
+nsh> [K
+SHELL_QUERY result=0 command=gps start -d /dev/ttyS0 -b 0
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=37 text=gps start -d /dev/ttyS0 -b 0
+nsh> [K
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=46 text=INFO  [gps] u-blox firmware version: SPG 4.04
+
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=INFO  [gps] u-blox protocol version: 32.01
+INFO  [gps] u-blox module:
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=9 text= NEO-M9N
+
+MESSAGE id=24 sys=1 comp=1 GPS_RAW_INT fix_type=0 satellites=0 lat=0.0000000 lon=0.0000000 alt_m=-17.000 eph=9999 epv=9999
+SHELL_QUERY result=0 command=gps status
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=gps status
+INFO  [gps] Main GPS
+INFO  [gps] protocol: UBX
+INFO  [gps]
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= status: OK, port: /dev/ttyS0, baudrate: 115200
+INFO  [gps] sat info:
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= disabled
+INFO  [gps] rate reading: 		     0 B/s
+INFO  [gps] rate pos
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ition: 		  0.00 Hz
+INFO  [gps] rate velocity: 		  0.00 Hz
+INFO  [gps]
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= rate publication:		  0.00 Hz
+INFO  [gps] rate RTCM injection:	  0.00
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text= Hz
+ sensor_gps
+    timestamp: 3603226605 (0.038315 seconds ago)
+    
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=time_utc_usec: 0
+    device_id: 11075589 (Type: 0xA9, SERIAL:0 (0x00)
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=)
+    lat: 0
+    lon: 0
+    alt: -17000
+    alt_ellipsoid: 0
+    s_va
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=riance_m_s: 20.1390
+    c_variance_rad: 3.1416
+    eph: 4294967.5000
+
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=    epv: 3750692.0000
+    hdop: 99.9900
+    vdop: 99.9900
+    noise_p
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=er_ms: 82
+    jamming_indicator: 51
+    vel_m_s: 0.0000
+    vel_n_m_s
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=: 0.0000
+    vel_e_m_s: 0.0000
+    vel_d_m_s: 0.0000
+    cog_rad: 0.0
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=000
+    timestamp_time_relative: 0
+    heading: nan
+    heading_offse
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=t: 0.0000
+    heading_accuracy: 0.0000
+    automatic_gain_control: 0
+
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=    fix_type: 0
+    jamming_state: 0
+    vel_ned_valid: False
+    sat
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=25 text=ellites_used: 0
+
+nsh> [K
+SHELL_QUERY result=0 command=listener sensor_gps -n 1
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=listener sensor_gps -n 1
+
+TOPIC: sensor_gps
+ sensor_gps
+    timestamp
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=: 3606226605 (0.023805 seconds ago)
+    time_utc_usec: 0
+    device_i
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=d: 11075589 (Type: 0xA9, SERIAL:0 (0x00))
+    lat: 0
+    lon: 0
+    a
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=lt: -17000
+    alt_ellipsoid: 0
+    s_variance_m_s: 20.3700
+    c_var
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=iance_rad: 3.1416
+    eph: 4294967.5000
+    epv: 3750692.2500
+    hdo
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=p: 99.9900
+    vdop: 99.9900
+    noise_per_ms: 93
+    jamming_indicat
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=or: 51
+    vel_m_s: 0.0000
+    vel_n_m_s: 0.0000
+    vel_e_m_s: 0.000
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=0
+    vel_d_m_s: 0.0000
+    cog_rad: 0.0000
+    timestamp_time_relati
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=ve: 0
+    heading: nan
+    heading_offset: 0.0000
+    heading_accurac
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=y: 0.0000
+    automatic_gain_control: 0
+    fix_type: 0
+    jamming_s
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=65 text=tate: 0
+    vel_ned_valid: False
+    satellites_used: 0
+
+nsh> [K
+SHELL_QUERY result=0 command=param show EKF2_AID_MASK
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=69 text=param show EKF2_AID_MASK
+Symbols: x = used, + = saved, * = unsaved
+x 
+MESSAGE id=126 sys=1 comp=1 SHELL device=10 count=67 text=+ EKF2_AID_MASK [211,437] : 24
+
+ 898/1803 parameters used.
+nsh> [K
+SUMMARY seconds=30.001 bytes=644750 gcs_heartbeat_bytes=630 gps_query_bytes=0 usb_errors=0
+COUNT id=0 count=30
+COUNT id=1 count=30
+COUNT id=4 count=31
+COUNT id=8 count=31
+COUNT id=24 count=119
+COUNT id=26 count=749
+COUNT id=30 count=1495
+COUNT id=31 count=1494
+COUNT id=36 count=599
+COUNT id=74 count=599
+COUNT id=83 count=241
+COUNT id=105 count=1494
+COUNT id=111 count=299
+COUNT id=116 count=749
+COUNT id=126 count=39
+COUNT id=140 count=898
+COUNT id=141 count=298
+COUNT id=147 count=15
+COUNT id=230 count=150
+COUNT id=241 count=76
+COUNT id=245 count=60
+COUNT id=253 count=1
+COUNT id=331 count=897
+COUNT id=410 count=2
+COUNT id=411 count=11
+parser_received=10407 parser_drop=0 parser_errors=0
+cdc_dtr_release_result=0

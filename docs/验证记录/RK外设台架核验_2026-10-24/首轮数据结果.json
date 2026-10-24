@@ -1,0 +1,38 @@
+{
+  "passed": false, 
+  "samples": {
+    "scan": {
+      "closest_m": 0.15000000596046448, 
+      "frame": "laser", 
+      "furthest_m": 5.269999980926514, 
+      "points": 3585, 
+      "range_max": 30.0, 
+      "range_min": 0.15000000596046448, 
+      "scan_time_s": 0.09247008711099625, 
+      "valid_points": 2068
+    }
+  }, 
+  "streams": {
+    "camera_info": {
+      "count": 0, 
+      "latest_stamp_age_s": null, 
+      "max_gap_s": 0, 
+      "received_hz": null, 
+      "stamp_strictly_increasing": true
+    }, 
+    "image": {
+      "count": 0, 
+      "latest_stamp_age_s": null, 
+      "max_gap_s": 0, 
+      "received_hz": null, 
+      "stamp_strictly_increasing": true
+    }, 
+    "scan": {
+      "count": 160, 
+      "latest_stamp_age_s": 0.1474623680114746, 
+      "max_gap_s": 0.11866402626037598, 
+      "received_hz": 10.037556130982777, 
+      "stamp_strictly_increasing": true
+    }
+  }
+}

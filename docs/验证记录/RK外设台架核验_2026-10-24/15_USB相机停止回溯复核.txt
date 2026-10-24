@@ -1,0 +1,28 @@
+GDB children=['2254']
+Normal stop SIGINT to inferior 2254
+SIGINT is used by the debugger.
+Are you sure you want to change it? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7fb1322e80 (LWP 2281)]
+[New Thread 0x7fb0b21e80 (LWP 2282)]
+[New Thread 0x7fabffee80 (LWP 2283)]
+[New Thread 0x7fab7fde80 (LWP 2288)]
+[33m[ WARN] [1792848540.725906954]: Camera calibration file /tmp/rk-sensor-probe-20261024.s7pWpH/ros-home/camera_info/head_camera.yaml not found.[0m
+[33m[ WARN] [1792848541.037236371]: unknown control 'focus_auto'
+[0m
+[Thread 0x7fabffee80 (LWP 2283) exited]
+[Thread 0x7fab7fde80 (LWP 2288) exited]
+[Thread 0x7fb0b21e80 (LWP 2282) exited]
+[Thread 0x7fb1322e80 (LWP 2281) exited]
+
+Thread 1 "usb_cam_node" received signal SIGSEGV, Segmentation fault.
+0x0000007fb6c0e248 in av_parser_close () from /usr/lib/aarch64-linux-gnu/libavcodec.so.57
+
+Thread 1 (Thread 0x7fb1b384a0 (LWP 2254)):
+#0  0x0000007fb6c0e248 in av_parser_close () from /usr/lib/aarch64-linux-gnu/libavcodec.so.57
+#1  0x0000007fb7fb54e0 in usb_cam::UsbCam::~UsbCam() () from /opt/ros/melodic/lib/libusb_cam.so
+#2  0x0000005555560aa0 in usb_cam::UsbCamNode::~UsbCamNode() ()
+#3  0x000000555555eb84 in main ()
+
+Frame rate set to 60.000 fps

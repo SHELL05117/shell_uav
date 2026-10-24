@@ -1,0 +1,185 @@
+2026-10-24T02:14:52+08:00
+uid=1001(jcfh) gid=1001(jcfh) groups=1001(jcfh),20(dialout),27(sudo),44(video),108(i2c)
+0
+ 02:14:52 up 7 min,  0 users,  load average: 0.12, 0.13, 0.07
+Bus 004 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 006: ID 3185:0038  
+Bus 003 Device 004: ID 0bda:9143 Realtek Semiconductor Corp. 
+Bus 003 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+/:  Bus 06.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 05.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 5000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M
+/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 2: Dev 4, If 0, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 2: Dev 4, If 1, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 4: Dev 6, If 0, Class=Communications, Driver=, 12M
+        |__ Port 4: Dev 6, If 1, Class=CDC Data, Driver=, 12M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 1, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 2, Class=Vendor Specific Class, Driver=rtl8723du, 480M
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             DOWN           fe80::12dc:b6ff:fe91:a0f/64 
+wlan0            DOWN           
+p2p0             DOWN           
+usb0             UP             192.168.77.1/24 fe80::53:48ff:fe45:4c01/64 
+crw-rw---- 1 root video 81,  0 Mar  2  2023 /dev/video0
+crw-rw---- 1 root video 81,  1 Mar  2  2023 /dev/video1
+crw-rw---- 1 root video 81, 14 Oct 24 02:08 /dev/video10
+crw-rw---- 1 root video 81, 15 Oct 24 02:08 /dev/video11
+crw-rw---- 1 root video 81,  2 Mar  2  2023 /dev/video2
+crw-rw---- 1 root video 81,  3 Mar  2  2023 /dev/video3
+crw-rw---- 1 root video 81,  4 Mar  2  2023 /dev/video4
+crw-rw---- 1 root video 81,  5 Mar  2  2023 /dev/video5
+crw-rw---- 1 root video 81,  6 Mar  2  2023 /dev/video6
+crw-rw---- 1 root video 81,  7 Mar  2  2023 /dev/video7
+crw-rw---- 1 root video 81,  8 Mar  2  2023 /dev/video8
+crw-rw---- 1 root video 81,  9 Mar  2  2023 /dev/video9
+/sys/class/video4linux/v4l-subdev0 rkisp1-isp-subdev /sys/devices/platform/ff910000.rkisp1
+/sys/class/video4linux/v4l-subdev1 rockchip-mipi-dphy-rx /sys/devices/platform/ff910000.rkisp1
+/sys/class/video4linux/v4l-subdev2 rkisp1-isp-subdev /sys/devices/platform/ff920000.rkisp1
+/sys/class/video4linux/v4l-subdev3 rockchip-mipi-dphy-rx /sys/devices/platform/ff920000.rkisp1
+/sys/class/video4linux/video0 rkisp1_mainpath /sys/devices/platform/ff910000.rkisp1
+/sys/class/video4linux/video1 rkisp1_selfpath /sys/devices/platform/ff910000.rkisp1
+/sys/class/video4linux/video10 USB Camera /sys/devices/platform/usb1/fe900000.dwc3/xhci-hcd.10.auto/usb3/3-1/3-1.2/3-1.2:1.0
+/sys/class/video4linux/video11 USB Camera /sys/devices/platform/usb1/fe900000.dwc3/xhci-hcd.10.auto/usb3/3-1/3-1.2/3-1.2:1.0
+/sys/class/video4linux/video2 rkisp1_dmapath /sys/devices/platform/ff910000.rkisp1
+/sys/class/video4linux/video3 rkisp1-statistics /sys/devices/platform/ff910000.rkisp1
+/sys/class/video4linux/video4 rkisp1-input-params /sys/devices/platform/ff910000.rkisp1
+/sys/class/video4linux/video5 rkisp1_mainpath /sys/devices/platform/ff920000.rkisp1
+/sys/class/video4linux/video6 rkisp1_selfpath /sys/devices/platform/ff920000.rkisp1
+/sys/class/video4linux/video7 rkisp1_dmapath /sys/devices/platform/ff920000.rkisp1
+/sys/class/video4linux/video8 rkisp1-statistics /sys/devices/platform/ff920000.rkisp1
+/sys/class/video4linux/video9 rkisp1-input-params /sys/devices/platform/ff920000.rkisp1
+[    7.426184] [WLAN_RFKILL]: wifi shut off power.
+[    7.426201] wifi_platform_bus_enumerate device present 0
+[    7.426217] ======== Card detection to remove SDIO card! ========
+[    7.426233] sdio: host isn't  initialization successfully.
+[    7.436241] failed to power up DHD generic adapter, max retry reached**
+[    7.438738] unregister wifi platform drivers
+[    7.438764] wifi_platform_bus_enumerate device present 0
+[    7.438781] ======== Card detection to remove SDIO card! ========
+[    7.438798] sdio: host isn't  initialization successfully.
+[    7.448473] ======== dhd_wlan_deinit_plat_data ========
+[    7.448498] dhd_module_init: Failed to load the driver, try cnt 0
+[    7.449974] dhd_module_init: Failed to load driver max retry reached**
+[    7.449997] dhd_module_init: Exit err=-19
+[    9.177481] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.
+[    9.913418] tty_port_close_start: tty->count = 1 port count = 2.
+[   30.138468] usb 3-1.2: new high-speed USB device number 4 using xhci-hcd
+[   30.270576] usb 3-1.2: New USB device found, idVendor=0bda, idProduct=9143
+[   30.270613] usb 3-1.2: New USB device strings: Mfr=3, Product=1, SerialNumber=2
+[   30.270638] usb 3-1.2: Product: USB Camera
+[   30.270661] usb 3-1.2: Manufacturer: RYS
+[   30.270683] usb 3-1.2: SerialNumber: 200901010001
+[   30.295949] uvcvideo: Found UVC 1.00 device USB Camera (0bda:9143)
+[  209.661630] usb 3-1.4: new full-speed USB device number 5 using xhci-hcd
+[  209.741967] usb 3-1.4: New USB device found, idVendor=3185, idProduct=0038
+[  209.742009] usb 3-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  209.742034] usb 3-1.4: Product: PX4 BL FMU v6C.x
+[  209.742057] usb 3-1.4: Manufacturer: Auterion
+[  209.742080] usb 3-1.4: SerialNumber: 0
+[  209.749942] usb 3-1.4: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[  214.517382] usb 3-1.4: USB disconnect, device number 5
+[  215.068461] usb 3-1.4: new full-speed USB device number 6 using xhci-hcd
+[  215.144543] usb 3-1.4: New USB device found, idVendor=3185, idProduct=0038
+[  215.144582] usb 3-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  215.144608] usb 3-1.4: Product: PX4 FMU v6C.x
+[  215.144631] usb 3-1.4: Manufacturer: Auterion
+[  215.144653] usb 3-1.4: SerialNumber: 0
+[  215.155943] usb 3-1.4: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[  304.424960] RTW: nolinked power save enter
+[  306.060452] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  306.061193] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  306.073400] RTW: nolinked power save leave
+[  307.592091] RTW: nolinked power save enter
+[  313.459225] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  313.460839] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  313.472562] RTW: nolinked power save leave
+[  315.101608] RTW: nolinked power save enter
+[  320.853474] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  320.855026] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  320.868760] RTW: nolinked power save leave
+[  322.499609] RTW: nolinked power save enter
+[  328.346599] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  328.348222] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  328.360253] RTW: nolinked power save leave
+[  329.878593] RTW: nolinked power save enter
+[  335.642355] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  335.643213] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  335.657010] RTW: nolinked power save leave
+[  337.184983] RTW: nolinked power save enter
+[  342.950078] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  342.951574] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  342.962256] RTW: nolinked power save leave
+[  344.576853] RTW: nolinked power save enter
+[  350.340577] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  350.341863] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  350.352631] RTW: nolinked power save leave
+[  351.971227] RTW: nolinked power save enter
+[  357.607455] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  357.608194] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  357.619385] RTW: nolinked power save leave
+[  359.233684] RTW: nolinked power save enter
+[  365.111952] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  365.113408] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  365.124008] RTW: nolinked power save leave
+[  366.738766] RTW: nolinked power save enter
+[  372.593828] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  372.595197] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  372.605880] RTW: nolinked power save leave
+[  374.124091] RTW: nolinked power save enter
+[  379.888703] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  379.890198] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  379.900881] RTW: nolinked power save leave
+[  381.423217] RTW: nolinked power save enter
+[  387.185475] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  387.187216] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  387.199124] RTW: nolinked power save leave
+[  388.722469] RTW: nolinked power save enter
+[  394.500452] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  394.501193] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  394.512386] RTW: nolinked power save leave
+[  396.025218] RTW: nolinked power save enter
+[  401.913098] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  401.914839] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  401.928515] RTW: nolinked power save leave
+[  403.453984] RTW: nolinked power save enter
+[  409.090078] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  409.091697] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  409.102386] RTW: nolinked power save leave
+[  410.719727] RTW: nolinked power save enter
+[  416.482952] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  416.484398] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  416.495007] RTW: nolinked power save leave
+[  418.111860] RTW: nolinked power save enter
+[  423.876826] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  423.878199] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  423.888881] RTW: nolinked power save leave
+[  425.434468] RTW: nolinked power save enter
+[  431.189331] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[  431.190193] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[  431.201385] RTW: nolinked power save leave
+[  432.717377] RTW: nolinked power save enter
+/usr/bin/v4l2-ctl
+/usr/bin/ffmpeg
+/usr/bin/python
+/usr/bin/python3
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ImportError: No module named serial
+/opt/ros/melodic/share/mavros
+/opt/ros/melodic/share/usb_cam
+rplidarNode
+rplidarNodeClient
+head: invalid number of lines: '25\r'

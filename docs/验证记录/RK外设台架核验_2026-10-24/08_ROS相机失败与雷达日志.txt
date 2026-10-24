@@ -1,0 +1,36 @@
+[33m[ WARN] [1792847942.717748835]: Camera calibration file /tmp/rk-sensor-probe-20261024.s7pWpH/ros-home/camera_info/head_camera.yaml not found.[0m
+[33m[ WARN] [1792847943.003895711]: unknown control 'focus_auto'
+[0m
+[0m[ INFO] [1792847942.370427210]: RPLIDAR running on ROS package rplidar_ros, SDK Version:2.1.0[0m
+[0m[ INFO] [1792847942.381280710]: RPLIDAR MODE:S2M1[0m
+[0m[ INFO] [1792847942.381347210]: RPLIDAR S/N: B397E18BC7E49CCCA3EB9AF4274A4C72[0m
+[0m[ INFO] [1792847942.381370835]: Firmware Ver: 1.02[0m
+[0m[ INFO] [1792847942.381392419]: Hardware Rev: 18[0m
+[0m[ INFO] [1792847942.383446044]: RPLidar health status : OK.[0m
+[0m[ INFO] [1792847942.641414835]: current scan mode: DenseBoost, sample rate: 32 Khz, max_distance: 30.0 m, scan frequency:10.0 Hz, [0m
+[0m[ INFO] [1792847944.861630628]: set lidar scan frequency to 10.0 Hz(600.0 Rpm) [0m
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                 Version                       Architecture Description
++++-====================-=============================-============-==========================================================================
+ii  libavcodec-dev:arm64 7:3.4.11-0ubuntu0.1           arm64        FFmpeg library with de/encoders for audio/video codecs - development files
+ii  libavcodec57:arm64   7:3.4.11-0ubuntu0.1           arm64        FFmpeg library with de/encoders for audio/video codecs - runtime files
+ii  libavutil55:arm64    7:3.4.11-0ubuntu0.1           arm64        FFmpeg library with functions for simplifying programming - runtime files
+ii  libswscale4:arm64    7:3.4.11-0ubuntu0.1           arm64        FFmpeg library for image scaling and various conversions - runtime files
+ii  ros-melodic-usb-cam  0.3.7-1bionic.20230322.235948 arm64        A ROS Driver for V4L USB Cameras
+	linux-vdso.so.1 (0x0000007fa8ded000)
+	libusb_cam.so => not found
+	libimage_transport.so => not found
+	libcamera_info_manager.so => not found
+	libroscpp.so => not found
+	librosconsole.so => not found
+	libroscpp_serialization.so => not found
+	librostime.so => not found
+	libboost_system.so.1.65.1 => /usr/lib/aarch64-linux-gnu/libboost_system.so.1.65.1 (0x0000007fa8d54000)
+	libpthread.so.0 => /lib/aarch64-linux-gnu/libpthread.so.0 (0x0000007fa8d28000)
+	libstdc++.so.6 => /usr/lib/aarch64-linux-gnu/libstdc++.so.6 (0x0000007fa8b94000)
+	libgcc_s.so.1 => /lib/aarch64-linux-gnu/libgcc_s.so.1 (0x0000007fa8b70000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000007fa8a17000)
+	/lib/ld-linux-aarch64.so.1 (0x0000007fa8dc1000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000007fa895e000)

@@ -1,0 +1,15 @@
+Sat Oct 24 21:17:30 CST 2026
+                      Local time: Sat 2026-10-24 21:17:30 CST
+                  Universal time: Sat 2026-10-24 13:17:30 UTC
+                        RTC time: Sat 2017-08-05 09:13:23
+                       Time zone: Asia/Shanghai (CST, +0800)
+       System clock synchronized: no
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+crw-rw---- 1 root dialout 188, 0 Oct 24 02:19 /dev/ttyUSB0
+
+/dev/serial/by-id:
+total 0
+lrwxrwxrwx 1 root root 13 Oct 24 02:19 usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_909394b23877ed11907beefafdf7b791-if00-port0 -> ../../ttyUSB0
+/opt/ros/melodic/include/mavlink/v2.0/common/mavlink_msg_gps_raw_int.h
+1

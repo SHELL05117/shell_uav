@@ -1,0 +1,68 @@
+{
+  "observed_topics": {
+    "camera_info": "/bench_camera/bench_camera/camera_info", 
+    "image": "/bench_camera/bench_camera/image_raw"
+  }, 
+  "passed": true, 
+  "samples": {
+    "camera_info": {
+      "D": [], 
+      "K": [
+        0.0, 
+        0.0, 
+        0.0, 
+        0.0, 
+        0.0, 
+        0.0, 
+        0.0, 
+        0.0, 
+        0.0
+      ], 
+      "calibrated": false, 
+      "height": 720, 
+      "width": 1280
+    }, 
+    "image": {
+      "data_bytes": 2764800, 
+      "encoding": "rgb8", 
+      "frame": "camera", 
+      "height": 720, 
+      "size_consistent": true, 
+      "step": 3840, 
+      "width": 1280
+    }, 
+    "scan": {
+      "closest_m": 0.15000000596046448, 
+      "frame": "laser", 
+      "furthest_m": 5.507999897003174, 
+      "points": 3585, 
+      "range_max": 30.0, 
+      "range_min": 0.15000000596046448, 
+      "scan_time_s": 0.09930933266878128, 
+      "valid_points": 2109
+    }
+  }, 
+  "streams": {
+    "camera_info": {
+      "count": 538, 
+      "latest_stamp_age_s": 0.03892922401428223, 
+      "max_gap_s": 0.05649900436401367, 
+      "received_hz": 30.014378173652872, 
+      "stamp_strictly_increasing": true
+    }, 
+    "image": {
+      "count": 538, 
+      "latest_stamp_age_s": 0.03705024719238281, 
+      "max_gap_s": 0.06201314926147461, 
+      "received_hz": 30.033874437661904, 
+      "stamp_strictly_increasing": true
+    }, 
+    "scan": {
+      "count": 158, 
+      "latest_stamp_age_s": 0.15776991844177246, 
+      "max_gap_s": 0.13667607307434082, 
+      "received_hz": 10.039080083720778, 
+      "stamp_strictly_increasing": true
+    }
+  }
+}

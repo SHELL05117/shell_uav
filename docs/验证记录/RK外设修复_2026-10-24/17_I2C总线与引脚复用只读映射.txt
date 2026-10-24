@@ -1,0 +1,14 @@
+i2c-0 /sys/firmware/devicetree/base/i2c@ff3c0000
+i2c-1 /sys/firmware/devicetree/base/i2c@ff110000
+i2c-2 /sys/firmware/devicetree/base/i2c@ff120000
+i2c-4 /sys/firmware/devicetree/base/i2c@ff3d0000
+i2c-6 /sys/firmware/devicetree/base/i2c@ff150000
+i2c-7 /sys/firmware/devicetree/base/i2c@ff160000
+i2c-8 /sys/firmware/devicetree/base/i2c@ff3e0000
+i2c-9 /sys/firmware/devicetree/base/hdmi@ff940000
+/sys/kernel/debug/pinctrl/pinctrl/pinmux-pins:pin 71 (gpio2-7): ff160000.i2c (GPIO UNCLAIMED) function i2c7 group i2c7-xfer
+/sys/kernel/debug/pinctrl/pinctrl/pinmux-pins:pin 72 (gpio2-8): ff160000.i2c (GPIO UNCLAIMED) function i2c7 group i2c7-xfer
+/sys/kernel/debug/pinctrl/pinctrl/pinmux-pins:pin 73 (gpio2-9): ff150000.i2c (GPIO UNCLAIMED) function i2c6 group i2c6-xfer
+/sys/kernel/debug/pinctrl/pinctrl/pinmux-pins:pin 74 (gpio2-10): ff150000.i2c (GPIO UNCLAIMED) function i2c6 group i2c6-xfer
+/home/jcfh/catkin_ws/src/usb_cam
+4096

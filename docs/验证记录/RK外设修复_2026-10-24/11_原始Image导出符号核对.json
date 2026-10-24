@@ -1,0 +1,8 @@
+{
+  "table_start": "0x108d4f0",
+  "table_end": "0x10b47a0",
+  "exports": 10027,
+  "required": 88,
+  "missing": [],
+  "passed": true
+}

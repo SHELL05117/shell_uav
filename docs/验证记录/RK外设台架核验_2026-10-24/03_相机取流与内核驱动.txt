@@ -1,0 +1,136 @@
+
+CAMERA_STREAM_TEST
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 60.39 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+camera_stream_exit=0
+
+CAMERA_JPEG_CAPTURE
+Input #0, video4linux2,v4l2, from '/dev/video10':
+  Duration: N/A, start: 695.740460, bitrate: N/A
+    Stream #0:0: Video: mjpeg, yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 1000k tbn, 1000k tbc
+Output #0, image2, to '/tmp/rk-camera-check-20261024.jpg':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0: Video: mjpeg, yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, q=2-31, 30 fps, 30 tbr, 1000k tbn, 1000k tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (copy)
+frame=    1 fps=0.0 q=-1.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=0.00126x    
+video:110kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+camera_capture_exit=0
+-rw-rw-r-- 1 jcfh jcfh 112762 Oct 24 02:19 /tmp/rk-camera-check-20261024.jpg
+
+KERNEL_FILES
+/boot:
+total 8
+drwxr-xr-x  2 root root 4096 Apr 24  2018 .
+drwxr-xr-x 21 root root 4096 Mar  2  2023 ..
+
+/lib/modules:
+total 12
+drwxr-xr-x  3 root root 4096 Oct 22 14:59 .
+drwxr-xr-x 12 root root 4096 Oct 22 14:59 ..
+drwxr-xr-x  3 root root 4096 Oct 22 14:59 4.4.194
+
+/lib/modules/4.4.194:
+total 108
+drwxr-xr-x 3 root root  4096 Oct 22 14:59 .
+drwxr-xr-x 3 root root  4096 Oct 22 14:59 ..
+drwxr-xr-x 4 root root  4096 Oct 22 14:49 kernel
+-rw-r--r-- 1 root root   470 Oct 22 14:59 modules.alias
+-rw-r--r-- 1 root root   545 Oct 22 14:59 modules.alias.bin
+-rw-r--r-- 1 root root 30423 Oct 22 14:49 modules.builtin
+-rw-r--r-- 1 root root     0 Oct 22 14:59 modules.builtin.alias.bin
+-rw-r--r-- 1 root root 32543 Oct 22 14:59 modules.builtin.bin
+-rw-r--r-- 1 root root   246 Oct 22 14:59 modules.dep
+-rw-r--r-- 1 root root   544 Oct 22 14:59 modules.dep.bin
+-rw-r--r-- 1 root root     0 Oct 22 14:59 modules.devname
+-rw-r--r-- 1 root root   195 Oct 22 14:49 modules.order
+-rw-r--r-- 1 root root    55 Oct 22 14:59 modules.softdep
+-rw-r--r-- 1 root root   943 Oct 22 14:59 modules.symbols
+-rw-r--r-- 1 root root  1153 Oct 22 14:59 modules.symbols.bin
+
+/usr/src:
+total 12
+drwxr-xr-x  3 root root 4096 Oct 24 00:46 .
+drwxr-xr-x 10 root root 4096 Oct 20 18:13 ..
+lrwxrwxrwx  1 root root   21 Dec 23  2016 gmock -> googletest/googlemock
+drwxr-xr-x  4 root root 4096 Oct 24 00:45 googletest
+lrwxrwxrwx  1 root root   21 Dec 23  2016 gtest -> googletest/googletest
+total 0
+drwxr-xr-x 2 root root 0 Mar  2  2023 GobiNet-LS
+drwxr-xr-x 2 root root 0 Mar  2  2023 asix
+drwxr-xr-x 2 root root 0 Mar  2  2023 ax88179_178a
+drwxr-xr-x 2 root root 0 Mar  2  2023 bfusb
+drwxr-xr-x 2 root root 0 Mar  2  2023 cdc_ether
+drwxr-xr-x 2 root root 0 Mar  2  2023 cdc_mbim
+drwxr-xr-x 2 root root 0 Mar  2  2023 cdc_ncm
+drwxr-xr-x 2 root root 0 Mar  2  2023 cdc_wdm
+drwxr-xr-x 2 root root 0 Mar  2  2023 cdc_xr_usb_serial
+drwxr-xr-x 2 root root 0 Mar  2  2023 cp210x
+drwxr-xr-x 2 root root 0 Mar  2  2023 ftdi_sio
+drwxr-xr-x 2 root root 0 Mar  2  2023 hub
+drwxr-xr-x 2 root root 0 Mar  2  2023 keyspan
+drwxr-xr-x 2 root root 0 Mar  2  2023 option
+drwxr-xr-x 2 root root 0 Mar  2  2023 oti6858
+drwxr-xr-x 2 root root 0 Mar  2  2023 pl2303
+drwxr-xr-x 2 root root 0 Mar  2  2023 qcserial
+drwxr-xr-x 2 root root 0 Mar  2  2023 r8152
+drwxr-xr-x 2 root root 0 Mar  2  2023 rndis_host
+drwxr-xr-x 2 root root 0 Mar  2  2023 rndis_wlan
+drwxr-xr-x 2 root root 0 Mar  2  2023 rtk_btusb
+drwxr-xr-x 2 root root 0 Mar  2  2023 rtl8150
+drwxr-xr-x 2 root root 0 Mar  2  2023 rtl8188eu
+drwxr-xr-x 2 root root 0 Mar  2  2023 rtl8723du
+drwxr-xr-x 2 root root 0 Mar  2  2023 sierra
+drwxr-xr-x 2 root root 0 Mar  2  2023 snd-usb-audio
+drwxr-xr-x 2 root root 0 Mar  2  2023 uas
+drwxr-xr-x 2 root root 0 Mar  2  2023 usb
+drwxr-xr-x 2 root root 0 Mar  2  2023 usb-storage
+drwxr-xr-x 2 root root 0 Mar  2  2023 usbfs
+drwxr-xr-x 2 root root 0 Mar  2  2023 usbhid
+drwxr-xr-x 2 root root 0 Mar  2  2023 usbserial
+drwxr-xr-x 2 root root 0 Mar  2  2023 usbserial_generic
+drwxr-xr-x 2 root root 0 Mar  2  2023 usbtouchscreen
+drwxr-xr-x 2 root root 0 Mar  2  2023 uvcvideo
+kernel/drivers/usb/serial/cp210x.ko
+kernel/drivers/usb/serial/ftdi_sio.ko
+/lib/modules/4.4.194/modules.alias.bin
+/lib/modules/4.4.194/modules.order
+/lib/modules/4.4.194/modules.builtin.bin
+/lib/modules/4.4.194/modules.dep
+/lib/modules/4.4.194/modules.builtin
+/lib/modules/4.4.194/modules.dep.bin
+/lib/modules/4.4.194/modules.symbols
+/lib/modules/4.4.194/modules.softdep
+/lib/modules/4.4.194/modules.builtin.alias.bin
+/lib/modules/4.4.194/modules.symbols.bin
+/lib/modules/4.4.194/modules.devname
+/lib/modules/4.4.194/modules.alias
+
+LIVE_USB
+Bus 004 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 006: ID 3185:0038  
+Bus 003 Device 004: ID 0bda:9143 Realtek Semiconductor Corp. 
+Bus 003 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+/:  Bus 06.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 05.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 5000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M
+/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 2: Dev 4, If 0, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 2: Dev 4, If 1, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 4: Dev 6, If 0, Class=Communications, Driver=, 12M
+        |__ Port 4: Dev 6, If 1, Class=CDC Data, Driver=, 12M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 1, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 2, Class=Vendor Specific Class, Driver=rtl8723du, 480M

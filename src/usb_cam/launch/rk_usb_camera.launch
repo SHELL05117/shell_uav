@@ -1,0 +1,20 @@
+<launch>
+  <!-- Camera only: no mission, servo or MAVROS nodes. -->
+  <arg name="video_device" default="/dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0" />
+  <arg name="width" default="1280" />
+  <arg name="height" default="720" />
+  <arg name="framerate" default="30" />
+  <arg name="pixel_format" default="mjpeg" />
+  <arg name="camera_info_url" default="" />
+  <node pkg="usb_cam" type="usb_cam_node" name="camera" output="screen">
+    <param name="video_device" value="$(arg video_device)" />
+    <param name="image_width" value="$(arg width)" />
+    <param name="image_height" value="$(arg height)" />
+    <param name="framerate" value="$(arg framerate)" />
+    <param name="pixel_format" value="$(arg pixel_format)" />
+    <param name="io_method" value="mmap" />
+    <param name="camera_frame_id" value="camera" />
+    <param name="camera_info_url" value="$(arg camera_info_url)" />
+    <param name="autofocus" value="false" />
+  </node>
+</launch>

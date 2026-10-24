@@ -1,0 +1,58 @@
+interface=0 kernel_driver_active=0
+interface=1 kernel_driver_active=0
+claim_interface=0 result=0
+claim_interface=1 result=0
+cdc_line_coding_result=7 cdc_dtr_result=0
+MESSAGE id=83 sys=1 comp=1 payload_length=32
+MESSAGE id=331 sys=1 comp=1 payload_length=232
+MESSAGE id=140 sys=1 comp=1 payload_length=40
+MESSAGE id=30 sys=1 comp=1 ATTITUDE roll=0.02365 pitch=0.01921 yaw=-3.07817
+MESSAGE id=31 sys=1 comp=1 payload_length=32
+MESSAGE id=105 sys=1 comp=1 HIGHRES_IMU accel=(0.2092,-0.2637,-9.8199) gyro=(-0.0039,0.0038,0.0019)
+MESSAGE id=26 sys=1 comp=1 payload_length=24
+MESSAGE id=116 sys=1 comp=1 payload_length=24
+MESSAGE id=36 sys=1 comp=1 payload_length=12
+MESSAGE id=74 sys=1 comp=1 payload_length=17
+MESSAGE id=111 sys=1 comp=1 payload_length=14
+MESSAGE id=141 sys=1 comp=1 payload_length=32
+MESSAGE id=230 sys=1 comp=1 payload_length=41
+MESSAGE id=0 sys=1 comp=1 HEARTBEAT type=2 autopilot=12 base_mode=81 armed=0 custom_mode=65536 system_status=3
+MESSAGE id=147 sys=1 comp=1 payload_length=49
+MESSAGE id=245 sys=1 comp=1 payload_length=2
+MESSAGE id=4 sys=1 comp=1 payload_length=9
+MESSAGE id=1 sys=1 comp=1 SYS_STATUS present=2452127756 enabled=2452127756 health=2184085519 voltage_battery_mV=65535
+MESSAGE id=241 sys=1 comp=1 payload_length=20
+MESSAGE id=8 sys=1 comp=1 payload_length=21
+MESSAGE id=410 sys=1 comp=1 payload_length=13
+MESSAGE id=411 sys=1 comp=1 payload_length=2
+MESSAGE id=253 sys=1 comp=1 STATUSTEXT severity=6 text=Data link regained	
+GPS_MESSAGE_REQUEST id=24 result=0 bytes=44
+MESSAGE id=77 sys=1 comp=1 COMMAND_ACK command=512 result=2
+GPS_MESSAGE_REQUEST id=124 result=0 bytes=44
+SUMMARY seconds=22.002 bytes=458968 gcs_heartbeat_bytes=462 gps_query_bytes=88 usb_errors=0
+COUNT id=0 count=23
+COUNT id=1 count=23
+COUNT id=4 count=23
+COUNT id=8 count=23
+COUNT id=26 count=541
+COUNT id=30 count=1080
+COUNT id=31 count=1080
+COUNT id=36 count=432
+COUNT id=74 count=432
+COUNT id=77 count=2
+COUNT id=83 count=174
+COUNT id=105 count=1080
+COUNT id=111 count=218
+COUNT id=116 count=540
+COUNT id=140 count=649
+COUNT id=141 count=218
+COUNT id=147 count=12
+COUNT id=230 count=108
+COUNT id=241 count=54
+COUNT id=245 count=44
+COUNT id=253 count=1
+COUNT id=331 count=649
+COUNT id=410 count=2
+COUNT id=411 count=8
+parser_received=7416 parser_drop=0 parser_errors=0
+cdc_dtr_release_result=0

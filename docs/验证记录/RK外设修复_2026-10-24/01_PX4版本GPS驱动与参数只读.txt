@@ -1,0 +1,15 @@
+<stdin>: In function ‘int main(int, char**)’:
+<stdin>:87:160: error: too few arguments to function ‘uint16_t mavlink_msg_serial_control_pack(uint8_t, uint8_t, mavlink_message_t*, uint8_t, uint8_t, uint16_t, uint32_t, uint8_t, const uint8_t*, uint8_t, uint8_t)’
+In file included from /opt/ros/melodic/include/mavlink/v2.0/common/common.h:2689:0,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/mavlink.h:32,
+                 from <stdin>:11:
+/opt/ros/melodic/include/mavlink/v2.0/common/./mavlink_msg_serial_control.h:75:24: note: declared here
+ static inline uint16_t mavlink_msg_serial_control_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<stdin>:170:95: error: too few arguments to function ‘uint16_t mavlink_msg_serial_control_pack(uint8_t, uint8_t, mavlink_message_t*, uint8_t, uint8_t, uint16_t, uint32_t, uint8_t, const uint8_t*, uint8_t, uint8_t)’
+In file included from /opt/ros/melodic/include/mavlink/v2.0/common/common.h:2689:0,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/mavlink.h:32,
+                 from <stdin>:11:
+/opt/ros/melodic/include/mavlink/v2.0/common/./mavlink_msg_serial_control.h:75:24: note: declared here
+ static inline uint16_t mavlink_msg_serial_control_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
