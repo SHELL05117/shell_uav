@@ -1,0 +1,21 @@
+{
+  "verified_at": "2026-10-25T04:22:47.063656+08:00",
+  "source_tag": "1024",
+  "source_commit": "2f1853ba9b75f9a912541ec2a8df1d1c767d108f",
+  "archive_path": "D:\\SHELL\\UAV_sim_handoff_1024_2026-10-24.zip",
+  "archive_bytes": 984766117,
+  "archive_sha256": "e46431a40ec894a03950d6f04be5c6182b5659c9da0bc6d5c5078fa27a42b720",
+  "payload_files": 766,
+  "manifest_passed": true,
+  "independent_git_blob_checks": 753,
+  "git_snapshot_passed": true,
+  "native_powershell_sha256_passed": true,
+  "dataset_jpg": 180,
+  "dataset_xml": 180,
+  "dataset_sha256": "6a9d4537ce546ae5bb0c429f565edaf3f0e44c6e0bd628b7faf5a061c9666b41",
+  "excluded_checkpoint_and_engine_files": true,
+  "third_party_runtime_packages_included": false,
+  "third_party_git_remote_check": "PX4 ls-remote timed out on sender; recipient must resolve tag and submodules",
+  "python_and_powershell_syntax_passed": true,
+  "environment_and_simulation_executed": false
+}

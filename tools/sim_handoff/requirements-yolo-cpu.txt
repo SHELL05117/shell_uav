@@ -1,0 +1,7 @@
+# Candidate for isolated x86_64 Python 3.10/3.11 CPU process; not ROS Python2.
+# Recipient must resolve wheels and record hashes; no CUDA/Torch training required.
+numpy==1.26.4
+Pillow==10.4.0
+onnx==1.16.2
+onnxruntime==1.19.2
+opencv-python-headless==4.10.0.84

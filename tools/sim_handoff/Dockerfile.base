@@ -1,0 +1,14 @@
+# Untested recipient-side build template; image/repository availability is checked there.
+# This builds general ROS C++ dependencies, not PX4/Gazebo GUI/YOLO integration.
+ARG ROS_IMAGE=ros:melodic-ros-base-bionic
+FROM ${ROS_IMAGE}
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ENV DEBIAN_FRONTEND=noninteractive
+COPY apt-common.txt apt-ros-common.txt /opt/shell-handoff/
+RUN apt-get update \
+    && xargs -r -a /opt/shell-handoff/apt-common.txt apt-get install -y --no-install-recommends \
+    && sed "s/\${ROS_DISTRO}/${ROS_DISTRO}/g" /opt/shell-handoff/apt-ros-common.txt \
+       | xargs -r apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /workspace
+CMD ["bash"]

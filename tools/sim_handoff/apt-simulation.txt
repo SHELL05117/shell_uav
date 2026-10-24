@@ -1,0 +1,7 @@
+# Expand ${ROS_DISTRO} only after selecting the matching Linux/ROS profile.
+ros-${ROS_DISTRO}-gazebo-ros-pkgs
+ros-${ROS_DISTRO}-gazebo-plugins
+ros-${ROS_DISTRO}-cartographer-ros
+ros-${ROS_DISTRO}-foxglove-bridge
+# Gazebo Classic9/11 and development packages must match the selected profile.
+# PX4 dependencies/submodules and GeographicLib datasets are separate.
