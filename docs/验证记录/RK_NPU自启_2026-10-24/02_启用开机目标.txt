@@ -1,0 +1,11 @@
+PC capture: 2026-10-25T03:30:07.0426088+08:00
+Created symlink /etc/systemd/system/multi-user.target.wants/shell-npu.target → /etc/systemd/system/shell-npu.target.
+enabled
+JOB UNIT                       TYPE  STATE  
+123 shell-npu-power.service    start running
+122 shell-npu-firmware.service start waiting
+120 shell-npu.target           start waiting
+121 shell-npu-proxy.service    start waiting
+
+4 jobs listed.
+ExitCode=0

@@ -1,0 +1,46 @@
+PC capture: 2026-10-25T03:33:15.0249550+08:00
+e4f2e041-2c28-4e31-9d65-9b813b909f3d
+enabled
+active
+active
+active
+active
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[   10.439588] toybrick python3[323]: Write LBA from file (100%)
+[   10.578307] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[   10.598650] toybrick python3[323]: NPU stage: run-system
+[   10.735386] toybrick python3[323]: Not found config.ini
+[   10.735386] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[   10.735386] toybrick python3[323]: start to run system...
+[   10.735386] toybrick python3[323]: run system ok.
+[   10.741342] toybrick python3[323]: NPU RAM boot commands completed; verify runtime USB and proxy separately.
+[   16.026726] toybrick python3[323]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   26.073238] toybrick python3[323]: NPU firmware stage ready
+[   26.130302] toybrick systemd[1]: Started SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[   26.131257] toybrick systemd[1]: Starting SHELL RK3399Pro NPU transfer proxy and device readiness...
+[   26.144440] toybrick npu_transfer_proxy[425]: I NPUTransfer: Starting NPU Transfer Proxy, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51), devid = 14ade952d732d316, pid = 425:1
+[   26.335712] toybrick python3[426]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   26.359516] toybrick python3[426]: List of ntb devices attached
+[   26.359516] toybrick python3[426]: 14ade952d732d316    a0096b1e    USB_DEVICE
+[   26.359516] toybrick python3[426]: NPU proxy device ready
+[   26.385426] toybrick systemd[1]: Started SHELL RK3399Pro NPU transfer proxy and device readiness.
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+api=1.7.5 (bb79b30 build: 2023-07-18 16:49:12) driver=1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+head 0 channels=33 side=80 elements=211200
+head 1 channels=33 side=40 elements=52800
+head 2 channels=33 side=20 elements=13200
+1 IMG_2706 56.3862 ms
+completed=1
+50a6b0dbc321ffd071a653a321f26c4fe82231219eb32cefc8c83120ddea5b6a  autostart_pre/IMG_2706_0.f32
+00474fe8bb35ee682cb25930611fcf6c4fc0a7efcdfe3bc7176288daef844e7f  autostart_pre/IMG_2706_1.f32
+5a16556a94121c41c5efe681f17d4177ad3ea18b00b738f15b07a04dee0350d2  autostart_pre/IMG_2706_2.f32
+50a6b0dbc321ffd071a653a321f26c4fe82231219eb32cefc8c83120ddea5b6a  autostart_post/IMG_2706_0.f32
+00474fe8bb35ee682cb25930611fcf6c4fc0a7efcdfe3bc7176288daef844e7f  autostart_post/IMG_2706_1.f32
+5a16556a94121c41c5efe681f17d4177ad3ea18b00b738f15b07a04dee0350d2  autostart_post/IMG_2706_2.f32
+ExitCode=0

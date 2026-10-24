@@ -1,0 +1,14 @@
+[Unit]
+Description=SHELL RK3399Pro NPU owned power control
+Requires=sys-kernel-debug.mount
+After=local-fs.target systemd-udev-trigger.service sys-kernel-debug.mount
+PartOf=shell-npu.target
+RequiresMountsFor=/home/jcfh/npu_runtime_175 /home/jcfh/RK3399Pro_npu
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/shell-rk-npu/rk_npu_power.py on --profile prod-20181217 --usb-timeout 15
+ExecStop=/usr/bin/python3 /usr/local/lib/shell-rk-npu/rk_npu_power.py off --profile prod-20181217
+TimeoutStartSec=30
+TimeoutStopSec=30

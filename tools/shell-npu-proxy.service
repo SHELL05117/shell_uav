@@ -1,12 +1,15 @@
 [Unit]
-Description=SHELL RK3399Pro NPU transfer proxy (start after NPU firmware boot)
-After=systemd-udevd.service
+Description=SHELL RK3399Pro NPU transfer proxy and device readiness
+Requires=shell-npu-firmware.service
+After=shell-npu-firmware.service
+PartOf=shell-npu.target
 
 [Service]
 Type=simple
 ExecStart=/usr/local/bin/npu_transfer_proxy
-Restart=on-failure
-RestartSec=2
+ExecStartPost=/usr/bin/python3 /usr/local/lib/shell-rk-npu/rk_npu_autostart.py proxy
+# Replacing only this process previously hung model loading. Restart the target
+# for an ordered full NPU cycle; never silently reset NPU beneath a client.
+Restart=no
+TimeoutStartSec=80
 TimeoutStopSec=5
-
-# Deliberately no Install section: power and firmware boot are manual for now.

@@ -1,0 +1,40 @@
+PC capture: 2026-10-25T03:32:42.5571103+08:00
+e4f2e041-2c28-4e31-9d65-9b813b909f3d
+ 02:07:58 up 0 min,  0 users,  load average: 0.31, 0.08, 0.03
+Id=shell-npu.target
+ActiveState=inactive
+SubState=dead
+
+Result=success
+Id=shell-npu-power.service
+ActiveState=active
+SubState=exited
+
+Result=success
+Id=shell-npu-firmware.service
+ActiveState=activating
+SubState=start
+
+Result=success
+Id=shell-npu-proxy.service
+ActiveState=inactive
+SubState=dead
+List of ntb devices attached
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[   10.439588] toybrick python3[323]: Write LBA from file (93%)
+[   10.439588] toybrick python3[323]: Write LBA from file (94%)
+[   10.439588] toybrick python3[323]: Write LBA from file (95%)
+[   10.439588] toybrick python3[323]: Write LBA from file (96%)
+[   10.439588] toybrick python3[323]: Write LBA from file (97%)
+[   10.439588] toybrick python3[323]: Write LBA from file (98%)
+[   10.439588] toybrick python3[323]: Write LBA from file (99%)
+[   10.439588] toybrick python3[323]: Write LBA from file (100%)
+[   10.578307] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[   10.598650] toybrick python3[323]: NPU stage: run-system
+[   10.735386] toybrick python3[323]: Not found config.ini
+[   10.735386] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[   10.735386] toybrick python3[323]: start to run system...
+[   10.735386] toybrick python3[323]: run system ok.
+[   10.741342] toybrick python3[323]: NPU RAM boot commands completed; verify runtime USB and proxy separately.
+[   16.026726] toybrick python3[323]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+ExitCode=0

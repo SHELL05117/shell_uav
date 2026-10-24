@@ -1,0 +1,40 @@
+PC capture: 2026-10-25T03:33:47.6418171+08:00
+e4f2e041-2c28-4e31-9d65-9b813b909f3d
+enabled
+Id=shell-npu.target
+ActiveState=active
+SubState=active
+FragmentPath=/etc/systemd/system/shell-npu.target
+
+Result=success
+ExecMainStatus=0
+Id=shell-npu-power.service
+ActiveState=active
+SubState=exited
+FragmentPath=/etc/systemd/system/shell-npu-power.service
+
+Result=success
+ExecMainStatus=0
+Id=shell-npu-firmware.service
+ActiveState=active
+SubState=exited
+FragmentPath=/etc/systemd/system/shell-npu-firmware.service
+
+Result=success
+ExecMainStatus=0
+Id=shell-npu-proxy.service
+ActiveState=active
+SubState=running
+FragmentPath=/etc/systemd/system/shell-npu-proxy.service
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+d9f151d62a7a049d53bf68f4c28c47858389379a319ae8ff3f1dfd18904bc2ba  /usr/local/lib/shell-rk-npu/rk_npu_power.py
+ad56be93af9158ed1d059b9bf5c3a7358de5c690481fc48729f2c40d345e3a6a  /usr/local/lib/shell-rk-npu/rk_npu_autostart.py
+6e543f107c1efec89fb11b7ff3b4699e0bb8f55a0b0b2049c79cd611524afe47  /usr/local/lib/shell-rk-npu/rk_npu_boot.sh
+2fc9d0a2d6d9fb25b334290a03bb9d0b51fd8386ced241b0743416b2daceeb9a  /etc/systemd/system/shell-npu-power.service
+b1ac95f087ab358e5f757350edf43f17aafee67cf2e9c38695d9c03516697211  /etc/systemd/system/shell-npu-firmware.service
+f632164e4cc8bcdaa86fb1f61877ee72d687e29e093f3ce2d92cc9e435669d0f  /etc/systemd/system/shell-npu-proxy.service
+5f3498370d580ad7caffb5504560e61780f03b7a02e7dcc118543925ea810d43  /etc/systemd/system/shell-npu.target
+File /lib/systemd/system/systemd-udevd.service:35 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+ExitCode=0

@@ -1,0 +1,7 @@
+[Unit]
+Description=SHELL RK3399Pro NPU power, firmware and transfer proxy
+Requires=shell-npu-proxy.service
+After=shell-npu-proxy.service
+
+[Install]
+WantedBy=multi-user.target

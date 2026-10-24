@@ -1,0 +1,12 @@
+[Unit]
+Description=SHELL RK3399Pro NPU firmware RAM boot and USB readiness
+Requires=shell-npu-power.service
+After=shell-npu-power.service
+PartOf=shell-npu.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/jcfh/npu_runtime_175
+ExecStart=/usr/bin/python3 /usr/local/lib/shell-rk-npu/rk_npu_autostart.py firmware
+TimeoutStartSec=270

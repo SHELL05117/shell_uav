@@ -12,10 +12,12 @@ fw=$repo/drivers/npu_firmware/npu_fw
 expected_commit=8858114555f1700e41e185b14ec3d266342f8059
 expected_tool=09dfa63f4a9f3e38bab3c0ee2731a08e96e0fb52f21d259a028080204621da4c
 [[ $(sha256sum "$tool" | cut -d ' ' -f 1) == "$expected_tool" ]] || { echo 'Tool SHA256 differs' >&2; exit 1; }
-[[ $(git -C "$repo" rev-parse HEAD) == "$expected_commit" ]] || { echo 'Firmware repository commit differs' >&2; exit 1; }
+# systemd root has no sudo caller identity; trust only this audited repository
+# for these read-only Git checks, without changing global safe.directory.
+[[ $(git -c safe.directory="$repo" -C "$repo" rev-parse HEAD) == "$expected_commit" ]] || { echo 'Firmware repository commit differs' >&2; exit 1; }
 for name in MiniLoaderAll.bin uboot.img trust.img boot.img; do
     path=drivers/npu_firmware/npu_fw/$name
-    [[ $(git -C "$repo" hash-object "$path") == $(git -C "$repo" rev-parse "HEAD:$path") ]] \
+    [[ $(git -c safe.directory="$repo" -C "$repo" hash-object "$path") == $(git -c safe.directory="$repo" -C "$repo" rev-parse "HEAD:$path") ]] \
         || { echo "Firmware blob differs: $name" >&2; exit 1; }
 done
 

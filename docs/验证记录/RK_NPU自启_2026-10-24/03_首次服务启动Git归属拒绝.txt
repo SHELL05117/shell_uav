@@ -1,0 +1,22 @@
+PC capture: 2026-10-25T03:30:57.9652782+08:00
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[  344.185045] toybrick systemd[1]: Starting SHELL RK3399Pro NPU owned power control...
+[  344.813091] toybrick python3[4369]: {
+[  344.813091] toybrick python3[4369]:   "firmware_loaded_by_script": false,
+[  344.813091] toybrick python3[4369]:   "npu_usb": {
+[  344.813091] toybrick python3[4369]:     "3-1.1": "2207:180a"
+[  344.813091] toybrick python3[4369]:   },
+[  344.813091] toybrick python3[4369]:   "result": "power_on_usb_visible"
+[  344.813091] toybrick python3[4369]: }
+[  344.861525] toybrick systemd[1]: Started SHELL RK3399Pro NPU owned power control.
+[  344.866943] toybrick systemd[1]: Starting SHELL RK3399Pro NPU firmware RAM boot and USB readiness...
+[  345.152147] toybrick python3[4387]: fatal: detected dubious ownership in repository at '/home/jcfh/RK3399Pro_npu'
+[  345.152147] toybrick python3[4387]: To add an exception for this directory, call:
+[  345.152147] toybrick python3[4387]:         git config --global --add safe.directory /home/jcfh/RK3399Pro_npu
+[  345.155070] toybrick python3[4387]: Firmware repository commit differs
+[  345.157568] toybrick python3[4387]: NPU startup failed: Command '['/bin/bash', '/usr/local/lib/shell-rk-npu/rk_npu_boot.sh', 'start']' returned non-zero exit status 1.
+[  345.183515] toybrick systemd[1]: shell-npu-firmware.service: Main process exited, code=exited, status=1/FAILURE
+[  345.185768] toybrick systemd[1]: shell-npu-firmware.service: Failed with result 'exit-code'.
+[  345.186536] toybrick systemd[1]: Failed to start SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[  345.187275] toybrick systemd[1]: Dependency failed for SHELL RK3399Pro NPU transfer proxy and device readiness.
+[  345.190691] toybrick systemd[1]: shell-npu-proxy.service: Job shell-npu-proxy.service/start failed with result 'dependency'.

@@ -1,0 +1,5 @@
+PC capture: 2026-10-25T03:32:15.2991125+08:00
+enabled
+1c302562-7ccf-4bc8-82f4-6bd95bf9f84c
+ 02:15:28 up 7 min,  2 users,  load average: 0.59, 0.46, 0.22
+ExitCode=0

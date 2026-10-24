@@ -1,0 +1,110 @@
+PC capture: 2026-10-25T03:31:58.5095864+08:00
+Id=shell-npu.target
+ActiveState=inactive
+SubState=dead
+
+Result=success
+Id=shell-npu-power.service
+ActiveState=deactivating
+SubState=stop
+
+Result=success
+Id=shell-npu-firmware.service
+ActiveState=inactive
+SubState=dead
+
+Result=success
+Id=shell-npu-proxy.service
+ActiveState=inactive
+SubState=dead
+{
+  "action": "read_only_check",
+  "cold_start_blockers": [],
+  "hardware": {
+    "boot_id": "1c302562-7ccf-4bc8-82f4-6bd95bf9f84c",
+    "busy": [],
+    "clock24_count": 0,
+    "clock24_prepare": 0,
+    "clock24_rate": 24000000,
+    "clock32_count": 0,
+    "clock_gate": 4092,
+    "clock_select": 8326,
+    "compatible": [
+      "rockchip,rk3399pro-toybrick-prod-linux",
+      "rockchip,rk3399pro"
+    ],
+    "exported": [],
+    "gpio": {
+      "4": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "10": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "11": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "32": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "35": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "36": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "54": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "55": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "56": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      }
+    },
+    "kernel": "4.4.194",
+    "machine": "aarch64",
+    "npu_usb": {}
+  },
+  "ownership_journal": null,
+  "profile": "prod-20181217",
+  "profile_pcb_revision_verified": false
+}
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[  416.808878] toybrick python3[5103]: NPU firmware stage ready
+[  416.838641] toybrick systemd[1]: Started SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[  416.842294] toybrick systemd[1]: Starting SHELL RK3399Pro NPU transfer proxy and device readiness...
+[  416.853381] toybrick npu_transfer_proxy[5426]: I NPUTransfer: Starting NPU Transfer Proxy, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51), devid = 14ade952d732d316, pid = 5426:1
+[  417.127712] toybrick python3[5427]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[  417.157927] toybrick python3[5427]: List of ntb devices attached
+[  417.157927] toybrick python3[5427]: 14ade952d732d316    a0096b1e    USB_DEVICE
+[  417.157927] toybrick python3[5427]: NPU proxy device ready
+[  417.188328] toybrick systemd[1]: Started SHELL RK3399Pro NPU transfer proxy and device readiness.
+[  455.366166] toybrick systemd[1]: Stopping SHELL RK3399Pro NPU transfer proxy and device readiness...
+[  455.368460] toybrick systemd[1]: Stopped SHELL RK3399Pro NPU transfer proxy and device readiness.
+[  455.370807] toybrick systemd[1]: Stopped SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[  455.374045] toybrick systemd[1]: Stopping SHELL RK3399Pro NPU owned power control...
+[  455.584394] toybrick python3[5929]: {
+[  455.584394] toybrick python3[5929]:   "result": "owned_resources_powered_off_and_released"
+[  455.584394] toybrick python3[5929]: }
+[  455.609184] toybrick systemd[1]: Stopped SHELL RK3399Pro NPU owned power control.
+ExitCode=0

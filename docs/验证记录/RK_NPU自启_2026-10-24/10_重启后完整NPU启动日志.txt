@@ -1,0 +1,226 @@
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[    4.250499] toybrick systemd[1]: Starting SHELL RK3399Pro NPU owned power control...
+[    4.956337] toybrick python3[294]: {
+[    4.956337] toybrick python3[294]:   "firmware_loaded_by_script": false,
+[    4.956337] toybrick python3[294]:   "npu_usb": {
+[    4.956337] toybrick python3[294]:     "3-1.1": "2207:180a"
+[    4.956337] toybrick python3[294]:   },
+[    4.956337] toybrick python3[294]:   "result": "power_on_usb_visible"
+[    4.956337] toybrick python3[294]: }
+[    4.993270] toybrick systemd[1]: Started SHELL RK3399Pro NPU owned power control.
+[    5.001237] toybrick systemd[1]: Starting SHELL RK3399Pro NPU firmware RAM boot and USB readiness...
+[    5.785670] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[    5.933200] toybrick python3[323]: Not found config.ini
+[    5.933200] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[    5.933200] toybrick python3[323]: List of rockusb connected(1)
+[    5.933200] toybrick python3[323]: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=30101        Mode=Maskrom
+[    6.094124] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[    6.114482] toybrick python3[323]: NPU stage: loader
+[    6.872589] toybrick python3[323]: Not found config.ini
+[    6.872589] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[    6.872589] toybrick python3[323]: Download boot...
+[    6.872589] toybrick python3[323]: Waiting for loader...
+[    6.872589] toybrick python3[323]: Download boot ok.
+[    8.030670] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[    8.049878] toybrick python3[323]: NPU stage: loader-ready
+[    8.167309] toybrick python3[323]: Not found config.ini
+[    8.167309] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[    8.167309] toybrick python3[323]: Test Device OK.
+[    8.381221] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[    8.404461] toybrick python3[323]: NPU stage: uboot-RAM
+[    8.624526] toybrick python3[323]: Not found config.ini
+[    8.624526] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[    8.624526] toybrick python3[323]: Write LBA from file (3%)
+[    8.624526] toybrick python3[323]: Write LBA from file (6%)
+[    8.624526] toybrick python3[323]: Write LBA from file (9%)
+[    8.624526] toybrick python3[323]: Write LBA from file (12%)
+[    8.624526] toybrick python3[323]: Write LBA from file (15%)
+[    8.624526] toybrick python3[323]: Write LBA from file (18%)
+[    8.624526] toybrick python3[323]: Write LBA from file (21%)
+[    8.624526] toybrick python3[323]: Write LBA from file (25%)
+[    8.624526] toybrick python3[323]: Write LBA from file (28%)
+[    8.624526] toybrick python3[323]: Write LBA from file (31%)
+[    8.624526] toybrick python3[323]: Write LBA from file (34%)
+[    8.624526] toybrick python3[323]: Write LBA from file (37%)
+[    8.624526] toybrick python3[323]: Write LBA from file (40%)
+[    8.624526] toybrick python3[323]: Write LBA from file (43%)
+[    8.624526] toybrick python3[323]: Write LBA from file (46%)
+[    8.624526] toybrick python3[323]: Write LBA from file (50%)
+[    8.624526] toybrick python3[323]: Write LBA from file (53%)
+[    8.624526] toybrick python3[323]: Write LBA from file (56%)
+[    8.624526] toybrick python3[323]: Write LBA from file (59%)
+[    8.624526] toybrick python3[323]: Write LBA from file (62%)
+[    8.624526] toybrick python3[323]: Write LBA from file (65%)
+[    8.624526] toybrick python3[323]: Write LBA from file (68%)
+[    8.624526] toybrick python3[323]: Write LBA from file (71%)
+[    8.624526] toybrick python3[323]: Write LBA from file (75%)
+[    8.624526] toybrick python3[323]: Write LBA from file (78%)
+[    8.624526] toybrick python3[323]: Write LBA from file (81%)
+[    8.624526] toybrick python3[323]: Write LBA from file (84%)
+[    8.624526] toybrick python3[323]: Write LBA from file (87%)
+[    8.624526] toybrick python3[323]: Write LBA from file (90%)
+[    8.624526] toybrick python3[323]: Write LBA from file (93%)
+[    8.624526] toybrick python3[323]: Write LBA from file (96%)
+[    8.624526] toybrick python3[323]: Write LBA from file (100%)
+[    8.831809] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[    8.854416] toybrick python3[323]: NPU stage: trust-RAM
+[    9.075876] toybrick python3[323]: Not found config.ini
+[    9.075876] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[    9.075876] toybrick python3[323]: Write LBA from file (3%)
+[    9.075876] toybrick python3[323]: Write LBA from file (6%)
+[    9.075876] toybrick python3[323]: Write LBA from file (9%)
+[    9.075876] toybrick python3[323]: Write LBA from file (12%)
+[    9.075876] toybrick python3[323]: Write LBA from file (15%)
+[    9.075876] toybrick python3[323]: Write LBA from file (18%)
+[    9.075876] toybrick python3[323]: Write LBA from file (21%)
+[    9.075876] toybrick python3[323]: Write LBA from file (25%)
+[    9.075876] toybrick python3[323]: Write LBA from file (28%)
+[    9.075876] toybrick python3[323]: Write LBA from file (31%)
+[    9.075876] toybrick python3[323]: Write LBA from file (34%)
+[    9.075876] toybrick python3[323]: Write LBA from file (37%)
+[    9.075876] toybrick python3[323]: Write LBA from file (40%)
+[    9.075876] toybrick python3[323]: Write LBA from file (43%)
+[    9.075876] toybrick python3[323]: Write LBA from file (46%)
+[    9.075876] toybrick python3[323]: Write LBA from file (50%)
+[    9.075876] toybrick python3[323]: Write LBA from file (53%)
+[    9.075876] toybrick python3[323]: Write LBA from file (56%)
+[    9.075876] toybrick python3[323]: Write LBA from file (59%)
+[    9.075876] toybrick python3[323]: Write LBA from file (62%)
+[    9.075876] toybrick python3[323]: Write LBA from file (65%)
+[    9.075876] toybrick python3[323]: Write LBA from file (68%)
+[    9.075876] toybrick python3[323]: Write LBA from file (71%)
+[    9.075876] toybrick python3[323]: Write LBA from file (75%)
+[    9.075876] toybrick python3[323]: Write LBA from file (78%)
+[    9.075876] toybrick python3[323]: Write LBA from file (81%)
+[    9.075876] toybrick python3[323]: Write LBA from file (84%)
+[    9.075876] toybrick python3[323]: Write LBA from file (87%)
+[    9.075876] toybrick python3[323]: Write LBA from file (90%)
+[    9.075876] toybrick python3[323]: Write LBA from file (93%)
+[    9.075876] toybrick python3[323]: Write LBA from file (96%)
+[    9.075876] toybrick python3[323]: Write LBA from file (100%)
+[    9.294353] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[    9.302996] toybrick python3[323]: NPU stage: boot-RAM
+[    9.896818] toybrick python3[323]: Not found config.ini
+[    9.896818] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[    9.896818] toybrick python3[323]: Write LBA from file (0%)
+[    9.896818] toybrick python3[323]: Write LBA from file (1%)
+[    9.896818] toybrick python3[323]: Write LBA from file (2%)
+[    9.896818] toybrick python3[323]: Write LBA from file (3%)
+[    9.896818] toybrick python3[323]: Write LBA from file (4%)
+[    9.896818] toybrick python3[323]: Write LBA from file (5%)
+[    9.896818] toybrick python3[323]: Write LBA from file (6%)
+[    9.896818] toybrick python3[323]: Write LBA from file (7%)
+[    9.896818] toybrick python3[323]: Write LBA from file (8%)
+[    9.896818] toybrick python3[323]: Write LBA from file (9%)
+[    9.896818] toybrick python3[323]: Write LBA from file (10%)
+[    9.896818] toybrick python3[323]: Write LBA from file (11%)
+[    9.896818] toybrick python3[323]: Write LBA from file (12%)
+[    9.896818] toybrick python3[323]: Write LBA from file (13%)
+[    9.896818] toybrick python3[323]: Write LBA from file (14%)
+[    9.896818] toybrick python3[323]: Write LBA from file (15%)
+[    9.896818] toybrick python3[323]: Write LBA from file (16%)
+[    9.896818] toybrick python3[323]: Write LBA from file (17%)
+[    9.896818] toybrick python3[323]: Write LBA from file (18%)
+[    9.896818] toybrick python3[323]: Write LBA from file (19%)
+[    9.896818] toybrick python3[323]: Write LBA from file (20%)
+[    9.896818] toybrick python3[323]: Write LBA from file (21%)
+[    9.896818] toybrick python3[323]: Write LBA from file (22%)
+[    9.922955] toybrick python3[323]: Write LBA from file (23%)
+[    9.922955] toybrick python3[323]: Write LBA from file (24%)
+[    9.922955] toybrick python3[323]: Write LBA from file (25%)
+[    9.922955] toybrick python3[323]: Write LBA from file (26%)
+[    9.922955] toybrick python3[323]: Write LBA from file (27%)
+[    9.922955] toybrick python3[323]: Write LBA from file (28%)
+[    9.922955] toybrick python3[323]: Write LBA from file (29%)
+[    9.922955] toybrick python3[323]: Write LBA from file (30%)
+[    9.922955] toybrick python3[323]: Write LBA from file (31%)
+[    9.922955] toybrick python3[323]: Write LBA from file (32%)
+[    9.922955] toybrick python3[323]: Write LBA from file (33%)
+[    9.922955] toybrick python3[323]: Write LBA from file (34%)
+[    9.922955] toybrick python3[323]: Write LBA from file (35%)
+[    9.922955] toybrick python3[323]: Write LBA from file (36%)
+[    9.922955] toybrick python3[323]: Write LBA from file (37%)
+[    9.922955] toybrick python3[323]: Write LBA from file (38%)
+[    9.922955] toybrick python3[323]: Write LBA from file (39%)
+[    9.922955] toybrick python3[323]: Write LBA from file (40%)
+[    9.922955] toybrick python3[323]: Write LBA from file (41%)
+[    9.922955] toybrick python3[323]: Write LBA from file (42%)
+[    9.922955] toybrick python3[323]: Write LBA from file (43%)
+[    9.922955] toybrick python3[323]: Write LBA from file (44%)
+[    9.922955] toybrick python3[323]: Write LBA from file (45%)
+[    9.922955] toybrick python3[323]: Write LBA from file (46%)
+[    9.934091] toybrick python3[323]: Write LBA from file (46%)
+[   10.374909] toybrick python3[323]: Write LBA from file (46%)
+[   10.374909] toybrick python3[323]: Write LBA from file (47%)
+[   10.374909] toybrick python3[323]: Write LBA from file (48%)
+[   10.374909] toybrick python3[323]: Write LBA from file (49%)
+[   10.374909] toybrick python3[323]: Write LBA from file (50%)
+[   10.374909] toybrick python3[323]: Write LBA from file (51%)
+[   10.374909] toybrick python3[323]: Write LBA from file (52%)
+[   10.374909] toybrick python3[323]: Write LBA from file (53%)
+[   10.374909] toybrick python3[323]: Write LBA from file (54%)
+[   10.374909] toybrick python3[323]: Write LBA from file (55%)
+[   10.374909] toybrick python3[323]: Write LBA from file (56%)
+[   10.374909] toybrick python3[323]: Write LBA from file (57%)
+[   10.374909] toybrick python3[323]: Write LBA from file (58%)
+[   10.374909] toybrick python3[323]: Write LBA from file (59%)
+[   10.374909] toybrick python3[323]: Write LBA from file (60%)
+[   10.374909] toybrick python3[323]: Write LBA from file (61%)
+[   10.374909] toybrick python3[323]: Write LBA from file (62%)
+[   10.374909] toybrick python3[323]: Write LBA from file (63%)
+[   10.374909] toybrick python3[323]: Write LBA from file (64%)
+[   10.374909] toybrick python3[323]: Write LBA from file (65%)
+[   10.374909] toybrick python3[323]: Write LBA from file (66%)
+[   10.374909] toybrick python3[323]: Write LBA from file (67%)
+[   10.374909] toybrick python3[323]: Write LBA from file (68%)
+[   10.374909] toybrick python3[323]: Write LBA from file (69%)
+[   10.401848] toybrick python3[323]: Write LBA from file (69%)
+[   10.401848] toybrick python3[323]: Write LBA from file (70%)
+[   10.401848] toybrick python3[323]: Write LBA from file (71%)
+[   10.401848] toybrick python3[323]: Write LBA from file (72%)
+[   10.401848] toybrick python3[323]: Write LBA from file (73%)
+[   10.401848] toybrick python3[323]: Write LBA from file (74%)
+[   10.401848] toybrick python3[323]: Write LBA from file (75%)
+[   10.401848] toybrick python3[323]: Write LBA from file (76%)
+[   10.401848] toybrick python3[323]: Write LBA from file (77%)
+[   10.401848] toybrick python3[323]: Write LBA from file (78%)
+[   10.401848] toybrick python3[323]: Write LBA from file (79%)
+[   10.401848] toybrick python3[323]: Write LBA from file (80%)
+[   10.401848] toybrick python3[323]: Write LBA from file (81%)
+[   10.401848] toybrick python3[323]: Write LBA from file (82%)
+[   10.401848] toybrick python3[323]: Write LBA from file (83%)
+[   10.401848] toybrick python3[323]: Write LBA from file (84%)
+[   10.401848] toybrick python3[323]: Write LBA from file (85%)
+[   10.401848] toybrick python3[323]: Write LBA from file (86%)
+[   10.401848] toybrick python3[323]: Write LBA from file (87%)
+[   10.401848] toybrick python3[323]: Write LBA from file (88%)
+[   10.401848] toybrick python3[323]: Write LBA from file (89%)
+[   10.401848] toybrick python3[323]: Write LBA from file (90%)
+[   10.401848] toybrick python3[323]: Write LBA from file (91%)
+[   10.401848] toybrick python3[323]: Write LBA from file (92%)
+[   10.413421] toybrick python3[323]: Write LBA from file (93%)
+[   10.439588] toybrick python3[323]: Write LBA from file (93%)
+[   10.439588] toybrick python3[323]: Write LBA from file (94%)
+[   10.439588] toybrick python3[323]: Write LBA from file (95%)
+[   10.439588] toybrick python3[323]: Write LBA from file (96%)
+[   10.439588] toybrick python3[323]: Write LBA from file (97%)
+[   10.439588] toybrick python3[323]: Write LBA from file (98%)
+[   10.439588] toybrick python3[323]: Write LBA from file (99%)
+[   10.439588] toybrick python3[323]: Write LBA from file (100%)
+[   10.578307] toybrick python3[323]: Unique NPU USB target: 3-1.1 / 2207:180a
+[   10.598650] toybrick python3[323]: NPU stage: run-system
+[   10.735386] toybrick python3[323]: Not found config.ini
+[   10.735386] toybrick python3[323]: Program Data in /home/jcfh/npu_runtime_175
+[   10.735386] toybrick python3[323]: start to run system...
+[   10.735386] toybrick python3[323]: run system ok.
+[   10.741342] toybrick python3[323]: NPU RAM boot commands completed; verify runtime USB and proxy separately.
+[   16.026726] toybrick python3[323]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   26.073238] toybrick python3[323]: NPU firmware stage ready
+[   26.130302] toybrick systemd[1]: Started SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[   26.131257] toybrick systemd[1]: Starting SHELL RK3399Pro NPU transfer proxy and device readiness...
+[   26.144440] toybrick npu_transfer_proxy[425]: I NPUTransfer: Starting NPU Transfer Proxy, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51), devid = 14ade952d732d316, pid = 425:1
+[   26.335712] toybrick python3[426]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   26.359516] toybrick python3[426]: List of ntb devices attached
+[   26.359516] toybrick python3[426]: 14ade952d732d316    a0096b1e    USB_DEVICE
+[   26.359516] toybrick python3[426]: NPU proxy device ready
+[   26.385426] toybrick systemd[1]: Started SHELL RK3399Pro NPU transfer proxy and device readiness.

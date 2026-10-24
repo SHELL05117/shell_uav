@@ -1,0 +1,37 @@
+PC capture: 2026-10-25T03:31:48.9258480+08:00
+active
+active
+active
+active
+enabled
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[  401.572641] toybrick python3[5103]: Not found config.ini
+[  401.572641] toybrick python3[5103]: Program Data in /home/jcfh/npu_runtime_175
+[  401.572641] toybrick python3[5103]: start to run system...
+[  401.572641] toybrick python3[5103]: run system ok.
+[  401.578526] toybrick python3[5103]: NPU RAM boot commands completed; verify runtime USB and proxy separately.
+[  406.784729] toybrick python3[5103]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[  416.808878] toybrick python3[5103]: NPU firmware stage ready
+[  416.838641] toybrick systemd[1]: Started SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[  416.842294] toybrick systemd[1]: Starting SHELL RK3399Pro NPU transfer proxy and device readiness...
+[  416.853381] toybrick npu_transfer_proxy[5426]: I NPUTransfer: Starting NPU Transfer Proxy, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51), devid = 14ade952d732d316, pid = 5426:1
+[  417.127712] toybrick python3[5427]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[  417.157927] toybrick python3[5427]: List of ntb devices attached
+[  417.157927] toybrick python3[5427]: 14ade952d732d316    a0096b1e    USB_DEVICE
+[  417.157927] toybrick python3[5427]: NPU proxy device ready
+[  417.188328] toybrick systemd[1]: Started SHELL RK3399Pro NPU transfer proxy and device readiness.
+f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1  sixclass_yolov5s_relu_rk3399pro.rknn
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+api=1.7.5 (bb79b30 build: 2023-07-18 16:49:12) driver=1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+head 0 channels=33 side=80 elements=211200
+head 1 channels=33 side=40 elements=52800
+head 2 channels=33 side=20 elements=13200
+1 IMG_2706 55.3741 ms
+completed=1
+ExitCode=0
