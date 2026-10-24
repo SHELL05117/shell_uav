@@ -1,0 +1,23 @@
+{
+ "selected_experiment": "exp1_warm_coco_silu",
+ "rerun_experiment": "exp2_scratch_relu",
+ "weights": {
+  "best.pt": {
+   "bytes": 14426920,
+   "sha256": "007d6088f936fbf12d6c39b6cea15c15a04c9bf1f84ccb3455198f70369e4d6e"
+  },
+  "best.onnx": {
+   "bytes": 28136557,
+   "sha256": "42f4c1fba3b5aa9716961a5ad87dccb8c6bb67c376c6a03003e3c6b82b297933"
+  },
+  "best.torchscript": {
+   "bytes": 28418284,
+   "sha256": "af8ad5ae8041bf9a825e5e1af98751ba3949e10390974dc1adee5e614d4d32cb"
+  },
+  "sixclass_yolov5s_relu_rk3399pro.rknn": {
+   "bytes": 7174523,
+   "sha256": "f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1"
+  }
+ },
+ "opt_yaml": "weights: D:\\project\\yolotraining\\downloads\\yolov5s.pt\ncfg: models/yolov5s.yaml\ndata: D:\\project\\yolotraining\\work\\dataset\\sixclass\\data.yaml\nhyp:\n  lr0: 0.01\n  lrf: 0.01\n  momentum: 0.937\n  weight_decay: 0.0005\n  warmup_epochs: 3.0\n  warmup_momentum: 0.8\n  warmup_bias_lr: 0.1\n  box: 0.05\n  cls: 0.5\n  cls_pw: 1.0\n  obj: 1.0\n  obj_pw: 1.0\n  iou_t: 0.2\n  anchor_t: 4.0\n  fl_gamma: 0.0\n  hsv_h: 0.015\n  hsv_s: 0.7\n  hsv_v: 0.4\n  degrees: 0.0\n  translate: 0.1\n  scale: 0.5\n  shear: 0.0\n  perspective: 0.0\n  flipud: 0.0\n  fliplr: 0.5\n  mosaic: 1.0\n  mixup: 0.0\n  copy_paste: 0.0\nepochs: 200\nbatch_size: 16\nimgsz: 640\nrect: false\nresume: false\nnosave: false\nnoval: false\nnoautoanchor: false\nnoplots: false\nevolve: null\nbucket: ''\ncache: disk\nimage_weights: false\ndevice: '0'\nmulti_scale: false\nsingle_cls: false\noptimizer: SGD\nsync_bn: false\nworkers: 4\nproject: D:\\project\\yolotraining\\work\\runs\nname: exp1_warm_coco_silu\nexist_ok: true\nquad: false\ncos_lr: false\nlabel_smoothing: 0.0\npatience: 50\nfreeze:\n- 0\nsave_period: -1\nseed: 42\nlocal_rank: -1\nentity: null\nupload_dataset: false\nbbox_interval: -1\nartifact_alias: latest\nsave_dir: D:\\project\\yolotraining\\work\\runs\\exp1_warm_coco_silu\n"
+}

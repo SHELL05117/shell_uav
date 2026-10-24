@@ -1,0 +1,7 @@
+GT \ Pred,0:person_marker,1:hazard_toxic,2:hazard_flammable,3:hazard_explosive,4:distractor_1,5:distractor_2,background
+0:person_marker,5,0,0,0,0,0,1
+1:hazard_toxic,0,0,1,2,1,2,0
+2:hazard_flammable,1,0,1,1,2,1,0
+3:hazard_explosive,0,0,0,2,0,2,2
+4:distractor_1,0,0,1,1,3,1,0
+5:distractor_2,1,0,0,2,0,3,0

@@ -91,3 +91,12 @@ Desktop.ini
 *.swo
 *.tmp
 *~
+
+# Local firmware/tools download staging; evidence is archived under docs/ and logs/.
+/temp1022/
+
+# Keep extracted YOLO source/config/exported models and selected evidence.
+# Retain delivery ZIPs, training logs/checkpoints and the independent upstream clone locally.
+/yolov5training/*.zip
+/yolov5training/**/logs/
+/yolov5training/rknn/npu/RK3399Pro_npu/

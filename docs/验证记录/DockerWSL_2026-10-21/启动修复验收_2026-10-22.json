@@ -1,0 +1,67 @@
+{
+  "engineering_date": "2026-10-21",
+  "actual_date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "collaborator": "SHELL",
+  "source": "Computer Use UI observations plus independent same-user non-elevated checks and Docker CLI",
+  "prior_shortcut_fix_conclusion": "Withdrawn: actual desktop-folder double-click reproduced the same registry error.",
+  "repair": {
+    "native_uninstall_registration": "Restored 11 existing installer-generated values with original kinds",
+    "native_install_settings": {
+      "engineTypeWindows": "wsl2",
+      "wslDefaultDataRoot": "D:\\uav-dev\\docker-data"
+    },
+    "same_user_sid_checked": true,
+    "source_backups": "D:\\uav-dev\\logs\\docker-native-registration-fix-20261022"
+  },
+  "gui_checks": [
+    {
+      "step": "Initial post-repair icon double-click",
+      "entry": "Explorer Desktop folder, same Docker Desktop.lnk",
+      "result": "Containers dashboard; Engine running; no missing-registry-key popup"
+    },
+    {
+      "step": "Cycle 1",
+      "quit": "Clicked Quit Docker Desktop menu via Computer Use; Docker processes then absent",
+      "open": "Computer Use double-click of same desktop icon",
+      "backend_start_local": "2026-10-22T20:03:03+08:00",
+      "result": "Dashboard; Engine running; no registry popup"
+    },
+    {
+      "step": "Cycle 2",
+      "quit": "Clicked Quit Docker Desktop menu via Computer Use; zero Docker processes at 20:06:01",
+      "open": "Computer Use double-click of same desktop icon",
+      "backend_start_local": "2026-10-22T20:06:22+08:00",
+      "result": "Settings/dashboard; Engine running; no registry popup"
+    }
+  ],
+  "native_verification": {
+    "checked_at": "2026-10-22T20:04:49.2927489+08:00",
+    "install_location": "C:\\Users\\shell\\AppData\\Local\\Programs\\DockerDesktop",
+    "desktop_version": "4.96.2",
+    "lxss": [
+      {
+        "DistributionName": "docker-desktop",
+        "BasePath": "\\\\?\\D:\\uav-dev\\docker-data\\main",
+        "Version": 2
+      }
+    ],
+    "wsl_config": "[wsl2]\nmemory=6GB\nprocessors=4\nswap=2GB\n"
+  },
+  "storage_gui": "Disk image location: D:\\uav-dev\\docker-data",
+  "hello_world": {
+    "checked_at": "2026-10-22T20:05:16+08:00",
+    "command": "docker run --rm --pull=never --platform linux/amd64 hello-world",
+    "exit_code": 0,
+    "digest": "sha256:11a3eb1597e864c51b3f56733cb2e8a90bf0c284bfc05f9444d81c558bc848aa"
+  },
+  "limitations": [
+    "Windows reboot not tested in this repair",
+    "ROS build and simulation not performed",
+    "C: default data VHDX produced during troubleshooting retained; active configuration is D:"
+  ],
+  "user_error_attachment": {
+    "relative_path": "../../../logs/附件/2026-10-21/codex-clipboard-d2a76aaa-dde5-46a7-9572-d05a7d2b0c97.png",
+    "sha256": "42d3e12cd14aaa53e8db50de54386fc640485e0471fc290109159727238dbb19"
+  }
+}

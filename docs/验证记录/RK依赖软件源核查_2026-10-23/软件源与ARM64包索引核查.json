@@ -1,0 +1,120 @@
+{
+  "checked_at_utc": "2026-10-23T11:28:47.167879+00:00",
+  "scope": "Repository metadata and selected download endpoints only; no board install or dependency solver execution. Release signature is not verified locally; board apt must verify it.",
+  "snapshot_url": "http://snapshots.ros.org/melodic/final/ubuntu/",
+  "index_url": "http://snapshots.ros.org/melodic/final/ubuntu/dists/bionic/main/binary-arm64/Packages.gz",
+  "index_bytes": 1017382,
+  "index_sha256": "85113c4e5d4d4b7614ac2b0ad66881dd33f6cea5d2877ece8e5e36a38c546d54",
+  "matches_release_sha256": true,
+  "packages": {
+    "python-rosdep": {
+      "Version": "0.22.2-1",
+      "Architecture": "all",
+      "Filename": "pool/main/p/python-rosdep/python-rosdep_0.22.2-1_all.deb",
+      "SHA256": "abbb1d539280ef74699e69fcfc5e16e5ac661808799f929db17950d7cadd6ae4"
+    },
+    "ros-melodic-cartographer-ros": {
+      "Version": "1.0.0-1bionic.20221025.224527",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-cartographer-ros/ros-melodic-cartographer-ros_1.0.0-1bionic.20221025.224527_arm64.deb",
+      "SHA256": "f61d8bd441e106a9b7207133548e20660e79053f67739f19527f740f256d2333"
+    },
+    "ros-melodic-cmake-modules": {
+      "Version": "0.4.2-0bionic.20200802.113658",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-cmake-modules/ros-melodic-cmake-modules_0.4.2-0bionic.20200802.113658_arm64.deb",
+      "SHA256": "10f7ab2a23ba06b7c8e3f27986c6aba0c2788a6cd79778ccfc2bf49cd3959730"
+    },
+    "ros-melodic-cv-bridge": {
+      "Version": "1.13.1-1bionic.20221025.193650",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-cv-bridge/ros-melodic-cv-bridge_1.13.1-1bionic.20221025.193650_arm64.deb",
+      "SHA256": "2a9b95b2dc31bf6580b407d3736ce2404704dae34f46120c2b795d9dbfe51de3"
+    },
+    "ros-melodic-foxglove-bridge": {
+      "Version": "0.6.3-1bionic.20230620.181421",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-foxglove-bridge/ros-melodic-foxglove-bridge_0.6.3-1bionic.20230620.181421_arm64.deb",
+      "SHA256": "cf64bef7bed6f5b2cf0d7df9d27344de720a4ee6615bf06dc6c03bcdf3818902"
+    },
+    "ros-melodic-gazebo-msgs": {
+      "Version": "2.8.7-1bionic.20221025.214250",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-gazebo-msgs/ros-melodic-gazebo-msgs_2.8.7-1bionic.20221025.214250_arm64.deb",
+      "SHA256": "26d02a92ec540887ca2a63cc70e7fc8b669d991491ac3ffacae7053ad006d76f"
+    },
+    "ros-melodic-mavros": {
+      "Version": "1.16.0-1bionic.20230605.155036",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-mavros/ros-melodic-mavros_1.16.0-1bionic.20230605.155036_arm64.deb",
+      "SHA256": "8b45c5e9512f647ebf19735dd485374f3729302a64a06a0efc33d018459ae33d"
+    },
+    "ros-melodic-mavros-extras": {
+      "Version": "1.16.0-1bionic.20230605.160238",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-mavros-extras/ros-melodic-mavros-extras_1.16.0-1bionic.20230605.160238_arm64.deb",
+      "SHA256": "30c73fea5ab9a9ae6842283ab28b8eee791d1d807d0b2700d9d3170d9ee1bd34"
+    },
+    "ros-melodic-message-generation": {
+      "Version": "0.4.1-1bionic.20221025.174821",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-message-generation/ros-melodic-message-generation_0.4.1-1bionic.20221025.174821_arm64.deb",
+      "SHA256": "b38b563884b8f4ece9d54fbf09c4e8f9ff6e21e3af770c35f483584d7ba09977"
+    },
+    "ros-melodic-message-runtime": {
+      "Version": "0.4.12-0bionic.20221025.174748",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-message-runtime/ros-melodic-message-runtime_0.4.12-0bionic.20221025.174748_arm64.deb",
+      "SHA256": "3d7f1f32f39f73ef3dd37ecfc5493d5b7e7dcced3f02de187a4167826792e8ac"
+    },
+    "ros-melodic-ros-base": {
+      "Version": "1.4.1-0bionic.20230216.105845",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-ros-base/ros-melodic-ros-base_1.4.1-0bionic.20230216.105845_arm64.deb",
+      "SHA256": "9cb4ab0d83c08616323ee02d9e619df03a9a37f6cf8daf11edaa4aee86e17f82"
+    },
+    "ros-melodic-tf": {
+      "Version": "1.12.1-1bionic.20221025.195522",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-tf/ros-melodic-tf_1.12.1-1bionic.20221025.195522_arm64.deb",
+      "SHA256": "eff513c4c15b21bf45e0e55a6f762247aebc7227d0bb965479fae13419c9a397"
+    },
+    "ros-melodic-tf2-geometry-msgs": {
+      "Version": "0.6.5-0bionic.20221025.203321",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-tf2-geometry-msgs/ros-melodic-tf2-geometry-msgs_0.6.5-0bionic.20221025.203321_arm64.deb",
+      "SHA256": "e5d6f944117b56a83ffa85c7b53b2594cb78a9d5ef18e4bec6e8cf753cf1d3a4"
+    },
+    "ros-melodic-tf2-ros": {
+      "Version": "0.6.5-0bionic.20221025.194946",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-tf2-ros/ros-melodic-tf2-ros_0.6.5-0bionic.20221025.194946_arm64.deb",
+      "SHA256": "79e13db53dde5e94070eca91e61e02b53df2c273b86b6250548685ee99cb93c7"
+    },
+    "ros-melodic-usb-cam": {
+      "Version": "0.3.7-1bionic.20230322.235948",
+      "Architecture": "arm64",
+      "Filename": "pool/main/r/ros-melodic-usb-cam/ros-melodic-usb-cam_0.3.7-1bionic.20230322.235948_arm64.deb",
+      "SHA256": "fa07e3a0ad2ae2ceae33924c288faac93796b54cfe5878b784cd4d1d76f844a0"
+    }
+  },
+  "missing": [],
+  "selected_deb_http_head_status": {
+    "ros-melodic-ros-base": 200,
+    "ros-melodic-mavros": 200,
+    "ros-melodic-cartographer-ros": 200,
+    "ros-melodic-usb-cam": 200,
+    "ros-melodic-foxglove-bridge": 200
+  },
+  "key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA",
+  "key_primary_fingerprint": "4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA",
+  "ubuntu_ports_checked": [
+    "https://ports.ubuntu.com/ubuntu-ports/dists/bionic/Release",
+    "https://ports.ubuntu.com/ubuntu-ports/dists/bionic-updates/Release"
+  ],
+  "image_ubuntu_sources": [
+    "http://mirrors.cloud.tencent.com/ubuntu-ports bionic",
+    "http://mirrors.cloud.tencent.com/ubuntu-ports bionic-updates",
+    "http://mirrors.cloud.tencent.com/ubuntu-ports bionic-security"
+  ]
+}

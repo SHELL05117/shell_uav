@@ -1,0 +1,61 @@
+{
+ "weights": "D:\\project\\yolotraining\\work\\runs\\exp1_warm_coco_silu\\weights\\best.pt",
+ "split": "val",
+ "rows": [
+  {
+   "class_id": 0,
+   "class_name": "person_marker",
+   "precision": 0.6244,
+   "recall": 1.0,
+   "mAP50": 0.8949,
+   "gt_count": 6,
+   "pred_count": 460
+  },
+  {
+   "class_id": 1,
+   "class_name": "hazard_toxic",
+   "precision": 1.0,
+   "recall": 0.0,
+   "mAP50": 0.0,
+   "gt_count": 6,
+   "pred_count": 6
+  },
+  {
+   "class_id": 2,
+   "class_name": "hazard_flammable",
+   "precision": 0.566,
+   "recall": 0.6667,
+   "mAP50": 0.597,
+   "gt_count": 6,
+   "pred_count": 26
+  },
+  {
+   "class_id": 3,
+   "class_name": "hazard_explosive",
+   "precision": 0.2476,
+   "recall": 1.0,
+   "mAP50": 0.6634,
+   "gt_count": 6,
+   "pred_count": 70
+  },
+  {
+   "class_id": 4,
+   "class_name": "distractor_1",
+   "precision": 0.2613,
+   "recall": 0.8333,
+   "mAP50": 0.3951,
+   "gt_count": 6,
+   "pred_count": 40
+  },
+  {
+   "class_id": 5,
+   "class_name": "distractor_2",
+   "precision": 0.6243,
+   "recall": 0.8333,
+   "mAP50": 0.6148,
+   "gt_count": 6,
+   "pred_count": 17
+  }
+ ],
+ "note": "single-IoU (0.5) AP per class at the low confidence used for AP input; the full 10-IoU table is produced by YOLOv5 val.py and stored next to this file"
+}

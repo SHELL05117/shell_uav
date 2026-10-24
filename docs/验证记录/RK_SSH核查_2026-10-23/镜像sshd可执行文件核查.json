@@ -1,0 +1,41 @@
+{
+  "checked_at_utc": "2026-10-23T15:30:11.806482+00:00",
+  "firmware": "TB-RK3399ProD-Ubuntu-18.04-RK330C-FULL-v2-update.img",
+  "scope": "Offline public executable, ELF program-header/interpreter and dpkg package-file-list inspection only; no private-key or credential access, no execution or board connection.",
+  "paths": {
+    "/usr/sbin/sshd": {
+      "resolves": true,
+      "mode": "0o755",
+      "size_low32": 708944,
+      "magic": "7f454c46",
+      "elf_class": 2,
+      "e_machine": 183,
+      "elf_interpreter": "/lib/ld-linux-aarch64.so.1"
+    },
+    "/usr/bin/ssh": {
+      "resolves": true,
+      "mode": "0o755",
+      "size_low32": 650032
+    },
+    "/usr/bin/ssh-keygen": {
+      "resolves": true,
+      "mode": "0o755",
+      "size_low32": 379104
+    },
+    "/lib/ld-linux-aarch64.so.1": {
+      "resolves": true,
+      "mode": "0o755",
+      "size_low32": 129992
+    },
+    "/lib/ld-linux-armhf.so.3": {
+      "resolves": false
+    },
+    "/var/lib/dpkg/info/openssh-server.list": {
+      "resolves": true,
+      "mode": "0o644",
+      "size_low32": 1097,
+      "dpkg_lists_sshd": true
+    }
+  },
+  "usr_sbin_directory_contains_sshd": true
+}

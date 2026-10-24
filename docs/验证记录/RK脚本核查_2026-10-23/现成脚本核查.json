@@ -1,0 +1,193 @@
+{
+  "inspected_at_utc": "2026-10-23T09:47:31.850113+00:00",
+  "images": [
+    {
+      "image": "rootfs.img",
+      "scope": "Enumerated non-hidden filesystem entries excluding proc/sys/dev/lost+found. Read candidate scripts only in home/root/opt/usr-local/bin/sbin and selected systemd/init/profile directories; standard dpkg-owned scripts excluded. No credential files read; no scripts executed.",
+      "regular_files_count": 16971,
+      "custom_script_candidates": [
+        {
+          "path": "/etc/systemd/system/rk-growroot.service",
+          "bytes": 274,
+          "sha256": "46b89e4c1f24c0929bb85baf389309b47bcfaa8a6f140806dc9bc9629e1b6189",
+          "package_owned": false,
+          "text": "[Unit]\nDescription=Grow the root filesystem to fill the eMMC partition\nConditionPathExists=/etc/rk-growroot.once\nAfter=local-fs.target\nBefore=ssh.service\n\n[Service]\nType=oneshot\nExecStart=/usr/local/sbin/rk-growroot\nRemainAfterExit=yes\n\n[Install]\nWantedBy=multi-user.target\n"
+        },
+        {
+          "path": "/usr/local/sbin/rk-growroot",
+          "bytes": 419,
+          "sha256": "00fd54dd566cab8255d1dc519bf497fccb1c2856d635ad7f9faf06ba683d1d96",
+          "package_owned": false,
+          "text": "#!/bin/sh\n# One-shot: expand the ext4 root filesystem to the full rootfs partition.\nset -eu\n\nFLAG=/etc/rk-growroot.once\n[ -e \"$FLAG\" ] || exit 0\n\nroot_src=$(findmnt -n -o SOURCE /)\ncase \"$root_src\" in\n  /dev/*) ;;\n  *)\n    echo \"rk-growroot: unexpected root source: $root_src\" >&2\n    exit 0\n    ;;\nesac\n\nif resize2fs \"$root_src\"; then\n  rm -f \"$FLAG\"\n  systemctl disable rk-growroot.service >/dev/null 2>&1 || true\nfi\n"
+        }
+      ],
+      "rk_growroot_symlinks": {
+        "/etc/systemd/system/multi-user.target.wants/rk-growroot.service": "/lib/systemd/system/rk-growroot.service"
+      },
+      "selected_dpkg_packages": [
+        {
+          "Package": "build-essential",
+          "Status": "install ok installed",
+          "Version": "12.4ubuntu1"
+        },
+        {
+          "Package": "i2c-tools",
+          "Status": "install ok installed",
+          "Version": "4.0-2"
+        },
+        {
+          "Package": "netplan.io",
+          "Status": "install ok installed",
+          "Version": "0.99-0ubuntu3~18.04.5"
+        },
+        {
+          "Package": "openssh-server",
+          "Status": "install ok installed",
+          "Version": "1:7.6p1-4ubuntu0.7"
+        }
+      ],
+      "walk_errors": [],
+      "growroot_path_checks": {
+        "/etc/rk-growroot.once": {
+          "exists": true,
+          "mode": "0o100644"
+        },
+        "/etc/systemd/system/rk-growroot.service": {
+          "exists": true,
+          "mode": "0o100644"
+        },
+        "/lib/systemd/system/rk-growroot.service": {
+          "exists": false
+        },
+        "/usr/local/sbin/rk-growroot": {
+          "exists": true,
+          "mode": "0o100755"
+        },
+        "/sbin/resize2fs": {
+          "exists": true,
+          "mode": "0o100755"
+        }
+      },
+      "selected_dependency_state": {
+        "build-essential": "installed in dpkg",
+        "cmake": "not registered installed in dpkg",
+        "libeigen3-dev": "not registered installed in dpkg",
+        "libopencv-dev": "not registered installed in dpkg",
+        "libi2c-dev": "not registered installed in dpkg",
+        "i2c-tools": "installed in dpkg",
+        "openssh-server": "installed in dpkg",
+        "netplan.io": "installed in dpkg"
+      }
+    },
+    {
+      "image": "TB-RK3399ProD-Ubuntu-18.04-update.img",
+      "scope": "Enumerated non-hidden filesystem entries excluding proc/sys/dev/lost+found. Read candidate scripts only in home/root/opt/usr-local/bin/sbin and selected systemd/init/profile directories; standard dpkg-owned scripts excluded. No credential files read; no scripts executed.",
+      "regular_files_count": 16971,
+      "custom_script_candidates": [
+        {
+          "path": "/etc/systemd/system/rk-growroot.service",
+          "bytes": 274,
+          "sha256": "46b89e4c1f24c0929bb85baf389309b47bcfaa8a6f140806dc9bc9629e1b6189",
+          "package_owned": false,
+          "text": "[Unit]\nDescription=Grow the root filesystem to fill the eMMC partition\nConditionPathExists=/etc/rk-growroot.once\nAfter=local-fs.target\nBefore=ssh.service\n\n[Service]\nType=oneshot\nExecStart=/usr/local/sbin/rk-growroot\nRemainAfterExit=yes\n\n[Install]\nWantedBy=multi-user.target\n"
+        },
+        {
+          "path": "/usr/local/sbin/rk-growroot",
+          "bytes": 419,
+          "sha256": "00fd54dd566cab8255d1dc519bf497fccb1c2856d635ad7f9faf06ba683d1d96",
+          "package_owned": false,
+          "text": "#!/bin/sh\n# One-shot: expand the ext4 root filesystem to the full rootfs partition.\nset -eu\n\nFLAG=/etc/rk-growroot.once\n[ -e \"$FLAG\" ] || exit 0\n\nroot_src=$(findmnt -n -o SOURCE /)\ncase \"$root_src\" in\n  /dev/*) ;;\n  *)\n    echo \"rk-growroot: unexpected root source: $root_src\" >&2\n    exit 0\n    ;;\nesac\n\nif resize2fs \"$root_src\"; then\n  rm -f \"$FLAG\"\n  systemctl disable rk-growroot.service >/dev/null 2>&1 || true\nfi\n"
+        }
+      ],
+      "rk_growroot_symlinks": {
+        "/etc/systemd/system/multi-user.target.wants/rk-growroot.service": "/lib/systemd/system/rk-growroot.service"
+      },
+      "selected_dpkg_packages": [
+        {
+          "Package": "build-essential",
+          "Status": "install ok installed",
+          "Version": "12.4ubuntu1"
+        },
+        {
+          "Package": "i2c-tools",
+          "Status": "install ok installed",
+          "Version": "4.0-2"
+        },
+        {
+          "Package": "netplan.io",
+          "Status": "install ok installed",
+          "Version": "0.99-0ubuntu3~18.04.5"
+        },
+        {
+          "Package": "openssh-server",
+          "Status": "install ok installed",
+          "Version": "1:7.6p1-4ubuntu0.7"
+        }
+      ],
+      "walk_errors": [],
+      "growroot_path_checks": {
+        "/etc/rk-growroot.once": {
+          "exists": true,
+          "mode": "0o100644"
+        },
+        "/etc/systemd/system/rk-growroot.service": {
+          "exists": true,
+          "mode": "0o100644"
+        },
+        "/lib/systemd/system/rk-growroot.service": {
+          "exists": false
+        },
+        "/usr/local/sbin/rk-growroot": {
+          "exists": true,
+          "mode": "0o100755"
+        },
+        "/sbin/resize2fs": {
+          "exists": true,
+          "mode": "0o100755"
+        }
+      },
+      "selected_dependency_state": {
+        "build-essential": "installed in dpkg",
+        "cmake": "not registered installed in dpkg",
+        "libeigen3-dev": "not registered installed in dpkg",
+        "libopencv-dev": "not registered installed in dpkg",
+        "libi2c-dev": "not registered installed in dpkg",
+        "i2c-tools": "installed in dpkg",
+        "openssh-server": "installed in dpkg",
+        "netplan.io": "installed in dpkg"
+      }
+    }
+  ],
+  "project_shell_scripts": [
+    {
+      "path": "src/gc_2026_sim/scripts/check_slam_topics.sh",
+      "sha256": "1b83946555ff43aec61334fcfad98e32e3a2947edc4d02b40f21e9b52a83a25e",
+      "dependency_install_lines": []
+    },
+    {
+      "path": "src/gc_2026_sim/scripts/install_px4_field_world.sh",
+      "sha256": "7cd8368e933f1ee1b5af5dd585abbbb384bdab6d56775a5da58495aee3a1143b",
+      "dependency_install_lines": []
+    },
+    {
+      "path": "src/gc_2026_sim/scripts/px4_field_rcS.sh",
+      "sha256": "a2912b3bb910c4585027d984e7f0624993383ddf4f119d23d7a1cea88d841a4d",
+      "dependency_install_lines": []
+    },
+    {
+      "path": "src/gc_2026_sim/scripts/start_px4_slam.sh",
+      "sha256": "dd65a227a42e026984dbb1da5927e5e48e67dd0f4bc5968263cf6835b02323aa",
+      "dependency_install_lines": []
+    },
+    {
+      "path": "src/rplidar_ros/scripts/create_udev_rules.sh",
+      "sha256": "e1c05f22e7e68c637dbd77acea4f96edd5587627739fabad0a6fdb1c1dc7ea0b",
+      "dependency_install_lines": []
+    },
+    {
+      "path": "src/rplidar_ros/scripts/delete_udev_rules.sh",
+      "sha256": "39ff3e1f8ea0e36e6543c46a160dda93535a9a989866660f56e058df9b551073",
+      "dependency_install_lines": []
+    }
+  ]
+}

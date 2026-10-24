@@ -1,0 +1,349 @@
+{
+  "inspected_at_utc": "2026-10-22T13:36:28.700885+00:00",
+  "method": "read-only RKFW/RKAF and ext4 metadata; no mount or execution",
+  "images": [
+    {
+      "name": "boot_linux.img",
+      "size": 67108864,
+      "sha256": "ae8dca6687a71b2e3c679bcc96f78238c6afa92e520ed20b65b4c7b1eefa3c41",
+      "ext4": {
+        "block_size": 4096,
+        "filesystem_bytes": 67108864,
+        "label": "boot",
+        "features": {
+          "compat": 56,
+          "incompat": 2,
+          "ro_compat": 3
+        },
+        "selected_file_sha256": {},
+        "/": [
+          "extlinux",
+          "lost+found"
+        ],
+        "/boot": null,
+        "/extlinux": [
+          "Image",
+          "extlinux.conf",
+          "toybrick-edp.dtb",
+          "toybrick-imx258.dtb",
+          "toybrick-mipi.dtb",
+          "toybrick-u2.dtb",
+          "toybrick.dtb"
+        ],
+        "/opt": null,
+        "/opt/ros": null,
+        "/etc/netplan": null,
+        "/etc/apt/sources.list.d": null,
+        "/usr/lib/aarch64-linux-gnu": null,
+        "/extlinux/extlinux.conf": [
+          "default toybrick-hdmi",
+          "label toybrick-hdmi",
+          "    linux /extlinux/Image",
+          "    fdt /extlinux/toybrick.dtb",
+          "label toybrick-hdmi-mmc",
+          "    linux /extlinux/Image",
+          "    fdt /extlinux/toybrick.dtb",
+          "label toybrick-edp",
+          "    linux /extlinux/Image",
+          "    fdt /extlinux/toybrick-edp.dtb",
+          "label toybrick-mipi",
+          "    linux /extlinux/Image",
+          "    fdt /extlinux/toybrick-mipi.dtb",
+          "label toybrick-u2",
+          "    linux /extlinux/Image",
+          "    fdt /extlinux/toybrick-u2.dtb",
+          "label toybrick-imx258",
+          "    linux /extlinux/Image",
+          "    fdt /extlinux/toybrick-imx258.dtb"
+        ]
+      }
+    },
+    {
+      "name": "rootfs.img",
+      "size": 6442450944,
+      "sha256": "6e06948c0852edbaf91546c5da42dd4e3eaf5cb90d62a0982143685168f5b64e",
+      "ext4": {
+        "block_size": 4096,
+        "filesystem_bytes": 6442450944,
+        "label": "rootfs",
+        "features": {
+          "compat": 60,
+          "incompat": 578,
+          "ro_compat": 1131
+        },
+        "selected_file_sha256": {
+          "/etc/os-release": "3985a2eb99038ca1911a8da245bb7a3b61071517a04b4861cb5fea216f418867",
+          "/etc/lsb-release": "dccf0c38aa3b7d90eaa69bc008f2016a5c1fa305e58bb34deac15407ed33e882",
+          "/etc/debian_version": "865469589c2453b1da95547235c029d05b8d81782058b265c1300bae641366dc",
+          "/bin/bash": "fe1973ee3c6e14755b9c66b8488c7cff06b0d6113cedb1e4939294ed77813acf",
+          "/usr/bin/python3": "157eb19bf4ff8ccde3b1298dcbe7d79dd625be60511960f58fe050d8387405ec",
+          "/var/lib/dpkg/status": "f2e59501753faedf574039ed7dcc94170f896fb1130d283204cb9158d8223884"
+        },
+        "/": [
+          "bin",
+          "boot",
+          "dev",
+          "etc",
+          "home",
+          "lib",
+          "lost+found",
+          "media",
+          "mnt",
+          "opt",
+          "proc",
+          "root",
+          "run",
+          "sbin",
+          "srv",
+          "sys",
+          "tmp",
+          "usr",
+          "var"
+        ],
+        "/boot": [],
+        "/extlinux": null,
+        "/opt": [],
+        "/opt/ros": null,
+        "/etc/netplan": [
+          "01-toybrick.yaml"
+        ],
+        "/etc/apt/sources.list.d": [],
+        "/usr/lib/aarch64-linux-gnu": [],
+        "/etc/os-release": "NAME=\"Ubuntu\"\nVERSION=\"18.04 LTS (Bionic Beaver)\"\nID=ubuntu\nID_LIKE=debian\nPRETTY_NAME=\"Ubuntu 18.04 LTS\"\nVERSION_ID=\"18.04\"\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nVERSION_CODENAME=bionic\nUBUNTU_CODENAME=bionic\n",
+        "/etc/lsb-release": "DISTRIB_ID=Ubuntu\nDISTRIB_RELEASE=18.04\nDISTRIB_CODENAME=bionic\nDISTRIB_DESCRIPTION=\"Ubuntu 18.04 LTS\"\n",
+        "/etc/debian_version": "buster/sid\n",
+        "/bin/bash": {
+          "elf_magic": "7f454c46",
+          "elf_machine": 183
+        },
+        "/usr/bin/python3": {
+          "elf_magic": "7f454c46",
+          "elf_machine": 183
+        },
+        "selected_dpkg_packages": [
+          {
+            "Package": "python3",
+            "Status": "install ok installed",
+            "Version": "3.6.7-1~18.04",
+            "Architecture": "arm64"
+          },
+          {
+            "Package": "netplan.io",
+            "Status": "install ok installed",
+            "Version": "0.99-0ubuntu3~18.04.5",
+            "Architecture": "arm64"
+          },
+          {
+            "Package": "openssh-server",
+            "Status": "install ok installed",
+            "Version": "1:7.6p1-4ubuntu0.7",
+            "Architecture": "arm64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TB-RK3399ProD-Ubuntu-18.04-update.img",
+      "size": 1374261720,
+      "sha256": "68b3b8c638cfe8d53b7734c4ef29fdf09a8227333dc6df92b2ccbd312fcef42c",
+      "rkfw": {
+        "loader_offset": 102,
+        "loader_size": 465230,
+        "rkaf_offset": 465332,
+        "rkaf_size": 1373796356
+      },
+      "parts": [
+        {
+          "name": "package-file",
+          "path": "package-file",
+          "offset_in_rkaf": 2048,
+          "flash_offset_field": 4294967295,
+          "padded_sectors": 1,
+          "size": 194,
+          "text": "package-file\tpackage-file\nbootloader\tImage/MiniLoaderAll.bin\nparameter\tImage/parameter.txt\ntrust\t\tImage/trust.img\nuboot\t\tImage/uboot.img\nboot_linux\tImage/boot_linux.img\nrootfs\t\tImage/rootfs.img\n"
+        },
+        {
+          "name": "bootloader",
+          "path": "Image/MiniLoaderAll.bin",
+          "offset_in_rkaf": 4096,
+          "flash_offset_field": 4294967295,
+          "padded_sectors": 228,
+          "size": 465230
+        },
+        {
+          "name": "parameter",
+          "path": "Image/parameter.txt",
+          "offset_in_rkaf": 471040,
+          "flash_offset_field": 0,
+          "padded_sectors": 1,
+          "size": 438,
+          "text": "FIRMWARE_VER:8.1\nMACHINE_MODEL:RK3399\nMACHINE_ID:007\nMANUFACTURER: RK3399\nMAGIC: 0x5041524B\nATAG: 0x00200800\nMACHINE: 3399\nCHECK_MASK: 0x80\nPWR_HLD: 0,0,A,0,1\nTYPE: GPT\nCMDLINE:mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00030000@0x00006000(boot_linux:bootable),-@0x00036000(rootfs:grow)\nuuid:rootfs=614e0000-0000-4b53-8000-1d28000054a9\nuuid:boot_linux=a2d37d82-51e0-420d-83f5-470db993dd35\n"
+        },
+        {
+          "name": "trust",
+          "path": "Image/trust.img",
+          "offset_in_rkaf": 473088,
+          "flash_offset_field": 16384,
+          "padded_sectors": 2048,
+          "size": 4194304
+        },
+        {
+          "name": "uboot",
+          "path": "Image/uboot.img",
+          "offset_in_rkaf": 4667392,
+          "flash_offset_field": 8192,
+          "padded_sectors": 2048,
+          "size": 4194304
+        },
+        {
+          "name": "boot_linux",
+          "path": "Image/boot_linux.img",
+          "offset_in_rkaf": 8861696,
+          "flash_offset_field": 4294967295,
+          "padded_sectors": 32768,
+          "size": 67108864,
+          "sha256": "ae8dca6687a71b2e3c679bcc96f78238c6afa92e520ed20b65b4c7b1eefa3c41",
+          "ext4": {
+            "block_size": 4096,
+            "filesystem_bytes": 67108864,
+            "label": "boot",
+            "features": {
+              "compat": 56,
+              "incompat": 2,
+              "ro_compat": 3
+            },
+            "selected_file_sha256": {},
+            "/": [
+              "extlinux",
+              "lost+found"
+            ],
+            "/boot": null,
+            "/extlinux": [
+              "Image",
+              "extlinux.conf",
+              "toybrick-edp.dtb",
+              "toybrick-imx258.dtb",
+              "toybrick-mipi.dtb",
+              "toybrick-u2.dtb",
+              "toybrick.dtb"
+            ],
+            "/opt": null,
+            "/opt/ros": null,
+            "/etc/netplan": null,
+            "/etc/apt/sources.list.d": null,
+            "/usr/lib/aarch64-linux-gnu": null,
+            "/extlinux/extlinux.conf": [
+              "default toybrick-hdmi",
+              "label toybrick-hdmi",
+              "    linux /extlinux/Image",
+              "    fdt /extlinux/toybrick.dtb",
+              "label toybrick-hdmi-mmc",
+              "    linux /extlinux/Image",
+              "    fdt /extlinux/toybrick.dtb",
+              "label toybrick-edp",
+              "    linux /extlinux/Image",
+              "    fdt /extlinux/toybrick-edp.dtb",
+              "label toybrick-mipi",
+              "    linux /extlinux/Image",
+              "    fdt /extlinux/toybrick-mipi.dtb",
+              "label toybrick-u2",
+              "    linux /extlinux/Image",
+              "    fdt /extlinux/toybrick-u2.dtb",
+              "label toybrick-imx258",
+              "    linux /extlinux/Image",
+              "    fdt /extlinux/toybrick-imx258.dtb"
+            ]
+          }
+        },
+        {
+          "name": "rootfs",
+          "path": "Image/rootfs.img",
+          "offset_in_rkaf": 75970560,
+          "flash_offset_field": 4294967295,
+          "padded_sectors": 633704,
+          "size": 1297825792,
+          "sha256": "77ec9d1e38d18723c5fc8d6d708ed496f8e8fd57c7bff5ff805e9c0423892a93",
+          "ext4": {
+            "block_size": 4096,
+            "filesystem_bytes": 1297825792,
+            "label": "rootfs",
+            "features": {
+              "compat": 60,
+              "incompat": 578,
+              "ro_compat": 1131
+            },
+            "selected_file_sha256": {
+              "/etc/os-release": "3985a2eb99038ca1911a8da245bb7a3b61071517a04b4861cb5fea216f418867",
+              "/etc/lsb-release": "dccf0c38aa3b7d90eaa69bc008f2016a5c1fa305e58bb34deac15407ed33e882",
+              "/etc/debian_version": "865469589c2453b1da95547235c029d05b8d81782058b265c1300bae641366dc",
+              "/bin/bash": "fe1973ee3c6e14755b9c66b8488c7cff06b0d6113cedb1e4939294ed77813acf",
+              "/usr/bin/python3": "157eb19bf4ff8ccde3b1298dcbe7d79dd625be60511960f58fe050d8387405ec",
+              "/var/lib/dpkg/status": "f2e59501753faedf574039ed7dcc94170f896fb1130d283204cb9158d8223884"
+            },
+            "/": [
+              "bin",
+              "boot",
+              "dev",
+              "etc",
+              "home",
+              "lib",
+              "lost+found",
+              "media",
+              "mnt",
+              "opt",
+              "proc",
+              "root",
+              "run",
+              "sbin",
+              "srv",
+              "sys",
+              "tmp",
+              "usr",
+              "var"
+            ],
+            "/boot": [],
+            "/extlinux": null,
+            "/opt": [],
+            "/opt/ros": null,
+            "/etc/netplan": [
+              "01-toybrick.yaml"
+            ],
+            "/etc/apt/sources.list.d": [],
+            "/usr/lib/aarch64-linux-gnu": [],
+            "/etc/os-release": "NAME=\"Ubuntu\"\nVERSION=\"18.04 LTS (Bionic Beaver)\"\nID=ubuntu\nID_LIKE=debian\nPRETTY_NAME=\"Ubuntu 18.04 LTS\"\nVERSION_ID=\"18.04\"\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nVERSION_CODENAME=bionic\nUBUNTU_CODENAME=bionic\n",
+            "/etc/lsb-release": "DISTRIB_ID=Ubuntu\nDISTRIB_RELEASE=18.04\nDISTRIB_CODENAME=bionic\nDISTRIB_DESCRIPTION=\"Ubuntu 18.04 LTS\"\n",
+            "/etc/debian_version": "buster/sid\n",
+            "/bin/bash": {
+              "elf_magic": "7f454c46",
+              "elf_machine": 183
+            },
+            "/usr/bin/python3": {
+              "elf_magic": "7f454c46",
+              "elf_machine": 183
+            },
+            "selected_dpkg_packages": [
+              {
+                "Package": "python3",
+                "Status": "install ok installed",
+                "Version": "3.6.7-1~18.04",
+                "Architecture": "arm64"
+              },
+              {
+                "Package": "netplan.io",
+                "Status": "install ok installed",
+                "Version": "0.99-0ubuntu3~18.04.5",
+                "Architecture": "arm64"
+              },
+              {
+                "Package": "openssh-server",
+                "Status": "install ok installed",
+                "Version": "1:7.6p1-4ubuntu0.7",
+                "Architecture": "arm64"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

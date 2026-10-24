@@ -1,0 +1,125 @@
+{
+ "working_point": {
+  "conf": 0.25,
+  "iou": 0.5,
+  "source": "chosen for reporting only; no business threshold was provided"
+ },
+ "images": 36,
+ "distractor_predicted_actionable": [
+  {
+   "stem": "IMG_2824",
+   "gt": 4,
+   "gt_name": "distractor_1",
+   "pred": 3,
+   "pred_name": "hazard_explosive",
+   "n_det": 13,
+   "top1_conf": 0.488
+  }
+ ],
+ "actionable_predicted_distractor": [
+  {
+   "stem": "IMG_2730",
+   "gt": 1,
+   "gt_name": "hazard_toxic",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 10,
+   "top1_conf": 0.2987
+  },
+  {
+   "stem": "IMG_2731",
+   "gt": 1,
+   "gt_name": "hazard_toxic",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 8,
+   "top1_conf": 0.7337
+  },
+  {
+   "stem": "IMG_2732",
+   "gt": 1,
+   "gt_name": "hazard_toxic",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 6,
+   "top1_conf": 0.6567
+  },
+  {
+   "stem": "IMG_2735",
+   "gt": 1,
+   "gt_name": "hazard_toxic",
+   "pred": 5,
+   "pred_name": "distractor_2",
+   "n_det": 47,
+   "top1_conf": 0.2442
+  },
+  {
+   "stem": "IMG_2761",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 8,
+   "top1_conf": 0.7676
+  },
+  {
+   "stem": "IMG_2762",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 25,
+   "top1_conf": 0.7514
+  },
+  {
+   "stem": "IMG_2763",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 7,
+   "top1_conf": 0.7382
+  },
+  {
+   "stem": "IMG_2764",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 12,
+   "top1_conf": 0.8704
+  },
+  {
+   "stem": "IMG_2765",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 5,
+   "pred_name": "distractor_2",
+   "n_det": 17,
+   "top1_conf": 0.2846
+  }
+ ],
+ "actionable_missed": [
+  {
+   "stem": "IMG_2700",
+   "gt": 0,
+   "gt_name": "person_marker",
+   "pred": null,
+   "pred_name": "missed",
+   "n_det": 20,
+   "top1_conf": 0.1065
+  },
+  {
+   "stem": "IMG_2794",
+   "gt": 3,
+   "gt_name": "hazard_explosive",
+   "pred": null,
+   "pred_name": "missed",
+   "n_det": 9,
+   "top1_conf": 0.3872
+  }
+ ],
+ "correct": 18,
+ "missed_total": 2,
+ "matched_iou_mean": 0.8842
+}

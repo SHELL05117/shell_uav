@@ -1,0 +1,38 @@
+{
+  "verified_at_utc": "2026-10-23T10:28:00.755512+00:00",
+  "original": {
+    "name": "TB-RK3399ProD-Ubuntu-18.04-update.img",
+    "bytes": 1374261720,
+    "sha256": "68b3b8c638cfe8d53b7734c4ef29fdf09a8227333dc6df92b2ccbd312fcef42c",
+    "support_chip": "0x33333939",
+    "os_type": 1,
+    "loader_bytes": 465230,
+    "loader_chip": "0x33333043",
+    "loader_sha256": "0394f54b1a0f7801cab7689d4bf295a37a773df90c793eaabf2e0e71def7b22a",
+    "rkaf_bytes": 1373796356,
+    "rkaf_sha256": "6a00b8c6e1418f4655c80e60b55f9c47a237ed7da214b25ccbacf72260e7df77",
+    "header_hex": "524b465766000000010800000002ea070a1607011b39393333660000004e190700b41907000478e25100000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "repacked": {
+    "name": "TB-RK3399ProD-Ubuntu-18.04-RK330C-update.img",
+    "bytes": 1374261720,
+    "sha256": "e9a628585200ca104306f4759f68963cf25491aa29a6857f11b002aaa8af5173",
+    "support_chip": "0x33333043",
+    "os_type": 1,
+    "loader_bytes": 465230,
+    "loader_chip": "0x33333043",
+    "loader_sha256": "0394f54b1a0f7801cab7689d4bf295a37a773df90c793eaabf2e0e71def7b22a",
+    "rkaf_bytes": 1373796356,
+    "rkaf_sha256": "6a00b8c6e1418f4655c80e60b55f9c47a237ed7da214b25ccbacf72260e7df77",
+    "header_hex": "524b465766000000010800000002ea070a17121a3b43303333660000004e190700b41907000478e25100000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "checks": {
+    "original_hash_matches_22_oct_evidence": true,
+    "chip_matches_device_log_and_loader": true,
+    "loader_unchanged": true,
+    "entire_rkaf_payload_unchanged": true,
+    "os_type_unchanged": true
+  },
+  "command": "RKImageMaker.exe -RK330C MiniLoaderAll.bin original_payload.rkaf TB-RK3399ProD-Ubuntu-18.04-RK330C-update.img -os_type:androidos",
+  "note": "Repacked outer wrapper only using the supplied tool. No device flashing or USB write commands executed."
+}

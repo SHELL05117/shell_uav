@@ -1,0 +1,61 @@
+{
+  "checked_at_utc": "2026-10-23T11:32:01.924075+00:00",
+  "method": "Downloaded as text for inspection only; never executed.",
+  "downloads": [
+    {
+      "url": "https://fishros.com/install",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>",
+      "relevant_lines": []
+    },
+    {
+      "url": "https://mirror.fishros.com/install/install.py",
+      "final_url": "https://mirror.fishros.com/install/install.py",
+      "sha256": "6bf854ce81e9fbdfb98ae4802442d2ca0ecacc42d5166203ca1ee6c56a42cd08",
+      "relevant_lines": [
+        {
+          "line": 5,
+          "text": "url_prefix = os.environ.get(\"FISHROS_URL\", \"https://mirror.fishros.com/install/\")"
+        },
+        {
+          "line": 26,
+          "text": "\"tool\": \"tools/tool_install_ros.py\","
+        },
+        {
+          "line": 86,
+          "text": "\"tool\": \"tools/tool_install_ros_with_docker.py\","
+        },
+        {
+          "line": 116,
+          "text": "\"tool\": \"tools/tool_install_ros1_systemdefault.py\","
+        },
+        {
+          "line": 163,
+          "text": "url_prefix = os.environ.get(\"FISHROS_URL\", \"https://mirror.fishros.com/install/\")"
+        }
+      ]
+    },
+    {
+      "url": "https://mirror.fishros.com/install/tools/tool_install_ros.py",
+      "final_url": "https://mirror.fishros.com/install/tools/tool_install_ros.py",
+      "sha256": "60cf61d3f17ba3876f9b86e495fb6bf4ed95ffe9865b716f1cd5e383e686bb05",
+      "relevant_lines": [
+        {
+          "line": 135,
+          "text": "\"melodic\","
+        },
+        {
+          "line": 188,
+          "text": "return \"ros-{}-desktop-full\".format(name)"
+        },
+        {
+          "line": 747,
+          "text": "\"ros-base\", \"ros-[A-Za-z]+-ros-base\", \"ros-\", \"-base\""
+        },
+        {
+          "line": 790,
+          "text": "\"ros-base\", \"ros-[A-Za-z]+-ros-base\", \"ros-\", \"-base\""
+        }
+      ]
+    }
+  ]
+}

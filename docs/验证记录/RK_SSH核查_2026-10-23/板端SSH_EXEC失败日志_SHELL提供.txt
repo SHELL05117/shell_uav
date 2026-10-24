@@ -1,0 +1,27 @@
+Oct 23 23:26:12 toybrick systemd[1]: Failed to start OpenBSD Secure Shell server.
+Oct 23 23:26:12 toybrick systemd[1]: ssh.service: Service hold-off time over, scheduling restart.
+Oct 23 23:26:12 toybrick systemd[1]: ssh.service: Scheduled restart job, restart counter is at 3.
+Oct 23 23:26:12 toybrick systemd[1]: Stopped OpenBSD Secure Shell server.
+Oct 23 23:26:12 toybrick systemd[1]: Starting OpenBSD Secure Shell server...
+Oct 23 23:26:12 toybrick systemd[2466]: ssh.service: Failed to execute command: No such file or directory
+Oct 23 23:26:12 toybrick systemd[2466]: ssh.service: Failed at step EXEC spawning /usr/sbin/sshd: No such file or directory
+Oct 23 23:26:12 toybrick systemd[2466]: ssh.service: Control process exited, code=exited status=203
+y
+Oct 23 23:26:12 toybrick systemd[1]: ssh.service: Failed with result 'exit-code'.
+Oct 23 23:26:12 toybrick systemd[1]: Failed to start OpenBSD Secure Shell server.
+Oct 23 23:26:12 toybrick systemd[1]: ssh.service: Service hold-off time over, scheduling restart.
+Oct 23 23:26:12 toybrick systemd[1]: ssh.service: Scheduled restart job, restart counter is at 4.
+Oct 23 23:26:12 toybrick systemd[1]: Stopped OpenBSD Secure Shell server.
+Oct 23 23:26:12 toybrick systemd[1]: Starting OpenBSD Secure Shell server...
+Oct 23 23:26:13 toybrick systemd[2468]: ssh.service: Failed to execute command: No such file or directory
+Oct 23 23:26:13 toybrick systemd[2468]: ssh.service: Failed at step EXEC spawning /usr/sbin/sshd: No such file or directory
+Oct 23 23:26:13 toybrick systemd[2468]: ssh.service: Control process exited, code=exited status=203
+y
+Oct 23 23:26:13 toybrick systemd[1]: ssh.service: Failed with result 'exit-code'.
+Oct 23 23:26:13 toybrick systemd[1]: Failed to start OpenBSD Secure Shell server.
+Oct 23 23:26:13 toybrick systemd[1]: ssh.service: Service hold-off time over, scheduling restart.
+Oct 23 23:26:13 toybrick systemd[1]: ssh.service: Scheduled restart job, restart counter is at 5.
+Oct 23 23:26:13 toybrick systemd[1]: Stopped OpenBSD Secure Shell server.
+Oct 23 23:26:13 toybrick systemd[1]: ssh.service: Start request repeated too quickly.
+Oct 23 23:26:13 toybrick systemd[1]: ssh.service: Failed with result 'exit-code'.
+Oct 23 23:26:13 toybrick systemd[1]: Failed to start OpenBSD Secure Shell server.

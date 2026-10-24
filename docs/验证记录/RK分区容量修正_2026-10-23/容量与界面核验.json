@@ -1,0 +1,79 @@
+{
+  "verified_at_utc": "2026-10-23T10:57:54.218172+00:00",
+  "file": "TB-RK3399ProD-Ubuntu-18.04-RK330C-FULL-v2-update.img",
+  "bytes": 1374261720,
+  "sha256": "bf91231fd19cc1843e0d8613a5cd9a5222e6d2e418b28d1ab9d13c73610ba90d",
+  "rkaf_crc": "0xf666d68c",
+  "parts": [
+    {
+      "name": "package-file",
+      "capacity_sectors": "0xff81056c",
+      "flash_lba": "0xffffffff",
+      "bytes": 194,
+      "sha256": "e3d10e73a338a4dbe0902862fec0130b1276b8f0134c251620cd77543c82cfda",
+      "fits_declared_capacity": true
+    },
+    {
+      "name": "bootloader",
+      "capacity_sectors": "0x0",
+      "flash_lba": "0xffffffff",
+      "bytes": 465230,
+      "sha256": "0394f54b1a0f7801cab7689d4bf295a37a773df90c793eaabf2e0e71def7b22a",
+      "fits_declared_capacity": true
+    },
+    {
+      "name": "parameter",
+      "capacity_sectors": "0x2000",
+      "flash_lba": "0x0",
+      "bytes": 438,
+      "sha256": "4612f6c1eebceb66c88b708b00542700b468be2ae8570589c8d7a25060b55030",
+      "fits_declared_capacity": true
+    },
+    {
+      "name": "trust",
+      "capacity_sectors": "0x2000",
+      "flash_lba": "0x4000",
+      "bytes": 4194304,
+      "sha256": "144f2c866e599762a134b9a137e4dfd46bc65c636030c7c9a5bce6650f70772e",
+      "fits_declared_capacity": true
+    },
+    {
+      "name": "uboot",
+      "capacity_sectors": "0x2000",
+      "flash_lba": "0x2000",
+      "bytes": 4194304,
+      "sha256": "5d7bc6808e69c2093916b82f3b2c1e0c579b473eb7df1f33fb8905065efcc949",
+      "fits_declared_capacity": true
+    },
+    {
+      "name": "boot_linux",
+      "capacity_sectors": "0x30000",
+      "flash_lba": "0x6000",
+      "bytes": 67108864,
+      "sha256": "ae8dca6687a71b2e3c679bcc96f78238c6afa92e520ed20b65b4c7b1eefa3c41",
+      "fits_declared_capacity": true
+    },
+    {
+      "name": "rootfs",
+      "capacity_sectors": "0xffffffff",
+      "flash_lba": "0x36000",
+      "bytes": 1297825792,
+      "sha256": "77ec9d1e38d18723c5fc8d6d708ed496f8e8fd57c7bff5ff805e9c0423892a93",
+      "fits_declared_capacity": true
+    }
+  ],
+  "checks": {
+    "chip_matches_device": true,
+    "all_writable_images_fit": true,
+    "all_partition_contents_unchanged": true,
+    "addresses_and_capacities_match_parameter": true,
+    "outer_loader_unchanged": true,
+    "rkdevtool_gui_load_passed_without_capacity_popup": true
+  },
+  "gui_evidence": {
+    "tool": "RKDevTool3.30",
+    "action": "Selected FULL-v2 in the existing firmware dialog via Computer Use and opened it",
+    "result": "Firmware version8.1.00,Loader1.21,chipRK330C and full file path loaded; LOADER present; no error dialog",
+    "upgrade_clicked_by_assistant": false
+  }
+}

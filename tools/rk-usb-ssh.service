@@ -1,0 +1,18 @@
+[Unit]
+Description=SHELL RK USB RNDIS network for SSH
+Requires=sys-kernel-config.mount
+After=sys-kernel-config.mount systemd-modules-load.service
+Wants=ssh.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=/bin/sh -c 'until test -d /sys/class/udc/fe800000.dwc3; do sleep 1; done'
+ExecStartPre=/bin/sh -c 'test -d /sys/kernel/config/usb_gadget || /sbin/modprobe libcomposite'
+ExecStart=/bin/bash /usr/local/sbin/rk_usb_ssh.sh start
+ExecStop=/bin/bash /usr/local/sbin/rk_usb_ssh.sh stop
+TimeoutStartSec=30
+# Ubuntu 18.04 systemd 237 does not allow Restart= for Type=oneshot.
+
+[Install]
+WantedBy=multi-user.target

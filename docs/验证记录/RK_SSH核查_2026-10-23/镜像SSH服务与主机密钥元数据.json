@@ -1,0 +1,24 @@
+{
+  "checked_at_utc": "2026-10-23T15:20:46.128363+00:00",
+  "scope": "Offline FULL-v2 rootfs. Directory names, host-key inode metadata, selected public sshd directives, public service units only. No private key, password or credential content read. No board connection.",
+  "firmware": "TB-RK3399ProD-Ubuntu-18.04-RK330C-FULL-v2-update.img",
+  "ssh_directory_filenames": [
+    "moduli",
+    "ssh_config",
+    "sshd_config"
+  ],
+  "host_key_metadata": [],
+  "selected_active_sshd_directives": [
+    "PermitRootLogin prohibit-password",
+    "PasswordAuthentication yes",
+    "ChallengeResponseAuthentication no",
+    "UsePAM yes",
+    "PrintMotd no",
+    "AcceptEnv LANG LC_*",
+    "Subsystem\tsftp\t/usr/lib/openssh/sftp-server"
+  ],
+  "service_units": {
+    "/lib/systemd/system/ssh.service": "[Unit]\nDescription=OpenBSD Secure Shell server\nAfter=network.target auditd.service\nConditionPathExists=!/etc/ssh/sshd_not_to_be_run\n\n[Service]\nEnvironmentFile=-/etc/default/ssh\nExecStartPre=/usr/sbin/sshd -t\nExecStart=/usr/sbin/sshd -D $SSHD_OPTS\nExecReload=/usr/sbin/sshd -t\nExecReload=/bin/kill -HUP $MAINPID\nKillMode=process\nRestart=on-failure\nRestartPreventExitStatus=255\nType=notify\nRuntimeDirectory=sshd\nRuntimeDirectoryMode=0755\n\n[Install]\nWantedBy=multi-user.target\nAlias=sshd.service\n",
+    "/etc/systemd/system/ssh.service": null
+  }
+}

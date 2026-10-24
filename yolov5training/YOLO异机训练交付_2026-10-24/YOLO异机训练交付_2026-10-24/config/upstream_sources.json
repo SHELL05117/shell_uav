@@ -1,0 +1,9 @@
+{
+  "note": "Pinned references; installed compatibility and actual training/export commits must be verified and recorded.",
+  "rk3399pro_runtime": "https://github.com/airockchip/RK3399Pro_npu/tree/8858114555f1700e41e185b14ec3d266342f8059",
+  "rk3399pro_yolov5_demo": "https://github.com/airockchip/RK3399Pro_npu/tree/8858114555f1700e41e185b14ec3d266342f8059/rknn-api/examples/c_demos/rknn_yolov5_demo",
+  "rknn_toolkit_1": "https://github.com/rockchip-linux/rknn-toolkit/tree/8e30ee72e772d6d39f2fcaf4047fead450b3ee89",
+  "rknn_packages": "https://github.com/rockchip-linux/rknn-toolkit/releases/tag/v1.7.5",
+  "yolov5_rk_optimization_reference": "https://github.com/airockchip/yolov5/tree/d25a07534c14f44296f9444bab2aa5c601cdaaab",
+  "converter_requirements_reference": "https://github.com/rockchip-linux/rknn-toolkit/blob/8e30ee72e772d6d39f2fcaf4047fead450b3ee89/packages/requirements-cpu-ubuntu20.04_py38.txt"
+}

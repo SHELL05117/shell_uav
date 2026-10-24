@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "nc": 6,
+  "background_class": false,
+  "classes": [
+    {
+      "id": 0,
+      "voc_name": "人员",
+      "name": "person_marker",
+      "task_zone": "person",
+      "actionable": true
+    },
+    {
+      "id": 1,
+      "voc_name": "识别项-有毒",
+      "name": "hazard_toxic",
+      "task_zone": "hazard",
+      "actionable": true
+    },
+    {
+      "id": 2,
+      "voc_name": "识别项-易燃",
+      "name": "hazard_flammable",
+      "task_zone": "hazard",
+      "actionable": true
+    },
+    {
+      "id": 3,
+      "voc_name": "识别项-易爆",
+      "name": "hazard_explosive",
+      "task_zone": "hazard",
+      "actionable": true
+    },
+    {
+      "id": 4,
+      "voc_name": "干扰项1",
+      "name": "distractor_1",
+      "task_zone": "ignore",
+      "actionable": false
+    },
+    {
+      "id": 5,
+      "voc_name": "干扰项2",
+      "name": "distractor_2",
+      "task_zone": "ignore",
+      "actionable": false
+    }
+  ]
+}

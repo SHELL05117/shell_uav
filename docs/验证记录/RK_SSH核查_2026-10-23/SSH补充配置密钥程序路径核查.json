@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-23T15:52:05.465544+00:00",
+  "firmware": "TB-RK3399ProD-Ubuntu-18.04-RK330C-FULL-v2-update.img",
+  "scope": "Offline public SSH drop-in, public executable existence and dpkg file-list inspection; no key/credential access or board execution.",
+  "drop_in_path": "/etc/systemd/system/ssh.service.d/10-hostkeys.conf",
+  "original_drop_in": "[Service]\n# Host keys are removed from the image; regenerate them on the first boot.\nExecStartPre=/usr/sbin/ssh-keygen -A\n",
+  "paths": {
+    "/usr/bin/ssh-keygen": "resolves",
+    "/usr/sbin/ssh-keygen": "not found"
+  },
+  "drop_in_in_openssh_server_package_file_list": false,
+  "board_evidence_from_conversation_image": {
+    "image": "IMG_1634.jpeg",
+    "sshd_t": "No error text visible after manual sshd -t; exit code not separately captured.",
+    "failure_target": "/usr/sbin/ssh-keygen",
+    "status": 203,
+    "dpkg": "openssh-server post-installation script returned error exit status 1",
+    "latest_visible_journal_date": "2026-10-23 23:45:44 CST"
+  },
+  "remedy": "Correct only the ssh-keygen executable path in this drop-in, keep a .bak copy, daemon-reload/reset-failed/restart ssh, complete pending dpkg configuration, verify port 22. Board fix has not been executed by assistant."
+}

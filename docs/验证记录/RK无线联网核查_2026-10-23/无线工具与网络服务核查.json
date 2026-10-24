@@ -1,0 +1,77 @@
+{
+  "checked_at_utc": "2026-10-23T12:37:59.946383+00:00",
+  "firmware": "TB-RK3399ProD-Ubuntu-18.04-RK330C-FULL-v2-update.img",
+  "scope": "Offline package database and existence of selected public binary/service paths only; no network credentials read and no board access.",
+  "packages": {
+    "wireless-tools": {
+      "Version": "30~pre9-12ubuntu1",
+      "Status": "install ok installed",
+      "Architecture": "arm64"
+    },
+    "wpasupplicant": {
+      "Version": "2:2.6-15ubuntu2.8+esm1",
+      "Status": "install ok installed",
+      "Architecture": "arm64"
+    },
+    "netplan.io": {
+      "Version": "0.99-0ubuntu3~18.04.5",
+      "Status": "install ok installed",
+      "Architecture": "arm64"
+    },
+    "systemd": {
+      "Version": "237-3ubuntu10.57",
+      "Status": "install ok installed",
+      "Architecture": "arm64"
+    },
+    "iw": {
+      "Version": "4.14-0.1",
+      "Status": "install ok installed",
+      "Architecture": "arm64"
+    },
+    "rfkill": {
+      "Version": "2.31.1-0.4ubuntu3.7",
+      "Status": "install ok installed",
+      "Architecture": "arm64"
+    }
+  },
+  "not_registered": [
+    "bluez",
+    "isc-dhcp-client",
+    "network-manager"
+  ],
+  "paths": {
+    "/sbin/wpa_supplicant": {
+      "resolved_inode": 3782
+    },
+    "/usr/sbin/wpa_supplicant": {
+      "not_resolved": "KeyError"
+    },
+    "/sbin/rfkill": {
+      "not_resolved": "KeyError"
+    },
+    "/usr/sbin/rfkill": {
+      "resolved_inode": 10528
+    },
+    "/sbin/iw": {
+      "resolved_inode": 3711
+    },
+    "/usr/bin/nmcli": {
+      "not_resolved": "KeyError"
+    },
+    "/lib/systemd/system/systemd-networkd.service": {
+      "resolved_inode": 3414
+    },
+    "/etc/systemd/system/multi-user.target.wants/systemd-networkd.service": {
+      "resolved_inode": 3414
+    },
+    "/etc/systemd/system/dbus-org.freedesktop.network1.service": {
+      "not_resolved": "KeyError"
+    },
+    "/etc/systemd/system/multi-user.target.wants/NetworkManager.service": {
+      "not_resolved": "KeyError"
+    },
+    "/sbin/dhclient": {
+      "not_resolved": "KeyError"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+ "onnx": "D:\\project\\yolotraining\\work\\tmp\\exp1_best_snapshot.onnx",
+ "images": 36,
+ "conf": 0.25,
+ "iou": 0.45,
+ "total_detections": 21,
+ "per_class": {
+  "person_marker": 6,
+  "hazard_toxic": 0,
+  "hazard_flammable": 0,
+  "hazard_explosive": 12,
+  "distractor_1": 1,
+  "distractor_2": 2
+ },
+ "parity_vs_pytorch": {
+  "images": 36,
+  "max_box_diff_px": 0.0,
+  "class_mismatch": 0,
+  "conf_max_diff": 0.0,
+  "matched": 0,
+  "head_max_abs_diff": 0.00030052661895751953,
+  "decode_top1_box_diff_px": 0.0003662109375,
+  "decode_top1_conf_diff": 3.3080577850341797e-06,
+  "detections_compared": 21,
+  "nms_match_iou_sum": 15.32011604309082,
+  "nms_match_iou_min": 0.47505199909210205,
+  "nms_match_iou_mean": 0.7295293211936951
+ }
+}
