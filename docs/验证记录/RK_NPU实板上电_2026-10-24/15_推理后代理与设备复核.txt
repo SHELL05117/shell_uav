@@ -1,0 +1,24 @@
+PC time: 2026-10-25T03:01:04.0285723+08:00
+active
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+crw-rw-r-- 1 root root 189, 2 Oct 24 03:14 /dev/bus/usb/001/003
+d9f151d62a7a049d53bf68f4c28c47858389379a319ae8ff3f1dfd18904bc2ba  /home/jcfh/rk_npu_power.py
+5113d59e7bb49ae60bd9ffa493b7e75519310f49865e4d10fffb92d60928d779  /home/jcfh/npu_runtime_175/rk_npu_boot.sh
+0f6a0c7235cead5bb11589ce43a36982bb84a275389ce36f010dfad613328854  /home/jcfh/npu_runtime_175/demo/out.bmp
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+Oct 24 03:13:16 toybrick systemd[1]: Started /home/jcfh/RK3399Pro_npu/drivers/npu_transfer_proxy/linux-aarch64/npu_transfer_proxy.
+Oct 24 03:13:16 toybrick npu_transfer_proxy[12506]: I NPUTransfer: Starting NPU Transfer Proxy, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51), devid = 14ade952d732d316, pid = 12506:1
+/:  Bus 06.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 05.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 1, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 2, Class=Vendor Specific Class, Driver=rtl8723du, 480M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 5000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M
+        |__ Port 1: Dev 3, If 0, Class=, Driver=usbfs, 5000M
+        |__ Port 1: Dev 3, If 1, Class=Vendor Specific Class, Driver=, 5000M

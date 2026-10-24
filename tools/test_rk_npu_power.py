@@ -54,7 +54,9 @@ class FakeSystem:
         pins += '\npin 2 (gpio0-2): pinctrl (GPIO UNCLAIMED) function npu_clk group npu-ref-clk'
         result = {'compatible': [power.COMPATIBLE, 'rockchip,rk3399pro'],
                   'machine': 'aarch64', 'kernel': '4.4.194', 'boot_id': self.boot_id(),
-                  'pins': pins, 'gpio': {n: {'output': False, 'latch': 0, 'level': 0}
+                  'pins': pins, 'gpio': {n: {'output': self.directions.get(n) == 'out',
+                                           'latch': self.levels.get(n, 0),
+                                           'level': self.levels.get(n, 0)}
                                         for n in power.GPIOS},
                   'exported': sorted(self.exported), 'clock24_count': 0,
                   'clock32_count': self.counts[power.CLOCK32], 'clock24_rate': 24000000,
@@ -149,6 +151,17 @@ class PowerTests(unittest.TestCase):
         self.assertEqual(controller.on(0)['result'], 'already_powered_no_reset')
         self.assertEqual(io.writes, before)
         self.assertEqual(io.counts[power.CLOCK24], 1)
+
+    def test_off_on_accepts_unclaimed_output_low_left_by_gpiolib(self):
+        io = FakeSystem()
+        controller = power.Controller(io)
+        controller.on(0)
+        controller.off()
+        self.assertEqual(io.directions[power.RESET], 'out')
+        self.assertFalse(io.exported)
+        self.assertEqual(controller.on(0)['result'], 'power_on_usb_visible')
+        controller.off()
+        self.assert_clean(io)
 
     def test_off_releases_only_owned_resources_and_preserves_shared_32k(self):
         io = FakeSystem(clock32_count=3)

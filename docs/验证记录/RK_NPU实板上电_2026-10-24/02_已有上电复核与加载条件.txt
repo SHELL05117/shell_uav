@@ -1,0 +1,74 @@
+PC time: 2026-10-25T02:51:12.2463949+08:00
+{
+  "npu_usb": {
+    "3-1.1": "2207:180a"
+  },
+  "result": "already_powered_no_reset"
+}
+List of ntb devices attached
+parameter.txt 408
+uboot.img 2097152
+boot.img 21183488
+trust.img 2097152
+MiniLoaderAll.bin 160078
+cmake	3.10.2-1ubuntu2.18.04.2
+g++	4:7.4.0-1ubuntu2.3
+gcc	4:7.4.0-1ubuntu2.3
+libusb-1.0-0:arm64	2:1.0.21-2
+make	4.1-9.1ubuntu1
+pkg-config	0.29.1-0ubuntu2
+
+Bus 003 Device 005: ID 2207:180a  
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            0 (Defined at Interface level)
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x2207 
+  idProduct          0x180a 
+  bcdDevice            1.00
+  iManufacturer           0 
+  iProduct                0 
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength           32
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              400mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass      6 
+      bInterfaceProtocol      5 
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data

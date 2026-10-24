@@ -1,0 +1,166 @@
+PC time: 2026-10-25T02:50:26.4350564+08:00
+f6da92e958731d86c3273e5d23bfea4ec795312c22e2fee3ce10eb54457305d7  /home/jcfh/rk_npu_power.py
+{
+  "action": "read_only_check",
+  "cold_start_blockers": [
+    "Target GPIOs already exported: [4, 10, 11, 54, 55, 56, 32, 36, 35]",
+    "GPIO4 pinmux/consumer is occupied or unknown",
+    "GPIO4 is not in the expected cold input/low state",
+    "GPIO10 pinmux/consumer is occupied or unknown",
+    "GPIO10 is not in the expected cold input/low state",
+    "GPIO11 pinmux/consumer is occupied or unknown",
+    "GPIO11 is not in the expected cold input/low state",
+    "GPIO54 pinmux/consumer is occupied or unknown",
+    "GPIO54 is not in the expected cold input/low state",
+    "GPIO55 pinmux/consumer is occupied or unknown",
+    "GPIO55 is not in the expected cold input/low state",
+    "GPIO56 pinmux/consumer is occupied or unknown",
+    "GPIO56 is not in the expected cold input/low state",
+    "GPIO32 pinmux/consumer is occupied or unknown",
+    "GPIO32 is not in the expected cold input/low state",
+    "GPIO36 pinmux/consumer is occupied or unknown",
+    "GPIO36 is not in the expected cold input/low state",
+    "GPIO35 pinmux/consumer is occupied or unknown",
+    "GPIO35 is not in the expected cold input/low state",
+    "24MHz clock already has an owner; cold-start refused",
+    "Unexpected reference-clock mux or active hardware gate",
+    "Rockchip device already present behind internal hub"
+  ],
+  "hardware": {
+    "boot_id": "d1f84574-45ba-4a5a-8192-b942c3accc9a",
+    "busy": [],
+    "clock24_count": 1,
+    "clock24_prepare": 1,
+    "clock24_rate": 24000000,
+    "clock32_count": 1,
+    "clock_gate": 3836,
+    "clock_select": 8326,
+    "compatible": [
+      "rockchip,rk3399pro-toybrick-prod-linux",
+      "rockchip,rk3399pro"
+    ],
+    "exported": [
+      4,
+      10,
+      11,
+      54,
+      55,
+      56,
+      32,
+      36,
+      35
+    ],
+    "gpio": {
+      "4": {
+        "latch": 1,
+        "level": 1,
+        "output": true
+      },
+      "10": {
+        "latch": 1,
+        "level": 1,
+        "output": true
+      },
+      "11": {
+        "latch": 1,
+        "level": 1,
+        "output": true
+      },
+      "32": {
+        "latch": 1,
+        "level": 1,
+        "output": true
+      },
+      "35": {
+        "latch": 0,
+        "level": 1,
+        "output": false
+      },
+      "36": {
+        "latch": 0,
+        "level": 0,
+        "output": true
+      },
+      "54": {
+        "latch": 1,
+        "level": 1,
+        "output": true
+      },
+      "55": {
+        "latch": 1,
+        "level": 1,
+        "output": true
+      },
+      "56": {
+        "latch": 1,
+        "level": 1,
+        "output": true
+      }
+    },
+    "kernel": "4.4.194",
+    "machine": "aarch64",
+    "npu_usb": {
+      "3-1.1": "2207:180a"
+    }
+  },
+  "ownership_journal": {
+    "boot_id": "d1f84574-45ba-4a5a-8192-b942c3accc9a",
+    "clocks": {
+      "clk_wifi_pmu": 0,
+      "rk808-clkout2": 0
+    },
+    "exported": [
+      4,
+      10,
+      11,
+      54,
+      55,
+      56,
+      32,
+      36,
+      35
+    ],
+    "outputs": [
+      4,
+      10,
+      11,
+      54,
+      55,
+      56,
+      32,
+      36
+    ],
+    "phase": "powered",
+    "profile": "prod-20181217",
+    "schema": 1,
+    "usb_at_power_on": {
+      "3-1.1": "2207:180a"
+    }
+  },
+  "profile": "prod-20181217",
+  "profile_pcb_revision_verified": false
+}
+Bus 003 Device 005: ID 2207:180a  
+Bus 003 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 001 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+ 03:04:04 up 56 min,  2 users,  load average: 0.16, 0.22, 0.24
+[   12.114271] configfs-gadget gadget: super-speed config #1: c
+[   12.114565] IPv6: ADDRCONF(NETDEV_CHANGE): usb0: link becomes ready
+[   12.114960] android_work: sent uevent USB_STATE=CONFIGURED
+[   14.776935] fusb302 8-0022: PD disabled
+[   15.436094] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.
+[  272.880809] systemd-journald[195]: File /var/log/journal/9465cc13756d4442b866525efd8335a4/user-1001.journal corrupted or uncleanly shut down, renaming and replacing.
+[ 1358.508400] RTW: recv eapol packet
+[ 1358.510472] RTW: send eapol packet
+[ 1358.514552] RTW: set group key camid:2, addr:b0:95:8e:55:cd:e7, kid:2, type:TKIP
+[ 3240.150298] usb 3-1.1: new high-speed USB device number 5 using xhci-hcd
+[ 3240.237025] usb 3-1.1: New USB device found, idVendor=2207, idProduct=180a
+[ 3240.237066] usb 3-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Exit: 0

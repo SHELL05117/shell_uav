@@ -1,0 +1,4 @@
+PC capture: 2026-10-25T03:11:44.2186529+08:00
+post process config: box_conf_threshold = 0.50, nms_threshold = 0.60
+Loading mode...
+ExitCode=124

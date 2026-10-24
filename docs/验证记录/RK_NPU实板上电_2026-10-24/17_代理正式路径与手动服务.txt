@@ -1,0 +1,10 @@
+PC time: 2026-10-25T03:03:35.2763634+08:00
+File /lib/systemd/system/systemd-udevd.service:35 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+active
+ExecStart={ path=/usr/local/bin/npu_transfer_proxy ; argv[]=/usr/local/bin/npu_transfer_proxy ; ignore_errors=no ; start_time=[Sat 2026-10-24 03:17:13 CST] ; stop_time=[n/a] ; pid=15335 ; code=(null) ; status=0/0 }
+FragmentPath=/etc/systemd/system/shell-npu-proxy.service
+UnitFileState=static
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+Exit: 0

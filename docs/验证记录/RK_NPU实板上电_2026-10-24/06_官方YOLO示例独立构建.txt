@@ -1,0 +1,28 @@
+PC time: 2026-10-25T02:56:37.8597138+08:00
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- 64bit
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jcfh/npu_runtime_175/build_yolo
+Scanning dependencies of target rknn_yolov5_demo
+[ 25%] Building C object CMakeFiles/rknn_yolov5_demo.dir/src/rga_func.c.o
+[ 50%] Building CXX object CMakeFiles/rknn_yolov5_demo.dir/src/postprocess.cc.o
+[ 75%] Building CXX object CMakeFiles/rknn_yolov5_demo.dir/src/main.cc.o
+[100%] Linking CXX executable rknn_yolov5_demo
+[100%] Built target rknn_yolov5_demo
+ldd: ./rknn_yolov5_demo
+: No such file or directory
+Exit: 1

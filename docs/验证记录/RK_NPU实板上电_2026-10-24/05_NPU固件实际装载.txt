@@ -1,0 +1,10 @@
+PC time: 2026-10-25T02:55:35.4474780+08:00
+Unique NPU USB target: 3-1.1 / 2207:180a
+Not found config.ini
+Program Data in /home/jcfh/npu_runtime_175
+List of rockusb connected(1)
+DevNo=1	Vid=0x2207,Pid=0x180a,LocationID=30101	Mode=Maskrom
+Unique NPU USB target: 3-1.1 / 2207:180a
+
+NPU stage: loader
+Exit: 124

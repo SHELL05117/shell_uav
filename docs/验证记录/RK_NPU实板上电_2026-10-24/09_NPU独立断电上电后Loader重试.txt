@@ -1,0 +1,6 @@
+PC time: 2026-10-25T02:57:29.3326527+08:00
+{
+  "result": "owned_resources_powered_off_and_released"
+}
+ERROR: GPIO4 is not in the expected cold input/low state; GPIO10 is not in the expected cold input/low state; GPIO11 is not in the expected cold input/low state; GPIO54 is not in the expected cold input/low state; GPIO55 is not in the expected cold input/low state; GPIO56 is not in the expected cold input/low state; GPIO32 is not in the expected cold input/low state; GPIO36 is not in the expected cold input/low state
+Exit: 1

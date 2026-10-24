@@ -1,0 +1,12 @@
+[Unit]
+Description=SHELL RK3399Pro NPU transfer proxy (start after NPU firmware boot)
+After=systemd-udevd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/npu_transfer_proxy
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=5
+
+# Deliberately no Install section: power and firmware boot are manual for now.

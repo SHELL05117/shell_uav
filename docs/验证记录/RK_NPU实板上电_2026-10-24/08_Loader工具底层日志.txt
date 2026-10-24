@@ -1,0 +1,54 @@
+PC time: 2026-10-25T02:56:55.6066579+08:00
+/home/jcfh/npu_runtime_175/log/log2026-10-24.txt 1317
+03:06:04 	Upgrade Tool v1.0
+
+03:06:04 	Current process in /home/jcfh/npu_runtime_175
+03:06:04 	Not found config.ini,in the /home/jcfh/npu_runtime_175/config.ini
+03:06:46 	Upgrade Tool v1.0
+
+03:06:46 	Current process in /home/jcfh/npu_runtime_175
+03:06:46 	Not found config.ini,in the /home/jcfh/npu_runtime_175/config.ini
+03:08:32 	Upgrade Tool v1.0
+
+03:08:32 	Current process in /home/jcfh/npu_runtime_175
+03:08:32 	Not found config.ini,in the /home/jcfh/npu_runtime_175/config.ini
+03:08:43 	Upgrade Tool v1.0
+
+03:08:43 	Current process in /home/jcfh/npu_runtime_175
+03:08:43 	Not found config.ini,in the /home/jcfh/npu_runtime_175/config.ini
+03:08:43 	Upgrade Tool v1.0
+
+03:08:43 	Current process in /home/jcfh/npu_runtime_175
+03:08:43 	Not found config.ini,in the /home/jcfh/npu_runtime_175/config.ini
+03:10:21 	Upgrade Tool v1.0
+
+03:10:21 	Current process in /home/jcfh/npu_runtime_175
+03:10:21 	Not found config.ini,in the /home/jcfh/npu_runtime_175/config.ini
+03:10:21 	Upgrade Tool v1.0
+
+03:10:21 	Current process in /home/jcfh/npu_runtime_175
+03:10:21 	Not found config.ini,in the /home/jcfh/npu_runtime_175/config.ini
+03:10:21 	Error:RKU_DeviceRequest-->DeviceRequest vendor=0x471 failed,err=-1
+03:10:21 	<LAYER 769-1> ERROR:DownloadBoot-->Boot_VendorRequest471 failed,index(0)
+[   12.114960] android_work: sent uevent USB_STATE=CONFIGURED
+[   14.776935] fusb302 8-0022: PD disabled
+[   15.436094] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.
+[  272.880809] systemd-journald[195]: File /var/log/journal/9465cc13756d4442b866525efd8335a4/user-1001.journal corrupted or uncleanly shut down, renaming and replacing.
+[ 1358.508400] RTW: recv eapol packet
+[ 1358.510472] RTW: send eapol packet
+[ 1358.514552] RTW: set group key camid:2, addr:b0:95:8e:55:cd:e7, kid:2, type:TKIP
+[ 3240.150298] usb 3-1.1: new high-speed USB device number 5 using xhci-hcd
+[ 3240.237025] usb 3-1.1: New USB device found, idVendor=2207, idProduct=180a
+[ 3240.237066] usb 3-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+/:  Bus 06.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 05.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 1: Dev 5, If 0, Class=Vendor Specific Class, Driver=, 480M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 1, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 2, Class=Vendor Specific Class, Driver=rtl8723du, 480M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 5000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M

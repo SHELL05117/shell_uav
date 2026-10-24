@@ -1,0 +1,17 @@
+PC time: 2026-10-25T02:56:43.3370644+08:00
+total 3040
+drwxrwxr-x 4 jcfh jcfh    4096 Oct 24 03:09 .
+drwxr-xr-x 8 jcfh jcfh    4096 Oct 24 03:06 ..
+drwxrwxr-x 3 jcfh jcfh    4096 Oct 24 03:10 build_yolo
+drwxrwxr-- 2 jcfh jcfh    4096 Oct 24 03:06 log
+-rw-rw-r-- 1 jcfh jcfh    3208 Oct 24 03:08 rk_npu_boot.sh
+-rwxr-xr-x 1 jcfh jcfh 3089960 Oct 24 03:06 upgrade_tool
+Not found config.ini
+Program Data in /home/jcfh/npu_runtime_175
+List of rockusb connected(1)
+DevNo=1	Vid=0x2207,Pid=0x180a,LocationID=30101	Mode=Maskrom
+Not found config.ini
+Program Data in /home/jcfh/npu_runtime_175
+Download boot...
+Download boot failed!
+Exit: 255

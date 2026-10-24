@@ -1,0 +1,4 @@
+PC capture: 2026-10-25T03:14:35.7625680+08:00
+kex_exchange_identification: read: Connection reset
+Connection reset by 192.168.77.1 port 22
+ExitCode=255

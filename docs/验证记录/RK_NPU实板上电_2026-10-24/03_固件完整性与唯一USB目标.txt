@@ -1,0 +1,8 @@
+PC time: 2026-10-25T02:52:55.1001536+08:00
+== firmware git verification ==
+8858114555f1700e41e185b14ec3d266342f8059 Update rk3399pro npu driver to 1.7.5
+e554a1510ec462a31242c99b87b5ad83fbccdb570f33db8305cb3d9ff3fa6332  drivers/npu_firmware/npu_fw/MiniLoaderAll.bin
+e3246735294a5cae0f0cb3a9d9ad5b16a0663815e202e366220d9cd6c7c3e3ca  drivers/npu_firmware/npu_fw/uboot.img
+92d650fe50a9a53e638ebd80d25d793fc298201675ab8cd1370d7593c59a5be2  drivers/npu_firmware/npu_fw/trust.img
+7cef42d2c487daccd38b9b8b67f6eb3ee40b8d853bf7185a1b30c673a089df29  drivers/npu_firmware/npu_fw/boot.img
+Exit: 1

@@ -1,0 +1,29 @@
+PC time: 2026-10-25T02:59:42.2167141+08:00
+Running as unit: shell-npu-proxy.service
+post process config: box_conf_threshold = 0.50, nms_threshold = 0.60
+Loading mode...
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+sdk version: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12) driver version: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+model input num: 1, output num: 3
+  index=0, name=x.1_0, n_dims=4, dims=[1, 3, 640, 640], n_elems=1228800, size=1228800, fmt=NCHW, type=UINT8, qnt_type=AFFINE, zp=0, scale=0.003922
+  index=0, name=sigmoid_at_1097_147_out0_152, n_dims=4, dims=[1, 255, 80, 80], n_elems=1632000, size=1632000, fmt=NCHW, type=UINT8, qnt_type=AFFINE, zp=0, scale=0.003858
+  index=1, name=sigmoid_at_1109_149_out0_153, n_dims=4, dims=[1, 255, 40, 40], n_elems=408000, size=408000, fmt=NCHW, type=UINT8, qnt_type=AFFINE, zp=0, scale=0.003919
+  index=2, name=sigmoid_at_1121_151_out0_154, n_dims=4, dims=[1, 255, 20, 20], n_elems=102000, size=102000, fmt=NCHW, type=UINT8, qnt_type=AFFINE, zp=0, scale=0.003916
+model is NCHW input fmt
+model input height=640, width=640, channel=3
+once run use 63.173000 ms
+loadLabelName ./model/coco_80_labels_list.txt
+person
+ @ (208 238 287 511) 0.868883
+person
+ @ (109 234 231 536) 0.867932
+person
+ @ (480 240 559 525) 0.860113
+bus
+ @ (91 125 554 464) 0.577748
+loop count = 100 , average run  33.399830 ms
+Exit: 0

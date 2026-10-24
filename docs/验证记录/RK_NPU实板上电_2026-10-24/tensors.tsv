@@ -1,0 +1,4 @@
+index	name	fmt	type	zp	scale	elements	dims_api_order
+0	Sigmoid_/model.24/Sigmoid/out0_0	0	3	0	0.00391962	211200	80,80,33,1
+1	Sigmoid_/model.24/Sigmoid_1/out0_1	0	3	0	0.00391833	52800	40,40,33,1
+2	Sigmoid_/model.24/Sigmoid_2/out0_2	0	3	0	0.00391641	13200	20,20,33,1

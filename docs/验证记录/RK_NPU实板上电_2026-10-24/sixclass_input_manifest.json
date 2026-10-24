@@ -1,0 +1,218 @@
+[
+  {
+    "stem": "IMG_2706",
+    "class_id": 0,
+    "rgb_sha256": "abe9788da67f72f95f3770e2a6613ebb6e10371f5f68a1e8cd80f317fb1a6439",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2707",
+    "class_id": 0,
+    "rgb_sha256": "eb8354e8748c23c97f645bec0f190c7086040a8f38bbf96a4d82ed1f9aeb2923",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2708",
+    "class_id": 0,
+    "rgb_sha256": "bb77a56c79924941a759de8e9c5bb8b09ec2b00534c3f3c0e17a98abe00d4ffc",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2709",
+    "class_id": 0,
+    "rgb_sha256": "18c6df08224f3397460c1d81b61b43f1e4b09520e566ec071fd9d0e35033888a",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2710",
+    "class_id": 0,
+    "rgb_sha256": "355d5f4a33179a227070d12549ecb3c86ae8b0ff5fc490de82544fee0861e3bd",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2711",
+    "class_id": 0,
+    "rgb_sha256": "53f24a4e9e05500d178a1d05407c0262aacfcebef2abf5ba545d9557549616f0",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2736",
+    "class_id": 1,
+    "rgb_sha256": "8fa22f56692c399d868ca1444d7660407c465d9fd1b2239b38f44d3deb590a7c",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2737",
+    "class_id": 1,
+    "rgb_sha256": "809ad33e739aa1463f36dca87673e917f4f41821991c530a101885722a2c060c",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2738",
+    "class_id": 1,
+    "rgb_sha256": "b7e88b1ff3f722bb53166e4368b9ad7901741aa37d3517527e83f1e54c7dda12",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2739",
+    "class_id": 1,
+    "rgb_sha256": "a9ac9e4a91ee025413dde75224cc339070ba4001d654c21e4daf1d0e6f568c1c",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2740",
+    "class_id": 1,
+    "rgb_sha256": "9704fe245b24a7d3a1a79c5e829be60767793b80153763454388ab0da303e40b",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2741",
+    "class_id": 1,
+    "rgb_sha256": "bdcef2f39a321fc3041e24d5c98453cd3097fca9d28780549f01bced3d66cb1a",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2766",
+    "class_id": 2,
+    "rgb_sha256": "c358442728997a64afe4f8edb816cc0250dabdbc55f496cfbe0d64b6a3fee269",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2767",
+    "class_id": 2,
+    "rgb_sha256": "58caaf6786f0130b0ed25dbb34700296bd92cd3bbf29d13c02c2ac4b5d7a41f9",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2768",
+    "class_id": 2,
+    "rgb_sha256": "7fcaf7bc12771a9517ed8732cff7b16cf21137e75cde966f2e16cd9f2b33149d",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2769",
+    "class_id": 2,
+    "rgb_sha256": "96b8d06bc4972f1ef2e8ca74ac1778fb1f83bc046bd2ad81ebe225b7fe7fc5a4",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2770",
+    "class_id": 2,
+    "rgb_sha256": "7febc374f9a932f6e8d3a0a2549f243119223449aae420a580f32b033d178d8e",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2771",
+    "class_id": 2,
+    "rgb_sha256": "ab5cf1397d5e644fc974503309356b190cce2ad40a5dea688b52fadcd70a0e7e",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2797",
+    "class_id": 3,
+    "rgb_sha256": "f701ea8ab94ca0956860bbdc87098955a140c5dd3737405b2a0a62981669f5f3",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2798",
+    "class_id": 3,
+    "rgb_sha256": "f6bf4ce8852096cb3789c05f84d3d31c74eb13eec697284d8e3d3fc0e6d4a2a4",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2799",
+    "class_id": 3,
+    "rgb_sha256": "f60e4300d11b749e64af0bf9a118bd123b2c5f6314d8af0bf8a662cc4ab301d3",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2800",
+    "class_id": 3,
+    "rgb_sha256": "f805fd74fbfd4fbb49fb893d0af837f110fbb96c5e5b22f5feb0e478c40fcf95",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2801",
+    "class_id": 3,
+    "rgb_sha256": "857e40712823f42a6254584e8bad39dbfaa0028fd1b363ddcc24fe56e13f2a71",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2802",
+    "class_id": 3,
+    "rgb_sha256": "317fa02e94409a22bcb2c8f7c73bcdc64de001f4738fb9124fba84224e309c65",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2828",
+    "class_id": 4,
+    "rgb_sha256": "2f2824e03abe3f44405ffd6ad097a660c430e0419c6db6790d1aec2036602add",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2829",
+    "class_id": 4,
+    "rgb_sha256": "80f1331b7e0a22130f67144a99b56b7c6d8d09af01111dfe49a3e2cc94bacc58",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2830",
+    "class_id": 4,
+    "rgb_sha256": "b3e33d7d659d7192add6b4eb5719d9bb0de480455054d406d9bc6bc9ac399d73",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2831",
+    "class_id": 4,
+    "rgb_sha256": "8745017420a5b1155682793a4a3ed4932ed5e4db47c635f81fbe9f500adcfa0a",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2832",
+    "class_id": 4,
+    "rgb_sha256": "0db8e5230fc97416922b761177cb945135e9e936ba187025b9792a9ee716eae6",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2833",
+    "class_id": 4,
+    "rgb_sha256": "e2ee1e165154519982095adac0f5c706fed9c386fc152f99d9760d2220945719",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2858",
+    "class_id": 5,
+    "rgb_sha256": "2f0adfb55deb912c713129cc92c152d3c942466949b0e4c7ae4a8c8ebae237c3",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2859",
+    "class_id": 5,
+    "rgb_sha256": "366409a72fe7ab0c6ddf90c0a0ae9ad77dbc59d0b30d9768018388a3d3b12fe9",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2860",
+    "class_id": 5,
+    "rgb_sha256": "afc61eaa44da819ec834aa6ea2c7729b3892a03ef1e2d2c4a88d5215577585cb",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2861",
+    "class_id": 5,
+    "rgb_sha256": "af764474dbe9ee6215e0cdda7240cfb5f1c8d89a1a843931f5824bdca6f8781a",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2862",
+    "class_id": 5,
+    "rgb_sha256": "830eadefeb6020f5478b68f0abad574d20eadab29dfce26f8cc9a4046006bb99",
+    "bytes": 1228800
+  },
+  {
+    "stem": "IMG_2863",
+    "class_id": 5,
+    "rgb_sha256": "86382e229ccc696844909c7f0da9818fb5dddc383cc537775c1b5cff9f467b93",
+    "bytes": 1228800
+  }
+]

@@ -1,0 +1,45 @@
+PC time: 2026-10-25T02:59:26.9317411+08:00
+Bus 003 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 003: ID 2207:0019  
+Bus 001 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 001 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+[ 3867.383495] usb 3-1.1: reset high-speed USB device number 6 using xhci-hcd
+[ 3867.509089] usb 3-1.1: USB disconnect, device number 6
+[ 3867.574382] usb 3-1.1: new high-speed USB device number 7 using xhci-hcd
+[ 3867.651278] usb 3-1.1: New USB device found, idVendor=2207, idProduct=180a
+[ 3867.651319] usb 3-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3867.651344] usb 3-1.1: Product: USB-MSC
+[ 3867.651367] usb 3-1.1: Manufacturer: RockChip
+[ 3867.651390] usb 3-1.1: SerialNumber: rockchip
+[ 3913.214947] usb 3-1.1: USB disconnect, device number 7
+[ 3915.847762] usb 1-1.1: new SuperSpeed USB device number 3 using xhci-hcd
+[ 3915.862132] usb 1-1.1: New USB device found, idVendor=2207, idProduct=0019
+[ 3915.862174] usb 1-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3915.862311] usb 1-1.1: Product: rk3xxx
+[ 3915.862336] usb 1-1.1: Manufacturer: rockchip
+[ 3915.862358] usb 1-1.1: SerialNumber: 14ade952d732d316
+38:#include "rga_func.h"
+165:    for (int i = 0; i < element_size; i++)
+217:int main(int argc, char **argv)
+225:    rga_context rga_ctx;
+231:    memset(&rga_ctx, 0, sizeof(rga_context));
+233:    if (argc != 3)
+235:        printf("Usage: %s <rknn model> <bmp>\n", argv[0]);
+241:    model_name = (char *)argv[1];
+242:    char *image_name = argv[2];
+284:    for (int i = 0; i < io_num.n_input; i++)
+299:    for (int i = 0; i < io_num.n_output; i++)
+353:    // stbi_write_png("./resize.png", width, height, channel, resize_buf, 0);
+369:    for (int i = 0; i < io_num.n_output; i++)
+387:    for (int i = 0; i < io_num.n_output; ++i)
+401:    for (int i = 0; i < detect_result_group.count; i++)
+417:    img.save("./out.bmp");
+425:    for (int i = 0; i < test_count; ++i)

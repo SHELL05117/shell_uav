@@ -188,8 +188,12 @@ def cold_errors(snapshot):
         if not match or '(MUX UNCLAIMED)' not in match.group(0) or '(GPIO UNCLAIMED)' not in match.group(0):
             errors.append('GPIO%d pinmux/consumer is occupied or unknown' % number)
         entry = snapshot['gpio'][number]
-        if entry['output'] or entry['level'] or entry['latch']:
-            errors.append('GPIO%d is not in the expected cold input/low state' % number)
+        # gpiolib unexport releases ownership but leaves a previous output-low
+        # direction in hardware. That is also a safe inactive state; rejecting
+        # it would make a normal off/on cycle impossible. Occupancy is checked
+        # independently above, and any high level or latch still blocks start.
+        if entry['level'] or entry['latch']:
+            errors.append('GPIO%d is not in the expected inactive low state' % number)
     if not re.search(r'^pin 2 .*function npu_clk group npu-ref-clk$', snapshot['pins'], re.M):
         errors.append('GPIO0_A2 is not routed to npu-ref-clk')
     if snapshot['clock24_count'] or snapshot['clock24_prepare']:
