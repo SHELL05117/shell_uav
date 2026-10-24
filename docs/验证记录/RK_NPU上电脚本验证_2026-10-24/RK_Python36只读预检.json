@@ -1,0 +1,72 @@
+{
+  "action": "read_only_check",
+  "cold_start_blockers": [],
+  "hardware": {
+    "boot_id": "d1f84574-45ba-4a5a-8192-b942c3accc9a",
+    "busy": [],
+    "clock24_count": 0,
+    "clock24_prepare": 0,
+    "clock24_rate": 24000000,
+    "clock32_count": 0,
+    "clock_gate": 4092,
+    "clock_select": 8326,
+    "compatible": [
+      "rockchip,rk3399pro-toybrick-prod-linux",
+      "rockchip,rk3399pro"
+    ],
+    "exported": [],
+    "gpio": {
+      "4": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "10": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "11": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "32": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "35": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "36": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "54": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "55": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      },
+      "56": {
+        "latch": 0,
+        "level": 0,
+        "output": false
+      }
+    },
+    "kernel": "4.4.194",
+    "machine": "aarch64",
+    "npu_usb": {}
+  },
+  "ownership_journal": null,
+  "profile": "prod-20181217",
+  "profile_pcb_revision_verified": false
+}

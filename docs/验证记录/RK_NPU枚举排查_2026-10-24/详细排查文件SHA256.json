@@ -1,0 +1,107 @@
+[
+  {
+    "path": "参考源码/clk-rk3399.c",
+    "bytes": 78251,
+    "sha256": "b16506d7178216006e708cb22a2e2145140b7c823ebb42a59b19cc9cd1d867ec"
+  },
+  {
+    "path": "参考源码/clk.c",
+    "bytes": 88470,
+    "sha256": "d4e4a93c5d11c8dd7e814ded89a545c4dba0e512a512d36ca031a19b6b954f5a"
+  },
+  {
+    "path": "参考源码/npu_powerctrl_friendlyarm.c",
+    "bytes": 6397,
+    "sha256": "0e8e41864269c072ec6ba1962dd315c262af7af5473a31d70ba919ec594fe30b"
+  },
+  {
+    "path": "参考源码/npu_powerctrl_tinkerboard.c",
+    "bytes": 7925,
+    "sha256": "4de3ffb794f1d94bc8acc93926cae365e3d6888cf1925b1ff32d3d343b52c1a4"
+  },
+  {
+    "path": "参考源码/pinctrl-rockchip.c",
+    "bytes": 128325,
+    "sha256": "a2f53acbf79c1de2e4fc5718db92bcdc2b4fd397f9c306a04411188590f29d92"
+  },
+  {
+    "path": "参考源码/rk3399pro-toybrick.dtsi",
+    "bytes": 17596,
+    "sha256": "3aabfbaef4cf0b9d74a7531d0a3ff5b75d20e020527c0519273783fc7a02f7d5"
+  },
+  {
+    "path": "参考源码/rockchip-clk.h",
+    "bytes": 29943,
+    "sha256": "018a72d0eed8b78417f4879f673bb804036e2d9160ffc5c29e8027b78f6722de"
+  },
+  {
+    "path": "引脚复用与时钟接口核验.txt",
+    "bytes": 877,
+    "sha256": "d8527e3b655a3a6e5301558e434464a21cb23aecbbe2fe258bc2e46df11ea462"
+  },
+  {
+    "path": "原理图_P04_框图.png",
+    "bytes": 252497,
+    "sha256": "429e6f7700aeb980de2bc826720cb4a04e82db51dacf0297ff3ba24807c58180"
+  },
+  {
+    "path": "原理图_P07_NPU控制.png",
+    "bytes": 722340,
+    "sha256": "86d3cb03bcab2afa8e6592a478f37404fc82d8a58fdaec37cb27ce566475fec1"
+  },
+  {
+    "path": "原理图_P10_NPU接口.png",
+    "bytes": 664772,
+    "sha256": "7fa3359887f726bd2fe98c818fbd94171d8d2807561a217260514ef96a0a60b5"
+  },
+  {
+    "path": "原理图_P17_NPU电源.png",
+    "bytes": 747324,
+    "sha256": "6ea6e6eadd9a93fdf9e55c257f1d2adb98d6d58755fcb9b84c95f7fb39f0f9fe"
+  },
+  {
+    "path": "只读寄存器核查.py",
+    "bytes": 2787,
+    "sha256": "a5097beb1e078cfbd1c87ced345a115e45be8ae7d272fe7956c5e16562116c90"
+  },
+  {
+    "path": "GPIO与时钟只读寄存器核验.txt",
+    "bytes": 933,
+    "sha256": "3fe72cb00a9e6d013195b17a821ec6270f0f82cf05361413b205a1e8fcb7127c"
+  },
+  {
+    "path": "README.md",
+    "bytes": 12488,
+    "sha256": "136c121763a6620d44c1c5853b10053080d9128f5ddd31bbb1df693134581865"
+  },
+  {
+    "path": "schematic_page_04.txt",
+    "bytes": 1722,
+    "sha256": "ecdd02f367f00005733c3156e7845768531d1c0dc1d6316ab58cabe423a4a792"
+  },
+  {
+    "path": "schematic_page_07.txt",
+    "bytes": 5851,
+    "sha256": "b556dac8805323d7fa7543d383df51b4cc360502ebd4c61ecf920c6d990f72d8"
+  },
+  {
+    "path": "schematic_page_10.txt",
+    "bytes": 5175,
+    "sha256": "427864fc20bafb49cfd65c92167dde8168eb235f0e788ca9adeda576c96d6e4b"
+  },
+  {
+    "path": "schematic_page_17.txt",
+    "bytes": 5192,
+    "sha256": "bd683f6c9a1981b19922ccd94cad8a14d94442603edf1158f07664b9f460ec5b"
+  },
+  {
+    "path": "SSH核验.txt",
+    "bytes": 3713,
+    "sha256": "60d0f55e84c46d5c487573dcfd8f4545be8c7ff7a93916459415dd9762e44b1d"
+  },
+  {
+    "path": "USB集线器与启动组件.txt",
+    "bytes": 4273,
+    "sha256": "2852c85b8290ed5e993eb87e2e81d0185d6a1d63c0b5d8bbb853f3fedafd7c31"
+  }
+]

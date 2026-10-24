@@ -1,0 +1,8 @@
+PC time: 2026-10-25T02:25:22.6894160+08:00
+Python 3.6.9
+Linux toybrick 4.4.194 #1 SMP Tue Oct 20 18:43:31 Asia 2026 aarch64 aarch64 aarch64 GNU/Linux
+f6da92e958731d86c3273e5d23bfea4ec795312c22e2fee3ce10eb54457305d7  /home/jcfh/rk_npu_power.py
+-rw-rw-r-- 1 jcfh jcfh 18844 Oct 24 02:37 /home/jcfh/rk_npu_power.py
+no_power_journal
+no_power_lock
+No on/off command executed in this turn.

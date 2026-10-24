@@ -1,0 +1,57 @@
+PC verification time: 2026-10-25T00:56:52.5469919+08:00
+== board time (known drift) ==
+2026-10-24T02:49:46+08:00
+Linux toybrick 4.4.194 #1 SMP Tue Oct 20 18:43:31 Asia 2026 aarch64 aarch64 aarch64 GNU/Linux
+== repository ==
+8858114555f1700e41e185b14ec3d266342f8059 Update rk3399pro npu driver to 1.7.5
+origin	https://github.com/airockchip/RK3399Pro_npu.git (fetch)
+origin	https://github.com/airockchip/RK3399Pro_npu.git (push)
+== executable and user/root enumeration ==
+/home/jcfh/RK3399Pro_npu/drivers/npu_transfer_proxy/linux-aarch64/npu_transfer_proxy: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, for GNU/Linux 3.7.0, BuildID[sha1]=76a2716cb7b260431d54cfd5c0b6eefc07e0cd4e, stripped
+List of ntb devices attached
+List of ntb devices attached
+== proxy running; enumerate again ==
+I NPUTransfer: Starting NPU Transfer Proxy, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51), devid = 0123456789ABCDEF, pid = 25082:25081
+List of ntb devices attached
+== cleanup, known tools, device paths ==
+  PID COMMAND
+== usb/pci ==
+Bus 003 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 001 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+total 0
+drwxr-xr-x 2 root root 0 Oct 24 02:47 .
+drwxr-xr-x 5 root root 0 Oct 24 02:48 ..
+== compatibility ==
+rockchip,rk3399pro-toybrick-prod-linux
+rockchip,rk3399pro
+== filtered kernel log ==
+[    0.289646] of_get_named_gpiod_flags: parsed 'gpio' property of node '/vcc-pcie-regulator[0]' - status (0)
+[    0.289693] vcc_pcie: no parameters
+[    0.289847] reg-fixed-voltage vcc-pcie-regulator: vcc_pcie supplying 0uV
+[    0.403980] phy phy-pcie-phy.3: Looking up phy-supply from device tree
+[    0.403991] phy phy-pcie-phy.3: Looking up phy-supply property in node /pcie-phy failed
+[    0.406063] rockchip-pcie f8000000.pcie: GPIO lookup for consumer ep
+[    0.406075] rockchip-pcie f8000000.pcie: using device tree for GPIO lookup
+[    0.406105] of_get_named_gpiod_flags: parsed 'ep-gpios' property of node '/pcie@f8000000[0]' - status (0)
+[    0.406370] rockchip-pcie f8000000.pcie: Looking up vpcie3v3-supply from device tree
+[    0.406383] rockchip-pcie f8000000.pcie: Looking up vpcie3v3-supply property in node /pcie@f8000000 failed
+[    0.406399] rockchip-pcie f8000000.pcie: no vpcie3v3 regulator found
+[    0.406987] rockchip-pcie f8000000.pcie: Looking up vpcie1v8-supply from device tree
+[    0.406999] rockchip-pcie f8000000.pcie: Looking up vpcie1v8-supply property in node /pcie@f8000000 failed
+[    0.407012] rockchip-pcie f8000000.pcie: no vpcie1v8 regulator found
+[    0.407609] rockchip-pcie f8000000.pcie: Looking up vpcie0v9-supply from device tree
+[    0.407621] rockchip-pcie f8000000.pcie: Looking up vpcie0v9-supply property in node /pcie@f8000000 failed
+[    0.407634] rockchip-pcie f8000000.pcie: no vpcie0v9 regulator found
+[    0.408219] rockchip-pcie f8000000.pcie: missing "memory-region" property
+[    0.408851] PCI host bridge /pcie@f8000000 ranges:
+[    0.952304] rockchip-pcie f8000000.pcie: PCIe link training gen1 timeout!
+[    0.952942] rockchip-pcie f8000000.pcie: deferred probe failed
+[    0.953694] rockchip-pcie: probe of f8000000.pcie failed with error -110
+== matching support files (exclude input substring) ==

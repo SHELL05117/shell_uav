@@ -1,0 +1,19 @@
+PC time: 2026-10-25T02:23:23.4547759+08:00
+test_active_inference_blocks_off_without_changing_power (__main__.PowerTests.test_active_inference_blocks_off_without_changing_power) ... ok
+test_changed_running_state_is_never_silently_reinitialized (__main__.PowerTests.test_changed_running_state_is_never_silently_reinitialized) ... ok
+test_clock_refcount_race_releases_one_reference_and_preserves_the_other (__main__.PowerTests.test_clock_refcount_race_releases_one_reference_and_preserves_the_other) ... ok
+test_electrical_order_and_minimum_delays (__main__.PowerTests.test_electrical_order_and_minimum_delays) ... ok
+test_failed_power_down_retains_gpio_ownership_for_retry (__main__.PowerTests.test_failed_power_down_retains_gpio_ownership_for_retry) ... ok
+test_failure_at_every_startup_hardware_write_rolls_back (__main__.PowerTests.test_failure_at_every_startup_hardware_write_rolls_back) ... ok
+test_foreign_gpio_active_clock_wrong_board_and_busy_process_refuse_without_writes (__main__.PowerTests.test_foreign_gpio_active_clock_wrong_board_and_busy_process_refuse_without_writes) ... ok
+test_gpio_acquired_by_another_client_during_start_is_never_released (__main__.PowerTests.test_gpio_acquired_by_another_client_during_start_is_never_released) ... ok
+test_missing_usb_rolls_back_instead_of_reporting_npu_success (__main__.PowerTests.test_missing_usb_rolls_back_instead_of_reporting_npu_success) ... ok
+test_off_releases_only_owned_resources_and_preserves_shared_32k (__main__.PowerTests.test_off_releases_only_owned_resources_and_preserves_shared_32k) ... ok
+test_repeat_on_never_resets_or_increments_clocks (__main__.PowerTests.test_repeat_on_never_resets_or_increments_clocks) ... ok
+test_usb_success_requires_internal_hub_port_one (__main__.PowerTests.test_usb_success_requires_internal_hub_port_one) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.011s
+
+OK
+Exit: 0

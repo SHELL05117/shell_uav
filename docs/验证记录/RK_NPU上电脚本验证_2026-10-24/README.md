@@ -1,0 +1,26 @@
+# RK NPU上电脚本实现与验证
+
+[脚本](../../../tools/rk_npu_power.py)｜[模拟故障测试](../../../tools/test_rk_npu_power.py)｜[使用说明](../../项目资料/RK_NPU上电脚本使用说明_2026-10-24.md)｜[前序硬件状态核查](../RK_NPU枚举排查_2026-10-24/README.md)
+
+实际执行时间：2026-10-25凌晨，按08:00前归2026-10-24。SHELL要求编写脚本，本轮只在板端运行模拟测试和只读check，未执行on／off、未写GPIO或时钟，没有刷固件、重启或配置自启。
+
+## 实现
+
+Python3.6及以上，仅标准库。默认check只读；on／off必须显式选择prod-20181217控制定义。上电前核对ProD兼容串、AArch64／4.4.194、现场GPIO地址／方向／电平／占用、参考时钟复用及门控。GPIO使用sysfs，初始低电平输出用direction=low原子配置；/dev/mem仅O_RDONLY／PROT_READ用于核查。
+
+按已审阅的Rockchip序列控制六路电源、24MHz和复位，NPU休眠状态引脚保持输入；等待内置Genesys集线器1号端口出现Rockchip USB设备才报告power_on_usb_visible。它不代表固件已启动或模型可运行。失败会尝试关断，关断失败保留资源归属及明确报错；不强占原有GPIO，不复位已由本脚本开启的设备，不释放其他调用者的时钟引用。
+
+profile基于ProD V1.0／20181217图纸及同源控制实现。实物V1.2逐网对应和真实电源轨测量仍待核对，check字段profile_pcb_revision_verified始终false；本轮不将条件检查通过扩大为硬件兼容验收。
+
+## 实际验证结果
+
+- 本地Python运行12项模拟测试，通过：[完整输出](本地故障注入测试.txt)。启动流程27个硬件写入点逐一注入单次失败，均关断并释放本次资源；另验最小间隔／复位延时、USB超时回退、重复on无写入、外部GPIO抢占、clock引用竞态、关断失败保留归属及重试、运行代理阻止off、USB限定内部1号端口。模拟硬件不访问本机GPIO或寄存器。
+- RK实际Python3.6.9运行同12项测试，通过：[完整输出](RK_Python36故障注入测试.txt)。测试脚本通过stdin运行，无板端测试文件／字节码落盘；硬件后端被FakeSystem替换，USB筛选测试也仅使用内存数据。
+- 板端正式脚本check返回0、cold_start_blockers=[]，没有资源归属文件，PCB版本仍false：[实际报告](RK_Python36只读预检.json)。这是只读条件检查通过，未执行实际上电。
+- 本地和板端脚本SHA256相同，板端位置/home/jcfh/rk_npu_power.py；未改/home/jcfh/RK3399Pro_npu官方仓库。部署后确认/run/shell-rk-npu-power.json及锁文件都不存在，见[部署与收尾记录](部署与收尾记录.txt)。
+
+本机首次测试发现Windows没有fcntl；已将fcntl导入移到仅Linux的写操作CLI路径，跨平台内存模拟测试可运行。随后所有最终测试通过，没有借用真实硬件来代替故障注入。
+
+## 待完成
+
+实物V1.2控制对应确认、实际on及USB启动枚举、配套USB NPU固件装载、运行代理／模型推理和重启自启均未验收。本轮交付是可审阅、已部署的独立脚本及可复现逻辑验证，不是NPU恢复完成。

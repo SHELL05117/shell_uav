@@ -1,0 +1,34 @@
+PC verification time: 2026-10-25T02:04:42.8081097+08:00
+== clock counts ==
+0
+0
+24000000
+== pin ownership ==
+pin 2 (gpio0-2): pinctrl (GPIO UNCLAIMED) function npu_clk group npu-ref-clk
+pin 4 (gpio0-4): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 10 (gpio0-10): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 11 (gpio0-11): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 32 (gpio1-0): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 35 (gpio1-3): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 36 (gpio1-4): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 54 (gpio1-22): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 55 (gpio1-23): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+pin 56 (gpio1-24): (MUX UNCLAIMED) (GPIO UNCLAIMED)
+== existing exports ==
+export
+gpio149
+gpio41
+gpio42
+gpio5
+gpio6
+gpiochip0
+gpiochip128
+gpiochip32
+gpiochip511
+gpiochip64
+gpiochip96
+unexport
+== root query ==
+List of ntb devices attached
+== remaining test process ==
+  PID COMMAND

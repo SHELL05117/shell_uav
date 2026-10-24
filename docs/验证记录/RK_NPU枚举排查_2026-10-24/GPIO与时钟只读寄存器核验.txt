@@ -1,0 +1,19 @@
+PC verification time: 2026-10-25T02:04:42.2594579+08:00
+DT /proc/device-tree/pinctrl/gpio0@ff720000/reg 00000000ff7200000000000000000100
+DT /proc/device-tree/pinctrl/gpio1@ff730000/reg 00000000ff7300000000000000000100
+gpio0 {"DR": "0x1062", "DDR": "0x1062", "EXT_PORT": "0x11e3"}
+gpio1 {"DR": "0x600", "DDR": "0x24620", "EXT_PORT": "0x35bf84"}
+4 NPU_PWREN_1_0V8 input latch 0 level 0
+10 NPU_PWREN_2_LOG input latch 0 level 0
+11 NPU_PWREN_3_1V8_DDR input latch 0 level 0
+54 NPU_PWREN_4_CPU input latch 0 level 0
+55 NPU_PWREN_5_3V3 input latch 0 level 0
+56 NPU_PWREN_6_CORE input latch 0 level 0
+32 CPU_RST_NPU input latch 0 level 0
+35 NPU_INT_CPU input latch 0 level 0
+36 CPU_INT_NPU input latch 0 level 0
+PMUCRU {"CLKSEL_CON1": "0x2086", "CLKGATE_CON0": "0xffc"}
+clk_wifi_div_gate_bit8 1 (1 means disabled, CLK_GATE_SET_TO_DISABLE)
+clk_wifi_source_bit13 1 (1 selects xin24m)
+clk_wifi_pmu_mux_bit14 0 (0 selects clk_wifi_div)
+Exit: 0

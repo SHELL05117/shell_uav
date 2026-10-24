@@ -1,0 +1,156 @@
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+D D
+C C
+B B
+A A
+BUCK
+VCC5V0_SYS_S3
+VCC_RTC_S5
+MIPI_RX Camera
+Interface  
+I2C2
+I2C1
+I2C4
+UART RS232 x1
+I2C7/6
+SPI5
+GPIOs
+40PIN
+External 
+Interface
+VCC3V3_SYS_S3
+VCC5V0_SYS_S3
+I2C x2
+SPI x1
+ADC x2
+POWER x3
+GPIO x4
+NB679GD BUCK
+RK809-3
+LDO
+VCC5V0_SYS_S3
+RK3399Pro SOC
+USB HOST0
+USB3.0 HUB
+GL3520
+USB WIFI/BT
+Typec1
+USB 3.0 host
+Connector x1
+Typec0/DP
+USB Typec
+Connector
+MIPI_RX
+Sperker
+Headphone
+Mic
+USB HOST1
+Recovery/ADC ADC eDP eDP display
+MIPI_TX/RX MIPI_RX Camera
+Interface  
+HDMI PortHDMI
+RGMII GMAC ：
+RTL8211 RJ45
+UART2
+POWER SYSTEM
+DC 12V
+Storage
+LPDDR3
+TF Card
+FLASH0
+SDMMC0
+DDR0
+DDR1
+eMMC(default)
+Nand Flash
+32k RTC Reset
+RTCCLK
+SYSTEM POWER
+RESET
+RESET_KEY
+I2C0
+I2C3
+Debug
+FT232RL
+I2S0
+I2S MIC ARRAY
+LCM eDP/MIPI
+HDMI
+Audio SPK
+USB 2.0 HOST
+Camera
+USB 3.0 HOST
+POWER_KEY
+POWER
+GPIOsSYSTEM WORK LED
+RGBLED/FAN
+2X32BIT
+MIPI_TX
+I2C4 TOUCH SIGNAL
+I2S1
+AUDIO
+NPU USB3.0
+NPU SPI 
+USB3.0
+USB 2.0 host
+Connector x2
+3G/4G 
+mini-PCI Slot
+USB2.0
+SIM Slot
+RTC
+UART0 uart_tx/rx
+PCIEPCIE
+X4 Slot
+NPU DDR LPDDR3
+1X32BIT
+USB3.0
+System block diagram
+VCC12V_DCIN
+UART4
+MIPI_TX Interface  
+Project:
+File:
+Date:
+Fuzhou Rockchip Electronics
+Designed by:
+Rev:
+Sheet:  of
+Monday, December 17, 2018
+<Page name>
+RK3399Pro LP3S178P232DD8
+HXS 3 99
+V1.0
+Project:
+File:
+Date:
+Fuzhou Rockchip Electronics
+Designed by:
+Rev:
+Sheet:  of
+Monday, December 17, 2018
+<Page name>
+RK3399Pro LP3S178P232DD8
+HXS 3 99
+V1.0
+Project:
+File:
+Date:
+Fuzhou Rockchip Electronics
+Designed by:
+Rev:
+Sheet:  of
+Monday, December 17, 2018
+<Page name>
+RK3399Pro LP3S178P232DD8
+HXS 3 99
+V1.0
