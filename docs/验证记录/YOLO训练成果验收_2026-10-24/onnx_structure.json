@@ -1,0 +1,54 @@
+{
+  "checker": "passed",
+  "opsets": [
+    {
+      "domain": "",
+      "version": 12
+    }
+  ],
+  "inputs": {
+    "images": [
+      1,
+      3,
+      640,
+      640
+    ]
+  },
+  "outputs": {
+    "output0": [
+      1,
+      33,
+      80,
+      80
+    ],
+    "286": [
+      1,
+      33,
+      40,
+      40
+    ],
+    "288": [
+      1,
+      33,
+      20,
+      20
+    ]
+  },
+  "operators": {
+    "Conv": 61,
+    "Relu": 57,
+    "Add": 7,
+    "Concat": 13,
+    "MaxPool": 6,
+    "Constant": 4,
+    "Resize": 2,
+    "Sigmoid": 3
+  },
+  "versions": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "onnx": "1.17.0",
+    "onnxruntime": "1.20.1",
+    "opencv": "4.10.0"
+  }
+}

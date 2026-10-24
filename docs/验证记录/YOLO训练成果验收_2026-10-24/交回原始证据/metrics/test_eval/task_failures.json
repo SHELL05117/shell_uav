@@ -1,0 +1,161 @@
+{
+ "working_point": {
+  "conf": 0.25,
+  "iou": 0.5,
+  "source": "chosen for reporting only; no business threshold was provided"
+ },
+ "images": 36,
+ "distractor_predicted_actionable": [
+  {
+   "stem": "IMG_2829",
+   "gt": 4,
+   "gt_name": "distractor_1",
+   "pred": 3,
+   "pred_name": "hazard_explosive",
+   "n_det": 9,
+   "top1_conf": 0.7196
+  },
+  {
+   "stem": "IMG_2833",
+   "gt": 4,
+   "gt_name": "distractor_1",
+   "pred": 2,
+   "pred_name": "hazard_flammable",
+   "n_det": 16,
+   "top1_conf": 0.6856
+  },
+  {
+   "stem": "IMG_2858",
+   "gt": 5,
+   "gt_name": "distractor_2",
+   "pred": 3,
+   "pred_name": "hazard_explosive",
+   "n_det": 14,
+   "top1_conf": 0.37
+  },
+  {
+   "stem": "IMG_2861",
+   "gt": 5,
+   "gt_name": "distractor_2",
+   "pred": 0,
+   "pred_name": "person_marker",
+   "n_det": 25,
+   "top1_conf": 0.3989
+  },
+  {
+   "stem": "IMG_2862",
+   "gt": 5,
+   "gt_name": "distractor_2",
+   "pred": 3,
+   "pred_name": "hazard_explosive",
+   "n_det": 29,
+   "top1_conf": 0.2479
+  }
+ ],
+ "actionable_predicted_distractor": [
+  {
+   "stem": "IMG_2736",
+   "gt": 1,
+   "gt_name": "hazard_toxic",
+   "pred": 5,
+   "pred_name": "distractor_2",
+   "n_det": 20,
+   "top1_conf": 0.3029
+  },
+  {
+   "stem": "IMG_2737",
+   "gt": 1,
+   "gt_name": "hazard_toxic",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 14,
+   "top1_conf": 0.3492
+  },
+  {
+   "stem": "IMG_2740",
+   "gt": 1,
+   "gt_name": "hazard_toxic",
+   "pred": 5,
+   "pred_name": "distractor_2",
+   "n_det": 10,
+   "top1_conf": 0.2353
+  },
+  {
+   "stem": "IMG_2767",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 38,
+   "top1_conf": 0.412
+  },
+  {
+   "stem": "IMG_2768",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 4,
+   "pred_name": "distractor_1",
+   "n_det": 12,
+   "top1_conf": 0.4198
+  },
+  {
+   "stem": "IMG_2771",
+   "gt": 2,
+   "gt_name": "hazard_flammable",
+   "pred": 5,
+   "pred_name": "distractor_2",
+   "n_det": 7,
+   "top1_conf": 0.222
+  },
+  {
+   "stem": "IMG_2798",
+   "gt": 3,
+   "gt_name": "hazard_explosive",
+   "pred": 5,
+   "pred_name": "distractor_2",
+   "n_det": 32,
+   "top1_conf": 0.2153
+  },
+  {
+   "stem": "IMG_2801",
+   "gt": 3,
+   "gt_name": "hazard_explosive",
+   "pred": 5,
+   "pred_name": "distractor_2",
+   "n_det": 34,
+   "top1_conf": 0.216
+  }
+ ],
+ "actionable_missed": [
+  {
+   "stem": "IMG_2708",
+   "gt": 0,
+   "gt_name": "person_marker",
+   "pred": null,
+   "pred_name": "missed",
+   "n_det": 14,
+   "top1_conf": 0.4617
+  },
+  {
+   "stem": "IMG_2797",
+   "gt": 3,
+   "gt_name": "hazard_explosive",
+   "pred": null,
+   "pred_name": "missed",
+   "n_det": 2,
+   "top1_conf": 0.0259
+  },
+  {
+   "stem": "IMG_2802",
+   "gt": 3,
+   "gt_name": "hazard_explosive",
+   "pred": null,
+   "pred_name": "missed",
+   "n_det": 10,
+   "top1_conf": 0.0365
+  }
+ ],
+ "correct": 14,
+ "missed_total": 3,
+ "matched_iou_mean": 0.911
+}

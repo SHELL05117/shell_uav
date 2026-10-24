@@ -1,0 +1,46 @@
+{
+ "onnx": "D:\\project\\yolotraining\\work\\runs\\exp1_warm_coco_silu\\weights\\best.onnx",
+ "onnx_sha256": "42f4c1fba3b5aa9716961a5ad87dccb8c6bb67c376c6a03003e3c6b82b297933",
+ "toolkit": "unknown",
+ "steps": [
+  {
+   "step": "config",
+   "ret": 0
+  },
+  {
+   "step": "load_onnx",
+   "ret": 0,
+   "input_size": [
+    [
+     1,
+     3,
+     640,
+     640
+    ]
+   ]
+  },
+  {
+   "step": "build",
+   "ret": 0,
+   "quantized": true
+  },
+  {
+   "step": "export_rknn",
+   "ret": 0,
+   "path": "D:\\project\\yolotraining\\work\\rknn\\sixclass_yolov5s_relu_rk3399pro.rknn"
+  }
+ ],
+ "ok": true,
+ "error": null,
+ "inputs": [
+  "images"
+ ],
+ "outputs": [
+  "output0",
+  "286",
+  "288"
+ ],
+ "elapsed_s": 65.6,
+ "rknn_bytes": 7174523,
+ "rknn_sha256": "f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1"
+}

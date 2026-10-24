@@ -1,0 +1,326 @@
+[
+ {
+  "stem": "IMG_2706",
+  "gt": 0,
+  "gt_name": "person_marker",
+  "pred": 0,
+  "pred_name": "person_marker",
+  "n_det": 16,
+  "top1_conf": 0.9319
+ },
+ {
+  "stem": "IMG_2707",
+  "gt": 0,
+  "gt_name": "person_marker",
+  "pred": 0,
+  "pred_name": "person_marker",
+  "n_det": 12,
+  "top1_conf": 0.3756
+ },
+ {
+  "stem": "IMG_2708",
+  "gt": 0,
+  "gt_name": "person_marker",
+  "pred": null,
+  "pred_name": "missed",
+  "n_det": 14,
+  "top1_conf": 0.4617
+ },
+ {
+  "stem": "IMG_2709",
+  "gt": 0,
+  "gt_name": "person_marker",
+  "pred": 0,
+  "pred_name": "person_marker",
+  "n_det": 8,
+  "top1_conf": 0.4328
+ },
+ {
+  "stem": "IMG_2710",
+  "gt": 0,
+  "gt_name": "person_marker",
+  "pred": 0,
+  "pred_name": "person_marker",
+  "n_det": 9,
+  "top1_conf": 0.1875
+ },
+ {
+  "stem": "IMG_2711",
+  "gt": 0,
+  "gt_name": "person_marker",
+  "pred": 0,
+  "pred_name": "person_marker",
+  "n_det": 5,
+  "top1_conf": 0.6338
+ },
+ {
+  "stem": "IMG_2736",
+  "gt": 1,
+  "gt_name": "hazard_toxic",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 20,
+  "top1_conf": 0.3029
+ },
+ {
+  "stem": "IMG_2737",
+  "gt": 1,
+  "gt_name": "hazard_toxic",
+  "pred": 4,
+  "pred_name": "distractor_1",
+  "n_det": 14,
+  "top1_conf": 0.3492
+ },
+ {
+  "stem": "IMG_2738",
+  "gt": 1,
+  "gt_name": "hazard_toxic",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 23,
+  "top1_conf": 0.6779
+ },
+ {
+  "stem": "IMG_2739",
+  "gt": 1,
+  "gt_name": "hazard_toxic",
+  "pred": 2,
+  "pred_name": "hazard_flammable",
+  "n_det": 5,
+  "top1_conf": 0.2787
+ },
+ {
+  "stem": "IMG_2740",
+  "gt": 1,
+  "gt_name": "hazard_toxic",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 10,
+  "top1_conf": 0.2353
+ },
+ {
+  "stem": "IMG_2741",
+  "gt": 1,
+  "gt_name": "hazard_toxic",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 16,
+  "top1_conf": 0.5317
+ },
+ {
+  "stem": "IMG_2766",
+  "gt": 2,
+  "gt_name": "hazard_flammable",
+  "pred": 0,
+  "pred_name": "person_marker",
+  "n_det": 16,
+  "top1_conf": 0.3908
+ },
+ {
+  "stem": "IMG_2767",
+  "gt": 2,
+  "gt_name": "hazard_flammable",
+  "pred": 4,
+  "pred_name": "distractor_1",
+  "n_det": 38,
+  "top1_conf": 0.412
+ },
+ {
+  "stem": "IMG_2768",
+  "gt": 2,
+  "gt_name": "hazard_flammable",
+  "pred": 4,
+  "pred_name": "distractor_1",
+  "n_det": 12,
+  "top1_conf": 0.4198
+ },
+ {
+  "stem": "IMG_2769",
+  "gt": 2,
+  "gt_name": "hazard_flammable",
+  "pred": 2,
+  "pred_name": "hazard_flammable",
+  "n_det": 18,
+  "top1_conf": 0.3764
+ },
+ {
+  "stem": "IMG_2770",
+  "gt": 2,
+  "gt_name": "hazard_flammable",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 16,
+  "top1_conf": 0.7886
+ },
+ {
+  "stem": "IMG_2771",
+  "gt": 2,
+  "gt_name": "hazard_flammable",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 7,
+  "top1_conf": 0.222
+ },
+ {
+  "stem": "IMG_2797",
+  "gt": 3,
+  "gt_name": "hazard_explosive",
+  "pred": null,
+  "pred_name": "missed",
+  "n_det": 2,
+  "top1_conf": 0.0259
+ },
+ {
+  "stem": "IMG_2798",
+  "gt": 3,
+  "gt_name": "hazard_explosive",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 32,
+  "top1_conf": 0.2153
+ },
+ {
+  "stem": "IMG_2799",
+  "gt": 3,
+  "gt_name": "hazard_explosive",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 20,
+  "top1_conf": 0.3046
+ },
+ {
+  "stem": "IMG_2800",
+  "gt": 3,
+  "gt_name": "hazard_explosive",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 24,
+  "top1_conf": 0.8527
+ },
+ {
+  "stem": "IMG_2801",
+  "gt": 3,
+  "gt_name": "hazard_explosive",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 34,
+  "top1_conf": 0.216
+ },
+ {
+  "stem": "IMG_2802",
+  "gt": 3,
+  "gt_name": "hazard_explosive",
+  "pred": null,
+  "pred_name": "missed",
+  "n_det": 10,
+  "top1_conf": 0.0365
+ },
+ {
+  "stem": "IMG_2828",
+  "gt": 4,
+  "gt_name": "distractor_1",
+  "pred": 4,
+  "pred_name": "distractor_1",
+  "n_det": 37,
+  "top1_conf": 0.5316
+ },
+ {
+  "stem": "IMG_2829",
+  "gt": 4,
+  "gt_name": "distractor_1",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 9,
+  "top1_conf": 0.7196
+ },
+ {
+  "stem": "IMG_2830",
+  "gt": 4,
+  "gt_name": "distractor_1",
+  "pred": 4,
+  "pred_name": "distractor_1",
+  "n_det": 5,
+  "top1_conf": 0.6418
+ },
+ {
+  "stem": "IMG_2831",
+  "gt": 4,
+  "gt_name": "distractor_1",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 39,
+  "top1_conf": 0.2793
+ },
+ {
+  "stem": "IMG_2832",
+  "gt": 4,
+  "gt_name": "distractor_1",
+  "pred": 4,
+  "pred_name": "distractor_1",
+  "n_det": 29,
+  "top1_conf": 0.5012
+ },
+ {
+  "stem": "IMG_2833",
+  "gt": 4,
+  "gt_name": "distractor_1",
+  "pred": 2,
+  "pred_name": "hazard_flammable",
+  "n_det": 16,
+  "top1_conf": 0.6856
+ },
+ {
+  "stem": "IMG_2858",
+  "gt": 5,
+  "gt_name": "distractor_2",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 14,
+  "top1_conf": 0.37
+ },
+ {
+  "stem": "IMG_2859",
+  "gt": 5,
+  "gt_name": "distractor_2",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 18,
+  "top1_conf": 0.1771
+ },
+ {
+  "stem": "IMG_2860",
+  "gt": 5,
+  "gt_name": "distractor_2",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 14,
+  "top1_conf": 0.3819
+ },
+ {
+  "stem": "IMG_2861",
+  "gt": 5,
+  "gt_name": "distractor_2",
+  "pred": 0,
+  "pred_name": "person_marker",
+  "n_det": 25,
+  "top1_conf": 0.3989
+ },
+ {
+  "stem": "IMG_2862",
+  "gt": 5,
+  "gt_name": "distractor_2",
+  "pred": 3,
+  "pred_name": "hazard_explosive",
+  "n_det": 29,
+  "top1_conf": 0.2479
+ },
+ {
+  "stem": "IMG_2863",
+  "gt": 5,
+  "gt_name": "distractor_2",
+  "pred": 5,
+  "pred_name": "distractor_2",
+  "n_det": 23,
+  "top1_conf": 0.2933
+ }
+]

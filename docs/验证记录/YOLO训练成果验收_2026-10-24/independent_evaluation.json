@@ -1,0 +1,380 @@
+{
+  "protocol": "Frozen test split; independent ONNX CPU check, no tuning. RGB/OpenCV bilinear fixed 640 square; sigmoid heads; grid=index-0.5; multi-label NMS 0.6; low conf 0.001; working conf 0.25. Not identical to original PyTorch rectangular batch evaluation.",
+  "rgb": {
+    "images": 36,
+    "per_class": [
+      {
+        "id": 0,
+        "name": "person_marker",
+        "gt": 6,
+        "ap50": 0.995,
+        "ap50_95": 0.8988004210526317
+      },
+      {
+        "id": 1,
+        "name": "hazard_toxic",
+        "gt": 6,
+        "ap50": 0.8063333333333332,
+        "ap50_95": 0.6809872549019607
+      },
+      {
+        "id": 2,
+        "name": "hazard_flammable",
+        "gt": 6,
+        "ap50": 0.6339850427350426,
+        "ap50_95": 0.5705865384615384
+      },
+      {
+        "id": 3,
+        "name": "hazard_explosive",
+        "gt": 6,
+        "ap50": 0.867,
+        "ap50_95": 0.6922400243902439
+      },
+      {
+        "id": 4,
+        "name": "distractor_1",
+        "gt": 6,
+        "ap50": 0.885,
+        "ap50_95": 0.8209500000000001
+      },
+      {
+        "id": 5,
+        "name": "distractor_2",
+        "gt": 6,
+        "ap50": 0.3912698412698412,
+        "ap50_95": 0.3463893437229437
+      }
+    ],
+    "map50": 0.7630980362230361,
+    "map50_95": 0.6683255970882197,
+    "working_point": {
+      "conf": 0.25,
+      "localization_iou": 0.5,
+      "nms_iou": 0.6,
+      "top1_localized_confusion": [
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0
+        ]
+      ],
+      "top1_correct_per_class": [
+        6,
+        2,
+        1,
+        5,
+        3,
+        6
+      ],
+      "any_localized_correct_per_class": [
+        6,
+        3,
+        4,
+        5,
+        5,
+        6
+      ],
+      "distractor_images_with_any_actionable": [
+        "IMG_2828",
+        "IMG_2829",
+        "IMG_2832",
+        "IMG_2833"
+      ],
+      "distractor_images_with_localized_actionable": [
+        "IMG_2828",
+        "IMG_2829",
+        "IMG_2832",
+        "IMG_2833"
+      ]
+    }
+  },
+  "bgr_diagnostic": {
+    "images": 36,
+    "per_class": [
+      {
+        "id": 0,
+        "name": "person_marker",
+        "gt": 6,
+        "ap50": 0.6888888888888889,
+        "ap50_95": 0.5942304903225807
+      },
+      {
+        "id": 1,
+        "name": "hazard_toxic",
+        "gt": 6,
+        "ap50": 0.30236185383244213,
+        "ap50_95": 0.25793253404634586
+      },
+      {
+        "id": 2,
+        "name": "hazard_flammable",
+        "gt": 6,
+        "ap50": 0.26615384615384613,
+        "ap50_95": 0.23189062857142856
+      },
+      {
+        "id": 3,
+        "name": "hazard_explosive",
+        "gt": 6,
+        "ap50": 0.3007738368910783,
+        "ap50_95": 0.2539454653530378
+      },
+      {
+        "id": 4,
+        "name": "distractor_1",
+        "gt": 6,
+        "ap50": 0.596904761904762,
+        "ap50_95": 0.5129668571428573
+      },
+      {
+        "id": 5,
+        "name": "distractor_2",
+        "gt": 6,
+        "ap50": 0.38621428571428584,
+        "ap50_95": 0.331874653846154
+      }
+    ],
+    "map50": 0.42354957889755057,
+    "map50_95": 0.36380677154706736,
+    "working_point": {
+      "conf": 0.25,
+      "localization_iou": 0.5,
+      "nms_iou": 0.6,
+      "top1_localized_confusion": [
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1
+        ]
+      ],
+      "top1_correct_per_class": [
+        3,
+        0,
+        0,
+        2,
+        4,
+        2
+      ],
+      "any_localized_correct_per_class": [
+        3,
+        0,
+        0,
+        2,
+        5,
+        2
+      ],
+      "distractor_images_with_any_actionable": [
+        "IMG_2829",
+        "IMG_2830",
+        "IMG_2831",
+        "IMG_2832",
+        "IMG_2833",
+        "IMG_2858",
+        "IMG_2861",
+        "IMG_2862"
+      ],
+      "distractor_images_with_localized_actionable": [
+        "IMG_2829",
+        "IMG_2830",
+        "IMG_2831",
+        "IMG_2832",
+        "IMG_2833",
+        "IMG_2858",
+        "IMG_2861",
+        "IMG_2862"
+      ]
+    }
+  },
+  "rgb_bestclass_working_point": {
+    "conf": 0.25,
+    "localization_iou": 0.5,
+    "nms_iou": 0.6,
+    "top1_localized_confusion": [
+      [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        2,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        3,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0
+      ]
+    ],
+    "top1_correct_per_class": [
+      6,
+      2,
+      1,
+      5,
+      3,
+      6
+    ],
+    "any_localized_correct_per_class": [
+      6,
+      3,
+      2,
+      5,
+      5,
+      6
+    ],
+    "distractor_images_with_any_actionable": [
+      "IMG_2829",
+      "IMG_2832",
+      "IMG_2833"
+    ],
+    "distractor_images_with_localized_actionable": [
+      "IMG_2829",
+      "IMG_2832",
+      "IMG_2833"
+    ]
+  },
+  "cpu_inference_seconds": {
+    "mean": 0.08395920416458263,
+    "min": 0.052290899999206886,
+    "max": 0.09745699999621138
+  },
+  "note": "CPU timings are diagnostic only, not RK performance. Both paths include the same fixed model, anchors and postprocessing. No thresholds or weights optimized on test data."
+}

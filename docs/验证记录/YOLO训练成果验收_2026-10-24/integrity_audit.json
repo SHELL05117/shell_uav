@@ -1,0 +1,2120 @@
+{
+  "time": "2026-10-25T01:12:06.788982+08:00",
+  "package": "D:\\SHELL\\uav1018\\yolov5training\\YOLO异机训练交付_2026-10-24\\YOLO异机训练交付_2026-10-24",
+  "archive": {
+    "path": "D:\\SHELL\\uav1018\\yolov5training\\YOLO异机训练交付_2026-10-24.zip",
+    "bytes": 76878302,
+    "sha256": "144d47c4655e31e3ede30315beaefe57b6af191c867954cbe6f2e9a96bc469fa",
+    "expected_sha256": "144d47c4655e31e3ede30315beaefe57b6af191c867954cbe6f2e9a96bc469fa",
+    "crc_error": null,
+    "files": 100,
+    "zip_vs_local": [
+      {
+        "path": "YOLO异机训练交付_2026-10-24/config/class_map.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/config/data.yaml",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/config/hyp_rot_finetune.yaml",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/config/RK_anchors.txt",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/config/upstream_sources.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/data_pipeline.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/env_summary.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/environment.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/evaluation.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/export_quantization.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/integration_notes.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/pip_freeze_rknn.txt",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/pip_freeze_train.txt",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/rk_deployment_checklist.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/docs/training.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/exp1_warm_train.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/exp2_scratch_train.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/exp3_rot_train.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/pip_torch_install.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/pip_yolov5_requirements.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/smoke_train.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/stage1_audit.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/stage2_build.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/logs/val_exp1_test.log",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/ablation_exp2_scratch_relu/hyp.yaml",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/ablation_exp2_scratch_relu/labels.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/ablation_exp2_scratch_relu/labels_correlogram.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/ablation_exp2_scratch_relu/opt.yaml",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/ablation_exp2_scratch_relu/results.csv",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/ablation_exp2_scratch_relu/train_batch0.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/confusion_matrix.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/F1_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/hyp.yaml",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/labels.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/labels_correlogram.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/opt.yaml",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/P_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/PR_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/R_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/results.csv",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/results.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/train_batch0.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/val_batch0_labels.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/selected_exp1_warm_coco_silu/val_batch0_pred.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_eval/confusion_matrix.csv",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_eval/detections.csv",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_eval/metrics_per_class.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_eval/per_image_predictions.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_eval/task_failures.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_eval/test_predictions_conf025.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_eval/test_predictions_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/confusion_matrix.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/F1_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/P_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/PR_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/R_curve.png",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/val_batch0_labels.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/val_batch0_pred.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/val_batch1_labels.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/test_valpy/val_batch1_pred.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/val_eval/confusion_matrix.csv",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/val_eval/detections.csv",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/val_eval/metrics_per_class.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/val_eval/per_image_predictions.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/val_eval/task_failures.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/metrics/val_eval/val_predictions_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/models/best.onnx",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/models/best.pt",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/models/best.torchscript",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/models/model_manifest.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/models/sixclass_yolov5s_relu_rk3399pro.rknn",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/README_交回说明.md",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/audit_pre_conversion.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/calib_manifest.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/onnx_parity_summary.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/overlays/0_person_marker_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/overlays/1_hazard_toxic_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/overlays/2_hazard_flammable_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/overlays/3_hazard_explosive_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/overlays/4_distractor_1_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/overlays/5_distractor_2_sheet.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/overlays/zoom_review_6.jpg",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/rknn_convert_report.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/reports/split_manifest.json",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/01_extract_audit.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/02_build_dataset.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/03_make_calib.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/05_eval_test.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/06_infer_onnx.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/07_rknn_convert.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/08_rknn_compare.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/09_assemble_deliverables.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/remote_zip_extract.py",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/run_exp1_warm.bat",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/run_exp2_resume.bat",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/run_exp2_scratch.bat",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/run_exp3_rot.bat",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/scripts/run_smoke.bat",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/SHA256SUMS.txt",
+        "ok": true
+      },
+      {
+        "path": "YOLO异机训练交付_2026-10-24/TRAINING_STATUS.md",
+        "ok": true
+      }
+    ]
+  },
+  "checksum_entries": [
+    {
+      "path": "config/class_map.json",
+      "expected": "21b062adfed65bdb8cf245d97e4f6531486e134fa5ff7081065978cf693a3746",
+      "actual": "21b062adfed65bdb8cf245d97e4f6531486e134fa5ff7081065978cf693a3746",
+      "ok": true
+    },
+    {
+      "path": "config/data.yaml",
+      "expected": "4e99680dac5e0f7984c54287dbf0303cd933ba225c2db2a28534ed514c772b5f",
+      "actual": "4e99680dac5e0f7984c54287dbf0303cd933ba225c2db2a28534ed514c772b5f",
+      "ok": true
+    },
+    {
+      "path": "config/hyp_rot_finetune.yaml",
+      "expected": "72000d648fe2772ad5717a865abf42b8b3ea8a84c96fc0cf410880b64fcdfed1",
+      "actual": "72000d648fe2772ad5717a865abf42b8b3ea8a84c96fc0cf410880b64fcdfed1",
+      "ok": true
+    },
+    {
+      "path": "config/RK_anchors.txt",
+      "expected": "5948574ca9ae9fedad3cf9c9ac4fda7f52f6c94238b3f15af380ada39c58cfc5",
+      "actual": "5948574ca9ae9fedad3cf9c9ac4fda7f52f6c94238b3f15af380ada39c58cfc5",
+      "ok": true
+    },
+    {
+      "path": "config/upstream_sources.json",
+      "expected": "c5b391c9e7a239e0aa135b1fae1824e208a252348b4aaa9b7dc5660393314bfe",
+      "actual": "c5b391c9e7a239e0aa135b1fae1824e208a252348b4aaa9b7dc5660393314bfe",
+      "ok": true
+    },
+    {
+      "path": "docs/data_pipeline.md",
+      "expected": "93a88d2370bdf330ac3df5a897b9c10a0f498bb0a3d9d704ea8e51be39dbd230",
+      "actual": "93a88d2370bdf330ac3df5a897b9c10a0f498bb0a3d9d704ea8e51be39dbd230",
+      "ok": true
+    },
+    {
+      "path": "docs/env_summary.json",
+      "expected": "697cb9a493358dec0a0367b8460c1359ebd0b290b6a1b9333a75e4dbee5a0130",
+      "actual": "697cb9a493358dec0a0367b8460c1359ebd0b290b6a1b9333a75e4dbee5a0130",
+      "ok": true
+    },
+    {
+      "path": "docs/environment.md",
+      "expected": "3f14d54c4bd38a0534c5fd4d85cf8a6029375833f1d33718ebae5f926b7cf7f1",
+      "actual": "3f14d54c4bd38a0534c5fd4d85cf8a6029375833f1d33718ebae5f926b7cf7f1",
+      "ok": true
+    },
+    {
+      "path": "docs/evaluation.md",
+      "expected": "24048fbe4ecffbb212ae00df3ca71aac47f9863533ae5d8b0f88ddd48c8d156d",
+      "actual": "24048fbe4ecffbb212ae00df3ca71aac47f9863533ae5d8b0f88ddd48c8d156d",
+      "ok": true
+    },
+    {
+      "path": "docs/export_quantization.md",
+      "expected": "cd7f0d8ceab00f9dddc969e8ba7667c7b1dc1dad20eaf5a65670563255408b8d",
+      "actual": "cd7f0d8ceab00f9dddc969e8ba7667c7b1dc1dad20eaf5a65670563255408b8d",
+      "ok": true
+    },
+    {
+      "path": "docs/integration_notes.md",
+      "expected": "6cf54d8711282f27210859ccea2242094327818916eec75476a65e977690043c",
+      "actual": "6cf54d8711282f27210859ccea2242094327818916eec75476a65e977690043c",
+      "ok": true
+    },
+    {
+      "path": "docs/pip_freeze_rknn.txt",
+      "expected": "82cc005c24a30d5c566f8e6c25dd702f7e998eaac855ed4fdd5910e74a7e704e",
+      "actual": "82cc005c24a30d5c566f8e6c25dd702f7e998eaac855ed4fdd5910e74a7e704e",
+      "ok": true
+    },
+    {
+      "path": "docs/pip_freeze_train.txt",
+      "expected": "68b4278f8330b3837eca69291b8136aa7af6d56c7d114d92dd2ef848997b4521",
+      "actual": "68b4278f8330b3837eca69291b8136aa7af6d56c7d114d92dd2ef848997b4521",
+      "ok": true
+    },
+    {
+      "path": "docs/rk_deployment_checklist.md",
+      "expected": "f964f0e6e60cbe97bac4e09af571416852817be01f825f8a4c2ecda856bfa292",
+      "actual": "f964f0e6e60cbe97bac4e09af571416852817be01f825f8a4c2ecda856bfa292",
+      "ok": true
+    },
+    {
+      "path": "docs/training.md",
+      "expected": "695ea9b6bae240e7e4c5f7ba29dc52ac6c9eadc479dda9a3010ed02ea907b542",
+      "actual": "695ea9b6bae240e7e4c5f7ba29dc52ac6c9eadc479dda9a3010ed02ea907b542",
+      "ok": true
+    },
+    {
+      "path": "logs/exp1_warm_train.log",
+      "expected": "ff40a5a3ada8c5415fe8b8835b984965d3b381cd5be78a36f5b1411c7420ca82",
+      "actual": "ff40a5a3ada8c5415fe8b8835b984965d3b381cd5be78a36f5b1411c7420ca82",
+      "ok": true
+    },
+    {
+      "path": "logs/exp2_scratch_train.log",
+      "expected": "726d093d2c4a814ca371d302e69824e43231c8de7b668b8c78786cbff33945f4",
+      "actual": "726d093d2c4a814ca371d302e69824e43231c8de7b668b8c78786cbff33945f4",
+      "ok": true
+    },
+    {
+      "path": "logs/exp3_rot_train.log",
+      "expected": "8408a07412fbf9caddacf126964b51a6bbe2b798c93ea4b62bb0c21006d955fd",
+      "actual": "8408a07412fbf9caddacf126964b51a6bbe2b798c93ea4b62bb0c21006d955fd",
+      "ok": true
+    },
+    {
+      "path": "logs/pip_torch_install.log",
+      "expected": "933d42e58fbdb1837e1b370122372105919aa6fde8bf62ebc5a4597dedca6a82",
+      "actual": "933d42e58fbdb1837e1b370122372105919aa6fde8bf62ebc5a4597dedca6a82",
+      "ok": true
+    },
+    {
+      "path": "logs/pip_yolov5_requirements.log",
+      "expected": "7c158ca62dbbaa32b31d50c805ba2bdfd0af763229cafbc0cff907cb45320eb1",
+      "actual": "7c158ca62dbbaa32b31d50c805ba2bdfd0af763229cafbc0cff907cb45320eb1",
+      "ok": true
+    },
+    {
+      "path": "logs/smoke_train.log",
+      "expected": "3f2d381998b0e6f3f93f575d1a077879f02c0ef05ec55c6fd7d9bfa95fa3cfc4",
+      "actual": "3f2d381998b0e6f3f93f575d1a077879f02c0ef05ec55c6fd7d9bfa95fa3cfc4",
+      "ok": true
+    },
+    {
+      "path": "logs/stage1_audit.log",
+      "expected": "a201e6f40f5583c6107b36e88e69a20d238f0d1a16d460cab24cddfc338aff7b",
+      "actual": "a201e6f40f5583c6107b36e88e69a20d238f0d1a16d460cab24cddfc338aff7b",
+      "ok": true
+    },
+    {
+      "path": "logs/stage2_build.log",
+      "expected": "a669efa55bdae85b81e799b11030f8a05e9d5add77a946b72499e9a7238fb025",
+      "actual": "a669efa55bdae85b81e799b11030f8a05e9d5add77a946b72499e9a7238fb025",
+      "ok": true
+    },
+    {
+      "path": "logs/val_exp1_test.log",
+      "expected": "e2c857d33ba8a0865c6b2a419d89c68b6d9ca105eb42a1e14ae0f0eafdceafa5",
+      "actual": "e2c857d33ba8a0865c6b2a419d89c68b6d9ca105eb42a1e14ae0f0eafdceafa5",
+      "ok": true
+    },
+    {
+      "path": "metrics/ablation_exp2_scratch_relu/hyp.yaml",
+      "expected": "e6a6d755ad525c4dac609334c528ec21c219d4e355096b9b9599206c12115f4b",
+      "actual": "e6a6d755ad525c4dac609334c528ec21c219d4e355096b9b9599206c12115f4b",
+      "ok": true
+    },
+    {
+      "path": "metrics/ablation_exp2_scratch_relu/labels.jpg",
+      "expected": "c9adfdbd8083a818b1e0c5d5073e72cb4ea422d304325cd217c16ada191253bd",
+      "actual": "c9adfdbd8083a818b1e0c5d5073e72cb4ea422d304325cd217c16ada191253bd",
+      "ok": true
+    },
+    {
+      "path": "metrics/ablation_exp2_scratch_relu/labels_correlogram.jpg",
+      "expected": "2f0d12558dd8332ae28205e6a2ab277128902d54fbd055e7adbcd32a7052c364",
+      "actual": "2f0d12558dd8332ae28205e6a2ab277128902d54fbd055e7adbcd32a7052c364",
+      "ok": true
+    },
+    {
+      "path": "metrics/ablation_exp2_scratch_relu/opt.yaml",
+      "expected": "d33675ff33b824c86df519ddb3e00d858db201c9e4b15c6e65386ab6c8a45348",
+      "actual": "d33675ff33b824c86df519ddb3e00d858db201c9e4b15c6e65386ab6c8a45348",
+      "ok": true
+    },
+    {
+      "path": "metrics/ablation_exp2_scratch_relu/results.csv",
+      "expected": "ec22bfe1731a1e8b9003efb3e9e1a6467556188261d82c853c6c380f7270c8d3",
+      "actual": "ec22bfe1731a1e8b9003efb3e9e1a6467556188261d82c853c6c380f7270c8d3",
+      "ok": true
+    },
+    {
+      "path": "metrics/ablation_exp2_scratch_relu/train_batch0.jpg",
+      "expected": "58c15f263d51b8471f148e96d55118a18aaafccbe4a780eaff8b653d50e31a6d",
+      "actual": "58c15f263d51b8471f148e96d55118a18aaafccbe4a780eaff8b653d50e31a6d",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/confusion_matrix.png",
+      "expected": "81274107140223a160f574bc3cdc83d614f98372ca33a709ba6831603d8756b5",
+      "actual": "81274107140223a160f574bc3cdc83d614f98372ca33a709ba6831603d8756b5",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/F1_curve.png",
+      "expected": "f38b978ad2bed6cde9696cbb03e7bb6afc2764654cb0dec75f18dc058d8d241c",
+      "actual": "f38b978ad2bed6cde9696cbb03e7bb6afc2764654cb0dec75f18dc058d8d241c",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/hyp.yaml",
+      "expected": "e6a6d755ad525c4dac609334c528ec21c219d4e355096b9b9599206c12115f4b",
+      "actual": "e6a6d755ad525c4dac609334c528ec21c219d4e355096b9b9599206c12115f4b",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/labels.jpg",
+      "expected": "c9adfdbd8083a818b1e0c5d5073e72cb4ea422d304325cd217c16ada191253bd",
+      "actual": "c9adfdbd8083a818b1e0c5d5073e72cb4ea422d304325cd217c16ada191253bd",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/labels_correlogram.jpg",
+      "expected": "2f0d12558dd8332ae28205e6a2ab277128902d54fbd055e7adbcd32a7052c364",
+      "actual": "2f0d12558dd8332ae28205e6a2ab277128902d54fbd055e7adbcd32a7052c364",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/opt.yaml",
+      "expected": "189b078bef40dbd5fa50bdea865bbdbfc4ffdb6f028d4addba0de4204272d8c6",
+      "actual": "189b078bef40dbd5fa50bdea865bbdbfc4ffdb6f028d4addba0de4204272d8c6",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/P_curve.png",
+      "expected": "f0d4e8b238cffc17b94c3af506da54468a6c698646b016ed4a185917f137a80d",
+      "actual": "f0d4e8b238cffc17b94c3af506da54468a6c698646b016ed4a185917f137a80d",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/PR_curve.png",
+      "expected": "bef06a060d84c99ae7ca70f240ade8d102cebc24a3f36aa3ddf41c0be67efdb8",
+      "actual": "bef06a060d84c99ae7ca70f240ade8d102cebc24a3f36aa3ddf41c0be67efdb8",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/R_curve.png",
+      "expected": "579f2fcf945c27c7b62848221fa6d6e0c0f6d2ef4f0bbb70777a128cb48429c4",
+      "actual": "579f2fcf945c27c7b62848221fa6d6e0c0f6d2ef4f0bbb70777a128cb48429c4",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/results.csv",
+      "expected": "74920ade4f06c4019f725d428cc83cbc043fb818ee1e9e1d1c6b9dd23bded498",
+      "actual": "74920ade4f06c4019f725d428cc83cbc043fb818ee1e9e1d1c6b9dd23bded498",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/results.png",
+      "expected": "80359d1c6bf5984cef870f4f8cc50cb177ab850f56edca53ce133189eaf48781",
+      "actual": "80359d1c6bf5984cef870f4f8cc50cb177ab850f56edca53ce133189eaf48781",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/train_batch0.jpg",
+      "expected": "58c15f263d51b8471f148e96d55118a18aaafccbe4a780eaff8b653d50e31a6d",
+      "actual": "58c15f263d51b8471f148e96d55118a18aaafccbe4a780eaff8b653d50e31a6d",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/val_batch0_labels.jpg",
+      "expected": "9e87441e8c957f0c0804ab186f0ffb28b65eac612a06bb65e44974e1a2ab82c0",
+      "actual": "9e87441e8c957f0c0804ab186f0ffb28b65eac612a06bb65e44974e1a2ab82c0",
+      "ok": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/val_batch0_pred.jpg",
+      "expected": "1a5ed1e723dce2f0aaf5c1272801ce3feb8cd9508f444d9d5df2641934ee869e",
+      "actual": "1a5ed1e723dce2f0aaf5c1272801ce3feb8cd9508f444d9d5df2641934ee869e",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_eval/confusion_matrix.csv",
+      "expected": "864daedcc2d2389b5452162f86c2fba017989356bb05efbce3a5fa5cbc2966e7",
+      "actual": "864daedcc2d2389b5452162f86c2fba017989356bb05efbce3a5fa5cbc2966e7",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_eval/detections.csv",
+      "expected": "7e718b9cbcd8162350e603d2c8dca5620f246df7f28198f97b51225e5a55af4f",
+      "actual": "7e718b9cbcd8162350e603d2c8dca5620f246df7f28198f97b51225e5a55af4f",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_eval/metrics_per_class.json",
+      "expected": "b53547040cc41df7bfcb2e705e9e2be00b1533d603b320d32f7b000d8cb1184b",
+      "actual": "b53547040cc41df7bfcb2e705e9e2be00b1533d603b320d32f7b000d8cb1184b",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_eval/per_image_predictions.json",
+      "expected": "b7eaa2492199f6c2bb99ae09e18a896e179b9eeda3486b197484e652612fb2bf",
+      "actual": "b7eaa2492199f6c2bb99ae09e18a896e179b9eeda3486b197484e652612fb2bf",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_eval/task_failures.json",
+      "expected": "0b3c1a012c44e082a6e336249921b928c1c4371e591f59fbf75f22a82e12c1f9",
+      "actual": "0b3c1a012c44e082a6e336249921b928c1c4371e591f59fbf75f22a82e12c1f9",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_eval/test_predictions_conf025.jpg",
+      "expected": "66dcd94bb6115493cc73ce5b9f1206ab17a38198da8de453a98bd8328cbabd45",
+      "actual": "66dcd94bb6115493cc73ce5b9f1206ab17a38198da8de453a98bd8328cbabd45",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_eval/test_predictions_sheet.jpg",
+      "expected": "e8f65f6dea76c04f922a97ae04b479c01043b33ee6e679c5fb224364bf33a75a",
+      "actual": "e8f65f6dea76c04f922a97ae04b479c01043b33ee6e679c5fb224364bf33a75a",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/confusion_matrix.png",
+      "expected": "604595b7d766b9814d7be718fca9247bda366397fb40ed35464961fb13879030",
+      "actual": "604595b7d766b9814d7be718fca9247bda366397fb40ed35464961fb13879030",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/F1_curve.png",
+      "expected": "fca8d0c7436c94eea1dc048ab73871222e9b0f087716e1e99cac320d3c2847c8",
+      "actual": "fca8d0c7436c94eea1dc048ab73871222e9b0f087716e1e99cac320d3c2847c8",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/P_curve.png",
+      "expected": "657a28899c65a76779ec1fe45d494a707aa83712fd544d0408f7794438567243",
+      "actual": "657a28899c65a76779ec1fe45d494a707aa83712fd544d0408f7794438567243",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/PR_curve.png",
+      "expected": "be8afdcfee9375d8b8accd419ac25771a8006834bc38b26942522a9ae2a4855e",
+      "actual": "be8afdcfee9375d8b8accd419ac25771a8006834bc38b26942522a9ae2a4855e",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/R_curve.png",
+      "expected": "1aa78bf5684bd4a85dbd67925f2add1d37441844789a1f0f5e3ce3eb4bc67657",
+      "actual": "1aa78bf5684bd4a85dbd67925f2add1d37441844789a1f0f5e3ce3eb4bc67657",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/val_batch0_labels.jpg",
+      "expected": "a575ef60fe3d52537aa865e4f12964e99a6bcc40888d2b61fc91fb598301c348",
+      "actual": "a575ef60fe3d52537aa865e4f12964e99a6bcc40888d2b61fc91fb598301c348",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/val_batch0_pred.jpg",
+      "expected": "3568aacd3e8109cca2c08ffe4bb5724be27705c0486e5bc54226f99cdc3bc1b3",
+      "actual": "3568aacd3e8109cca2c08ffe4bb5724be27705c0486e5bc54226f99cdc3bc1b3",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/val_batch1_labels.jpg",
+      "expected": "2a7f2531a28d1e2ad78f27e1f79bebd84f1aaf4d84ac43f62341d9a451dc8862",
+      "actual": "2a7f2531a28d1e2ad78f27e1f79bebd84f1aaf4d84ac43f62341d9a451dc8862",
+      "ok": true
+    },
+    {
+      "path": "metrics/test_valpy/val_batch1_pred.jpg",
+      "expected": "97819dfd72c0e0bc2c01a1fe644a938b57c8b199090a4d0bd5104370c105802a",
+      "actual": "97819dfd72c0e0bc2c01a1fe644a938b57c8b199090a4d0bd5104370c105802a",
+      "ok": true
+    },
+    {
+      "path": "metrics/val_eval/confusion_matrix.csv",
+      "expected": "5d9e4907bbc5d8b91fdf6096d0261229bb6eebb79d0037c41a1310905543d505",
+      "actual": "5d9e4907bbc5d8b91fdf6096d0261229bb6eebb79d0037c41a1310905543d505",
+      "ok": true
+    },
+    {
+      "path": "metrics/val_eval/detections.csv",
+      "expected": "fe52a93087de3eddbec1962ab06b1428159911676a4c16ff9f7f515c0401bea9",
+      "actual": "fe52a93087de3eddbec1962ab06b1428159911676a4c16ff9f7f515c0401bea9",
+      "ok": true
+    },
+    {
+      "path": "metrics/val_eval/metrics_per_class.json",
+      "expected": "3e82362f99f4852f7cb40f2a88474fca16fa2a0b52ef5cf2cfacf52a5f8d2b1b",
+      "actual": "3e82362f99f4852f7cb40f2a88474fca16fa2a0b52ef5cf2cfacf52a5f8d2b1b",
+      "ok": true
+    },
+    {
+      "path": "metrics/val_eval/per_image_predictions.json",
+      "expected": "a4533e798f170a14a044dd574d9b6480bac3f60afcee0cca9945f3eaebad0ddd",
+      "actual": "a4533e798f170a14a044dd574d9b6480bac3f60afcee0cca9945f3eaebad0ddd",
+      "ok": true
+    },
+    {
+      "path": "metrics/val_eval/task_failures.json",
+      "expected": "54eb9e6200644f3a1a0f8d52a151976a61916b0ec0b717ab9c96063d5a5c55f4",
+      "actual": "54eb9e6200644f3a1a0f8d52a151976a61916b0ec0b717ab9c96063d5a5c55f4",
+      "ok": true
+    },
+    {
+      "path": "metrics/val_eval/val_predictions_sheet.jpg",
+      "expected": "7c83692539052815c25a1d663634cd76c7649f3b0f6d0ca401bb3a5c35df1da5",
+      "actual": "7c83692539052815c25a1d663634cd76c7649f3b0f6d0ca401bb3a5c35df1da5",
+      "ok": true
+    },
+    {
+      "path": "models/best.onnx",
+      "expected": "42f4c1fba3b5aa9716961a5ad87dccb8c6bb67c376c6a03003e3c6b82b297933",
+      "actual": "42f4c1fba3b5aa9716961a5ad87dccb8c6bb67c376c6a03003e3c6b82b297933",
+      "ok": true
+    },
+    {
+      "path": "models/best.pt",
+      "expected": "007d6088f936fbf12d6c39b6cea15c15a04c9bf1f84ccb3455198f70369e4d6e",
+      "actual": "007d6088f936fbf12d6c39b6cea15c15a04c9bf1f84ccb3455198f70369e4d6e",
+      "ok": true
+    },
+    {
+      "path": "models/best.torchscript",
+      "expected": "af8ad5ae8041bf9a825e5e1af98751ba3949e10390974dc1adee5e614d4d32cb",
+      "actual": "af8ad5ae8041bf9a825e5e1af98751ba3949e10390974dc1adee5e614d4d32cb",
+      "ok": true
+    },
+    {
+      "path": "models/model_manifest.json",
+      "expected": "dc5795b46338fbf5bdbc908c9d870edd41c09bb259aa6ada68f89f5b16e80f1a",
+      "actual": "dc5795b46338fbf5bdbc908c9d870edd41c09bb259aa6ada68f89f5b16e80f1a",
+      "ok": true
+    },
+    {
+      "path": "models/sixclass_yolov5s_relu_rk3399pro.rknn",
+      "expected": "f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1",
+      "actual": "f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1",
+      "ok": true
+    },
+    {
+      "path": "README_交回说明.md",
+      "expected": "41085ac64b68806c1d7159e727842657ebd890f37964885e44e0bb047894e9be",
+      "actual": "41085ac64b68806c1d7159e727842657ebd890f37964885e44e0bb047894e9be",
+      "ok": true
+    },
+    {
+      "path": "reports/audit_pre_conversion.json",
+      "expected": "a07285859c906fdb84a8beaedf2ee8738b5bb705e4286bcae2624b385ca57532",
+      "actual": "a07285859c906fdb84a8beaedf2ee8738b5bb705e4286bcae2624b385ca57532",
+      "ok": true
+    },
+    {
+      "path": "reports/calib_manifest.json",
+      "expected": "6b13d1bc80b090f3634130711332ac3e111f971507ab9041fcd5cce2b8c213b9",
+      "actual": "6b13d1bc80b090f3634130711332ac3e111f971507ab9041fcd5cce2b8c213b9",
+      "ok": true
+    },
+    {
+      "path": "reports/onnx_parity_summary.json",
+      "expected": "29000308711d839d865ad1a1ebdd28f33d61fc595bc157006715cec8185ba841",
+      "actual": "29000308711d839d865ad1a1ebdd28f33d61fc595bc157006715cec8185ba841",
+      "ok": true
+    },
+    {
+      "path": "reports/overlays/0_person_marker_sheet.jpg",
+      "expected": "ecfcfc98b1bb342870d1ff9cf92da2e2e759307741a2ad5947c83febbb3e7d0d",
+      "actual": "ecfcfc98b1bb342870d1ff9cf92da2e2e759307741a2ad5947c83febbb3e7d0d",
+      "ok": true
+    },
+    {
+      "path": "reports/overlays/1_hazard_toxic_sheet.jpg",
+      "expected": "60b49f4773934066fe3be1bd5bb915af47e74f3451303ebd22e9226619b94dde",
+      "actual": "60b49f4773934066fe3be1bd5bb915af47e74f3451303ebd22e9226619b94dde",
+      "ok": true
+    },
+    {
+      "path": "reports/overlays/2_hazard_flammable_sheet.jpg",
+      "expected": "62a9a4b92aec12a328bce2a8ce4b46c725631db7b98cb72d5a1116cdf0136593",
+      "actual": "62a9a4b92aec12a328bce2a8ce4b46c725631db7b98cb72d5a1116cdf0136593",
+      "ok": true
+    },
+    {
+      "path": "reports/overlays/3_hazard_explosive_sheet.jpg",
+      "expected": "e1968e31248ff8e7497c60dc2a407d9d38f60a56074c2122582f100d094c56c0",
+      "actual": "e1968e31248ff8e7497c60dc2a407d9d38f60a56074c2122582f100d094c56c0",
+      "ok": true
+    },
+    {
+      "path": "reports/overlays/4_distractor_1_sheet.jpg",
+      "expected": "b90d18fbac0ea0bceb8c83c0c7579f35ca0307ac472b0b8ba201384e41954e18",
+      "actual": "b90d18fbac0ea0bceb8c83c0c7579f35ca0307ac472b0b8ba201384e41954e18",
+      "ok": true
+    },
+    {
+      "path": "reports/overlays/5_distractor_2_sheet.jpg",
+      "expected": "5a5145cf464901b14e5eff82b221ada957fc584b5703fcb7947bab49e1673004",
+      "actual": "5a5145cf464901b14e5eff82b221ada957fc584b5703fcb7947bab49e1673004",
+      "ok": true
+    },
+    {
+      "path": "reports/overlays/zoom_review_6.jpg",
+      "expected": "fb6f8071429dd7ddf7b370cb2132e0c7fb2cf15f9ddc9538d0cf9991c98d9828",
+      "actual": "fb6f8071429dd7ddf7b370cb2132e0c7fb2cf15f9ddc9538d0cf9991c98d9828",
+      "ok": true
+    },
+    {
+      "path": "reports/rknn_convert_report.json",
+      "expected": "fb9944bd3477b083d36623d27d4169d46fcba31d24cbc79f91e1dadcd1534b06",
+      "actual": "fb9944bd3477b083d36623d27d4169d46fcba31d24cbc79f91e1dadcd1534b06",
+      "ok": true
+    },
+    {
+      "path": "reports/split_manifest.json",
+      "expected": "0c07e71092e1be9f25a6427693c4c173e7d01d4dabc8f42b083cebecbf1d19fa",
+      "actual": "0c07e71092e1be9f25a6427693c4c173e7d01d4dabc8f42b083cebecbf1d19fa",
+      "ok": true
+    },
+    {
+      "path": "scripts/01_extract_audit.py",
+      "expected": "f19c9b0489e380ee0c1627cac74d5b63db6f94f6220e63737112b12a67146221",
+      "actual": "f19c9b0489e380ee0c1627cac74d5b63db6f94f6220e63737112b12a67146221",
+      "ok": true
+    },
+    {
+      "path": "scripts/02_build_dataset.py",
+      "expected": "c54352787e54da47546fb8c770a99825421a4b105fc77d72d2dd7b75c2af6986",
+      "actual": "c54352787e54da47546fb8c770a99825421a4b105fc77d72d2dd7b75c2af6986",
+      "ok": true
+    },
+    {
+      "path": "scripts/03_make_calib.py",
+      "expected": "356eb4cce9eccaef62592f2e4a88f4b91ea0229953267af465b8a573bdf20548",
+      "actual": "356eb4cce9eccaef62592f2e4a88f4b91ea0229953267af465b8a573bdf20548",
+      "ok": true
+    },
+    {
+      "path": "scripts/05_eval_test.py",
+      "expected": "9b35fa44be7e0dbe6365061a4d36d5be9aaa2ce9d8412d2cada77aeed9fb0841",
+      "actual": "9b35fa44be7e0dbe6365061a4d36d5be9aaa2ce9d8412d2cada77aeed9fb0841",
+      "ok": true
+    },
+    {
+      "path": "scripts/06_infer_onnx.py",
+      "expected": "8921976dfe026a2f2ab41c7ff1a8a806248f225957a032ac389ad4ea674ed052",
+      "actual": "8921976dfe026a2f2ab41c7ff1a8a806248f225957a032ac389ad4ea674ed052",
+      "ok": true
+    },
+    {
+      "path": "scripts/07_rknn_convert.py",
+      "expected": "08b4dea16217737f30fb47cbb936eb32a96135ab42df28ec4d79a935bafda209",
+      "actual": "08b4dea16217737f30fb47cbb936eb32a96135ab42df28ec4d79a935bafda209",
+      "ok": true
+    },
+    {
+      "path": "scripts/08_rknn_compare.py",
+      "expected": "c9d583ff3f9667f0fe80c4af7ee0a60e17bcf0d9a45104b48c4585ee4a343a35",
+      "actual": "c9d583ff3f9667f0fe80c4af7ee0a60e17bcf0d9a45104b48c4585ee4a343a35",
+      "ok": true
+    },
+    {
+      "path": "scripts/09_assemble_deliverables.py",
+      "expected": "be0256d9a67e2d6e188d3ff63d8b66f3fd2a463d93acb87cee18161725000d78",
+      "actual": "be0256d9a67e2d6e188d3ff63d8b66f3fd2a463d93acb87cee18161725000d78",
+      "ok": true
+    },
+    {
+      "path": "scripts/remote_zip_extract.py",
+      "expected": "685dd8eb1c237b5822833821fc8e424d7f5710df96c9d94c530c9077ffa6f877",
+      "actual": "685dd8eb1c237b5822833821fc8e424d7f5710df96c9d94c530c9077ffa6f877",
+      "ok": true
+    },
+    {
+      "path": "scripts/run_exp1_warm.bat",
+      "expected": "c90a95ebba6f8a9a8729fb80890f492ce3cb63d1237663136897f31b9866544a",
+      "actual": "c90a95ebba6f8a9a8729fb80890f492ce3cb63d1237663136897f31b9866544a",
+      "ok": true
+    },
+    {
+      "path": "scripts/run_exp2_resume.bat",
+      "expected": "535dc0a639c53c89a876d00e5be5f1b825b971601b0a71d687d069e6982fb80a",
+      "actual": "535dc0a639c53c89a876d00e5be5f1b825b971601b0a71d687d069e6982fb80a",
+      "ok": true
+    },
+    {
+      "path": "scripts/run_exp2_scratch.bat",
+      "expected": "a1398613119257af0cd0390b9d49f6df0d4a3da402693fc5e3b41a5d224bbac2",
+      "actual": "a1398613119257af0cd0390b9d49f6df0d4a3da402693fc5e3b41a5d224bbac2",
+      "ok": true
+    },
+    {
+      "path": "scripts/run_exp3_rot.bat",
+      "expected": "2765b836b18a0e3dd19c2660dcb63f29ac8b7233580095681e5058e76b1cb15c",
+      "actual": "2765b836b18a0e3dd19c2660dcb63f29ac8b7233580095681e5058e76b1cb15c",
+      "ok": true
+    },
+    {
+      "path": "scripts/run_smoke.bat",
+      "expected": "f8a4e2982c792dea7ea82402e5209c81c8f96873acc22e654eef7b784b80007a",
+      "actual": "f8a4e2982c792dea7ea82402e5209c81c8f96873acc22e654eef7b784b80007a",
+      "ok": true
+    },
+    {
+      "path": "TRAINING_STATUS.md",
+      "expected": "6828c53d5c503faba7dc32893e8c00fc016a76efebf2954ee1c208714965be37",
+      "actual": "6828c53d5c503faba7dc32893e8c00fc016a76efebf2954ee1c208714965be37",
+      "ok": true
+    }
+  ],
+  "unlisted_files": [],
+  "models": [
+    {
+      "path": "best.pt",
+      "bytes": 14426920,
+      "sha256": "007d6088f936fbf12d6c39b6cea15c15a04c9bf1f84ccb3455198f70369e4d6e",
+      "manifest_sha256": "007d6088f936fbf12d6c39b6cea15c15a04c9bf1f84ccb3455198f70369e4d6e",
+      "manifest_ok": true
+    },
+    {
+      "path": "best.onnx",
+      "bytes": 28136557,
+      "sha256": "42f4c1fba3b5aa9716961a5ad87dccb8c6bb67c376c6a03003e3c6b82b297933",
+      "manifest_sha256": "42f4c1fba3b5aa9716961a5ad87dccb8c6bb67c376c6a03003e3c6b82b297933",
+      "manifest_ok": true
+    },
+    {
+      "path": "best.torchscript",
+      "bytes": 28418284,
+      "sha256": "af8ad5ae8041bf9a825e5e1af98751ba3949e10390974dc1adee5e614d4d32cb",
+      "manifest_sha256": "af8ad5ae8041bf9a825e5e1af98751ba3949e10390974dc1adee5e614d4d32cb",
+      "manifest_ok": true
+    },
+    {
+      "path": "sixclass_yolov5s_relu_rk3399pro.rknn",
+      "bytes": 7174523,
+      "sha256": "f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1",
+      "manifest_sha256": "f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1",
+      "manifest_ok": true
+    }
+  ],
+  "structures": {
+    "best.pt": {
+      "zip_crc_error": null,
+      "members": 362,
+      "relu_calls": 0,
+      "silu_calls": 0,
+      "pickle_globals": [
+        "__builtin__ set",
+        "collections OrderedDict",
+        "models.common Bottleneck",
+        "models.common C3",
+        "models.common Concat",
+        "models.common Conv",
+        "models.common SPPF",
+        "models.yolo Detect",
+        "models.yolo DetectionModel",
+        "torch FloatStorage",
+        "torch HalfStorage",
+        "torch LongStorage",
+        "torch._utils _rebuild_parameter",
+        "torch._utils _rebuild_tensor_v2",
+        "torch.nn.modules.activation ReLU",
+        "torch.nn.modules.batchnorm BatchNorm2d",
+        "torch.nn.modules.container ModuleList",
+        "torch.nn.modules.container Sequential",
+        "torch.nn.modules.conv Conv2d",
+        "torch.nn.modules.pooling MaxPool2d",
+        "torch.nn.modules.upsampling Upsample"
+      ],
+      "epoch_minus_one": true
+    },
+    "best.torchscript": {
+      "zip_crc_error": null,
+      "members": 555,
+      "relu_calls": 57,
+      "silu_calls": 0
+    },
+    "rknn_header_hex": "524b4e4e000000000100000000000000cca76b0000000000d2e1ffffc82e000076010000471e0000d22e00003416000072380000cc1400002b3a0000a8400000"
+  },
+  "source": {
+    "path": "D:\\SHELL\\TargetDelection1.1.zip",
+    "bytes": 866460635,
+    "sha256": "6a9d4537ce546ae5bb0c429f565edaf3f0e44c6e0bd628b7faf5a061c9666b41",
+    "expected_sha256": "6a9d4537ce546ae5bb0c429f565edaf3f0e44c6e0bd628b7faf5a061c9666b41",
+    "matches": [
+      {
+        "stem": "IMG_2682",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2683",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2684",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2685",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2686",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2687",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2688",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2689",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2690",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2691",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2692",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2693",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2694",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2695",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2696",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2697",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2698",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2699",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2700",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2701",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2702",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2703",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2704",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2705",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2706",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2707",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2708",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2709",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2710",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2711",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2712",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2713",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2714",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2715",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2716",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2717",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2718",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2719",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2720",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2721",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2722",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2723",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2724",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2725",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2726",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2727",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2728",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2729",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2730",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2731",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2732",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2733",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2734",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2735",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2736",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2737",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2738",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2739",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2740",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2741",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2742",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2743",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2744",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2745",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2746",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2747",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2748",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2749",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2750",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2751",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2752",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2753",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2754",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2755",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2756",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2757",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2758",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2759",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2760",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2761",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2762",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2763",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2764",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2765",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2766",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2767",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2768",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2769",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2770",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2771",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2773",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2774",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2775",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2776",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2777",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2778",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2779",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2780",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2781",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2782",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2783",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2784",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2785",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2786",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2787",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2788",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2789",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2790",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2791",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2792",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2793",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2794",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2795",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2796",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2797",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2798",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2799",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2800",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2801",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2802",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2803",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2804",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2805",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2806",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2807",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2808",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2809",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2810",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2811",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2812",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2813",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2814",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2815",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2816",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2817",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2818",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2820",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2821",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2822",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2823",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2824",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2825",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2826",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2827",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2828",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2829",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2830",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2831",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2832",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2833",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2834",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2835",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2836",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2837",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2838",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2839",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2840",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2841",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2842",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2843",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2844",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2845",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2846",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2847",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2848",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2849",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2850",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2851",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2852",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2853",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2854",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2855",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2856",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2857",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2858",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2859",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2860",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2861",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2862",
+        "jpg_ok": true,
+        "xml_ok": true
+      },
+      {
+        "stem": "IMG_2863",
+        "jpg_ok": true,
+        "xml_ok": true
+      }
+    ]
+  },
+  "splits": {
+    "counts": {
+      "train": 108,
+      "val": 36,
+      "test": 36
+    },
+    "per_class": {
+      "train": {
+        "person_marker": 18,
+        "hazard_toxic": 18,
+        "hazard_flammable": 18,
+        "hazard_explosive": 18,
+        "distractor_1": 18,
+        "distractor_2": 18
+      },
+      "val": {
+        "person_marker": 6,
+        "hazard_toxic": 6,
+        "hazard_flammable": 6,
+        "hazard_explosive": 6,
+        "distractor_1": 6,
+        "distractor_2": 6
+      },
+      "test": {
+        "person_marker": 6,
+        "hazard_toxic": 6,
+        "hazard_flammable": 6,
+        "hazard_explosive": 6,
+        "distractor_1": 6,
+        "distractor_2": 6
+      }
+    },
+    "duplicate_stems": 0,
+    "duplicate_image_hashes": 0,
+    "group_independent": false,
+    "calibration_count": 48,
+    "calibration_errors": []
+  },
+  "training": {
+    "epochs": 200,
+    "first": {
+      "epoch": 0.0,
+      "train/box_loss": 0.12178,
+      "train/obj_loss": 0.037283,
+      "train/cls_loss": 0.057774,
+      "metrics/precision": 2.6692e-05,
+      "metrics/recall": 0.027778,
+      "metrics/mAP_0.5": 1.5868e-05,
+      "metrics/mAP_0.5:0.95": 3.1737e-06,
+      "val/box_loss": 0.11017,
+      "val/obj_loss": 0.025092,
+      "val/cls_loss": 0.056131,
+      "x/lr0": 0.0946,
+      "x/lr1": 0.0006,
+      "x/lr2": 0.0006
+    },
+    "last": {
+      "epoch": 199.0,
+      "train/box_loss": 0.012584,
+      "train/obj_loss": 0.0054516,
+      "train/cls_loss": 0.016588,
+      "metrics/precision": 0.82969,
+      "metrics/recall": 0.84761,
+      "metrics/mAP_0.5": 0.87999,
+      "metrics/mAP_0.5:0.95": 0.7611,
+      "val/box_loss": 0.010976,
+      "val/obj_loss": 0.0026549,
+      "val/cls_loss": 0.023122,
+      "x/lr0": 0.000199,
+      "x/lr1": 0.000199,
+      "x/lr2": 0.000199
+    },
+    "best_fitness": {
+      "epoch": 185.0,
+      "train/box_loss": 0.015498,
+      "train/obj_loss": 0.0061691,
+      "train/cls_loss": 0.018637,
+      "metrics/precision": 0.84374,
+      "metrics/recall": 0.847,
+      "metrics/mAP_0.5": 0.90158,
+      "metrics/mAP_0.5:0.95": 0.77668,
+      "val/box_loss": 0.012419,
+      "val/obj_loss": 0.0028744,
+      "val/cls_loss": 0.021668,
+      "x/lr0": 0.000892,
+      "x/lr1": 0.000892,
+      "x/lr2": 0.000892
+    },
+    "best_map50": {
+      "epoch": 175.0,
+      "train/box_loss": 0.015366,
+      "train/obj_loss": 0.0051116,
+      "train/cls_loss": 0.020949,
+      "metrics/precision": 0.79439,
+      "metrics/recall": 0.87263,
+      "metrics/mAP_0.5": 0.91319,
+      "metrics/mAP_0.5:0.95": 0.73723,
+      "val/box_loss": 0.013904,
+      "val/obj_loss": 0.0029645,
+      "val/cls_loss": 0.023306,
+      "x/lr0": 0.001387,
+      "x/lr1": 0.001387,
+      "x/lr2": 0.001387
+    }
+  },
+  "historical_working_point": {
+    "test": {
+      "reported_images": 36,
+      "top1_reconstruction_mismatches": {
+        ".001": [],
+        ".25": [
+          "IMG_2710",
+          "IMG_2740",
+          "IMG_2771",
+          "IMG_2798",
+          "IMG_2801",
+          "IMG_2859",
+          "IMG_2862"
+        ]
+      }
+    },
+    "val": {
+      "reported_images": 36,
+      "top1_reconstruction_mismatches": {
+        ".001": [],
+        ".25": [
+          "IMG_2735",
+          "IMG_2856"
+        ]
+      }
+    }
+  }
+}

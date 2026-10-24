@@ -1,0 +1,121 @@
+{
+  "original_evidence_copies": [
+    {
+      "path": "README_交回说明.md",
+      "sha256": "41085ac64b68806c1d7159e727842657ebd890f37964885e44e0bb047894e9be",
+      "identical": true
+    },
+    {
+      "path": "TRAINING_STATUS.md",
+      "sha256": "6828c53d5c503faba7dc32893e8c00fc016a76efebf2954ee1c208714965be37",
+      "identical": true
+    },
+    {
+      "path": "config/class_map.json",
+      "sha256": "21b062adfed65bdb8cf245d97e4f6531486e134fa5ff7081065978cf693a3746",
+      "identical": true
+    },
+    {
+      "path": "config/RK_anchors.txt",
+      "sha256": "5948574ca9ae9fedad3cf9c9ac4fda7f52f6c94238b3f15af380ada39c58cfc5",
+      "identical": true
+    },
+    {
+      "path": "docs/environment.md",
+      "sha256": "3f14d54c4bd38a0534c5fd4d85cf8a6029375833f1d33718ebae5f926b7cf7f1",
+      "identical": true
+    },
+    {
+      "path": "docs/evaluation.md",
+      "sha256": "24048fbe4ecffbb212ae00df3ca71aac47f9863533ae5d8b0f88ddd48c8d156d",
+      "identical": true
+    },
+    {
+      "path": "docs/export_quantization.md",
+      "sha256": "cd7f0d8ceab00f9dddc969e8ba7667c7b1dc1dad20eaf5a65670563255408b8d",
+      "identical": true
+    },
+    {
+      "path": "docs/integration_notes.md",
+      "sha256": "6cf54d8711282f27210859ccea2242094327818916eec75476a65e977690043c",
+      "identical": true
+    },
+    {
+      "path": "docs/training.md",
+      "sha256": "695ea9b6bae240e7e4c5f7ba29dc52ac6c9eadc479dda9a3010ed02ea907b542",
+      "identical": true
+    },
+    {
+      "path": "logs/val_exp1_test.log",
+      "sha256": "e2c857d33ba8a0865c6b2a419d89c68b6d9ca105eb42a1e14ae0f0eafdceafa5",
+      "identical": true
+    },
+    {
+      "path": "models/model_manifest.json",
+      "sha256": "dc5795b46338fbf5bdbc908c9d870edd41c09bb259aa6ada68f89f5b16e80f1a",
+      "identical": true
+    },
+    {
+      "path": "reports/calib_manifest.json",
+      "sha256": "6b13d1bc80b090f3634130711332ac3e111f971507ab9041fcd5cce2b8c213b9",
+      "identical": true
+    },
+    {
+      "path": "reports/onnx_parity_summary.json",
+      "sha256": "29000308711d839d865ad1a1ebdd28f33d61fc595bc157006715cec8185ba841",
+      "identical": true
+    },
+    {
+      "path": "reports/rknn_convert_report.json",
+      "sha256": "fb9944bd3477b083d36623d27d4169d46fcba31d24cbc79f91e1dadcd1534b06",
+      "identical": true
+    },
+    {
+      "path": "reports/split_manifest.json",
+      "sha256": "0c07e71092e1be9f25a6427693c4c173e7d01d4dabc8f42b083cebecbf1d19fa",
+      "identical": true
+    },
+    {
+      "path": "scripts/05_eval_test.py",
+      "sha256": "9b35fa44be7e0dbe6365061a4d36d5be9aaa2ce9d8412d2cada77aeed9fb0841",
+      "identical": true
+    },
+    {
+      "path": "scripts/06_infer_onnx.py",
+      "sha256": "8921976dfe026a2f2ab41c7ff1a8a806248f225957a032ac389ad4ea674ed052",
+      "identical": true
+    },
+    {
+      "path": "scripts/08_rknn_compare.py",
+      "sha256": "c9d583ff3f9667f0fe80c4af7ee0a60e17bcf0d9a45104b48c4585ee4a343a35",
+      "identical": true
+    },
+    {
+      "path": "metrics/selected_exp1_warm_coco_silu/results.csv",
+      "sha256": "74920ade4f06c4019f725d428cc83cbc043fb818ee1e9e1d1c6b9dd23bded498",
+      "identical": true
+    },
+    {
+      "path": "metrics/test_eval/detections.csv",
+      "sha256": "7e718b9cbcd8162350e603d2c8dca5620f246df7f28198f97b51225e5a55af4f",
+      "identical": true
+    },
+    {
+      "path": "metrics/test_eval/per_image_predictions.json",
+      "sha256": "b7eaa2492199f6c2bb99ae09e18a896e179b9eeda3486b197484e652612fb2bf",
+      "identical": true
+    },
+    {
+      "path": "metrics/test_eval/task_failures.json",
+      "sha256": "0b3c1a012c44e082a6e336249921b928c1c4371e591f59fbf75f22a82e12c1f9",
+      "identical": true
+    }
+  ],
+  "local_report_links_checked": 22,
+  "missing_links": [],
+  "tool_syntax": "passed",
+  "final_export_images": 36,
+  "final_export_max_abs_error": 3.0547380447387695e-05,
+  "bestclass_distractor_error_images": 3,
+  "scope": "read-only local acceptance; no training/hardware access"
+}
