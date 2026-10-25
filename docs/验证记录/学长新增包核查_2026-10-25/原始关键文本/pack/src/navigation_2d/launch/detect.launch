@@ -1,0 +1,36 @@
+<launch>
+  <!-- 单机识别调试：roslaunch navigation_2d detect.launch [input_image_topic:=...]
+       [target_name:=flammable] [confidence_threshold:=0.6]
+       画面在 /detect_result，红框是被 target_name 命中的目标。 -->
+  <arg name="input_image_topic" default="/camera/image_raw" />
+  <arg name="target_name" default="" />
+  <arg name="confidence_threshold" default="0.5" />
+  <arg name="camera_hfov_deg" default="54.0" />
+  <arg name="camera_yaw_deg" default="0.0" />
+  <!-- auto：板上用 .rknn，x86 用 OpenCV DNN 读同一个 raw-head ONNX -->
+  <arg name="detect_backend" default="auto" />
+  <arg name="onnx_file" default="gc-yolo-raw-416.onnx" />
+  <arg name="detect_input_size" default="416" />
+  <arg name="yolo_style" default="v5-interleaved" />
+  <arg name="yolo_anchors" default="10,13,16,30,33,23,30,61,62,45,59,119,116,90,156,198,373,326" />
+
+  <node pkg="navigation_2d" type="detectnet" name="detectnet" output="screen">
+    <param name="input_image_topic" value="$(arg input_image_topic)" />
+    <param name="model_path" value="$(find navigation_2d)/detect_mode/26" />
+    <param name="model_file" value="gc-yolo-raw-416.rknn" />
+    <param name="onnx_file" value="$(arg onnx_file)" />
+    <param name="backend" value="$(arg detect_backend)" />
+    <param name="input_size" value="$(arg detect_input_size)" />
+    <param name="yolo_style" value="$(arg yolo_style)" />
+    <param name="yolo_anchors" value="$(arg yolo_anchors)" />
+    <param name="yolo_strides" value="8,16,32" />
+    <param name="labels_file" value="labels.txt" />
+    <param name="confidence_threshold" value="$(arg confidence_threshold)" />
+    <param name="nms_iou" value="0.45" />
+    <param name="camera_hfov_deg" value="$(arg camera_hfov_deg)" />
+    <param name="camera_yaw_deg" value="$(arg camera_yaw_deg)" />
+    <param name="publish_scale" value="1.0" />
+    <param name="publish_rate" value="10.0" />
+    <param name="target_name" value="$(arg target_name)" />
+  </node>
+</launch>

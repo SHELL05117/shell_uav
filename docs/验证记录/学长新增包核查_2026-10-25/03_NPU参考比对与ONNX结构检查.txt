@@ -1,0 +1,78 @@
+{
+  "npu_reference_comparison": [
+    {
+      "path": "firmware/npu_fw/MiniLoaderAll.bin",
+      "incoming_sha256": "e554a1510ec462a31242c99b87b5ad83fbccdb570f33db8305cb3d9ff3fa6332",
+      "current_reference_sha256": "e554a1510ec462a31242c99b87b5ad83fbccdb570f33db8305cb3d9ff3fa6332",
+      "identical": true
+    },
+    {
+      "path": "firmware/npu_fw/boot.img",
+      "incoming_sha256": "7cef42d2c487daccd38b9b8b67f6eb3ee40b8d853bf7185a1b30c673a089df29",
+      "current_reference_sha256": "7cef42d2c487daccd38b9b8b67f6eb3ee40b8d853bf7185a1b30c673a089df29",
+      "identical": true
+    },
+    {
+      "path": "firmware/npu_fw/uboot.img",
+      "incoming_sha256": "e3246735294a5cae0f0cb3a9d9ad5b16a0663815e202e366220d9cd6c7c3e3ca",
+      "current_reference_sha256": "e3246735294a5cae0f0cb3a9d9ad5b16a0663815e202e366220d9cd6c7c3e3ca",
+      "identical": true
+    },
+    {
+      "path": "firmware/npu_fw/trust.img",
+      "incoming_sha256": "92d650fe50a9a53e638ebd80d25d793fc298201675ab8cd1370d7593c59a5be2",
+      "current_reference_sha256": "92d650fe50a9a53e638ebd80d25d793fc298201675ab8cd1370d7593c59a5be2",
+      "identical": true
+    },
+    {
+      "path": "firmware/npu_fw/parameter.txt",
+      "incoming_sha256": "d2005c5d02d79d6f96c94dd617bd22433bb845f3b9805e0742b1eb5bcc695328",
+      "current_reference_sha256": "11d2e25cd5a0cf1e70be1e47cf487ff2756124991cfbdcc895421d56312e454d",
+      "identical": false
+    },
+    {
+      "path": "bin/npu_transfer_proxy",
+      "incoming_sha256": "c6961f392030a71272e53263246f688ad74ea7410d302c9ba9988cd5e5d30b68",
+      "current_reference_sha256": "c6961f392030a71272e53263246f688ad74ea7410d302c9ba9988cd5e5d30b68",
+      "identical": true
+    },
+    {
+      "path": "lib/librknn_api.so",
+      "incoming_sha256": "63957db5cbc82d29b7969d44f17d8da22beb2cab39f011c4864235410b8dfae8",
+      "current_reference_sha256": "63957db5cbc82d29b7969d44f17d8da22beb2cab39f011c4864235410b8dfae8",
+      "identical": true
+    }
+  ],
+  "onnx_checker_passed": true,
+  "onnx_output_producer_chains": {
+    "output": [
+      "Transpose",
+      "Reshape",
+      "Conv",
+      "Relu"
+    ],
+    "327": [
+      "Transpose",
+      "Reshape",
+      "Conv",
+      "Relu"
+    ],
+    "339": [
+      "Transpose",
+      "Reshape",
+      "Conv",
+      "Relu"
+    ]
+  },
+  "onnx_op_counts": {
+    "Conv": 66,
+    "Concat": 14,
+    "Relu": 59,
+    "Add": 7,
+    "MaxPool": 12,
+    "Constant": 5,
+    "Resize": 2,
+    "Reshape": 3,
+    "Transpose": 3
+  }
+}

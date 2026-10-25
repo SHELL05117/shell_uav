@@ -1,0 +1,4 @@
+person
+explosive
+flammable
+toxic

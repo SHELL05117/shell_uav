@@ -1,0 +1,14 @@
+[Unit]
+Description=Load RK3399Pro NPU firmware and start npu_transfer_proxy
+ConditionPathExists=/usr/lib/firmware/npu_fw/boot.img
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+TimeoutStartSec=180
+ExecStart=/usr/local/sbin/rknn-start
+ExecStop=/usr/local/sbin/rknn-stop
+
+[Install]
+WantedBy=multi-user.target

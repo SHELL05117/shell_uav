@@ -1,0 +1,7 @@
+#!/bin/bash
+# Stop the NPU transfer proxy and power the RK1808 down.
+set -u
+
+pkill -f npu_transfer_proxy >/dev/null 2>&1 || true
+/usr/bin/npu_powerctrl -d >/dev/null 2>&1 || true
+exit 0

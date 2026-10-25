@@ -1,0 +1,8 @@
+PC completed: 2026-10-25 23:55:56 +08:00
+archive_inputs_unchanged=true
+npu_internal_checksums=15/15
+onnx_structure_check=true; model_inference_not_run=true
+critical_sources_exact_copy=21/21
+source_tree_unchanged=1c64a971fcd1835d5c7d790ebd889e23c3d14739
+npu_reference_commit=8858114555f1700e41e185b14ec3d266342f8059
+no_install_no_merge_no_ssh=true

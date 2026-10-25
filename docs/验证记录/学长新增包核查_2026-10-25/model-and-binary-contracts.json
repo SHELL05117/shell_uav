@@ -1,0 +1,91 @@
+{
+  "onnx": {
+    "sha256": "6e18c14c38fcd412ebc09f78033d74abb141306c6c4e9e60d3c04748f47392ad",
+    "producer": "pytorch",
+    "producer_version": "2.4.1",
+    "ir_version": 5,
+    "opset": [
+      [
+        "",
+        10
+      ]
+    ],
+    "inputs": [
+      {
+        "name": "images",
+        "shape": [
+          1,
+          3,
+          416,
+          416
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "output",
+        "shape": [
+          1,
+          3,
+          52,
+          52,
+          9
+        ]
+      },
+      {
+        "name": "327",
+        "shape": [
+          1,
+          3,
+          26,
+          26,
+          9
+        ]
+      },
+      {
+        "name": "339",
+        "shape": [
+          1,
+          3,
+          13,
+          13,
+          9
+        ]
+      }
+    ],
+    "metadata": {}
+  },
+  "npu_binaries": [
+    {
+      "path": "npu-fix-1.7.5/bin/npu_powerctrl",
+      "elf_bits": 64,
+      "machine": 183,
+      "version_strings": []
+    },
+    {
+      "path": "npu-fix-1.7.5/bin/npu_transfer_proxy",
+      "elf_bits": 64,
+      "machine": 183,
+      "version_strings": [
+        "Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51)"
+      ]
+    },
+    {
+      "path": "npu-fix-1.7.5/bin/upgrade_tool",
+      "elf_bits": 64,
+      "machine": 183,
+      "version_strings": []
+    },
+    {
+      "path": "npu-fix-1.7.5/lib/librknn_api.so",
+      "elf_bits": 64,
+      "machine": 183,
+      "version_strings": [
+        "E RKNNAPI: RKNN VERSION UNMATCH:",
+        "E RKNNAPI: RKNN VERSION:",
+        "D RKNNAPI: RKNN VERSION:",
+        "Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51)"
+      ]
+    }
+  ]
+}

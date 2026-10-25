@@ -1,0 +1,109 @@
+{
+  "archives": {
+    "npu-fix-1.7.5.gz": {
+      "size": 18736218,
+      "sha256": "ce8bd37fff5c165f7a91d45842363cc3a79099c48ca9d20fda4bd5b8a8d358f4",
+      "entries": 23,
+      "files": 16,
+      "expanded_bytes": 26444016
+    },
+    "pack.7z": {
+      "size": 28707834,
+      "sha256": "2558ec3c8ed58e3be16d6cfb5d9e4fb351561ef5551ef2ac2ea063abd4ef0fc0",
+      "entries": 180,
+      "files": 140,
+      "expanded_bytes": 40948403
+    }
+  },
+  "comparison_counts": {
+    "identical": 31,
+    "changed": 63,
+    "incoming_only": 18,
+    "line_endings_only": 28
+  },
+  "checksums_passed": true,
+  "checksum_count": 15,
+  "local_only_count": 43
+}
+Changed/new paths:
+changed location/CMakeLists.txt
+changed location/include/i2c.h
+changed location/include/tf_mini_i2c.h
+changed location/launch/cartographer_2d.launch
+changed location/launch/location.launch
+changed location/launch/rplidar.launch
+changed location/package.xml
+incoming_only location/README.md
+changed location/rviz/ros_navigation.rviz
+changed location/src/i2c.cpp
+changed location/src/location_with_ftmini.cpp
+changed location/src/tfmini_test.cpp
+changed navigation_2d/CMakeLists.txt
+incoming_only navigation_2d/detect_mode/26/best.onnx
+incoming_only navigation_2d/detect_mode/26/best.rknn
+incoming_only navigation_2d/detect_mode/26/labels.txt
+incoming_only navigation_2d/docs/field_route_preview.png
+incoming_only navigation_2d/include/detect.h
+changed navigation_2d/include/flight_control.h
+changed navigation_2d/include/mission_with_move_base.h
+incoming_only navigation_2d/launch/detect.launch
+incoming_only navigation_2d/launch/move_base.launch
+changed navigation_2d/launch/navigation_2d.launch
+changed navigation_2d/package.xml
+incoming_only navigation_2d/param/costmap_common_params.yaml
+incoming_only navigation_2d/param/dwa_local_planner_params.yaml
+incoming_only navigation_2d/param/global_costmap_params.yaml
+incoming_only navigation_2d/param/local_costmap_params.yaml
+incoming_only navigation_2d/param/move_base_params.yaml
+incoming_only navigation_2d/src/detect.cpp
+incoming_only navigation_2d/src/detect_main.cpp
+changed navigation_2d/src/flight_control.cpp
+incoming_only navigation_2d/src/shoot_with_move_base.cpp
+incoming_only navigation_2d/tools/.unpacked
+changed rplidar_ros/CHANGELOG.rst
+changed rplidar_ros/CMakeLists.txt
+changed rplidar_ros/launch/rplidar_s2.launch
+changed rplidar_ros/launch/test_rplidar.launch
+changed rplidar_ros/launch/test_rplidar_a3.launch
+changed rplidar_ros/package.xml
+changed rplidar_ros/README.md
+changed rplidar_ros/scripts/create_udev_rules.sh
+changed rplidar_ros/sdk/include/rplidar.h
+changed rplidar_ros/sdk/include/rplidar_cmd.h
+changed rplidar_ros/sdk/include/rplidar_driver.h
+changed rplidar_ros/sdk/include/rplidar_protocol.h
+changed rplidar_ros/sdk/include/sl_lidar.h
+changed rplidar_ros/sdk/include/sl_lidar_cmd.h
+changed rplidar_ros/sdk/include/sl_lidar_driver.h
+changed rplidar_ros/sdk/include/sl_lidar_driver_impl.h
+changed rplidar_ros/sdk/include/sl_lidar_protocol.h
+changed rplidar_ros/sdk/Makefile
+changed rplidar_ros/sdk/src/arch/linux/net_serial.cpp
+changed rplidar_ros/sdk/src/arch/linux/net_socket.cpp
+changed rplidar_ros/sdk/src/arch/linux/thread.hpp
+changed rplidar_ros/sdk/src/arch/linux/timer.cpp
+changed rplidar_ros/sdk/src/arch/linux/timer.h
+changed rplidar_ros/sdk/src/arch/macOS/net_serial.cpp
+changed rplidar_ros/sdk/src/arch/macOS/net_serial.h
+changed rplidar_ros/sdk/src/arch/macOS/net_socket.cpp
+changed rplidar_ros/sdk/src/arch/macOS/thread.hpp
+changed rplidar_ros/sdk/src/arch/macOS/timer.cpp
+changed rplidar_ros/sdk/src/arch/macOS/timer.h
+changed rplidar_ros/sdk/src/arch/win32/net_serial.cpp
+changed rplidar_ros/sdk/src/arch/win32/net_socket.cpp
+changed rplidar_ros/sdk/src/arch/win32/timer.cpp
+changed rplidar_ros/sdk/src/arch/win32/timer.h
+changed rplidar_ros/sdk/src/arch/win32/winthread.hpp
+changed rplidar_ros/sdk/src/hal/event.h
+changed rplidar_ros/sdk/src/hal/locker.h
+changed rplidar_ros/sdk/src/hal/socket.h
+changed rplidar_ros/sdk/src/hal/thread.h
+changed rplidar_ros/sdk/src/hal/types.h
+changed rplidar_ros/sdk/src/rplidar_driver.cpp
+changed rplidar_ros/sdk/src/sl_crc.cpp
+changed rplidar_ros/sdk/src/sl_lidar_driver.cpp
+changed rplidar_ros/sdk/src/sl_serial_channel.cpp
+changed rplidar_ros/sdk/src/sl_tcp_channel.cpp
+changed rplidar_ros/sdk/src/sl_udp_channel.cpp
+changed rplidar_ros/src/node.cpp
+incoming_only servo_control/script/servo_debug.py

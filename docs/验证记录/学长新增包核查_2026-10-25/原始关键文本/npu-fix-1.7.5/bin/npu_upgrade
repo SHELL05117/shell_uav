@@ -1,0 +1,157 @@
+#!/bin/bash
+
+ROOT_DIR="/usr/lib/firmware/npu_fw"
+UPGRADE_TOOL=upgrade_tool
+UBOOT_ADDR=0x20000
+TRUST_ADDR=0x20800
+BOOT_ADDR=0x21000
+
+function npu_power_up()
+{
+	echo "NPU Power up ..."
+	npu_powerctrl -i
+	sleep 0.1
+	npu_powerctrl -o
+	sleep 1
+}
+
+function reset_hub()
+{
+	case $1 in
+	TB-RK3399ProX*)
+		echo "Hub: do nothing ..."
+		;;
+	*)
+		echo "Reset hub ..."
+		echo 0 > /sys/class/gpio/gpio149/value
+		sleep 1
+		echo 1 > /sys/class/gpio/gpio149/value
+		sleep 3
+	;;
+	esac
+}
+
+function remove_180a()
+{
+	echo "Remove 180a process ..."
+	PID=$(find /sys/bus/platform/devices/fe900000.dwc3/ -name idProduct | xargs grep -i "180a" -l)
+	echo 0 > ${PID/idProduct}/remove
+}
+
+function flash_miniloader()
+{
+	echo "Flash miniloader ..."
+	${UPGRADE_TOOL} db ${ROOT_DIR}/MiniLoaderAll.bin > /dev/null
+	if [ $? -ne 0 ]; then
+		echo "Failed to flash miniloader"
+		return 1
+	fi
+	${UPGRADE_TOOL} td
+	if [ $? -ne 0 ]; then
+		echo "Failed to wait loader mode ready"
+		return 1
+	else
+		return 0
+	fi
+}
+
+function flash_image()
+{
+	${UPGRADE_TOOL} wl $1 $2 > /dev/null
+}
+
+function flash_all()
+{
+	flash_miniloader
+	if [ $? -ne 0 ]; then
+		return 1
+	fi
+
+	echo "Flash uboot ..."
+	flash_image ${UBOOT_ADDR} ${ROOT_DIR}/uboot.img
+	if [ $? -ne 0 ]; then
+		echo "Failed to flash uboot image"
+		return 1
+	fi
+
+	echo "Flash trust ..."
+	flash_image ${TRUST_ADDR} ${ROOT_DIR}/trust.img
+	if [ $? -ne 0 ]; then
+		echo "Failed to flash trust image"
+		return 1
+	fi
+
+	echo "Flash boot ..."
+	flash_image ${BOOT_ADDR} ${ROOT_DIR}/boot.img
+	if [ $? -ne 0 ]; then
+		echo "Failed to flash boot image"
+		return 1
+	fi
+
+	echo "Flash all images successfully!"
+	return 0
+}
+
+function boot_system()
+{
+	$UPGRADE_TOOL rs ${UBOOT_ADDR} ${TRUST_ADDR} ${BOOT_ADDR} ${ROOT_DIR}/uboot.img ${ROOT_DIR}/trust.img ${ROOT_DIR}/boot.img
+}
+
+function wait_device_ready()
+{
+	local retry=10
+	while [ ${retry} -gt 0 ]; do
+		${UPGRADE_TOOL} ld
+		if [ $? -ne 0 ]; then
+			let retry=${retry}-1
+		else
+			return 0
+		fi
+
+		if [ ${retry} -eq 5 ]; then
+			npu_powerctrl -o
+			sleep 3
+		fi
+		sleep 0.1
+	done
+
+	echo "Failed to wait device ready!"
+	return 1
+}
+
+function flash()
+{
+	local retry=2
+	while [ ${retry} -gt 0 ]; do
+		npu_power_up
+		wait_device_ready
+		flash_all
+		if [ $? -eq 0 ]; then
+			return 0
+		else
+			reset_hub $1
+		fi
+		let retry=${retry}-1
+		sleep 1
+	done
+
+	return 1
+}
+
+case $1 in
+#TB-RK3399ProXs)
+#	npu_power_up
+#	sleep 3
+#	remove_180a
+#	;;
+TB-RK3399ProX*)
+	flash $1
+	boot_system
+	sleep 3
+	remove_180a
+	;;
+*)
+	flash $1
+	boot_system
+	;;
+esac

@@ -1,0 +1,227 @@
+<launch>
+
+  <!-- 任务轮次：1 = 不投救助物资；2 = 识别到伤员后投救助物资（决赛） -->
+  <arg name="stage" default="1" />
+  <!-- 兼容旧参数：stage=2 或 rescue_drop_enabled=true 任一成立就投救助物资 -->
+  <arg name="rescue_drop_enabled" default="false" />
+
+  <arg name="auto_start" default="true" />
+  <arg name="use_real_servos" default="true" />
+  <arg name="enforce_safe_field" default="true" />
+
+  <!-- 场地系 -> map 系的旋转：机头相对场地系 +x 的航向（度，逆时针为正） -->
+  <arg name="field_yaw_deg" default="-90" />
+
+  <!-- 高度：巡航 / 识别悬停 / 投放，都是 PX4 local z（相对起飞点）。
+       location 用 TFmini 定高：z = 距离 - 0.09，起飞点就是 0。 -->
+  <arg name="fly_height" default="1.5" />
+  <arg name="detect_height" default="1.2" />
+  <arg name="drop_height" default="0.6" />
+
+  <arg name="input_image_topic" default="/camera/image_raw" />
+  <arg name="scan_topic" default="/scan" />
+  <arg name="start_foxglove_bridge" default="false" />
+
+  <!-- 识别：危险品标志每轮随机分配，正确类别必须在本轮起飞前给出。
+       新模型（YOLOv5n，4 类）的类名是 explosive / flammable / toxic / person。
+       两条路任选：launch 参数 target_hazard:=flammable（或中文“易燃”），
+       或者节点起来后、起飞前向 /mission/target_hazard 发一条 std_msgs/String
+       （rostopic pub -l /mission/target_hazard std_msgs/String "data: '易燃'"）。
+       留空且 wait_for_target=true 时任务节点停在 WAIT_FCU，不解锁、不起飞。 -->
+  <arg name="target_hazard" default="" />
+  <arg name="target_person" default="person" />
+  <arg name="target_topic" default="/mission/target_hazard" />
+  <arg name="wait_for_target" default="true" />
+
+  <arg name="camera_hfov_deg" default="54.0" />
+  <arg name="camera_yaw_deg" default="0.0" />
+  <arg name="confidence_threshold" default="0.50" />
+  <arg name="detect_times" default="5" />
+  <arg name="detect_timeout" default="8.0" />
+  <arg name="annotate_hold" default="6.0" />
+  <!-- 识别后端与模型，含义见下面任务节点里的注释 -->
+  <arg name="detect_backend" default="auto" />
+  <arg name="onnx_file" default="gc-yolo-raw-416.onnx" />
+  <arg name="detect_input_size" default="416" />
+  <arg name="labels_file" default="labels.txt" />
+  <!-- yolo 模型（raw head）的三项元数据，由 tools/export_yolo_raw.py 打印/写成
+       <onnx>.params，粘过来即可。anchors 是像素值、level-major（3 层 × 3 anchor × 2），
+       默认是 yolov5n 在 640 下的官方值（yolov5 的 anchor 不随输入分辨率缩放）。 -->
+  <arg name="yolo_style" default="v5-interleaved" />
+  <arg name="yolo_anchors" default="10,13,16,30,33,23,30,61,62,45,59,119,116,90,156,198,373,326" />
+  <arg name="yolo_strides" default="8,16,32" />
+
+  <!-- 投放对准 -->
+  <arg name="drop_align_mode" default="vision_with_fallback" />
+  <arg name="max_align_offset" default="0.35" />
+  <arg name="rescue_drop_x" default="999.0" />
+  <arg name="rescue_drop_y" default="999.0" />
+
+  <!-- 舵机（PCA9685）：0 号通道相机俯仰，1 号通道两仓投放 -->
+  <arg name="i2c_device" default="/dev/i2c-1" />
+  <arg name="i2c_address" default="64" />
+  <arg name="camera_channel" default="0" />
+  <arg name="drop_channel" default="1" />
+  <arg name="pwm_frequency" default="50" />
+  <arg name="min_pulse_us" default="750" />
+  <arg name="max_pulse_us" default="2250" />
+  <arg name="front_angle" default="170" />
+  <arg name="down_angle" default="55" />
+  <arg name="drop_safe_angle" default="30" />
+  <arg name="fire_drop_angle" default="90" />
+  <arg name="rescue_drop_angle" default="140" />
+  <arg name="servo_motion_seconds" default="0.8" />
+  <arg name="servo_seconds_per_degree" default="0.006" />
+  <arg name="startup_settle_seconds" default="1.0" />
+  <arg name="drop_action_seconds" default="1.0" />
+
+  <!-- move_base：与任务节点共用 scan 话题 -->
+  <include file="$(find navigation_2d)/launch/move_base.launch">
+    <arg name="scan_topic" value="$(arg scan_topic)" />
+  </include>
+
+  <node pkg="navigation_2d" type="shoot_with_move_base_node"
+        name="shoot_with_move_base_node" output="screen" required="true">
+
+    <param name="auto_start" value="$(arg auto_start)" />
+    <param name="stage" value="$(arg stage)" />
+    <param name="rescue_drop_enabled" value="$(arg rescue_drop_enabled)" />
+
+    <param name="fly_height" value="$(arg fly_height)" />
+    <param name="detect_height" value="$(arg detect_height)" />
+    <param name="drop_height" value="$(arg drop_height)" />
+    <param name="takeoff_height_tolerance" value="0.12" />
+    <param name="settle_time" value="1.0" />
+    <param name="goal_timeout" value="25.0" />
+    <param name="drop_settle_time" value="0.8" />
+    <param name="ack_timeout" value="3.0" />
+    <param name="land_settle_time" value="2.0" />
+
+    <!-- 飞行速度上限（与 DWA 参数保持一致） -->
+    <param name="max_vel" value="0.35" />
+    <param name="xy_gain_p" value="1.2" />
+    <param name="z_gain_p" value="1.0" />
+    <param name="pub_rate" value="50" />
+
+    <param name="field_yaw_deg" value="$(arg field_yaw_deg)" />
+    <param name="enforce_safe_field" value="$(arg enforce_safe_field)" />
+    <param name="field_min_x" value="-0.55" />
+    <param name="field_max_x" value="3.25" />
+    <param name="field_min_y" value="-3.25" />
+    <param name="field_max_y" value="0.55" />
+
+    <param name="target_hazard" value="$(arg target_hazard)" />
+    <param name="target_person" value="$(arg target_person)" />
+    <param name="target_topic" value="$(arg target_topic)" />
+    <param name="wait_for_target" value="$(arg wait_for_target)" />
+    <param name="detect_times" value="$(arg detect_times)" />
+    <param name="detect_timeout" value="$(arg detect_timeout)" />
+    <param name="annotate_hold" value="$(arg annotate_hold)" />
+    <param name="max_center_offset" value="0.35" />
+
+
+    <param name="drop_align_mode" value="$(arg drop_align_mode)" />
+    <param name="max_align_offset" value="$(arg max_align_offset)" />
+    <param name="rescue_drop_x" value="$(arg rescue_drop_x)" />
+    <param name="rescue_drop_y" value="$(arg rescue_drop_y)" />
+
+    <!-- ====== 场地系航点（米，原点=起飞点） ======
+         危险品任务区：x=1.40（图上 1950 从右边缘量起 -> 4000-1950=2050 mm），
+         两张卡 y=0.00 / -0.45（卡心相距 450 mm）。
+         人员救助区：x=2.70（图上 650 从右边缘量起 -> 3350 mm），
+         三张卡 y=-1.05 / -1.85 / -2.65（卡 3 底边在图上的 500 线上，卡距 800 mm）。
+
+         绕障说明（见 docs/field_frame.md 的坐标推导）：
+           固定障碍 1 在 x=0.70、y=-1.05..0.65，必须从它下沿以南穿过；
+           固定障碍 2 是右上角 45° 斜梁，下沿端点在 (2.15,-0.55) 附近；
+           随机障碍 1 在左列 (0.70,-1.45) 或 (0.70,-2.45)，
+           随机障碍 2 在右列 (2.10,-1.45) 或 (2.10,-1.95)。
+           所以左列在 y=-1.95 穿、右列在 y=-0.95 穿，两个位置对四个随机位
+           都是等距，激光看到实际摆位后由 move_base 微调路径。 -->
+
+    <!-- 危险品航线：最后 hazard_detect_num 个点是识别悬停点 -->
+    <param name="hazard_route_num" value="4" />
+    <param name="hazard_detect_num" value="2" />
+    <param name="hazard_point0_x" value="0.00" />
+    <param name="hazard_point0_y" value="-1.95" />
+    <param name="hazard_point1_x" value="1.40" />
+    <param name="hazard_point1_y" value="-1.95" />
+    <param name="hazard_point2_x" value="1.40" />
+    <param name="hazard_point2_y" value="0.00" />
+    <param name="hazard_point3_x" value="1.40" />
+    <param name="hazard_point3_y" value="-0.45" />
+
+    <!-- 人员航线：前 2 个是转场点，最后 person_detect_num 个是识别悬停点 -->
+    <param name="person_route_num" value="5" />
+    <param name="person_detect_num" value="3" />
+    <param name="person_point0_x" value="1.40" />
+    <param name="person_point0_y" value="-0.95" />
+    <param name="person_point1_x" value="2.70" />
+    <param name="person_point1_y" value="-0.95" />
+    <param name="person_point2_x" value="2.70" />
+    <param name="person_point2_y" value="-1.05" />
+    <param name="person_point3_x" value="2.70" />
+    <param name="person_point3_y" value="-1.85" />
+    <param name="person_point4_x" value="2.70" />
+    <param name="person_point4_y" value="-2.65" />
+
+    <!-- 返航航线：末点回起飞点。
+         人员任务在 1/2/3 号卡都可能结束，所以返航先回到 y=-0.95 的转场线，
+         再沿去程的安全走廊退回。 -->
+    <param name="return_route_num" value="5" />
+    <param name="return_point0_x" value="2.70" />
+    <param name="return_point0_y" value="-0.95" />
+    <param name="return_point1_x" value="1.40" />
+    <param name="return_point1_y" value="-0.95" />
+    <param name="return_point2_x" value="1.40" />
+    <param name="return_point2_y" value="-1.95" />
+    <param name="return_point3_x" value="0.00" />
+    <param name="return_point3_y" value="-1.95" />
+    <param name="return_point4_x" value="0.00" />
+    <param name="return_point4_y" value="0.00" />
+
+
+    <param name="input_image_topic" value="$(arg input_image_topic)" />
+    <param name="model_path" value="$(find navigation_2d)/detect_mode/26" />
+    <param name="model_file" value="best.rknn" />
+    <param name="onnx_file" value="$(arg onnx_file)" />
+    <param name="backend" value="$(arg detect_backend)" />
+    <param name="input_size" value="$(arg detect_input_size)" />
+    <param name="yolo_reg_max" value="16" />
+    <param name="yolo_style" value="$(arg yolo_style)" />
+    <param name="yolo_anchors" value="$(arg yolo_anchors)" />
+    <param name="yolo_strides" value="$(arg yolo_strides)" />
+    <param name="labels_file" value="$(arg labels_file)" />
+    <param name="confidence_threshold" value="$(arg confidence_threshold)" />
+    <param name="nms_iou" value="0.45" />
+    <param name="camera_hfov_deg" value="$(arg camera_hfov_deg)" />
+    <param name="camera_yaw_deg" value="$(arg camera_yaw_deg)" />
+    <param name="publish_scale" value="0.5" />
+    <param name="publish_rate" value="8.0" />
+  </node>
+
+  <!-- 舵机节点：真机才起。仿真里 gc_2026_sim 的 rig 会代答 /gpio_ack。 -->
+  <group if="$(arg use_real_servos)">
+    <node pkg="servo_control" type="servo_controller_node"
+          name="servo_controller_node" output="screen">
+      <param name="i2c_device" value="$(arg i2c_device)" />
+      <param name="i2c_address" value="$(arg i2c_address)" />
+      <param name="camera_channel" value="$(arg camera_channel)" />
+      <param name="drop_channel" value="$(arg drop_channel)" />
+      <param name="pwm_frequency" value="$(arg pwm_frequency)" />
+      <param name="min_pulse_us" value="$(arg min_pulse_us)" />
+      <param name="max_pulse_us" value="$(arg max_pulse_us)" />
+      <param name="front_angle" value="$(arg front_angle)" />
+      <param name="down_angle" value="$(arg down_angle)" />
+      <param name="drop_safe_angle" value="$(arg drop_safe_angle)" />
+      <param name="fire_drop_angle" value="$(arg fire_drop_angle)" />
+      <param name="rescue_drop_angle" value="$(arg rescue_drop_angle)" />
+      <param name="servo_motion_seconds" value="$(arg servo_motion_seconds)" />
+      <param name="servo_seconds_per_degree" value="$(arg servo_seconds_per_degree)" />
+      <param name="startup_settle_seconds" value="$(arg startup_settle_seconds)" />
+      <param name="drop_action_seconds" value="$(arg drop_action_seconds)" />
+      <!-- 飞行链上必须是 false：/gpio_debug_cmd 不订阅，任意消息都动不了投放舵机 -->
+      <param name="angle_debug" value="false" />
+    </node>
+  </group>
+</launch>

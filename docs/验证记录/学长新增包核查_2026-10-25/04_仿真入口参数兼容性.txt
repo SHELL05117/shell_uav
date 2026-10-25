@@ -1,0 +1,40 @@
+{
+  "existing_sim_launch_compatibility": [
+    {
+      "launch": "src/gc_2026_sim/launch/gazebo_field.launch",
+      "supplied": [
+        "auto_start",
+        "drop_align_mode",
+        "enforce_safe_field",
+        "input_image_topic",
+        "rescue_drop_enabled",
+        "rescue_drop_x",
+        "rescue_drop_y",
+        "stage",
+        "start_foxglove_bridge",
+        "use_real_servos"
+      ],
+      "undeclared_by_incoming": []
+    },
+    {
+      "launch": "src/gc_2026_sim/launch/px4_sitl_field.launch",
+      "supplied": [
+        "auto_start",
+        "drop_align_mode",
+        "enforce_safe_field",
+        "field_yaw_deg",
+        "input_image_topic",
+        "rescue_drop_enabled",
+        "rescue_drop_x",
+        "rescue_drop_y",
+        "scan_topic",
+        "stage",
+        "start_foxglove_bridge",
+        "use_real_servos"
+      ],
+      "undeclared_by_incoming": []
+    }
+  ],
+  "parameter_txt_line_endings_only": true,
+  "sim_launches_reference_incoming_missing_args": false
+}

@@ -1,0 +1,25 @@
+#!/bin/bash
+# Power up the RK1808 NPU, push its firmware over USB3 and start the transfer
+# proxy that librknn_api talks to. The NPU has no flash, so this runs at every
+# boot; the firmware and tools come from the official toybrick rootfs.
+set -u
+
+BOARD=TB-RK3399ProD
+# shellcheck source=/dev/null
+[ -r /etc/default/rknn ] && . /etc/default/rknn
+
+FW_DIR=/usr/lib/firmware/npu_fw
+for f in MiniLoaderAll.bin uboot.img trust.img boot.img; do
+  if [ ! -r "$FW_DIR/$f" ]; then
+    echo "rknn-start: 缺少 $FW_DIR/$f" >&2
+    exit 1
+  fi
+done
+
+# npu_upgrade powers the NPU up, flashes loader/uboot/trust/boot and boots it.
+/usr/bin/npu_upgrade "$BOARD" || exit 1
+
+# Must outlive this oneshot unit: it stays in the unit's cgroup and is killed
+# by rknn-stop.
+/usr/bin/npu_transfer_proxy &
+exit 0

@@ -94,6 +94,7 @@ Desktop.ini
 
 # Local firmware/tools download staging; evidence is archived under docs/ and logs/.
 /temp1022/
+/temp1025/
 
 # Keep extracted YOLO source/config/exported models and selected evidence.
 # Retain delivery ZIPs, training logs/checkpoints and the independent upstream clone locally.

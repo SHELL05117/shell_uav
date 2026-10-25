@@ -1,0 +1,63 @@
+<launch>
+
+
+  <arg name="open_rviz" default="false" />
+  <arg name="drone_frame" default="base_link" />
+  <arg name="odom_frame" default="odom" />
+
+  <!-- RPLIDAR S2：USB 转串口，S2 固定 1 Mbaud -->
+  <arg name="lidar_serial_port" default="/dev/ttyUSB0" />
+  <arg name="node_start_delay" default="3.0" />
+
+  <!-- TFmini：只用来定高。向下装在机臂上，起飞时离地 0.09 m。
+       节点输出 z = 距离 - tf_mini_height，起飞点就是 0；PX4 的 local z 原点也在
+       起飞点，所以直接当 vision_pose 的高度即可，不需要 IMU 姿态或三维安装偏移。
+       3399Pro 的 I2C 编号和 Jetson 不同，先 `i2cdetect -l` 确认再用。 -->
+  <arg name="use_tf_mini" default="true" />
+  <arg name="tf_mini_type" default="i2c" />
+  <arg name="tf_mini_height" default="0.09" />
+  <arg name="bus" default="1" />
+  <arg name="address" default="16" />
+  <arg name="serial_port" default="/dev/ttyUSB0" />
+  <arg name="baud_rate" default="115200" />
+
+  <!-- Pixhawk 6C：PX4 的 USB 默认 921600（USB CDC 本身忽略波特率，但 MAVROS 要匹配） -->
+  <arg name="fcu_url" default="/dev/ttyACM0:921600" />
+  <arg name="gcs_url" default="tcp-l://0.0.0.0:5760" />
+
+  <include file="$(find location)/launch/rplidar.launch">
+    <arg name="serial_port" value="$(arg lidar_serial_port)" />
+  </include>
+
+  <include file="$(find mavros)/launch/px4.launch">
+    <arg name="fcu_url" value="$(arg fcu_url)" />
+    <arg name="gcs_url" value="$(arg gcs_url)" />
+  </include>
+
+  <node pkg="location" type="location_node" name="location_node" output="screen"
+        launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' ">
+    <param name="publish_rate" value="20" />
+
+    <param name="target_frame_id" value="$(arg odom_frame)" />
+    <param name="source_frame_id" value="$(arg drone_frame)" />
+
+    <param name="use_tf_mini" value="$(arg use_tf_mini)" />
+    <param name="tf_mini_type" value="$(arg tf_mini_type)" />
+    <param name="tf_mini_height" value="$(arg tf_mini_height)" />
+    <param name="bus" value="$(arg bus)" />
+    <param name="address" value="$(arg address)" />
+    <param name="serial_port" value="$(arg serial_port)" />
+    <param name="baud_rate" value="$(arg baud_rate)" />
+  </node>
+
+  <include file="$(find location)/launch/cartographer_2d.launch" />
+
+  <!-- 雷达安装：S2 相对机头转了 180°，与旧机一致 -->
+  <node pkg="tf" type="static_transform_publisher" name="tf_baselink_to_laserlink"
+        args="0 0 0 3.14159 0 0 base_link laser_link 30" />
+
+  <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find location)/rviz/ros_navigation.rviz" />
+  </group>
+</launch>
