@@ -1,0 +1,12 @@
+Verified session temporary files and root-owned test cache removed; installed runtime and rollback backup retained.
+active
+active
+active
+active
+active
+active
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+  415     1 /usr/local/bin/npu_transfer_proxy
+2026-10-24T02:11:49+08:00
+252.29 1483.59

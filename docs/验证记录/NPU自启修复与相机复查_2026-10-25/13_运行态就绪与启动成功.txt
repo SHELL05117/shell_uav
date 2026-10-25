@@ -1,0 +1,14 @@
+active
+active
+active
+active
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE
+	linux-vdso.so.1 (0x0000007f89beb000)
+	librknn_api.so => /home/jcfh/RK3399Pro_npu/rknn-api/librknn_api/Linux/lib64/librknn_api.so (0x0000007f89b87000)
+	libstdc++.so.6 => /usr/lib/aarch64-linux-gnu/libstdc++.so.6 (0x0000007f899bf000)
+	libgcc_s.so.1 => /lib/aarch64-linux-gnu/libgcc_s.so.1 (0x0000007f8999b000)
+	libpthread.so.0 => /lib/aarch64-linux-gnu/libpthread.so.0 (0x0000007f8996f000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000007f89816000)
+	/lib/ld-linux-aarch64.so.1 (0x0000007f89bbf000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000007f8975d000)

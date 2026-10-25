@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+  File "/usr/lib/python3.6/shutil.py", line 486, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/usr/lib/python3.6/shutil.py", line 424, in _rmtree_safe_fd
+    _rmtree_safe_fd(dirfd, fullname, onerror)
+  File "/usr/lib/python3.6/shutil.py", line 424, in _rmtree_safe_fd
+    _rmtree_safe_fd(dirfd, fullname, onerror)
+  File "/usr/lib/python3.6/shutil.py", line 444, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/usr/lib/python3.6/shutil.py", line 442, in _rmtree_safe_fd
+    os.unlink(name, dir_fd=topfd)
+PermissionError: [Errno 13] Permission denied: 'rk_npu_power.cpython-36.pyc'

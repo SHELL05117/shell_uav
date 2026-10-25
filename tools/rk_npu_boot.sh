@@ -9,6 +9,7 @@ action=${1:-check}
 tool=/home/jcfh/npu_runtime_175/upgrade_tool
 repo=/home/jcfh/RK3399Pro_npu
 fw=$repo/drivers/npu_firmware/npu_fw
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
 expected_commit=8858114555f1700e41e185b14ec3d266342f8059
 expected_tool=09dfa63f4a9f3e38bab3c0ee2731a08e96e0fb52f21d259a028080204621da4c
 [[ $(sha256sum "$tool" | cut -d ' ' -f 1) == "$expected_tool" ]] || { echo 'Tool SHA256 differs' >&2; exit 1; }
@@ -22,47 +23,28 @@ for name in MiniLoaderAll.bin uboot.img trust.img boot.img; do
 done
 
 guard_usb() {
-    python3 - <<'PY'
-import json
-from pathlib import Path
-compat=Path('/proc/device-tree/compatible').read_bytes().split(b'\0')
-assert b'rockchip,rk3399pro-toybrick-prod-linux' in compat, 'Wrong board'
-state=json.loads(Path('/run/shell-rk-npu-power.json').read_text())
-assert state['phase']=='powered' and state['profile']=='prod-20181217', 'NPU power not owned/ready'
-assert state['boot_id']==Path('/proc/sys/kernel/random/boot_id').read_text().strip(), 'Stale power record'
-devices=[]
-for p in Path('/sys/bus/usb/devices').iterdir():
-    try:
-        if (p/'idVendor').read_text().strip()=='2207':
-            devices.append((p.name,(p/'idProduct').read_text().strip()))
-    except OSError:
-        pass
-assert devices==[('3-1.1','180a')], 'Expected exactly one NPU at 3-1.1; got %r'%devices
-assert Path('/sys/bus/usb/devices/3-1/idVendor').read_text().strip()=='05e3', 'Wrong parent hub'
-assert Path('/sys/bus/usb/devices/3-1/idProduct').read_text().strip()=='0610', 'Wrong parent hub'
-print('Unique NPU USB target: 3-1.1 / 2207:180a')
-PY
+    local listing
+    listing=$(timeout 8 "$tool" ld)
+    printf '%s\n' "$listing" >&2
+    printf '%s\n' "$listing" | python3 "$script_dir/rk_npu_usb.py" "$1" "${2:-}"
 }
 
 run_stage() {
-    guard_usb
+    guard_usb Loader "$location" >/dev/null
     printf '\nNPU stage: %s\n' "$1"
     shift
     timeout 30 "$tool" "$@"
 }
 
-guard_usb
-listing=$("$tool" ld)
-printf '%s\n' "$listing"
-[[ $(printf '%s\n' "$listing" | grep -c '^DevNo=') == 1 ]] || { echo 'Ambiguous rockusb target' >&2; exit 1; }
 mode=Maskrom
 [[ $action != resume ]] || mode=Loader
-[[ $listing == *LocationID=30101* && $listing == *Mode=$mode* ]] \
-    || { echo "Expected NPU $mode at LocationID=30101; no automatic reset" >&2; exit 1; }
+location=$(guard_usb "$mode")
 [[ $action != check ]] || { echo 'Check passed; no firmware transferred.'; exit 0; }
 
 if [[ $action == start ]]; then
-    run_stage loader db "$fw/MiniLoaderAll.bin"
+    guard_usb Maskrom "$location" >/dev/null
+    printf '\nNPU stage: loader\n'
+    timeout 30 "$tool" db "$fw/MiniLoaderAll.bin"
     sleep 1
 fi
 run_stage loader-ready td

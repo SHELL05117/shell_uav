@@ -1,0 +1,21 @@
+/dev/video10
+Format Video Capture:
+	Width/Height      : 1280/720
+	Pixel Format      : 'MJPG'
+	Field             : None
+	Bytes per Line    : 0
+	Size Image        : 1843200
+	Colorspace        : sRGB
+	Transfer Function : Default (maps to sRGB)
+	YCbCr/HSV Encoding: Default (maps to ITU-R 601)
+	Quantization      : Default (maps to Full Range)
+	Flags             : 
+Streaming Parameters Video Capture:
+	Capabilities     : timeperframe
+	Frames per second: 60.000 (60/1)
+	Read buffers     : 0
+<<<<<<<<<<<<<<<<<<<<<
+c8c1d5565c9bd3c10bb694aafaeeb9f4e7ce6a938b46b6c05fa43e504e54ab1e  /tmp/shell_npu_fix_20261025/camera-clear.jpg
+
+[pre-reboot]
+aac9d5a8-b835-4fb4-aa5d-2d3c2b74db2b

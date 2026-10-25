@@ -1,0 +1,49 @@
+total 7076
+drwxrwxr-x 2 jcfh jcfh    4096 Oct 24 02:08 autostart_post
+drwxrwxr-x 2 jcfh jcfh    4096 Oct 24  2026 autostart_pre
+drwxrwxr-x 2 jcfh jcfh    4096 Oct 24  2026 inputs
+-rw-rw-r-- 1 jcfh jcfh       9 Oct 24  2026 manifest-autostart.txt
+-rw-rw-r-- 1 jcfh jcfh     324 Oct 24  2026 manifest.txt
+drwxrwxr-x 2 jcfh jcfh    4096 Oct 24  2026 outputs
+-rwxrwxr-x 1 jcfh jcfh   36432 Oct 24  2026 rk_sixclass_probe
+-rw-rw-r-- 1 jcfh jcfh    5315 Oct 24  2026 rk_sixclass_probe.cpp
+-rw-rw-r-- 1 jcfh jcfh 7174523 Oct 24  2026 sixclass_yolov5s_relu_rk3399pro.rknn
+/home/jcfh/npu_runtime_175/sixclass/autostart_post:
+total 1096
+-rw-rw-r-- 1 jcfh jcfh 844800 Oct 24 02:08 IMG_2706_0.f32
+-rw-rw-r-- 1 jcfh jcfh 211200 Oct 24 02:08 IMG_2706_1.f32
+-rw-rw-r-- 1 jcfh jcfh  52800 Oct 24 02:08 IMG_2706_2.f32
+-rw-rw-r-- 1 jcfh jcfh    265 Oct 24 02:08 tensors.tsv
+-rw-rw-r-- 1 jcfh jcfh     37 Oct 24 02:08 timings.tsv
+
+/home/jcfh/npu_runtime_175/sixclass/autostart_pre:
+total 1096
+-rw-rw-r-- 1 jcfh jcfh 844800 Oct 24  2026 IMG_2706_0.f32
+-rw-rw-r-- 1 jcfh jcfh 211200 Oct 24  2026 IMG_2706_1.f32
+-rw-rw-r-- 1 jcfh jcfh  52800 Oct 24  2026 IMG_2706_2.f32
+-rw-rw-r-- 1 jcfh jcfh    265 Oct 24  2026 tensors.tsv
+-rw-rw-r-- 1 jcfh jcfh     37 Oct 24  2026 timings.tsv
+[Unit]
+Description=SHELL RK3399Pro NPU owned power control
+Requires=sys-kernel-debug.mount
+After=local-fs.target systemd-udev-trigger.service sys-kernel-debug.mount
+PartOf=shell-npu.target
+RequiresMountsFor=/home/jcfh/npu_runtime_175 /home/jcfh/RK3399Pro_npu
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/shell-rk-npu/rk_npu_power.py on --profile prod-20181217 --usb-timeout 15
+ExecStop=/usr/bin/python3 /usr/local/lib/shell-rk-npu/rk_npu_power.py off --profile prod-20181217
+TimeoutStartSec=30
+TimeoutStopSec=30
+total 48
+drwxr-xr-x 2 root root  4096 Oct 24  2026 __pycache__
+-rw-r--r-- 1 root root  3765 Oct 24  2026 rk_npu_autostart.py
+-rw-r--r-- 1 root root  3566 Oct 24  2026 rk_npu_boot.sh
+-rw-r--r-- 1 root root 19139 Oct 24  2026 rk_npu_power.py
+-rw-r--r-- 1 root root  3344 Oct 24  2026 test_rk_npu_autostart.py
+-rw-r--r-- 1 root root 11225 Oct 24  2026 test_rk_npu_power.py
+2
+1.1
+/sys/devices/platform/usb1/fe900000.dwc3/xhci-hcd.10.auto/usb2/2-1/2-1.1

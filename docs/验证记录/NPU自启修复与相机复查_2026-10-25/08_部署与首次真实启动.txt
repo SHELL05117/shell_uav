@@ -1,0 +1,19 @@
+[before-install]
+ad56be93af9158ed1d059b9bf5c3a7358de5c690481fc48729f2c40d345e3a6a  /usr/local/lib/shell-rk-npu/rk_npu_autostart.py
+6e543f107c1efec89fb11b7ff3b4699e0bb8f55a0b0b2049c79cd611524afe47  /usr/local/lib/shell-rk-npu/rk_npu_boot.sh
+previously absent: /home/jcfh/npu_runtime_175/rk_npu_usb.py
+previously absent: /home/jcfh/npu_runtime_175/rk_npu_power.py
+
+[deployed]
+d93edf6dac0f9bb80cc195b80d7471719949313e8eb83f7b72388d767f0a8599  /usr/local/lib/shell-rk-npu/rk_npu_autostart.py
+dcbd93546ab98d6e3c9789caa9bd2fb6bb747ec0d173a7cacb99d645fe84a6dd  /usr/local/lib/shell-rk-npu/rk_npu_boot.sh
+0d7a0119c7d696061d80c20e8d8eeb5b114abe5ac9654ae9fdd5ffe54a62d9d2  /usr/local/lib/shell-rk-npu/rk_npu_usb.py
+Not found config.ini
+Program Data in /home/jcfh/npu_runtime_175
+List of rockusb connected(1)
+DevNo=1	Vid=0x2207,Pid=0x180a,LocationID=20101	Mode=Maskrom
+Unique internal NPU: 2-1.1 / 2207:180a LocationID=20101 mode=Maskrom
+Check passed; no firmware transferred.
+
+[start-target]
+A dependency job for shell-npu.target failed. See 'journalctl -xe' for details.

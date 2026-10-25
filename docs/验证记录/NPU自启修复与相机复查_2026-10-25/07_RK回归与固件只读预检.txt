@@ -1,0 +1,26 @@
+Python 3.6.9
+Runtime already present; no firmware transfer/reset
+NPU firmware stage ready
+NPU firmware stage ready
+NPU firmware stage ready
+NPU firmware stage ready
+expected-id a0096b1e USB_DEVICE
+NPU proxy device ready
+.................................
+----------------------------------------------------------------------
+Ran 33 tests in 0.170s
+
+OK
+Not found config.ini
+Program Data in /home/jcfh/npu_runtime_175
+List of rockusb connected(1)
+DevNo=1	Vid=0x2207,Pid=0x180a,LocationID=20101	Mode=Maskrom
+Unique internal NPU: 2-1.1 / 2207:180a LocationID=20101 mode=Maskrom
+Check passed; no firmware transferred.
+d93edf6dac0f9bb80cc195b80d7471719949313e8eb83f7b72388d767f0a8599  /home/jcfh/shell_npu_fix_20261025/candidate/rk_npu_autostart.py
+d9f151d62a7a049d53bf68f4c28c47858389379a319ae8ff3f1dfd18904bc2ba  /home/jcfh/shell_npu_fix_20261025/candidate/rk_npu_power.py
+0d7a0119c7d696061d80c20e8d8eeb5b114abe5ac9654ae9fdd5ffe54a62d9d2  /home/jcfh/shell_npu_fix_20261025/candidate/rk_npu_usb.py
+2a6d4f3c7673a9ffdad6567e608ee79b4d09ee20371a6f8020c3e8f373c62d36  /home/jcfh/shell_npu_fix_20261025/candidate/test_rk_npu_autostart.py
+5f12902467d32d8ea392dc2d0fca3b12618970013e4815151bdcda3938a507ea  /home/jcfh/shell_npu_fix_20261025/candidate/test_rk_npu_power.py
+f7b62342506eec0aad8064d1a504ab37e26ebe8d23e0cda428bc8ade54396567  /home/jcfh/shell_npu_fix_20261025/candidate/test_rk_npu_usb.py
+dcbd93546ab98d6e3c9789caa9bd2fb6bb747ec0d173a7cacb99d645fe84a6dd  /home/jcfh/shell_npu_fix_20261025/candidate/rk_npu_boot.sh

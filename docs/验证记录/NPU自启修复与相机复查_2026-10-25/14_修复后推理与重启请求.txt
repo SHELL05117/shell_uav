@@ -1,0 +1,23 @@
+f922b48bdd34e0ed47b94a8c3975a6b12b58989c8cf4c5816f66cc3a00b6eab1  /home/jcfh/npu_runtime_175/sixclass/sixclass_yolov5s_relu_rk3399pro.rknn
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+api=1.7.5 (bb79b30 build: 2023-07-18 16:49:12) driver=1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+head 0 channels=33 side=80 elements=211200
+head 1 channels=33 side=40 elements=52800
+head 2 channels=33 side=20 elements=13200
+1 IMG_2706 57.3691 ms
+completed=1
+50a6b0dbc321ffd071a653a321f26c4fe82231219eb32cefc8c83120ddea5b6a  /home/jcfh/shell_npu_fix_20261025/pre-reboot/IMG_2706_0.f32
+00474fe8bb35ee682cb25930611fcf6c4fc0a7efcdfe3bc7176288daef844e7f  /home/jcfh/shell_npu_fix_20261025/pre-reboot/IMG_2706_1.f32
+5a16556a94121c41c5efe681f17d4177ad3ea18b00b738f15b07a04dee0350d2  /home/jcfh/shell_npu_fix_20261025/pre-reboot/IMG_2706_2.f32
+
+[ready-before-reboot]
+ce6ec3e8-f61f-43ad-9b18-558000bfa90f
+active
+active
+active
+active
+enabled

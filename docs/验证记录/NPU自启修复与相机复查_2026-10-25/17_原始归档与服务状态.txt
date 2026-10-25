@@ -1,0 +1,11 @@
+944d5f27108dd8eca07fe6f453720ada5a1c967e274405417ddb770978d8950d  /home/jcfh/shell_npu_fix_20261025_evidence.tar.gz
+
+[final-readiness]
+b0e49c11-958c-4507-83ca-9b47a920fd7b
+enabled
+active
+active
+active
+active
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE

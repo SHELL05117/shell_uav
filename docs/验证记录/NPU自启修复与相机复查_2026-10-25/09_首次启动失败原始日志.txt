@@ -1,0 +1,60 @@
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[    4.729542] toybrick systemd[1]: Starting SHELL RK3399Pro NPU owned power control...
+[    5.610986] toybrick python3[283]: {
+[    5.610986] toybrick python3[283]:   "firmware_loaded_by_script": false,
+[    5.610986] toybrick python3[283]:   "npu_usb": {
+[    5.610986] toybrick python3[283]:     "2-1.1": "2207:180a"
+[    5.610986] toybrick python3[283]:   },
+[    5.610986] toybrick python3[283]:   "result": "power_on_usb_visible"
+[    5.610986] toybrick python3[283]: }
+[    5.660158] toybrick systemd[1]: Started SHELL RK3399Pro NPU owned power control.
+[    5.668074] toybrick systemd[1]: Starting SHELL RK3399Pro NPU firmware RAM boot and USB readiness...
+[    5.900324] toybrick python3[321]: NPU startup failed: Unexpected NPU boot USB state: {'2-1.1': '2207:180a'}
+[    5.924991] toybrick systemd[1]: shell-npu-firmware.service: Main process exited, code=exited, status=1/FAILURE
+[    5.925919] toybrick systemd[1]: shell-npu-firmware.service: Failed with result 'exit-code'.
+[    5.926412] toybrick systemd[1]: Failed to start SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[    5.927790] toybrick systemd[1]: Dependency failed for SHELL RK3399Pro NPU transfer proxy and device readiness.
+[    5.930559] toybrick systemd[1]: shell-npu-proxy.service: Job shell-npu-proxy.service/start failed with result 'dependency'.
+[  472.845586] toybrick systemd[1]: Starting SHELL RK3399Pro NPU firmware RAM boot and USB readiness...
+[  473.448074] toybrick python3[741]: Not found config.ini
+[  473.448074] toybrick python3[741]: Program Data in /home/jcfh/npu_runtime_175
+[  473.448074] toybrick python3[741]: List of rockusb connected(1)
+[  473.448074] toybrick python3[741]: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=20101        Mode=Maskrom
+[  473.637135] toybrick python3[741]: Unique internal NPU: 2-1.1 / 2207:180a LocationID=20101 mode=Maskrom
+[  473.782656] toybrick python3[741]: Not found config.ini
+[  473.782656] toybrick python3[741]: Program Data in /home/jcfh/npu_runtime_175
+[  473.782656] toybrick python3[741]: List of rockusb connected(1)
+[  473.782656] toybrick python3[741]: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=20101        Mode=Maskrom
+[  473.970309] toybrick python3[741]: Unique internal NPU: 2-1.1 / 2207:180a LocationID=20101 mode=Maskrom
+[  473.991748] toybrick python3[741]: NPU stage: loader
+[  474.761862] toybrick python3[741]: Not found config.ini
+[  474.761862] toybrick python3[741]: Program Data in /home/jcfh/npu_runtime_175
+[  474.761862] toybrick python3[741]: Download boot...
+[  474.761862] toybrick python3[741]: Waiting for loader...
+[  474.761862] toybrick python3[741]: Download boot ok.
+[  475.915478] toybrick python3[741]: Not found config.ini
+[  475.915478] toybrick python3[741]: Program Data in /home/jcfh/npu_runtime_175
+[  475.915478] toybrick python3[741]: List of rockusb connected(1)
+[  475.915478] toybrick python3[741]: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=20101        Mode=Loader        SerialNo=rockchip
+[  476.103597] toybrick python3[741]: NPU USB guard refused: Unexpected tool device or mode: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=20101        Mode=Loader        SerialNo=rockchip
+[  476.147045] toybrick python3[741]: NPU startup failed: Command '['/bin/bash', '/usr/local/lib/shell-rk-npu/rk_npu_boot.sh', 'start']' returned non-zero exit status 1.
+[  476.168341] toybrick systemd[1]: shell-npu-firmware.service: Main process exited, code=exited, status=1/FAILURE
+[  476.170245] toybrick systemd[1]: shell-npu-firmware.service: Failed with result 'exit-code'.
+[  476.171408] toybrick systemd[1]: Failed to start SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[  476.172562] toybrick systemd[1]: Dependency failed for SHELL RK3399Pro NPU transfer proxy and device readiness.
+[  476.186969] toybrick systemd[1]: shell-npu-proxy.service: Job shell-npu-proxy.service/start failed with result 'dependency'.
+Bus 002 Device 005: ID 0bda:9143 Realtek Semiconductor Corp. 
+Bus 002 Device 004: ID 10c4:ea60 Cygnal Integrated Products, Inc. CP210x UART Bridge / myAVR mySmartUSB light
+Bus 002 Device 007: ID 3185:0038  
+Bus 002 Device 008: ID 2207:180a  
+Bus 002 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 001 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Result=exit-code
+ExecMainStatus=1

@@ -1,0 +1,23 @@
+2026-10-24T02:27:46+08:00
+aac9d5a8-b835-4fb4-aa5d-2d3c2b74db2b
+ 02:27:46 up 20 min,  0 users,  load average: 0.04, 0.12, 0.15
+Bus 002 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 007: ID 0bda:9143 Realtek Semiconductor Corp. 
+Bus 001 Device 006: ID 10c4:ea60 Cygnal Integrated Products, Inc. CP210x UART Bridge / myAVR mySmartUSB light
+Bus 001 Device 009: ID 3185:0038  
+Bus 001 Device 008: ID 2207:180a  
+Bus 001 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+inactive
+failed
+inactive
+enabled
+total 0
+lrwxrwxrwx 1 root root 13 Oct 24 02:07 usb-RYS_USB_Camera_200901010001-video-index0 -> ../../video10
+lrwxrwxrwx 1 root root 13 Oct 24 02:07 usb-RYS_USB_Camera_200901010001-video-index1 -> ../../video11

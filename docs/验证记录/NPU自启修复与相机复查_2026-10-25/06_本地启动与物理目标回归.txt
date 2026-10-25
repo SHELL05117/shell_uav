@@ -1,0 +1,12 @@
+Runtime already present; no firmware transfer/reset
+NPU firmware stage ready
+NPU firmware stage ready
+NPU firmware stage ready
+NPU firmware stage ready
+expected-id a0096b1e USB_DEVICE
+NPU proxy device ready
+.................................
+----------------------------------------------------------------------
+Ran 33 tests in 0.081s
+
+OK

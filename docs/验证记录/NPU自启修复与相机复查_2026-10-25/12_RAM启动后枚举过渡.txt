@@ -1,0 +1,29 @@
+Bus 002 Device 005: ID 0bda:9143 Realtek Semiconductor Corp. 
+Bus 002 Device 004: ID 10c4:ea60 Cygnal Integrated Products, Inc. CP210x UART Bridge / myAVR mySmartUSB light
+Bus 002 Device 007: ID 3185:0038  
+Bus 002 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 003: ID 2207:0019  
+Bus 001 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 001 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[  476.147045] toybrick python3[741]: NPU startup failed: Command '['/bin/bash', '/usr/local/lib/shell-rk-npu/rk_npu_boot.sh', 'start']' returned non-zero exit status 1.
+[  476.168341] toybrick systemd[1]: shell-npu-firmware.service: Main process exited, code=exited, status=1/FAILURE
+[  476.170245] toybrick systemd[1]: shell-npu-firmware.service: Failed with result 'exit-code'.
+[  476.171408] toybrick systemd[1]: Failed to start SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[  527.893709] toybrick systemd[1]: Starting SHELL RK3399Pro NPU firmware RAM boot and USB readiness...
+[  529.506462] toybrick python3[968]: Not found config.ini
+[  529.506462] toybrick python3[968]: Program Data in /home/jcfh/npu_runtime_175
+[  529.506462] toybrick python3[968]: List of rockusb connected(1)
+[  529.506462] toybrick python3[968]: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=20101        Mode=Loader
+[  529.752073] toybrick python3[968]: NPU USB guard refused: Unexpected tool device or mode: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=20101        Mode=Loader
+[  529.784652] toybrick python3[968]: NPU startup failed: Command '['/bin/bash', '/usr/local/lib/shell-rk-npu/rk_npu_boot.sh', 'start']' returned non-zero exit status 1.
+[  529.861480] toybrick systemd[1]: shell-npu-firmware.service: Main process exited, code=exited, status=1/FAILURE
+[  529.862325] toybrick systemd[1]: shell-npu-firmware.service: Failed with result 'exit-code'.
+[  529.862546] toybrick systemd[1]: Failed to start SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+548.68 3243.80

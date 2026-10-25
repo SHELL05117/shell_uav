@@ -1,0 +1,16 @@
+ce6ec3e8-f61f-43ad-9b18-558000bfa90f
+ 02:08:20 up 0 min,  0 users,  load average: 0.36, 0.12, 0.04
+inactive
+failed
+inactive
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[    5.668074] toybrick systemd[1]: Starting SHELL RK3399Pro NPU firmware RAM boot and USB readiness...
+[    5.900324] toybrick python3[321]: NPU startup failed: Unexpected NPU boot USB state: {'2-1.1': '2207:180a'}
+[    5.924991] toybrick systemd[1]: shell-npu-firmware.service: Main process exited, code=exited, status=1/FAILURE
+[    5.925919] toybrick systemd[1]: shell-npu-firmware.service: Failed with result 'exit-code'.
+[    5.926412] toybrick systemd[1]: Failed to start SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+ls: cannot access '/tmp/shell_npu_fix_20261025': No such file or directory
+Not found config.ini
+Program Data in /home/jcfh/npu_runtime_175
+List of rockusb connected(1)
+DevNo=1	Vid=0x2207,Pid=0x180a,LocationID=20101	Mode=Maskrom

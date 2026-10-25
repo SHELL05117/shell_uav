@@ -1,0 +1,65 @@
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+api=1.7.5 (bb79b30 build: 2023-07-18 16:49:12) driver=1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+head 0 channels=33 side=80 elements=211200
+head 1 channels=33 side=40 elements=52800
+head 2 channels=33 side=20 elements=13200
+1 IMG_2706 56.1065 ms
+completed=1
+
+[output-hashes]
+50a6b0dbc321ffd071a653a321f26c4fe82231219eb32cefc8c83120ddea5b6a  /home/jcfh/shell_npu_fix_20261025/pre-reboot/IMG_2706_0.f32
+00474fe8bb35ee682cb25930611fcf6c4fc0a7efcdfe3bc7176288daef844e7f  /home/jcfh/shell_npu_fix_20261025/pre-reboot/IMG_2706_1.f32
+5a16556a94121c41c5efe681f17d4177ad3ea18b00b738f15b07a04dee0350d2  /home/jcfh/shell_npu_fix_20261025/pre-reboot/IMG_2706_2.f32
+50a6b0dbc321ffd071a653a321f26c4fe82231219eb32cefc8c83120ddea5b6a  /home/jcfh/shell_npu_fix_20261025/post-reboot/IMG_2706_0.f32
+00474fe8bb35ee682cb25930611fcf6c4fc0a7efcdfe3bc7176288daef844e7f  /home/jcfh/shell_npu_fix_20261025/post-reboot/IMG_2706_1.f32
+5a16556a94121c41c5efe681f17d4177ad3ea18b00b738f15b07a04dee0350d2  /home/jcfh/shell_npu_fix_20261025/post-reboot/IMG_2706_2.f32
+
+[deployed-hashes]
+d93edf6dac0f9bb80cc195b80d7471719949313e8eb83f7b72388d767f0a8599  /usr/local/lib/shell-rk-npu/rk_npu_autostart.py
+dcbd93546ab98d6e3c9789caa9bd2fb6bb747ec0d173a7cacb99d645fe84a6dd  /usr/local/lib/shell-rk-npu/rk_npu_boot.sh
+30ff61aec20c6301cf5a1df771114c75637efde67c93934db913b39621492669  /usr/local/lib/shell-rk-npu/rk_npu_usb.py
+d9f151d62a7a049d53bf68f4c28c47858389379a319ae8ff3f1dfd18904bc2ba  /usr/local/lib/shell-rk-npu/rk_npu_power.py
+
+[service-health]
+Id=shell-npu.target
+ActiveState=active
+SubState=active
+
+Result=success
+ExecMainStatus=0
+Id=shell-npu-power.service
+ActiveState=active
+SubState=exited
+
+Result=success
+ExecMainStatus=0
+Id=shell-npu-firmware.service
+ActiveState=active
+SubState=exited
+
+Result=success
+ExecMainStatus=0
+Id=shell-npu-proxy.service
+ActiveState=active
+SubState=running
+0 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+
+[boot-mode-target]
+[    6.536079] toybrick python3[319]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Maskrom
+[    6.980807] toybrick python3[319]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Maskrom
+[    9.150582] toybrick python3[319]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Loader
+[    9.617629] toybrick python3[319]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Loader
+[   10.183731] toybrick python3[319]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Loader
+[   10.751847] toybrick python3[319]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Loader
+[   12.230938] toybrick python3[319]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Loader
+[   17.594408] toybrick python3[319]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   27.954869] toybrick python3[416]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   27.991343] toybrick python3[416]: NPU proxy device ready
+
+[processes]
+  415     1 /usr/local/bin/npu_transfer_proxy

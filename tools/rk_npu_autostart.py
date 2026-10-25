@@ -11,6 +11,7 @@ import time
 from pathlib import Path
 
 from rk_npu_power import Controller, System
+from rk_npu_usb import internal_target
 
 ROOT = Path('/usr/local/lib/shell-rk-npu')
 
@@ -20,7 +21,8 @@ def owned_runtime(io):
     if not state or state.get('phase') != 'powered':
         raise RuntimeError('NPU power ownership is not ready')
     Controller(io).healthy(state)
-    return io.npu_usb()
+    target = internal_target(allow_absent=True)
+    return {target['port']: '2207:' + target['product']} if target else {}
 
 
 def wait_runtime(io, timeout=60):
@@ -46,7 +48,7 @@ def firmware(io):
     usb = owned_runtime(io)
     if len(usb) == 1 and list(usb.values()) == ['2207:0019']:
         print('Runtime already present; no firmware transfer/reset', flush=True)
-    elif usb == {'3-1.1': '2207:180a'}:
+    elif len(usb) == 1 and list(usb.values()) == ['2207:180a']:
         # The existing helper independently checks hashes, board and target.
         subprocess.run(['/bin/bash', str(ROOT / 'rk_npu_boot.sh'), 'start'], check=True, timeout=190)
     else:
@@ -63,7 +65,7 @@ def proxy(io, timeout=60):
     deadline = time.monotonic() + timeout
     last = ''
     while True:
-        owned_runtime(io)
+        usb = owned_runtime(io)
         try:
             result = subprocess.run(['/usr/local/bin/npu_transfer_proxy', 'devices'],
                                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
@@ -71,7 +73,7 @@ def proxy(io, timeout=60):
             last = result.stdout
             rows = [line.split() for line in last.splitlines() if 'USB_DEVICE' in line]
             if result.returncode == 0 and len(rows) == 1 and len(rows[0]) == 3:
-                port = next(iter(io.npu_usb()))
+                port = next(iter(usb))
                 serial = (Path('/sys/bus/usb/devices') / port / 'serial').read_text().strip()
                 if rows[0][0] == serial:
                     print(last, end='', flush=True)
