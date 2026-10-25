@@ -1,0 +1,537 @@
+[start]
+2026-10-24T02:14:37+08:00
+420.71 2424.99
+Verified PX4 heartbeat: disarmed
+SHELL_COMMAND '\n'
+
+NuttShell (NSH) NuttX-11.0.0
+nsh> [K
+nsh> [KSHELL_COMMAND 'ver all\n'
+ver all
+HW arch: PX4_FMU_V6C
+HW type: V6C01
+HW version: 0x00000000
+HW revision: 0x00000001
+FW git-hash: 1c8ab2a0d7db2d14a6f320ebd8766b5ffaea28fa
+FW version: Release 1.13.3 (17630207)
+OS: NuttX
+OS version: Release 11.0.0 (184549631)
+OS git-hash: 4a1dd8680cd29f51fb0fe66dcfbf6f69bec747cf
+Build datetime: Mar 14 2023 01:46:35
+Build uri: localhost
+Build variant: default
+Toolchain: GNU GCC, 9.3.1 20200408 (release)
+PX4GUID: 000600000000323736363133510f001e002b
+MCU: STM32H7[4|5]xxx, rev. V
+nsh> [KSHELL_COMMAND 'commander status\n'
+commander status
+INFO  [commander] arming: STANDBY
+INFO  [commander] navigation: MANUAL
+commander: cycle: 38032 events, 5586540us elapsed, 146.89us avg, min 31us max 9398us 627.728us rms
+commander: preflight check: 828 events, 3513863us elapsed, 4243.80us avg, min 568us max 5468us 358.386us rms
+nsh> [KSHELL_COMMAND 'listener vehicle_status -n 1\n'
+listener vehicle_status -n 1
+
+TOPIC: vehicle_status
+ vehicle_status
+    timestamp: 424954641 (0.296561 seconds ago)
+    nav_state_timestamp: 672849
+    failsafe_timestamp: 0
+    onboard_control_sensors_present: 304644108
+    onboard_control_sensors_enabled: 304644108
+    onboard_control_sensors_health: 36601871
+    armed_time: 0
+    takeoff_time: 0
+    nav_state: 0
+    arming_state: 1
+    hil_state: 0
+    failsafe: False
+    system_type: 2
+    system_id: 1
+    component_id: 1
+    vehicle_type: 1
+    is_vtol: False
+    is_vtol_tailsitter: False
+    vtol_fw_permanent_stab: False
+    in_transition_mode: False
+    in_transition_to_fw: False
+    rc_signal_lost: True
+    data_link_lost: False
+    data_link_lost_counter: 0
+    high_latency_data_link_lost: False
+    engine_failure: False
+    mission_failure: False
+    geofence_violated: False
+    failure_detector_status: 0
+    latest_arming_reason: 0
+    latest_disarming_reason: 0
+
+nsh> [KSHELL_COMMAND 'listener vehicle_status_flags -n 1\n'
+listener vehicle_status_flags -n 1
+
+TOPIC: vehicle_status_flags
+ vehicle_status_flags
+    timestamp: 428015911 (0.236960 seconds ago)
+    calibration_enabled: False
+    system_sensors_initialized: True
+    system_hotplug_timeout: True
+    auto_mission_available: False
+    angular_velocity_valid: True
+    attitude_valid: True
+    local_altitude_valid: True
+    local_position_valid: False
+    local_velocity_valid: False
+    global_position_valid: False
+    gps_position_valid: False
+    home_position_valid: False
+    power_input_valid: True
+    battery_healthy: True
+    escs_error: False
+    escs_failure: False
+    position_reliant_on_gps: False
+    position_reliant_on_optical_flow: False
+    position_reliant_on_vision_position: False
+    dead_reckoning: True
+    flight_terminated: False
+    circuit_breaker_engaged_power_check: False
+    circuit_breaker_engaged_airspd_check: False
+    circuit_breaker_engaged_enginefailure_check: True
+    circuit_breaker_flight_termination_disabled: True
+    circuit_breaker_engaged_usb_check: True
+    circuit_breaker_engaged_posfailure_check: False
+    circuit_breaker_vtol_fw_arming_check: False
+    offboard_control_signal_lost: True
+    rc_signal_found_once: False
+    rc_calibration_in_progress: False
+    rc_calibration_valid: True
+    vtol_transition_failure: False
+    usb_connected: True
+    sd_card_detected_once: True
+    avoidance_system_required: False
+    avoidance_system_valid: False
+    parachute_system_present: False
+    parachute_system_healthy: False
+
+nsh> [KSHELL_COMMAND 'listener battery_status -n 1\n'
+listener battery_status -n 1
+
+TOPIC: battery_status
+ battery_status
+    timestamp: 431255537 (0.001025 seconds ago)
+    voltage_v: 0.0338
+    voltage_filtered_v: 0.0338
+    current_a: 0.3373
+    current_filtered_a: 0.3373
+    current_average_a: 15.0000
+    discharged_mah: 189.9009
+    remaining: 0.0000
+    scale: 1.2000
+    time_remaining_s: nan
+    temperature: nan
+    voltage_cell_v: [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]
+    max_cell_voltage_delta: 0.0000
+    custom_faults: 0
+    average_power: 0.0000
+    available_energy: 0.0000
+    full_charge_capacity_wh: 0.0000
+    remaining_capacity_wh: 0.0000
+    design_capacity: 0.0000
+    nominal_voltage: 0.0000
+    capacity: 0
+    cycle_count: 0
+    average_time_to_empty: 0
+    serial_number: 0
+    manufacture_date: 0
+    state_of_health: 0
+    max_error: 0
+    interface_error: 0
+    faults: 0
+    average_time_to_full: 0
+    over_discharge_count: 0
+    connected: False
+    cell_count: 4
+    source: 0
+    priority: 0
+    id: 1
+    is_powering_off: False
+    is_required: False
+    warning: 0
+    mode: 0
+
+nsh> [KSHELL_COMMAND 'listener system_power -n 1\n'
+listener system_power -n 1
+
+TOPIC: system_power
+ system_power
+    timestamp: 434255514 (0.005741 seconds ago)
+    voltage5v_v: 4.8368
+    sensors3v3: [0.0000, 0.0000, 0.0000, 0.0000]
+    sensors3v3_valid: 0
+    usb_connected: 1
+    brick_valid: 0
+    usb_valid: 1
+    servo_valid: 1
+    periph_5v_oc: 0
+    hipower_5v_oc: 0
+    comp_5v_valid: 0
+    can1_gps1_5v_valid: 0
+
+nsh> [KSHELL_COMMAND 'sensors status\n'
+sensors status
+selected gyro: 2490378 (1)
+validator: best: 0, prev best: 0, failsafe: NO (0 events)
+sensor #0, prio: 50, state: OK
+	val:   0.0016, lp:   0.0018 mean dev:  -0.0000 RMS:   0.0031 conf:   1.0000
+	val:  -0.0036, lp:   0.0004 mean dev:  -0.0000 RMS:   0.0045 conf:   1.0000
+	val:   0.0025, lp:  -0.0002 mean dev:  -0.0000 RMS:   0.0046 conf:   1.0000
+sensor #1, prio: 50, state: OK
+	val:  -0.0040, lp:  -0.0032 mean dev:  -0.0000 RMS:   0.0009 conf:   1.0000
+	val:  -0.0012, lp:  -0.0013 mean dev:  -0.0000 RMS:   0.0017 conf:   1.0000
+	val:   0.0009, lp:   0.0005 mean dev:   0.0000 RMS:   0.0030 conf:   1.0000
+
+selected accel: 2490378 (1)
+validator: best: 0, prev best: 0, failsafe: NO (0 events)
+sensor #0, prio: 50, state: OK
+	val:   0.0022, lp:   0.0325 mean dev:  -0.0001 RMS:   0.0392 conf:   1.0000
+	val:  -0.2505, lp:  -0.2443 mean dev:   0.0000 RMS:   0.0266 conf:   1.0000
+	val:  -9.7240, lp:  -9.7139 mean dev:   0.0000 RMS:   0.0327 conf:   1.0000
+sensor #1, prio: 50, state: OK
+	val:   0.0397, lp:   0.0568 mean dev:  -0.0001 RMS:   0.0312 conf:   1.0000
+	val:   0.0070, lp:   0.0157 mean dev:   0.0000 RMS:   0.0210 conf:   1.0000
+	val:  -9.7736, lp:  -9.7673 mean dev:   0.0001 RMS:   0.0262 conf:   1.0000
+
+[vehicle_magnetometer] selected MAG: 396809 (1)
+validator: best: 1, prev best: 1, failsafe: NO (0 events)
+sensor #0, prio: 50, state: OK
+	val:   0.0109, lp:   0.0115 mean dev:   0.0001 RMS:   0.0063 conf:   1.0000
+	val:   0.3532, lp:   0.3513 mean dev:   0.0000 RMS:   0.0016 conf:   1.0000
+	val:   0.2825, lp:   0.2787 mean dev:  -0.0001 RMS:   0.0194 conf:   1.0000
+sensor #1, prio: 75, state: OK
+	val:   0.0704, lp:   0.0702 mean dev:   0.0001 RMS:   0.0038 conf:   1.0000
+	val:   0.3007, lp:   0.2994 mean dev:   0.0001 RMS:   0.0030 conf:   1.0000
+	val:   0.2336, lp:   0.2304 mean dev:  -0.0000 RMS:   0.0059 conf:   1.0000
+MAG 396321 EN: 1, offset: [-0.151 -0.061 0.001], scale: [0.960 1.005 1.034], Internal
+MAG 396809 EN: 1, offset: [-0.011 -0.012 -0.028], scale: [0.917 1.013 1.139], Ext ROT: 0
+
+[vehicle_air_data] selected BARO: 4028193 (0)
+validator: best: 0, prev best: 0, failsafe: NO (0 events)
+sensor #0, prio: 50, state: OK
+	val: 101977.0000, lp: 101975.8984 mean dev:  -0.0423 RMS:   2.6290 conf:   1.0000
+	val:  42.0500, lp:  42.0472 mean dev:   0.0161 RMS:   0.0125 conf:   1.0000
+	val: -54.1411, lp: -54.0446 mean dev:  -0.0042 RMS:   0.2179 conf:   1.0000
+BARO 4028193 EN: 1, offset: 0.000, Internal
+
+Airspeed status:
+	no data
+
+[vehicle_acceleration] selected sensor: 2490378, rate: 801.7 Hz, estimated bias: [0.0023 0.0047 0.0401]
+ACC 2490378 EN: 1, offset: [0.012 0.019 -0.117], scale: [1.000 1.000 1.000], Internal
+
+[vehicle_angular_velocity] selected sensor: 2490378, rate: 8017.3 Hz FIFO, estimated bias: [-0.00324 -0.00127 0.00046]
+GYRO 2490378 EN: 1, offset: [0.001 -0.006 0.014], Internal
+vehicle_angular_velocity: gyro filter: 348354 events, 4582459us elapsed, 13.15us avg, min 6us max 218us 1.038us rms
+vehicle_angular_velocity: gyro filter reset: 2 events
+vehicle_angular_velocity: gyro selection changed: 2 events
+
+
+[vehicle_imu] 0 - Accel: 4259850, interval: 1469.2 us (SD 0.4 us), Gyro: 4325386, interval: 1500.2 us (SD 29.1 us)
+vehicle_imu: accel data gap: 1 events
+vehicle_imu: gyro data gap: 1 events
+ACC 4259850 EN: 1, offset: [0.087 0.062 0.280], scale: [0.992 1.003 0.978], Internal
+GYRO 4325386 EN: 1, offset: [-0.006 -0.003 -0.006], Internal
+
+[vehicle_imu] 1 - Accel: 2490378, interval: 1247.3 us (SD 0.4 us), Gyro: 2490378, interval: 1247.3 us (SD 0.4 us)
+vehicle_imu: accel data gap: 1 events
+vehicle_imu: gyro data gap: 1 events
+ACC 2490378 EN: 1, offset: [0.012 0.019 -0.117], scale: [1.000 1.000 1.000], Internal
+GYRO 2490378 EN: 1, offset: [0.001 -0.006 0.014], Internal
+nsh> [KSHELL_COMMAND 'ekf2 status\n'
+ekf2 status
+INFO  [ekf2] available instances: 4
+INFO  [ekf2] 0: ACC: 4259850, GYRO: 4325386, MAG: 396321, healthy, test ratio: 1.0000000 (0.00000) 
+INFO  [ekf2] 1: ACC: 2490378, GYRO: 2490378, MAG: 396321, healthy, test ratio: 1.0000000 (0.00000) *
+INFO  [ekf2] 2: ACC: 4259850, GYRO: 4325386, MAG: 396809, healthy, test ratio: 1.0000000 (0.00000) 
+INFO  [ekf2] 3: ACC: 2490378, GYRO: 2490378, MAG: 396809, healthy, test ratio: 1.0000000 (0.00000) 
+
+ekf2:0 EKF dt: 0.0089s, IMU dt: 0.0044s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 49091 events, 128824us elapsed, 2.62us avg, min 1us max 81us 1.835us rms
+ekf2: ECL full update: 48564 events, 4900648us elapsed, 100.91us avg, min 67us max 429us 42.719us rms
+ekf2: IMU message missed: 1 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+
+ekf2:1 EKF dt: 0.0099s, IMU dt: 0.0049s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 44283 events, 125461us elapsed, 2.83us avg, min 1us max 400us 6.464us rms
+ekf2: ECL full update: 43810 events, 4629320us elapsed, 105.67us avg, min 66us max 707us 55.080us rms
+ekf2: IMU message missed: 0 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+
+ekf2:2 EKF dt: 0.0090s, IMU dt: 0.0044s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 49094 events, 102872us elapsed, 2.10us avg, min 1us max 131us 1.999us rms
+ekf2: ECL full update: 48568 events, 4721521us elapsed, 97.21us avg, min 66us max 416us 41.105us rms
+ekf2: IMU message missed: 1 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+
+ekf2:3 EKF dt: 0.0099s, IMU dt: 0.0049s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 44285 events, 98057us elapsed, 2.21us avg, min 1us max 393us 5.338us rms
+ekf2: ECL full update: 43813 events, 4326504us elapsed, 98.75us avg, min 67us max 731us 50.190us rms
+ekf2: IMU message missed: 0 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+nsh> [KSHELL_COMMAND 'listener estimator_status -n 1\n'
+listener estimator_status -n 1
+
+TOPIC: estimator_status 4 instances
+
+Instance 0:
+ estimator_status
+    timestamp: 443256267 (0.007791 seconds ago)
+    timestamp_sample: 443102892 (153375 us before timestamp)
+    output_tracking_error: [0.0001, 0.0005, 0.0004]
+    control_mode_flags: 603980307 (0b0010'0100'0000'0000'0000'0010'0001'0011)
+    filter_fault_flags: 0 (0b0000'0000'0000'0000'0000'0000'0000'0000)
+    pos_horiz_accuracy: 0.0177
+    pos_vert_accuracy: 0.2705
+    mag_test_ratio: 0.0023
+    vel_test_ratio: nan
+    pos_test_ratio: nan
+    hgt_test_ratio: 0.0034
+    tas_test_ratio: 0.0000
+    hagl_test_ratio: 0.0000
+    beta_test_ratio: 0.0000
+    time_slip: 0.0044
+    accel_device_id: 4259850 (Type: 0x41, SPI:1 (0x00))
+    gyro_device_id: 4325386 (Type: 0x42, SPI:1 (0x00))
+    baro_device_id: 4028193 (Type: 0x3D, I2C:4 (0x77))
+    mag_device_id: 396321 (Type: 0x06, I2C:4 (0x0C))
+    gps_check_fail_flags: 0 (0b0000'0000'0000'0000)
+    innovation_check_flags: 0 (0b0000'0000'0000'0000)
+    solution_status_flags: 229 (0b0000'0000'1110'0101)
+    reset_count_vel_ne: 1
+    reset_count_vel_d: 0
+    reset_count_pos_ne: 1
+    reset_count_pod_d: 0
+    reset_count_quat: 2
+    pre_flt_fail_innov_heading: False
+    pre_flt_fail_innov_vel_horiz: False
+    pre_flt_fail_innov_vel_vert: False
+    pre_flt_fail_innov_height: False
+    pre_flt_fail_mag_field_disturbed: False
+    health_flags: 0 (0b0000'0000)
+    timeout_flags: 0 (0b0000'0000)
+
+
+Instance 1:
+ estimator_status
+    timestamp: 443325152 (0.001743 seconds ago)
+    timestamp_sample: 443155031 (170121 us before timestamp)
+    output_tracking_error: [0.0001, 0.0001, 0.0001]
+    control_mode_flags: 603980307 (0b0010'0100'0000'0000'0000'0010'0001'0011)
+    filter_fault_flags: 0 (0b0000'0000'0000'0000'0000'0000'0000'0000)
+    pos_horiz_accuracy: 0.0158
+    pos_vert_accuracy: 0.2722
+    mag_test_ratio: 0.0063
+    vel_test_ratio: nan
+    pos_test_ratio: nan
+    hgt_test_ratio: 0.0033
+    tas_test_ratio: 0.0000
+    hagl_test_ratio: 0.0000
+    beta_test_ratio: 0.0000
+    time_slip: 0.0000
+    accel_device_id: 2490378 (Type: 0x26, SPI:1 (0x00))
+    gyro_device_id: 2490378 (Type: 0x26, SPI:1 (0x00))
+    baro_device_id: 4028193 (Type: 0x3D, I2C:4 (0x77))
+    mag_device_id: 396321 (Type: 0x06, I2C:4 (0x0C))
+    gps_check_fail_flags: 0 (0b0000'0000'0000'0000)
+    innovation_check_flags: 0 (0b0000'0000'0000'0000)
+    solution_status_flags: 229 (0b0000'0000'1110'0101)
+    reset_count_vel_ne: 1
+    reset_count_vel_d: 0
+    reset_count_pos_ne: 1
+    reset_count_pod_d: 0
+    reset_count_quat: 2
+    pre_flt_fail_innov_heading: False
+    pre_flt_fail_innov_vel_horiz: False
+    pre_flt_fail_innov_vel_vert: False
+    pre_flt_fail_innov_height: False
+    pre_flt_fail_mag_field_disturbed: False
+    health_flags: 0 (0b0000'0000)
+    timeout_flags: 0 (0b0000'0000)
+
+
+Instance 2:
+ estimator_status
+    timestamp: 443382384 (0.004603 seconds ago)
+    timestamp_sample: 443228925 (153459 us before timestamp)
+    output_tracking_error: [0.0001, 0.0007, 0.0009]
+    control_mode_flags: 603980307 (0b0010'0100'0000'0000'0000'0010'0001'0011)
+    filter_fault_flags: 0 (0b0000'0000'0000'0000'0000'0000'0000'0000)
+    pos_horiz_accuracy: 0.0145
+    pos_vert_accuracy: 0.2724
+    mag_test_ratio: 0.0092
+    vel_test_ratio: nan
+    pos_test_ratio: nan
+    hgt_test_ratio: 0.0092
+    tas_test_ratio: 0.0000
+    hagl_test_ratio: 0.0000
+    beta_test_ratio: 0.0000
+    time_slip: 0.0044
+    accel_device_id: 4259850 (Type: 0x41, SPI:1 (0x00))
+    gyro_device_id: 4325386 (Type: 0x42, SPI:1 (0x00))
+    baro_device_id: 4028193 (Type: 0x3D, I2C:4 (0x77))
+    mag_device_id: 396809 (Type: 0x06, I2C:1 (0x0E))
+    gps_check_fail_flags: 0 (0b0000'0000'0000'0000)
+    innovation_check_flags: 0 (0b0000'0000'0000'0000)
+    solution_status_flags: 229 (0b0000'0000'1110'0101)
+    reset_count_vel_ne: 1
+    reset_count_vel_d: 0
+    reset_count_pos_ne: 1
+    reset_count_pod_d: 0
+    reset_count_quat: 2
+    pre_flt_fail_innov_heading: False
+    pre_flt_fail_innov_vel_horiz: False
+    pre_flt_fail_innov_vel_vert: False
+    pre_flt_fail_innov_height: False
+    pre_flt_fail_mag_field_disturbed: False
+    health_flags: 0 (0b0000'0000)
+    timeout_flags: 0 (0b0000'0000)
+
+
+Instance 3:
+ estimator_status
+    timestamp: 443445357 (0.001606 seconds ago)
+    timestamp_sample: 443274784 (170573 us before timestamp)
+    output_tracking_error: [0.0001, 0.0004, 0.0002]
+    control_mode_flags: 603980307 (0b0010'0100'0000'0000'0000'0010'0001'0011)
+    filter_fault_flags: 0 (0b0000'0000'0000'0000'0000'0000'0000'0000)
+    pos_horiz_accuracy: 0.0125
+    pos_vert_accuracy: 0.2733
+    mag_test_ratio: 0.0031
+    vel_test_ratio: nan
+    pos_test_ratio: nan
+    hgt_test_ratio: 0.0037
+    tas_test_ratio: 0.0000
+    hagl_test_ratio: 0.0000
+    beta_test_ratio: 0.0000
+    time_slip: 0.0000
+    accel_device_id: 2490378 (Type: 0x26, SPI:1 (0x00))
+    gyro_device_id: 2490378 (Type: 0x26, SPI:1 (0x00))
+    baro_device_id: 4028193 (Type: 0x3D, I2C:4 (0x77))
+    mag_device_id: 396809 (Type: 0x06, I2C:1 (0x0E))
+    gps_check_fail_flags: 0 (0b0000'0000'0000'0000)
+    innovation_check_flags: 0 (0b0000'0000'0000'0000)
+    solution_status_flags: 229 (0b0000'0000'1110'0101)
+    reset_count_vel_ne: 1
+    reset_count_vel_d: 0
+    reset_count_pos_ne: 1
+    reset_count_pod_d: 0
+    reset_count_quat: 2
+    pre_flt_fail_innov_heading: False
+    pre_flt_fail_innov_vel_horiz: False
+    pre_flt_fail_innov_vel_vert: False
+    pre_flt_fail_innov_height: False
+    pre_flt_fail_mag_field_disturbed: False
+    health_flags: 0 (0b0000'0000)
+    timeout_flags: 0 (0b0000'0000)
+
+nsh> [KSHELL_COMMAND 'gps status\n'
+gps status
+INFO  [gps] Main GPS
+INFO  [gps] protocol: UBX
+INFO  [gps] status: OK, port: /dev/ttyS0, baudrate: 115200
+INFO  [gps] sat info: disabled
+INFO  [gps] rate reading: 		  1042 B/s
+INFO  [gps] rate position: 		  8.00 Hz
+INFO  [gps] rate velocity: 		  8.00 Hz
+INFO  [gps] rate publication:		  8.00 Hz
+INFO  [gps] rate RTCM injection:	  0.00 Hz
+ sensor_gps
+    timestamp: 446184612 (0.111224 seconds ago)
+    time_utc_usec: 0
+    device_id: 11075589 (Type: 0xA9, SERIAL:0 (0x00))
+    lat: 0
+    lon: 0
+    alt: -17000
+    alt_ellipsoid: 0
+    s_variance_m_s: 42.2790
+    c_variance_rad: 3.1416
+    eph: 4294967.5000
+    epv: 3750010.7500
+    hdop: 99.9900
+    vdop: 99.9900
+    noise_per_ms: 92
+    jamming_indicator: 36
+    vel_m_s: 0.0000
+    vel_n_m_s: 0.0000
+    vel_e_m_s: 0.0000
+    vel_d_m_s: 0.0000
+    cog_rad: 0.0000
+    timestamp_time_relative: 0
+    heading: nan
+    heading_offset: 0.0000
+    heading_accuracy: 0.0000
+    automatic_gain_control: 0
+    fix_type: 0
+    jamming_state: 0
+    vel_ned_valid: False
+    satellites_used: 0
+
+nsh> [KSHELL_COMMAND 'param show GPS_1_CONFIG\n'
+param show GPS_1_CONFIG
+Symbols: x = used, + = saved, * = unsaved
+x   GPS_1_CONFIG [346,691] : 201
+
+ 899/1803 parameters used.
+nsh> [KSHELL_COMMAND 'param show SYS_HAS_GPS\n'
+param show SYS_HAS_GPS
+Symbols: x = used, + = saved, * = unsaved
+x + SYS_HAS_GPS [856,1464] : 0
+
+ 899/1803 parameters used.
+nsh> [KSHELL_COMMAND 'param show EKF2_AID_MASK\n'
+param show EKF2_AID_MASK
+Symbols: x = used, + = saved, * = unsaved
+x + EKF2_AID_MASK [211,437] : 24
+
+ 899/1803 parameters used.
+nsh> [KSHELL_COMMAND 'listener sensor_gps -n 1\n'
+listener sensor_gps -n 1
+
+TOPIC: sensor_gps
+ sensor_gps
+    timestamp: 458184643 (0.105820 seconds ago)
+    time_utc_usec: 0
+    device_id: 11075589 (Type: 0xA9, SERIAL:0 (0x00))
+    lat: 0
+    lon: 0
+    alt: -17000
+    alt_ellipsoid: 0
+    s_variance_m_s: 42.7210
+    c_variance_rad: 3.1416
+    eph: 4294967.5000
+    epv: 3750011.2500
+    hdop: 99.9900
+    vdop: 99.9900
+    noise_per_ms: 91
+    jamming_indicator: 58
+    vel_m_s: 0.0000
+    vel_n_m_s: 0.0000
+    vel_e_m_s: 0.0000
+    vel_d_m_s: 0.0000
+    cog_rad: 0.0000
+    timestamp_time_relative: 0
+    heading: nan
+    heading_offset: 0.0000
+    heading_accuracy: 0.0000
+    automatic_gain_control: 0
+    fix_type: 0
+    jamming_state: 0
+    vel_ned_valid: False
+    satellites_used: 0
+
+nsh> [K
+[end]
+2026-10-24T02:15:29+08:00
+472.81 2713.01

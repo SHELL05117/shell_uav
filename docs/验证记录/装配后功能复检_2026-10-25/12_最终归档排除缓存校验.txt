@@ -1,0 +1,4 @@
+c6241d3bd22bf49ab2fb6169d5214788e858af279a8b924477b7a2fe3d2076d9  /tmp/shell_assembly_20261025_evidence.tar.gz
+sha256=c6241d3bd22bf49ab2fb6169d5214788e858af279a8b924477b7a2fe3d2076d9
+local_remote_equal=true
+python_bytecode_excluded=true

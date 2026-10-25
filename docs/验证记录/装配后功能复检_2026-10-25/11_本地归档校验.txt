@@ -1,0 +1,5 @@
+
+Algorithm : SHA256
+Hash      : 44C02564DD87B6654347A24503CD22E3439859B0A2867C0BB399E30641D07D96
+Path      : D:\SHELL\uav1018\docs\验证记录\装配后功能复检_2026-10-25\原始检查证据.tar.gz
+

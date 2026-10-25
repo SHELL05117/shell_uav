@@ -1,0 +1,56 @@
+
+[npu-failure]
+Result=exit-code
+ExecMainCode=1
+ExecMainStatus=1
+Hint: You are currently not seeing messages from other users and the system.
+      Users in groups 'adm', 'systemd-journal' can see all messages.
+      Pass -q to turn off this notice.
+-- Logs begin at Sat 2026-10-24 01:06:19 CST, end at Sat 2026-10-24 22:45:14 CST. --
+-- No entries --
+
+[source-entries]
+ac361357acc0e2a73482fe2cb84aaea92304f084496b9e32b469734c9797f778  /home/jcfh/catkin_ws/src/location/launch/rk_mavros_bench.launch
+95337b03710b9dc6fe4ca215ea2dd8bc76c7be834c5f1ff4156e89b9619f80f9  /home/jcfh/catkin_ws/src/usb_cam/launch/rk_usb_camera.launch
+<launch>
+  <!-- Telemetry bench entry only. Does not start mission, servo or navigation. -->
+  <arg name="fcu_url" default="/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200" />
+  <node pkg="mavros" type="mavros_node" name="mavros" output="screen">
+    <param name="fcu_url" value="$(arg fcu_url)" />
+    <param name="gcs_url" value="" />
+    <param name="fcu_protocol" value="v2.0" />
+    <param name="system_id" value="255" />
+    <param name="component_id" value="240" />
+    <param name="target_system_id" value="1" />
+    <param name="target_component_id" value="1" />
+    <param name="startup_px4_usb_quirk" value="false" />
+    <param name="conn/heartbeat_rate" value="1.0" />
+    <param name="conn/timeout" value="5.0" />
+    <param name="local_position/tf/send" value="false" />
+    <rosparam param="plugin_blacklist">['*']</rosparam>
+    <rosparam param="plugin_whitelist">[sys_status, imu, global_position, local_position]</rosparam>
+  </node>
+</launch>
+<launch>
+  <!-- Camera only: no mission, servo or MAVROS nodes. -->
+  <arg name="video_device" default="/dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0" />
+  <arg name="width" default="1280" />
+  <arg name="height" default="720" />
+  <arg name="framerate" default="30" />
+  <arg name="pixel_format" default="mjpeg" />
+  <arg name="camera_info_url" default="" />
+  <node pkg="usb_cam" type="usb_cam_node" name="camera" output="screen">
+    <param name="video_device" value="$(arg video_device)" />
+    <param name="image_width" value="$(arg width)" />
+    <param name="image_height" value="$(arg height)" />
+    <param name="framerate" value="$(arg framerate)" />
+    <param name="pixel_format" value="$(arg pixel_format)" />
+    <param name="io_method" value="mmap" />
+    <param name="camera_frame_id" value="camera" />
+    <param name="camera_info_url" value="$(arg camera_info_url)" />
+    <param name="autofocus" value="false" />
+  </node>
+</launch>
+
+[open-handles]
+[]

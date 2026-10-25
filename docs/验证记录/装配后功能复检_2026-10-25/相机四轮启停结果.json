@@ -1,0 +1,78 @@
+{
+  "master_exit": 0, 
+  "cases": [
+    {
+      "sample": [
+        1792779283.807168, 
+        1280, 
+        720, 
+        "rgb8", 
+        2764800, 
+        3840
+      ], 
+      "passed": true, 
+      "format": "mjpeg", 
+      "frames": 61, 
+      "exit_code": 0, 
+      "size": [
+        1280, 
+        720
+      ]
+    }, 
+    {
+      "sample": [
+        1792779287.33314, 
+        640, 
+        480, 
+        "rgb8", 
+        921600, 
+        1920
+      ], 
+      "passed": true, 
+      "format": "yuyv", 
+      "frames": 60, 
+      "exit_code": 0, 
+      "size": [
+        640, 
+        480
+      ]
+    }, 
+    {
+      "sample": [
+        1792779290.639575, 
+        1280, 
+        720, 
+        "rgb8", 
+        2764800, 
+        3840
+      ], 
+      "passed": true, 
+      "format": "mjpeg", 
+      "frames": 61, 
+      "exit_code": 0, 
+      "size": [
+        1280, 
+        720
+      ]
+    }, 
+    {
+      "sample": [
+        1792779294.020954, 
+        640, 
+        480, 
+        "rgb8", 
+        921600, 
+        1920
+      ], 
+      "passed": true, 
+      "format": "yuyv", 
+      "frames": 60, 
+      "exit_code": 0, 
+      "size": [
+        640, 
+        480
+      ]
+    }
+  ], 
+  "passed": true
+}

@@ -1,0 +1,197 @@
+{
+  "armed_seen": false, 
+  "battery_observed_voltage_range": [
+    0.0, 
+    65.53500366210938
+  ], 
+  "diagnostics": {
+    "mavros: Battery": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 1, 
+      "message": "Low voltage", 
+      "values": {
+        "Current": "nan", 
+        "Remaining": "-1.0", 
+        "Voltage": "0.00"
+      }
+    }, 
+    "mavros: FCU connection": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 0, 
+      "message": "connected", 
+      "values": {
+        "Buffer overruns:": "0", 
+        "Dropped packets:": "0", 
+        "Parse errors:": "0", 
+        "Received packets:": "7630", 
+        "Rx sequence number:": "206", 
+        "Rx speed:": "32453.000000", 
+        "Rx total bytes:": "470142", 
+        "Tx sequence number:": "0", 
+        "Tx speed:": "21.000000", 
+        "Tx total bytes:": "483"
+      }
+    }, 
+    "mavros: GPS": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 2, 
+      "message": "No satellites", 
+      "values": {
+        "EPH (m)": "99.99", 
+        "EPV (m)": "99.99", 
+        "Fix type": "0", 
+        "Satellites visible": "0"
+      }
+    }, 
+    "mavros: Heartbeat": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 0, 
+      "message": "Normal", 
+      "values": {
+        "Autopilot type": "PX4 Autopilot", 
+        "Frequency (Hz)": "1.000080", 
+        "Heartbeats since startup": "21", 
+        "Mode": "MANUAL", 
+        "System status": "Standby", 
+        "Vehicle type": "Quadrotor"
+      }
+    }, 
+    "mavros: System": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 2, 
+      "message": "Sensor health", 
+      "values": {
+        "2nd 3D magnetometer": "Ok", 
+        "3D magnetometer": "Ok", 
+        "AHRS subsystem health": "Ok", 
+        "Battery": "Ok", 
+        "CPU Load (%)": "33.7", 
+        "Drop rate (%)": "0.0", 
+        "Errors comm": "0", 
+        "Errors count #1": "0", 
+        "Errors count #2": "0", 
+        "Errors count #3": "0", 
+        "Errors count #4": "0", 
+        "Sensor enabled": "0x9228800C", 
+        "Sensor health": "0x822E800F", 
+        "Sensor present": "0x9228800C", 
+        "absolute pressure": "Ok", 
+        "motor outputs / control": "Ok", 
+        "pre-arm check status. Always healthy when armed": "Fail"
+      }
+    }
+  }, 
+  "samples": {
+    "battery": {
+      "cell_voltage": [], 
+      "current": NaN, 
+      "percentage": -0.009999999776482582, 
+      "present": true, 
+      "voltage": 0.0
+    }, 
+    "image": {
+      "bytes": 2764800, 
+      "encoding": "rgb8", 
+      "height": 720, 
+      "step": 3840, 
+      "width": 1280
+    }, 
+    "imu": {
+      "acceleration": [
+        0.0576893575489521, 
+        -0.014427906833587877, 
+        9.802335739135742
+      ], 
+      "angular_velocity": [
+        -0.0003630174323916435, 
+        6.770505569875232e-05, 
+        -0.0006432812660932541
+      ]
+    }, 
+    "pressure": 101972.203125, 
+    "satellites": 0, 
+    "scan": {
+      "angle_max": 3.1415927410125732, 
+      "angle_min": -3.1415927410125732, 
+      "closest": 0.22300000488758087, 
+      "farthest": 13.064000129699707, 
+      "frame": "laser_frame", 
+      "points": 3585, 
+      "range_max": 30.0, 
+      "range_min": 0.15000000596046448, 
+      "scan_time": 0.09970974922180176, 
+      "valid": 3424
+    }, 
+    "state": {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL", 
+      "system_status": 3
+    }
+  }, 
+  "saved_frame": "camera-last-frame.jpg", 
+  "statustext": [], 
+  "streams": {
+    "battery": {
+      "count": 12, 
+      "first_stamp": 1792779175.62113, 
+      "hz": 0.5238893023810255, 
+      "last_stamp": 1792779196.6173477, 
+      "max_receive_gap": 2.005729913711548, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "diagnostics": {
+      "count": 22, 
+      "first_stamp": 1792779172.3984938, 
+      "hz": 0.8737120763444856, 
+      "last_stamp": 1792779196.4320087, 
+      "max_receive_gap": 1.5027449131011963, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "image": {
+      "count": 706, 
+      "first_stamp": 1792779172.7006469, 
+      "hz": 29.949122177661344, 
+      "last_stamp": 1792779196.2648733, 
+      "max_receive_gap": 0.09021997451782227, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "imu": {
+      "count": 1129, 
+      "first_stamp": 1792779174.6360354, 
+      "hz": 50.08942141954313, 
+      "last_stamp": 1792779197.1585228, 
+      "max_receive_gap": 0.06668210029602051, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "pressure": {
+      "count": 418, 
+      "first_stamp": 1792779174.6365232, 
+      "hz": 18.534557489785445, 
+      "last_stamp": 1792779197.1379554, 
+      "max_receive_gap": 0.10460996627807617, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "satellites": {
+      "count": 181, 
+      "hz": 8.003561799668867, 
+      "max_receive_gap": 0.15452194213867188
+    }, 
+    "scan": {
+      "count": 220, 
+      "first_stamp": 1792779172.7953875, 
+      "hz": 10.020726454429829, 
+      "last_stamp": 1792779194.6539173, 
+      "max_receive_gap": 0.14561796188354492, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "state": {
+      "count": 23, 
+      "first_stamp": 1792779172.9304414, 
+      "hz": 0.9292781722418761, 
+      "last_stamp": 1792779196.6168044, 
+      "max_receive_gap": 2.6756460666656494, 
+      "nonincreasing_stamp_pairs": 0
+    }
+  }
+}

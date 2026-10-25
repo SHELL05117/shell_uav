@@ -1,0 +1,237 @@
+
+[clock]
+2026-10-24T02:10:36+08:00
+180.42 1065.06
+
+[resources]
+              total        used        free      shared  buff/cache   available
+Mem:           3843          49        3707           7          86        3756
+Swap:             0           0           0
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        29G  4.0G   25G  14% /
+/dev/root        29G  4.0G   25G  14% /
+/sys/class/thermal/thermal_zone0 soc-thermal
+46875
+/sys/class/thermal/thermal_zone1 gpu-thermal
+46875
+
+[network]
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             DOWN           fe80::12dc:b6ff:fe91:a0f/64 
+wlan0            UP             192.168.1.102/24 fe80::16f5:f9ff:fee6:cd08/64 
+p2p0             DOWN           
+usb0             UP             192.168.77.1/24 fe80::53:48ff:fe45:4c01/64 
+
+[usb]
+Bus 002 Device 002: ID 05e3:0616 Genesys Logic, Inc. hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 007: ID 0bda:9143 Realtek Semiconductor Corp. 
+Bus 001 Device 006: ID 10c4:ea60 Cygnal Integrated Products, Inc. CP210x UART Bridge / myAVR mySmartUSB light
+Bus 001 Device 009: ID 3185:0038  
+Bus 001 Device 008: ID 2207:180a  
+Bus 001 Device 002: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 002: ID 0bda:d723 Realtek Semiconductor Corp. 
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+/:  Bus 06.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 05.Port 1: Dev 1, Class=root_hub, Driver=ohci-platform/1p, 12M
+/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=ehci-platform/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 1, Class=Wireless, Driver=rtk_btusb, 480M
+    |__ Port 1: Dev 2, If 2, Class=Vendor Specific Class, Driver=rtl8723du, 480M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 5000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 1: Dev 8, If 0, Class=Vendor Specific Class, Driver=, 480M
+        |__ Port 2: Dev 9, If 0, Class=Communications, Driver=cdc_acm, 12M
+        |__ Port 2: Dev 9, If 1, Class=CDC Data, Driver=cdc_acm, 12M
+        |__ Port 3: Dev 6, If 0, Class=Vendor Specific Class, Driver=cp210x, 12M
+        |__ Port 4: Dev 7, If 0, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 4: Dev 7, If 1, Class=Video, Driver=uvcvideo, 480M
+
+[devices]
+crw-rw---- 1 root dialout 166,  0 Oct 24 02:07 /dev/ttyACM0
+crw-rw---- 1 root dialout 188,  0 Oct 24 02:07 /dev/ttyUSB0
+crw-rw---- 1 root video    81, 14 Oct 24 02:07 /dev/video10
+crw-rw---- 1 root video    81, 15 Oct 24 02:07 /dev/video11
+
+/dev/serial/by-id:
+total 0
+lrwxrwxrwx 1 root root 13 Oct 24 02:07 usb-Auterion_PX4_FMU_v6C.x_0-if00 -> ../../ttyACM0
+lrwxrwxrwx 1 root root 13 Oct 24 02:07 usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_909394b23877ed11907beefafdf7b791-if00-port0 -> ../../ttyUSB0
+rkisp1-statistics (platform: rkisp1):
+	/dev/video3
+	/dev/video4
+	/dev/video8
+	/dev/video9
+
+rkisp1_mainpath (platform:ff910000.rkisp1):
+	/dev/video0
+	/dev/video1
+	/dev/video2
+
+rkisp1_mainpath (platform:ff920000.rkisp1):
+	/dev/video5
+	/dev/video6
+	/dev/video7
+
+USB Camera (usb-xhci-hcd.10.auto-1.4):
+	/dev/video10
+	/dev/video11
+
+
+[processes]
+
+[listeners]
+State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    
+LISTEN   0         0                127.0.0.53:53               0.0.0.0:*       
+LISTEN   0         0                   0.0.0.0:22               0.0.0.0:*       
+LISTEN   0         0                         *:22                     *:*       
+
+[services]
+  UNIT                       LOAD   ACTIVE SUB    DESCRIPTION                                            
+● shell-npu-firmware.service loaded failed failed SHELL RK3399Pro NPU firmware RAM boot and USB readiness
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+1 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+active
+active
+inactive
+active
+failed
+inactive
+enabled
+
+[npu]
+List of ntb devices attached
+
+[device-openers]
+sudo: lsof: command not found
+
+[kernel-tail]
+[    4.316103] systemd[1]: Mounting Kernel Configuration File System...
+[    4.322473] systemd[1]: Starting udev Kernel Device Manager...
+[    4.327265] systemd[1]: Reached target Local File Systems (Pre).
+[    4.333634] systemd[1]: Mounting /tmp...
+[    4.340384] systemd[1]: Starting Load/Save Random Seed...
+[    4.347466] systemd[1]: Started Apply Kernel Variables.
+[    4.352506] systemd[1]: Mounted FUSE Control File System.
+[    4.357392] systemd[1]: Mounted Kernel Configuration File System.
+[    4.362445] systemd[1]: Mounted /tmp.
+[    4.367742] systemd[1]: Started Load/Save Random Seed.
+[    4.370740] systemd[1]: Started udev Coldplug all Devices.
+[    4.372966] systemd[1]: Reached target Local File Systems.
+[    4.377501] systemd[1]: Starting Enable support for additional executable binary formats...
+[    4.379497] systemd[1]: Started udev Kernel Device Manager.
+[    4.383371] systemd[1]: Starting Network Service...
+[    4.394808] systemd[1]: Started Enable support for additional executable binary formats.
+[    4.425630] systemd[1]: Started Journal Service.
+[    4.444921] systemd-journald[197]: Received request to flush runtime journal from PID 1
+[    4.447463] systemd-journald[197]: File /var/log/journal/9465cc13756d4442b866525efd8335a4/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[    4.573237] random: nonblocking pool is initialized
+[    4.768259] failed to power up DHD generic adapter, 1 retry left
+[    4.784589] wifi_platform_set_power = 0
+[    4.784610] ======== PULL WL_REG_ON(-1) LOW! ========
+[    4.784628] [WLAN_RFKILL]: rockchip_wifi_power: 0
+[    4.784645] [BT_RFKILL]: rfkill_get_bt_power_state: rfkill-bt driver has not Successful initialized
+[    4.784660] [WLAN_RFKILL]: wifi shut off power.
+[    4.784675] wifi_platform_bus_enumerate device present 0
+[    4.784689] ======== Card detection to remove SDIO card! ========
+[    4.784702] sdio: host isn't  initialization successfully.
+[    4.791001] wifi_platform_set_power = 1
+[    4.791021] ======== PULL WL_REG_ON(-1) HIGH! ========
+[    4.791037] [WLAN_RFKILL]: rockchip_wifi_power: 1
+[    4.791051] [BT_RFKILL]: rfkill_get_bt_power_state: rfkill-bt driver has not Successful initialized
+[    4.791070] [WLAN_RFKILL]: wifi turn on power. -1
+[    4.892137] usb 1-1-port3: Cannot enable. Maybe the USB cable is bad?
+[    4.958300] usb 1-1.3: new full-speed USB device number 6 using xhci-hcd
+[    4.991873] using random self ethernet address
+[    4.991892] using random host ethernet address
+[    5.034042] usb 1-1.3: New USB device found, idVendor=10c4, idProduct=ea60
+[    5.034054] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    5.034060] usb 1-1.3: Product: CP2102N USB to UART Bridge Controller
+[    5.034066] usb 1-1.3: Manufacturer: Silicon Labs
+[    5.034070] usb 1-1.3: SerialNumber: 909394b23877ed11907beefafdf7b791
+[    5.038628] cp210x 1-1.3:1.0: cp210x converter detected
+[    5.038881] usb 1-1.3: cp210x converter now attached to ttyUSB0
+[    5.091249] wifi_platform_bus_enumerate device present 1
+[    5.091260] ======== Card detection to detect SDIO card! ========
+[    5.091265] sdio: host isn't  initialization successfully.
+[    5.105335] usb 1-1.4: new high-speed USB device number 7 using xhci-hcd
+[    5.225580] usb 1-1.4: New USB device found, idVendor=0bda, idProduct=9143
+[    5.225600] usb 1-1.4: New USB device strings: Mfr=3, Product=1, SerialNumber=2
+[    5.225612] usb 1-1.4: Product: USB Camera
+[    5.225623] usb 1-1.4: Manufacturer: RYS
+[    5.225632] usb 1-1.4: SerialNumber: 200901010001
+[    5.265131] uvcvideo: Found UVC 1.00 device USB Camera (0bda:9143)
+[    5.351819] rtk_btcoex: Close BTCOEX
+[    5.351848] rtk_btcoex: -x
+[    5.447493] usb 1-1.1: new high-speed USB device number 8 using xhci-hcd
+[    5.458430] RTW: wlan0- hw port(0) mac_addr =14:f5:f9:e6:cd:08
+[    5.459173] RTW: p2p0- hw port(1) mac_addr =16:f5:f9:e6:cd:08
+[    5.470303] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[    5.475864] usb0: HOST MAC 02:53:48:45:4c:02
+[    5.475987] usb0: MAC 02:53:48:45:4c:01
+[    5.523684] usb 1-1.1: New USB device found, idVendor=2207, idProduct=180a
+[    5.523690] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    5.531427] IPv6: ADDRCONF(NETDEV_UP): usb0: link is not ready
+[    5.601463] android_work: sent uevent USB_STATE=CONNECTED
+[    5.607749] configfs-gadget gadget: super-speed config #1: c
+[    5.608106] IPv6: ADDRCONF(NETDEV_CHANGE): usb0: link becomes ready
+[    5.608369] android_work: sent uevent USB_STATE=CONFIGURED
+[    6.542873] usb 1-1.2: USB disconnect, device number 4
+[    7.092525] failed to power up DHD generic adapter, 0 retry left
+[    7.108870] wifi_platform_set_power = 0
+[    7.108896] ======== PULL WL_REG_ON(-1) LOW! ========
+[    7.108914] [WLAN_RFKILL]: rockchip_wifi_power: 0
+[    7.108932] [BT_RFKILL]: rfkill_get_bt_power_state: rfkill-bt driver has not Successful initialized
+[    7.108947] [WLAN_RFKILL]: wifi shut off power.
+[    7.108961] wifi_platform_bus_enumerate device present 0
+[    7.108975] ======== Card detection to remove SDIO card! ========
+[    7.108988] sdio: host isn't  initialization successfully.
+[    7.111776] RTW: rtw_set_802_11_connect(wlan0)  fw_state=0x00000000
+[    7.114193] failed to power up DHD generic adapter, max retry reached**
+[    7.114566] unregister wifi platform drivers
+[    7.114586] wifi_platform_bus_enumerate device present 0
+[    7.114600] ======== Card detection to remove SDIO card! ========
+[    7.114613] sdio: host isn't  initialization successfully.
+[    7.119699] ======== dhd_wlan_deinit_plat_data ========
+[    7.119720] dhd_module_init: Failed to load the driver, try cnt 0
+[    7.119820] dhd_module_init: Failed to load driver max retry reached**
+[    7.119835] dhd_module_init: Exit err=-19
+[    7.159624] RTW: start auth
+[    7.161481] RTW: auth success, start assoc
+[    7.178342] RTW: assoc success
+[    7.178753] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+[    7.226340] usb 1-1.2: new full-speed USB device number 9 using xhci-hcd
+[    7.275539] RTW: recv eapol packet
+[    7.279001] RTW: send eapol packet
+[    7.286678] RTW: recv eapol packet
+[    7.287212] RTW: send eapol packet
+[    7.289364] RTW: set pairwise key camid:0, addr:b0:95:8e:55:cd:e7, kid:0, type:AES
+[    7.296648] RTW: set group key camid:1, addr:b0:95:8e:55:cd:e7, kid:1, type:TKIP
+[    7.303849] usb 1-1.2: New USB device found, idVendor=3185, idProduct=0038
+[    7.303887] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    7.303912] usb 1-1.2: Product: PX4 FMU v6C.x
+[    7.303935] usb 1-1.2: Manufacturer: Auterion
+[    7.303957] usb 1-1.2: SerialNumber: 0
+[    7.305105] usb 1-1.2: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[    7.308396] cdc_acm 1-1.2:1.0: ttyACM0: USB ACM device
+[    8.857058] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.
+[    9.915887] tty_port_close_start: tty->count = 1 port count = 2.
+
+[paths]
+drwxrwxr-x 5 jcfh jcfh  4096 Oct 24  2026 /home/jcfh/catkin_ws
+drwxrwxr-x 8 jcfh jcfh  4096 Oct 24  2026 /home/jcfh/npu_runtime_175
+-rw-rw-r-- 1 jcfh jcfh 19139 Oct 24  2026 /home/jcfh/rk_npu_power.py
+
+[package-audit]

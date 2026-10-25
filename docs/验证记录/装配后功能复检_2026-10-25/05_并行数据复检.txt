@@ -1,0 +1,490 @@
+[start]
+2026-10-24T02:12:44+08:00
+308.41 1823.58
+{
+  "exits": {
+    "camera": 0, 
+    "lidar": 0, 
+    "master": 0, 
+    "mavros": 0
+  }, 
+  "gps_position_fix_passed": false, 
+  "observed_topics": [
+    [
+      "/mavros/global_position/raw/satellites", 
+      "std_msgs/UInt32"
+    ], 
+    [
+      "/mavros/local_position/pose_cov", 
+      "geometry_msgs/PoseWithCovarianceStamped"
+    ], 
+    [
+      "/mavlink/gcs_ip", 
+      "std_msgs/String"
+    ], 
+    [
+      "/mavros/local_position/velocity_body", 
+      "geometry_msgs/TwistStamped"
+    ], 
+    [
+      "/mavros/imu/data_raw", 
+      "sensor_msgs/Imu"
+    ], 
+    [
+      "/mavros/imu/diff_pressure", 
+      "sensor_msgs/FluidPressure"
+    ], 
+    [
+      "/mavros/imu/mag", 
+      "sensor_msgs/MagneticField"
+    ], 
+    [
+      "/scan", 
+      "sensor_msgs/LaserScan"
+    ], 
+    [
+      "/mavros/global_position/compass_hdg", 
+      "std_msgs/Float64"
+    ], 
+    [
+      "/mavros/global_position/gp_origin", 
+      "geographic_msgs/GeoPointStamped"
+    ], 
+    [
+      "/mavros/global_position/gp_lp_offset", 
+      "geometry_msgs/PoseStamped"
+    ], 
+    [
+      "/mavlink/from", 
+      "mavros_msgs/Mavlink"
+    ], 
+    [
+      "/mavros/local_position/pose", 
+      "geometry_msgs/PoseStamped"
+    ], 
+    [
+      "/mavros/imu/data", 
+      "sensor_msgs/Imu"
+    ], 
+    [
+      "/camera/image_raw", 
+      "sensor_msgs/Image"
+    ], 
+    [
+      "/tf_static", 
+      "tf2_msgs/TFMessage"
+    ], 
+    [
+      "/mavros/global_position/global", 
+      "sensor_msgs/NavSatFix"
+    ], 
+    [
+      "/mavros/estimator_status", 
+      "mavros_msgs/EstimatorStatus"
+    ], 
+    [
+      "/diagnostics", 
+      "diagnostic_msgs/DiagnosticArray"
+    ], 
+    [
+      "/mavros/global_position/raw/fix", 
+      "sensor_msgs/NavSatFix"
+    ], 
+    [
+      "/mavros/battery", 
+      "sensor_msgs/BatteryState"
+    ], 
+    [
+      "/camera/camera_info", 
+      "sensor_msgs/CameraInfo"
+    ], 
+    [
+      "/rosout", 
+      "rosgraph_msgs/Log"
+    ], 
+    [
+      "/mavros/global_position/local", 
+      "nav_msgs/Odometry"
+    ], 
+    [
+      "/tf", 
+      "tf2_msgs/TFMessage"
+    ], 
+    [
+      "/rosout_agg", 
+      "rosgraph_msgs/Log"
+    ], 
+    [
+      "/mavros/imu/static_pressure", 
+      "sensor_msgs/FluidPressure"
+    ], 
+    [
+      "/mavros/local_position/accel", 
+      "geometry_msgs/AccelWithCovarianceStamped"
+    ], 
+    [
+      "/mavros/statustext/recv", 
+      "mavros_msgs/StatusText"
+    ], 
+    [
+      "/mavros/global_position/rel_alt", 
+      "std_msgs/Float64"
+    ], 
+    [
+      "/mavros/imu/temperature_baro", 
+      "sensor_msgs/Temperature"
+    ], 
+    [
+      "/mavros/local_position/odom", 
+      "nav_msgs/Odometry"
+    ], 
+    [
+      "/mavros/extended_state", 
+      "mavros_msgs/ExtendedState"
+    ], 
+    [
+      "/mavros/local_position/velocity_local", 
+      "geometry_msgs/TwistStamped"
+    ], 
+    [
+      "/mavros/imu/temperature_imu", 
+      "sensor_msgs/Temperature"
+    ], 
+    [
+      "/mavros/global_position/raw/gps_vel", 
+      "geometry_msgs/TwistStamped"
+    ], 
+    [
+      "/mavros/local_position/velocity_body_cov", 
+      "geometry_msgs/TwistWithCovarianceStamped"
+    ], 
+    [
+      "/mavros/state", 
+      "mavros_msgs/State"
+    ]
+  ], 
+  "passed_receive_and_exit": true, 
+  "receive_checks": {
+    "connected_unarmed": true, 
+    "gps": true, 
+    "image": true, 
+    "imu": true, 
+    "scan": true
+  }, 
+  "samples": {
+    "gps": {
+      "altitude": 0.1630000000000038, 
+      "latitude": 0.0, 
+      "longitude": 0.0, 
+      "position_fix": false, 
+      "status": -1
+    }, 
+    "image": {
+      "encoding": "rgb8", 
+      "height": 720, 
+      "size_consistent": true, 
+      "width": 1280
+    }, 
+    "imu": {
+      "acceleration": [
+        0.09972025454044342, 
+        -0.022652190178631536, 
+        9.802196502685547
+      ], 
+      "frame": "base_link", 
+      "quaternion_norm": 1.0000000047826982
+    }, 
+    "scan": {
+      "points": 3585, 
+      "valid": 3418
+    }, 
+    "state": {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }
+  }, 
+  "streams": {
+    "gps": {
+      "count": 161, 
+  Frame rate set to 60.000 fps
+    "hz": 8.002128595083603
+    }, 
+    "image": {
+      "count": 660, 
+      "hz": 30.089793623835767
+    }, 
+    "imu": {
+      "count": 1006, 
+      "hz": 50.10175839972393
+    }, 
+    "scan": {
+      "count": 219, 
+      "hz": 10.019944281131965
+    }, 
+    "state": {
+      "count": 21, 
+      "hz": 0.9234037099865654
+    }
+  }
+}
+
+[exit-status] bench=0 observer=0
+
+[extended]
+{
+  "armed_seen": false, 
+  "battery_observed_voltage_range": [
+    0.0, 
+    65.53500366210938
+  ], 
+  "diagnostics": {
+    "mavros: Battery": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 1, 
+      "message": "Low voltage", 
+      "values": {
+        "Current": "nan", 
+        "Remaining": "-1.0", 
+        "Voltage": "0.00"
+      }
+    }, 
+    "mavros: FCU connection": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 0, 
+      "message": "connected", 
+      "values": {
+        "Buffer overruns:": "0", 
+        "Dropped packets:": "0", 
+        "Parse errors:": "0", 
+        "Received packets:": "7630", 
+        "Rx sequence number:": "206", 
+        "Rx speed:": "32453.000000", 
+        "Rx total bytes:": "470142", 
+        "Tx sequence number:": "0", 
+        "Tx speed:": "21.000000", 
+        "Tx total bytes:": "483"
+      }
+    }, 
+    "mavros: GPS": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 2, 
+      "message": "No satellites", 
+      "values": {
+        "EPH (m)": "99.99", 
+        "EPV (m)": "99.99", 
+        "Fix type": "0", 
+        "Satellites visible": "0"
+      }
+    }, 
+    "mavros: Heartbeat": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 0, 
+      "message": "Normal", 
+      "values": {
+        "Autopilot type": "PX4 Autopilot", 
+        "Frequency (Hz)": "1.000080", 
+        "Heartbeats since startup": "21", 
+        "Mode": "MANUAL", 
+        "System status": "Standby", 
+        "Vehicle type": "Quadrotor"
+      }
+    }, 
+    "mavros: System": {
+      "hardware_id": "/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200", 
+      "level": 2, 
+      "message": "Sensor health", 
+      "values": {
+        "2nd 3D magnetometer": "Ok", 
+        "3D magnetometer": "Ok", 
+        "AHRS subsystem health": "Ok", 
+        "Battery": "Ok", 
+        "CPU Load (%)": "33.7", 
+        "Drop rate (%)": "0.0", 
+        "Errors comm": "0", 
+        "Errors count #1": "0", 
+        "Errors count #2": "0", 
+        "Errors count #3": "0", 
+        "Errors count #4": "0", 
+        "Sensor enabled": "0x9228800C", 
+        "Sensor health": "0x822E800F", 
+        "Sensor present": "0x9228800C", 
+        "absolute pressure": "Ok", 
+        "motor outputs / control": "Ok", 
+        "pre-arm check status. Always healthy when armed": "Fail"
+      }
+    }
+  }, 
+  "samples": {
+    "battery": {
+      "cell_voltage": [], 
+      "current": NaN, 
+      "percentage": -0.009999999776482582, 
+      "present": true, 
+      "voltage": 0.0
+    }, 
+    "image": {
+      "bytes": 2764800, 
+      "encoding": "rgb8", 
+      "height": 720, 
+      "step": 3840, 
+      "width": 1280
+    }, 
+    "imu": {
+      "acceleration": [
+        0.0576893575489521, 
+        -0.014427906833587877, 
+        9.802335739135742
+      ], 
+      "angular_velocity": [
+        -0.0003630174323916435, 
+        6.770505569875232e-05, 
+        -0.0006432812660932541
+      ]
+    }, 
+    "pressure": 101972.203125, 
+    "satellites": 0, 
+    "scan": {
+      "angle_max": 3.1415927410125732, 
+      "angle_min": -3.1415927410125732, 
+      "closest": 0.22300000488758087, 
+      "farthest": 13.064000129699707, 
+      "frame": "laser_frame", 
+      "points": 3585, 
+      "range_max": 30.0, 
+      "range_min": 0.15000000596046448, 
+      "scan_time": 0.09970974922180176, 
+      "valid": 3424
+    }, 
+    "state": {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL", 
+      "system_status": 3
+    }
+  }, 
+  "saved_frame": "camera-last-frame.jpg", 
+  "statustext": [], 
+  "streams": {
+    "battery": {
+      "count": 12, 
+      "first_stamp": 1792779175.62113, 
+      "hz": 0.5238893023810255, 
+      "last_stamp": 1792779196.6173477, 
+      "max_receive_gap": 2.005729913711548, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "diagnostics": {
+      "count": 22, 
+      "first_stamp": 1792779172.3984938, 
+      "hz": 0.8737120763444856, 
+      "last_stamp": 1792779196.4320087, 
+      "max_receive_gap": 1.5027449131011963, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "image": {
+      "count": 706, 
+      "first_stamp": 1792779172.7006469, 
+      "hz": 29.949122177661344, 
+      "last_stamp": 1792779196.2648733, 
+      "max_receive_gap": 0.09021997451782227, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "imu": {
+      "count": 1129, 
+      "first_stamp": 1792779174.6360354, 
+      "hz": 50.08942141954313, 
+      "last_stamp": 1792779197.1585228, 
+      "max_receive_gap": 0.06668210029602051, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "pressure": {
+      "count": 418, 
+      "first_stamp": 1792779174.6365232, 
+      "hz": 18.534557489785445, 
+      "last_stamp": 1792779197.1379554, 
+      "max_receive_gap": 0.10460996627807617, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "satellites": {
+      "count": 181, 
+      "hz": 8.003561799668867, 
+      "max_receive_gap": 0.15452194213867188
+    }, 
+    "scan": {
+      "count": 220, 
+      "first_stamp": 1792779172.7953875, 
+      "hz": 10.020726454429829, 
+      "last_stamp": 1792779194.6539173, 
+      "max_receive_gap": 0.14561796188354492, 
+      "nonincreasing_stamp_pairs": 0
+    }, 
+    "state": {
+      "count": 23, 
+      "first_stamp": 1792779172.9304414, 
+      "hz": 0.9292781722418761, 
+      "last_stamp": 1792779196.6168044, 
+      "max_receive_gap": 2.6756460666656494, 
+      "nonincreasing_stamp_pairs": 0
+    }
+  }
+}
+[kernel-after]
+[    7.108932] [BT_RFKILL]: rfkill_get_bt_power_state: rfkill-bt driver has not Successful initialized
+[    7.108947] [WLAN_RFKILL]: wifi shut off power.
+[    7.108961] wifi_platform_bus_enumerate device present 0
+[    7.108975] ======== Card detection to remove SDIO card! ========
+[    7.108988] sdio: host isn't  initialization successfully.
+[    7.111776] RTW: rtw_set_802_11_connect(wlan0)  fw_state=0x00000000
+[    7.114193] failed to power up DHD generic adapter, max retry reached**
+[    7.114566] unregister wifi platform drivers
+[    7.114586] wifi_platform_bus_enumerate device present 0
+[    7.114600] ======== Card detection to remove SDIO card! ========
+[    7.114613] sdio: host isn't  initialization successfully.
+[    7.119699] ======== dhd_wlan_deinit_plat_data ========
+[    7.119720] dhd_module_init: Failed to load the driver, try cnt 0
+[    7.119820] dhd_module_init: Failed to load driver max retry reached**
+[    7.119835] dhd_module_init: Exit err=-19
+[    7.159624] RTW: start auth
+[    7.161481] RTW: auth success, start assoc
+[    7.178342] RTW: assoc success
+[    7.178753] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+[    7.226340] usb 1-1.2: new full-speed USB device number 9 using xhci-hcd
+[    7.275539] RTW: recv eapol packet
+[    7.279001] RTW: send eapol packet
+[    7.286678] RTW: recv eapol packet
+[    7.287212] RTW: send eapol packet
+[    7.289364] RTW: set pairwise key camid:0, addr:b0:95:8e:55:cd:e7, kid:0, type:AES
+[    7.296648] RTW: set group key camid:1, addr:b0:95:8e:55:cd:e7, kid:1, type:TKIP
+[    7.303849] usb 1-1.2: New USB device found, idVendor=3185, idProduct=0038
+[    7.303887] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    7.303912] usb 1-1.2: Product: PX4 FMU v6C.x
+[    7.303935] usb 1-1.2: Manufacturer: Auterion
+[    7.303957] usb 1-1.2: SerialNumber: 0
+[    7.305105] usb 1-1.2: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[    7.308396] cdc_acm 1-1.2:1.0: ttyACM0: USB ACM device
+[    8.857058] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon. Use the iptables CT target to attach helpers instead.
+[    9.915887] tty_port_close_start: tty->count = 1 port count = 2.
+
+[npu-journal]
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[    4.809766] toybrick systemd[1]: Starting SHELL RK3399Pro NPU owned power control...
+[    5.556330] toybrick python3[274]: {
+[    5.556330] toybrick python3[274]:   "firmware_loaded_by_script": false,
+[    5.556330] toybrick python3[274]:   "npu_usb": {
+[    5.556330] toybrick python3[274]:     "1-1.1": "2207:180a"
+[    5.556330] toybrick python3[274]:   },
+[    5.556330] toybrick python3[274]:   "result": "power_on_usb_visible"
+[    5.556330] toybrick python3[274]: }
+[    5.597419] toybrick systemd[1]: Started SHELL RK3399Pro NPU owned power control.
+[    5.603971] toybrick systemd[1]: Starting SHELL RK3399Pro NPU firmware RAM boot and USB readiness...
+[    5.763698] toybrick python3[314]: NPU startup failed: Unexpected NPU boot USB state: {'1-1.1': '2207:180a'}
+[    5.789363] toybrick systemd[1]: shell-npu-firmware.service: Main process exited, code=exited, status=1/FAILURE
+[    5.791080] toybrick systemd[1]: shell-npu-firmware.service: Failed with result 'exit-code'.
+[    5.793336] toybrick systemd[1]: Failed to start SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[    5.816626] toybrick systemd[1]: Dependency failed for SHELL RK3399Pro NPU transfer proxy and device readiness.
+[    5.834297] toybrick systemd[1]: shell-npu-proxy.service: Job shell-npu-proxy.service/start failed with result 'dependency'.
+
+[end]
+2026-10-24T02:13:19+08:00
+343.34 1965.52

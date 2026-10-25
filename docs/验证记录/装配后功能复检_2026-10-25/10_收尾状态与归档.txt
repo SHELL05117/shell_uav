@@ -1,0 +1,28 @@
+[final-state-before-archive]
+2026-10-24T02:17:20+08:00
+584.51 3378.32
+active
+active
+Id=shell-npu.target
+ActiveState=inactive
+SubState=dead
+
+Result=exit-code
+Id=shell-npu-firmware.service
+ActiveState=failed
+SubState=failed
+
+Result=success
+Id=shell-npu-proxy.service
+ActiveState=inactive
+SubState=dead
+State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    
+LISTEN   0         0                127.0.0.53:53               0.0.0.0:*       
+LISTEN   0         0                   0.0.0.0:22               0.0.0.0:*       
+LISTEN   0         0                         *:22                     *:*       
+open_device_handles=[]
+./rk_camera_lifecycle_check.py: OK
+./rk_camera_lifecycle_check.pyc: OK
+./rk_peripheral_bench_check.py: OK
+./rk_px4_serial_shell.py: OK
+44c02564dd87b6654347a24503cd22e3439859b0a2867c0bb399e30641d07d96  /tmp/shell_assembly_20261025_evidence.tar.gz

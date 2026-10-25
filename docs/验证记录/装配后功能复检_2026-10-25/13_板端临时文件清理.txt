@@ -1,0 +1,17 @@
+Only verified session temporary directory, archive and manifest-check output removed.
+
+[processes]
+
+[listeners]
+State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    
+LISTEN   0         0                127.0.0.53:53               0.0.0.0:*       
+LISTEN   0         0                   0.0.0.0:22               0.0.0.0:*       
+LISTEN   0         0                         *:22                     *:*       
+
+[services]
+active
+active
+
+[final-clock]
+2026-10-24T02:19:13+08:00
+696.99 4045.21
