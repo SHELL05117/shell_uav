@@ -1,0 +1,17 @@
+<launch>
+  <!-- Ground teaching only: real perception + limited MAVROS telemetry.
+       No location_node, mission, move_base, servo, goals or vision_pose. -->
+  <include file="$(find usb_cam)/launch/rk_usb_camera.launch" />
+  <include file="$(find navigation_2d)/launch/detect.launch">
+    <arg name="detect_backend" value="rknn" />
+    <arg name="required" value="true" />
+  </include>
+  <node pkg="location" type="monitor_jpeg.py" name="monitor_jpeg"
+        output="screen" required="true" />
+  <include file="$(find location)/launch/rk_mavros_bench.launch" />
+  <include file="$(find location)/launch/rplidar.launch" />
+  <node pkg="tf" type="static_transform_publisher" name="monitor_laser_tf"
+        args="0 0 0 3.14159 0 0 base_link laser_link 30" />
+  <include file="$(find location)/launch/cartographer_2d.launch" />
+  <include file="$(find location)/launch/lichtblick_bridge_readonly.launch" />
+</launch>

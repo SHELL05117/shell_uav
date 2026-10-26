@@ -1,0 +1,196 @@
+{
+  "local_checks_passed": true,
+  "gui_import_passed": true,
+  "gui_save_export_passed": true,
+  "real_short_observation_passed": true,
+  "final_rk_sync_passed": false,
+  "final_rk_process_release_confirmed": false,
+  "wireless_acceptance": false,
+  "flight_acceptance": false,
+  "display_whitelist": [
+    "^/map$",
+    "^/scan$",
+    "^/tf$",
+    "^/tf_static$",
+    "^/mavros/state$",
+    "^/mavros/battery$",
+    "^/mavros/local_position/pose$",
+    "^/mavros/local_position/odom$",
+    "^/mavros/imu/data$",
+    "^/monitor/camera/image/compressed$",
+    "^/mission/status$",
+    "^/mission/readiness$",
+    "^/location/status$",
+    "^/move_base/NavfnROS/plan$",
+    "^/move_base/DWAPlannerROS/global_plan$",
+    "^/move_base/DWAPlannerROS/local_plan$"
+  ],
+  "files": [
+    {
+      "path": "docs/监看/Lichtblick连接与常用功能教学_2026-10-26.html",
+      "bytes": 24178,
+      "sha256": "781de9b748919b6ba892b03875d09dcaafa90951448338c9e6299b46582bb8e1"
+    },
+    {
+      "path": "docs/监看/Lichtblick连接与常用功能教学_2026-10-26.md",
+      "bytes": 17740,
+      "sha256": "f700821db442980ba873b411707c5dbfdb523bc6c35a4d511641aae8167bd94b"
+    },
+    {
+      "path": "docs/监看/README.md",
+      "bytes": 9788,
+      "sha256": "daba6afe56ff002de136627fc35f4bd4f5f0f932bd89a61262fb3ba9c9e93ac7"
+    },
+    {
+      "path": "docs/监看/RK_DWA_常用监看_教学版.json",
+      "bytes": 4531,
+      "sha256": "cdb49d575982c10d62556ca1237c480fc726e883f7127a1b6ac2c7c2ac96aacc"
+    },
+    {
+      "path": "docs/项目资料/任务状态.md",
+      "bytes": 77335,
+      "sha256": "b205920ecf6478a78a5db267a8e72c272d5ccb5ecefc241df9801c5dff641f8c"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/01_地面监看运行.txt",
+      "bytes": 93,
+      "sha256": "041257715aabeed7273210901a4a4737437b0b530888e16540522904a2cceeda"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/02_地面监看运行.txt",
+      "bytes": 123446,
+      "sha256": "04682d9e8a6491e161ec9ae04db1fd315b75e3b2cef188ebcadffa988256f108"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/03_地面监看运行.txt",
+      "bytes": 13764,
+      "sha256": "d6bfaace638a43d49e8c1836317c15d7ec5f4da32ac9ff0f12c4c721fc92cd61"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/04_只读观测摘要.txt",
+      "bytes": 1811,
+      "sha256": "ddd959f128c8328081a5b86ccffb99ff50a631341cf43bde0696e5d243e2ab06"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/GUI导出_四面板原始.json",
+      "bytes": 4468,
+      "sha256": "b978c538841a0657201129ffca2650bb5689b46eb698476c3c6bc974f4e43353"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/README.md",
+      "bytes": 5070,
+      "sha256": "e3bdd7dea95d911235d550e827f9c309c018e1a60eb8c4f1170698bad97447cc"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/只读观测.json",
+      "bytes": 16486,
+      "sha256": "4fdf9d4e87ef27b2cf1b03dfeccd8dceeae3ea698848f4feda77cb4265334a01"
+    },
+    {
+      "path": "docs/验证记录/Lichtblick教学_2026-10-26/布局初版.json",
+      "bytes": 3938,
+      "sha256": "3635cd2df4092281621c4752c8970f4e8c96113c0a955c969effadf910fbb0a0"
+    },
+    {
+      "path": "logs/2026-10-26_DWA四类部署续验.md",
+      "bytes": 20222,
+      "sha256": "f5ef250108e6dfda659ef12097c29a03cc071e9a0e0519c836839dd32138d0f4"
+    },
+    {
+      "path": "logs/低空消防无人机工程日志.md",
+      "bytes": 48221,
+      "sha256": "48d1513d925bdff2b00ac824b8fe6a4bfc6d88c494c28e0b58547a0314aab3a4"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/01_USB连接地址.png",
+      "bytes": 64419,
+      "sha256": "b4d847d8c98334cf0ecf14fb1ef0b2e5e88e5a2d57b07b5246d16b8e662e38c8"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/02_USB中断保留旧值.png",
+      "bytes": 69587,
+      "sha256": "519afe4eba3183b4f028f5f77f8030021263af86aa17e03334a9f69b5a58c296"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/03_导入布局文件.png",
+      "bytes": 99748,
+      "sha256": "9f088214c4f3a53217f737282851599c3a7c053aed97315073da9611ae069f2b"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/04_地图坐标系设置_断线示例.png",
+      "bytes": 56765,
+      "sha256": "1d49e8530cc1f1daba3efdbb2ed40fa3a3bf0f8c7c77df15eb89a0fabe3c76a4"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/05_相机话题与画面设置.png",
+      "bytes": 60490,
+      "sha256": "4dfeb383a509b38b55415cb769dafcba9311db06c5afaed6bbc4bc4efcbb0a32"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/06_添加常用面板菜单.png",
+      "bytes": 59140,
+      "sha256": "a5136740cc184b876a63bc091017b70fcf2ce3b1c931dced819bdc0a46c5763e"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/07_Plot电压字段设置.png",
+      "bytes": 76592,
+      "sha256": "72f825f4b32bd702ee8608a26ad3ff75691037973dcc4943944858279f585233"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/08_保存与导出布局菜单.png",
+      "bytes": 61879,
+      "sha256": "ba5caabcdc53ff949a89c12009df7f4bc3757cce9fab523f250e5667479f9b12"
+    },
+    {
+      "path": "logs/附件/2026-10-26/Lichtblick/09_正式四面板布局_断线状态.png",
+      "bytes": 60483,
+      "sha256": "f333308103f81130efe3ea3408e5234d9aa0d7ad7a78a3aad1aa5b06b74956a3"
+    },
+    {
+      "path": "src/location/CMakeLists.txt",
+      "bytes": 1887,
+      "sha256": "95c5c7fc222b1eb10b45dedbf1dbecae9c3f7a48dcf4be880057ff5f4783bf67"
+    },
+    {
+      "path": "src/location/launch/lichtblick_bridge_readonly.launch",
+      "bytes": 1166,
+      "sha256": "3f2b36a0091659ce8c01c181d13a3a78836da60842d66a653e0f3bace79b792f"
+    },
+    {
+      "path": "src/location/launch/lichtblick_ground_preview.launch",
+      "bytes": 917,
+      "sha256": "64c52db3082eb194d25011e926c5c851d634ff7cb073b2d2f0f66a4e8a10ceb0"
+    },
+    {
+      "path": "src/location/package.xml",
+      "bytes": 877,
+      "sha256": "fbf4724451eba907759ce716adce27db611c4904429680edf4c2e671a8f2fb55"
+    },
+    {
+      "path": "src/location/scripts/monitor_jpeg.py",
+      "bytes": 1455,
+      "sha256": "3b14453fd9cd86a91bb072783277ebbe76b76a199c06f604138a0af9ec3cb198"
+    },
+    {
+      "path": "src/navigation_2d/launch/detect.launch",
+      "bytes": 2277,
+      "sha256": "d761b61c9c0ab0e59d64cd06356d6d230b382d27ad39baa73b08c414f3978448"
+    },
+    {
+      "path": "tools/lichtblick_readonly_observe.py",
+      "bytes": 3131,
+      "sha256": "953931de01c9182660547071507c9f17fa6610b5d8005491153eaa134d00e341"
+    },
+    {
+      "path": "tools/render_monitor_guide.cjs",
+      "bytes": 3194,
+      "sha256": "aa2fbf35fc9ea1668b98c03df5ba76f8fa5a090b355a16507d2b766f5d6be2a8"
+    },
+    {
+      "path": "tools/start_lichtblick_monitor.sh",
+      "bytes": 1794,
+      "sha256": "e0721f740f6f9cd8bd701d4e19933fdfc066aac54d46b003e63d3fa666505894"
+    }
+  ],
+  "file_hash_scope": "本轮Git暂存内容；工作区另有原先未提交的接线记录，未混入本次提交。此清单自身不纳入哈希列表。"
+}

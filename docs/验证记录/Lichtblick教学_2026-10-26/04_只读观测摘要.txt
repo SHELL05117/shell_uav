@@ -1,0 +1,98 @@
+{
+  "map": {
+    "width": 440, 
+    "frame": "map", 
+    "resolution": 0.05000000074505806, 
+    "height": 194
+  }, 
+  "forbidden": {
+    "/move_base_simple/goal": 0, 
+    "/mavros/setpoint_raw/local": 0, 
+    "/mavros/vision_pose/pose": 0, 
+    "/gpio_ack": 0, 
+    "/gpio_cmd": 0, 
+    "/mavros/setpoint_velocity/cmd_vel": 0, 
+    "/mavros/setpoint_position/local": 0
+  }, 
+  "jpeg": {
+    "frame": "camera", 
+    "source_stamp": 1793033048.3701484, 
+    "bytes": 28804, 
+    "format": "jpeg"
+  }, 
+  "states": [
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }, 
+    {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }
+  ], 
+  "passed": true, 
+  "counts": {
+    "/mavros/state": 13, 
+    "/monitor/camera/image/compressed": 47, 
+    "/mavros/imu/data": 608, 
+    "/scan": 122, 
+    "/map": 13
+  }
+}

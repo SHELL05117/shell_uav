@@ -3,6 +3,7 @@
        [target_name:=flammable] [confidence_threshold:=0.6]
        画面在 /detect_result，红框是被 target_name 命中的目标。 -->
   <arg name="input_image_topic" default="/camera/image_raw" />
+  <arg name="required" default="false" />
   <arg name="target_name" default="" />
   <arg name="confidence_threshold" default="0.5" />
   <arg name="camera_hfov_deg" default="54.0" />
@@ -16,7 +17,7 @@
   <arg name="yolo_style" default="v5-interleaved" />
   <arg name="yolo_anchors" default="10,13,16,30,33,23,30,61,62,45,59,119,116,90,156,198,373,326" />
 
-  <node pkg="navigation_2d" type="detectnet" name="detectnet" output="screen">
+  <node pkg="navigation_2d" type="detectnet" name="detectnet" output="screen" required="$(arg required)">
     <param name="input_image_topic" value="$(arg input_image_topic)" />
     <param name="model_path" value="$(find navigation_2d)/detect_mode/26" />
     <param name="model_file" value="best.rknn" />

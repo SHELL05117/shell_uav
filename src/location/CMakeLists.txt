@@ -62,6 +62,9 @@ endif()
 install(TARGETS location_node tfmini_test
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+catkin_install_python(PROGRAMS scripts/monitor_jpeg.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 install(DIRECTORY launch param
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

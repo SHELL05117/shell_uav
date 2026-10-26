@@ -21,4 +21,8 @@
   <exec_depend>mavros</exec_depend>
   <exec_depend>cartographer_ros</exec_depend>
   <exec_depend>rplidar_ros</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>foxglove_bridge</exec_depend>
+  <exec_depend>usb_cam</exec_depend>
 </package>

@@ -1,0 +1,17 @@
+<launch>
+  <!-- Display existing ROS data only; no client publishing/services/parameters. -->
+  <arg name="address" default="0.0.0.0" />
+  <arg name="port" default="8765" />
+  <arg name="jpeg_relay" default="false" />
+  <node if="$(arg jpeg_relay)" pkg="location" type="monitor_jpeg.py"
+        name="monitor_jpeg" output="screen" required="true" />
+  <include file="$(find foxglove_bridge)/launch/foxglove_bridge.launch">
+    <arg name="address" value="$(arg address)" />
+    <arg name="port" value="$(arg port)" />
+    <arg name="capabilities" value="[]" />
+    <arg name="client_topic_whitelist" value="[]" />
+    <arg name="param_whitelist" value="[]" />
+    <arg name="service_whitelist" value="[]" />
+    <arg name="topic_whitelist" value="['^/map$', '^/scan$', '^/tf$', '^/tf_static$', '^/mavros/state$', '^/mavros/battery$', '^/mavros/local_position/pose$', '^/mavros/local_position/odom$', '^/mavros/imu/data$', '^/monitor/camera/image/compressed$', '^/mission/status$', '^/mission/readiness$', '^/location/status$', '^/move_base/NavfnROS/plan$', '^/move_base/DWAPlannerROS/global_plan$', '^/move_base/DWAPlannerROS/local_plan$']" />
+  </include>
+</launch>
