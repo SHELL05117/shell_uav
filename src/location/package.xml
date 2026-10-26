@@ -1,35 +1,24 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>location</name>
-  <version>0.0.0</version>
-  <description>The location package</description>
+  <version>0.2.0</version>
+  <description>RPLIDAR S2 + Pixhawk 6C + TFmini localization bridge for the 2026 field.</description>
 
-  <maintainer email="bingobin.lw@gmail.com">Bingo</maintainer>
+  <maintainer email="expload233@gmail.com">expload</maintainer>
   <author email="bingobin.lw@gmail.com">Bingo</author>
   <license>TODO</license>
 
-  <url type="website">http://www.amovauto.com/</url>
-  <url type="repository">https://gitee.com/bingobinlw/volans.git</url>
-
-  <build_depend>message_generation</build_depend>
-  <exec_depend>message_runtime</exec_depend>
-
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>roscpp</build_depend>
-  <build_export_depend>roscpp</build_export_depend>
+  <depend>roscpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
 
-  <build_depend>geometry_msgs</build_depend>
-  <build_depend>tf</build_depend>
-
-  <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>tf</exec_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <exec_depend>sensor_msgs</exec_depend>
-
-  <exec_depend>roscpp</exec_depend>
-  <exec_depend>message_runtime</exec_depend>
-  <export>
-    <moveit_core plugin="${prefix}/moveit_multi_dof_controller_manager_plugin_description.xml"/>
-  </export>
+  <exec_depend>mavros</exec_depend>
+  <exec_depend>cartographer_ros</exec_depend>
+  <exec_depend>rplidar_ros</exec_depend>
 </package>

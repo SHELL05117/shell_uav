@@ -1,0 +1,57 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{"global_plans": 76, "name": "straight", "plugin": "dwa_local_planner/DWAPlannerROS", "velocity_samples": 37, "reached_goal_error": 0.09786957670631846, "passed": true, "initial_yaw": 0.0, "cancelled_action_zero_velocity": true, "velocity_limits": {"y": 0.4, "x": 0.4, "translation": 0.45, "angular": 0.0}, "mean_body_velocity": [0.18702881078462344, -0.0006731870533848131]}
+{"global_plans": 79, "name": "yaw90", "plugin": "dwa_local_planner/DWAPlannerROS", "velocity_samples": 42, "reached_goal_error": 0.0972483024522771, "passed": true, "initial_yaw": 1.5707963267948966, "cancelled_action_zero_velocity": true, "velocity_limits": {"y": 0.4, "x": 0.4, "translation": 0.45, "angular": 0.0}, "mean_body_velocity": [-0.018019204375724213, -0.18013023833433786]}
+{
+  "aircraft_footprint_measured": false, 
+  "cases": [
+    {
+      "cancelled_action_zero_velocity": true, 
+      "global_plans": 76, 
+      "initial_yaw": 0.0, 
+      "mean_body_velocity": [
+        0.18702881078462344, 
+        -0.0006731870533848131
+      ], 
+      "name": "straight", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.09786957670631846, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 37
+    }, 
+    {
+      "cancelled_action_zero_velocity": true, 
+      "global_plans": 79, 
+      "initial_yaw": 1.5707963267948966, 
+      "mean_body_velocity": [
+        -0.018019204375724213, 
+        -0.18013023833433786
+      ], 
+      "name": "yaw90", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.0972483024522771, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 42
+    }
+  ], 
+  "exits": {
+    "dwa_straight": 0, 
+    "dwa_yaw90": 0, 
+    "master": 0
+  }, 
+  "forbidden_topics_absent": true, 
+  "master": "127.0.0.1:11331", 
+  "passed": true, 
+  "scope": "synthetic software planner execution only"
+}

@@ -1,0 +1,13 @@
+<launch>
+  <!-- Isolated ROS master recommended. No hardware, MAVROS or flight nodes. -->
+  <node pkg="location" type="location_node" name="location_guard_probe" output="screen">
+    <param name="tf_mini_type" value="topic" />
+    <param name="height_reference_calibrated" value="true" />
+    <param name="range_topic" value="/location_probe/range" />
+    <param name="imu_topic" value="/location_probe/imu" />
+    <param name="tf_timeout" value="0.20" />
+    <param name="range_timeout" value="0.20" />
+    <param name="imu_timeout" value="0.20" />
+    <remap from="/mavros/vision_pose/pose" to="/location_probe/pose" />
+  </node>
+</launch>

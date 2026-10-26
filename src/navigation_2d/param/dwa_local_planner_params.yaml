@@ -1,0 +1,50 @@
+DWAPlannerROS:
+
+# Robot Configuration Parameters
+# 任务节点自己限速 0.35 m/s（~max_vel），这里略高一点，让规划器有裕量。
+  max_vel_x: 0.4
+  min_vel_x: -0.4
+
+  max_vel_y: 0.4
+  min_vel_y: -0.4
+
+# 4 m 场地上 0.2 m/s 的最小平移速度会把 5 cm 的终点容差顶飞，
+# 改成 0.1 并把 xy 容差放宽到 0.10（识别悬停本来也不需要 5 cm）。
+  max_vel_trans: 0.45
+  min_vel_trans: 0.10
+
+  max_vel_theta: 0
+  min_vel_theta: 0
+
+  acc_lim_x: 4.0
+  acc_lim_y: 4.0
+  acc_lim_theta: 3.2
+
+# Goal Tolerance Parametes
+  xy_goal_tolerance: 0.10
+  yaw_goal_tolerance: 0.20
+  latch_xy_goal_tolerance: false
+
+# Forward Simulation Parameters
+  sim_time: 2.0
+  sim_granularity: 0.025
+  vx_samples: 20
+  vy_samples: 20
+  vth_samples: 40
+  controller_frequency: 15.0
+
+# Trajectory Scoring Parameters
+  path_distance_bias: 32.0
+  goal_distance_bias: 24.0
+  occdist_scale: 0.15
+  forward_point_distance: 0.2
+  stop_time_buffer: 0.2
+  scaling_speed: 1.0
+  max_scaling_factor: 1.0
+
+# Oscillation Prevention Parameters
+  oscillation_reset_dist: 0.05
+
+# Debugging
+  publish_traj_pc: false
+  publish_cost_grid_pc: false

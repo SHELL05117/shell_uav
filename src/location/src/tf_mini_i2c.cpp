@@ -3,8 +3,9 @@
 TFMiniPro::TFMiniPro(uint8 address, uint8 bus) noexcept(false)
 {
 	i2c_dev_ = new I2C(address, bus);
-	i2c_dev_->write(address); // check if the device exist on the Bus
-	sleep(0.5f);
+	try { i2c_dev_->write(address); }
+	catch (...) { delete i2c_dev_; throw; }
+	usleep(500000);
 }
 
 bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
@@ -56,7 +57,7 @@ bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
 	if (reply_length == 0)
 		return true;
 	else if (cmnd != TFMP_I2C_FORMAT_CM)
-		sleep(0.2f);
+		usleep(200000);
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	// Step 3 - Get command reply data back from the device.
@@ -81,8 +82,7 @@ bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
 		check_sum_response += response[i];
 	if (response[reply_length - 1] != (uint8_t)check_sum_response)
 	{
-		if (cmnd != TFMP_I2C_FORMAT_CM)
-			return true; // and return "false."
+		return false;
 	}
 	// TO DO: do something with response
 	return true;
@@ -101,7 +101,7 @@ bool TFMiniPro::ChangeAddress(uint8 new_address)
 	std::cout << "Saving settings..." << std::endl;
 	if (SendCommand(TFMP_SAVE_SETTINGS, new_address, cmd_resp) != true)
 		return success;
-	sleep(0.5);
+	usleep(500000);
 	// Change device address
 	i2c_dev_->change_address(new_address);
 	return true;
@@ -127,5 +127,5 @@ float TFMiniPro::ReadData()
 
 TFMiniPro::~TFMiniPro()
 {
-	i2c_dev_->close_device();
+	delete i2c_dev_;
 }

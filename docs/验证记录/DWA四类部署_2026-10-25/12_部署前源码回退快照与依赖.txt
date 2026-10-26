@@ -1,0 +1,7 @@
+7923554488f23219a32de6b47e8dc202f3fe4a8073c01517a909dd2728dcf1f8  /home/jcfh/shell_dwa_20261025/before-migration-src.tar.gz
+/opt/ros/melodic/share/move_base
+/opt/ros/melodic/share/dwa_local_planner
+active
+active
+List of ntb devices attached
+14ade952d732d316    a0096b1e    USB_DEVICE

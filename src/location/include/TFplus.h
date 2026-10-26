@@ -1,4 +1,5 @@
-#include <ros/ros.h>
+#ifndef LOCATION_TFPLUS_H
+#define LOCATION_TFPLUS_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,7 +9,6 @@
 #include <termios.h>
 #include <errno.h>
 #include <string>
-#include <sensor_msgs/Range.h>
 
 namespace benewake
 {
@@ -16,7 +16,7 @@ namespace benewake
   {
     public:
       TFplus(std::string _name, int _baudRate);
-      ~TFplus(){};
+      ~TFplus();
       float getDist();
       void closePort();
       bool isOpen();
@@ -26,8 +26,9 @@ namespace benewake
     private:
       std::string portName_;
       int baudRate_;
-      int serial_;
+      int serial_ = -1;
+      bool is_open_ = false;
 
-      bool readData(unsigned char *_buf, int _nRead);
   };
 }
+#endif

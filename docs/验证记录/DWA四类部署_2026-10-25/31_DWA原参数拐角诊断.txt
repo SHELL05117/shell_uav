@@ -1,0 +1,23 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{
+  "aircraft_footprint_measured": false, 
+  "cases": [], 
+  "error": "RuntimeError('dwa_obstacle configured footprint is not a polygon',)", 
+  "exits": {
+    "dwa_obstacle": 0, 
+    "master": 0
+  }, 
+  "forward_point_distance_override": null, 
+  "master": "127.0.0.1:11331", 
+  "passed": false, 
+  "requested_case": "obstacle", 
+  "scope": "synthetic software planner execution only"
+}
+Traceback (most recent call last):
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 379, in <module>
+    main()
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 344, in main
+    if args.case in ('all','obstacle'): run_case('obstacle',0.0,obstacle=True)
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 293, in run_case
+    raise RuntimeError(namespace+' configured footprint is not a polygon')
+RuntimeError: dwa_obstacle configured footprint is not a polygon

@@ -1,0 +1,20 @@
+[
+  {
+    "source_log": "28_完整任务十项机上模拟核验.txt",
+    "source_sha256": "c1ee8397353e8e91c37ce4eed64ed7df5ede3a0871bb78adb0a43a084e9c82df",
+    "derived_report": "结果/任务十项.json",
+    "cases": 10
+  },
+  {
+    "source_log": "26_串口真实字节与定位15项测试.txt",
+    "source_sha256": "dc9509f414cf6aad6fee61c76922ce7e426b5d63a627be884ddec985927baa7c",
+    "derived_report": "结果/定位十五项.json",
+    "cases": 15
+  },
+  {
+    "source_log": "22_合理图像尺寸后相机识别复测.txt",
+    "source_sha256": "058b5a3e731b61e91235ebd6fbfc11614e3bc6a7f818d38421e5218d7d917b0c",
+    "derived_report": "结果/相机识别.json",
+    "cases": 3
+  }
+]

@@ -1,283 +1,87 @@
-# 2026 intelligent low-altitude firefighting mission
+# DWA导航与四类YOLO任务
 
-Current runtime uses only these two launch files:
+本包当前采用move_base／DWA规划、独立异步RKNN识别和消防／人员巡检状态机。SHELL已确认退出EGO默认启动链，保留现有NPU服务和雷达SDK 2.1.0；历史实现仍可从Git历史查看。
+
+本包只使用学长交付的训练产物，不负责训练。当前类别顺序为0 person、1 explosive、2 flammable、3 toxic。模型为416输入，文件位于detect_mode/26；模型、labels和解析布局必须一起匹配，不能混用旧六类模型。
+
+[项目状态](../../docs/项目资料/任务状态.md)和[工程日志](../../logs/2026-10-25_装配后功能复检.md)记录实际部署／验证证据。本文描述接口和行为，不把构建、mock或单图推理通过写成飞行验收。
+
+## 启动入口
+
+相机与独立识别：
 
 ```bash
-roslaunch location location.launch
+roslaunch usb_cam rk_usb_camera.launch
+roslaunch navigation_2d detect.launch
+```
+
+默认任务入口：
+
+```bash
 roslaunch navigation_2d navigation_2d.launch
 ```
 
-Gazebo Classic and PX4 SITL are kept in the separate `gc_2026_sim` package;
-that package is not installed on the flight computer.
-
-`location.launch` starts Pixhawk 6C/PX4, RPLidar S2, Cartographer, TFmini, and `/mavros/vision_pose/pose`. `navigation_2d.launch` starts the selected planner, the mission state machine, the USB camera, servos, and the optional Foxglove Bridge. Gazebo resources and PX4 SITL nodes live only in `gc_2026_sim`.
-
-The aircraft keeps its takeoff heading for the whole mission; planners only command horizontal translation. Servo 0 starts front-facing, turns down after takeoff, and returns front-facing at the landing point. The landing mode request waits for the front-facing servo acknowledgement and settle interval.
-
-The real servo node is C++ and writes PCA9685 over Linux I2C; it does not load
-Python ServoKit or Jetson GPIO. Configure `/dev/i2c-1`, board address, channel
-mapping, pulse range, and calibrated front/down angles in
-`navigation_2d.launch`. Camera-move acknowledgements include a settling delay;
-failed down-facing confirmation aborts the route, while failed front-facing
-confirmation prevents an automatic landing request.
-
-Legacy letter-recognition and laser-targeting code are not part of the current CMake target or launch chain.
-
-## Mission flow
-
-```text
-WAIT_FCU -> TAKEOFF -> NAV_HAZARD -> HAZARD_HOVER
--> HAZARD_ALIGN -> HAZARD_DROP -> NAV_PERSON
--> [stage 2] NAV_RESCUE -> RESCUE_HOVER
-   -> RESCUE_ALIGN -> RESCUE_DROP
--> RETURN_HOME -> LANDING -> COMPLETE
-```
-
-Round 1 is the same flight with the `NAV_RESCUE` leg omitted, so `NAV_PERSON` goes
-straight to `RETURN_HOME`. The round is chosen with `stage:=1` or `stage:=2`, and
-the two are reconciled with the older `rescue_drop_enabled` flag inside the node,
-not in the launch file.
-
-`person_route` is the tour of the 人员救助任务区 and must contain a waypoint over
-**every** person card: the requirement is to pass over all of them before
-returning home, and `tools/check_config.py` fails if a `person_zone_card_*` model
-in the world has no waypoint over it. The rescue-material drop is a separate leg
-to a position drawn by lot on the day, so it is not part of the tour and cannot be
-baked into the route table.
-
-The hazard target uses yellow candidates and a red box. The person target uses
-blue candidates and a blue box. Candidates are ordered from top to bottom and then
-left to right. `hazard_target_index` and `person_target_index` select the drawn
-position, and `hazard_target_index` must name the same card the last `hazard_route`
-waypoint sits on - that waypoint is also the reference the waypoint-drop fallback
-drops on, and the gate checks the pair against the world file. The selected
-candidate must be stable for several frames; the node times out instead of drawing
-a box or dropping on an empty image.
-
-## How the drop point is decided
+默认enable_actuation=false、auto_start=false、use_real_servos=false。此时任务节点只运行模型、订阅输入并发布状态，不输出飞控设定值、模式／解锁请求、GPIO或move_base目标；真实舵机节点也不启动。缺少定位、TF或飞控输入时会报告阻断，不因程序仍运行就判定整机就绪。
 
-`drop_align_mode` picks between three strategies, and it applies to both drops:
-
-| mode | behaviour | when to use |
-| --- | --- | --- |
-| `vision` | camera only; no stable detection aborts the run | the drawing is not trusted, the camera is |
-| `waypoint` | authored waypoint only; the camera is not used | the detector misbehaves at the venue |
-| `vision_with_fallback` | camera first, then the authored waypoint | **default, recommended** |
+location.launch负责真实定位／MAVROS等外设链，不能当作单纯看图入口；TFmini等尚未接入时不得据此宣称定位验收。Gazebo／PX4 SITL资源继续位于gc_2026_sim，不由本包启动真实飞控来代替仿真。
 
-The recommended mode is `vision_with_fallback`, and the reasoning is short: the
-camera is the only measurement here of where the *target* is, everything else
-measures the *vehicle*. It aligns on the card when the card is seen, and when it is
-not it drops on the authored waypoint - but only after checking the vehicle is
-already within `drop_waypoint_tolerance` of that waypoint. So a missed blob can
-cost accuracy, or cost a hold, but it can never move the drop to a place nobody
-chose. The old camera-only behaviour turned one missed blob into the end of the
-run (`Hazard target detection timeout` aborts), which is the worst trade available
-when a waypoint drop would still score.
-
-The authored waypoint is the last `hazard_route` point for the hazard drop and
-`rescue_drop_x` / `rescue_drop_y` for the rescue drop. Both are logged at the start
-of the phase, and a fallback drop is logged as a warning that names how far the
-vehicle was from the waypoint, so an aligned drop and a fallback drop never look
-the same in a log.
-
-## Launch modes
-
-Final first stage (round 1), one drop, no rescue material:
-
-```bash
-roslaunch navigation_2d navigation_2d.launch auto_start:=true stage:=1 start_foxglove_bridge:=true
-```
-
-Final second stage (round 2), two drops. The drawn position is a start-up
-parameter in odom/field metres - takeoff is `(0, 0)`, the field is
-`x -0.65..3.35`, `y -3.35..0.65`, and mat millimetres convert as
-`x = mat_x/1000 - 0.65`, `y = mat_y/1000 - 3.35`:
-
-```bash
-# the lot drew 人员救助任务区 2 (mat x 3350, mat y 1450)
-roslaunch navigation_2d navigation_2d.launch auto_start:=true stage:=2 \
-  rescue_drop_x:=2.70 rescue_drop_y:=-1.85 start_foxglove_bridge:=true
-```
-
-Both parameters default to `999.0`, which is outside the field and is what "not
-supplied" looks like. A stage-2 run that does not set them logs an error and never
-leaves `WAIT_FCU`, rather than dropping the rescue material at the take-off pad.
-
-Select a local planner with `planner_backend:=dwa`, `planner_backend:=teb`, or
-`planner_backend:=ego`. EGO runs without `move_base` and uses the same mission
-waypoint goals, laser scan, and map-to-base TF; its trajectory is converted to
-bounded `/cmd_vel` by the included tracker.
-
-Run `location.launch` and `navigation_2d.launch` under the same ROS Master. Before
-starting the mission, verify `/mavros/state`, `/mavros/local_position/pose`,
-`/scan`, and the `map -> base_link` TF.
+实际任务必须显式开启enable_actuation；自动切模式／解锁还需auto_start=true，真实舵机还需use_real_servos=true。即使显式开启，模型和关键输入门控仍生效。台架、仿真与真机的参数及验收分别记录。
 
-## Compressed video
+## 模型与健康门控
 
-The new vision node publishes only:
+RKNN使用已验证的1.7.5头文件／API库与现有shell-npu.target，不安装第二套NPU上电服务。CMake需要正确找到该SDK；不同芯片系列的运行库不能按相似文件名替换。
 
-```text
-/mission/video/compressed       sensor_msgs/CompressedImage
-/mission/vision/detection       navigation_2d/TargetDetection
-```
+构造时模型初始化失败，main以非零状态退出，不继续一个无模型任务。成功后启动独立推理线程；任务callback／50Hz控制timer均不调用同步推理。原始四类模型曾实测约0.66秒/图，实际性能以日志为准。
 
-Raw camera frames stay in the onboard process for detection and annotation. The mission frame is resized and JPEG encoded before publishing, so the old `/detect_result` raw image is not sent. Defaults are 640 px wide, 15 fps, JPEG quality 55. For weak wireless links, start with `video_width=480`, `camera_fps=5`, and `jpeg_quality=40-55`.
+任务只有在新鲜图像及至少一次有效完成的推理满足inferenceReady()后才允许推进。运行中的模型失败／超时或图像失效同样阻断业务。缓存使用单调sequence，只有新完成结果可计入detect_times，不能把同一结果反复累计。
 
-With `start_foxglove_bridge:=true`, Foxglove Bridge listens on port `8765`; select `/mission/video/compressed` in the Image panel. RViz remains useful for `/map`, `/scan`, TF, and move_base planning. Do not subscribe to an old raw image topic during the run.
+默认detect_times=5、detect_timeout=8s、detect_confirmation_window=6s。确认窗口按原始模型实际速率扩大，进入DETECT会跳过当前缓存；相机姿态切换和实际识别精度仍须台架验收。frame_timeout默认1s、inference_timeout默认3s。空检测结果可以是成功推理，但不能当作投放授权。
 
-## Gazebo simulation reference
+## 控制、坐标与时效
 
-The simulation implementation lives in `src/gc_2026_sim`; this section is
-kept as a quick reference for the shared mission workflow.
+move_base只做水平导航。DWA保留全向XY速度配置，航向保持起飞时捕获的方向，高度由任务的本地高度目标控制。
 
-The repository includes a Gazebo Classic field scene based on the rule dimensions:
+/cmd_vel按body-frame速度解释，每次发布前用当前有效机体yaw旋入PX4本地ROS坐标；水平速度按向量范数限制为max_vel，不能分别限制两轴后允许对角超速。最终ENU／FLU到PX4坐标的转换由MAVROS负责。
 
-- field: `4.0 m x 4.0 m`
-- fixed obstacles: `2.0 m` high
-- random obstacles: `0.20 m` diameter and `2.0 m` high
-- target cards: `0.40 m x 0.40 m`
-- hazard cards: yellow cards with red borders
-- person cards: blue cards
+map和PX4本地系不假定原点／航向一致。节点使用同一时段map→base_link TF与MAVROS local→body位姿建立平面旋转／平移，用于固定救助投放点和goal航向。起飞XY捕获实际本地位姿。场地航点仍按field_yaw约定旋入map；现场H点与map原点、场地角度必须另行核对，不能用坐标代码代替场地测量。
 
-Start the complete WSL simulation with:
+| 参数 | 默认 | 含义 |
+|---|---:|---|
+| pose_timeout | 0.5s | 本地位姿最大年龄，非有限位姿／无效四元数也拒绝 |
+| state_timeout | 3s | FCU状态最大年龄，且必须connected |
+| tf_timeout | 0.5s | map/body TF和变换缓存最大年龄 |
+| alignment_tolerance | 0.2s | TF与本地位姿时间差上限 |
+| planner_timeout | 0.5s | DWA速度最大年龄；过期发零水平速度并保高度 |
+| map_frame / body_frame | map / base_link | 任务TF坐标系，改变时需同步核对costmap配置 |
+| odom_topic | /mavros/local_position/odom | 显式提供给DWA的速度里程计话题 |
 
-```bash
-sudo apt install ros-melodic-gazebo-ros-pkgs ros-melodic-cv-bridge
-cd ~/catkin_ws
-catkin build gc_2026_sim navigation_2d ego_planner_2d
-source devel/setup.bash
-roslaunch gc_2026_sim gazebo_field.launch
-```
+关键输入故障时暂停业务计时、清空识别累计并取消在途导航目标；有新鲜本地反馈时保持捕获的位置，没有新鲜反馈则不伪造新控制样本。恢复后重新取得导航／识别输入再继续。任务callback及timer互斥，重推理留在独立线程，真实控制频率须机上验收。
 
-The launch starts Gazebo, the field, a visual quadrotor, a simulated 2D laser, move_base, simulated MAVROS state/pose services, the mission state machine, and the Gazebo down-facing camera. It does not open `/dev/video0`, Pixhawk, RPLidar, TFmini, or Jetson GPIO. Use `gui:=false` for a headless run, and `stage:=2 rescue_drop_x:=... rescue_drop_y:=...` for the second final stage.
+TAKEOFF、TRANSIT、SETTLE、DETECT、DESCEND、DROP、CLIMB要求飞控持续armed且处于OFFBOARD。新鲜飞控状态一旦显示解除武装或人工切离OFFBOARD，立即取消在途目标、停止任务设定值／GPIO／模式请求并锁存BLOCKED_FLIGHT_AUTHORITY_LOST；即使之后恢复OFFBOARD也不自行继续，必须重新启动任务节点。WAIT_FCU中的显式自动准备不受此锁存条件替代。
 
-The world origin is the takeoff point. The `x` axis points to the right side of the drawing and the `y` axis points toward the top of the drawing. With the takeoff point at 650 mm from the left and top boundaries, the field bounds are `x=-0.65..3.35 m` and `y=-3.35..0.65 m`. The fixed obstacle and target positions follow the supplied field drawing; random obstacle positions can be changed directly in `gazebo/worlds/gc_2026_field.world`. The simulation vehicle is a control-flow, route-planning, and vision-validation model, not a replacement for PX4 flight dynamics. Real PX4 SITL can be connected later through the same MAVROS topics and services.
+起飞只有达到fly_height并满足2秒起飞观察时间后才进入危化巡检。takeoff_timeout默认20秒，可配置用于台架mock；到期未满足起飞条件则锁存BLOCKED_TAKEOFF_TIMEOUT，停止任务输出，不再按原包行为横向巡航。该中止同样需要重启任务，不能靠后续高度变化自动解除。
 
-## PX4 SITL backend
+LAND只接受节点自己请求的模式转换：stage0保持OFFBOARD并请求POSCTL，stage1等待实际POSCTL后才请求AUTO.LAND，stage2允许POSCTL→AUTO.LAND及正常落地解除武装。LAND出现MANUAL等未请求模式仍锁存飞行权丢失；离开OFFBOARD后不再发送任务设定值，正常解除武装可完成任务，不重新解锁。
 
-For PX4 commit `1c8ab2a0d7`, close previous PX4/Gazebo runs with Ctrl+C, then
-start the ROS1 simulation through one entry point:
+costmap的0.32m候选footprint及膨胀参数来自收到的配置，并非已测机体包络；实际旋翼／机臂外缘和通道净空仍须测量。雷达2.1.0通过不代表避障参数自动合格。
 
-```bash
-cd ~/catkin_ws
-bash src/gc_2026_sim/scripts/start_px4_slam.sh
-```
+## 任务与投放策略
 
-The script extends `~/cartographer_ws/install_isolated/setup.bash`,
-`~/foxglove_bridge_ws/devel/setup.bash` and this workspace's `devel/setup.bash`.
-Override `CARTOGRAPHER_SETUP`, `FOXGLOVE_SETUP`, or `PX4_ROOT` when installed
-elsewhere. It checks dependencies and refuses to start over an existing
-PX4/Gazebo process. Build `gc_2026_sim navigation_2d` after source changes.
-
-The launch loads the Gazebo ROS API and `/clock`, spawns Iris at `(0, 0, 0.25)`
-above the takeoff pad, and starts MAVROS, sensors, Cartographer and Foxglove.
-It does not arm or start the mission by default. Use `gui:=false` for headless
-operation. Do not additionally run `make ... gazebo` or another MAVROS launch.
+流程为WAIT_FCU→TAKEOFF→危化巡检→人员巡检→RETURN→LAND。危险品目标只接受explosive／flammable／toxic及对应中文别名；person不得作为危险品目标或授权消防投放。
 
-To start the autonomous mission in SITL:
+消防投放必须先取得本识别阶段对指定危险品的确认。所有危险品卡片均未识别时记录HAZARD_NOT_FOUND_NO_DROP，不在最后一点盲投，继续人员巡检后返航。无人员识别时同样不投救助物资。
 
-```bash
-bash src/gc_2026_sim/scripts/start_px4_slam.sh auto_start:=true
-```
+stage=1时确认person只标注并返航；stage=2或rescue_drop_enabled=true时，确认person后可授权救助物资投放。消防与救助授权分别检查；超时、空结果或路线耗尽不产生授权。
 
-The local PX4 startup wrapper enables bit 2 of `COM_RCL_EXCEPT` (OFFBOARD
-only), because this simulation has no RC/joystick input. Other exception
-bits are preserved; OFFBOARD setpoint-loss protection is not disabled.
-Without this setting, PX4 1.13 can repeatedly leave OFFBOARD before the
-mission gets an opportunity to arm. QGC connectivity is not RC input.
-This wrapper is used only by `px4_gazebo_slam.launch`, not the real-aircraft
-launch. Do not copy this setting blindly to the aircraft.
-
-`sitl_no_rc:=false` skips this configuration but does not reset a previously
-saved SITL parameter. To restore RC-loss checking for OFFBOARD, clear bit 2
-of `COM_RCL_EXCEPT` in the SITL parameter editor (set to `0` if no other
-exceptions are needed). Never use Gazebo Reset Time while PX4 is running.
-
-The old make target spawns Iris at `(1.01, 0.98, 0.83)`, outside this field
-(`y <= 0.65`), so it falls indefinitely and the follow camera loses the map.
-Changing world physics alone does not fix that. Reset Time makes PX4's
-sensor clock jump backwards; restart the entire launch instead.
-
-Cartographer consumes `/scan` and `/mavros/imu/data`, without odometry, GPS,
-or Gazebo truth input. It publishes `map -> odom -> base_link`, with a static
-`base_link -> laser_link` mounting transform. The occupancy grid node publishes
-the measured `/map`; this is not a pre-rendered rule map. The separate
-`/simulation/ground_truth/odom` is diagnostic only and publishes no TF.
-
-In Foxglove, connect via Foxglove WebSocket to `ws://localhost:8765`.
-In the 3D panel choose display frame `map`, and enable `/map`, `/scan` and TF.
-Use `/mission/video/compressed` in the Image panel. WSL IP can be used instead
-of localhost when Windows localhost forwarding is unavailable.
-
-Observe a running, disarmed simulation for 45 seconds:
-
-```bash
-source ~/catkin_ws/devel/setup.bash
-python3 ~/catkin_ws/src/gc_2026_sim/scripts/check_px4_slam.py
-```
-
-The PX4 launch uses `udp://:14540@127.0.0.1:14580`, matching this checkout's
-Onboard MAVLink port. This project has one ordinary RGB camera whose viewing
-direction is changed by servo 0; it does not use a depth camera. The auxiliary
-collision-free sensor rig follows Iris and provides `/camera/image_raw` and
-horizontal `/scan`. The real-aircraft launch does not use the sensor rig.
-
-```bash
-rostopic hz /scan
-rostopic hz /map
-rosrun tf tf_echo map laser_link
-```
-
-The PX4 SITL launch does not convert depth images into laser scans. The auxiliary rig uses a ray sensor to emulate the horizontal RPLidar S2 scan. Set `start_sensor_rig:=false` only when another model or a simulated RPLidar already publishes both topics. The rig's camera is fixed down-facing for ground-card validation; servo 0 front/down motion remains part of the real-aircraft hardware path.
-
-The filename is `gc_2026_field.world`, with internal world name `default`.
-The optional smoke test checks only SDF parsing and Iris spawning while paused;
-it does not prove sustained PX4 operation, rendering, or SLAM:
-
-```bash
-python3 src/gc_2026_sim/scripts/check_px4_field.py
-```
-
-## Parameters requiring calibration
-
-The routes in `navigation_2d.launch` are examples and must be changed to the actual field coordinates and the drawn random-obstacle layout:
-
-- `hazard_route`: route from takeoff to the hazard task area; its last point is
-  both the hazard drop goal and the fallback drop reference, and must sit on
-  `hazard_zone_card_1` when `hazard_target_index:=0`.
-- `person_route`: the tour of the 人员救助任务区, one waypoint over **each** card.
-- `return_route`: route from the person task area back to takeoff.
-
-The mission-side parameters of the two rounds:
-
-- `stage`: `1` (hazard drop only) or `2` (hazard drop + rescue-material drop).
-- `rescue_drop_x`, `rescue_drop_y`: the drawn round-2 drop position, in odom
-  metres. Required for stage 2; a stage-2 run without a position inside the field
-  will not take off.
-- `drop_align_mode`: `vision`, `waypoint` or `vision_with_fallback` (default).
-- `drop_vision_timeout`: seconds the camera gets before the fallback fires
-  (default 5.0, must stay below `task_timeout`).
-- `drop_waypoint_tolerance`: how close to the authored waypoint the vehicle must
-  already be for a fallback drop to be allowed (default 0.20 m).
-
-Servo defaults are placeholders and must be calibrated on the aircraft:
-
-- Servo 0: `front_angle`, `down_angle`.
-- Servo 1: `drop_safe_angle`, then one angle per material - `fire_drop_angle` for
-  the hazard drop and `rescue_drop_angle` for the rescue drop. Both are launch
-  arguments, and the angle is what selects which container releases, so they must
-  differ enough that the mechanism cannot confuse them (the node warns below 5
-  degrees apart, and from a parked angle within 5 degrees of either).
-- Drop hold time: `drop_action_seconds`.
-
-Camera alignment parameters also need calibration: `camera_fx`, `camera_fy`, `pixel_to_body_x_sign`, `pixel_to_body_y_sign`, and `max_task_correction`.
-
-## Safety behavior
-
-- While waiting for FCU, switching to OFFBOARD, and arming, the node holds the current pose and never treats default height 0 as a descend target.
-- An unexpected OFFBOARD loss enters `ABORT`; PX4's configured failsafe remains in control.
-- Navigation timeouts resend a goal a limited number of times. An abort holds the current position; `AUTO.LAND` is only requested when already within `abort_land_home_radius` of the captured home position.
-- A stage-2 run without a usable drawn drop position never leaves `WAIT_FCU`; it logs the two parameters to set instead of flying. Dropping the rescue material in the wrong place cannot be undone, so the missing-parameter case is a refusal, not a default.
-- A `vision_with_fallback` drop only falls back when the vehicle is already within `drop_waypoint_tolerance` of the authored waypoint. If it is not, the node holds and reports rather than dropping blind, and `task_timeout` still ends the phase.
-- Mission completion requires PX4 to report `armed=false`, not just a successful landing-service call.
-- Before real flight, use `auto_start:=false` and validate OFFBOARD and arming with the existing ground-station procedure.
+按SHELL决定保留：**已经识别并取得合法授权、进入DESCEND后，即使高度或XY未达标，下降10秒超时仍转DROP；投放回执超时仍爬升继续。** 这不等于未识别也投放。关键模型／输入故障期间暂停业务及相关计时，恢复后继续原状态，不能绕过识别授权。
+
+GPIO回执表示节点报告动作结束，不等于传感器确认物资实际释放。ACK超时也不能在工程记录中冒充投放成功。
+
+## 观察接口
+
+- /detect_result：图像预览／标注。
+- /mission/status：锁存事件，包括DRY_RUN_READY、WAIT_PLANNER、WAIT_TARGET、BLOCKED_MODEL_INFERENCE、BLOCKED_CAMERA_STALE、BLOCKED_POSE_STALE、BLOCKED_FCU_STALE、BLOCKED_TF_STALE、BLOCKED_FLIGHT_AUTHORITY_LOST、BLOCKED_TAKEOFF_TIMEOUT、HOLD_PLANNER_STALE，以及未识别不投放事件。
+- /mission/readiness：锁存String JSON，包括model_loaded、frame_fresh、inference_ready、pose_fresh、fcu_fresh、tf_fresh、actuation_enabled、flight_authority、mission_aborted、abort_reason、phase、hazard_detection、person_detection。flight_authority表示当前新鲜状态是否armed+OFFBOARD，LAND正常退出OFFBOARD后可为false；mission_aborted及abort_reason表示不可自动恢复的任务中止。检测状态为pending／confirmed／not_found／no_route；confirmed只表示识别，不表示投放完成。
+- /gpio_cmd及MAVROS控制接口：受动作总闸和健康门控约束，默认不发布。
+
+phase整数依次为0 WAIT_FCU、1 TAKEOFF、2 TRANSIT、3 SETTLE、4 DETECT、5 DESCEND、6 DROP、7 CLIMB、8 LAND、9 DONE。独立ROS mock不能连接真实MAVROS或舵机；以日志验证闸门、坐标、时效和策略，真实飞行验收另行进行。

@@ -1,96 +1,74 @@
+/***************************************************************************************************************************
+ * TFmini 台架测试（不启动 ROS 节点）。
+ *
+ *   tfmini_test i2c [bus] [address]        默认 bus=6, address=0x10
+ *   tfmini_test uart [port] [baud]         默认 /dev/ttyUSB0, 115200
+ *
+ * 换平台后原来的 /dev/ttyTHS0（Jetson UART）和写死的 i2c 地址 0 都不对，这里一并修掉。
+ ***************************************************************************************************************************/
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <string>
+#include <unistd.h>
+
 #include <TFplus.h>
 #include <tf_mini_i2c.h>
-#include <unistd.h>
 
 int main(int argc, char **argv)
 {
-    benewake::TFplus *tfplus_obj;
-    TFMiniPro *tf_mini_plus_;
+  if (argc < 2)
+  {
+    std::cout << "usage: " << argv[0] << " i2c [bus] [address] | uart [port] [baud]" << std::endl;
+    return 1;
+  }
 
-    if (argc == 1)
-    {
-        std::cout << "i2c or uart ?" << std::endl;
-        return 0;
-    }
-    else if (argc == 2)
-    {
-        if (strcmp(argv[1], "uart") == 0)
-        {
-            std::cout << "Open Serial port: /dev/ttyTHS0" << std::endl;
-            tfplus_obj = new benewake::TFplus("/dev/ttyTHS0", 115200);
-        }
-        else if (strcmp(argv[1], "i2c") == 0)
-        {
-            try
-            {
-                tf_mini_plus_ = new TFMiniPro(0, 1);
-                std::cout << "Range sensor ready on i2c bus: 1, address: 0x00." << std::endl;
-            }
-            catch (const std::system_error &error)
-            {
-                std::cout << "ERROR opening sensor on on i2c bus: 1, address: 0x00." << std::endl;
-                return 0;
-            }
-        }
-    }
-    else if (argc == 3)
-    {
-        if (strcmp(argv[1], "uart") == 0)
-        {
-            std::cout << "Open Serial port:" << argv[2] << std::endl;
-            tfplus_obj = new benewake::TFplus(argv[2], 115200);
-        }
-        else if (strcmp(argv[1], "i2c"))
-        {
-            std::cout << "Lacking params." << std::endl;
-        }
-    }
-    else if (argc == 4)
-    {
+  benewake::TFplus *tf_uart = nullptr;
+  TFMiniPro *tf_i2c = nullptr;
 
-        if (strcmp(argv[1], "i2c") == 0)
-        {
-            try
-            {
-                tf_mini_plus_ = new TFMiniPro(std::stoi(argv[3]), std::stoi(argv[2]));
-                std::cout << "Range sensor ready on i2c bus: " << std::stoi(argv[2]) << ", address: 0x" << std::hex << std::stoi(argv[3]) << std::endl;
-            }
-            catch (const std::system_error &error)
-            {
-                std::cout << "ERROR opening sensor on i2c bus: " << std::stoi(argv[2]) << ", address: 0x" << std::hex << std::stoi(argv[3]) << std::endl;
-                return 0;
-            }
-        }
-    }
-    std::cout << "tf mini init" << std::endl;
-
-    float dist;
-    while (true)
+  if (std::strcmp(argv[1], "i2c") == 0)
+  {
+    const int bus = argc > 2 ? std::atoi(argv[2]) : 6;
+    const int address = argc > 3 ? std::atoi(argv[3]) : 0x10;
+    try
     {
-
-        if (argc > 1)
-        {
-            if (strcmp(argv[1], "uart") == 0)
-            {
-                dist = tfplus_obj->getDist();
-                std::cout << "uart: dist:" << dist << std::endl;
-            }
-            else if (strcmp(argv[1], "i2c") == 0)
-            {
-                dist = tf_mini_plus_->ReadData();
-                std::cout << "i2c: dist:" << dist << std::endl;
-                usleep(1000 * 10);
-            }
-        }
+      tf_i2c = new TFMiniPro(static_cast<uint8>(address), static_cast<uint8>(bus));
     }
-    if (strcmp(argv[1], "uart") == 0)
+    catch (const std::exception &error)
     {
-        tfplus_obj->closePort();
+      std::cout << "cannot open TFmini on i2c-" << bus << " address 0x" << std::hex << address
+                << ": " << error.what() << std::endl;
+      return 1;
     }
-    // else if (argv[1] == "i2c")
-    // {
-    //     dist = tf_mini_plus_->ReadData();
-    // }
+    std::cout << "TFmini on /dev/i2c-" << std::dec << bus << ", address 0x" << std::hex << address
+              << std::dec << std::endl;
+  }
+  else if (std::strcmp(argv[1], "uart") == 0)
+  {
+    const std::string port = argc > 2 ? argv[2] : "/dev/ttyUSB0";
+    const int baud = argc > 3 ? std::atoi(argv[3]) : 115200;
+    tf_uart = new benewake::TFplus(port, baud);
+    if (!tf_uart->isOpen())
+    {
+      std::cout << "cannot open TFmini on " << port << " @ " << baud << std::endl;
+      return 1;
+    }
+    std::cout << "TFmini on " << port << " @ " << baud << std::endl;
+  }
+  else
+  {
+    std::cout << "unknown interface '" << argv[1] << "'" << std::endl;
+    return 1;
+  }
 
-    return 0;
+  while (true)
+  {
+    std::cout << "dist: " << (tf_i2c != nullptr ? tf_i2c->ReadData() : tf_uart->getDist()) << " m"
+              << std::endl;
+    usleep(100000);
+  }
+
+  delete tf_i2c;
+  delete tf_uart;
+  return 0;
 }

@@ -1,0 +1,87 @@
+/opt/ros/melodic/share/cartographer_ros
+/home/jcfh/catkin_ws/src/usb_cam
+/home/jcfh/catkin_ws/src/rplidar_ros
+/home/jcfh/catkin_ws/src/location
+/home/jcfh/catkin_ws/src/navigation_2d
+total 2312
+-rwxrwxr-x 1 jcfh jcfh  261992 Oct 26 04:02 detectnet
+-rwxrwxr-x 1 jcfh jcfh   64568 Oct 26 04:03 dwa_control_math_test
+-rwxrwxr-x 1 jcfh jcfh  218200 Oct 24 03:11 ego_trajectory_controller_node
+-rwxrwxr-x 1 jcfh jcfh  637272 Oct 24 03:12 rescue_mission_node
+-rwxrwxr-x 1 jcfh jcfh 1057832 Oct 26 04:03 shoot_with_move_base_node
+-rwxrwxr-x 1 jcfh jcfh  118744 Oct 26 04:03 yolo_tensor_layout_test
+<launch>
+  <!-- Telemetry bench entry only. Does not start mission, servo or navigation. -->
+  <arg name="fcu_url" default="/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200" />
+  <node pkg="mavros" type="mavros_node" name="mavros" output="screen">
+    <param name="fcu_url" value="$(arg fcu_url)" />
+    <param name="gcs_url" value="" />
+    <param name="fcu_protocol" value="v2.0" />
+    <param name="system_id" value="255" />
+    <param name="component_id" value="240" />
+    <param name="target_system_id" value="1" />
+    <param name="target_component_id" value="1" />
+    <param name="startup_px4_usb_quirk" value="false" />
+    <param name="conn/heartbeat_rate" value="1.0" />
+    <param name="conn/timeout" value="5.0" />
+    <param name="local_position/tf/send" value="false" />
+    <rosparam param="plugin_blacklist">['*']</rosparam>
+    <rosparam param="plugin_whitelist">[sys_status, imu, global_position, local_position]</rosparam>
+  </node>
+</launch>
+[==========] Running 10 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 5 tests from YoloLayout
+[ RUN      ] YoloLayout.FiveDimensionalHeadsPreserveAnchorCellAndField
+[       OK ] YoloLayout.FiveDimensionalHeadsPreserveAnchorCellAndField (0 ms)
+[ RUN      ] YoloLayout.LegacyRknnDimensionOrderMatchesLogicalOnnxHead
+[       OK ] YoloLayout.LegacyRknnDimensionOrderMatchesLogicalOnnxHead (0 ms)
+[ RUN      ] YoloLayout.FourDimensionalChwHeadsAreUnchanged
+[       OK ] YoloLayout.FourDimensionalChwHeadsAreUnchanged (0 ms)
+[ RUN      ] YoloLayout.BadBatchClassesOrBufferCountAreRejected
+[       OK ] YoloLayout.BadBatchClassesOrBufferCountAreRejected (0 ms)
+[ RUN      ] YoloLayout.CorruptOrMissingOutputIsRejected
+[       OK ] YoloLayout.CorruptOrMissingOutputIsRejected (0 ms)
+[----------] 5 tests from YoloLayout (1 ms total)
+
+[----------] 2 tests from YoloDecode
+[ RUN      ] YoloDecode.UsesHalfCellOffsetAndPixelAnchors
+[       OK ] YoloDecode.UsesHalfCellOffsetAndPixelAnchors (0 ms)
+[ RUN      ] YoloDecode.StableSigmoidAndNonzeroBoxLogits
+[       OK ] YoloDecode.StableSigmoidAndNonzeroBoxLogits (0 ms)
+[----------] 2 tests from YoloDecode (0 ms total)
+
+[----------] 3 tests from YoloAsyncResults
+[ RUN      ] YoloAsyncResults.EmptyDetectionIsConsumedOncePerSequence
+[       OK ] YoloAsyncResults.EmptyDetectionIsConsumedOncePerSequence (0 ms)
+[ RUN      ] YoloAsyncResults.ConsumersHaveIndependentSequenceCursors
+[       OK ] YoloAsyncResults.ConsumersHaveIndependentSequenceCursors (0 ms)
+[ RUN      ] YoloAsyncResults.RestartClearsCacheAndKeepsSequenceMonotonic
+[       OK ] YoloAsyncResults.RestartClearsCacheAndKeepsSequenceMonotonic (0 ms)
+[----------] 3 tests from YoloAsyncResults (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 3 test cases ran. (2 ms total)
+[  PASSED  ] 10 tests.
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from DwaControlMath
+[ RUN      ] DwaControlMath.BodyForwardRotatesWithActualYaw
+[       OK ] DwaControlMath.BodyForwardRotatesWithActualYaw (0 ms)
+[ RUN      ] DwaControlMath.DiagonalSpeedUsesVectorBound
+[       OK ] DwaControlMath.DiagonalSpeedUsesVectorBound (0 ms)
+[ RUN      ] DwaControlMath.InvalidVelocityProducesNoCommand
+[       OK ] DwaControlMath.InvalidVelocityProducesNoCommand (0 ms)
+[ RUN      ] DwaControlMath.MapPointUsesRotationAndOriginTranslation
+[       OK ] DwaControlMath.MapPointUsesRotationAndOriginTranslation (0 ms)
+[ RUN      ] DwaControlMath.InvalidMapObservationIsRejected
+[       OK ] DwaControlMath.InvalidMapObservationIsRejected (0 ms)
+[ RUN      ] DwaControlMath.QuaternionMustBeValidAndCanBeNormalized
+[       OK ] DwaControlMath.QuaternionMustBeValidAndCanBeNormalized (0 ms)
+[ RUN      ] DwaControlMath.SamplesCannotBeMissingStaleOrFarFuture
+[       OK ] DwaControlMath.SamplesCannotBeMissingStaleOrFarFuture (0 ms)
+[----------] 7 tests from DwaControlMath (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test case ran. (2 ms total)
+[  PASSED  ] 7 tests.

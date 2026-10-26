@@ -1,0 +1,215 @@
+{
+  "cases": {
+    "known_image": {
+      "annotation_red_changed_pixels": 4849,
+      "detector_exit": 0,
+      "flammable_detections": 21,
+      "image_errors": [],
+      "inference_ok": 3,
+      "model_open_error": false,
+      "model_ready": true,
+      "observation_seconds": 14.053982715000075,
+      "parameters": {
+        "backend": "rknn",
+        "confidence_threshold": 0.5,
+        "input_size": 416,
+        "labels_file": "labels.txt",
+        "model_file": "best.rknn",
+        "nms_iou": 0.45
+      },
+      "passed": true,
+      "published_input_preview": "known-published-input.jpg",
+      "saved_images": {
+        "annotated": "known-flammable-annotated.jpg",
+        "output": "output-last.jpg"
+      },
+      "streams": {
+        "output": {
+          "count": 144,
+          "hz": 10.012692979560276,
+          "max_gap": 0.11386404099994252,
+          "shapes": [
+            {
+              "count": 144,
+              "encoding": "bgr8",
+              "height": 720,
+              "width": 540
+            }
+          ]
+        }
+      }
+    },
+    "missing_model": {
+      "exit_code": 2,
+      "exited_by_itself": true,
+      "flammable_detections": 0,
+      "inference_ok": 0,
+      "model_open_error": true,
+      "model_ready": false,
+      "passed": true
+    },
+    "real_camera": {
+      "annotation_red_changed_pixels": 0,
+      "camera_exit": 0,
+      "detector_exit": 0,
+      "dimensions_consistent": true,
+      "flammable_detections": 0,
+      "image_errors": [],
+      "inference_ok": 4,
+      "model_open_error": false,
+      "model_ready": true,
+      "observation_seconds": 18.046433634000095,
+      "parameters": {
+        "backend": "rknn",
+        "confidence_threshold": 0.5,
+        "input_size": 416,
+        "labels_file": "labels.txt",
+        "model_file": "best.rknn",
+        "nms_iou": 0.45
+      },
+      "passed": true,
+      "saved_images": {
+        "camera": "camera-last.jpg",
+        "output": "output-last.jpg"
+      },
+      "streams": {
+        "camera": {
+          "count": 628,
+          "hz": 29.86551715668651,
+          "max_gap": 0.09353779200000645,
+          "shapes": [
+            {
+              "count": 628,
+              "encoding": "rgb8",
+              "height": 720,
+              "width": 1280
+            }
+          ]
+        },
+        "output": {
+          "count": 183,
+          "hz": 9.998527776116916,
+          "max_gap": 0.14251008299993373,
+          "shapes": [
+            {
+              "count": 183,
+              "encoding": "bgr8",
+              "height": 720,
+              "width": 1280
+            }
+          ]
+        }
+      }
+    }
+  },
+  "children": [
+    {
+      "arguments": [
+        "roscore",
+        "-p",
+        "11330"
+      ],
+      "exit_code": 0,
+      "log": "master.log",
+      "name": "master",
+      "process_group_empty": true,
+      "stop_signals": [
+        2
+      ]
+    },
+    {
+      "arguments": [
+        "roslaunch",
+        "navigation_2d",
+        "detect.launch",
+        "detect_backend:=rknn",
+        "input_image_topic:=/shell_fourclass_known/image",
+        "target_name:=flammable"
+      ],
+      "exit_code": 0,
+      "log": "known-detector.log",
+      "name": "known-detector",
+      "process_group_empty": true,
+      "stop_signals": [
+        2
+      ]
+    },
+    {
+      "arguments": [
+        "roslaunch",
+        "usb_cam",
+        "rk_usb_camera.launch"
+      ],
+      "exit_code": 0,
+      "log": "real-camera.log",
+      "name": "real-camera",
+      "process_group_empty": true,
+      "stop_signals": [
+        2
+      ]
+    },
+    {
+      "arguments": [
+        "roslaunch",
+        "navigation_2d",
+        "detect.launch",
+        "detect_backend:=rknn",
+        "input_image_topic:=/camera/image_raw"
+      ],
+      "exit_code": 0,
+      "log": "camera-detector.log",
+      "name": "camera-detector",
+      "process_group_empty": true,
+      "stop_signals": [
+        2
+      ]
+    },
+    {
+      "arguments": [
+        "rosrun",
+        "navigation_2d",
+        "detectnet",
+        "_backend:=rknn",
+        "_model_path:=/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26",
+        "_model_file:=__shell_missing_model_preflight__.rknn",
+        "_labels_file:=labels.txt",
+        "_yolo_anchors:=10,13,16,30,33,23,30,61,62,45,59,119,116,90,156,198,373,326",
+        "_yolo_strides:=8,16,32",
+        "_input_image_topic:=/shell_missing_model/image"
+      ],
+      "exit_code": 2,
+      "log": "missing-model.log",
+      "name": "missing-model",
+      "process_group_empty": true,
+      "stop_signals": []
+    }
+  ],
+  "cleanup_errors": [],
+  "input_sha256": {
+    "known_image": "536c840fb14970a08177ace89abab974ab0fc668536417b5bc5e9d539f0be6c2",
+    "onnx": "6e18c14c38fcd412ebc09f78033d74abb141306c6c4e9e60d3c04748f47392ad",
+    "rknn": "d963d19128cad36dcd57ce942a7ca3c2e966bae035a0a60f07b3b6b2a820fc7f"
+  },
+  "known_image_geometry": {
+    "downscale": 0.12605042016806722,
+    "interpolation": "INTER_AREA",
+    "original_height": 5712,
+    "original_width": 4284,
+    "published_height": 720,
+    "published_width": 540,
+    "purpose": "camera-sized still-image replay; not original-resolution throughput",
+    "upscaled": false
+  },
+  "labels": [
+    "person",
+    "explosive",
+    "flammable",
+    "toxic"
+  ],
+  "master_exit": 0,
+  "model_dir": "/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26",
+  "normal_child_stops": true,
+  "output_hz_is_inference_hz": false,
+  "passed": true,
+  "private_master": "http://127.0.0.1:11330"
+}

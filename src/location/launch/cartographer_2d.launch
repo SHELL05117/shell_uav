@@ -1,34 +1,23 @@
 <launch>
+  <!-- 2D 激光 SLAM：用 S2 的扫描 + PX4 IMU 做扫描匹配。
+       配置：param/ROSSLAM/cartographer_2Dlidar_mapping_location_params.lua
+         tracking_frame = base_link, published_frame = base_link,
+         odom_frame = odom, provide_odom_frame = true
+       所以 cartographer 自己发 map->odom 和 odom->base_link 两条 TF，
+       location_node 读 odom->base_link。 -->
+  <arg name="node_start_delay" default="6.0" />
 
-  <!-- <param name="/use_sim_time" value="true"/> -->
-
-  <!-- rplidar_location: true for rplidar; false for t265 -->
-  <arg name="rplidar_location" default="false" />
-  <arg name="node_start_delay" value="6.0" />
-  <!--cartographer
-  2d lidar mapping 使用robot的里程计进行校正-->
-  <node unless="$(arg rplidar_location)" name="cartographer_node" pkg="cartographer_ros"
-    type="cartographer_node" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'"
-    args="
-          -configuration_directory  $(find location)/param/ROSSLAM
-          -configuration_basename cartographer_2Dlidar_mapping_params.lua"
-    output="screen">
-    <!-- <remap from="scan" to="/lidar2Dscan" /> -->
-    <remap from="odom" to="/mavros/local_position/odom" />
-    <remap from="imu" to="/mavros/imu/data" />
-  </node>
-
-  <node if="$(arg rplidar_location)" name="cartographer_node" pkg="cartographer_ros"
-    type="cartographer_node" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'"
-    args="
-          -configuration_directory  $(find location)/param/ROSSLAM
-          -configuration_basename cartographer_2Dlidar_mapping_location_params.lua"
-    output="screen">
-    <!-- <remap from="scan" to="/lidar2Dscan" /> -->
+  <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node"
+        output="screen"
+        launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'"
+        args="-configuration_directory $(find location)/param/ROSSLAM
+              -configuration_basename cartographer_2Dlidar_mapping_location_params.lua">
+    <remap from="scan" to="/scan" />
     <remap from="imu" to="/mavros/imu/data" />
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
-    type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
-
+        type="cartographer_occupancy_grid_node"
+        launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'"
+        args="-resolution 0.05 -publish_period_sec 1.0" />
 </launch>

@@ -1,0 +1,22 @@
+{
+  "xml_files_parsed": 14,
+  "python_tools_parsed": 7,
+  "model_checks": [
+    {
+      "file": "best.onnx",
+      "sha256": "6e18c14c38fcd412ebc09f78033d74abb141306c6c4e9e60d3c04748f47392ad",
+      "original_matches": true
+    },
+    {
+      "file": "best.rknn",
+      "sha256": "d963d19128cad36dcd57ce942a7ca3c2e966bae035a0a60f07b3b6b2a820fc7f",
+      "original_matches": true
+    },
+    {
+      "file": "labels.txt",
+      "sha256": "d2dfd780231c193462d6abf8a652db644435420d6ffc9810c2e4555307684ace",
+      "original_matches": true
+    }
+  ],
+  "board_final_source_comparison": "pending USB recovery"
+}

@@ -1,0 +1,2 @@
+/home/jcfh/RK3399Pro_npu/rknn-api/librknn_api/Linux/lib64/librknn_api.so: undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status

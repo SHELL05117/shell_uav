@@ -1,0 +1,54 @@
+[100%] Built target detectnet
+Scanning dependencies of target shoot_with_move_base_node
+[ 25%] Building CXX object navigation_2d/CMakeFiles/shoot_with_move_base_node.dir/src/shoot_with_move_base.cpp.o
+[ 50%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/navigation_2d/shoot_with_move_base_node
+[100%] Built target shoot_with_move_base_node
+[ 40%] Built target gtest
+Scanning dependencies of target dwa_control_math_test
+[ 60%] Building CXX object navigation_2d/CMakeFiles/dwa_control_math_test.dir/test/dwa_control_math_test.cpp.o
+[ 80%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/navigation_2d/dwa_control_math_test
+[100%] Built target dwa_control_math_test
+[ 40%] Built target gtest
+[100%] Built target yolo_tensor_layout_test
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make -j2 -l2 detectnet shoot_with_move_base_node dwa_control_math_test yolo_tensor_layout_test" in "/home/jcfh/catkin_ws/build"
+####
+[==========] Running 10 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 7 tests from DwaControlMath
+[ RUN      ] DwaControlMath.BodyForwardRotatesWithActualYaw
+[       OK ] DwaControlMath.BodyForwardRotatesWithActualYaw (0 ms)
+[ RUN      ] DwaControlMath.DiagonalSpeedUsesVectorBound
+[       OK ] DwaControlMath.DiagonalSpeedUsesVectorBound (0 ms)
+[ RUN      ] DwaControlMath.InvalidVelocityProducesNoCommand
+[       OK ] DwaControlMath.InvalidVelocityProducesNoCommand (0 ms)
+[ RUN      ] DwaControlMath.MapPointUsesRotationAndOriginTranslation
+[       OK ] DwaControlMath.MapPointUsesRotationAndOriginTranslation (0 ms)
+[ RUN      ] DwaControlMath.InvalidMapObservationIsRejected
+[       OK ] DwaControlMath.InvalidMapObservationIsRejected (0 ms)
+[ RUN      ] DwaControlMath.QuaternionMustBeValidAndCanBeNormalized
+[       OK ] DwaControlMath.QuaternionMustBeValidAndCanBeNormalized (0 ms)
+[ RUN      ] DwaControlMath.SamplesCannotBeMissingStaleOrFarFuture
+[       OK ] DwaControlMath.SamplesCannotBeMissingStaleOrFarFuture (0 ms)
+[----------] 7 tests from DwaControlMath (3 ms total)
+
+[----------] 3 tests from DwaMissionPolicy
+[ RUN      ] DwaMissionPolicy.FireDropRequiresTheConfirmedRequestedHazard
+[       OK ] DwaMissionPolicy.FireDropRequiresTheConfirmedRequestedHazard (0 ms)
+[ RUN      ] DwaMissionPolicy.MissingTargetCannotAuthorizeButExplicitAnyStillNeedsAHazard
+[       OK ] DwaMissionPolicy.MissingTargetCannotAuthorizeButExplicitAnyStillNeedsAHazard (0 ms)
+[ RUN      ] DwaMissionPolicy.RescueDropRequiresPersonAndEnabledRescueStage
+[       OK ] DwaMissionPolicy.RescueDropRequiresPersonAndEnabledRescueStage (0 ms)
+[----------] 3 tests from DwaMissionPolicy (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 2 test cases ran. (7 ms total)
+[  PASSED  ] 10 tests.

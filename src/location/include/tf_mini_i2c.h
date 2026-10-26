@@ -14,8 +14,8 @@
 	I2C ADDRESS/BITS
 	-----------------------------------------------------------------------*/
 #define TFMP_DEFAULT_ADDRESS (0x10) // bin 1001 000 (ADDR = GND)
-#define TFMP_DEFAULT_BUS 1			// Default 0 I2C bus for Jetson TX2, J21:3 & J21:5
-#define TFMP_REG_POINTER (0x00)		// Default 0 I2C bus for Jetson TX2, J21:3 & J21:5
+#define TFMP_DEFAULT_BUS 6			// checked ProD BSP: I2C6 -> /dev/i2c-6; physical wiring still pending
+#define TFMP_REG_POINTER (0x00)
 									/*=========================================================================*/
 
 /*=========================================================================

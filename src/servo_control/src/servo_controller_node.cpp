@@ -20,7 +20,7 @@ public:
   ServoController()
       : private_nh_("~")
   {
-    private_nh_.param<std::string>("i2c_device", i2c_device_, "/dev/i2c-1");
+  private_nh_.param<std::string>("i2c_device", i2c_device_, "/dev/i2c-6");
     private_nh_.param<int>("i2c_address", i2c_address_, 0x40);
     private_nh_.param<int>("camera_channel", camera_channel_, 0);
     private_nh_.param<int>("drop_channel", drop_channel_, 1);

@@ -1,0 +1,116 @@
+{
+  "cases": [
+    {
+      "name": "missing_tf",
+      "passed": true,
+      "poses": 0,
+      "status": "WAIT_TF",
+      "z": null
+    },
+    {
+      "name": "missing_range",
+      "passed": true,
+      "poses": 0,
+      "status": "WAIT_RANGE",
+      "z": null
+    },
+    {
+      "name": "level_height",
+      "passed": true,
+      "poses": 10,
+      "status": "READY",
+      "z": 0.49999997377395633
+    },
+    {
+      "name": "bad_range_expires",
+      "passed": true,
+      "poses": 0,
+      "status": "RANGE_STALE",
+      "z": null
+    },
+    {
+      "name": "range_recovery",
+      "passed": true,
+      "poses": 10,
+      "status": "READY",
+      "z": 0.49999997377395633
+    },
+    {
+      "name": "cached_range_expires",
+      "passed": true,
+      "poses": 0,
+      "status": "RANGE_STALE",
+      "z": null
+    },
+    {
+      "name": "cached_range_recovery",
+      "passed": true,
+      "poses": 10,
+      "status": "READY",
+      "z": 0.49999997377395633
+    },
+    {
+      "name": "cached_tf_expires",
+      "passed": true,
+      "poses": 0,
+      "status": "TF_STALE",
+      "z": null
+    },
+    {
+      "name": "tf_recovery",
+      "passed": true,
+      "poses": 11,
+      "status": "READY",
+      "z": 0.49999997377395633
+    },
+    {
+      "name": "cached_imu_expires",
+      "passed": true,
+      "poses": 0,
+      "status": "IMU_STALE",
+      "z": null
+    },
+    {
+      "name": "imu_recovery",
+      "passed": true,
+      "poses": 11,
+      "status": "READY",
+      "z": 0.49999997377395633
+    },
+    {
+      "name": "tilt_projection",
+      "passed": true,
+      "poses": 10,
+      "status": "READY",
+      "z": 0.5000000107973886
+    },
+    {
+      "name": "excess_tilt_blocks",
+      "passed": true,
+      "poses": 0,
+      "status": "HEIGHT_GEOMETRY_OR_LIMIT",
+      "z": null
+    },
+    {
+      "name": "uncalibrated_reference_blocks",
+      "passed": true,
+      "poses": 0,
+      "status": "HEIGHT_REFERENCE_UNCALIBRATED",
+      "z": null
+    },
+    {
+      "name": "disabled_height_blocks_slam_z",
+      "passed": true,
+      "poses": 0,
+      "status": "HEIGHT_DISABLED",
+      "z": null
+    }
+  ],
+  "exits": {
+    "bridge": 0,
+    "height-disabled-bridge": 0,
+    "master": 0,
+    "uncalibrated-bridge": 0
+  },
+  "passed": true
+}

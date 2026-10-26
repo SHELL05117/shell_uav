@@ -288,14 +288,14 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /ssd_detection/image/compressed
+      Image Topic: /detect_result
       Max Value: 1
       Median window: 5
       Min Value: 0
       Name: Image
       Normalize Range: true
       Queue Size: 2
-      Transport Hint: compressed
+      Transport Hint: raw
       Unreliable: false
       Value: true
   Enabled: true

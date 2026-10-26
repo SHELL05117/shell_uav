@@ -1,0 +1,96 @@
+known_image_passed=False
+{
+  "cases": {
+    "known_image": {
+      "annotation_red_changed_pixels": 32935, 
+      "detector_exit": 0, 
+      "flammable_detections": 25, 
+      "image_errors": [], 
+      "inference_ok": 4, 
+      "model_open_error": false, 
+      "model_ready": true, 
+      "observation_seconds": 14.16617079799994, 
+      "parameters": {
+        "backend": "rknn", 
+        "confidence_threshold": 0.5, 
+        "input_size": 416, 
+        "labels_file": "labels.txt", 
+        "model_file": "best.rknn", 
+        "nms_iou": 0.45
+      }, 
+      "passed": false, 
+      "saved_images": {
+        "annotated": "known-flammable-annotated.jpg", 
+        "output": "output-last.jpg"
+      }, 
+      "streams": {
+        "output": {
+          "count": 3, 
+          "hz": 0.15741976045011885, 
+          "max_gap": 7.41607275299998, 
+          "shapes": [
+            {
+              "count": 3, 
+              "encoding": "bgr8", 
+              "height": 5712, 
+              "width": 4284
+            }
+          ]
+        }
+      }
+    }
+  }, 
+  "children": [
+    {
+      "arguments": [
+        "roscore", 
+        "-p", 
+        "11330"
+      ], 
+      "exit_code": 0, 
+      "log": "master.log", 
+      "name": "master", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "navigation_2d", 
+        "detect.launch", 
+        "detect_backend:=rknn", 
+        "input_image_topic:=/shell_fourclass_known/image", 
+        "target_name:=flammable"
+      ], 
+      "exit_code": 0, 
+      "log": "known-detector.log", 
+      "name": "known-detector", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }
+  ], 
+  "cleanup_errors": [], 
+  "error": "RuntimeError('Known-image detector/annotation check failed',)", 
+  "input_sha256": {
+    "known_image": "536c840fb14970a08177ace89abab974ab0fc668536417b5bc5e9d539f0be6c2", 
+    "onnx": "6e18c14c38fcd412ebc09f78033d74abb141306c6c4e9e60d3c04748f47392ad", 
+    "rknn": "d963d19128cad36dcd57ce942a7ca3c2e966bae035a0a60f07b3b6b2a820fc7f"
+  }, 
+  "labels": [
+    "person", 
+    "explosive", 
+    "flammable", 
+    "toxic"
+  ], 
+  "master_exit": 0, 
+  "model_dir": "/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26", 
+  "normal_child_stops": true, 
+  "output_hz_is_inference_hz": false, 
+  "passed": false, 
+  "private_master": "http://127.0.0.1:11330", 
+  "traceback": "Traceback (most recent call last):\n  File \"/home/jcfh/shell_dwa_20261025/rk_fourclass_camera_check.py\", line 347, in run\n    raise RuntimeError('Known-image detector/annotation check failed')\nRuntimeError: Known-image detector/annotation check failed\n"
+}

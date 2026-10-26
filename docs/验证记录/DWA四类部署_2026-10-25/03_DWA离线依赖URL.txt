@@ -1,0 +1,32 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  ros-melodic-angles ros-melodic-base-local-planner
+  ros-melodic-clear-costmap-recovery ros-melodic-costmap-2d
+  ros-melodic-laser-geometry ros-melodic-map-msgs ros-melodic-move-base-msgs
+  ros-melodic-nav-core ros-melodic-navfn ros-melodic-rotate-recovery
+  ros-melodic-voxel-grid
+The following NEW packages will be installed:
+  ros-melodic-angles ros-melodic-base-local-planner
+  ros-melodic-clear-costmap-recovery ros-melodic-costmap-2d
+  ros-melodic-dwa-local-planner ros-melodic-laser-geometry
+  ros-melodic-map-msgs ros-melodic-move-base ros-melodic-move-base-msgs
+  ros-melodic-nav-core ros-melodic-navfn ros-melodic-rotate-recovery
+  ros-melodic-voxel-grid
+0 upgraded, 13 newly installed, 0 to remove and 44 not upgraded.
+Need to get 1,255 kB of archives.
+After this operation, 7,433 kB of additional disk space will be used.
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-angles/ros-melodic-angles_1.9.12-1bionic.20201019.180702_arm64.deb' ros-melodic-angles_1.9.12-1bionic.20201019.180702_arm64.deb 12288 MD5Sum:91b9cb66b47545f02038b73bb8026dc8
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-laser-geometry/ros-melodic-laser-geometry_1.6.7-1bionic.20221025.205015_arm64.deb' ros-melodic-laser-geometry_1.6.7-1bionic.20221025.205015_arm64.deb 35992 MD5Sum:4a12895fc81c4d068db153a67e1e1755
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-map-msgs/ros-melodic-map-msgs_1.14.1-1bionic.20221025.212622_arm64.deb' ros-melodic-map-msgs_1.14.1-1bionic.20221025.212622_arm64.deb 47764 MD5Sum:cbd375fa01a4212fd165422b61f043b4
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-voxel-grid/ros-melodic-voxel-grid_1.16.7-1bionic.20221025.184206_arm64.deb' ros-melodic-voxel-grid_1.16.7-1bionic.20221025.184206_arm64.deb 15896 MD5Sum:a9aa37686ced4807f4a8acc0ea7a2bf8
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-costmap-2d/ros-melodic-costmap-2d_1.16.7-1bionic.20221025.212840_arm64.deb' ros-melodic-costmap-2d_1.16.7-1bionic.20221025.212840_arm64.deb 392760 MD5Sum:1518af8905070f415fb23e6b732e34c9
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-nav-core/ros-melodic-nav-core_1.16.7-1bionic.20221025.213633_arm64.deb' ros-melodic-nav-core_1.16.7-1bionic.20221025.213633_arm64.deb 8448 MD5Sum:85c9ba5acd836a652f2b8101597a4330
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-base-local-planner/ros-melodic-base-local-planner_1.16.7-1bionic.20221025.213949_arm64.deb' ros-melodic-base-local-planner_1.16.7-1bionic.20221025.213949_arm64.deb 212536 MD5Sum:32f8f0f34fa797c9ebf0b4c071ae4a02
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-clear-costmap-recovery/ros-melodic-clear-costmap-recovery_1.16.7-1bionic.20221025.214125_arm64.deb' ros-melodic-clear-costmap-recovery_1.16.7-1bionic.20221025.214125_arm64.deb 36676 MD5Sum:0ff5ca8121db2036ec34e40223b4194c
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-dwa-local-planner/ros-melodic-dwa-local-planner_1.16.7-1bionic.20221025.214639_arm64.deb' ros-melodic-dwa-local-planner_1.16.7-1bionic.20221025.214639_arm64.deb 101112 MD5Sum:87d936059ca80856fd2c6f47b59dc764
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-move-base-msgs/ros-melodic-move-base-msgs_1.14.1-1bionic.20221025.180308_arm64.deb' ros-melodic-move-base-msgs_1.14.1-1bionic.20221025.180308_arm64.deb 32636 MD5Sum:ce1409e17d50327f8e4fc1fcca1e6924
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-navfn/ros-melodic-navfn_1.16.7-1bionic.20221025.214021_arm64.deb' ros-melodic-navfn_1.16.7-1bionic.20221025.214021_arm64.deb 107480 MD5Sum:edc67a3caaba35466d8346aab3338bd2
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-rotate-recovery/ros-melodic-rotate-recovery_1.16.7-1bionic.20221025.214600_arm64.deb' ros-melodic-rotate-recovery_1.16.7-1bionic.20221025.214600_arm64.deb 35188 MD5Sum:04bea0eb1f5054ebe6b6c3d35d8e0ce3
+'https://mirrors.ustc.edu.cn/ros/ubuntu/pool/main/r/ros-melodic-move-base/ros-melodic-move-base_1.16.7-1bionic.20221025.215246_arm64.deb' ros-melodic-move-base_1.16.7-1bionic.20221025.215246_arm64.deb 215992 MD5Sum:a52af01a9908a4ede995bac1f6252d84

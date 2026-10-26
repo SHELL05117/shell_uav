@@ -32,15 +32,6 @@ public:
 	I2C(uint8 address = I2C_DEFAULT_ADDR, uint8 bus = I2C_DEFAULT_BUS)
 	noexcept(false);
 	~I2C();
-	
-	// 禁用拷贝构造和拷贝赋值（RAII 原则，防止资源重复释放）
-	I2C(const I2C&) = delete;
-	I2C& operator=(const I2C&) = delete;
-	
-	// 支持移动语义
-	I2C(I2C&& other) noexcept;
-	I2C& operator=(I2C&& other) noexcept;
-	
 	void close_device();
 	uint16 write_register16(uint8 device_register, uint16 value) noexcept(false);
 	uint16 write_register_block(uint8 device_register, uint8 length, uint8 *values) noexcept(false);

@@ -1,0 +1,91 @@
+{
+  "additional_source_checks": {
+    "all_window_actuation_disabled": true,
+    "all_window_frame_fresh": true,
+    "all_window_model_loaded": true,
+    "normal_cleanup": true,
+    "original_checks": {
+      "annotated_image_stream": true,
+      "camera_continuous": true,
+      "dwa_config_and_loaded": true,
+      "fcu_connected_unarmed_stable_mode": true,
+      "images_valid": true,
+      "imu_continuous": true,
+      "inference_ready_observed": true,
+      "location_range_blocked": true,
+      "mavros_readonly": true,
+      "model_loaded": true,
+      "multiple_real_inferences": false,
+      "no_setpoints_gpio_or_vision": true,
+      "safe_gate": true,
+      "scaled_image_dimensions_consistent": true,
+      "scan_continuous": true
+    },
+    "source_errors": [],
+    "zero_expected_topic_counts": {
+      "/gpio_ack": 0,
+      "/gpio_cmd": 0,
+      "/gpio_debug_cmd": 0,
+      "/mavros/setpoint_position/local": 0,
+      "/mavros/setpoint_raw/local": 0,
+      "/mavros/setpoint_velocity/cmd_vel": 0,
+      "/mavros/vision_pose/pose": 0
+    }
+  },
+  "conclusion": {
+    "actual_inference_log_count_independently_reverified": false,
+    "boundaries": [
+      "readiness消息频率不是推理FPS；同一健康推理结果可被多条readiness报告。",
+      "未启动ROS、未连接设备、未重新运行模型或任务。",
+      "不构成业务识别精度、有效高度、SLAM定位、实际避障或飞行验收。"
+    ],
+    "full_hardware_rerun_passed": false,
+    "local_navigation_log_available": false,
+    "offline_readiness_health_passed": true,
+    "说明": "原始JSON的20秒readiness持续性满足现工具严格判据，原唯一false项为multiple_real_inferences。当前仅复核JSON，没有本地navigation.log，不能独立核验主任务板端看到的5条inference OK或认定完整硬件复测通过。日志刷新修正后的严格板端复测与源一致性核验仍待USB恢复。"
+  },
+  "method": {
+    "execution": "Extracted the current pure function with Python AST; no ROS, SSH or hardware execution.",
+    "function": "readiness_health",
+    "helper_path": "../../../../tools/rk_dwa_readonly_stack_check.py",
+    "helper_sha256": "2ac90afb3a3ed290c35bd602528a2f0846f7bdd9efc04a2c2549ac9d765786ca",
+    "window_reconstruction": "begin = first readiness receipt time - readiness stream first_delay; end = begin + observation_seconds; cross-checked against last receipt time + last_age."
+  },
+  "observation_window_monotonic_seconds": {
+    "begin": 576.431496313,
+    "duration": 20.168319258999986,
+    "end": 596.599815572
+  },
+  "readiness_health": {
+    "first_sample_delay_seconds": 0.005118374999938169,
+    "inference_ready_true_count": 202,
+    "inference_ready_true_ratio": 1.0,
+    "is_inference_fps": false,
+    "last_sample_age_seconds": 0.06401937500004351,
+    "max_bad_gap_seconds": 0.30696754200005216,
+    "max_continuous_false_seconds": 0.0,
+    "max_message_gap_seconds": 0.30696754200005216,
+    "maximum_bad_gap_limit_seconds": 1.0,
+    "minimum_samples": 10,
+    "minimum_true_ratio": 0.95,
+    "passed": true,
+    "sample_count": 202
+  },
+  "review_kind": "offline_readonly_readiness_health_recalculation",
+  "schema_version": 1,
+  "source": {
+    "original_false_checks": [
+      "multiple_real_inferences"
+    ],
+    "original_inference_log": {
+      "flammable_detections": 0,
+      "inference_ok": 0,
+      "model_open_error": false,
+      "model_ready": false
+    },
+    "original_passed": false,
+    "original_unchanged": true,
+    "path": "联合只读首轮原始.json",
+    "sha256": "524c40a279118f4c960d2c86df988944af219bd3dab73c6fa1155673d0750140"
+  }
+}

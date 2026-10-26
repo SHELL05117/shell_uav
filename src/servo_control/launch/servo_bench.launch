@@ -29,7 +29,7 @@
   ========================================================================== -->
 
   <!-- 硬件配置：默认值与 navigation_2d.launch **逐字相同**。 -->
-  <arg name="i2c_device" default="/dev/i2c-1" />
+  <arg name="i2c_device" default="/dev/i2c-6" />
   <arg name="i2c_address" default="64" />
   <arg name="camera_channel" default="0" />
   <arg name="drop_channel" default="1" />

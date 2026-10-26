@@ -1,0 +1,264 @@
+-- Using CATKIN_DEVEL_PREFIX: /home/jcfh/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+-- This workspace overlays: /opt/ros/melodic
+-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/jcfh/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.29
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- Using CATKIN_WHITELIST_PACKAGES: navigation_2d;location;servo_control;usb_cam;rplidar_ros
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 5 packages in topological order:
+-- ~~  - servo_control
+-- ~~  - rplidar_ros
+-- ~~  - location
+-- ~~  - navigation_2d
+-- ~~  - usb_cam
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'servo_control'
+-- ==> add_subdirectory(servo_control)
+-- +++ processing catkin package: 'rplidar_ros'
+-- ==> add_subdirectory(rplidar_ros)
+-- +++ processing catkin package: 'location'
+-- ==> add_subdirectory(location)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'navigation_2d'
+-- ==> add_subdirectory(navigation_2d)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- navigation_2d: OpenCV 3.2.0
+-- navigation_2d: RKNN /home/jcfh/RK3399Pro_npu/rknn-api/librknn_api/Linux/lib64/librknn_api.so, headers /home/jcfh/RK3399Pro_npu/rknn-api/librknn_api/include
+-- +++ processing catkin package: 'usb_cam'
+-- ==> add_subdirectory(usb_cam)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jcfh/catkin_ws/build
+Scanning dependencies of target location_node
+[ 20%] Building CXX object location/CMakeFiles/location_node.dir/src/location_with_ftmini.cpp.o
+[ 40%] Building CXX object location/CMakeFiles/location_node.dir/src/TFplus.cpp.o
+[ 60%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/location_node
+[100%] Built target location_node
+Scanning dependencies of target tfmini_test
+[ 20%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/TFplus.cpp.o
+[ 40%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/tfmini_test.cpp.o
+[ 60%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/tfmini_test
+[100%] Built target tfmini_test
+[ 50%] Built target gtest
+[100%] Built target localization_guard_test
+[ 40%] Built target gtest
+Scanning dependencies of target tfmini_uart_pty_test
+[ 60%] Building CXX object location/CMakeFiles/tfmini_uart_pty_test.dir/src/TFplus.cpp.o
+[ 80%] Building CXX object location/CMakeFiles/tfmini_uart_pty_test.dir/test/tfmini_uart_pty_test.cpp.o
+[100%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/tfmini_uart_pty_test
+[100%] Built target tfmini_uart_pty_test
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make -j2 -l2 location_node tfmini_test localization_guard_test tfmini_uart_pty_test" in "/home/jcfh/catkin_ws/build"
+####
+[==========] Running 11 tests from 5 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from Freshness
+[ RUN      ] Freshness.RejectsMissingOldFutureAndNan
+[       OK ] Freshness.RejectsMissingOldFutureAndNan (0 ms)
+[----------] 1 test from Freshness (0 ms total)
+
+[----------] 3 tests from Range
+[ RUN      ] Range.RejectsTinyNanAndOutOfRangeWithoutRefreshing
+[       OK ] Range.RejectsTinyNanAndOutOfRangeWithoutRefreshing (0 ms)
+[ RUN      ] Range.RepeatedCachedSamplesDoNotConfirmJump
+[       OK ] Range.RepeatedCachedSamplesDoNotConfirmJump (0 ms)
+[ RUN      ] Range.InconsistentJumpSamplesDoNotRebaseline
+[       OK ] Range.InconsistentJumpSamplesDoNotRebaseline (0 ms)
+[----------] 3 tests from Range (1 ms total)
+
+[----------] 1 test from Position
+[ RUN      ] Position.JumpRejectionDoesNotAcceptDuplicateStamp
+[       OK ] Position.JumpRejectionDoesNotAcceptDuplicateStamp (0 ms)
+[----------] 1 test from Position (0 ms total)
+
+[----------] 5 tests from Height
+[ RUN      ] Height.SubtractsMeasuredLevelGroundClearance
+[       OK ] Height.SubtractsMeasuredLevelGroundClearance (0 ms)
+[ RUN      ] Height.ProjectsSlantRangeUsingImuPitch
+[       OK ] Height.ProjectsSlantRangeUsingImuPitch (0 ms)
+[ RUN      ] Height.AppliesRotatedSensorOffset
+[       OK ] Height.AppliesRotatedSensorOffset (0 ms)
+[ RUN      ] Height.RejectsTiltInvalidQuaternionAndOutsideHeight
+[       OK ] Height.RejectsTiltInvalidQuaternionAndOutsideHeight (0 ms)
+[ RUN      ] Height.RejectsInvalidGeometryParameters
+[       OK ] Height.RejectsInvalidGeometryParameters (0 ms)
+[----------] 5 tests from Height (1 ms total)
+
+[----------] 1 test from UartFrame
+[ RUN      ] UartFrame.ValidatesHeaderChecksumAndLength
+[       OK ] UartFrame.ValidatesHeaderChecksumAndLength (0 ms)
+[----------] 1 test from UartFrame (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 5 test cases ran. (2 ms total)
+[  PASSED  ] 11 tests.
+[==========] Running 5 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 5 tests from TfminiUartPty
+[ RUN      ] TfminiUartPty.PreCallBacklogWithoutANewSampleIsNotFresh
+[       OK ] TfminiUartPty.PreCallBacklogWithoutANewSampleIsNotFresh (311 ms)
+[ RUN      ] TfminiUartPty.NewFrameAfterBoundaryReplacesOldQueuedDistance
+[       OK ] TfminiUartPty.NewFrameAfterBoundaryReplacesOldQueuedDistance (44 ms)
+[ RUN      ] TfminiUartPty.DrainsABurstLargerThanOneReadToItsLatestCompleteFrame
+[       OK ] TfminiUartPty.DrainsABurstLargerThanOneReadToItsLatestCompleteFrame (34 ms)
+[ RUN      ] TfminiUartPty.ResynchronizesNoiseCorruptChecksumAndFragmentedFrame
+[       OK ] TfminiUartPty.ResynchronizesNoiseCorruptChecksumAndFragmentedFrame (55 ms)
+[ RUN      ] TfminiUartPty.AConsumedFrameCannotRefreshAgainAfterTheStreamStops
+[       OK ] TfminiUartPty.AConsumedFrameCannotRefreshAgainAfterTheStreamStops (632 ms)
+[----------] 5 tests from TfminiUartPty (1077 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test case ran. (1078 ms total)
+[  PASSED  ] 5 tests.
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{"status": "WAIT_TF", "poses": 0, "z": null, "passed": true, "name": "missing_tf"}
+{"status": "WAIT_RANGE", "poses": 0, "z": null, "passed": true, "name": "missing_range"}
+{"status": "READY", "poses": 10, "z": 0.49999997377395633, "passed": true, "name": "level_height"}
+{"status": "RANGE_STALE", "poses": 0, "z": null, "passed": true, "name": "bad_range_expires"}
+{"status": "READY", "poses": 10, "z": 0.49999997377395633, "passed": true, "name": "range_recovery"}
+{"status": "RANGE_STALE", "poses": 0, "z": null, "passed": true, "name": "cached_range_expires"}
+{"status": "READY", "poses": 10, "z": 0.49999997377395633, "passed": true, "name": "cached_range_recovery"}
+{"status": "TF_STALE", "poses": 0, "z": null, "passed": true, "name": "cached_tf_expires"}
+{"status": "READY", "poses": 11, "z": 0.49999997377395633, "passed": true, "name": "tf_recovery"}
+{"status": "IMU_STALE", "poses": 0, "z": null, "passed": true, "name": "cached_imu_expires"}
+{"status": "READY", "poses": 11, "z": 0.49999997377395633, "passed": true, "name": "imu_recovery"}
+{"status": "READY", "poses": 10, "z": 0.5000000107973886, "passed": true, "name": "tilt_projection"}
+{"status": "HEIGHT_GEOMETRY_OR_LIMIT", "poses": 0, "z": null, "passed": true, "name": "excess_tilt_blocks"}
+{"status": "HEIGHT_REFERENCE_UNCALIBRATED", "poses": 0, "z": null, "passed": true, "name": "uncalibrated_reference_blocks"}
+{"status": "HEIGHT_DISABLED", "poses": 0, "z": null, "passed": true, "name": "disabled_height_blocks_slam_z"}
+{
+  "cases": [
+    {
+      "name": "missing_tf", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "WAIT_TF", 
+      "z": null
+    }, 
+    {
+      "name": "missing_range", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "WAIT_RANGE", 
+      "z": null
+    }, 
+    {
+      "name": "level_height", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "bad_range_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "RANGE_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "range_recovery", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "cached_range_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "RANGE_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "cached_range_recovery", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "cached_tf_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "TF_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "tf_recovery", 
+      "passed": true, 
+      "poses": 11, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "cached_imu_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "IMU_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "imu_recovery", 
+      "passed": true, 
+      "poses": 11, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "tilt_projection", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.5000000107973886
+    }, 
+    {
+      "name": "excess_tilt_blocks", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "HEIGHT_GEOMETRY_OR_LIMIT", 
+      "z": null
+    }, 
+    {
+      "name": "uncalibrated_reference_blocks", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "HEIGHT_REFERENCE_UNCALIBRATED", 
+      "z": null
+    }, 
+    {
+      "name": "disabled_height_blocks_slam_z", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "HEIGHT_DISABLED", 
+      "z": null
+    }
+  ], 
+  "exits": {
+    "bridge": 0, 
+    "height-disabled-bridge": 0, 
+    "master": 0, 
+    "uncalibrated-bridge": 0
+  }, 
+  "passed": true
+}

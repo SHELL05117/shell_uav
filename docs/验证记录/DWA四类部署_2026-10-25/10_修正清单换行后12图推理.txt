@@ -1,0 +1,19 @@
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+1 IMG_2706 663.289 ms; float_bytes=292032,73008,18252
+2 IMG_2707 666.067 ms; float_bytes=292032,73008,18252
+3 IMG_2736 659.998 ms; float_bytes=292032,73008,18252
+4 IMG_2737 659.865 ms; float_bytes=292032,73008,18252
+5 IMG_2766 658.774 ms; float_bytes=292032,73008,18252
+6 IMG_2767 657.877 ms; float_bytes=292032,73008,18252
+7 IMG_2797 656.466 ms; float_bytes=292032,73008,18252
+8 IMG_2798 656.238 ms; float_bytes=292032,73008,18252
+9 IMG_2828 653.399 ms; float_bytes=292032,73008,18252
+10 IMG_2829 650.564 ms; float_bytes=292032,73008,18252
+11 IMG_2858 662.069 ms; float_bytes=292032,73008,18252
+12 IMG_2859 660.163 ms; float_bytes=292032,73008,18252
+completed=12
+6794962e730beca3b0b6997a14e7adbf8f735d3f8e2b81e23fa51f7231ffdd7f  raw-outputs.tar.gz

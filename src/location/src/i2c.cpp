@@ -1,41 +1,14 @@
 #include <i2c.h>
-#include <utility>  // for std::exchange
 
 I2C::I2C(uint8 address, uint8 bus) noexcept(false)
-	: kI2CAddress(address), kI2CBus(bus), kI2CFileDescriptor(-1)
 {
+	kI2CFileDescriptor = -1;
+	kI2CBus = bus;		   // /dev/i2c-<bus>; on the 3399Pro confirm the number with i2cdetect -l
+	kI2CAddress = address; // Defaults to 0x70
 	open_device();
 }
 
-I2C::~I2C()
-{
-	close_device();
-}
-
-// 移动构造函数
-I2C::I2C(I2C&& other) noexcept
-	: kI2CAddress(other.kI2CAddress),
-	  kI2CBus(other.kI2CBus),
-	  kI2CFileDescriptor(std::exchange(other.kI2CFileDescriptor, -1))
-{
-	// 资源已转移，other 不再拥有文件描述符
-}
-
-// 移动赋值运算符
-I2C& I2C::operator=(I2C&& other) noexcept
-{
-	if (this != &other)
-	{
-		// 先关闭当前资源
-		close_device();
-		
-		// 转移资源
-		kI2CAddress = other.kI2CAddress;
-		kI2CBus = other.kI2CBus;
-		kI2CFileDescriptor = std::exchange(other.kI2CFileDescriptor, -1);
-	}
-	return *this;
-}
+I2C::~I2C() { close_device(); }
 
 void I2C::open_device() noexcept(false)
 {
@@ -48,12 +21,16 @@ void I2C::open_device() noexcept(false)
 		throw std::system_error(errno, std::generic_category(), "[i2c]Could not open the file");
 
 	if (ioctl(kI2CFileDescriptor, I2C_SLAVE, kI2CAddress) < 0)
-		throw std::system_error(errno, std::generic_category(), "[i2c]Could not open dev on bus");
+	{
+		const int saved_errno = errno;
+		close_device();
+		throw std::system_error(saved_errno, std::generic_category(), "[i2c]Could not open dev on bus");
+	}
 }
 
 void I2C::close_device()
 {
-	if (kI2CFileDescriptor > 0)
+	if (kI2CFileDescriptor >= 0)
 	{
 		close(kI2CFileDescriptor);
 		// WARNING - This is not quite right, need to check for error first

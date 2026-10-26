@@ -1,0 +1,16 @@
+{
+  "scope": "Offline metrics from a real trajectory; original probe ended with a footprint parameter parsing error, not an overall pass",
+  "final_xy": [
+    1.4194780612550664,
+    -0.05078627378189822
+  ],
+  "goal_error": 0.0951999381506772,
+  "max_lateral": 0.8060214654959167,
+  "distance": 3.5277718818962573,
+  "minimum_configured_footprint_clearance": 0.05977571030013439,
+  "samples": 501,
+  "seconds": 40.37373995780945,
+  "global_plans": 656,
+  "production_parameter_changed": false,
+  "conclusion": "This original-parameter run reached the goal; the earlier stall is not a deterministic failure. Further board A/B testing remains required."
+}

@@ -1,0 +1,16 @@
+# Candidate footprint/inflation received in pack.7z. These dimensions were
+# inferred from a passage, not measured on SHELL's assembled aircraft.
+# Unverified for real collision clearance: include arms/rotors in measurement
+# and validate the resulting envelope before physical navigation acceptance.
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+footprint: [[0.16, 0.16], [0.16, -0.16], [-0.16, -0.16], [-0.16, 0.16]]
+#robot_radius: 0.16
+
+inflation_radius: 0.25
+cost_scaling_factor: 3.0
+
+map_type: costmap
+observation_sources: scan
+scan: {sensor_frame: laser_link, data_type: LaserScan, topic: scan, marking: true, clearing: true}

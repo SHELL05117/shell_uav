@@ -1,108 +1,67 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 project(location)
- 
-## The location node uses std::unique_ptr/std::make_unique/std::exchange.
-add_compile_options(-std=c++14)
+
+add_compile_options(-std=c++14 -O2)
 
 find_package(catkin REQUIRED COMPONENTS
-  message_generation  
   roscpp
   geometry_msgs
   nav_msgs
+  sensor_msgs
+  std_msgs
+  tf2
   tf2_ros
 )
 
-find_package(cmake_modules REQUIRED)
-find_package(Eigen3 REQUIRED)
-
-find_library(I2C_LIBRARY
-  NAMES i2c libi2c.so.0 i2c.so.0
-  PATHS
-    /usr/lib/aarch64-linux-gnu
-    /lib/aarch64-linux-gnu
-    /usr/lib
-    /lib
-)
-
+# TFmini 的 I2C 访问用 libi2c（i2c-tools），不要再写死 aarch64 下的绝对路径：
+# Jetson 和 3399Pro 的多架构库目录不一定同名。
+find_library(I2C_LIBRARY NAMES i2c)
 if(NOT I2C_LIBRARY)
-  message(FATAL_ERROR "Could not find libi2c. Install the libi2c development/runtime package before building location.")
+  message(FATAL_ERROR "libi2c not found (install i2c-tools / libi2c-dev)")
 endif()
-
-## Generate services in the 'srv' folder
-# add_service_files(FILES AddTwoInts.srv)
-# generate_messages(DEPENDENCIES std_msgs)
-
-include_directories(${EIGEN3_INCLUDE_DIR})
-add_definitions(${EIGEN_DEFINITIONS})
-
-#catkin_python_setup()
 
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp message_runtime
+  CATKIN_DEPENDS roscpp geometry_msgs nav_msgs sensor_msgs std_msgs tf2 tf2_ros
 )
 
-###########
-## Build ##
-###########
-
-## Specify additional locations of header files
-## Your package locations should be listed before other locations
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
 )
- 
-add_executable(location_node src/location_with_ftmini.cpp src/TFplus.cpp src/i2c.cpp src/tf_mini_i2c.cpp)
 
-## Specify libraries to link a library or executable target against
+add_executable(location_node
+  src/location_with_ftmini.cpp
+  src/TFplus.cpp
+  src/i2c.cpp
+  src/tf_mini_i2c.cpp
+)
 target_link_libraries(location_node ${catkin_LIBRARIES} ${I2C_LIBRARY})
 
-
-add_executable(tfmini_test src/tfmini_test.cpp src/TFplus.cpp src/i2c.cpp src/tf_mini_i2c.cpp)
-
-## Specify libraries to link a library or executable target against
+add_executable(tfmini_test
+  src/tfmini_test.cpp
+  src/TFplus.cpp
+  src/i2c.cpp
+  src/tf_mini_i2c.cpp
+)
 target_link_libraries(tfmini_test ${catkin_LIBRARIES} ${I2C_LIBRARY})
 
+if(CATKIN_ENABLE_TESTING)
+  find_package(Threads REQUIRED)
+  find_library(UTIL_LIBRARY NAMES util)
+  catkin_add_gtest(localization_guard_test test/localization_guard_test.cpp)
+  if(TARGET localization_guard_test)
+    target_link_libraries(localization_guard_test ${catkin_LIBRARIES})
+  endif()
+  catkin_add_gtest(tfmini_uart_pty_test test/tfmini_uart_pty_test.cpp src/TFplus.cpp)
+  if(TARGET tfmini_uart_pty_test)
+    target_link_libraries(tfmini_uart_pty_test ${catkin_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${UTIL_LIBRARY})
+  endif()
+endif()
 
-## Declare a cpp executable
-# add_executable(position_with_tfmini_node src/position_with_tfmini.cpp)
-
-## Specify libraries to link a library or executable target against
-# target_link_libraries(position_with_tfmini_node
-#   ${catkin_LIBRARIES}
-# )
-
-
-## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-#   FILES_MATCHING PATTERN "*.h"
-# )
-## Mark executables and/or libraries for installation
-# install(TARGETS  position_to_mavros_node
-#   set_mode_node
-#   collision_avoidance_vfh_node
-#   avoidance_car_vfh_node
-#   collision_avoidance_matlabvfh_node
-#   circular_node circular_car_node 
-#   ros_nav_quadrotor_node 
-#   mission_car_offboard_node
-#   landing_quadrotor_node
-#   tracking_quadrotor_node
-#   tracking_down_kcf_quadrotor_node
-#   tracking_ardupilot_node
-#   auto_2d_nav_node
-#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
-
-# install(DIRECTORY
-#   launch
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
-
-
-
-
+install(TARGETS location_node tfmini_test
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+install(DIRECTORY launch param
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)

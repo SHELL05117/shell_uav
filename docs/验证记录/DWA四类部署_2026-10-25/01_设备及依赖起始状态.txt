@@ -1,0 +1,46 @@
+ 02:09:30 up 1 min,  2 users,  load average: 0.19, 0.14, 0.06
+Result=success
+Id=shell-npu-power.service
+ActiveState=active
+SubState=exited
+
+Result=success
+Id=shell-npu-firmware.service
+ActiveState=active
+SubState=exited
+
+Result=success
+Id=shell-npu-proxy.service
+ActiveState=active
+SubState=running
+-- Logs begin at Thu 2023-03-02 20:58:02 CST, end at Sat 2026-10-24 23:02:22 CST. --
+[   12.104370] toybrick python3[324]: Write LBA from file (97%)
+[   12.104370] toybrick python3[324]: Write LBA from file (98%)
+[   12.104370] toybrick python3[324]: Write LBA from file (99%)
+[   12.104370] toybrick python3[324]: Write LBA from file (100%)
+[   12.242556] toybrick python3[324]: Not found config.ini
+[   12.242556] toybrick python3[324]: Program Data in /home/jcfh/npu_runtime_175
+[   12.242556] toybrick python3[324]: List of rockusb connected(1)
+[   12.242556] toybrick python3[324]: DevNo=1        Vid=0x2207,Pid=0x180a,LocationID=30101        Mode=Loader        SerialNo=rockchip
+[   12.422564] toybrick python3[324]: Unique internal NPU: 3-1.1 / 2207:180a LocationID=30101 mode=Loader
+[   12.443838] toybrick python3[324]: NPU stage: run-system
+[   12.581804] toybrick python3[324]: Not found config.ini
+[   12.581804] toybrick python3[324]: Program Data in /home/jcfh/npu_runtime_175
+[   12.581804] toybrick python3[324]: start to run system...
+[   12.581804] toybrick python3[324]: run system ok.
+[   12.585922] toybrick python3[324]: NPU RAM boot commands completed; verify runtime USB and proxy separately.
+[   17.819453] toybrick python3[324]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   27.863242] toybrick python3[324]: NPU firmware stage ready
+[   27.921543] toybrick systemd[1]: Started SHELL RK3399Pro NPU firmware RAM boot and USB readiness.
+[   27.926932] toybrick systemd[1]: Starting SHELL RK3399Pro NPU transfer proxy and device readiness...
+[   27.966547] toybrick npu_transfer_proxy[654]: I NPUTransfer: Starting NPU Transfer Proxy, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51), devid = 14ade952d732d316, pid = 654:1
+[   28.135702] toybrick python3[655]: NPU runtime USB ready: 4-1.1 serial=14ade952d732d316
+[   28.154106] toybrick python3[655]: List of ntb devices attached
+[   28.154106] toybrick python3[655]: 14ade952d732d316    a0096b1e    USB_DEVICE
+[   28.154106] toybrick python3[655]: NPU proxy device ready
+[   28.179416] toybrick systemd[1]: Started SHELL RK3399Pro NPU transfer proxy and device readiness.
+drwxrwxr-x 5 jcfh jcfh 4096 Oct 24  2026 /home/jcfh/catkin_ws/devel
+rknn_api.h
+libi2c-dev	4.0-2
+dpkg-query: no packages found matching ros-melodic-move-base
+dpkg-query: no packages found matching ros-melodic-dwa-local-planner

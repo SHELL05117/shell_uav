@@ -1,353 +1,233 @@
-#include <TFplus.h>
-#include <tf_mini_i2c.h>
-#include <tf2_ros/transform_listener.h>
-#include <geometry_msgs/TransformStamped.h>
-#include <geometry_msgs/Twist.h>
-#include <geometry_msgs/PoseStamped.h>
-#include <sensor_msgs/Range.h>
-#include <nav_msgs/Path.h>
-#include <nav_msgs/Odometry.h>
-#include <memory>   // 添加智能指针支持
-#include <atomic>
+// SLAM + measured-height bridge. Missing/stale samples never acquire new time.
 #include <algorithm>
 #include <cmath>
+#include <memory>
+#include <mutex>
+#include <stdexcept>
+#include <string>
+#include <ros/ros.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <sensor_msgs/Imu.h>
+#include <sensor_msgs/Range.h>
+#include <std_msgs/String.h>
+#include <tf2/LinearMath/Matrix3x3.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2/exceptions.h>
+#include <tf2_ros/buffer.h>
+#include <tf2_ros/transform_listener.h>
+#include <TFplus.h>
+#include <tf_mini_i2c.h>
+#include <localization_guard.h>
 
-using namespace std;
-
-ros::Publisher position_pub;
-tf2_ros::Buffer tfBuffer;
-// ros::Subscriber pose_sub, height_sub;
-geometry_msgs::PoseStamped position;
-tf2::Quaternion quat_body;
-std::unique_ptr<benewake::TFplus> tfplus_obj;      // 改为智能指针
-// height_listener 在独立线程里一直写，position_listener 30 Hz 读。原来是裸 float，
-// 读到一个撕裂/半更新的值也会被当成一次测量直接算成 z。用 atomic 把"读到什么"
-// 这件事至少变成定义良好的。
-std::atomic<float> dist{0.0f};
-int baud_rate;
-std::string target_frame_id;
-std::string source_frame_id, tf_mini_type;
-double publish_rate, roll_obj, pitch_obj, yaw_obj, tf_mini_height;
-bool is_simulation, rplidar_location, use_tf_mini;
-bool height_from_tf_mini;
-int bus, address;
-std::unique_ptr<TFMiniPro> tf_mini_plus_;          // 改为智能指针
-
-// ---- TF mini 的输入保护 ------------------------------------------------
-//
-// 2026-10-17 实机：起飞后 odom z 从 1.375 一步跳到 -0.098，0.5 s 内掉了
-// 1.47 m，随后 -1.879 / -3.854 / ... 一路积到 -22.6，再被 EKF 重置回 1.22。
-// 算术对得上：`z = dist - tf_mini_height`，tf_mini_height 取代码默认的 0.1，
-// z=-0.098 就是 dist=0.002 —— TFmini 在飞行中报了一次 2 mm 的假回波（低反射
-// 地面/超出量程/被桨叶遮挡都会这样），而这行代码把它当成真值直接发给了
-// /mavros/vision_pose/pose。PX4 的高度被这份 vision 拽下去，之后整条估计链
-// 都在追一个不存在的高度。
-//
-// 原来只有一个 `dist > 0.0` 的判断：它挡不住 0.002 这种"正的但不可能"的值，
-// 也挡不住一次 1.4 m 的跳变。下面三个门各自挡一件事：
-//   量程   —— 挡掉 0 附近的假读数（TFmini Plus 的标称下限 0.1 m，这里留到 0.05）
-//   跳变   —— 挡掉单次毛刺；连续 N 个周期都越界则认为是真的快速变化（起飞/下降），
-//             重新接受，避免一次拒收之后永久拒收
-//   限幅   —— z 是相对起飞点的飞行高度，场地墙高 3.00 m，负数没有物理意义
-// 被测数据不合格时保持上一次**有效**的 z，而不是发一个新算出来的错值。
-double last_valid_tf_z = 0.0;      // 0.0 表示"还没有过有效测量"
-bool have_valid_tf_z = false;
-double last_accepted_raw = -1.0;
-int reject_streak = 0;
-
-double tf_mini_min_range = 0.05;
-double tf_mini_max_range = 6.0;
-double tf_mini_max_delta = 0.60;
-int tf_mini_jump_override = 20;
-double tf_mini_z_min = -0.20;
-double tf_mini_z_max = 3.00;
-
-// xy 跳变门的状态与门限，含义见 position_listener 里那一段注释。
-double last_ok_x = 0.0;
-double last_ok_y = 0.0;
-bool have_ok_xy = false;
-int xy_reject_streak = 0;
-double tf_pose_max_jump = 0.30;
-int tf_pose_jump_override = 10;
-
-void position_listener(const ros::TimerEvent &event)
+class LocalizationBridge
 {
-  static tf2::Quaternion quat_obj, quat_body;
-  geometry_msgs::TransformStamped transformStamped;
-
-  try
+public:
+  explicit LocalizationBridge(ros::NodeHandle nh) : nh_(nh), listener_(buffer_)
   {
-    if (tfBuffer.canTransform(target_frame_id, source_frame_id, ros::Time(0)))
+    nh_.param("target_frame_id", target_frame_, std::string("odom"));
+    nh_.param("source_frame_id", source_frame_, std::string("base_link"));
+    nh_.param("tf_mini_type", range_type_, std::string("i2c"));
+    nh_.param("use_tf_mini", use_range_, true);
+    nh_.param("height_reference_calibrated", calibrated_, false);
+    nh_.param("publish_rate", publish_rate_, 20.0);
+    nh_.param("tf_timeout", tf_timeout_, 0.25);
+    nh_.param("range_timeout", range_timeout_, 0.30);
+    nh_.param("imu_timeout", imu_timeout_, 0.30);
+    nh_.param("tf_mini_height", ground_clearance_, 0.09);
+    nh_.param("tf_mini_z_min", z_min_, -0.20);
+    nh_.param("tf_mini_z_max", z_max_, 3.00);
+    nh_.param("tf_mini_max_tilt_deg", max_tilt_, 35.0);
+    nh_.param("tf_mini_min_range", range_gate_.minimum, 0.05);
+    nh_.param("tf_mini_max_range", range_gate_.maximum, 6.0);
+    nh_.param("tf_mini_max_delta", range_gate_.max_delta, 0.60);
+    nh_.param("tf_mini_jump_override", range_gate_.confirmations_required, 20);
+    nh_.param("tf_pose_max_jump", position_gate_.max_delta, 0.30);
+    nh_.param("tf_pose_jump_override", position_gate_.confirmations_required, 10);
+    nh_.param("sensor_offset_x", offset_.x, 0.0);
+    nh_.param("sensor_offset_y", offset_.y, 0.0);
+    nh_.param("sensor_offset_z", offset_.z, 0.0);
+    nh_.param("sensor_beam_x", beam_.x, 0.0);
+    nh_.param("sensor_beam_y", beam_.y, 0.0);
+    nh_.param("sensor_beam_z", beam_.z, -1.0);
+    nh_.param("range_frame_id", range_frame_, std::string("tfmini_link"));
+    if (!validConfiguration()) throw std::runtime_error("Invalid localization limits or geometry");
+    position_pub_ = nh_.advertise<geometry_msgs::PoseStamped>("/mavros/vision_pose/pose", 1);
+    status_pub_ = nh_.advertise<std_msgs::String>("status", 1, true);
+    status("STARTING");
+    if (use_range_)
     {
-      transformStamped = tfBuffer.lookupTransform(target_frame_id, source_frame_id, ros::Time(0));
-
-      position.header.stamp = ros::Time::now();
-      position.header.frame_id = transformStamped.header.frame_id;
-
-      position.pose.position.x = transformStamped.transform.translation.x;
-      position.pose.position.y = transformStamped.transform.translation.y;
-
-      // ---- xy 跳变门 ---------------------------------------------------
-      //
-      // 2026-10-17 实机那段日志里，odom 在 0.5 s 内
-      //     (1.95, -0.74) -> (2.57, -0.96) -> (2.86, -0.77) -> (2.52, -0.83)
-      // 而同一时刻 map 稳定在 (2.10, -1.06) 附近。0.35 m/s 的机体不可能在
-      // 50 ms 内走 0.6 m，所以这是局部 SLAM 的跳变，不是飞行。它被原样转发
-      // 给 PX4 之后，EKF 的位置和高度一起被带走 —— 同一段日志里 z 就是在这
-      // 之后开始 5 m/s 地下滑。
-      //
-      // 拒收时保持上一次有效值（继续以原频率发布，不能让 EKF 饿死）；连续
-      // tf_pose_jump_override 帧都越界则认为是真的重定位，重建基准。
+      std::string imu_topic, range_topic;
+      nh_.param("imu_topic", imu_topic, std::string("/mavros/imu/data"));
+      imu_sub_ = nh_.subscribe(imu_topic, 5, &LocalizationBridge::imuCallback, this);
+      if (range_type_ == "topic")
       {
-        const double tx = position.pose.position.x;
-        const double ty = position.pose.position.y;
-        const bool jumped = have_ok_xy &&
-                            std::hypot(tx - last_ok_x, ty - last_ok_y) > tf_pose_max_jump;
-        const bool accept = !jumped || xy_reject_streak >= tf_pose_jump_override;
-        if (accept)
-        {
-          if (jumped)
-          {
-            ROS_WARN("TF pose moved %.3f m in one cycle; re-baselining after %d "
-                     "rejected frames (SLAM relocalisation, not flight)",
-                     std::hypot(tx - last_ok_x, ty - last_ok_y), xy_reject_streak);
-          }
-          last_ok_x = tx;
-          last_ok_y = ty;
-          have_ok_xy = true;
-          xy_reject_streak = 0;
-        }
-        else
-        {
-          ++xy_reject_streak;
-          ROS_WARN_THROTTLE(1.0,
-                            "TF pose rejected: (%.2f, %.2f) is %.3f m from the last "
-                            "good (%.2f, %.2f), %d in a row. Forwarding a SLAM jump "
-                            "to vision_pose hands it straight to the EKF.",
-                            tx, ty, std::hypot(tx - last_ok_x, ty - last_ok_y),
-                            last_ok_x, last_ok_y, xy_reject_streak);
-          position.pose.position.x = last_ok_x;
-          position.pose.position.y = last_ok_y;
-        }
+        nh_.param("range_topic", range_topic, std::string("/location_test/range"));
+        range_sub_ = nh_.subscribe(range_topic, 5, &LocalizationBridge::rangeCallback, this);
       }
-
-      // cout << "use_tf_mini:" << use_tf_mini << endl;
-      // cout << "dist:" << dist << endl;
-      if (use_tf_mini)
+      else if (range_type_ == "i2c")
       {
-        const double raw = static_cast<double>(dist.load());
-        const bool in_range = raw >= tf_mini_min_range && raw <= tf_mini_max_range;
-        const bool jumped = last_accepted_raw >= 0.0 &&
-                            std::fabs(raw - last_accepted_raw) > tf_mini_max_delta;
-        // 连续越界超过 tf_mini_jump_override 个周期，就认为"世界真的变了"
-        // （起飞、下降、被重新安装），重建基准。否则一次拒收会永久拒收。
-        const bool accept_jump = jumped && reject_streak >= tf_mini_jump_override;
-
-        if (in_range && (!jumped || accept_jump))
-        {
-          if (!height_from_tf_mini)
-          {
-            ROS_WARN("Using TF mini's height (raw %.3f m).", raw);
-            height_from_tf_mini = true;
-          }
-          if (accept_jump)
-          {
-            ROS_WARN("TF mini moved %.3f m in one step; re-baselining after %d "
-                     "rejected reads", raw - last_accepted_raw, reject_streak);
-          }
-          last_accepted_raw = raw;
-          reject_streak = 0;
-
-          double z = raw - tf_mini_height;
-          if (z < tf_mini_z_min || z > tf_mini_z_max)
-          {
-            ROS_WARN_THROTTLE(1.0,
-                              "TF mini raw %.3f m -> z %.3f m is outside [%.2f, %.2f]; "
-                              "clamping. tf_mini_height=%.3f is probably wrong or the "
-                              "beam is not looking at the floor.",
-                              raw, z, tf_mini_z_min, tf_mini_z_max, tf_mini_height);
-            z = std::min(std::max(z, tf_mini_z_min), tf_mini_z_max);
-          }
-          position.pose.position.z = z;
-          last_valid_tf_z = z;
-          have_valid_tf_z = true;
-        }
-        else
-        {
-          ++reject_streak;
-          // 无论以前有没有在"用 TF mini"，拒收都要能看见 —— 只打一次的话，
-          // 传感器之后整段失效在日志里就是静默的。
-          ROS_WARN_THROTTLE(1.0,
-                            "TF mini reading %.3f m rejected (%s), %d in a row; "
-                            "holding the last good height%s. A bad ranging value used "
-                            "to go straight into vision_pose and take the EKF's z "
-                            "with it.",
-                            raw,
-                            in_range ? "step change too large" : "outside range",
-                            reject_streak,
-                            have_valid_tf_z ? "" : " - none yet, publishing the previous z");
-          height_from_tf_mini = false;
-          if (have_valid_tf_z)
-          {
-            position.pose.position.z = last_valid_tf_z;
-          }
-        }
+        int bus, address;
+        nh_.param("bus", bus, 6); nh_.param("address", address, 16);
+        if (bus < 0 || bus > 255 || address < 0x03 || address > 0x77)
+          throw std::runtime_error("Invalid I2C bus/address");
+        i2c_.reset(new TFMiniPro(static_cast<uint8>(address), static_cast<uint8>(bus)));
+        height_timer_ = nh_.createTimer(ros::Duration(0.05), &LocalizationBridge::readHardware, this);
       }
-      else
+      else if (range_type_ == "uart")
       {
-        position.pose.position.z = transformStamped.transform.translation.z;
-        if (height_from_tf_mini)
-        {
-          if (rplidar_location)
-            ROS_WARN("TF mini is not using, height is 0!");
-          else
-            ROS_WARN("TF mini is not using, use T265's height!");
-          height_from_tf_mini = false;
-        }
+        std::string port; int baud;
+        nh_.param("serial_port", port, std::string("/dev/ttyUSB0"));
+        nh_.param("baud_rate", baud, 115200);
+        uart_.reset(new benewake::TFplus(port, baud));
+        if (!uart_->isOpen()) throw std::runtime_error("TFmini UART unavailable");
+        height_timer_ = nh_.createTimer(ros::Duration(0.05), &LocalizationBridge::readHardware, this);
       }
-
-      if (!rplidar_location)
-      {
-        quat_obj = tf2::Quaternion(transformStamped.transform.rotation.x, transformStamped.transform.rotation.y, transformStamped.transform.rotation.z, transformStamped.transform.rotation.w);
-
-        quat_body.setRPY(roll_obj, pitch_obj, yaw_obj);
-        quat_body = quat_obj * quat_body;
-        quat_body.normalize();
-
-        position.pose.orientation.x = quat_body.x();
-        position.pose.orientation.y = quat_body.y();
-        position.pose.orientation.z = quat_body.z();
-        position.pose.orientation.w = quat_body.w();
-      }
-      else
-      {
-        position.pose.orientation = transformStamped.transform.rotation;
-      }
-      position_pub.publish(position);
-      if (rplidar_location)
-        ROS_WARN_ONCE("publish pose from rplidar");
-      else
-        ROS_WARN_ONCE("publish pose from t265");
-
-      // body_path.header.stamp = cur_position.header.stamp;
-      // body_path.header.frame_id = cur_position.header.frame_id;
-      // body_path.poses.push_back(cur_position);
-      // body_path_pubisher.publish(body_path);
+      else throw std::runtime_error("tf_mini_type must be i2c, uart or topic");
     }
+    pose_timer_ = nh_.createTimer(ros::Duration(1.0/publish_rate_), &LocalizationBridge::publish, this);
   }
-  catch (tf2::TransformException &ex)
+private:
+  bool validConfiguration() const
   {
-    ROS_WARN("%s", ex.what());
+    return std::isfinite(publish_rate_) && publish_rate_ > 0.0 && publish_rate_ <= 100.0 &&
+      std::isfinite(tf_timeout_) && std::isfinite(range_timeout_) && std::isfinite(imu_timeout_) &&
+      tf_timeout_ > 0.0 && range_timeout_ > 0.0 && imu_timeout_ > 0.0 &&
+      range_gate_.minimum > 0.0 && range_gate_.maximum > range_gate_.minimum &&
+      std::isfinite(range_gate_.maximum) && std::isfinite(range_gate_.max_delta) &&
+      range_gate_.max_delta > 0.0 && range_gate_.confirmations_required > 0 &&
+      std::isfinite(position_gate_.max_delta) &&
+      position_gate_.max_delta > 0.0 && position_gate_.confirmations_required > 0 &&
+      std::isfinite(ground_clearance_) && ground_clearance_ >= 0.0 &&
+      std::isfinite(z_min_) && std::isfinite(z_max_) && z_min_ < z_max_ &&
+      max_tilt_ > 0.0 && max_tilt_ < 80.0 && location_guard::norm(beam_) > 1e-6 &&
+      std::isfinite(location_guard::norm(beam_)) && std::isfinite(location_guard::norm(offset_));
   }
-}
-
-void height_listener(const ros::TimerEvent &event)
-{
-  while (ros::master::check() && ros::ok())
+  void status(const std::string &text)
   {
-    if (tf_mini_type == "i2c")
-    {
-      dist.store(tf_mini_plus_->ReadData());
-      ros::Duration(0.01).sleep();
-    }
-    else
-    {
-      dist.store(tfplus_obj->getDist());
-    }
+    if (last_status_ == text) return;
+    last_status_ = text;
+    std_msgs::String message; message.data = text; status_pub_.publish(message);
+    if (text == "READY") ROS_INFO("location: READY");
+    else ROS_WARN("location: %s; vision pose withheld", text.c_str());
   }
-}
-
+  void observeRange(double range, const ros::Time &stamp)
+  {
+    if (!location_guard::fresh(stamp.toSec(), ros::Time::now().toSec(), range_timeout_)) return;
+    std::lock_guard<std::mutex> lock(input_mutex_);
+    if (!range_gate_.observe(range, stamp.toSec()))
+      ROS_WARN_THROTTLE(2.0, "location: range sample rejected (range, jump, or repeated timestamp)");
+  }
+  void rangeCallback(const sensor_msgs::RangeConstPtr &message)
+  {
+    if (message->header.frame_id != range_frame_) return;
+    if (message->range < message->min_range || message->range > message->max_range) return;
+    observeRange(message->range, message->header.stamp);
+  }
+  void imuCallback(const sensor_msgs::ImuConstPtr &message)
+  {
+    if (message->header.frame_id != source_frame_ || message->orientation_covariance[0] < 0.0 ||
+        !location_guard::fresh(message->header.stamp.toSec(), ros::Time::now().toSec(), imu_timeout_)) return;
+    const auto &q = message->orientation;
+    location_guard::Quaternion candidate{q.x,q.y,q.z,q.w};
+    location_guard::Vector ignored{};
+    if (!location_guard::rotate(candidate, beam_, ignored)) return;
+    std::lock_guard<std::mutex> lock(input_mutex_);
+    if (message->header.stamp <= imu_stamp_) return;
+    attitude_ = candidate; imu_stamp_ = message->header.stamp;
+  }
+  void readHardware(const ros::TimerEvent &)
+  {
+    std::lock_guard<std::mutex> hardware_lock(hardware_mutex_);
+    try { observeRange(i2c_ ? i2c_->ReadData() : uart_->getDist(), ros::Time::now()); }
+    catch (const std::exception &error) { ROS_WARN_THROTTLE(2.0, "location: TFmini read: %s", error.what()); }
+  }
+  void publish(const ros::TimerEvent &)
+  {
+    std::lock_guard<std::mutex> publish_lock(publish_mutex_);
+    // The installed SLAM is 2D; disabling the independent height sensor is
+    // not permission to send its zero z to PX4 as a complete 3D observation.
+    if (!use_range_) { status("HEIGHT_DISABLED"); return; }
+    geometry_msgs::TransformStamped transform;
+    try { transform = buffer_.lookupTransform(target_frame_, source_frame_, ros::Time(0)); }
+    catch (const tf2::TransformException &) { status("WAIT_TF"); return; }
+    const ros::Time now = ros::Time::now();
+    if (!location_guard::fresh(transform.header.stamp.toSec(), now.toSec(), tf_timeout_))
+    { status("TF_STALE"); return; }
+    const auto &translation = transform.transform.translation;
+    const auto &rotation = transform.transform.rotation;
+    location_guard::Vector ignored{};
+    if (!std::isfinite(translation.z) ||
+        !location_guard::rotate({rotation.x,rotation.y,rotation.z,rotation.w}, beam_, ignored))
+    { status("TF_INVALID"); return; }
+    if (!position_gate_.observe(translation.x, translation.y, transform.header.stamp.toSec()))
+    { status("TF_JUMP"); return; }
+    geometry_msgs::PoseStamped message;
+    message.header = transform.header;
+    message.pose.position.x = translation.x; message.pose.position.y = translation.y;
+    message.pose.orientation = rotation;
+    double height = translation.z;
+    if (use_range_)
+    {
+      double range, range_stamp; location_guard::Quaternion attitude; ros::Time imu_stamp;
+      {
+        std::lock_guard<std::mutex> lock(input_mutex_);
+        if (!range_gate_.valid()) { status("WAIT_RANGE"); return; }
+        range = range_gate_.value(); range_stamp = range_gate_.stamp();
+        attitude = attitude_; imu_stamp = imu_stamp_;
+      }
+      if (!location_guard::fresh(range_stamp, now.toSec(), range_timeout_))
+      { status("RANGE_STALE"); return; }
+      if (!location_guard::fresh(imu_stamp.toSec(), now.toSec(), imu_timeout_))
+      { status("IMU_STALE"); return; }
+      if (!calibrated_) { status("HEIGHT_REFERENCE_UNCALIBRATED"); return; }
+      if (!location_guard::projectHeight(range, attitude, beam_, offset_, ground_clearance_,
+                                        max_tilt_, z_min_, z_max_, height))
+      { status("HEIGHT_GEOMETRY_OR_LIMIT"); return; }
+      tf2::Quaternion imu(attitude.x,attitude.y,attitude.z,attitude.w); imu.normalize();
+      tf2::Quaternion slam(rotation.x,rotation.y,rotation.z,rotation.w); slam.normalize();
+      double roll,pitch,yaw,unused_roll,unused_pitch;
+      tf2::Matrix3x3(imu).getRPY(roll,pitch,yaw);
+      tf2::Matrix3x3(slam).getRPY(unused_roll,unused_pitch,yaw);
+      tf2::Quaternion combined; combined.setRPY(roll,pitch,yaw);
+      message.pose.orientation.x=combined.x(); message.pose.orientation.y=combined.y();
+      message.pose.orientation.z=combined.z(); message.pose.orientation.w=combined.w();
+      message.header.stamp.fromSec(std::min(transform.header.stamp.toSec(),
+                                           std::min(range_stamp, imu_stamp.toSec())));
+    }
+    if (!std::isfinite(height) || height < z_min_ || height > z_max_)
+    { status("Z_OUT_OF_RANGE"); return; }
+    message.pose.position.z = height;
+    position_pub_.publish(message);
+    status("READY");
+  }
+  ros::NodeHandle nh_;
+  tf2_ros::Buffer buffer_;
+  tf2_ros::TransformListener listener_;
+  ros::Publisher position_pub_, status_pub_;
+  ros::Subscriber imu_sub_, range_sub_;
+  ros::Timer height_timer_, pose_timer_;
+  std::unique_ptr<TFMiniPro> i2c_;
+  std::unique_ptr<benewake::TFplus> uart_;
+  std::mutex input_mutex_, publish_mutex_, hardware_mutex_;
+  location_guard::RangeGate range_gate_;
+  location_guard::PositionGate position_gate_;
+  location_guard::Quaternion attitude_{0.0,0.0,0.0,0.0};
+  location_guard::Vector offset_{0.0,0.0,0.0}, beam_{0.0,0.0,-1.0};
+  ros::Time imu_stamp_;
+  std::string target_frame_, source_frame_, range_type_, range_frame_, last_status_;
+  bool use_range_=true, calibrated_=false;
+  double publish_rate_=20.0, tf_timeout_=0.25, range_timeout_=0.30, imu_timeout_=0.30;
+  double ground_clearance_=0.09, z_min_=-0.20, z_max_=3.0, max_tilt_=35.0;
+};
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "location");
-  ros::NodeHandle nh_private("~");
-
-  std::string portName;
-
-  nh_private.param("is_simulation", is_simulation, false);
-  nh_private.param("rplidar_location", rplidar_location, true);
-  nh_private.param("use_tf_mini", use_tf_mini, true);
-
-  nh_private.param("target_frame_id", target_frame_id, std::string("odom"));
-  nh_private.param("source_frame_id", source_frame_id, std::string("base_link"));
-  nh_private.param("publish_rate", publish_rate, 30.0);
-
-  if (!rplidar_location)
+  try
   {
-    nh_private.param("roll_obj", roll_obj, 0.0);
-    nh_private.param("pitch_obj", pitch_obj, 0.0);
-    nh_private.param("yaw_obj", yaw_obj, 0.0);
-    quat_body.setRPY(roll_obj, pitch_obj, yaw_obj);
+    LocalizationBridge bridge(ros::NodeHandle("~"));
+    ros::MultiThreadedSpinner spinner(2); spinner.spin();
   }
-
-  nh_private.param("tf_mini_height", tf_mini_height, 0.1);
-  // TF mini 的输入保护，含义见文件上方那段注释。默认值按"向下测地、场地墙高
-  // 3.00 m、飞行高度 1.5 m"给的，不需要在 launch 里写一遍；只有换量程更大的
-  // 型号（TFmini Plus 是 0.1..12 m）或改成朝上安装时才需要动。
-  nh_private.param("tf_mini_min_range", tf_mini_min_range, 0.05);
-  nh_private.param("tf_mini_max_range", tf_mini_max_range, 6.0);
-  nh_private.param("tf_mini_max_delta", tf_mini_max_delta, 0.60);
-  nh_private.param("tf_mini_jump_override", tf_mini_jump_override, 20);
-  nh_private.param("tf_mini_z_min", tf_mini_z_min, -0.20);
-  nh_private.param("tf_mini_z_max", tf_mini_z_max, 3.00);
-  nh_private.param("tf_pose_max_jump", tf_pose_max_jump, 0.30);
-  nh_private.param("tf_pose_jump_override", tf_pose_jump_override, 10);
-  ROS_INFO("TF mini gate: accept %.3f..%.3f m, max step %.3f m (%d rejected reads "
-           "before re-baselining), z clamped to [%.2f, %.2f], tf_mini_height=%.3f",
-           tf_mini_min_range, tf_mini_max_range, tf_mini_max_delta,
-           tf_mini_jump_override, tf_mini_z_min, tf_mini_z_max, tf_mini_height);
-  ROS_INFO("vision_pose gate: xy jump > %.3f m in one cycle is rejected for up to "
-           "%d frames before re-baselining (target frame '%s', source '%s')",
-           tf_pose_max_jump, tf_pose_jump_override,
-           target_frame_id.c_str(), source_frame_id.c_str());
-  nh_private.param("tf_mini_type", tf_mini_type, std::string("i2c"));
-  nh_private.param("bus", bus, 1);
-  nh_private.param("address", address, 0);
-
-  nh_private.param("serial_port", portName, std::string("/dev/ttyUSB0"));
-  nh_private.param("baud_rate", baud_rate, 115200);
-
-  // cout << "target_frame_id:" << target_frame_id << endl;
-  // cout << "source_frame_id:" << source_frame_id << endl;
-  // cout << "output_rate:" << output_rate << endl;
-  // cout << "roll_obj:" << roll_obj << endl;
-  // cout << "pitch_obj:" << pitch_obj << endl;
-  // cout << "yaw_obj:" << yaw_obj << endl;
-  // cout << "use_tf_mini:" << use_tf_mini << endl;
-
-  tf2_ros::TransformListener tfListener(tfBuffer);
-  // Release timer handles inside main, before the static ROS TimerManager.
-  ros::Timer height_timer;
-  ros::Timer timer = nh_private.createTimer(ros::Duration(1.0 / publish_rate), &position_listener); // Define timer for constant loop rate
-
-  // ros::Duration(1.0).sleep();
-  if (!is_simulation)
-  {
-    if (use_tf_mini)
-    {
-      height_timer = nh_private.createTimer(ros::Duration(0.01), &height_listener, true);
-      if (tf_mini_type == "i2c")
-      {
-        tf_mini_plus_ = std::make_unique<TFMiniPro>(address, bus);  // 使用智能指针
-        ROS_INFO("Range sensor ready on i2c bus: %i, address: 0x%x.", bus, address);
-      }
-      else
-      {
-        tfplus_obj = std::make_unique<benewake::TFplus>(portName, baud_rate);  // 使用智能指针
-      }
-      height_from_tf_mini = false;
-    }
-    else
-      height_from_tf_mini = true;
-  }
-  else
-  {
-    use_tf_mini = false;
-  }
-
-  position_pub = nh_private.advertise<geometry_msgs::PoseStamped>("/mavros/vision_pose/pose", 1);
-
-  ros::MultiThreadedSpinner s(3);
-  ros::spin(s);
+  catch (const std::exception &error)
+  { ROS_FATAL("location: %s", error.what()); return 1; }
   return 0;
 }

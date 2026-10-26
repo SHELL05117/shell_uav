@@ -1,46 +1,27 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>navigation_2d</name>
-  <version>0.0.0</version>
-  <description>The navigation_2d package</description>
+  <version>0.2.0</version>
+  <description>2026 fire-and-rescue mission: field-frame waypoints, RKNN detection, two-stage drops.</description>
 
-  <maintainer email="expload233@gmail.com">Bingo</maintainer>
-  <author email="expload233@gmail.com">Bingo</author>
-  <license>pirvate-nbut</license>
+  <maintainer email="expload233@gmail.com">expload</maintainer>
+  <author email="expload233@gmail.com">expload</author>
+  <license>proprietary</license>
 
-  <url type="website">http://www.9h.pw/</url>
-  <url type="repository">https://github.com/expload233/26zjgc.git</url>
-
-  <build_depend>message_generation</build_depend>
-  <build_export_depend>message_generation</build_export_depend>
-  <exec_depend>message_runtime</exec_depend>
-  <exec_depend>ego_planner_2d</exec_depend>
-  <exec_depend>servo_control</exec_depend>
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>geometry_msgs</build_depend>
-  <build_depend>mavros_msgs</build_depend>
-  <build_depend>nav_msgs</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>actionlib_msgs</build_depend>
-  <build_depend>tf</build_depend>
-  <!-- MissionVision 消费 ssd_detection 的检测消息，而且 navigation_2d.launch
-       用 $(find ssd_detection) include 它的 launch —— 后者让这成为运行时依赖，
-       不只是编译期依赖：包不在，roslaunch 直接起不来。 -->
-  <build_depend>ssd_detection</build_depend>
-  <build_export_depend>ssd_detection</build_export_depend>
-  <exec_depend>ssd_detection</exec_depend>
 
-  <build_export_depend>roscpp</build_export_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>mavros_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>actionlib</depend>
+  <depend>move_base_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
 
-  <exec_depend>roscpp</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-  <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>mavros_msgs</exec_depend>
-  <exec_depend>nav_msgs</exec_depend>
-  <exec_depend>sensor_msgs</exec_depend>
-  <exec_depend>actionlib_msgs</exec_depend>
-  <exec_depend>tf</exec_depend>
-  <test_depend>gtest</test_depend>
+  <exec_depend>move_base</exec_depend>
+  <exec_depend>dwa_local_planner</exec_depend>
+  <exec_depend>servo_control</exec_depend>
 </package>

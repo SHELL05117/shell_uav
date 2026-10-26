@@ -1,34 +1,13 @@
 <launch>
+  <!-- RPLIDAR S2 只有一种波特率和一种推荐扫描模式，所以不再留 S2 开关。 -->
+  <arg name="serial_port" default="/dev/ttyUSB0" />
 
-  <arg name="serial_port" default="/dev/ttyUSB0"/>
-  <arg name="S2" default="true" />
-  <!-- <arg name="lidar_topic" default="/lidar2Dscan" /> -->
-  <group if="$(arg S2)">
-    <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
-      <!-- <remap from ="/scan" to="$(arg lidar_topic)"/> -->
-      <param name="serial_port" type="string" value="$(arg serial_port)"/>
-      <param name="serial_baudrate" type="int" value="1000000"/>
-      <param name="frame_id" type="string" value="laser_link"/>
-      <param name="inverted" type="bool" value="false"/>
-      <param name="angle_compensate" type="bool" value="true"/>
-      <param name="scan_mode" type="string" value="DenseBoost"/>
-    </node>
-  </group>
-
-  <!--A3 -->
-  <group unless="$(arg S2)">
-    <node name="rplidarNode"  pkg="rplidar_ros" type="rplidarNode" output="screen">
-      <!-- <remap from ="/scan"    to="$(arg lidar_topic)"/> -->
-      <param name="serial_port" type="string" value="$(arg serial_port)"/>
-      <param name="serial_baudrate" type="int" value="256000"/>
-      <param name="frame_id" type="string" value="laser_link"/>
-      <param name="inverted" type="bool" value="false"/>
-      <param name="angle_compensate" type="bool" value="true"/>
-      <param name="scan_mode" type="string" value="Sensitivity"/>
-    </node>
-  </group>
-
-
-
-
+  <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
+    <param name="serial_port" type="string" value="$(arg serial_port)" />
+    <param name="serial_baudrate" type="int" value="1000000" />
+    <param name="frame_id" type="string" value="laser_link" />
+    <param name="inverted" type="bool" value="false" />
+    <param name="angle_compensate" type="bool" value="true" />
+    <param name="scan_mode" type="string" value="DenseBoost" />
+  </node>
 </launch>

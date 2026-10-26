@@ -1,160 +1,102 @@
 #include <TFplus.h>
-#include <ros/ros.h>
-
-// #define DEBUG
+#include <localization_guard.h>
+#include <chrono>
+#include <poll.h>
+#include <stdexcept>
+#include <system_error>
+#include <vector>
 
 namespace benewake
 {
-  bool is_open = false;
-
-  TFplus::TFplus(std::string _name, int _baudRate) : portName_(_name), baudRate_(_baudRate)
+TFplus::TFplus(std::string name, int baud) : portName_(name), baudRate_(baud)
+{
+  serial_ = open(name.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK);
+  if (serial_ < 0) throw std::system_error(errno, std::generic_category(), "TFmini UART open");
+  try
   {
-    serial_ = open(_name.c_str(), O_RDWR);
-    if (serial_ == -1)
-    {
-      ROS_ERROR_STREAM("Failed to open serial port!");
-      exit(0);
-    }
-
     struct termios options;
     if (tcgetattr(serial_, &options) != 0)
+      throw std::system_error(errno, std::generic_category(), "TFmini UART termios");
+    speed_t speed;
+    switch (baud)
     {
-      ROS_ERROR_STREAM("Can't get serial port sets!");
-      exit(0);
+      case 921600: speed=B921600; break;
+      case 576000: speed=B576000; break;
+      case 500000: speed=B500000; break;
+      case 460800: speed=B460800; break;
+      case 230400: speed=B230400; break;
+      case 115200: speed=B115200; break;
+      case 57600: speed=B57600; break;
+      case 38400: speed=B38400; break;
+      case 19200: speed=B19200; break;
+      case 9600: speed=B9600; break;
+      case 4800: speed=B4800; break;
+      default: throw std::invalid_argument("Unsupported TFmini UART baud rate");
     }
-    tcflush(serial_, TCIFLUSH);
-    switch (_baudRate)
-    {
-    case 921600:
-      cfsetispeed(&options, B921600);
-      cfsetospeed(&options, B921600);
-      break;
-    case 576000:
-      cfsetispeed(&options, B576000);
-      cfsetospeed(&options, B576000);
-      break;
-    case 500000:
-      cfsetispeed(&options, B500000);
-      cfsetospeed(&options, B500000);
-      break;
-    case 460800:
-      cfsetispeed(&options, B460800);
-      cfsetospeed(&options, B460800);
-      break;
-    case 230400:
-      cfsetispeed(&options, B230400);
-      cfsetospeed(&options, B230400);
-      break;
-    case 115200:
-      cfsetispeed(&options, B115200);
-      cfsetospeed(&options, B115200);
-      break;
-    case 57600:
-      cfsetispeed(&options, B57600);
-      cfsetospeed(&options, B57600);
-      break;
-    case 38400:
-      cfsetispeed(&options, B38400);
-      cfsetospeed(&options, B38400);
-      break;
-    case 19200:
-      cfsetispeed(&options, B19200);
-      cfsetospeed(&options, B19200);
-      break;
-    case 9600:
-      cfsetispeed(&options, B9600);
-      cfsetospeed(&options, B9600);
-      break;
-    case 4800:
-      cfsetispeed(&options, B4800);
-      cfsetospeed(&options, B4800);
-      break;
-    default:
-      ROS_ERROR_STREAM("Unsupported baud rate!");
-      exit(0);
-    }
-    options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
-    options.c_oflag &= ~OPOST;
-    options.c_iflag &= ~(IXON | IXOFF | IXANY);
-    options.c_iflag &= ~(INLCR | ICRNL | IGNCR);
-    options.c_oflag &= ~(ONLCR | OCRNL);
+    cfmakeraw(&options);
+    options.c_cflag &= ~(CSIZE | PARENB | CSTOPB | CRTSCTS);
+    options.c_cflag |= CLOCAL | CREAD | CS8;
+    options.c_cc[VMIN]=0; options.c_cc[VTIME]=0;
+    cfsetispeed(&options,speed); cfsetospeed(&options,speed);
     if (tcsetattr(serial_, TCSANOW, &options) != 0)
-    {
-      ROS_ERROR_STREAM("Can't set serial port options!");
-      exit(0);
-    }
-    is_open = true;
+      throw std::system_error(errno, std::generic_category(), "TFmini UART configure");
+    tcflush(serial_,TCIFLUSH);
+    is_open_=true;
   }
+  catch (...) { closePort(); throw; }
+}
+TFplus::~TFplus() { closePort(); }
 
-  bool TFplus::readData(unsigned char *_buf, int _nRead)
+float TFplus::getDist()
+{
+  if (!is_open_) return -1.0f;
+  // No cached serial byte can become a newly timed measurement. Discard the
+  // entire pre-call backlog, then require a complete frame received after this
+  // boundary. Hardware-read timestamps still do not claim a sensor-side clock.
+  if (tcflush(serial_,TCIFLUSH)!=0) return -1.0f;
+  const auto deadline=std::chrono::steady_clock::now()+std::chrono::milliseconds(300);
+  std::vector<unsigned char> pending;
+  pending.reserve(1024);
+  float latest=-1.0f;
+  while (std::chrono::steady_clock::now()<deadline)
   {
-    int total = 0, ret = 0;
-
-    while (total != _nRead)
+    const auto left=std::chrono::duration_cast<std::chrono::milliseconds>(
+        deadline-std::chrono::steady_clock::now()).count();
+    struct pollfd waiter{serial_,POLLIN,0};
+    const int ready=poll(&waiter,1,latest>=0.0f ? 2 : static_cast<int>(std::max<long long>(1,left)));
+    if (ready<0 && errno==EINTR) continue;
+    if (ready<0 || (waiter.revents & (POLLERR|POLLHUP|POLLNVAL))) return -1.0f;
+    if (ready==0) return latest;
+    unsigned char chunk[512];
+    const ssize_t got=read(serial_,chunk,sizeof(chunk));
+    if (got<0 && (errno==EAGAIN || errno==EINTR)) continue;
+    if (got<=0) return -1.0f;
+    pending.insert(pending.end(),chunk,chunk+got);
+    while (pending.size()>=9)
     {
-      ret = read(serial_, _buf + total, (_nRead - total));
-      if (ret < 0)
+      if (!location_guard::validSerialFrame(pending.data(),9))
       {
-        return false;
+        pending.erase(pending.begin());
+        continue;
       }
-      total += ret;
+      const unsigned distance=pending[2] | (static_cast<unsigned>(pending[3])<<8);
+      if (distance>0)
+      {
+        latest=static_cast<float>(distance)/100.0f;
+        std::copy(pending.begin()+2,pending.begin()+9,dataBuf);
+      }
+      pending.erase(pending.begin(),pending.begin()+9);
     }
-#ifdef DEBUG
-    for (int i = 0; i < _nRead; i++)
-    {
-      printf("%02x ", _buf[i]);
-    }
-    printf("\n");
-#endif // DEBUG
-
-    return true;
+    // Drain all currently available bytes before returning the newest complete
+    // frame, including bursts larger than one read(). Partial frames are never
+    // retained across calls, and silence on the next call returns failure.
   }
-
-  float TFplus::getDist()
-  {
-    while (true)
-    {
-      if (readData(dataBuf, 2))
-      {
-        if (dataBuf[0] == 0x59 && dataBuf[1] == 0x59)
-          break;
-      }
-      else
-      {
-        return -1.0;
-      }
-    }
-
-    if (readData(dataBuf, 7))
-    {
-      int sumCheck = (0x59 + 0x59) % 256;
-      for (int i = 0; i < 6; i++)
-      {
-        sumCheck = (sumCheck + dataBuf[i]) % 256;
-      }
-
-      if (sumCheck == dataBuf[6])
-      {
-        return ((float)(dataBuf[1] << 8 | dataBuf[0]) / 100.0);
-      }
-      else
-      {
-        return 0.0;
-      }
-    }
-    else
-    {
-      return -1.0;
-    }
-  }
-
-  void TFplus::closePort()
-  {
-    close(serial_);
-  }
-
-  bool TFplus::isOpen()
-  {
-    return is_open;
-  }
+  return latest;
+}
+void TFplus::closePort()
+{
+  if (serial_>=0) close(serial_);
+  serial_=-1; is_open_=false;
+}
+bool TFplus::isOpen() { return is_open_; }
 }

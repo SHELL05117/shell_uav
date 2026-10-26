@@ -1,0 +1,9 @@
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+input index=0 name=images_169 n_dims=4 dims=416,416,3,1 fmt=0 type=3 qnt_type=2 zp=0 scale=0.00392157 n_elems=519168 size=519168
+output index=0 name=Transpose_/model.24/Transpose/out0_0 n_dims=5 dims=9,52,52,3,1 fmt=0 type=3 qnt_type=2 zp=176 scale=0.087075 n_elems=73008 size=73008
+output index=1 name=Transpose_/model.24/Transpose_1/out0_1 n_dims=5 dims=9,26,26,3,1 fmt=0 type=3 qnt_type=2 zp=171 scale=0.0715254 n_elems=18252 size=18252
+output index=2 name=Transpose_/model.24/Transpose_2/out0_2 n_dims=5 dims=9,13,13,3,1 fmt=0 type=3 qnt_type=2 zp=165 scale=0.0631721 n_elems=4563 size=4563

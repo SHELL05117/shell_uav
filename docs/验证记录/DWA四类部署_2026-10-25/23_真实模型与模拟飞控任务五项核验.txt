@@ -1,0 +1,94 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{"all_fcu_state_synthetic": true, "controls": 0, "exit_code": 2, "gpio": 0, "name": "missing_model", "passed": true, "services": 0}
+{"all_fcu_state_synthetic": true, "controls": 0, "exit_code": 0, "gpio": 0, "name": "dry_run", "passed": true, "readiness": {"actuation_enabled": false, "fcu_fresh": true, "frame_fresh": true, "hazard_detection": "pending", "inference_ready": true, "model_loaded": true, "person_detection": "pending", "phase": 0, "pose_fresh": true, "tf_fresh": true}, "services": 0}
+{"all_fcu_state_synthetic": true, "error": "RuntimeError(\"Acceptance failed: control_rotation_and_timeouts {'planner_timeout_zero': True, 'all_fcu_state_synthetic': True, 'planar_norm_limit': True, 'name': 'control_rotation_and_timeouts', 'fake_service_requests': 2, 'takeoff_kept_nonzero_xy': False, 'yaw90_body_to_local': True, 'takeoff_control_samples': 105, 'passed': False, 'stale_pose_stops_controls': True, 'rotated_control_samples': 36}\",)", "exit_code": 0, "fake_service_requests": 2, "name": "control_rotation_and_timeouts", "passed": false, "planar_norm_limit": true, "planner_timeout_zero": true, "rotated_control_samples": 36, "stale_pose_stops_controls": true, "takeoff_control_samples": 105, "takeoff_kept_nonzero_xy": false, "yaw90_body_to_local": true}
+Traceback (most recent call last):
+  File "/home/jcfh/shell_dwa_20261025/dwa_mission_probe.py", line 373, in <module>
+{
+  "all_fcu_state_synthetic": true, 
+  "cases": [
+    {
+      "all_fcu_state_synthetic": true, 
+      "controls": 0, 
+      "exit_code": 2, 
+      "gpio": 0, 
+      "name": "missing_model", 
+      "passed": true, 
+      "services": 0
+    }, 
+    {
+      "all_fcu_state_synthetic": true, 
+      "controls": 0, 
+      "exit_code": 0, 
+      "gpio": 0, 
+      "name": "dry_run", 
+      "passed": true, 
+      "readiness": {
+        "actuation_enabled": false, 
+        "fcu_fresh": true, 
+        "frame_fresh": true, 
+        "hazard_detection": "pending", 
+        "inference_ready": true, 
+        "model_loaded": true, 
+        "person_detection": "pending", 
+        "phase": 0, 
+        "pose_fresh": true, 
+        "tf_fresh": true
+      }, 
+      "services": 0
+    }, 
+    {
+      "all_fcu_state_synthetic": true, 
+      "error": "RuntimeError(\"Acceptance failed: control_rotation_and_timeouts {'planner_timeout_zero': True, 'all_fcu_state_synthetic': True, 'planar_norm_limit': True, 'name': 'control_rotation_and_timeouts', 'fake_service_requests': 2, 'takeoff_kept_nonzero_xy': False, 'yaw90_body_to_local': True, 'takeoff_control_samples': 105, 'passed': False, 'stale_pose_stops_controls': True, 'rotated_control_samples': 36}\",)", 
+      "exit_code": 0, 
+      "fake_service_requests": 2, 
+      "name": "control_rotation_and_timeouts", 
+      "passed": false, 
+      "planar_norm_limit": true, 
+      "planner_timeout_zero": true, 
+      "rotated_control_samples": 36, 
+      "stale_pose_stops_controls": true, 
+      "takeoff_control_samples": 105, 
+      "takeoff_kept_nonzero_xy": false, 
+      "yaw90_body_to_local": true
+    }
+  ], 
+  "error": "RuntimeError(\"Acceptance failed: control_rotation_and_timeouts {'planner_timeout_zero': True, 'all_fcu_state_synthetic': True, 'planar_norm_limit': True, 'name': 'control_rotation_and_timeouts', 'fake_service_requests': 2, 'takeoff_kept_nonzero_xy': False, 'yaw90_body_to_local': True, 'takeoff_control_samples': 105, 'passed': False, 'stale_pose_stops_controls': True, 'rotated_control_samples': 36}\",)", 
+  "image_sha256": "536c840fb14970a08177ace89abab974ab0fc668536417b5bc5e9d539f0be6c2", 
+  "images": {
+    "flammable": {
+      "original_height": 5712, 
+      "original_width": 4284, 
+      "path": "/home/jcfh/shell_dwa_20261025/images/IMG_2766.jpg", 
+      "preserved_aspect_ratio": true, 
+      "published_height": 720, 
+      "published_width": 540, 
+      "source_sha256": "536c840fb14970a08177ace89abab974ab0fc668536417b5bc5e9d539f0be6c2", 
+      "upscaled": false
+    }, 
+    "person": {
+      "original_height": 5712, 
+      "original_width": 4284, 
+      "path": "/home/jcfh/shell_dwa_20261025/images/IMG_2706.jpg", 
+      "preserved_aspect_ratio": true, 
+      "published_height": 720, 
+      "published_width": 540, 
+      "source_sha256": "eb576ef761f0919aad0346ad95599d40c049747e76378cbab9cfb3a6161403b3", 
+      "upscaled": false
+    }
+  }, 
+  "master": "127.0.0.1:11332", 
+  "master_exit": 0, 
+  "model_sha256": "d963d19128cad36dcd57ce942a7ca3c2e966bae035a0a60f07b3b6b2a820fc7f", 
+  "passed": false, 
+  "real_mavros_started": false, 
+  "real_npu_inference": true, 
+  "real_servos_started": false
+}
+    main()
+  File "/home/jcfh/shell_dwa_20261025/dwa_mission_probe.py", line 352, in main
+    run_case('control_rotation_and_timeouts',True)
+  File "/home/jcfh/shell_dwa_20261025/dwa_mission_probe.py", line 336, in run_case
+    if not summary['passed']: raise RuntimeError('Acceptance failed: '+name+' '+repr(summary))
+RuntimeError: Acceptance failed: control_rotation_and_timeouts {'planner_timeout_zero': True, 'all_fcu_state_synthetic': True, 'planar_norm_limit': True, 'name': 'control_rotation_and_timeouts', 'fake_service_requests': 2, 'takeoff_kept_nonzero_xy': False, 'yaw90_body_to_local': True, 'takeoff_control_samples': 105, 'passed': False, 'stale_pose_stops_controls': True, 'rotated_control_samples': 36}
+bash: line 3:  5728 Terminated              python2 /home/jcfh/shell_dwa_20261025/dwa_mission_probe.py /home/jcfh/shell_dwa_20261025/mission-run1 --image /home/jcfh/shell_dwa_20261025/images/IMG_2766.jpg --person-image /home/jcfh/shell_dwa_20261025/images/IMG_2706.jpg

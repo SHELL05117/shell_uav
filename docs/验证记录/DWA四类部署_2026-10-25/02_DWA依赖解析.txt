@@ -1,0 +1,32 @@
+ros-melodic-move-base:
+  Installed: (none)
+  Candidate: 1.16.7-1bionic.20221025.215246
+  Version table:
+     1.16.7-1bionic.20221025.215246 500
+        500 https://mirrors.ustc.edu.cn/ros/ubuntu bionic/main arm64 Packages
+ros-melodic-dwa-local-planner:
+  Installed: (none)
+  Candidate: 1.16.7-1bionic.20221025.214639
+  Version table:
+     1.16.7-1bionic.20221025.214639 500
+        500 https://mirrors.ustc.edu.cn/ros/ubuntu bionic/main arm64 Packages
+Inst ros-melodic-move-base (1.16.7-1bionic.20221025.215246 ROS bionic:bionic [arm64])
+Conf ros-melodic-angles (1.9.12-1bionic.20201019.180702 ROS bionic:bionic [arm64])
+Conf ros-melodic-laser-geometry (1.6.7-1bionic.20221025.205015 ROS bionic:bionic [arm64])
+Conf ros-melodic-map-msgs (1.14.1-1bionic.20221025.212622 ROS bionic:bionic [arm64])
+Conf ros-melodic-voxel-grid (1.16.7-1bionic.20221025.184206 ROS bionic:bionic [arm64])
+Conf ros-melodic-costmap-2d (1.16.7-1bionic.20221025.212840 ROS bionic:bionic [arm64])
+Conf ros-melodic-nav-core (1.16.7-1bionic.20221025.213633 ROS bionic:bionic [arm64])
+Conf ros-melodic-base-local-planner (1.16.7-1bionic.20221025.213949 ROS bionic:bionic [arm64])
+Conf ros-melodic-clear-costmap-recovery (1.16.7-1bionic.20221025.214125 ROS bionic:bionic [arm64])
+Conf ros-melodic-dwa-local-planner (1.16.7-1bionic.20221025.214639 ROS bionic:bionic [arm64])
+Conf ros-melodic-move-base-msgs (1.14.1-1bionic.20221025.180308 ROS bionic:bionic [arm64])
+Conf ros-melodic-navfn (1.16.7-1bionic.20221025.214021 ROS bionic:bionic [arm64])
+Conf ros-melodic-rotate-recovery (1.16.7-1bionic.20221025.214600 ROS bionic:bionic [arm64])
+Conf ros-melodic-move-base (1.16.7-1bionic.20221025.215246 ROS bionic:bionic [arm64])
+deb http://mirrors.cloud.tencent.com/ubuntu-ports bionic main restricted universe multiverse
+deb http://mirrors.cloud.tencent.com/ubuntu-ports bionic-updates main restricted universe multiverse
+deb http://mirrors.cloud.tencent.com/ubuntu-ports bionic-security main restricted universe multiverse
+deb [arch=arm64]  https://mirrors.ustc.edu.cn/ros/ubuntu/ bionic main
+deb [arch=arm64]  http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu/ bionic main
+/var/cache/apt/archives/openssh-server_1%3a7.6p1-4ubuntu0.7_arm64.deb

@@ -1,0 +1,123 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{"status": "WAIT_TF", "poses": 0, "z": null, "passed": true, "name": "missing_tf"}
+{"status": "WAIT_RANGE", "poses": 0, "z": null, "passed": true, "name": "missing_range"}
+{"status": "READY", "poses": 10, "z": 0.49999997377395633, "passed": true, "name": "level_height"}
+{"status": "RANGE_STALE", "poses": 0, "z": null, "passed": true, "name": "bad_range_expires"}
+{"status": "READY", "poses": 11, "z": 0.49999997377395633, "passed": true, "name": "range_recovery"}
+{"status": "RANGE_STALE", "poses": 0, "z": null, "passed": true, "name": "cached_range_expires"}
+{"status": "READY", "poses": 10, "z": 0.49999997377395633, "passed": true, "name": "cached_range_recovery"}
+{"status": "TF_STALE", "poses": 0, "z": null, "passed": true, "name": "cached_tf_expires"}
+{"status": "READY", "poses": 11, "z": 0.49999997377395633, "passed": true, "name": "tf_recovery"}
+{"status": "IMU_STALE", "poses": 0, "z": null, "passed": true, "name": "cached_imu_expires"}
+{"status": "READY", "poses": 10, "z": 0.49999997377395633, "passed": true, "name": "imu_recovery"}
+{"status": "READY", "poses": 10, "z": 0.5000000107973886, "passed": true, "name": "tilt_projection"}
+{"status": "HEIGHT_GEOMETRY_OR_LIMIT", "poses": 0, "z": null, "passed": true, "name": "excess_tilt_blocks"}
+{"status": "HEIGHT_REFERENCE_UNCALIBRATED", "poses": 0, "z": null, "passed": true, "name": "uncalibrated_reference_blocks"}
+{
+  "cases": [
+    {
+      "name": "missing_tf", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "WAIT_TF", 
+      "z": null
+    }, 
+    {
+      "name": "missing_range", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "WAIT_RANGE", 
+      "z": null
+    }, 
+    {
+      "name": "level_height", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "bad_range_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "RANGE_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "range_recovery", 
+      "passed": true, 
+      "poses": 11, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "cached_range_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "RANGE_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "cached_range_recovery", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "cached_tf_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "TF_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "tf_recovery", 
+      "passed": true, 
+      "poses": 11, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "cached_imu_expires", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "IMU_STALE", 
+      "z": null
+    }, 
+    {
+      "name": "imu_recovery", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.49999997377395633
+    }, 
+    {
+      "name": "tilt_projection", 
+      "passed": true, 
+      "poses": 10, 
+      "status": "READY", 
+      "z": 0.5000000107973886
+    }, 
+    {
+      "name": "excess_tilt_blocks", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "HEIGHT_GEOMETRY_OR_LIMIT", 
+      "z": null
+    }, 
+    {
+      "name": "uncalibrated_reference_blocks", 
+      "passed": true, 
+      "poses": 0, 
+      "status": "HEIGHT_REFERENCE_UNCALIBRATED", 
+      "z": null
+    }
+  ], 
+  "exits": {
+    "bridge": 0, 
+    "master": 0, 
+    "uncalibrated-bridge": 0
+  }, 
+  "passed": true
+}

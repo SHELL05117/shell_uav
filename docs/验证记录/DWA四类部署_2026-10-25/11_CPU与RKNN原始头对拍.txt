@@ -1,0 +1,8 @@
+{
+  "protocol": "12 unchanged frozen images; supplied four-class labels/anchors; fixed416 RGB; raw logits; conf0.5 NMS0.45; independent regression, not a blind accuracy test",
+  "all_raw_finite": true,
+  "mean_head_abs": 0.4295312940246529,
+  "minimum_head_correlation": 0.9317923379418486,
+  "cpu_detection_count": 10,
+  "rknn_detection_count": 10
+}

@@ -1,0 +1,66 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{"global_plans": 76, "name": "straight", "plugin": "dwa_local_planner/DWAPlannerROS", "velocity_samples": 37, "reached_goal_error": 0.09507326942390086, "passed": true, "initial_yaw": 0.0, "cancelled_action_zero_velocity": true, "velocity_limits": {"y": 0.4, "x": 0.4, "translation": 0.45, "angular": 0.0}, "mean_body_velocity": [0.19505962840205915, -0.0003971898223499994]}
+{"global_plans": 70, "name": "yaw90", "plugin": "dwa_local_planner/DWAPlannerROS", "velocity_samples": 37, "reached_goal_error": 0.09690220317842141, "passed": true, "initial_yaw": 1.5707963267948966, "cancelled_action_zero_velocity": true, "velocity_limits": {"y": 0.4, "x": 0.4, "translation": 0.45, "angular": 0.0}, "mean_body_velocity": [-0.016088172674146237, -0.19408283040330215]}
+Traceback (most recent call last):
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 346, in <module>
+    main()
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 325, in main
+    run_case('obstacle',0.0,obstacle=True)
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 257, in run_case
+    else: raise RuntimeError(namespace+' goal timeout at '+repr(pose))
+RuntimeError: dwa_obstacle goal timeout at [-0.6311476002307598, -0.8281470194078152, 0.0]
+{
+  "aircraft_footprint_measured": false, 
+  "cases": [
+    {
+      "cancelled_action_zero_velocity": true, 
+      "global_plans": 76, 
+      "initial_yaw": 0.0, 
+      "mean_body_velocity": [
+        0.19505962840205915, 
+        -0.0003971898223499994
+      ], 
+      "name": "straight", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.09507326942390086, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 37
+    }, 
+    {
+      "cancelled_action_zero_velocity": true, 
+      "global_plans": 70, 
+      "initial_yaw": 1.5707963267948966, 
+      "mean_body_velocity": [
+        -0.016088172674146237, 
+        -0.19408283040330215
+      ], 
+      "name": "yaw90", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.09690220317842141, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 37
+    }
+  ], 
+  "error": "RuntimeError('dwa_obstacle goal timeout at [-0.6311476002307598, -0.8281470194078152, 0.0]',)", 
+  "exits": {
+    "dwa_obstacle": 0, 
+    "dwa_straight": 0, 
+    "dwa_yaw90": 0, 
+    "master": 0
+  }, 
+  "master": "127.0.0.1:11331", 
+  "passed": false, 
+  "scope": "synthetic software planner execution only"
+}
