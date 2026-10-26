@@ -1,0 +1,12 @@
+{
+  "requested_by": "SHELL",
+  "local_request_time": "2026-10-27 01:47:55 +08:00",
+  "command": "sudo shutdown -h now",
+  "ssh_exit_code": 255,
+  "output": "2026-10-27T01:47:54+08:00\r\nclient_loop: send disconnect: Connection reset",
+  "delivery_commit": "9cd127c",
+  "postcheck_time": "2026-10-27 01:48:30 +08:00",
+  "postcheck_ssh_exit_code": 255,
+  "postcheck_output": "ssh: connect to host 192.168.77.1 port 22: Connection timed out",
+  "physical_power_state_measured": false
+}
