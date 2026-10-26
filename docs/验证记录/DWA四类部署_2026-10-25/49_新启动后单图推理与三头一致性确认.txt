@@ -1,0 +1,14 @@
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+1 IMG_2766 664.694 ms; float_bytes=292032,73008,18252
+completed=1
+351a191538e1357300ad05dc8579d81b333cd257794f64644fd48c14f4b39f9a  /home/jcfh/shell_dwa_20261025/final-boot-check/IMG_2766_0.f32
+1352ef1fda3fe1f42de9a49e4c293b93a085367a27c6ba698c05c9688306a1a7  /home/jcfh/shell_dwa_20261025/final-boot-check/IMG_2766_1.f32
+208c9b5be11de1f06b98839d4f266179fcf065e8ce4a1f2b943c2bc59550bceb  /home/jcfh/shell_dwa_20261025/final-boot-check/IMG_2766_2.f32
+active
+active
+active
+active

@@ -1,0 +1,12 @@
+{"stage_or_obsolete_processes": [], "open_test_interfaces_or_stage": []}
+rescue_mission_node: OK
+ego_trajectory_controller_node: OK
+active
+active
+active
+active
+active
+MainPID=415
+Result=success
+	librknn_api.so => /home/jcfh/RK3399Pro_npu/rknn-api/librknn_api/Linux/lib64/librknn_api.so (0x0000007fafd9f000)
+  415 /usr/local/bin/npu_transfer_proxy
