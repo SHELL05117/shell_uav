@@ -4,7 +4,7 @@
 
 本教程只保留地面练习及飞行监看会用到的功能。截图来自本机实际操作；实时连接、断线示例与地面录制回放会分别标明。地面数据显示成功不等于定位、投放或实飞验收通过。
 
-**本次交付状态：** 已实测连接、相机／地图／遥测及 GUI 布局操作。随后 USB 再次中断，短录制尚未完成，板端最终进程释放与最新版同步仍待恢复连接；本教程不将它们记为已完成。正式布局可以先在本地打开学习。
+**本次交付状态：** 连接恢复后已完成最新版同步、真实四面板截图、约 18 秒地面录制与本地播放／进度条定位、最终进程及设备句柄释放检查。SHELL 已授权在交付收尾后执行 `sudo shutdown -h now`。无线覆盖、可靠电池测量、测高／定位融合、实飞与投放仍未验收。
 
 ## 1. 先理解三部分各做什么
 
@@ -25,16 +25,16 @@
 
 ## 2. 第一次练习：先接 USB，再开板端预览
 
-### 2.0 本次断线恢复后的版本同步
+### 2.0 当前已部署；需要重新同步时用本节
 
-前面的真实显示使用了已上传的监看入口。断线后本地又补了 `bridge` 模式自动 JPEG 转发和精确路径名称，尚未再次上传。下一次恢复连接后，先确认旧预览进程已结束，再从 **项目根目录的 Windows PowerShell** 同步以下文件；这是复制显示配置／脚本，不需要重新训练或编译 C++：
+当前 RK 上的最新版已与本地核对一致，正常练习直接进入 2.1。以后更新显示配置或重新部署时，先确认旧预览进程已结束，再从 **项目根目录的 Windows PowerShell** 同步以下文件；这是复制显示配置／脚本，不需要重新训练或编译 C++：
 
 ```powershell
 ssh rk-uav 'mkdir -p /home/jcfh/catkin_ws/src/location/scripts'
 scp src/location/launch/lichtblick_bridge_readonly.launch src/location/launch/lichtblick_ground_preview.launch rk-uav:/home/jcfh/catkin_ws/src/location/launch/
 scp src/location/scripts/monitor_jpeg.py rk-uav:/home/jcfh/catkin_ws/src/location/scripts/
 scp src/navigation_2d/launch/detect.launch rk-uav:/home/jcfh/catkin_ws/src/navigation_2d/launch/
-scp tools/start_lichtblick_monitor.sh rk-uav:/home/jcfh/
+scp tools/start_lichtblick_monitor.sh tools/monitor_device_handles.py rk-uav:/home/jcfh/
 ssh rk-uav 'chmod +x /home/jcfh/catkin_ws/src/location/scripts/monitor_jpeg.py'
 ```
 
@@ -71,7 +71,7 @@ ssh rk-uav
 bash /home/jcfh/start_lichtblick_monitor.sh ground
 ```
 
-终端会持续输出日志，这是正常现象；不要关掉这个终端。启动后给建图和识别留出几十秒。脚本发现已有 ROS／相关设备占用或 8765 端口占用时会拒绝启动，不会自动杀掉别的程序。
+终端会持续输出日志，这是正常现象；不要关掉这个终端。启动后给建图和识别留出几十秒。脚本发现已有 ROS／相关设备占用或 8765 端口占用时会拒绝启动，不会自动杀掉别的程序。本机 BSP 没有 `fuser`，现改用随脚本部署的 `monitor_device_handles.py`，通过 `sudo -n` 只读检查 `/proc`；检查权限不足、辅助脚本缺失或设备不存在时都会拒绝启动，不把检查失败当成设备空闲。
 
 本轮相机采用已有 USB 相机入口，识别使用现有四类 RKNN 原模型，未训练、未替换模型。图像显示转发将 `/detect_result` 压缩为显示宽度不超过 960 像素的 JPEG，质量 65、发送上限 5 帧／秒；实测速率约 4 帧／秒。**这是显示图像频率，不是模型推理频率。**
 
@@ -104,6 +104,8 @@ Test-NetConnection 192.168.77.1 -Port 8765
 无需从空白逐一搭建面板。项目已经提供 [RK_DWA_常用监看_教学版.json](RK_DWA_常用监看_教学版.json)。
 
 正式布局上方左侧是地图，上方右侧为相机与飞控状态，下方是电压 Plot。导入后电压曲线已预设，可直接跳到第 8 节学习如何修改；没有电池消息时曲线为空。
+
+![恢复后正式四面板的真实实时画面；相机源本身偏暗，电压实报0，均保留原样](../../logs/附件/2026-10-26/Lichtblick/10_最终实时地图相机状态与电压.png)
 
 ![正式四面板布局已实际导入；截图当时 USB 已中断，所以面板为空，不是实时数据全景](../../logs/附件/2026-10-26/Lichtblick/09_正式四面板布局_断线状态.png)
 
@@ -158,6 +160,8 @@ Test-NetConnection 192.168.77.1 -Port 8765
 
 本轮 JPEG 来自独立 detectnet 输出图，若有识别框，框已画进图像，不需要再手动添加一个标注话题。**没有框不等于没有图像，也不等于识别链正确识别了所有目标。** 当前四类模型仍有误报和推理延迟边界；画面能显示不代表业务识别通过。
 
+最终样本的图像偏暗／偏蓝。取出录制里的原始 JPEG 也能看到同样现象，因此它不是单纯由本次 Lichtblick 画面设置造成；具体光照／相机／图像链原因未在本轮追查，不能据此宣布相机画质合格。
+
 遇到 **Image topic does not exist**：先查该话题是否存在／是否在桥白名单。遇到 **Waiting for image messages…**：话题可能已登记但没有收到新的图像，也可能链路已断。先看顶部连接状态和 Topics 数据，不要反复启动第二套相机驱动。
 
 ## 7. 看飞控模式、是否解锁及任务状态
@@ -195,6 +199,8 @@ Test-NetConnection 192.168.77.1 -Port 8765
 ![Plot 中填写电压字段的真实操作；当时连接中断，所以图中没有曲线](../../logs/附件/2026-10-26/Lichtblick/07_Plot电压字段设置.png)
 
 后续需要高度曲线时，添加独立 Plot，字段用 `/mavros/local_position/pose.pose.position.z`，单位为米。曲线抖动可能来自数据源或时间问题，先检查消息，不把它直接归因于板卡性能。
+
+**本轮实测补充：** 样本里的电池电压全部是 `0.0 V`，Plot 所以是一条零值线。这不代表已测出电池电量或电池已经耗尽。样本没有收到本地位置 pose 消息，因此不能用它练习真实高度变化。
 
 ## 9. 保存布局、下次恢复
 
@@ -261,5 +267,25 @@ bash /home/jcfh/start_lichtblick_monitor.sh bridge
 2. 确认本轮相机、雷达、detectnet、建图、MAVROS 与桥已退出，再断电。关闭电脑上的 Lichtblick 不会保证 RK 上所有程序自动退出。
 3. 飞行时使用的 `bridge` 模式，Ctrl+C 只关闭这次监看桥／JPEG 子进程；不要借此关闭其他独立启动的飞行程序。
 4. 再次启动练习时重复第 2～4 节即可；布局可直接复用。
+5. 需要关闭 RK 系统时，在停止预览后的 RK SSH 终端执行 `sudo shutdown -h now`。SSH 随系统关机断开是预期现象，电脑仍可独立回放文件。本轮已获 SHELL 明确授权，在交付完成后执行该命令，结果见验证记录；不能仅凭一次意外 SSH 断线就认定系统正常关机。
 
 本教程配套的原始观测、界面证据与实际边界见 [验证记录](../验证记录/Lichtblick教学_2026-10-26/README.md)。
+
+## 13. 无人机关机后，用地面样本继续练习
+
+本机已保留 [地面教学样本.bag](../../recordings/lichtblick_20261026/地面教学样本.bag)。它是本轮真实地面数据，时长约 17.94 秒、8,006,616 字节；原始录制依项目规则留在 Git 忽略的 `recordings/`，不会随 Git 推送自动交给其他电脑。两端 SHA-256 为 `c1cb858819fea65fb87b08fe9f37d5e4f02d5a36d64803dee390335a6141a3b2`。
+
+1. 这时不需要无人机上电，也不需要 SSH、桥、ROS 或 Docker。
+2. 在 Lichtblick 按 **Ctrl+O**，或选择 **左上角菜单 → File → Open local file(s)…**。
+3. 选择本项目 `recordings/lichtblick_20261026/地面教学样本.bag`。
+4. 顶部显示 **地面教学样本.bag**，底部出现时间条，说明当前是录制回放，不是实时连接。
+5. 点击底部中央 **Play** 播放，按钮变成 **Pause** 后可暂停；本轮已实际播放到样本末尾。
+6. 点击／拖动底部横向进度条，定位到需要的时刻。已实测能从末尾跳到约 8.95 秒处，消息时间和地图同步改变。
+7. 右下角 **1×** 是回放速度入口；**Loop playback** 用于循环。先按 1× 学习即可。
+8. 回放暂停后继续练习地图缩放、话题切换、Raw 字段展开和布局保存，这些显示操作不需要重新启动无人机。
+
+![实际打开并播放到末尾的本地地面样本；顶部文件名和底部控制栏区别于实时连接](../../logs/附件/2026-10-26/Lichtblick/11_本地样本回放与控制栏.png)
+
+![点击时间条跳到样本中段：当前时间及elapsed约8.946秒可见](../../logs/附件/2026-10-26/Lichtblick/12_回放进度条定位.png)
+
+样本包含地图、激光、TF、相机 JPEG、飞控状态和电池消息；没有导航目标或规划路径。回放不会让无人机执行这段数据，也不能把回放里的 `armed=false` 当成当前实机状态。要重新看实时数据，按第 3 节重新 **Open connection**。

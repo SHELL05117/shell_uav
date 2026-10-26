@@ -20,12 +20,15 @@ case "$mode" in
       echo '11333 is occupied; ground preview refused.' >&2
       exit 2
     fi
-    for device in /dev/ttyACM0 /dev/ttyUSB0 /dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0; do
-      if [[ ! -e "$device" ]] || fuser "$device" >/dev/null 2>&1; then
-        echo "Device missing or busy: $device; ground preview refused." >&2
-        exit 2
-      fi
-    done
+    script_dir="$(cd -- "$(dirname -- "$0")" && pwd)"
+    # This BSP has no fuser. Missing helper/privilege or unreadable FD state
+    # must fail closed, rather than treating a failed occupancy check as idle.
+    if ! sudo -n python2 "$script_dir/monitor_device_handles.py" \
+        /dev/ttyACM0 /dev/ttyUSB0 \
+        /dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0; then
+      echo 'Device missing/busy or FD inspection unavailable; ground preview refused.' >&2
+      exit 2
+    fi
     export ROS_MASTER_URI=http://127.0.0.1:11333
     export ROS_IP=127.0.0.1
     unset ROS_HOSTNAME ROS_NAMESPACE

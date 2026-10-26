@@ -1,0 +1,7 @@
+来源：第一次手动 bridge 复查命令的工具标准错误输出；09_bridge模式核验.txt 仅接收标准输出，因此为零字节。
+复查时有界 Master 已退出，实际工具输出：
+ERROR: Unable to communicate with master!
+ERROR: Unable to communicate with master!
+ERROR: Unable to communicate with master!
+SSH 命令退出码为 1。
+此失败不是通过证据。随后 verify_lichtblick_runtime.py 自己创建并收尾 Master／bridge，入口与占用集成核验.json 的七项检查全部通过。

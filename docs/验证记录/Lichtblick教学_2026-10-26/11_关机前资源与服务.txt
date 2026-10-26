@@ -1,0 +1,10 @@
+{"busy": [], "errors": [], "missing": [], "opens_hardware": false, "passed": true}
+State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    
+LISTEN   0         0                127.0.0.53:53               0.0.0.0:*       
+LISTEN   0         0                   0.0.0.0:22               0.0.0.0:*       
+LISTEN   0         0                         *:22                     *:*       
+active
+active
+active
+inactive
+active

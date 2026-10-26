@@ -1,0 +1,16 @@
+{"busy": [], "errors": [], "missing": [], "opens_hardware": false, "passed": true}
+active
+active
+active
+active
+active
+aa7cb855c9535fe17d7cc0b5af359bd65d33056f87499185990fdcb0d0b7b789  /home/jcfh/start_lichtblick_monitor.sh
+9e14405af3b4f907423234a3ac15e9bc47be968b79f3a096274dd91c514b77cb  /home/jcfh/monitor_device_handles.py
+215ed91d795f129cedd1a489b28a6e01ef6e709817d407b66e4f646745cde46d  /home/jcfh/lichtblick_readonly_observe.py
+71176a057471564a01cbf6e18f08c38fe95d92a5596b821898d380804995d81c  /home/jcfh/verify_lichtblick_runtime.py
+3f2b36a0091659ce8c01c181d13a3a78836da60842d66a653e0f3bace79b792f  /home/jcfh/catkin_ws/src/location/launch/lichtblick_bridge_readonly.launch
+64c52db3082eb194d25011e926c5c851d634ff7cb073b2d2f0f66a4e8a10ceb0  /home/jcfh/catkin_ws/src/location/launch/lichtblick_ground_preview.launch
+3b14453fd9cd86a91bb072783277ebbe76b76a199c06f604138a0af9ec3cb198  /home/jcfh/catkin_ws/src/location/scripts/monitor_jpeg.py
+95c5c7fc222b1eb10b45dedbf1dbecae9c3f7a48dcf4be880057ff5f4783bf67  /home/jcfh/catkin_ws/src/location/CMakeLists.txt
+fbf4724451eba907759ce716adce27db611c4904429680edf4c2e671a8f2fb55  /home/jcfh/catkin_ws/src/location/package.xml
+d761b61c9c0ab0e59d64cd06356d6d230b382d27ad39baa73b08c414f3978448  /home/jcfh/catkin_ws/src/navigation_2d/launch/detect.launch

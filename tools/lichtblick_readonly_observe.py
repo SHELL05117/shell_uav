@@ -3,6 +3,8 @@
 """Short read-only evidence collection for the Lichtblick ground session."""
 from __future__ import print_function
 import json
+import copy
+import threading
 import time
 import rospy
 from sensor_msgs.msg import LaserScan, CompressedImage, Imu
@@ -12,8 +14,19 @@ from mavros_msgs.msg import State
 rospy.init_node('lichtblick_teaching_observer', anonymous=True)
 report = dict(counts={}, states=[], map=None, jpeg=None, bridge={}, forbidden={})
 subscriptions = []
+lock = threading.RLock()
+collecting = True
 
 
+def synchronized(callback):
+    def wrapped(*args):
+        with lock:
+            if collecting:
+                return callback(*args)
+    return wrapped
+
+
+@synchronized
 def receive(message, topic):
     report['counts'][topic] = report['counts'].get(topic, 0) + 1
     if topic == '/mavros/state':
@@ -32,6 +45,7 @@ for topic, kind in [('/scan', LaserScan), ('/mavros/imu/data', Imu),
     subscriptions.append(rospy.Subscriber(topic, kind, receive, callback_args=topic, queue_size=2))
 
 
+@synchronized
 def forbidden(message, topic):
     report['forbidden'][topic] += 1
 
@@ -47,7 +61,13 @@ for name in ['capabilities', 'client_topic_whitelist', 'param_whitelist',
     report['bridge'][name] = rospy.get_param('/foxglove_bridge/'+name)
 begin = time.time()
 rospy.sleep(12)
-report['seconds'] = time.time()-begin
+with lock:
+    collecting = False
+    snapshot = copy.deepcopy(report)
+    snapshot['seconds'] = time.time()-begin
+for subscription in subscriptions:
+    subscription.unregister()
+report = snapshot
 report['master'] = rospy.get_master().getSystemState()
 report['passed'] = (all(report['counts'].get(topic, 0)>0 for topic in
                         ['/scan', '/mavros/imu/data', '/mavros/state', '/map',

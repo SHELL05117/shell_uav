@@ -1,0 +1,58 @@
+{
+  "battery_voltage_values": [
+    0.0
+  ], 
+  "end": 1793035942.4671745, 
+  "flight_recording": false, 
+  "jpeg": {
+    "bgr_mean": [
+      7.241221064814815, 
+      0.06527006172839506, 
+      0.11895833333333333
+    ], 
+    "bytes": 9983, 
+    "shape": [
+      540, 
+      960, 
+      3
+    ]
+  }, 
+  "start": 1793035924.5262098, 
+  "topics": {
+    "/map": {
+      "count": 19, 
+      "frequency": 1.0004732463170751, 
+      "type": "nav_msgs/OccupancyGrid"
+    }, 
+    "/mavros/battery": {
+      "count": 9, 
+      "frequency": 0.4996946234122607, 
+      "type": "sensor_msgs/BatteryState"
+    }, 
+    "/mavros/state": {
+      "count": 19, 
+      "frequency": 1.0009274732171676, 
+      "type": "mavros_msgs/State"
+    }, 
+    "/monitor/camera/image/compressed": {
+      "count": 70, 
+      "frequency": 3.7307507569477307, 
+      "type": "sensor_msgs/CompressedImage"
+    }, 
+    "/scan": {
+      "count": 178, 
+      "frequency": 9.994219308842837, 
+      "type": "sensor_msgs/LaserScan"
+    }, 
+    "/tf": {
+      "count": 2338, 
+      "frequency": 203.14350753136048, 
+      "type": "tf2_msgs/TFMessage"
+    }, 
+    "/tf_static": {
+      "count": 1, 
+      "frequency": null, 
+      "type": "tf2_msgs/TFMessage"
+    }
+  }
+}

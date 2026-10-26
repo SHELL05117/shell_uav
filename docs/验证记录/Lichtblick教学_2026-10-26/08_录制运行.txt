@@ -1,0 +1,9 @@
+[0m[ INFO] [1793035924.297667475]: Subscribing to /map[0m
+[0m[ INFO] [1793035924.332048558]: Subscribing to /mavros/battery[0m
+[0m[ INFO] [1793035924.350293183]: Subscribing to /mavros/local_position/pose[0m
+[0m[ INFO] [1793035924.365815975]: Subscribing to /mavros/state[0m
+[0m[ INFO] [1793035924.380887266]: Subscribing to /monitor/camera/image/compressed[0m
+[0m[ INFO] [1793035924.398340600]: Subscribing to /scan[0m
+[0m[ INFO] [1793035924.426702850]: Subscribing to /tf[0m
+[0m[ INFO] [1793035924.458680141]: Subscribing to /tf_static[0m
+[0m[ INFO] [1793035924.483031683]: Recording to '/home/jcfh/lichtblick-ground-sample-final.bag'.[0m

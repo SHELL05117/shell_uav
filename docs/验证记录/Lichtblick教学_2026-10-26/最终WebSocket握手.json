@@ -1,0 +1,66 @@
+{
+  "serverInfo": {
+    "capabilities": [],
+    "metadata": {
+      "ROS_DISTRO": "melodic"
+    },
+    "name": "foxglove_bridge",
+    "op": "serverInfo",
+    "sessionId": "15a909ba-d163-11f1-886d-14f5f9e6cd08",
+    "supportedEncodings": [
+      "ros1"
+    ]
+  },
+  "channels": [
+    {
+      "id": 10,
+      "topic": "/map",
+      "schemaName": "nav_msgs/OccupancyGrid"
+    },
+    {
+      "id": 9,
+      "topic": "/monitor/camera/image/compressed",
+      "schemaName": "sensor_msgs/CompressedImage"
+    },
+    {
+      "id": 8,
+      "topic": "/mavros/local_position/pose",
+      "schemaName": "geometry_msgs/PoseStamped"
+    },
+    {
+      "id": 7,
+      "topic": "/mavros/battery",
+      "schemaName": "sensor_msgs/BatteryState"
+    },
+    {
+      "id": 2,
+      "topic": "/tf_static",
+      "schemaName": "tf2_msgs/TFMessage"
+    },
+    {
+      "id": 1,
+      "topic": "/scan",
+      "schemaName": "sensor_msgs/LaserScan"
+    },
+    {
+      "id": 3,
+      "topic": "/tf",
+      "schemaName": "tf2_msgs/TFMessage"
+    },
+    {
+      "id": 4,
+      "topic": "/mavros/imu/data",
+      "schemaName": "sensor_msgs/Imu"
+    },
+    {
+      "id": 5,
+      "topic": "/mavros/state",
+      "schemaName": "mavros_msgs/State"
+    },
+    {
+      "id": 6,
+      "topic": "/mavros/local_position/odom",
+      "schemaName": "nav_msgs/Odometry"
+    }
+  ]
+}

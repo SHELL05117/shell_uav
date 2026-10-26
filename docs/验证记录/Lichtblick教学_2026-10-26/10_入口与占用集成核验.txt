@@ -1,0 +1,47 @@
+{
+  "errors": [], 
+  "device_idle": {
+    "busy": [], 
+    "opens_hardware": false, 
+    "errors": [], 
+    "passed": true, 
+    "missing": []
+  }, 
+  "parameters": {
+    "param_whitelist": [], 
+    "service_whitelist": [], 
+    "client_topic_whitelist": [], 
+    "capabilities": []
+  }, 
+  "dummy_busy": {
+    "busy": [
+      {
+        "device": "/tmp/lichtblick-fd-check-zJAhMi", 
+        "pid": 2975, 
+        "fd": "12"
+      }
+    ], 
+    "opens_hardware": false, 
+    "errors": [], 
+    "passed": false, 
+    "missing": []
+  }, 
+  "hardware_opened": false, 
+  "passed": true, 
+  "nodes": [
+    "/foxglove_bridge", 
+    "/foxglove_nodelet_manager", 
+    "/lichtblick_bridge_check", 
+    "/monitor_jpeg", 
+    "/rosout"
+  ], 
+  "checks": {
+    "missing_path_refused": true, 
+    "bridge_relay_attached": true, 
+    "duplicate_ground_refused": true, 
+    "real_devices_idle": true, 
+    "readonly_parameters": true, 
+    "open_regular_file_detected": true, 
+    "no_hardware_nodes": true
+  }
+}
