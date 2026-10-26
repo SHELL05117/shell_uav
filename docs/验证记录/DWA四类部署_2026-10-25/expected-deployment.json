@@ -105,8 +105,8 @@
     },
     {
       "path": "navigation_2d/launch/navigation_2d.launch",
-      "bytes": 13440,
-      "sha256": "acbf31623822012f9039e8b5aaee358e073f330adaf57bfb14f17de49e7a5914"
+      "bytes": 13446,
+      "sha256": "52cd18d7dcbd3af255005f2a22f1c59a4a9bac5f15d0b17aa4285b77ea91e8f6"
     },
     {
       "path": "navigation_2d/msg/TargetDetection.msg",
@@ -125,8 +125,8 @@
     },
     {
       "path": "navigation_2d/param/dwa_local_planner_params.yaml",
-      "bytes": 1143,
-      "sha256": "1a1e586cc9aa507bb3e9b86fe073e031842dd1e5659fe93dd64eb998f548bcab"
+      "bytes": 1374,
+      "sha256": "d904470e9bde6f712866953fa49662c54dc1ce7b7df401aea88fc2deceb3ad9b"
     },
     {
       "path": "navigation_2d/param/global_costmap_params.yaml",

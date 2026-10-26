@@ -163,7 +163,7 @@ def stop(process):
     return process.returncode
 
 
-def launch_xml(namespace,forward_point_distance=None):
+def launch_xml(namespace,forward_point_distance=None,occdist_scale=None):
     xml='''<launch>
   <group ns="%s">
     <node pkg="move_base" type="move_base" name="move_base" output="screen">
@@ -189,8 +189,6 @@ def launch_xml(namespace,forward_point_distance=None):
       <param name="global_costmap/static_layer/map_topic" value="/%s/map" />
       <param name="global_costmap/map_topic" value="/%s/map" />
       <param name="DWAPlannerROS/odom_topic" value="/%s/odom" />
-      <param name="controller_frequency" value="10.0" />
-      <param name="DWAPlannerROS/controller_frequency" value="10.0" />
       <param name="clearing_rotation_allowed" value="false" />
       <param name="recovery_behavior_enabled" value="false" />
       <remap from="cmd_vel" to="/%s/cmd_vel" />
@@ -200,14 +198,19 @@ def launch_xml(namespace,forward_point_distance=None):
   </group>
 </launch>''' % tuple([namespace]*15)
     if forward_point_distance is not None:
-        xml=xml.replace('      <param name="controller_frequency"',
-            '      <param name="DWAPlannerROS/forward_point_distance" value="%s" />\n      <param name="controller_frequency"' % forward_point_distance)
+        xml=xml.replace('    </node>',
+            '      <param name="DWAPlannerROS/forward_point_distance" value="%s" />\n    </node>' % forward_point_distance)
+    if occdist_scale is not None:
+        xml=xml.replace('    </node>',
+            '      <param name="DWAPlannerROS/occdist_scale" value="%s" />\n    </node>' % occdist_scale)
     return xml
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('output')
+    parser.add_argument('--occdist-scale',type=float,default=None,
+                        help='Diagnostic override only; does not edit production YAML')
     parser.add_argument('--case',choices=('all','straight','yaw90','obstacle'),default='all')
     parser.add_argument('--forward-point-distance',type=float,default=None,
                         help='Diagnostic override only; production YAML is otherwise used unchanged')
@@ -217,7 +220,9 @@ def main():
     os.environ.update(ROS_MASTER_URI='http://127.0.0.1:11331',ROS_IP='127.0.0.1',
                       ROS_HOME=directory+'/ros-home',ROS_LOG_DIR=directory+'/ros-logs')
     os.environ.pop('ROS_HOSTNAME',None)
-    reservation=socket.socket(); reservation.bind(('127.0.0.1',11331)); reservation.close()
+    reservation=socket.socket()
+    reservation.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+    reservation.bind(('127.0.0.1',11331)); reservation.close()
     children=[]; streams=[]; active_trace=[None]; active_evidence=[None]; active_simulation=[None]
     def save_simulation(snapshot):
         namespace,timing,seen,integration_trace,collision=snapshot
@@ -259,7 +264,7 @@ def main():
             prefix='/'+namespace
             frame=lambda part:namespace+'_'+part
             path=directory+'/'+namespace+'.launch'
-            with open(path,'w') as output: output.write(launch_xml(namespace,args.forward_point_distance))
+            with open(path,'w') as output: output.write(launch_xml(namespace,args.forward_point_distance,args.occdist_scale))
             command=[0.0,0.0,0.0]
             pending_commands=[]; command_lock=threading.Lock()
             seen=[]; plans=[]; local_plans=[]; costmaps={}
@@ -384,6 +389,12 @@ def main():
                         y=rospy.get_param(prefix+'/move_base/DWAPlannerROS/max_vel_y'),
                         translation=rospy.get_param(prefix+'/move_base/DWAPlannerROS/max_vel_trans'),
                         angular=rospy.get_param(prefix+'/move_base/DWAPlannerROS/max_vel_theta'))
+            frequencies=dict(move_base=rospy.get_param(prefix+'/move_base/controller_frequency'),
+                             dwa=rospy.get_param(prefix+'/move_base/DWAPlannerROS/controller_frequency'))
+            # Record effective values before motion, including aborted runs.
+            result.setdefault('effective_parameters',{})[name]=dict(controller_frequencies=frequencies,
+                occdist_scale=rospy.get_param(prefix+'/move_base/DWAPlannerROS/occdist_scale'),
+                forward_point_distance=rospy.get_param(prefix+'/move_base/DWAPlannerROS/forward_point_distance'))
             def goal(x,y):
                 message=MoveBaseGoal(); message.target_pose.header.frame_id=frame('map')
                 message.target_pose.header.stamp=rospy.Time.now()
@@ -443,11 +454,15 @@ def main():
                 with open(directory+'/'+namespace+'-global-plans.json','w') as output:
                     json.dump([[[p.pose.position.x,p.pose.position.y] for p in path.poses] for path in route],output)
             # A second real goal, then action cancellation must publish zero.
-            second_sent=monotonic(); client.send_goal(goal(1.6,0))
+            # Keep this goal far enough away to cancel an ACTIVE action; the
+            # obstacle goal already ends at x=1.5, within tolerance of x=1.6.
+            second_goal=(1.5,1.5) if obstacle else (1.6,0.0)
+            second_sent=monotonic(); client.send_goal(goal(*second_goal))
             deadline=monotonic()+5
             while monotonic()<deadline:
                 pump()
-                if any(when>second_sent and math.hypot(v[0],v[1])>.02 for when,v in seen): break
+                if client.get_state()==GoalStatus.ACTIVE and any(when>second_sent and
+                    math.hypot(v[0],v[1])>.02 for when,v in seen): break
             else: raise RuntimeError(namespace+' did not move for cancellation check')
             cancelled=monotonic(); client.cancel_goal(); deadline=monotonic()+3
             while monotonic()<deadline:
@@ -461,7 +476,9 @@ def main():
             case=dict(name=name,passed=bounded and bool(route) and end_error<.15 and semantics and timing_consistent,
                       plugin=plugin,global_plans=len(route),velocity_samples=len(nonzero),
                       velocity_limits=limits,mean_body_velocity=means,initial_yaw=yaw,
+                      controller_frequencies=frequencies,
                       reached_goal_error=end_error,cancelled_action_zero_velocity=True,
+                      cancellation_goal=list(second_goal),cancelled_while_active=True,
                       timing_consistent=timing_consistent,timing=dict(timing),substep_collision=dict(collision))
             if obstacle:
                 case.update(obstacle_metrics)

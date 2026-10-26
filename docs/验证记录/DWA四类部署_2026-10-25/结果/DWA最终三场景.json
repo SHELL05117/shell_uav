@@ -1,0 +1,240 @@
+{
+  "aircraft_footprint_measured": false, 
+  "cases": [
+    {
+      "cancellation_goal": [
+        1.6, 
+        0.0
+      ], 
+      "cancelled_action_zero_velocity": true, 
+      "cancelled_while_active": true, 
+      "controller_frequencies": {
+        "dwa": 15.0, 
+        "move_base": 10.0
+      }, 
+      "global_plans": 88, 
+      "initial_yaw": 0.0, 
+      "mean_body_velocity": [
+        0.16582793309244998, 
+        -4.38872934892867e-09
+      ], 
+      "name": "straight", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.09957166716805428, 
+      "substep_collision": {
+        "checked_substep_poses": 0, 
+        "minimum_footprint_clearance": null, 
+        "overlapping_substep_poses": 0
+      }, 
+      "timing": {
+        "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+        "integrated_seconds": 4.650673335000192, 
+        "integration_error_seconds": 0.0, 
+        "integration_step_limit": 0.025, 
+        "integration_substeps": 319, 
+        "maximum_integration_step": 0.024915041999975074, 
+        "maximum_pump_gap": 0.10377495800003089, 
+        "observed_elapsed_seconds": 4.650673335000192, 
+        "pump_calls": 310, 
+        "startup_hold_seconds": 6.28918996099992
+      }, 
+      "timing_consistent": true, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 43
+    }, 
+    {
+      "cancellation_goal": [
+        1.6, 
+        0.0
+      ], 
+      "cancelled_action_zero_velocity": true, 
+      "cancelled_while_active": true, 
+      "controller_frequencies": {
+        "dwa": 15.0, 
+        "move_base": 10.0
+      }, 
+      "global_plans": 73, 
+      "initial_yaw": 1.5707963267948966, 
+      "mean_body_velocity": [
+        -0.01706970618325014, 
+        -0.19579810175944018
+      ], 
+      "name": "yaw90", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.09986175341441685, 
+      "substep_collision": {
+        "checked_substep_poses": 0, 
+        "minimum_footprint_clearance": null, 
+        "overlapping_substep_poses": 0
+      }, 
+      "timing": {
+        "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+        "integrated_seconds": 4.109887710000066, 
+        "integration_error_seconds": 0.0, 
+        "integration_step_limit": 0.025, 
+        "integration_substeps": 275, 
+        "maximum_integration_step": 0.024709416999940004, 
+        "maximum_pump_gap": 0.1204769999999371, 
+        "observed_elapsed_seconds": 4.109887710000066, 
+        "pump_calls": 283, 
+        "startup_hold_seconds": 6.048281128000099
+      }, 
+      "timing_consistent": true, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 37
+    }, 
+    {
+      "cancellation_goal": [
+        1.5, 
+        1.5
+      ], 
+      "cancelled_action_zero_velocity": true, 
+      "cancelled_while_active": true, 
+      "collision_check_timebase": "all integration substeps <=25ms", 
+      "controller_frequencies": {
+        "dwa": 15.0, 
+        "move_base": 10.0
+      }, 
+      "detoured": true, 
+      "direct_distance": 3.0, 
+      "executed_lateral_excursion": 0.7352164432727446, 
+      "global_plans": 225, 
+      "goal": [
+        1.5, 
+        0
+      ], 
+      "goal_elapsed": 11.8388690889999, 
+      "goal_timeout": 45, 
+      "initial_yaw": 0.0, 
+      "mean_body_velocity": [
+        0.2594571012284672, 
+        -0.00626205937046427
+      ], 
+      "minimum_footprint_clearance": 0.05269262235749559, 
+      "name": "obstacle", 
+      "obstacle_bounds": [
+        -0.25, 
+        0.25, 
+        -0.5, 
+        0.5
+      ], 
+      "passed": true, 
+      "planned_lateral_excursion": 0.9181525873862597, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "raw_footprint_parameter": "[[0.16,0.16],[0.16,-0.16],[-0.16,-0.16],[-0.16,0.16]]", 
+      "raw_footprint_type": "str", 
+      "reached_goal_error": 0.09906828763493498, 
+      "required_footprint_clearance": 0.01, 
+      "start": [
+        -1.5, 
+        0
+      ], 
+      "substep_collision": {
+        "checked_substep_poses": 790, 
+        "minimum_footprint_clearance": 0.05269262235749559, 
+        "overlapping_substep_poses": 0
+      }, 
+      "synthetic_footprint": [
+        [
+          0.16, 
+          0.16
+        ], 
+        [
+          0.16, 
+          -0.16
+        ], 
+        [
+          -0.16, 
+          -0.16
+        ], 
+        [
+          -0.16, 
+          0.16
+        ]
+      ], 
+      "synthetic_map_and_scan_obstacle": true, 
+      "timing": {
+        "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+        "integrated_seconds": 12.74423175600009, 
+        "integration_error_seconds": 0.0, 
+        "integration_step_limit": 0.025, 
+        "integration_substeps": 643, 
+        "maximum_integration_step": 0.024935458333402494, 
+        "maximum_pump_gap": 0.763253375999966, 
+        "observed_elapsed_seconds": 12.74423175600009, 
+        "pump_calls": 249, 
+        "startup_hold_seconds": 7.554120503999911
+      }, 
+      "timing_consistent": true, 
+      "traveled_distance": 3.3569559358358783, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 114
+    }
+  ], 
+  "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+  "effective_parameters": {
+    "obstacle": {
+      "controller_frequencies": {
+        "dwa": 15.0, 
+        "move_base": 10.0
+      }, 
+      "forward_point_distance": 0.2, 
+      "occdist_scale": 0.02
+    }, 
+    "straight": {
+      "controller_frequencies": {
+        "dwa": 15.0, 
+        "move_base": 10.0
+      }, 
+      "forward_point_distance": 0.2, 
+      "occdist_scale": 0.02
+    }, 
+    "yaw90": {
+      "controller_frequencies": {
+        "dwa": 15.0, 
+        "move_base": 10.0
+      }, 
+      "forward_point_distance": 0.2, 
+      "occdist_scale": 0.02
+    }
+  }, 
+  "exits": {
+    "dwa_obstacle": 0, 
+    "dwa_straight": 0, 
+    "dwa_yaw90": 0, 
+    "master": 0
+  }, 
+  "forbidden_topics_absent": true, 
+  "forward_point_distance_override": null, 
+  "master": "127.0.0.1:11331", 
+  "passed": true, 
+  "requested_case": "all", 
+  "scope": "synthetic software planner execution only", 
+  "trace_columns": [
+    "monotonic_seconds", 
+    "x", 
+    "y", 
+    "yaw", 
+    "body_vx", 
+    "body_vy", 
+    "yaw_rate", 
+    "ros_seconds"
+  ]
+}

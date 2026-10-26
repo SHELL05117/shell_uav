@@ -1,0 +1,34 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{
+  "aircraft_footprint_measured": false, 
+  "cases": [], 
+  "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+  "error": "RuntimeError('dwa_obstacle goal failed: Robot is oscillating. Even after executing recovery behaviors.',)", 
+  "exits": {
+    "dwa_obstacle": 0, 
+    "master": 0
+  }, 
+  "forward_point_distance_override": 0.0, 
+Traceback (most recent call last):
+  "master": "127.0.0.1:11331", 
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 516, in <module>
+    main()
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 480, in main
+    if args.case in ('all','obstacle'): run_case('obstacle',0.0,obstacle=True)
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 407, in run_case
+    raise RuntimeError(namespace+' goal failed: '+client.get_goal_status_text())
+RuntimeError: dwa_obstacle goal failed: Robot is oscillating. Even after executing recovery behaviors.
+  "passed": false, 
+  "requested_case": "obstacle", 
+  "scope": "synthetic software planner execution only", 
+  "trace_columns": [
+    "monotonic_seconds", 
+    "x", 
+    "y", 
+    "yaw", 
+    "body_vx", 
+    "body_vy", 
+    "yaw_rate", 
+    "ros_seconds"
+  ]
+}

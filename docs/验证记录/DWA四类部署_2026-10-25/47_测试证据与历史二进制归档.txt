@@ -1,0 +1,4 @@
+e713752ca1299997763a1989471b3506a87b095952ace2ac1ed9084199cbbc3d  /home/jcfh/shell_dwa_20261025/deployment-test-evidence.tar.gz
+7923554488f23219a32de6b47e8dc202f3fe4a8073c01517a909dd2728dcf1f8  /home/jcfh/shell_backups/2026-10-25_dwa/before-migration-src.tar.gz
+4d3ecf0c90e432150de6055faf4f744510a4c6bb87bf5621c634b7d4dbb7d9f2  /home/jcfh/shell_backups/2026-10-25_dwa/old-ego-binaries.tar.gz
+-rw-rw-r-- 1 jcfh jcfh 11399081 Oct 26 17:22 /home/jcfh/shell_dwa_20261025/deployment-test-evidence.tar.gz

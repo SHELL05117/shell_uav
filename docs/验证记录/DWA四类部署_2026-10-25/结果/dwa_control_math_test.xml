@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="13" failures="0" disabled="0" errors="0" timestamp="2026-10-26T04:32:04" time="0.003" name="AllTests">
+  <testsuite name="DwaControlMath" tests="7" failures="0" disabled="0" errors="0" time="0.002">
+    <testcase name="BodyForwardRotatesWithActualYaw" status="run" time="0" classname="DwaControlMath" />
+    <testcase name="DiagonalSpeedUsesVectorBound" status="run" time="0" classname="DwaControlMath" />
+    <testcase name="InvalidVelocityProducesNoCommand" status="run" time="0" classname="DwaControlMath" />
+    <testcase name="MapPointUsesRotationAndOriginTranslation" status="run" time="0" classname="DwaControlMath" />
+    <testcase name="InvalidMapObservationIsRejected" status="run" time="0" classname="DwaControlMath" />
+    <testcase name="QuaternionMustBeValidAndCanBeNormalized" status="run" time="0" classname="DwaControlMath" />
+    <testcase name="SamplesCannotBeMissingStaleOrFarFuture" status="run" time="0" classname="DwaControlMath" />
+  </testsuite>
+  <testsuite name="DwaMissionPolicy" tests="6" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="FireDropRequiresTheConfirmedRequestedHazard" status="run" time="0" classname="DwaMissionPolicy" />
+    <testcase name="MissingTargetCannotAuthorizeButExplicitAnyStillNeedsAHazard" status="run" time="0" classname="DwaMissionPolicy" />
+    <testcase name="RescueDropRequiresPersonAndEnabledRescueStage" status="run" time="0" classname="DwaMissionPolicy" />
+    <testcase name="FlightAuthorityRequiresArmedOffboard" status="run" time="0" classname="DwaMissionPolicy" />
+    <testcase name="TakeoffTimeoutCannotAuthorizeHorizontalMission" status="run" time="0" classname="DwaMissionPolicy" />
+    <testcase name="LandingOnlyAllowsRequestedTransitionsAndFinalDisarm" status="run" time="0" classname="DwaMissionPolicy" />
+  </testsuite>
+</testsuites>

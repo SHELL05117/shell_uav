@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" disabled="0" errors="0" timestamp="2026-10-26T04:29:36" time="0.002" name="AllTests">
+  <testsuite name="Freshness" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="RejectsMissingOldFutureAndNan" status="run" time="0" classname="Freshness" />
+  </testsuite>
+  <testsuite name="Range" tests="3" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="RejectsTinyNanAndOutOfRangeWithoutRefreshing" status="run" time="0" classname="Range" />
+    <testcase name="RepeatedCachedSamplesDoNotConfirmJump" status="run" time="0" classname="Range" />
+    <testcase name="InconsistentJumpSamplesDoNotRebaseline" status="run" time="0" classname="Range" />
+  </testsuite>
+  <testsuite name="Position" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="JumpRejectionDoesNotAcceptDuplicateStamp" status="run" time="0" classname="Position" />
+  </testsuite>
+  <testsuite name="Height" tests="5" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="SubtractsMeasuredLevelGroundClearance" status="run" time="0" classname="Height" />
+    <testcase name="ProjectsSlantRangeUsingImuPitch" status="run" time="0" classname="Height" />
+    <testcase name="AppliesRotatedSensorOffset" status="run" time="0" classname="Height" />
+    <testcase name="RejectsTiltInvalidQuaternionAndOutsideHeight" status="run" time="0" classname="Height" />
+    <testcase name="RejectsInvalidGeometryParameters" status="run" time="0" classname="Height" />
+  </testsuite>
+  <testsuite name="UartFrame" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="ValidatesHeaderChecksumAndLength" status="run" time="0" classname="UartFrame" />
+  </testsuite>
+</testsuites>

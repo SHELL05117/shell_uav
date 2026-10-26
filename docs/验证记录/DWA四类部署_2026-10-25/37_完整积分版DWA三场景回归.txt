@@ -1,0 +1,115 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+{"global_plans": 72, "name": "straight", "plugin": "dwa_local_planner/DWAPlannerROS", "substep_collision": {"checked_substep_poses": 0, "minimum_footprint_clearance": null, "overlapping_substep_poses": 0}, "velocity_samples": 35, "timing": {"maximum_pump_gap": 0.08141791700001022, "integration_step_limit": 0.025, "integration_substeps": 259, "observed_elapsed_seconds": 3.799924544000021, "pump_calls": 280, "clock_source": "clock_gettime(CLOCK_MONOTONIC)", "startup_hold_seconds": 6.053473376999989, "maximum_integration_step": 0.02406031250001206, "integrated_seconds": 3.799924544000021, "integration_error_seconds": 0.0}, "reached_goal_error": 0.09563454239917535, "passed": true, "initial_yaw": 0.0, "timing_consistent": true, "cancelled_action_zero_velocity": true, "velocity_limits": {"y": 0.4, "x": 0.4, "translation": 0.45, "angular": 0.0}, "mean_body_velocity": [0.2054016181400844, 0.0]}
+{"global_plans": 74, "name": "yaw90", "plugin": "dwa_local_planner/DWAPlannerROS", "substep_collision": {"checked_substep_poses": 0, "minimum_footprint_clearance": null, "overlapping_substep_poses": 0}, "velocity_samples": 38, "timing": {"maximum_pump_gap": 0.1157420830000433, "integration_step_limit": 0.025, "integration_substeps": 283, "observed_elapsed_seconds": 4.165908043999991, "pump_calls": 283, "clock_source": "clock_gettime(CLOCK_MONOTONIC)", "startup_hold_seconds": 5.932595794000008, "maximum_integration_step": 0.024870416999988265, "integrated_seconds": 4.165908043999991, "integration_error_seconds": 0.0}, "reached_goal_error": 0.09511268017864076, "passed": true, "initial_yaw": 1.5707963267948966, "timing_consistent": true, "cancelled_action_zero_velocity": true, "velocity_limits": {"y": 0.4, "x": 0.4, "translation": 0.45, "angular": 0.0}, "mean_body_velocity": [-0.014784608714762726, -0.19476242245812164]}
+Traceback (most recent call last):
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 516, in <module>
+{
+  "aircraft_footprint_measured": false, 
+  "cases": [
+    {
+      "cancelled_action_zero_velocity": true, 
+      "global_plans": 72, 
+      "initial_yaw": 0.0, 
+      "mean_body_velocity": [
+        0.2054016181400844, 
+        0.0
+      ], 
+      "name": "straight", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.09563454239917535, 
+      "substep_collision": {
+        "checked_substep_poses": 0, 
+        "minimum_footprint_clearance": null, 
+        "overlapping_substep_poses": 0
+      }, 
+      "timing": {
+        "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+        "integrated_seconds": 3.799924544000021, 
+        "integration_error_seconds": 0.0, 
+        "integration_step_limit": 0.025, 
+        "integration_substeps": 259, 
+        "maximum_integration_step": 0.02406031250001206, 
+        "maximum_pump_gap": 0.08141791700001022, 
+        "observed_elapsed_seconds": 3.799924544000021, 
+        "pump_calls": 280, 
+        "startup_hold_seconds": 6.053473376999989
+      }, 
+      "timing_consistent": true, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 35
+    }, 
+    {
+      "cancelled_action_zero_velocity": true, 
+      "global_plans": 74, 
+      "initial_yaw": 1.5707963267948966, 
+      "mean_body_velocity": [
+        -0.014784608714762726, 
+        -0.19476242245812164
+      ], 
+      "name": "yaw90", 
+      "passed": true, 
+      "plugin": "dwa_local_planner/DWAPlannerROS", 
+      "reached_goal_error": 0.09511268017864076, 
+      "substep_collision": {
+        "checked_substep_poses": 0, 
+        "minimum_footprint_clearance": null, 
+        "overlapping_substep_poses": 0
+      }, 
+      "timing": {
+        "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+        "integrated_seconds": 4.165908043999991, 
+        "integration_error_seconds": 0.0, 
+        "integration_step_limit": 0.025, 
+        "integration_substeps": 283, 
+        "maximum_integration_step": 0.024870416999988265, 
+        "maximum_pump_gap": 0.1157420830000433, 
+        "observed_elapsed_seconds": 4.165908043999991, 
+        "pump_calls": 283, 
+        "startup_hold_seconds": 5.932595794000008
+      }, 
+      "timing_consistent": true, 
+      "velocity_limits": {
+        "angular": 0.0, 
+        "translation": 0.45, 
+        "x": 0.4, 
+        "y": 0.4
+      }, 
+      "velocity_samples": 38
+    }
+  ], 
+  "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+  "error": "RuntimeError('dwa_obstacle goal failed: Robot is oscillating. Even after executing recovery behaviors.',)", 
+  "exits": {
+    "dwa_obstacle": 0, 
+    "dwa_straight": 0, 
+    "dwa_yaw90": 0, 
+    "master": 0
+  }, 
+  "forward_point_distance_override": null, 
+  "master": "127.0.0.1:11331", 
+  "passed": false, 
+  "requested_case": "all", 
+  "scope": "synthetic software planner execution only", 
+  "trace_columns": [
+    "monotonic_seconds", 
+    "x", 
+    "y", 
+    "yaw", 
+    "body_vx", 
+    "body_vy", 
+    "yaw_rate", 
+    "ros_seconds"
+  ]
+}
+    main()
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 480, in main
+    if args.case in ('all','obstacle'): run_case('obstacle',0.0,obstacle=True)
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 407, in run_case
+    raise RuntimeError(namespace+' goal failed: '+client.get_goal_status_text())
+RuntimeError: dwa_obstacle goal failed: Robot is oscillating. Even after executing recovery behaviors.

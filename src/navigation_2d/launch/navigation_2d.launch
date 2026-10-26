@@ -34,7 +34,7 @@
   <arg name="start_foxglove_bridge" default="false" />
 
   <!-- 识别：危险品标志每轮随机分配，正确类别必须在本轮起飞前给出。
-       新模型（YOLOv5n，4 类）的类名是 explosive / flammable / toxic / person。
+       新模型（YOLO raw-head，4 类）的类名是 explosive / flammable / toxic / person。
        两条路任选：launch 参数 target_hazard:=flammable（或中文“易燃”），
        或者节点起来后、起飞前向 /mission/target_hazard 发一条 std_msgs/String
        （rostopic pub -l /mission/target_hazard std_msgs/String "data: '易燃'"）。

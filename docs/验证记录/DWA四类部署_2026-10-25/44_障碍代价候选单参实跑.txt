@@ -1,0 +1,45 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+[ERROR] [1793005544.047371]: Received comm state PREEMPTING when in simple state DONE with SimpleActionClient in NS /dwa_obstacle/move_base
+{
+  "aircraft_footprint_measured": false, 
+  "cases": [], 
+  "clock_source": "clock_gettime(CLOCK_MONOTONIC)", 
+  "effective_parameters": {
+    "obstacle": {
+      "controller_frequencies": {
+        "dwa": 15.0, 
+        "move_base": 10.0
+      }, 
+      "forward_point_distance": 0.2, 
+      "occdist_scale": 0.02
+    }
+  }, 
+  "error": "RuntimeError('dwa_obstacle cancellation did not produce zero velocity',)", 
+  "exits": {
+    "dwa_obstacle": 0, 
+    "master": 0
+  }, 
+  "forward_point_distance_override": null, 
+  "master": "127.0.0.1:11331", 
+  "passed": false, 
+  "requested_case": "obstacle", 
+  "scope": "synthetic software planner execution only", 
+  "trace_columns": [
+    "monotonic_seconds", 
+    "x", 
+    "y", 
+    "yaw", 
+    "body_vx", 
+    "body_vy", 
+    "yaw_rate", 
+    "ros_seconds"
+  ]
+}
+Traceback (most recent call last):
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 528, in <module>
+    main()
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 492, in main
+    if args.case in ('all','obstacle'): run_case('obstacle',0.0,obstacle=True)
+  File "/home/jcfh/shell_dwa_20261025/dwa_planner_probe.py", line 468, in run_case
+    else: raise RuntimeError(namespace+' cancellation did not produce zero velocity')
+RuntimeError: dwa_obstacle cancellation did not produce zero velocity

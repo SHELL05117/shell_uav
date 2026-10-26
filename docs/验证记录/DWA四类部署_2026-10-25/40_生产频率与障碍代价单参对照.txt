@@ -1,0 +1,2 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+client_loop: send disconnect: Connection reset

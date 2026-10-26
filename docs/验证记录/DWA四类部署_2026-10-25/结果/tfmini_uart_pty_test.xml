@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="0" disabled="0" errors="0" timestamp="2026-10-26T04:29:36" time="1.078" name="AllTests">
+  <testsuite name="TfminiUartPty" tests="5" failures="0" disabled="0" errors="0" time="1.077">
+    <testcase name="PreCallBacklogWithoutANewSampleIsNotFresh" status="run" time="0.311" classname="TfminiUartPty" />
+    <testcase name="NewFrameAfterBoundaryReplacesOldQueuedDistance" status="run" time="0.044" classname="TfminiUartPty" />
+    <testcase name="DrainsABurstLargerThanOneReadToItsLatestCompleteFrame" status="run" time="0.034" classname="TfminiUartPty" />
+    <testcase name="ResynchronizesNoiseCorruptChecksumAndFragmentedFrame" status="run" time="0.055" classname="TfminiUartPty" />
+    <testcase name="AConsumedFrameCannotRefreshAgainAfterTheStreamStops" status="run" time="0.632" classname="TfminiUartPty" />
+  </testsuite>
+</testsuites>

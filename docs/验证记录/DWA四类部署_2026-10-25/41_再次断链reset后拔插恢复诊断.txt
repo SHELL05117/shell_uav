@@ -1,0 +1,54 @@
+2026-10-24T02:12:59+08:00
+150a26e6-250f-4fb9-94da-7079d5a4f989
+ 02:12:59 up 5 min,  2 users,  load average: 0.43, 0.28, 0.12
+active
+dev-serial-by\x2did-usb\x2dAuterion_PX4_FMU_v6C.x_0\x2dif00.device                                                                     loaded    active   plugged   PX4_FMU_v6C.x                                                                          
+dev-serial-by\x2did-usb\x2dSilicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_909394b23877ed11907beefafdf7b791\x2dif00\x2dport0.device loaded    active   plugged   CP2102/CP2109 UART Bridge Controller [CP210x family]                                   
+dev-serial-by\x2dpath-platform\x2dxhci\x2dhcd.10.auto\x2dusb\x2d0:1.2:1.0.device                                                       loaded    active   plugged   PX4_FMU_v6C.x                                                                          
+dev-serial-by\x2dpath-platform\x2dxhci\x2dhcd.10.auto\x2dusb\x2d0:1.3:1.0\x2dport0.device                                              loaded    active   plugged   CP2102/CP2109 UART Bridge Controller [CP210x family]                                   
+dev-ttyUSB0.device                                                                                                                     loaded    active   plugged   CP2102/CP2109 UART Bridge Controller [CP210x family]                                   
+sys-devices-platform-fe380000.usb-usb2-2\x2d1-2\x2d1:1.0-bluetooth-hci0.device                                                         loaded    active   plugged   /sys/devices/platform/fe380000.usb/usb2/2-1/2-1:1.0/bluetooth/hci0                     
+sys-devices-platform-fe380000.usb-usb2-2\x2d1-2\x2d1:1.2-net-p2p0.device                                                               loaded    active   plugged   802.11n_WLAN_Adapter                                                                   
+sys-devices-platform-fe380000.usb-usb2-2\x2d1-2\x2d1:1.2-net-wlan0.device                                                              loaded    active   plugged   802.11n_WLAN_Adapter                                                                   
+sys-devices-platform-usb0-fe800000.dwc3-gadget-net-usb0.device                                                                         loaded    active   plugged   /sys/devices/platform/usb0/fe800000.dwc3/gadget/net/usb0                               
+sys-devices-platform-usb1-fe900000.dwc3-xhci\x2dhcd.10.auto-usb3-3\x2d1-3\x2d1.2-3\x2d1.2:1.0-tty-ttyACM0.device                       loaded    active   plugged   PX4_FMU_v6C.x                                                                          
+sys-devices-platform-usb1-fe900000.dwc3-xhci\x2dhcd.10.auto-usb3-3\x2d1-3\x2d1.3-3\x2d1.3:1.0-ttyUSB0-tty-ttyUSB0.device               loaded    active   plugged   CP2102/CP2109 UART Bridge Controller [CP210x family]                                   
+sys-subsystem-net-devices-usb0.device                                                                                                  loaded    active   plugged   /sys/subsystem/net/devices/usb0                                                        
+rk-usb-ssh.service                                                                                                                     loaded    active   exited    SHELL RK USB RNDIS network for SSH                                                     
+shell-npu-firmware.service                                                                                                             loaded    active   exited    SHELL RK3399Pro NPU firmware RAM boot and USB readiness                                
+/sys/class/udc/fe800000.dwc3/state
+configured
+-3 1a38150376154217aa72f2ef1ff2b9a5 Thu 2023-03-02 20:58:02 CST—Sat 2026-10-24 02:09:10 CST
+-2 8f59ce7b70894ee6b748c4c11998da9b Sat 2026-10-24 02:09:10 CST—Mon 2026-10-26 04:37:02 CST
+-1 562459bd9776436595f94a3275eeedf0 Mon 2026-10-26 13:38:19 CST—Mon 2026-10-26 13:47:23 CST
+ 0 dd9ac92d446c49e9a1b5bc3caeca6d0a Mon 2026-10-26 16:28:20 CST—Mon 2026-10-26 16:39:32 CST
+[    0.364357] thermal thermal_zone1: power_allocator: sustainable_power will be estimated
+[    0.990675] dwhdmi-rockchip ff940000.hdmi: Detected HDMI TX controller v2.11a with HDCP (DWC HDMI 2.0 TX PHY)
+[    1.055525]  Enable RX Mitigation via HW Watchdog Timer
+[    1.058749] of_get_named_gpiod_flags: parsed 'snps,reset-gpio' property of node '/ethernet@fe300000[0]' - status (0)
+[    1.164194] usbcore: registered new interface driver rndis_wlan
+[    1.184923] usbcore: registered new interface driver rndis_host
+[    1.199409] rockchip-dwc3 usb0: failed to get drvdata dwc3
+[    1.203127] rockchip-dwc3 usb1: failed to get drvdata dwc3
+[    1.345912] rk808 0-0020: support pmic reset mode:0,0
+[    1.549620] rockchip-thermal ff260000.tsadc: tsadc is probed successfully!
+[    1.553266] dw_wdt ff848000.watchdog: Should better to setup a 'resets' property in dt, that must been named with reset
+[    1.884026] of_get_named_gpiod_flags: can't parse 'WIFI,reset_gpio' property of node '/wireless-wlan[0]'
+[    1.897848] ov13850 1-0010: GPIO lookup for consumer reset
+[    1.897875] of_get_named_gpiod_flags: parsed 'reset-gpios' property of node '/i2c@ff110000/ov13850@10[0]' - status (0)
+[    1.911300] ov13850 2-0010: GPIO lookup for consumer reset
+[    1.911325] of_get_named_gpiod_flags: parsed 'reset-gpios' property of node '/i2c@ff120000/ov13850_1@10[0]' - status (0)
+[    2.228558] xhci-hcd xhci-hcd.9.auto: Host controller not halted, aborting reset.
+[    2.427333] of_get_named_gpiod_flags: parsed 'uhrst-gpio' property of node '/usbhub-reset[0]' - status (0)
+[    2.711498] rtk_btusb: patch_add: Reset gEVersion to 0xff
+[    2.712287] rtk_btusb: HCI reset.
+[    2.969809] rtk_btusb: HCI reset.
+[    3.273942] rockchip-dwc3 usb0: USB peripheral connected
+[    7.767221] usb 3-1.1: reset high-speed USB device number 6 using xhci-hcd
+[  266.059227] rockchip-dwc3 usb0: USB unconnected
+[  271.058625] rockchip-dwc3 usb0: USB peripheral connected
+[  271.267065] configfs-gadget gadget: super-speed config #1: c
+REPORT:planner-production-baseline
+No completed report
+REPORT:planner-occ002
+No completed report

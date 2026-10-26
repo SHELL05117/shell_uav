@@ -1,0 +1,39 @@
+[100%] Built target detectnet
+[100%] Built target shoot_with_move_base_node
+[100%] Built target location_node
+[100%] Built target tfmini_test
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_nodejs
+[100%] Built target servo_controller_node
+[ 40%] Built target gtest
+[100%] Built target yolo_tensor_layout_test
+[ 40%] Built target gtest
+[100%] Built target dwa_control_math_test
+[ 50%] Built target gtest
+[100%] Built target localization_guard_test
+[ 40%] Built target gtest
+[100%] Built target tfmini_uart_pty_test
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make -j2 -l2 detectnet shoot_with_move_base_node location_node tfmini_test servo_controller_node yolo_tensor_layout_test dwa_control_math_test localization_guard_test tfmini_uart_pty_test" in "/home/jcfh/catkin_ws/build"
+####

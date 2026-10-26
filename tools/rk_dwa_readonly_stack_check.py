@@ -445,10 +445,12 @@ def run(arguments):
             resources.sample()
         except Exception as error:
             report['errors'].append('Resource sampling: '+str(error)); report['passed']=False
-        if rospy is not None:
-            rospy.signal_shutdown('Bounded readonly observation complete')
         report['errors'].extend(children.finish_all())
         report['orphan_group_stop_signals'] = resources.finish_owned_groups()
+        # Let publisher processes close their TCPROS connections before the
+        # observer shuts down. Concurrent peer/observer close races in Melodic.
+        if rospy is not None:
+            rospy.signal_shutdown('Bounded readonly observation complete')
         report['processes'] = children.report()
         report['resources'] = resources.report()
         report['remaining_owned_processes'] = resources.remaining()
