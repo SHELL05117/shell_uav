@@ -1,0 +1,26 @@
+[
+  {
+    "run": "stalled",
+    "source_sha256": "0a2de5fb3257abaaed36a5020e1f34791dd4ef7e5db1466b53382bad751ab3d6",
+    "samples": 692,
+    "wall_seconds": 52.4098219871521,
+    "capped_integration_seconds": 34.54793295860291,
+    "capped_to_elapsed_ratio": 0.6591881378088269,
+    "pump_gaps_above_50ms": 687,
+    "pump_gaps": 691,
+    "maximum_pump_gap": 0.34021592140197754,
+    "scope": "Pairwise timestamps in the original complete trace; demonstrates discarded elapsed time, not the cause of DWA stall"
+  },
+  {
+    "run": "reached_goal",
+    "source_sha256": "f000dbe9a57ca79a48b1ebba833944d4d15915bd657b837282d6aa96f3a0ab0d",
+    "samples": 501,
+    "wall_seconds": 40.37373995780945,
+    "capped_integration_seconds": 24.996570062637332,
+    "capped_to_elapsed_ratio": 0.6191294165157536,
+    "pump_gaps_above_50ms": 499,
+    "pump_gaps": 500,
+    "maximum_pump_gap": 0.3669421672821045,
+    "scope": "Pairwise timestamps in the original complete trace; demonstrates discarded elapsed time, not the cause of DWA stall"
+  }
+]

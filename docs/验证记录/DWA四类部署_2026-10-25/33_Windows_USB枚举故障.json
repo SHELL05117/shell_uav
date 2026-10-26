@@ -1,0 +1,59 @@
+{
+  "pc_time": "2026-10-26T14:21:10.0796972+08:00",
+  "usb_nodes": [
+    {
+      "InstanceId": "USB\\VID_1D6B&PID_0104\\SHELL-RK3399PROD-USBSSH",
+      "Name": "USB Composite Device",
+      "Status": "Unknown",
+      "Properties": [
+        {
+          "KeyName": "DEVPKEY_Device_LocationPaths",
+          "Data": [
+            "PCIROOT(0)#PCI(0801)#PCI(0004)#USBROOT(0)#USB(4)",
+            "ACPI(_SB_)#ACPI(PCI0)#ACPI(GP17)#ACPI(XHC1)#ACPI(RHUB)#ACPI(PRT4)"
+          ]
+        },
+        {
+          "KeyName": "DEVPKEY_Device_Parent",
+          "Data": "USB\\ROOT_HUB30\\5&13376f66&0&0"
+        },
+        {
+          "KeyName": "DEVPKEY_Device_ProblemCode",
+          "Data": null
+        }
+      ]
+    },
+    {
+      "InstanceId": "USB\\VID_0000&PID_0004\\6&25E18758&0&4",
+      "Name": "未知 USB 设备(设定地址失败)",
+      "Status": "Error",
+      "Properties": [
+        {
+          "KeyName": "DEVPKEY_Device_LocationPaths",
+          "Data": [
+            "ACPI(_SB_)#ACPI(PCI0)#ACPI(GP17)#ACPI(XHC1)#ACPI(RHUB)#ACPI(PRT4)"
+          ]
+        },
+        {
+          "KeyName": "DEVPKEY_Device_Parent",
+          "Data": "USB\\ROOT_HUB30\\5&13376f66&0&0"
+        },
+        {
+          "KeyName": "DEVPKEY_Device_ProblemCode",
+          "Data": 43
+        }
+      ]
+    }
+  ],
+  "attribution": "Historical RK composite device and current failed enumeration occupy the same USB port; current descriptor cannot identify the connected device",
+  "windows_administrator": false,
+  "recovery_attempt": {
+    "command": "pnputil /restart-device USB\\VID_0000&PID_0004\\6&25E18758&0&4",
+    "stdout": "Failed to restart device. Access is denied.",
+    "utility_exit_code": 0,
+    "observed_success": false,
+    "caution": "Utility exit code was zero despite explicit failure; no restart is claimed"
+  },
+  "ssh": "192.168.77.1 timed out",
+  "pending": "Physical USB reconnection or user-assisted repair; no global hub reset or elevation attempted"
+}

@@ -19,7 +19,70 @@ import signal
 import socket
 import subprocess
 import sys
+import threading
 import time
+
+
+def _monotonic_clock():
+    if hasattr(time,'monotonic'):
+        return time.monotonic,'time.monotonic'
+    # ROS Melodic's Python 2 lacks time.monotonic; never silently use wall time.
+    import ctypes
+    class Timespec(ctypes.Structure):
+        _fields_=[('seconds',ctypes.c_long),('nanoseconds',ctypes.c_long)]
+    try: library=ctypes.CDLL(None,use_errno=True); clock=library.clock_gettime
+    except AttributeError:
+        library=ctypes.CDLL('librt.so.1',use_errno=True); clock=library.clock_gettime
+    clock.argtypes=[ctypes.c_int,ctypes.POINTER(Timespec)]; clock.restype=ctypes.c_int
+    def read():
+        value=Timespec()
+        if clock(1,ctypes.byref(value))!=0:
+            raise OSError(ctypes.get_errno(),'CLOCK_MONOTONIC failed')
+        return value.seconds+value.nanoseconds*1e-9
+    read()
+    return read,'clock_gettime(CLOCK_MONOTONIC)'
+
+
+monotonic,CLOCK_SOURCE=_monotonic_clock()
+
+
+def integrate_command_history(pose,start,end,command,events,max_step=.025):
+    """Integrate every elapsed second, splitting at command arrivals and small steps.
+
+    events are (monotonic arrival time, body vx/vy/yaw-rate). Returns final pose,
+    command active at end, and timestamped substep poses for collision checks.
+    """
+    if end<start or max_step<=0 or any(math.isnan(x) or math.isinf(x)
+            for x in list(pose)+list(command)+[start,end,max_step]):
+        raise ValueError('Invalid integration interval or state')
+    state=list(pose); active=tuple(command); cursor=start; samples=[]
+    changes=sorted(events,key=lambda event:event[0])
+    for when,values in changes:
+        if any(math.isnan(x) or math.isinf(x) for x in [when]+list(values)) or len(values)!=3:
+            raise ValueError('Invalid command arrival')
+        if when<=start: active=tuple(values)
+    samples.append([start]+state+list(active))
+    def advance(until,velocity):
+        duration=until-cursor
+        if duration<=0: return
+        steps=max(1,int(math.ceil(duration/max_step))); dt=duration/steps
+        vx,vy,omega=velocity
+        for index in range(steps):
+            heading=state[2]; angle=heading+omega*dt
+            if abs(omega)<1e-12:
+                state[0]+=(math.cos(heading)*vx-math.sin(heading)*vy)*dt
+                state[1]+=(math.sin(heading)*vx+math.cos(heading)*vy)*dt
+            else:
+                state[0]+=(vx*(math.sin(angle)-math.sin(heading))+vy*(math.cos(angle)-math.cos(heading)))/omega
+                state[1]+=(vx*(math.cos(heading)-math.cos(angle))+vy*(math.sin(angle)-math.sin(heading)))/omega
+            state[2]=angle
+            samples.append([cursor+(index+1)*dt]+list(state)+list(velocity))
+    for when,values in changes:
+        if when<=start: continue
+        if when>end: break
+        advance(when,active); cursor=when; active=tuple(values)
+    advance(end,active)
+    return state,active,samples
 
 
 def parse_footprint(value):
@@ -93,8 +156,8 @@ def stop(process):
         try: os.killpg(process.pid,signum)
         except OSError:
             if process.poll() is None: raise
-        deadline=time.time()+seconds
-        while process.poll() is None and time.time()<deadline:
+        deadline=monotonic()+seconds
+        while process.poll() is None and monotonic()<deadline:
             time.sleep(.05)
     if process.poll() is None: raise RuntimeError('Owned child did not stop after SIGKILL')
     return process.returncode
@@ -155,18 +218,27 @@ def main():
                       ROS_HOME=directory+'/ros-home',ROS_LOG_DIR=directory+'/ros-logs')
     os.environ.pop('ROS_HOSTNAME',None)
     reservation=socket.socket(); reservation.bind(('127.0.0.1',11331)); reservation.close()
-    children=[]; streams=[]; active_trace=[None]; active_evidence=[None]
+    children=[]; streams=[]; active_trace=[None]; active_evidence=[None]; active_simulation=[None]
+    def save_simulation(snapshot):
+        namespace,timing,seen,integration_trace,collision=snapshot
+        with open(directory+'/'+namespace+'-integration-trace.json','w') as output:
+            json.dump(integration_trace,output)
+        with open(directory+'/'+namespace+'-commands.json','w') as output: json.dump(seen,output)
+        timing['integration_error_seconds']=timing['integrated_seconds']-timing['observed_elapsed_seconds']
+        with open(directory+'/'+namespace+'-timing.json','w') as output:
+            json.dump(dict(timing=timing,collision=collision),output,indent=2,sort_keys=True)
     def start(name,command):
         stream=open(directory+'/'+name+'.log','w'); streams.append(stream)
         child=subprocess.Popen(command,stdout=stream,stderr=subprocess.STDOUT,preexec_fn=os.setsid)
         children.append((name,child)); return child
     result=dict(cases=[],exits={},scope='synthetic software planner execution only',
                 aircraft_footprint_measured=False,master='127.0.0.1:11331',
-                requested_case=args.case,forward_point_distance_override=args.forward_point_distance)
+                requested_case=args.case,forward_point_distance_override=args.forward_point_distance,
+                clock_source=CLOCK_SOURCE,trace_columns=['monotonic_seconds','x','y','yaw','body_vx','body_vy','yaw_rate','ros_seconds'])
     master=start('master',['roscore','-p','11331'])
     try:
-        deadline=time.time()+15
-        while time.time()<deadline:
+        deadline=monotonic()+15
+        while monotonic()<deadline:
             sock=socket.socket()
             try: sock.connect(('127.0.0.1',11331)); break
             except socket.error: time.sleep(.1)
@@ -189,11 +261,15 @@ def main():
             path=directory+'/'+namespace+'.launch'
             with open(path,'w') as output: output.write(launch_xml(namespace,args.forward_point_distance))
             command=[0.0,0.0,0.0]
+            pending_commands=[]; command_lock=threading.Lock()
             seen=[]; plans=[]; local_plans=[]; costmaps={}
             def velocity(message):
                 values=(message.linear.x,message.linear.y,message.angular.z)
-                command[:]=values
-                seen.append((time.time(),values))
+                # Timestamp under the same lock used by pump: a callback cannot
+                # append a retroactive event after that interval was integrated.
+                with command_lock:
+                    event=(monotonic(),values)
+                    pending_commands.append(event); seen.append(event)
             def plan(message): plans.append(message)
             def local_plan(message): local_plans.append(message)
             def costmap(kind,message): costmaps[kind]=message
@@ -220,17 +296,44 @@ def main():
                        (obstacle and 55<=x<65 and 50<=y<70) else 0
                        for y in range(120) for x in range(120)]
             pose=[-1.5 if obstacle else 0.0,0.0,yaw]
-            previous=[time.time()]; map_due=[0.0]
-            trace=[]
+            previous=[monotonic()]; map_due=[0.0]
+            trace=[]; integration_trace=[]; collision_footprint=[None]
+            timing=dict(clock_source=CLOCK_SOURCE,integration_step_limit=.025,
+                        observed_elapsed_seconds=0.0,integrated_seconds=0.0,
+                        integration_error_seconds=0.0,
+                        maximum_pump_gap=0.0,maximum_integration_step=0.0,
+                        integration_substeps=0,pump_calls=0,startup_hold_seconds=0.0)
+            collision=dict(checked_substep_poses=0,overlapping_substep_poses=0,
+                           minimum_footprint_clearance=None)
+            active_simulation[0]=(namespace,timing,seen,integration_trace,collision)
             active_trace[0]=(directory+'/'+namespace+'-trace.json',trace)
             def pump(integrate=True):
-                now=time.time(); delta=min(.05,max(0,now-previous[0])); previous[0]=now
+                with command_lock:
+                    now=monotonic(); stamp=rospy.Time.now()
+                    changes=list(pending_commands); del pending_commands[:]
+                before=previous[0]; delta=now-before; previous[0]=now
+                timing['pump_calls']+=1
+                timing['maximum_pump_gap']=max(timing['maximum_pump_gap'],delta)
                 if integrate:
-                    c=math.cos(pose[2]); s=math.sin(pose[2])
-                    pose[0]+=(c*command[0]-s*command[1])*delta
-                    pose[1]+=(s*command[0]+c*command[1])*delta
-                    pose[2]+=command[2]*delta
-                stamp=rospy.Time.now()
+                    new_pose,new_command,samples=integrate_command_history(pose,before,now,command,changes)
+                    pose[:]=new_pose; command[:]=new_command
+                    integration_trace.extend(samples)
+                    gaps=[b[0]-a[0] for a,b in zip(samples,samples[1:])]
+                    timing['observed_elapsed_seconds']+=delta
+                    timing['integrated_seconds']+=sum(gaps)
+                    timing['integration_error_seconds']=timing['integrated_seconds']-timing['observed_elapsed_seconds']
+                    timing['integration_substeps']+=len(gaps)
+                    timing['maximum_integration_step']=max([timing['maximum_integration_step']]+gaps)
+                    if obstacle and collision_footprint[0] is not None:
+                        for sample in samples:
+                            gap=footprint_box_clearance(sample[1:4],collision_footprint[0],box)
+                            old=collision['minimum_footprint_clearance']
+                            collision['minimum_footprint_clearance']=gap if old is None else min(old,gap)
+                            collision['checked_substep_poses']+=1
+                            if gap<=0: collision['overlapping_substep_poses']+=1
+                else:
+                    timing['startup_hold_seconds']+=delta
+                    if changes: command[:]=changes[-1][1]
                 transforms=[]
                 for parent,child,x,y,angle in [(frame('map'),frame('odom'),0,0,0),
                     (frame('odom'),frame('base'),pose[0],pose[1],pose[2]),
@@ -249,7 +352,7 @@ def main():
                 odom.twist.twist.angular.z=command[2]; odom_pub.publish(odom)
                 scan=LaserScan(); scan.header.stamp=stamp; scan.header.frame_id=frame('laser')
                 scan.angle_min=-math.pi; scan.angle_max=math.pi; scan.angle_increment=2*math.pi/360
-                scan.range_min=.05; scan.range_max=8.0; scan.scan_time=.025
+                scan.range_min=.05; scan.range_max=8.0; scan.scan_time=delta
                 if obstacle:
                     walls=[(-3,-2.95,-3,3),(2.95,3,-3,3),(-3,3,-3,-2.95),(-3,3,2.95,3)]
                     ranges=[]
@@ -264,15 +367,15 @@ def main():
                 scan_pub.publish(scan)
                 if now>=map_due[0]:
                     grid.header.stamp=stamp; map_pub.publish(grid); map_due[0]=now+.5
-                trace.append([now,pose[0],pose[1],pose[2],command[0],command[1],command[2]])
+                trace.append([now,pose[0],pose[1],pose[2],command[0],command[1],command[2],stamp.to_sec()])
                 time.sleep(.025)
             child=start(namespace,['roslaunch',path])
             client=actionlib.SimpleActionClient(prefix+'/move_base',MoveBaseAction)
-            deadline=time.time()+18
-            while time.time()<deadline:
+            deadline=monotonic()+18
+            while monotonic()<deadline:
                 if child.poll() is not None: raise RuntimeError(namespace+' exited during startup')
                 pump(False)
-                if client.wait_for_server(rospy.Duration(.01)) and time.time()>deadline-15: break
+                if client.wait_for_server(rospy.Duration(.01)) and monotonic()>deadline-15: break
             else: raise RuntimeError(namespace+' action server unavailable')
             for _ in range(30): pump(False)
             plugin=rospy.get_param(prefix+'/move_base/base_local_planner')
@@ -288,9 +391,14 @@ def main():
                 message.target_pose.pose.orientation.z=math.sin(yaw/2)
                 message.target_pose.pose.orientation.w=math.cos(yaw/2); return message
             goal_x=1.5 if obstacle else .8
-            sent=time.time(); trace_start=len(trace); client.send_goal(goal(goal_x,0))
-            deadline=time.time()+(45 if obstacle else 18)
-            while time.time()<deadline:
+            raw_footprint=None
+            if obstacle:
+                raw_footprint=rospy.get_param(prefix+'/move_base/local_costmap/footprint')
+                collision_footprint[0]=parse_footprint(raw_footprint)
+            sent=monotonic(); substep_start=len(integration_trace)
+            client.send_goal(goal(goal_x,0))
+            deadline=monotonic()+(45 if obstacle else 18)
+            while monotonic()<deadline:
                 if child.poll() is not None: raise RuntimeError(namespace+' exited during goal')
                 pump()
                 state=client.get_state()
@@ -310,10 +418,9 @@ def main():
                 semantics=means[1]<-.02 and abs(means[1])>abs(means[0])
             obstacle_metrics={}
             if obstacle:
-                goal_trace=trace[trace_start:]
-                raw_footprint=rospy.get_param(prefix+'/move_base/local_costmap/footprint')
+                goal_trace=integration_trace[substep_start:]
                 # Accept the installed polygon, never invent a measured aircraft size.
-                footprint=parse_footprint(raw_footprint)
+                footprint=collision_footprint[0]
                 clearance=min(footprint_box_clearance(sample[1:4],footprint,box) for sample in goal_trace)
                 lateral=max(abs(sample[2]) for sample in goal_trace)
                 planned_lateral=max(abs(p.pose.position.y) for path in route for p in path.poses) if route else 0
@@ -327,7 +434,8 @@ def main():
                     synthetic_footprint=footprint,minimum_footprint_clearance=clearance,
                     required_footprint_clearance=.01,executed_lateral_excursion=lateral,
                     planned_lateral_excursion=planned_lateral,traveled_distance=traveled,
-                    direct_distance=3.0,detoured=detoured,goal_elapsed=time.time()-sent,
+                    direct_distance=3.0,detoured=detoured,goal_elapsed=monotonic()-sent,
+                    collision_check_timebase='all integration substeps <=25ms',
                     goal_timeout=45,synthetic_map_and_scan_obstacle=True)
                 # Preserve trajectory and global paths even if this new acceptance fails.
                 with open(directory+'/'+namespace+'-obstacle.json','w') as output:
@@ -335,27 +443,32 @@ def main():
                 with open(directory+'/'+namespace+'-global-plans.json','w') as output:
                     json.dump([[[p.pose.position.x,p.pose.position.y] for p in path.poses] for path in route],output)
             # A second real goal, then action cancellation must publish zero.
-            second_sent=time.time(); client.send_goal(goal(1.6,0))
-            deadline=time.time()+5
-            while time.time()<deadline:
+            second_sent=monotonic(); client.send_goal(goal(1.6,0))
+            deadline=monotonic()+5
+            while monotonic()<deadline:
                 pump()
                 if any(when>second_sent and math.hypot(v[0],v[1])>.02 for when,v in seen): break
             else: raise RuntimeError(namespace+' did not move for cancellation check')
-            cancelled=time.time(); client.cancel_goal(); deadline=time.time()+3
-            while time.time()<deadline:
+            cancelled=monotonic(); client.cancel_goal(); deadline=monotonic()+3
+            while monotonic()<deadline:
                 pump()
                 if client.get_state()==GoalStatus.PREEMPTED and any(when>=cancelled and
                     max(abs(x) for x in v)<1e-6 for when,v in seen): break
             else: raise RuntimeError(namespace+' cancellation did not produce zero velocity')
-            case=dict(name=name,passed=bounded and bool(route) and end_error<.15 and semantics,
+            timing_consistent=(timing['observed_elapsed_seconds']>0 and
+                abs(timing['integration_error_seconds'])<=1e-6 and
+                timing['maximum_integration_step']<=.025+1e-8)
+            case=dict(name=name,passed=bounded and bool(route) and end_error<.15 and semantics and timing_consistent,
                       plugin=plugin,global_plans=len(route),velocity_samples=len(nonzero),
                       velocity_limits=limits,mean_body_velocity=means,initial_yaw=yaw,
-                      reached_goal_error=end_error,cancelled_action_zero_velocity=True)
+                      reached_goal_error=end_error,cancelled_action_zero_velocity=True,
+                      timing_consistent=timing_consistent,timing=dict(timing),substep_collision=dict(collision))
             if obstacle:
                 case.update(obstacle_metrics)
                 case['passed']=case['passed'] and obstacle_metrics['detoured'] and obstacle_metrics['minimum_footprint_clearance']>=.01
             result['cases'].append(case)
             with open(directory+'/'+namespace+'-trace.json','w') as output: json.dump(trace,output)
+            save_simulation(active_simulation[0])
             print(json.dumps(case)); sys.stdout.flush()
             result['exits'][namespace]=stop(child)
             for subscription in subscribers: subscription.unregister()
@@ -375,6 +488,7 @@ def main():
         if active_trace[0] is not None:
             path,trace=active_trace[0]
             with open(path,'w') as output: json.dump(trace,output)
+        if active_simulation[0] is not None: save_simulation(active_simulation[0])
         if active_evidence[0] is not None:
             namespace,plans,local_plans,costmaps=active_evidence[0]
             for kind,messages in (('global',plans),('local',local_plans)):

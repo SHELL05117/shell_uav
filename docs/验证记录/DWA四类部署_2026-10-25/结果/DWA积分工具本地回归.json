@@ -1,0 +1,86 @@
+{
+  "scope": "Local pure-function checks only; Python2/ROS execution on RK remains pending",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "tool_sha256": "33ae82c41fcd020253a5cc84afcc3df19a019288817db9129bce84818ff2532b",
+  "clock": "time.monotonic",
+  "cases": [
+    {
+      "name": "80ms_is_fully_integrated",
+      "passed": true,
+      "actual": [
+        0.08,
+        0.0,
+        0.0
+      ],
+      "integrated_seconds": 0.08,
+      "maximum_step": 0.020000000000000004
+    },
+    {
+      "name": "yaw90_body_forward",
+      "passed": true,
+      "actual": [
+        4.898587196589413e-18,
+        0.08,
+        1.5707963267948966
+      ],
+      "integrated_seconds": 0.08,
+      "maximum_step": 0.020000000000000004
+    },
+    {
+      "name": "command_change_at_30ms",
+      "passed": true,
+      "actual": [
+        0.03,
+        0.1,
+        0.0
+      ],
+      "integrated_seconds": 0.08,
+      "maximum_step": 0.025
+    },
+    {
+      "name": "stop_exactly_at_interval_end",
+      "passed": true,
+      "actual": [
+        0.08,
+        0.0,
+        0.0
+      ],
+      "integrated_seconds": 0.08,
+      "maximum_step": 0.020000000000000004
+    },
+    {
+      "name": "zero_velocity_holds_pose",
+      "passed": true,
+      "actual": [
+        2.0,
+        3.0,
+        0.0
+      ],
+      "integrated_seconds": 0.08,
+      "maximum_step": 0.020000000000000004
+    },
+    {
+      "name": "constant_twist_circular_arc",
+      "passed": true,
+      "actual": [
+        1.0,
+        1.0000000000000018,
+        1.5707963267948983
+      ],
+      "integrated_seconds": 1.5707963267948966,
+      "maximum_step": 0.02493327502849052
+    },
+    {
+      "name": "intermediate_collision_is_observable",
+      "passed": true,
+      "actual": [
+        1.000000000000001,
+        0.0,
+        0.0
+      ],
+      "integrated_seconds": 2.0,
+      "maximum_step": 0.025000000000000133
+    }
+  ],
+  "launch_xml_variants_parsed": 2
+}
