@@ -42,6 +42,9 @@ public:
 	int write_register8(uint8 device_register, uint8 value) noexcept(false);
 	int write(uint8 writeValue) noexcept(false);
 	int read(uint8 reg) noexcept(false);
+	// Raw I2C frames: no SMBus register pointer or length byte is added.
+	void write_bytes(const uint8 *data, std::size_t length);
+	void read_bytes(uint8 *data, std::size_t length);
 	void change_address(uint8 address);
 
 private:

@@ -1,0 +1,176 @@
+Verified PX4 heartbeat: disarmed
+SHELL_COMMAND '\n'
+
+NuttShell (NSH) NuttX-11.0.0
+nsh> [K
+nsh> [KSHELL_COMMAND 'commander check\n'
+commander check
+INFO  [commander] Preflight check: OK
+WARN  [PreFlightCheck] Arming denied! manual control lost
+INFO  [commander] Prearm check: FAILED
+INFO  [HealthFlags] DEVICE		STATUS
+INFO  [HealthFlags] ----------------------------------
+INFO  [HealthFlags] GYRO:		 	
+INFO  [HealthFlags] ACC:		 	
+INFO  [HealthFlags] MAG:		EN	OK
+INFO  [HealthFlags] PRESS:		EN	OK
+INFO  [HealthFlags] AIRSP:		 	
+INFO  [HealthFlags] GPS:		 	
+INFO  [HealthFlags] OPT:		 	
+INFO  [HealthFlags] VIO:		 	
+INFO  [HealthFlags] LASER:		 	
+INFO  [HealthFlags] GTRUTH:		 	
+INFO  [HealthFlags] RATES:		 	
+INFO  [HealthFlags] ATT:		 	
+INFO  [HealthFlags] YAW:		 	
+INFO  [HealthFlags] ALTCTL:		 	
+INFO  [HealthFlags] POS:		 	
+INFO  [HealthFlags] MOT:		EN	OK
+INFO  [HealthFlags] RC  :		 	
+INFO  [HealthFlags] GYRO2:		 	
+INFO  [HealthFlags] ACC2:		 	
+INFO  [HealthFlags] MAG2:		EN	OK
+INFO  [HealthFlags] GEOFENCE:		 	
+INFO  [HealthFlags] AHRS:		EN	OK
+INFO  [HealthFlags] TERRAIN:		 	
+INFO  [HealthFlags] REVMOT:		 	
+INFO  [HealthFlags] LOGGIN:		 	
+INFO  [HealthFlags] BATT:		EN	OK
+INFO  [HealthFlags] PROX:		 	
+INFO  [HealthFlags] SATCOM:		 	
+INFO  [HealthFlags] PREARM:		EN	ERR
+INFO  [HealthFlags] OBSAVD:		 	
+nsh> [KSHELL_COMMAND 'ekf2 status\n'
+ekf2 status
+INFO  [ekf2] available instances: 4
+INFO  [ekf2] 0: ACC: 4259850, GYRO: 4325386, MAG: 396321, healthy, test ratio: 1.0000000 (0.00000) 
+INFO  [ekf2] 1: ACC: 2490378, GYRO: 2490378, MAG: 396321, healthy, test ratio: 1.0000000 (0.00000) *
+INFO  [ekf2] 2: ACC: 4259850, GYRO: 4325386, MAG: 396809, healthy, test ratio: 1.0000000 (0.00000) 
+INFO  [ekf2] 3: ACC: 2490378, GYRO: 2490378, MAG: 396809, healthy, test ratio: 1.0000000 (0.00000) 
+
+ekf2:0 EKF dt: 0.0090s, IMU dt: 0.0044s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 61616 events, 163270us elapsed, 2.65us avg, min 1us max 94us 2.037us rms
+ekf2: ECL full update: 61092 events, 6166832us elapsed, 100.94us avg, min 67us max 367us 41.691us rms
+ekf2: IMU message missed: 1 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+
+ekf2:1 EKF dt: 0.0099s, IMU dt: 0.0049s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 55583 events, 155583us elapsed, 2.80us avg, min 1us max 520us 6.659us rms
+ekf2: ECL full update: 55114 events, 5696138us elapsed, 103.35us avg, min 67us max 863us 52.531us rms
+ekf2: IMU message missed: 0 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+
+ekf2:2 EKF dt: 0.0089s, IMU dt: 0.0044s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 61617 events, 130936us elapsed, 2.12us avg, min 1us max 106us 2.278us rms
+ekf2: ECL full update: 61097 events, 5949274us elapsed, 97.37us avg, min 66us max 387us 39.918us rms
+ekf2: IMU message missed: 2 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+
+ekf2:3 EKF dt: 0.0099s, IMU dt: 0.0049s, attitude: 1, local position: 0, global position: 0
+ekf2: ECL update: 55583 events, 122548us elapsed, 2.20us avg, min 1us max 449us 5.782us rms
+ekf2: ECL full update: 55119 events, 5407468us elapsed, 98.11us avg, min 66us max 715us 52.653us rms
+ekf2: IMU message missed: 0 events
+ekf2: vehicle_air_data messages missed: 0 events
+ekf2: vehicle_magnetometer messages missed: 0 events
+nsh> [KSHELL_COMMAND 'listener vehicle_status -n 1\n'
+listener vehicle_status -n 1
+
+TOPIC: vehicle_status
+ vehicle_status
+    timestamp: 555610643 (0.310370 seconds ago)
+    nav_state_timestamp: 670851
+    failsafe_timestamp: 0
+    onboard_control_sensors_present: 304644108
+    onboard_control_sensors_enabled: 304644108
+    onboard_control_sensors_health: 36601871
+    armed_time: 0
+    takeoff_time: 0
+    nav_state: 0
+    arming_state: 1
+    hil_state: 0
+    failsafe: False
+    system_type: 2
+    system_id: 1
+    component_id: 1
+    vehicle_type: 1
+    is_vtol: False
+    is_vtol_tailsitter: False
+    vtol_fw_permanent_stab: False
+    in_transition_mode: False
+    in_transition_to_fw: False
+    rc_signal_lost: True
+    data_link_lost: False
+    data_link_lost_counter: 0
+    high_latency_data_link_lost: False
+    engine_failure: False
+    mission_failure: False
+    geofence_violated: False
+    failure_detector_status: 0
+    latest_arming_reason: 0
+    latest_disarming_reason: 0
+
+nsh> [KSHELL_COMMAND 'listener battery_status -n 1\n'
+listener battery_status -n 1
+
+TOPIC: battery_status
+ battery_status
+    timestamp: 558913526 (0.007890 seconds ago)
+    voltage_v: 0.0021
+    voltage_filtered_v: 0.0021
+    current_a: 0.0264
+    current_filtered_a: 0.0264
+    current_average_a: 15.0000
+    discharged_mah: 4.2928
+    remaining: 0.0000
+    scale: 1.2000
+    time_remaining_s: nan
+    temperature: nan
+    voltage_cell_v: [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]
+    max_cell_voltage_delta: 0.0000
+    custom_faults: 0
+    average_power: 0.0000
+    available_energy: 0.0000
+    full_charge_capacity_wh: 0.0000
+    remaining_capacity_wh: 0.0000
+    design_capacity: 0.0000
+    nominal_voltage: 0.0000
+    capacity: 0
+    cycle_count: 0
+    average_time_to_empty: 0
+    serial_number: 0
+    manufacture_date: 0
+    state_of_health: 0
+    max_error: 0
+    interface_error: 0
+    faults: 0
+    average_time_to_full: 0
+    over_discharge_count: 0
+    connected: False
+    cell_count: 4
+    source: 0
+    priority: 0
+    id: 1
+    is_powering_off: False
+    is_required: False
+    warning: 0
+    mode: 0
+
+nsh> [KSHELL_COMMAND 'listener input_rc -n 1\n'
+listener input_rc -n 1
+never published
+nsh> [KSHELL_COMMAND 'param show EKF2_AID_MASK\n'
+param show EKF2_AID_MASK
+Symbols: x = used, + = saved, * = unsaved
+x + EKF2_AID_MASK [211,437] : 24
+
+ 899/1803 parameters used.
+nsh> [KSHELL_COMMAND 'param show EKF2_HGT_MODE\n'
+param show EKF2_HGT_MODE
+Symbols: x = used, + = saved, * = unsaved
+x + EKF2_HGT_MODE [255,481] : 3
+
+ 899/1803 parameters used.
+nsh> [K

@@ -1,0 +1,12 @@
+# SHELL: vertical TFmini, ruler about 0.12 +/- 0.01 m (2026-10-27).
+# 80 real range/IMU samples: projected zero 0.119966659 m; rounded to 0.12 m.
+# Lever arm is an accepted centimetre-level approximation, not a precision survey.
+# Re-zero if support height or sensor installation changes.
+height_reference_calibrated: true
+tf_mini_height: 0.12
+sensor_offset_x: 0.0
+sensor_offset_y: 0.0
+sensor_offset_z: 0.0
+sensor_beam_x: 0.0
+sensor_beam_y: 0.0
+sensor_beam_z: -1.0

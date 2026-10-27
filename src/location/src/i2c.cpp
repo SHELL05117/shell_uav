@@ -109,3 +109,20 @@ int I2C::write(uint8 writeValue) noexcept(false)
 
 	return write;
 }
+
+void I2C::write_bytes(const uint8 *data, std::size_t length)
+{
+	ssize_t count;
+	do { count = ::write(kI2CFileDescriptor, data, length); } while (count < 0 && errno == EINTR);
+	if (count != static_cast<ssize_t>(length))
+		throw std::system_error(count < 0 ? errno : EIO, std::generic_category(), "[i2c]Raw frame write");
+}
+
+void I2C::read_bytes(uint8 *data, std::size_t length)
+{
+	ssize_t count;
+	do { count = ::read(kI2CFileDescriptor, data, length); } while (count < 0 && errno == EINTR);
+	// Do not stitch partial I2C transactions into an apparently complete frame.
+	if (count != static_cast<ssize_t>(length))
+		throw std::system_error(count < 0 ? errno : EIO, std::generic_category(), "[i2c]Raw frame read");
+}

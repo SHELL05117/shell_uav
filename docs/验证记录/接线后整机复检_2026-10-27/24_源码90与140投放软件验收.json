@@ -1,0 +1,125 @@
+{
+  "angles": {
+    "down_angle": 55.0, 
+    "drop_safe_angle": 30.0, 
+    "fire_drop_angle": 90.0, 
+    "front_angle": 170.0, 
+    "rescue_drop_angle": 140.0
+  }, 
+  "clearance_confirmed": true, 
+  "commands": [
+    {
+      "ack_delay": 1.005270458000041, 
+      "acknowledgement": "DROP_FIRE_DONE", 
+      "angle": 90.0, 
+      "channel": 1, 
+      "command": "DROP_FIRE", 
+      "expected_registers": [
+        0, 
+        0, 
+        51, 
+        1
+      ], 
+      "registers": [
+        0, 
+        0, 
+        51, 
+        1
+      ], 
+      "registers_match": true
+    }, 
+    {
+      "ack_delay": 1.0043338749999293, 
+      "acknowledgement": "DROP_RESCUE_DONE", 
+      "angle": 140.0, 
+      "channel": 1, 
+      "command": "DROP_RESCUE", 
+      "expected_registers": [
+        0, 
+        0, 
+        137, 
+        1
+      ], 
+      "registers": [
+        0, 
+        0, 
+        137, 
+        1
+      ], 
+      "registers_match": true
+    }
+  ], 
+  "errors": [], 
+  "flight_acceptance": false, 
+  "linkage_disconnected_declared": false, 
+  "load_voltage_acceptance": false, 
+  "mechanical_acceptance": false, 
+  "outputs_disabled_after": {
+    "mode1_after": 176, 
+    "mode1_before": 32, 
+    "motion_or_voltage_acceptance": false, 
+    "oe_level_not_measured": true, 
+    "off_high": [
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16
+    ], 
+    "passed": true, 
+    "utc": "2026-10-27T13:55:16.928339+00:00"
+  }, 
+  "prescale": 121, 
+  "processes": [
+    {
+      "arguments": [
+        "roscore", 
+        "-p", 
+        "11336"
+      ], 
+      "exit_code": 0, 
+      "log": "master.log", 
+      "name": "master", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "servo_control", 
+        "servo_bench.launch", 
+        "restore_after_drop:=false", 
+        "down_angle:=55.0", 
+        "drop_safe_angle:=30.0", 
+        "fire_drop_angle:=90.0", 
+        "front_angle:=170.0", 
+        "rescue_drop_angle:=140.0"
+      ], 
+      "exit_code": 0, 
+      "log": "servo.log", 
+      "name": "servo", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }
+  ], 
+  "profile": "source", 
+  "selected_servo": "drop", 
+  "software_passed": true, 
+  "start_utc": "2026-10-27T13:55:05Z", 
+  "temporary_angles": false
+}

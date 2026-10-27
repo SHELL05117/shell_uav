@@ -5,6 +5,7 @@
 Only heartbeats and SERIAL_CONTROL are sent. Commands are fixed per mode.
 gps-persist sets only GPS_1_CONFIG=201; fusion/preflight parameters are read.
 reboot restarts a disarmed, USB-powered flight controller for persistence checks.
+The preflight mode only queries checks, estimator, battery and receiver state.
 Requires no pyserial/pymavlink package. Refuses an armed controller.
 """
 from __future__ import print_function
@@ -33,10 +34,14 @@ def checksum(data):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--device', default='/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00')
-    parser.add_argument('--mode', choices=['status', 'gps-persist', 'reboot'], default='status')
+    parser.add_argument('--mode', choices=['status', 'preflight', 'gps-persist', 'reboot'], default='status')
     args = parser.parse_args()
     commands = {
         'status': ['\n', 'gps status\n', 'param show GPS_1_CONFIG\n', 'param show SYS_HAS_GPS\n', 'param show EKF2_AID_MASK\n', 'listener sensor_gps -n 1\n'],
+        'preflight': ['\n', 'commander check\n', 'ekf2 status\n',
+            'listener vehicle_status -n 1\n', 'listener battery_status -n 1\n',
+            'listener input_rc -n 1\n', 'param show EKF2_AID_MASK\n',
+            'param show EKF2_HGT_MODE\n'],
         'gps-persist': ['\n', 'gps status\n', 'param set GPS_1_CONFIG 201\n', 'param show GPS_1_CONFIG\n', 'param show SYS_HAS_GPS\n', 'param show EKF2_AID_MASK\n', 'gps start -d /dev/ttyS0 -b 0\n', 'gps status\n', 'listener sensor_gps -n 1\n'],
         'reboot': ['\n', 'reboot\n'],
     }[args.mode]

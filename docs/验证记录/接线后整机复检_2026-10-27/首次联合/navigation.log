@@ -1,0 +1,262 @@
+... logging to /home/jcfh/shell_acceptance_20261027/joint-i2c/ros-logs/7ac9bca4-d208-11f1-ba5c-14f5f9e6cd08/roslaunch-toybrick-3072.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/navigation_2d/launch/navigation_2d.launch
+[1mstarted roslaunch server http://127.0.0.1:38115/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /move_base/DWAPlannerROS/acc_lim_theta: 3.2
+ * /move_base/DWAPlannerROS/acc_lim_x: 4.0
+ * /move_base/DWAPlannerROS/acc_lim_y: 4.0
+ * /move_base/DWAPlannerROS/controller_frequency: 15.0
+ * /move_base/DWAPlannerROS/forward_point_distance: 0.2
+ * /move_base/DWAPlannerROS/goal_distance_bias: 24.0
+ * /move_base/DWAPlannerROS/latch_xy_goal_tolerance: False
+ * /move_base/DWAPlannerROS/max_scaling_factor: 1.0
+ * /move_base/DWAPlannerROS/max_vel_theta: 0
+ * /move_base/DWAPlannerROS/max_vel_trans: 0.45
+ * /move_base/DWAPlannerROS/max_vel_x: 0.4
+ * /move_base/DWAPlannerROS/max_vel_y: 0.4
+ * /move_base/DWAPlannerROS/min_vel_theta: 0
+ * /move_base/DWAPlannerROS/min_vel_trans: 0.1
+ * /move_base/DWAPlannerROS/min_vel_x: -0.4
+ * /move_base/DWAPlannerROS/min_vel_y: -0.4
+ * /move_base/DWAPlannerROS/occdist_scale: 0.02
+ * /move_base/DWAPlannerROS/odom_topic: /mavros/local_pos...
+ * /move_base/DWAPlannerROS/oscillation_reset_dist: 0.05
+ * /move_base/DWAPlannerROS/path_distance_bias: 32.0
+ * /move_base/DWAPlannerROS/publish_cost_grid_pc: False
+ * /move_base/DWAPlannerROS/publish_traj_pc: False
+ * /move_base/DWAPlannerROS/scaling_speed: 1.0
+ * /move_base/DWAPlannerROS/sim_granularity: 0.025
+ * /move_base/DWAPlannerROS/sim_time: 2.0
+ * /move_base/DWAPlannerROS/stop_time_buffer: 0.2
+ * /move_base/DWAPlannerROS/vth_samples: 40
+ * /move_base/DWAPlannerROS/vx_samples: 20
+ * /move_base/DWAPlannerROS/vy_samples: 20
+ * /move_base/DWAPlannerROS/xy_goal_tolerance: 0.1
+ * /move_base/DWAPlannerROS/yaw_goal_tolerance: 0.2
+ * /move_base/base_local_planner: dwa_local_planner...
+ * /move_base/conservative_reset_dist: 3.0
+ * /move_base/controller_frequency: 10
+ * /move_base/controller_patience: 15.0
+ * /move_base/global_costmap/cost_scaling_factor: 3.0
+ * /move_base/global_costmap/default_tolerance: 1
+ * /move_base/global_costmap/footprint: [[0.16, 0.16], [0...
+ * /move_base/global_costmap/global_frame: map
+ * /move_base/global_costmap/inflation_radius: 0.25
+ * /move_base/global_costmap/map_type: costmap
+ * /move_base/global_costmap/observation_sources: scan
+ * /move_base/global_costmap/obstacle_range: 3.0
+ * /move_base/global_costmap/publish_frequency: 10.0
+ * /move_base/global_costmap/raytrace_range: 3.5
+ * /move_base/global_costmap/robot_base_frame: base_link
+ * /move_base/global_costmap/scan/clearing: True
+ * /move_base/global_costmap/scan/data_type: LaserScan
+ * /move_base/global_costmap/scan/marking: True
+ * /move_base/global_costmap/scan/sensor_frame: laser_link
+ * /move_base/global_costmap/scan/topic: scan
+ * /move_base/global_costmap/static_map: True
+ * /move_base/global_costmap/transform_tolerance: 0.5
+ * /move_base/global_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/cost_scaling_factor: 3.0
+ * /move_base/local_costmap/footprint: [[0.16, 0.16], [0...
+ * /move_base/local_costmap/global_frame: map
+ * /move_base/local_costmap/height: 6.0
+ * /move_base/local_costmap/inflation_radius: 0.25
+ * /move_base/local_costmap/map_type: costmap
+ * /move_base/local_costmap/observation_sources: scan
+ * /move_base/local_costmap/obstacle_range: 3.0
+ * /move_base/local_costmap/publish_frequency: 10.0
+ * /move_base/local_costmap/raytrace_range: 3.5
+ * /move_base/local_costmap/resolution: 0.05
+ * /move_base/local_costmap/robot_base_frame: base_link
+ * /move_base/local_costmap/rolling_window: True
+ * /move_base/local_costmap/scan/clearing: True
+ * /move_base/local_costmap/scan/data_type: LaserScan
+ * /move_base/local_costmap/scan/marking: True
+ * /move_base/local_costmap/scan/sensor_frame: laser_link
+ * /move_base/local_costmap/scan/topic: scan
+ * /move_base/local_costmap/static_map: False
+ * /move_base/local_costmap/transform_tolerance: 0.5
+ * /move_base/local_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/width: 6.0
+ * /move_base/oscillation_distance: 0.1
+ * /move_base/oscillation_timeout: 10.0
+ * /move_base/planner_frequency: 10
+ * /move_base/planner_patience: 5.0
+ * /move_base/shutdown_costmaps: False
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+ * /shoot_with_move_base_node/ack_timeout: 3.0
+ * /shoot_with_move_base_node/alignment_tolerance: 0.2
+ * /shoot_with_move_base_node/annotate_hold: 6.0
+ * /shoot_with_move_base_node/auto_start: False
+ * /shoot_with_move_base_node/backend: rknn
+ * /shoot_with_move_base_node/body_frame: base_link
+ * /shoot_with_move_base_node/camera_hfov_deg: 54.0
+ * /shoot_with_move_base_node/camera_yaw_deg: 0.0
+ * /shoot_with_move_base_node/confidence_threshold: 0.5
+ * /shoot_with_move_base_node/detect_confirmation_window: 6.0
+ * /shoot_with_move_base_node/detect_height: 1.2
+ * /shoot_with_move_base_node/detect_timeout: 8.0
+ * /shoot_with_move_base_node/detect_times: 5
+ * /shoot_with_move_base_node/drop_align_mode: vision_with_fallback
+ * /shoot_with_move_base_node/drop_height: 0.6
+ * /shoot_with_move_base_node/drop_settle_time: 0.8
+ * /shoot_with_move_base_node/enable_actuation: False
+ * /shoot_with_move_base_node/enforce_safe_field: True
+ * /shoot_with_move_base_node/field_max_x: 3.25
+ * /shoot_with_move_base_node/field_max_y: 0.55
+ * /shoot_with_move_base_node/field_min_x: -0.55
+ * /shoot_with_move_base_node/field_min_y: -3.25
+ * /shoot_with_move_base_node/field_yaw_deg: -90
+ * /shoot_with_move_base_node/fly_height: 1.5
+ * /shoot_with_move_base_node/goal_timeout: 25.0
+ * /shoot_with_move_base_node/hazard_detect_num: 2
+ * /shoot_with_move_base_node/hazard_point0_x: 0.0
+ * /shoot_with_move_base_node/hazard_point0_y: -1.95
+ * /shoot_with_move_base_node/hazard_point1_x: 1.4
+ * /shoot_with_move_base_node/hazard_point1_y: -1.95
+ * /shoot_with_move_base_node/hazard_point2_x: 1.4
+ * /shoot_with_move_base_node/hazard_point2_y: 0.0
+ * /shoot_with_move_base_node/hazard_point3_x: 1.4
+ * /shoot_with_move_base_node/hazard_point3_y: -0.45
+ * /shoot_with_move_base_node/hazard_route_num: 4
+ * /shoot_with_move_base_node/input_image_topic: /camera/image_raw
+ * /shoot_with_move_base_node/input_size: 416
+ * /shoot_with_move_base_node/labels_file: labels.txt
+ * /shoot_with_move_base_node/land_settle_time: 2.0
+ * /shoot_with_move_base_node/map_frame: map
+ * /shoot_with_move_base_node/max_align_offset: 0.35
+ * /shoot_with_move_base_node/max_center_offset: 0.35
+ * /shoot_with_move_base_node/max_vel: 0.35
+ * /shoot_with_move_base_node/model_file: best.rknn
+ * /shoot_with_move_base_node/model_path: /home/jcfh/catkin...
+ * /shoot_with_move_base_node/nms_iou: 0.45
+ * /shoot_with_move_base_node/onnx_file: best.onnx
+ * /shoot_with_move_base_node/person_detect_num: 3
+ * /shoot_with_move_base_node/person_point0_x: 1.4
+ * /shoot_with_move_base_node/person_point0_y: -0.95
+ * /shoot_with_move_base_node/person_point1_x: 2.7
+ * /shoot_with_move_base_node/person_point1_y: -0.95
+ * /shoot_with_move_base_node/person_point2_x: 2.7
+ * /shoot_with_move_base_node/person_point2_y: -1.05
+ * /shoot_with_move_base_node/person_point3_x: 2.7
+ * /shoot_with_move_base_node/person_point3_y: -1.85
+ * /shoot_with_move_base_node/person_point4_x: 2.7
+ * /shoot_with_move_base_node/person_point4_y: -2.65
+ * /shoot_with_move_base_node/person_route_num: 5
+ * /shoot_with_move_base_node/planner_timeout: 0.5
+ * /shoot_with_move_base_node/pose_timeout: 0.5
+ * /shoot_with_move_base_node/pub_rate: 50
+ * /shoot_with_move_base_node/publish_rate: 8.0
+ * /shoot_with_move_base_node/publish_scale: 0.5
+ * /shoot_with_move_base_node/rescue_drop_enabled: False
+ * /shoot_with_move_base_node/rescue_drop_x: 999.0
+ * /shoot_with_move_base_node/rescue_drop_y: 999.0
+ * /shoot_with_move_base_node/return_point0_x: 2.7
+ * /shoot_with_move_base_node/return_point0_y: -0.95
+ * /shoot_with_move_base_node/return_point1_x: 1.4
+ * /shoot_with_move_base_node/return_point1_y: -0.95
+ * /shoot_with_move_base_node/return_point2_x: 1.4
+ * /shoot_with_move_base_node/return_point2_y: -1.95
+ * /shoot_w[0m[ INFO] [1793106940.163572118]: Detect: 4 labels from /home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/labels.txt[0m
+[0m[ INFO] [1793106940.244143868]: Detect: backend=rknn (model_path=/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26)[0m
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+[33m[ WARN] [1793106944.953961787]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100696 timeout was 0.1.[0m
+[33m[ WARN] [1793106945.721853620]: [mission] move_base action server is not up yet; will keep waiting[0m
+[33m[ WARN] [1793106949.993505539]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100134 timeout was 0.1.[0m
+[33m[ WARN] [1793106955.037029375]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100475 timeout was 0.1.[0m
+[33m[ WARN] [1793106960.081289169]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100217 timeout was 0.1.[0m
+[33m[ WARN] [1793106965.119537755]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100755 timeout was 0.1.[0m
+[33m[ WARN] [1793106970.170204924]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100489 timeout was 0.1.[0m
+[33m[ WARN] [1793106975.228607384]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100577 timeout was 0.1.[0m
+[33m[ WARN] [1793106980.267615762]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100632 timeout was 0.1.[0m
+[33m[ WARN] [1793106985.302729848]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100392 timeout was 0.1.[0m
+[0m[ INFO] [1793106942.050697535]: Detect: RKNN model /home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/best.rknn: 1 input(s), 3 output(s)[0m
+[0m[ INFO] [1793106942.050775994]: Detect: input 'images_169' dims=[416,416,3,1] fmt=0 type=3[0m
+[0m[ INFO] [1793106942.050802827]: Detect: input_size=416[0m
+[0m[ INFO] [1793106942.050834327]: Detect: output[0] 'Transpose_/model.24/Transpose/out0_0' rank=5 dims=[9,52,52,3,1] fmt=0 type=3 n_elems=73008[0m
+[0m[ INFO] [1793106942.050863202]: Detect: output[1] 'Transpose_/model.24/Transpose_1/out0_1' rank=5 dims=[9,26,26,3,1] fmt=0 type=3 n_elems=18252[0m
+[0m[ INFO] [1793106942.050886244]: Detect: output[2] 'Transpose_/model.24/Transpose_2/out0_2' rank=5 dims=[9,13,13,3,1] fmt=0 type=3 n_elems=4563[0m
+[0m[ INFO] [1793106942.050911035]: Detect: RKNN ready (/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/best.rknn)[0m
+[0m[ INFO] [1793106942.590242077]: [mission] hazard route (4 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793106942.590311202]: [mission]   hazard[0] field=(  0.00, -1.95) map=(  1.95, -0.00)[0m
+[0m[ INFO] [1793106942.590339494]: [mission]   hazard[1] field=(  1.40, -1.95) map=(  1.95,  1.40)[0m
+[0m[ INFO] [1793106942.590398119]: [mission]   hazard[2] field=(  1.40,  0.00) map=(  0.00,  1.40)  <- detect[0m
+[0m[ INFO] [1793106942.590424952]: [mission]   hazard[3] field=(  1.40, -0.45) map=(  0.45,  1.40)  <- detect[0m
+[0m[ INFO] [1793106942.590450327]: [mission] person route (5 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793106942.590477160]: [mission]   person[0] field=(  1.40, -0.95) map=(  0.95,  1.40)[0m
+[0m[ INFO] [1793106942.590501952]: [mission]   person[1] field=(  2.70, -0.95) map=(  0.95,  2.70)[0m
+[0m[ INFO] [1793106942.590532577]: [mission]   person[2] field=(  2.70, -1.05) map=(  1.05,  2.70)  <- detect[0m
+[0m[ INFO] [1793106942.590555619]: [mission]   person[3] field=(  2.70, -1.85) map=(  1.85,  2.70)  <- detect[0m
+[0m[ INFO] [1793106942.590578077]: [mission]   person[4] field=(  2.70, -2.65) map=(  2.65,  2.70)  <- detect[0m
+[0m[ INFO] [1793106942.590599660]: [mission] return route (5 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793106942.590623285]: [mission]   return[0] field=(  2.70, -0.95) map=(  0.95,  2.70)[0m
+[0m[ INFO] [1793106942.590646619]: [mission]   return[1] field=(  1.40, -0.95) map=(  0.95,  1.40)[0m
+[0m[ INFO] [1793106942.590669660]: [mission]   return[2] field=(  1.40, -1.95) map=(  1.95,  1.40)[0m
+[0m[ INFO] [1793106942.590697077]: [mission]   return[3] field=(  0.00, -1.95) map=(  1.95, -0.00)[0m
+[0m[ INFO] [1793106942.590719535]: [mission]   return[4] field=(  0.00,  0.00) map=(  0.00,  0.00)[0m
+[0m[ INFO] [1793106945.722030370]: [mission] status: WAIT_FCU[0m
+[0m[ INFO] [1793106945.722066829]: [mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no[0m
+[0m[ INFO] [1793106945.722100954]: [mission] hazard target: flammable[0m
+[0m[ INFO] [1793106945.723456495]: [mission] status: BLOCKED_CAMERA_STALE[0m
+[0m[ INFO] [1793106945.823939287]: [mission] status: BLOCKED_MODEL_INFERENCE[0m
+[0m[ INFO] [1793106946.421168371]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106946.424031954]: [mission] status: BLOCKED_POSE_STALE[0m
+[0m[ INFO] [1793106951.743854873]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106957.083451667]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106962.402258753]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106967.743088506]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106973.155418800]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106978.562605636]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106984.019304305]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793106989.444015308]: Detect: inference OK backend=rknn input=416 he[33m[ WARN] [1793106990.365047308]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100799 timeout was 0.1.[0m
+[33m[ WARN] [1793106995.407907727]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100481 timeout was 0.1.[0m
+ads=3 detections=0[0m
+[0m[ INFO] [1793106994.869099894]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+ith_move_base_node/return_point3_x: 0.0
+ * /shoot_with_move_base_node/return_point3_y: -1.95
+ * /shoot_with_move_base_node/return_point4_x: 0.0
+ * /shoot_with_move_base_node/return_point4_y: 0.0
+ * /shoot_with_move_base_node/return_route_num: 5
+ * /shoot_with_move_base_node/settle_time: 1.0
+ * /shoot_with_move_base_node/stage: 1
+ * /shoot_with_move_base_node/state_timeout: 3.0
+ * /shoot_with_move_base_node/takeoff_height_tolerance: 0.12
+ * /shoot_with_move_base_node/takeoff_timeout: 20.0
+ * /shoot_with_move_base_node/target_hazard: flammable
+ * /shoot_with_move_base_node/target_person: person
+ * /shoot_with_move_base_node/target_topic: /mission/target_h...
+ * /shoot_with_move_base_node/tf_timeout: 0.5
+ * /shoot_with_move_base_node/wait_for_target: True
+ * /shoot_with_move_base_node/xy_gain_p: 1.2
+ * /shoot_with_move_base_node/yolo_anchors: 10,13,16,30,33,23...
+ * /shoot_with_move_base_node/yolo_reg_max: 16
+ * /shoot_with_move_base_node/yolo_strides: 8,16,32
+ * /shoot_with_move_base_node/yolo_style: v5-interleaved
+ * /shoot_with_move_base_node/z_gain_p: 1.0
+
+NODES
+  /
+    move_base (move_base/move_base)
+    shoot_with_move_base_node (navigation_2d/shoot_with_move_base_node)
+
+[1mROS_MASTER_URI=http://127.0.0.1:11333[0m
+]2;/home/jcfh/catkin_ws/src/navigation_2d/launch/navigation_2d.launch http://127.0.0.1:11333
+[1mprocess[move_base-1]: started with pid [3499][0m
+[1mprocess[shoot_with_move_base_node-2]: started with pid [3501][0m
+[shoot_with_move_base_node-2] killing on exit
+[move_base-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

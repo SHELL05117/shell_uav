@@ -14,7 +14,7 @@
 	I2C ADDRESS/BITS
 	-----------------------------------------------------------------------*/
 #define TFMP_DEFAULT_ADDRESS (0x10) // bin 1001 000 (ADDR = GND)
-#define TFMP_DEFAULT_BUS 6			// checked ProD BSP: I2C6 -> /dev/i2c-6; physical wiring still pending
+#define TFMP_DEFAULT_BUS 6			// ProD I2C6, real TFmini frames verified 2026-10-27
 #define TFMP_REG_POINTER (0x00)
 									/*=========================================================================*/
 

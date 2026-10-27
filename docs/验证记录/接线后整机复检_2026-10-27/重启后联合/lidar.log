@@ -1,0 +1,39 @@
+[0m[ INFO] [1793107609.683217662]: RPLIDAR running on ROS package rplidar_ros, SDK Version:2.1.0[0m
+[0m[ INFO] [1793107609.701597913]: RPLIDAR MODE:S2M1[0m
+[0m[ INFO] [1793107609.701673454]: RPLIDAR S/N: B397E18BC7E49CCCA3EB9AF4274A4C72[0m
+[0m[ INFO] [1793107609.701697663]: Firmware Ver: 1.02[0m
+[0m[ INFO] [1793107609.701719829]: Hardware Rev: 18[0m
+[0m[ INFO] [1793107609.703656788]: RPLidar health status : OK.[0m
+[0m[ INFO] [1793107609.880026788]: current scan mode: DenseBoost, sample rate: 32 Khz, max_distance: 30.0 m, scan frequency:10.0 Hz, [0m
+[0m[ INFO] [1793107612.093174789]: set lidar scan frequency to 10.0 Hz(600.0 Rpm) [0m
+... logging to /home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/roslaunch-toybrick-1183.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/location/launch/rplidar.launch
+[1mstarted roslaunch server http://127.0.0.1:44037/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+ * /rplidarNode/angle_compensate: True
+ * /rplidarNode/frame_id: laser_link
+ * /rplidarNode/inverted: False
+ * /rplidarNode/scan_mode: DenseBoost
+ * /rplidarNode/serial_baudrate: 1000000
+ * /rplidarNode/serial_port: /dev/ttyUSB0
+
+NODES
+  /
+    rplidarNode (rplidar_ros/rplidarNode)
+
+[1mROS_MASTER_URI=http://127.0.0.1:11333[0m
+]2;/home/jcfh/catkin_ws/src/location/launch/rplidar.launch http://127.0.0.1:11333
+[1mprocess[rplidarNode-1]: started with pid [1425][0m
+[rplidarNode-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

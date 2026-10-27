@@ -1,0 +1,19 @@
+<launch>
+  
+  <arg default="/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200" name="fcu_url" />
+  <node name="mavros" output="screen" pkg="mavros" type="mavros_node">
+    <param name="fcu_url" value="$(arg fcu_url)" />
+    <param name="gcs_url" value="" />
+    <param name="fcu_protocol" value="v2.0" />
+    <param name="system_id" value="255" />
+    <param name="component_id" value="240" />
+    <param name="target_system_id" value="1" />
+    <param name="target_component_id" value="1" />
+    <param name="startup_px4_usb_quirk" value="false" />
+    <param name="conn/heartbeat_rate" value="1.0" />
+    <param name="conn/timeout" value="5.0" />
+    <param name="local_position/tf/send" value="false" />
+    <rosparam param="plugin_blacklist">['*']</rosparam>
+    <rosparam param="plugin_whitelist">['global_position', 'imu', 'local_position', 'sys_status', 'vision_pose_estimate', 'sys_time', 'rc_io']</rosparam>
+  <param name="conn/timesync_rate" value="10.0" /><param name="conn/system_time_rate" value="1.0" /></node>
+</launch>

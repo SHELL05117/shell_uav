@@ -1,0 +1,48 @@
+[0m[ INFO] [1793109503.700446325]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/home/jcfh/catkin_ws/src/location/param/ROSSLAM/cartographer_2Dlidar_mapping_location_params.lua' for 'cartographer_2Dlidar_mapping_location_params.lua'.[0m
+[0m[ INFO] [1793109503.711199700]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/map_builder.lua' for 'map_builder.lua'.[0m
+[0m[ INFO] [1793109503.711333866]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/map_builder.lua' for 'map_builder.lua'.[0m
+[0m[ INFO] [1793109503.711890658]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/pose_graph.lua' for 'pose_graph.lua'.[0m
+[0m[ INFO] [1793109503.711998575]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/pose_graph.lua' for 'pose_graph.lua'.[0m
+[0m[ INFO] [1793109503.712672325]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder.lua' for 'trajectory_builder.lua'.[0m
+[0m[ INFO] [1793109503.712778783]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder.lua' for 'trajectory_builder.lua'.[0m
+[0m[ INFO] [1793109503.713243408]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.[0m
+[0m[ INFO] [1793109503.713341116]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.[0m
+[0m[ INFO] [1793109503.713951866]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.[0m
+[0m[ INFO] [1793109503.714115200]: I1027 21:58:23.000000  3623 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.[0m
+[0m[ INFO] [1793109503.805082033]: I1027 21:58:23.000000  3623 submap_2d.cc:187] Added submap 1[0m
+[0m[ INFO] [1793109503.805544033]: I1027 21:58:23.000000  3623 map_builder_bridge.cc:130] Added trajectory with ID '0'.[0m
+[0m[ INFO] [1793109504.063451158]: I1027 21:58:24.000000  3623 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639287063040615297'.[0m
+[0m[ INFO] [1793109504.108599700]: I1027 21:58:24.000000  3623 local_trajectory_builder_2d.cc:127] Extrapolator not yet initialized.[0m
+[0m[ INFO] [1793109504.111999075]: I1027 21:58:24.000000  3623 local_trajectory_builder_2d.cc:138] Extrapolator is still initializing.[0m
+[0m[ INFO] [1793109518.889204707]: I1027 21:58:38.000000  3623 collated_trajectory_builder.cc:72] imu rate: 50.00 Hz 2.00e-02 s +/- 1.83e-03 s (pulsed at 99.73% real time)[0m
+[0m[ INFO] [1793109518.889377665]: I1027 21:58:38.000000  3623 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.69e-03 s (pulsed at 100.64% real time)[0m
+[KOptimizing: Done.     
+[KOptimizing: Done.     
+... logging to /home/jcfh/shell_acceptance_20261027/real-vision-fusion/ros-logs/7144ff30-d20e-11f1-9848-14f5f9e6cd08/roslaunch-toybrick-3064.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/location/launch/cartographer_2d.launch
+[1mstarted roslaunch server http://127.0.0.1:36991/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+
+NODES
+  /
+    cartographer_node (cartographer_ros/cartographer_node)
+    cartographer_occupancy_grid_node (cartographer_ros/cartographer_occupancy_grid_node)
+
+[1mROS_MASTER_URI=http://127.0.0.1:11333[0m
+]2;/home/jcfh/catkin_ws/src/location/launch/cartographer_2d.launch http://127.0.0.1:11333
+[1mprocess[cartographer_node-1]: started with pid [3416][0m
+[1mprocess[cartographer_occupancy_grid_node-2]: started with pid [3426][0m
+[cartographer_occupancy_grid_node-2] killing on exit
+[cartographer_node-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

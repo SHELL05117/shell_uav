@@ -1,0 +1,70 @@
+{
+  "battery_monitor_passed": true, 
+  "before": {
+    "battery": {
+      "current": -0.32999998331069946, 
+      "present": true, 
+      "t": 263.72270504, 
+      "voltage": 16.131999969482422
+    }, 
+    "state": {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL", 
+      "t": 265.55147029
+    }
+  }, 
+  "errors": [
+    "RuntimeError: Need fresh unarmed state, RC, and 10..18 V battery telemetry"
+  ], 
+  "external_propulsion_battery_confirmed": true, 
+  "last_telemetry": {
+    "battery": {
+      "current": -0.32999998331069946, 
+      "present": true, 
+      "t": 263.72270504, 
+      "voltage": 16.131999969482422
+    }, 
+    "state": {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL", 
+      "t": 265.55147029
+    }
+  }, 
+  "motors": [], 
+  "percent": 8.0, 
+  "physical_acceptance": false, 
+  "processes": [
+    {
+      "arguments": [
+        "roscore", 
+        "-p", 
+        "11338"
+      ], 
+      "exit_code": 0, 
+      "log": "master.log", 
+      "name": "master", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "/home/jcfh/shell_acceptance_20261027/motor1-battery-test/mavros-motor-only.launch"
+      ], 
+      "exit_code": 0, 
+      "log": "mavros.log", 
+      "name": "mavros", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }
+  ], 
+  "protocol_passed": false, 
+  "start_utc": "2026-10-27T14:08:27Z", 
+  "timeout_seconds": 2.0
+}

@@ -1,0 +1,51 @@
+[33m[ WARN] [1793109082.862382332]: angle_debug is ON: /servo_debug_cmd accepts "SET_DROP <deg>", "SET_CAMERA <deg>", "PARK", "STATUS"; replies come back on /servo_debug_ack. This is a bench setting - it must never be on for a competition run.[0m
+[0m[ INFO] [1793109082.811017832]: Drop servo: channel 1 parked at 30.0 deg; DROP_FIRE -> 90.0 deg, DROP_RESCUE -> 140.0 deg, hold 1.00 s[0m
+[0m[ INFO] [1793109082.843677457]: PCA9685 initialized; camera is front-facing while waiting for servo settle[0m
+[0m[ INFO] [1793109083.844406416]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109084.845342750]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109085.846273000]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109086.847201459]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109087.848166793]: Servo controller ready; startup camera position is front-facing[0m
+... logging to /home/jcfh/shell_acceptance_20261027/camera-source-angles/ros-logs/7c1c4d88-d20d-11f1-9cf9-14f5f9e6cd08/roslaunch-toybrick-2411.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/servo_control/launch/servo_bench.launch
+[1mstarted roslaunch server http://127.0.0.1:35294/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+ * /servo_controller_node/angle_debug: True
+ * /servo_controller_node/camera_channel: 0
+ * /servo_controller_node/down_angle: 55.0
+ * /servo_controller_node/drop_action_seconds: 1.0
+ * /servo_controller_node/drop_channel: 1
+ * /servo_controller_node/drop_safe_angle: 30.0
+ * /servo_controller_node/fire_drop_angle: 90.0
+ * /servo_controller_node/front_angle: 170.0
+ * /servo_controller_node/i2c_address: 64
+ * /servo_controller_node/i2c_device: /dev/i2c-6
+ * /servo_controller_node/max_pulse_us: 2250
+ * /servo_controller_node/min_pulse_us: 750
+ * /servo_controller_node/pwm_frequency: 50
+ * /servo_controller_node/rescue_drop_angle: 140.0
+ * /servo_controller_node/restore_after_drop: False
+ * /servo_controller_node/servo_motion_seconds: 0.8
+ * /servo_controller_node/servo_seconds_per_degree: 0.006
+ * /servo_controller_node/startup_settle_seconds: 1.0
+
+NODES
+  /
+    servo_controller_node (servo_control/servo_controller_node)
+
+[1mROS_MASTER_URI=http://127.0.0.1:11336[0m
+]2;/home/jcfh/catkin_ws/src/servo_control/launch/servo_bench.launch http://127.0.0.1:11336
+[1mprocess[servo_controller_node-1]: started with pid [2433][0m
+[servo_controller_node-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

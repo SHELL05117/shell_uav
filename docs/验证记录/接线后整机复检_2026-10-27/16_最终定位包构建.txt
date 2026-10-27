@@ -1,0 +1,21 @@
+Scanning dependencies of target tfmini_test
+Scanning dependencies of target location_node
+[ 10%] Building CXX object location/CMakeFiles/location_node.dir/src/location_with_ftmini.cpp.o
+[ 20%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/tfmini_test.cpp.o
+[ 30%] Building CXX object location/CMakeFiles/tfmini_test.dir/src/tf_mini_i2c.cpp.o
+[ 40%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/tfmini_test
+[ 60%] Built target tfmini_test
+[ 70%] Building CXX object location/CMakeFiles/location_node.dir/src/tf_mini_i2c.cpp.o
+[ 80%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/location_node
+[100%] Built target location_node
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make -j2" in "/home/jcfh/catkin_ws/build/location"
+####

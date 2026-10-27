@@ -1,0 +1,4 @@
+[33m[ WARN] [1793109502.234741074]: location: STARTING; vision pose withheld[0m
+[33m[ WARN] [1793109502.343783866]: location: WAIT_TF; vision pose withheld[0m
+[33m[ WARN] [1793109529.596076754]: location: range sample rejected (range, jump, or repeated timestamp)[0m
+[0m[ INFO] [1793109504.294076950]: location: READY[0m

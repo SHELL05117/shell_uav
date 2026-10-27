@@ -1,0 +1,226 @@
+{
+  "exits": {
+    "camera": 0, 
+    "lidar": 0, 
+    "master": 0, 
+    "mavros": 0
+  }, 
+  "gps_position_fix_passed": false, 
+  "observed_topics": [
+    [
+      "/mavros/global_position/raw/satellites", 
+      "std_msgs/UInt32"
+    ], 
+    [
+      "/mavros/local_position/pose_cov", 
+      "geometry_msgs/PoseWithCovarianceStamped"
+    ], 
+    [
+      "/mavlink/gcs_ip", 
+      "std_msgs/String"
+    ], 
+    [
+      "/mavros/local_position/velocity_body", 
+      "geometry_msgs/TwistStamped"
+    ], 
+    [
+      "/mavros/imu/data_raw", 
+      "sensor_msgs/Imu"
+    ], 
+    [
+      "/mavros/imu/diff_pressure", 
+      "sensor_msgs/FluidPressure"
+    ], 
+    [
+      "/mavros/imu/mag", 
+      "sensor_msgs/MagneticField"
+    ], 
+    [
+      "/scan", 
+      "sensor_msgs/LaserScan"
+    ], 
+    [
+      "/rosout_agg", 
+      "rosgraph_msgs/Log"
+    ], 
+    [
+      "/mavros/global_position/compass_hdg", 
+      "std_msgs/Float64"
+    ], 
+    [
+      "/mavros/global_position/global", 
+      "sensor_msgs/NavSatFix"
+    ], 
+    [
+      "/mavros/global_position/gp_lp_offset", 
+      "geometry_msgs/PoseStamped"
+    ], 
+    [
+      "/mavlink/from", 
+      "mavros_msgs/Mavlink"
+    ], 
+    [
+      "/mavros/local_position/pose", 
+      "geometry_msgs/PoseStamped"
+    ], 
+    [
+      "/mavros/imu/data", 
+      "sensor_msgs/Imu"
+    ], 
+    [
+      "/mavros/global_position/raw/gps_vel", 
+      "geometry_msgs/TwistStamped"
+    ], 
+    [
+      "/tf_static", 
+      "tf2_msgs/TFMessage"
+    ], 
+    [
+      "/mavros/global_position/gp_origin", 
+      "geographic_msgs/GeoPointStamped"
+    ], 
+    [
+      "/mavros/estimator_status", 
+      "mavros_msgs/EstimatorStatus"
+    ], 
+    [
+      "/diagnostics", 
+      "diagnostic_msgs/DiagnosticArray"
+    ], 
+    [
+      "/mavros/global_position/raw/fix", 
+      "sensor_msgs/NavSatFix"
+    ], 
+    [
+      "/mavros/battery", 
+      "sensor_msgs/BatteryState"
+    ], 
+    [
+      "/camera/camera_info", 
+      "sensor_msgs/CameraInfo"
+    ], 
+    [
+      "/rosout", 
+      "rosgraph_msgs/Log"
+    ], 
+    [
+      "/mavros/global_position/local", 
+      "nav_msgs/Odometry"
+    ], 
+    [
+      "/tf", 
+      "tf2_msgs/TFMessage"
+    ], 
+    [
+      "/mavros/imu/static_pressure", 
+      "sensor_msgs/FluidPressure"
+    ], 
+    [
+      "/mavros/local_position/accel", 
+      "geometry_msgs/AccelWithCovarianceStamped"
+    ], 
+    [
+      "/mavros/statustext/recv", 
+      "mavros_msgs/StatusText"
+    ], 
+    [
+      "/mavros/global_position/rel_alt", 
+      "std_msgs/Float64"
+    ], 
+    [
+      "/mavros/imu/temperature_baro", 
+      "sensor_msgs/Temperature"
+    ], 
+    [
+      "/mavros/local_position/odom", 
+      "nav_msgs/Odometry"
+    ], 
+    [
+      "/mavros/extended_state", 
+      "mavros_msgs/ExtendedState"
+    ], 
+    [
+      "/mavros/local_position/velocity_local", 
+      "geometry_msgs/TwistStamped"
+    ], 
+    [
+      "/mavros/imu/temperature_imu", 
+      "sensor_msgs/Temperature"
+    ], 
+    [
+      "/camera/image_raw", 
+      "sensor_msgs/Image"
+    ], 
+    [
+      "/mavros/local_position/velocity_body_cov", 
+      "geometry_msgs/TwistWithCovarianceStamped"
+    ], 
+    [
+      "/mavros/state", 
+      "mavros_msgs/State"
+    ]
+  ], 
+  "passed_receive_and_exit": true, 
+  "receive_checks": {
+    "connected_unarmed": true, 
+    "gps": true, 
+    "image": true, 
+    "imu": true, 
+    "scan": true
+  }, 
+  "samples": {
+    "gps": {
+      "altitude": 0.1630000000000038, 
+      "latitude": 0.0, 
+      "longitude": 0.0, 
+      "position_fix": false, 
+      "status": -1
+    }, 
+    "image": {
+      "encoding": "rgb8", 
+      "height": 720, 
+      "size_consistent": true, 
+      "width": 1280
+    }, 
+    "imu": {
+      "acceleration": [
+        -0.005627448204904795, 
+        -0.13918201625347018, 
+        9.804776191711426
+      ], 
+      "frame": "base_link", 
+      "quaternion_norm": 1.0000000674957132
+    }, 
+    "scan": {
+      "points": 3585, 
+      "valid": 3337
+    }, 
+    "state": {
+      "armed": false, 
+      "connected": true, 
+      "mode": "MANUAL"
+    }
+  }, 
+  "streams": {
+    "gps": {
+      "count": 166, 
+      "hz": 8.023098021562404
+    }, 
+    "image": {
+      "count": 634, 
+      "hz": 30.02121686955304
+    }, 
+    "imu": {
+      "count": 1033, 
+      "hz": 50.093345219579085
+    }, 
+    "scan": {
+      "count": 219, 
+      "hz": 10.009696098588885
+    }, 
+    "state": {
+      "count": 21, 
+      "hz": 0.9501031956105968
+    }
+  }
+}

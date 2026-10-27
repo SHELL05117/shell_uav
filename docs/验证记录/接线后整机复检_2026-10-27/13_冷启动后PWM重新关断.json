@@ -1,0 +1,26 @@
+{
+  "mode1_after": 17,
+  "mode1_before": 17,
+  "motion_or_voltage_acceptance": false,
+  "oe_level_not_measured": true,
+  "off_high": [
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16
+  ],
+  "passed": true,
+  "utc": "2026-10-27T13:36:50.179509+00:00"
+}

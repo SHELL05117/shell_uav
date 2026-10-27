@@ -1,0 +1,129 @@
+[0m[ INFO] [1793107609.481134704]: FCU URL: /dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200[0m
+[0m[ INFO] [1793107609.507467537]: serial0: device: /dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00 @ 115200 bps[0m
+[0m[ INFO] [1793107609.509866204]: GCS bridge disabled[0m
+[0m[ INFO] [1793107609.546533079]: Plugin 3dr_radio blacklisted[0m
+[0m[ INFO] [1793107609.546698746]: Plugin actuator_control blacklisted[0m
+[0m[ INFO] [1793107609.546762329]: Plugin adsb blacklisted[0m
+[0m[ INFO] [1793107609.546819496]: Plugin altitude blacklisted[0m
+[0m[ INFO] [1793107609.546865579]: Plugin cam_imu_sync blacklisted[0m
+[0m[ INFO] [1793107609.546910204]: Plugin camera blacklisted[0m
+[0m[ INFO] [1793107609.546953079]: Plugin cellular_status blacklisted[0m
+[0m[ INFO] [1793107609.546996829]: Plugin command blacklisted[0m
+[0m[ INFO] [1793107609.547041746]: Plugin companion_process_status blacklisted[0m
+[0m[ INFO] [1793107609.547084912]: Plugin debug_value blacklisted[0m
+[0m[ INFO] [1793107609.547139162]: Plugin distance_sensor blacklisted[0m
+[0m[ INFO] [1793107609.547182329]: Plugin esc_status blacklisted[0m
+[0m[ INFO] [1793107609.547225204]: Plugin esc_telemetry blacklisted[0m
+[0m[ INFO] [1793107609.547270412]: Plugin fake_gps blacklisted[0m
+[0m[ INFO] [1793107609.547313871]: Plugin ftp blacklisted[0m
+[0m[ INFO] [1793107609.547355871]: Plugin geofence blacklisted[0m
+[0m[ INFO] [1793107609.606961162]: Plugin global_position loaded[0m
+[0m[ INFO] [1793107609.778831871]: Plugin global_position initialized[0m
+[0m[ INFO] [1793107609.778950288]: Plugin gps_input blacklisted[0m
+[0m[ INFO] [1793107609.779002496]: Plugin gps_rtk blacklisted[0m
+[0m[ INFO] [1793107609.779057329]: Plugin gps_status blacklisted[0m
+[0m[ INFO] [1793107609.779110121]: Plugin guided_target blacklisted[0m
+[0m[ INFO] [1793107609.779163204]: Plugin hil blacklisted[0m
+[0m[ INFO] [1793107609.779223579]: Plugin home_position blacklisted[0m
+[0m[ INFO] [1793107609.779635121]: Plugin imu loaded[0m
+[0m[ INFO] [1793107609.828128788]: Plugin imu initialized[0m
+[0m[ INFO] [1793107609.828306413]: Plugin landing_target blacklisted[0m
+[0m[ INFO] [1793107609.828708621]: Plugin local_position loaded[0m
+[0m[ INFO] [1793107609.882771079]: Plugin local_position initialized[0m
+[0m[ INFO] [1793107609.882899704]: Plugin log_transfer blacklisted[0m
+[0m[ INFO] [1793107609.882979329]: Plugin mag_calibration_status blacklisted[0m
+[0m[ INFO] [1793107609.883039704]: Plugin manual_control blacklisted[0m
+[0m[ INFO] [1793107609.883093079]: Plugin mocap_pose_estimate blacklisted[0m
+[0m[ INFO] [1793107609.883153163]: Plugin mount_control blacklisted[0m
+[0m[ INFO] [1793107609.883210621]: Plugin nav_controller_output blacklisted[0m
+[0m[ INFO] [1793107609.883263704]: Plugin obstacle_distance blacklisted[0m
+[0m[ INFO] [1793107609.883318829]: Plugin odom blacklisted[0m
+[0m[ INFO] [1793107609.883400496]: Plugin onboard_computer_status blacklisted[0m
+[0m[ INFO] [1793107609.883485663]: Plugin param blacklisted[0m
+[0m[ INFO] [1793107609.883544871]: Plugin play_tune blacklisted[0m
+[0m[ INFO] [1793107609.883596788]: Plugin px4flow blacklisted[0m
+[0m[ INFO] [1793107609.883653079]: Plugin rallypoint blacklisted[0m
+[0m[ INFO] [1793107609.883705288]: Plugin rangefinder blacklisted[0m
+[0m[ INFO] [1793107609.883760413]: Plugin rc_io blacklisted[0m
+[0m[ INFO] [1793107609.883812038]: Plugin safety_area blacklisted[0m
+[0m[ INFO] [1793107609.883867746]: Plugin setpoint_accel blacklisted[0m
+[0m[ INFO] [1793107609.883924038]: Plugin setpoint_attitude blacklisted[0m
+[0m[ INFO] [1793107609.883978871]: Plugin setpoint_position blacklisted[0m
+[0m[ INFO] [1793107609.884036038]: Plugin setpoint_raw blacklisted[0m
+[0m[ INFO] [1793107609.884088829]: Plugin setpoint_trajectory blacklisted[0m
+[0m[ INFO] [1793107609.884161163]: Plugin setpoint_velocity blacklisted[0m
+[0m[ INFO] [1793107609.884758496]: Plugin sys_status loaded[0m
+[0m[ INFO] [1793107610.038201121]: Plugin sys_status initialized[0m
+[0m[ INFO] [1793107610.0[33m[ WARN] [1793107610.042195788]: GP: No GPS fix[0m
+[31m[ERROR] [1793107611.052099163]: VER: command plugin service call failed![0m
+[31m[ERROR] [1793107612.054305039]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793107612.054473330]: VER: broadcast request timeout, retries left 4[0m
+[31m[ERROR] [1793107613.049584289]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793107613.049718456]: VER: broadcast request timeout, retries left 3[0m
+[31m[ERROR] [1793107614.051890706]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793107614.052021081]: VER: unicast request timeout, retries left 2[0m
+[31m[ERROR] [1793107615.049240165]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793107615.049598040]: VER: unicast request timeout, retries left 1[0m
+[31m[ERROR] [1793107616.048259207]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793107616.048522291]: VER: unicast request timeout, retries left 0[0m
+[31m[ERROR] [1793107617.048322916]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793107617.048922291]: VER: your FCU don't support AUTOPILOT_VERSION, switched to default capabilities[0m
+[33m[ WARN] [1793107640.135610219]: GP: No GPS fix[0m
+38401204]: Plugin sys_time blacklisted[0m
+[0m[ INFO] [1793107610.038722621]: Plugin terrain blacklisted[0m
+[0m[ INFO] [1793107610.038792621]: Plugin trajectory blacklisted[0m
+[0m[ INFO] [1793107610.038846579]: Plugin tunnel blacklisted[0m
+[0m[ INFO] [1793107610.038901996]: Plugin vfr_hud blacklisted[0m
+[0m[ INFO] [1793107610.038955371]: Plugin vibration blacklisted[0m
+[0m[ INFO] [1793107610.039025079]: Plugin vision_pose_estimate blacklisted[0m
+[0m[ INFO] [1793107610.039086913]: Plugin vision_speed_estimate blacklisted[0m
+[0m[ INFO] [1793107610.039142329]: Plugin waypoint blacklisted[0m
+[0m[ INFO] [1793107610.039199496]: Plugin wheel_odometry blacklisted[0m
+[0m[ INFO] [1793107610.039261329]: Plugin wind_estimation blacklisted[0m
+[0m[ INFO] [1793107610.039618329]: Built-in SIMD instructions: ARM NEON[0m
+[0m[ INFO] [1793107610.041397496]: Built-in MAVLink package version: 2022.12.30[0m
+[0m[ INFO] [1793107610.041661746]: IMU: Attitude quaternion IMU detected![0m
+[0m[ INFO] [1793107610.041821288]: Known MAVLink dialects: common ardupilotmega ASLUAV AVSSUAS all cubepilot development icarous matrixpilot paparazzi standard storm32 uAvionix ualberta[0m
+[0m[ INFO] [1793107610.041985204]: MAVROS started. MY ID 255.240, TARGET ID 1.1[0m
+[0m[ INFO] [1793107610.042918538]: IMU: High resolution IMU detected![0m
+[0m[ INFO] [1793107610.043984288]: CON: Got HEARTBEAT, connected. FCU: PX4 Autopilot[0m
+[0m[ INFO] [1793107610.044559454]: IMU: Attitude quaternion IMU detected![0m
+[0m[ INFO] [1793107610.045221246]: IMU: High resolution IMU detected![0m
+... logging to /home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/roslaunch-toybrick-1180.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/location/launch/rk_mavros_bench.launch
+[1mstarted roslaunch server http://127.0.0.1:36028/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /mavros/component_id: 240
+ * /mavros/conn/heartbeat_rate: 1.0
+ * /mavros/conn/timeout: 5.0
+ * /mavros/fcu_protocol: v2.0
+ * /mavros/fcu_url: /dev/serial/by-id...
+ * /mavros/gcs_url: 
+ * /mavros/local_position/tf/send: False
+ * /mavros/plugin_blacklist: ['*']
+ * /mavros/plugin_whitelist: ['sys_status', 'i...
+ * /mavros/startup_px4_usb_quirk: False
+ * /mavros/system_id: 255
+ * /mavros/target_component_id: 1
+ * /mavros/target_system_id: 1
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+
+NODES
+  /
+    mavros (mavros/mavros_node)
+
+[1mROS_MASTER_URI=http://127.0.0.1:11333[0m
+]2;/home/jcfh/catkin_ws/src/location/launch/rk_mavros_bench.launch http://127.0.0.1:11333
+[1mprocess[mavros-1]: started with pid [1358][0m
+[mavros-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

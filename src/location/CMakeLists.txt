@@ -53,6 +53,8 @@ if(CATKIN_ENABLE_TESTING)
   if(TARGET localization_guard_test)
     target_link_libraries(localization_guard_test ${catkin_LIBRARIES})
   endif()
+  # Fake transport exercises the real TFmini command/parser, without I2C hardware.
+  catkin_add_gtest(tfmini_i2c_protocol_test test/tfmini_i2c_protocol_test.cpp src/tf_mini_i2c.cpp)
   catkin_add_gtest(tfmini_uart_pty_test test/tfmini_uart_pty_test.cpp src/TFplus.cpp)
   if(TARGET tfmini_uart_pty_test)
     target_link_libraries(tfmini_uart_pty_test ${catkin_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${UTIL_LIBRARY})

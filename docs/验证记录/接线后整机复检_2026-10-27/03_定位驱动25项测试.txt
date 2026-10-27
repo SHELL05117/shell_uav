@@ -1,0 +1,121 @@
+[ 20%] Built target gtest
+Scanning dependencies of target tfmini_i2c_protocol_test
+[ 50%] Built target tfmini_uart_pty_test
+[ 60%] Building CXX object location/CMakeFiles/tfmini_i2c_protocol_test.dir/src/tf_mini_i2c.cpp.o
+[ 80%] Built target localization_guard_test
+[==========] Running 5 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 5 tests from TfminiUartPty
+[ RUN      ] TfminiUartPty.PreCallBacklogWithoutANewSampleIsNotFresh
+[       OK ] TfminiUartPty.PreCallBacklogWithoutANewSampleIsNotFresh (311 ms)
+[ RUN      ] TfminiUartPty.NewFrameAfterBoundaryReplacesOldQueuedDistance
+[       OK ] TfminiUartPty.NewFrameAfterBoundaryReplacesOldQueuedDistance (44 ms)
+[ RUN      ] TfminiUartPty.DrainsABurstLargerThanOneReadToItsLatestCompleteFrame
+[       OK ] TfminiUartPty.DrainsABurstLargerThanOneReadToItsLatestCompleteFrame (33 ms)
+[ RUN      ] TfminiUartPty.ResynchronizesNoiseCorruptChecksumAndFragmentedFrame
+[       OK ] TfminiUartPty.ResynchronizesNoiseCorruptChecksumAndFragmentedFrame (53 ms)
+[ RUN      ] TfminiUartPty.AConsumedFrameCannotRefreshAgainAfterTheStreamStops
+[       OK ] TfminiUartPty.AConsumedFrameCannotRefreshAgainAfterTheStreamStops (632 ms)
+[----------] 5 tests from TfminiUartPty (1074 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test case ran. (1074 ms total)
+[  PASSED  ] 5 tests.
+-- run_tests.py: execute commands
+  /home/jcfh/catkin_ws/devel/lib/location/tfmini_uart_pty_test --gtest_output=xml:/home/jcfh/catkin_ws/build/test_results/location/gtest-tfmini_uart_pty_test.xml
+-- run_tests.py: verify result "/home/jcfh/catkin_ws/build/test_results/location/gtest-tfmini_uart_pty_test.xml"
+[ 90%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/location/tfmini_i2c_protocol_test
+[ 90%] Built target run_tests_location_gtest_tfmini_uart_pty_test
+[==========] Running 11 tests from 5 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from Freshness
+[ RUN      ] Freshness.RejectsMissingOldFutureAndNan
+[       OK ] Freshness.RejectsMissingOldFutureAndNan (0 ms)
+[----------] 1 test from Freshness (0 ms total)
+
+[----------] 3 tests from Range
+[ RUN      ] Range.RejectsTinyNanAndOutOfRangeWithoutRefreshing
+[       OK ] Range.RejectsTinyNanAndOutOfRangeWithoutRefreshing (0 ms)
+[ RUN      ] Range.RepeatedCachedSamplesDoNotConfirmJump
+[       OK ] Range.RepeatedCachedSamplesDoNotConfirmJump (0 ms)
+[ RUN      ] Range.InconsistentJumpSamplesDoNotRebaseline
+[       OK ] Range.InconsistentJumpSamplesDoNotRebaseline (0 ms)
+[----------] 3 tests from Range (0 ms total)
+
+[----------] 1 test from Position
+[ RUN      ] Position.JumpRejectionDoesNotAcceptDuplicateStamp
+[       OK ] Position.JumpRejectionDoesNotAcceptDuplicateStamp (0 ms)
+[----------] 1 test from Position (0 ms total)
+
+[----------] 5 tests from Height
+[ RUN      ] Height.SubtractsMeasuredLevelGroundClearance
+[       OK ] Height.SubtractsMeasuredLevelGroundClearance (1 ms)
+[ RUN      ] Height.ProjectsSlantRangeUsingImuPitch
+[       OK ] Height.ProjectsSlantRangeUsingImuPitch (0 ms)
+[ RUN      ] Height.AppliesRotatedSensorOffset
+[       OK ] Height.AppliesRotatedSensorOffset (0 ms)
+[ RUN      ] Height.RejectsTiltInvalidQuaternionAndOutsideHeight
+[       OK ] Height.RejectsTiltInvalidQuaternionAndOutsideHeight (0 ms)
+[ RUN      ] Height.RejectsInvalidGeometryParameters
+[       OK ] Height.RejectsInvalidGeometryParameters (0 ms)
+[----------] 5 tests from Height (1 ms total)
+
+[----------] 1 test from UartFrame
+[ RUN      ] UartFrame.ValidatesHeaderChecksumAndLength
+[       OK ] UartFrame.ValidatesHeaderChecksumAndLength (0 ms)
+[----------] 1 test from UartFrame (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 5 test cases ran. (1 ms total)
+[  PASSED  ] 11 tests.
+-- run_tests.py: execute commands
+  /home/jcfh/catkin_ws/devel/lib/location/localization_guard_test --gtest_output=xml:/home/jcfh/catkin_ws/build/test_results/location/gtest-localization_guard_test.xml
+-- run_tests.py: verify result "/home/jcfh/catkin_ws/build/test_results/location/gtest-localization_guard_test.xml"
+[ 90%] Built target run_tests_location_gtest_localization_guard_test
+[100%] Built target tfmini_i2c_protocol_test
+[==========] Running 9 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 9 tests from TFMiniI2C
+[ RUN      ] TFMiniI2C.ExactRawCommandAndMetres
+[       OK ] TFMiniI2C.ExactRawCommandAndMetres (2 ms)
+[ RUN      ] TFMiniI2C.BadChecksum
+[       OK ] TFMiniI2C.BadChecksum (2 ms)
+[ RUN      ] TFMiniI2C.BadHeaderWithValidChecksum
+[       OK ] TFMiniI2C.BadHeaderWithValidChecksum (1 ms)
+[ RUN      ] TFMiniI2C.ShortFrame
+error reading channelInput/output error
+[       OK ] TFMiniI2C.ShortFrame (1 ms)
+[ RUN      ] TFMiniI2C.ReadFailureDoesNotReuseLastHeight
+error reading channelInput/output error
+[       OK ] TFMiniI2C.ReadFailureDoesNotReuseLastHeight (2 ms)
+[ RUN      ] TFMiniI2C.WriteFailure
+error in TF Mini Pro configuration Input/output error
+[       OK ] TFMiniI2C.WriteFailure (0 ms)
+[ RUN      ] TFMiniI2C.InvalidDistance
+[       OK ] TFMiniI2C.InvalidDistance (5 ms)
+[ RUN      ] TFMiniI2C.InvalidSignalStrength
+[       OK ] TFMiniI2C.InvalidSignalStrength (3 ms)
+[ RUN      ] TFMiniI2C.ValidDistanceAndSignalBoundaries
+[       OK ] TFMiniI2C.ValidDistanceAndSignalBoundaries (2 ms)
+[----------] 9 tests from TFMiniI2C (19 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test case ran. (19 ms total)
+[  PASSED  ] 9 tests.
+-- run_tests.py: execute commands
+  /home/jcfh/catkin_ws/devel/lib/location/tfmini_i2c_protocol_test --gtest_output=xml:/home/jcfh/catkin_ws/build/test_results/location/gtest-tfmini_i2c_protocol_test.xml
+-- run_tests.py: verify result "/home/jcfh/catkin_ws/build/test_results/location/gtest-tfmini_i2c_protocol_test.xml"
+[100%] Built target run_tests_location_gtest_tfmini_i2c_protocol_test
+[100%] Built target run_tests_location_gtest
+[100%] Built target run_tests_location
+Base path: /home/jcfh/catkin_ws
+Source space: /home/jcfh/catkin_ws/src
+Build space: /home/jcfh/catkin_ws/build
+Devel space: /home/jcfh/catkin_ws/devel
+Install space: /home/jcfh/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jcfh/catkin_ws/build"
+####
+####
+#### Running command: "make run_tests_location -j2" in "/home/jcfh/catkin_ws/build"
+####

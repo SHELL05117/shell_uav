@@ -3,9 +3,6 @@
 TFMiniPro::TFMiniPro(uint8 address, uint8 bus) noexcept(false)
 {
 	i2c_dev_ = new I2C(address, bus);
-	try { i2c_dev_->write(address); }
-	catch (...) { delete i2c_dev_; throw; }
-	usleep(500000);
 }
 
 bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
@@ -13,17 +10,16 @@ bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	// Step 1 - Build the command data to send to the device
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	static uint8 cmd_length;				  // Length of command
-	static uint8 reply_length;				  // Length of command reply data
-	static uint8 check_sum = 0;				  // 8 byte send command array
-	static uint8 cmnd_data[TFMP_MAX_CMD_LEN]; // 8 byte send command array
-
-	memset(cmnd_data, 0, TFMP_MAX_CMD_LEN); // Clear the send command array.
-	memcpy(&cmnd_data[0], &cmnd, 4);		// Copy 4 bytes of data: reply length,command length, command number and one parameter
-
-	reply_length = cmnd_data[0];	  // Save the first byte as reply length.
-	cmd_length = cmnd_data[1];		  // Save the second byte as command length.
-	cmnd_data[0] = TFMP_FRAME_HEADER; // Set the first byte to the header character.
+	const uint8 reply_length = cmnd & 0xff;
+	const uint8 cmd_length = (cmnd >> 8) & 0xff;
+	if (cmd_length < 4 || cmd_length > TFMP_MAX_CMD_LEN ||
+	    reply_length > TFMP_DATA_LENGTH || (reply_length && !response)) return false;
+	uint8 check_sum = 0;
+	uint8 cmnd_data[TFMP_MAX_CMD_LEN] = {};
+	cmnd_data[0] = TFMP_FRAME_HEADER;
+	cmnd_data[1] = cmd_length;
+	cmnd_data[2] = (cmnd >> 16) & 0xff;
+	cmnd_data[3] = (cmnd >> 24) & 0xff;
 
 	if (cmnd == TFMP_SET_FRAME_RATE)	   // If the command is to Set Frame Rate...
 		memcpy(&cmnd_data[3], &param, 2);  // add the 2 byte Frame Rate parameter.
@@ -44,7 +40,7 @@ bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	try
 	{
-		i2c_dev_->write_register_block(TFMP_REG_POINTER, cmd_length, cmnd_data);
+		i2c_dev_->write_bytes(cmnd_data, cmd_length);
 	}
 	catch (std::system_error &e)
 	{
@@ -58,16 +54,17 @@ bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
 		return true;
 	else if (cmnd != TFMP_I2C_FORMAT_CM)
 		usleep(200000);
+	else
+		// This RK/TFmini pair produced 0x2c instead of 0x59 on occasional
+		// immediate reads. A bounded 1 ms command-to-read gap is bench-verified.
+		usleep(1000);
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	// Step 3 - Get command reply data back from the device.
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	try
 	{
-		for (uint8 i = 0; i < reply_length; ++i)
-		{
-			response[i] = i2c_dev_->read(i);
-		}
+		i2c_dev_->read_bytes(response, reply_length);
 	}
 	catch (std::system_error &e)
 	{
@@ -84,7 +81,10 @@ bool TFMiniPro::SendCommand(uint32 cmnd, uint32 param, uint8 *response)
 	{
 		return false;
 	}
-	// TO DO: do something with response
+	if (cmnd == TFMP_I2C_FORMAT_CM)
+		return response[0] == 0x59 && response[1] == 0x59;
+	if (reply_length < 4 || response[0] != TFMP_FRAME_HEADER ||
+	    response[1] != reply_length || response[2] != cmnd_data[2]) return false;
 	return true;
 }
 
@@ -117,11 +117,10 @@ float TFMiniPro::ReadData()
 
 	uint16 dist = data[2] + (data[3] << 8);
 	uint16 flux = data[4] + (data[5] << 8);
-	uint16 temp = data[6] + (data[7] << 8);
-	// convert temp code to degrees Celsius
-	temp = (temp >> 3) - 256;
+	// TFmini Plus standard frames: blind zone below 10 cm, maximum 1200 cm;
+	// weak/overexposed returns must not refresh the localization height.
+	if (dist < 10 || dist > 1200 || flux < 100 || flux == 65535) return -1.0f;
 	resp = (float)dist;
-	resp = resp == 0 ? -1 : resp; // avoid false measurements
 	return resp / 100.0f;		  // Convert to meters and return
 }
 

@@ -1,0 +1,4856 @@
+{
+  "bus": 6,
+  "elapsed_seconds": 30.005772639000043,
+  "errors": [],
+  "oe_voltage_measured_by_software": false,
+  "passed": true,
+  "pca_after": {
+    "0x00": 17,
+    "0x01": 4,
+    "0x06": 0,
+    "0x07": 0,
+    "0x08": 0,
+    "0x09": 16,
+    "0x0a": 0,
+    "0x0b": 0,
+    "0x0c": 0,
+    "0x0d": 16,
+    "0xfa": 0,
+    "0xfb": 0,
+    "0xfc": 0,
+    "0xfd": 0,
+    "0xfe": 30
+  },
+  "pca_before": {
+    "0x00": 17,
+    "0x01": 4,
+    "0x06": 0,
+    "0x07": 0,
+    "0x08": 0,
+    "0x09": 16,
+    "0x0a": 0,
+    "0x0b": 0,
+    "0x0c": 0,
+    "0x0d": 16,
+    "0xfa": 0,
+    "0xfb": 0,
+    "0xfc": 0,
+    "0xfd": 0,
+    "0xfe": 30
+  },
+  "pwm_writes": 0,
+  "response_delay_ms": 1.0,
+  "samples": [
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 0.0036134580000179994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 0.05006895799999711,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 0.1003192499999841,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 0.15022079200002736,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 0.2002209170000242,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 0.25021812500006035,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 0.3002185420000387,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 0.3502142920000324,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 0.40021762499998204,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 0.4502174589999868,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 0.5002172920000021,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 0.5501582090000738,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 0.6002499170000419,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 0.6502173750000111,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 0.7003773750000164,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 0.750380375000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 0.8003852919999872,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 0.8502925000000232,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 0.900386334000018,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 0.9502101250000123,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 1.0003903760000412,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 1.050395041999991,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 1.1003867090000767,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 1.1503841260000627,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 1.2004624590000503,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 1.2503844589999744,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 1.3004606670000385,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 1.350383125999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 1.4003871670000763,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 1.4503844590000199,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 1.5003800010000532,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 1.550383709000016,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 1.6003817509999863,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 1.6503840420000415,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 1.7003810009999825,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 1.7503838760000008,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 1.8003808760000766,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00430e300949",
+      "strength": 3651,
+      "t": 1.8503817509999863,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 1.9003896680000025,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 1.9503833759999907,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 2.000329750999981,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 2.050532000999965,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 2.100527458999977,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 2.1503963339999927,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 2.200108584000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 2.2501562510000213,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 2.300123126000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 2.350118584000029,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004d0e300953",
+      "strength": 3661,
+      "t": 2.4001341680000223,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 2.450218001000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 2.5002166680000073,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 2.5502103759999954,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 2.6002180850000514,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 2.650216460000024,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004f0e300954",
+      "strength": 3663,
+      "t": 2.700261501,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 2.750215250999986,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 2.800218876000031,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 2.8502190010000277,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 2.900218543000051,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 2.950212835000002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 3.0002179179999757,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 3.0502139600000646,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00420e300948",
+      "strength": 3650,
+      "t": 3.10021933500002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 3.1502118770000607,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 3.200217543000008,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 3.250218251999968,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 3.300218084999983,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 3.350210918000016,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 3.400218918000064,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003e0e300944",
+      "strength": 3646,
+      "t": 3.450217877,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 3.5002177100000154,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004b0e300951",
+      "strength": 3659,
+      "t": 3.550212585000054,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004f0e300954",
+      "strength": 3663,
+      "t": 3.6002185429999827,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00490e30094f",
+      "strength": 3657,
+      "t": 3.6502154600000267,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 3.7002173350000476,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 3.750216292999994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 3.800217877000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 3.8502180020000196,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 3.900214334999987,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 3.9502118350000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 4.000240835,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 4.050130710000076,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 4.100214834999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 4.150212334999992,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 4.200213335000058,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 4.250225709999995,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 4.300131919000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 4.350211669000032,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 4.4001269190000585,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 4.450218044000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 4.50022371099999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00470e30094d",
+      "strength": 3655,
+      "t": 4.5502139190000435,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 4.600217543999975,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 4.650230501999999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 4.700222461000067,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 4.750217918999965,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 4.800217460999988,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 4.850217002000022,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 4.900217710999982,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004f0e300954",
+      "strength": 3663,
+      "t": 4.950220752000064,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 5.000218544000063,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 5.050131168999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 5.100216752000051,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 5.150211626999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00490e30094f",
+      "strength": 3657,
+      "t": 5.200217586000008,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 5.250218586000074,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 5.3002169610000465,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 5.350211252999998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 5.40021721100004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00470e30094d",
+      "strength": 3655,
+      "t": 5.450219086000061,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 5.5002180440000075,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 5.550151086000028,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 5.600256502999969,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 5.650220169000022,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004f0e300954",
+      "strength": 3663,
+      "t": 5.700219419000064,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 5.750212252999972,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 5.800217044000078,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 5.850215711000033,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 5.900217295000061,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00440e30094a",
+      "strength": 3652,
+      "t": 5.950212460999978,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 6.000162420000038,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 6.050189086000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 6.100183960999971,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 6.150120211000058,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 6.200181877999967,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 6.250129503000039,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 6.300217711000073,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 6.350211420000051,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 6.400216503000024,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 6.450147795000021,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 6.500216461000036,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 6.550210752999988,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 6.600218170000062,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004a0e300950",
+      "strength": 3658,
+      "t": 6.6502177119999715,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 6.70021637800005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 6.750211252999975,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 6.800216628000044,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 6.850219670000001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 6.900218044999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 6.95021146199997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 7.000218002999986,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 7.050213170000006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 7.10021825299998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 7.150211669999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 7.200218795000069,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 7.25021308700002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 7.300219045000063,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 7.350212170000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 7.400217837000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 7.450211545000002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 7.500218669999981,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00440e30094a",
+      "strength": 3652,
+      "t": 7.550212086999977,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 7.600218337000001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 7.6503745040000695,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 7.700385545000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00420e300948",
+      "strength": 3650,
+      "t": 7.750385129000051,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 7.80038304499999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 7.850382836999984,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 7.900381961999983,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 7.950385337000057,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 8.00025025399998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 8.050130796000076,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 8.100216087000035,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 8.150211546000037,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 8.200212836999981,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 8.250213254000073,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 8.300211921000027,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 8.350130087000025,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 8.40021187900004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 8.450224546000072,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 8.500143296000033,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 8.550211379000075,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 8.600143546000027,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 8.65021833700007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 8.700210296000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003e0e300944",
+      "strength": 3646,
+      "t": 8.750216838000028,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 8.800210546000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 8.850217379000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 8.900211087999992,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 8.950212671000031,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 9.000211628999978,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 9.050213503999998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 9.100212463000048,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 9.150212588000045,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 9.200211545999991,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 9.250218087999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 9.300211504000004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 9.350212213000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 9.400245588000075,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 9.450247755000078,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003a0e30093f",
+      "strength": 3642,
+      "t": 9.500176712999973,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 9.555004796000048,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 9.600220421000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 9.650259045999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 9.700266463000048,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 9.750201838000066,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004b0e300951",
+      "strength": 3659,
+      "t": 9.80016346299999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 9.850175255000067,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 9.900168588000042,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 9.950279838000029,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 10.000117213000067,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 10.050201337999965,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 10.100216671999988,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 10.150202463000028,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 10.200238630000058,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 10.25031250500001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003a0e30093f",
+      "strength": 3642,
+      "t": 10.300374297000076,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00430e300949",
+      "strength": 3651,
+      "t": 10.350346755000032,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 10.400175672000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 10.450325963000068,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 10.500226338000061,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 10.550129630000015,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 10.600177297000073,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 10.650172588000032,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 10.700217921999979,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 10.750205797000035,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00460e30094c",
+      "strength": 3654,
+      "t": 10.800124838999977,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 10.85011767200001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 10.90027433900002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 10.95017571400001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003c0e300941",
+      "strength": 3644,
+      "t": 11.000193921999994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 11.050136422000037,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 11.100281754999969,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 11.150374380000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 11.200366880000047,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 11.250357088999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 11.300378046999981,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 11.350381546999984,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 11.400367172000074,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 11.450377129999993,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003c0e300941",
+      "strength": 3644,
+      "t": 11.50037083899997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 11.550385130999985,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00530e300958",
+      "strength": 3667,
+      "t": 11.600408672000071,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003c0e300942",
+      "strength": 3644,
+      "t": 11.650371672000006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 11.700362422000012,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 11.75036792200001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 11.80037492200006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00530e300958",
+      "strength": 3667,
+      "t": 11.850367047000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 11.90035379699998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 11.950174339,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 12.000140381000051,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 12.050134672000013,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 12.100143547000016,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 12.150219796999977,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00420e300948",
+      "strength": 3650,
+      "t": 12.200120464000065,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 12.250145381000038,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 12.300141423000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00490e30094f",
+      "strength": 3657,
+      "t": 12.350164672999995,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003a0e30093f",
+      "strength": 3642,
+      "t": 12.400227213999983,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 12.450356923000072,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 12.500369798000065,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 12.550363214000072,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00440e30094a",
+      "strength": 3652,
+      "t": 12.600355923000052,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 12.650376589000075,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 12.704377506000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 12.750143798000067,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 12.800164048000056,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 12.850149589000011,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 12.90021067300006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 12.950213423000037,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 13.000217923000037,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 13.05013550600006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00490e30094f",
+      "strength": 3657,
+      "t": 13.100219047999985,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 13.150217130999977,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 13.20021784000005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 13.250220298000045,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 13.300219547999973,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 13.350218798000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 13.400220673000035,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 13.45022050600005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 13.500220923000029,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00440e30094a",
+      "strength": 3652,
+      "t": 13.550365048000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 13.600370548,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 13.650379132000012,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 13.700383382000041,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 13.750381757000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 13.80037788200002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 13.850376839999967,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 13.900384132,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 13.950385090000054,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003c0e300941",
+      "strength": 3644,
+      "t": 14.000167298000065,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 14.050138257000071,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 14.100375547999988,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 14.150378923000062,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00470e30094d",
+      "strength": 3655,
+      "t": 14.200380172999985,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 14.250377048000018,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00390e30093e",
+      "strength": 3641,
+      "t": 14.300377798999989,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 14.350377382000033,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 14.400378090000004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 14.450377839999987,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 14.500376923999966,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 14.550383424000074,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 14.600383256999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 14.650383299000055,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 14.700377798999966,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00460e30094c",
+      "strength": 3654,
+      "t": 14.750378589999968,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 14.800377464999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 14.850380049000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 14.900385131999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00550e30095a",
+      "strength": 3669,
+      "t": 14.950395882000066,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 15.000378216000058,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 15.050384716000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003f0e300945",
+      "strength": 3647,
+      "t": 15.100383256999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 15.150376090999998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 15.200378716000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 15.250377924000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 15.300379798999984,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 15.35038638200001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 15.40037884100002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 15.450376382000059,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00500e300955",
+      "strength": 3664,
+      "t": 15.500377049000008,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 15.550157465999973,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 15.600385631999984,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004e0e300954",
+      "strength": 3662,
+      "t": 15.650384924000036,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 15.700385508000068,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 15.750285673999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 15.800386548999995,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 15.850382965999984,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 15.900385174000007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 15.950383758000044,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 16.00067250799998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 16.050183508000032,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 16.10018100800005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 16.150147007999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 16.200143049000076,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 16.25018400800002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 16.300218257999973,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 16.350212549000048,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 16.400216758000056,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 16.45021659100007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 16.50021846599998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003d0e300943",
+      "strength": 3645,
+      "t": 16.550210133000064,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 16.600220465999996,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 16.65021767500002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 16.70021517500004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00430e300949",
+      "strength": 3651,
+      "t": 16.75021617499999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 16.80021367500001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 16.850218466,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 16.900213925000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 16.950212299999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00470e30094d",
+      "strength": 3655,
+      "t": 17.000214174999996,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 17.050126508000062,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 17.100216757999988,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 17.15021250799998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 17.200218758000005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 17.25021830000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 17.300224550000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 17.350213300000064,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 17.400218092000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 17.45021792500006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 17.50021717499999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004a0e300950",
+      "strength": 3658,
+      "t": 17.55021234200001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003d0e300943",
+      "strength": 3645,
+      "t": 17.600373591999983,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 17.65038146699999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 17.70038234200001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 17.750183342000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 17.800384174999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 17.850384550000058,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 17.900383508999994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 17.95039388400005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 18.000196592000066,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 18.050228800000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 18.10021842499998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 18.150210092000066,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 18.200217217000045,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 18.25021850899998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 18.30021659199997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 18.350211175000027,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 18.400215675000027,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 18.45021667499998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 18.500216508999983,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 18.550214300999983,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 18.600213259000043,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 18.650237592000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 18.700230426000076,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 18.750216550999994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003b0e300940",
+      "strength": 3643,
+      "t": 18.800372717000073,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 18.850381509000044,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 18.900385009000047,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 18.95038342600003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00390e30093e",
+      "strength": 3641,
+      "t": 19.00038246700001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 19.050144301000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 19.100383926000063,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 19.15038288400001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 19.20038496799998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 19.250242092999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 19.30038217599997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 19.35038380100002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 19.40038434300004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 19.45038496799998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 19.500384259000043,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 19.550385426000048,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 19.600383926000063,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 19.65038405100006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 19.70028959299998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 19.750385050999967,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 19.800207883999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 19.850383050999994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 19.90039488499997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00430e300949",
+      "strength": 3651,
+      "t": 19.950386426000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 20.000186260000078,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 20.050221384999986,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 20.10021830100004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 20.15021201000002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 20.200218260000042,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 20.250217801000076,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 20.300216760000012,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 20.350211926000043,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00460e30094c",
+      "strength": 3654,
+      "t": 20.40021759299998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 20.450217135000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00460e30094c",
+      "strength": 3654,
+      "t": 20.500218718000042,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 20.55019259300002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003b0e300940",
+      "strength": 3643,
+      "t": 20.600250468000013,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 20.650370092999992,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004a0e300950",
+      "strength": 3658,
+      "t": 20.70038217700005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004b0e300951",
+      "strength": 3659,
+      "t": 20.75037863500006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 20.800377509999976,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 20.85037734299999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 20.90037463500005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 20.950373093000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 21.000376218000042,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 21.050372010000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003c0e300942",
+      "strength": 3644,
+      "t": 21.100235259999977,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 21.150372927000035,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00430e300949",
+      "strength": 3651,
+      "t": 21.200236093000058,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 21.250375384999984,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 21.300233176999996,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 21.350371052000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 21.400232844000016,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 21.450372218999973,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 21.50037459400005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 21.55037284399998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00460e30094c",
+      "strength": 3654,
+      "t": 21.60037059399997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 21.65037121900002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 21.700376135000056,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 21.750383594000027,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003b0e300940",
+      "strength": 3643,
+      "t": 21.800382968999998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 21.85038271899998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 21.90038401000004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 21.95038342700002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 22.000185886000054,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00520e300957",
+      "strength": 3666,
+      "t": 22.050157136000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 22.10014559399997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 22.150157386000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 22.20015459399997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003f0e300945",
+      "strength": 3647,
+      "t": 22.250195552000037,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 22.300213469000028,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004b0e300951",
+      "strength": 3659,
+      "t": 22.350213594000024,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 22.400217802000043,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00490e30094f",
+      "strength": 3657,
+      "t": 22.450212676999968,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 22.500216593999994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004d0e300952",
+      "strength": 3661,
+      "t": 22.550211761000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00430e300949",
+      "strength": 3651,
+      "t": 22.600213052000072,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 22.65021259399998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 22.70021709399998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 22.750216344000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 22.800372303000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 22.85038517800001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 22.900394219000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003a0e30093f",
+      "strength": 3642,
+      "t": 22.950384385999996,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 23.00038417799999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 23.05017571899998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 23.100384469000005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 23.15029009400007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 23.20038455300005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 23.25021446900007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00400e300946",
+      "strength": 3648,
+      "t": 23.300386635999985,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 23.350395011000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 23.400385136000068,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 23.450305886000024,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00440e30094a",
+      "strength": 3652,
+      "t": 23.500379220000013,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00490e30094f",
+      "strength": 3657,
+      "t": 23.550383845000056,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003c0e300941",
+      "strength": 3644,
+      "t": 23.60037559500006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 23.65038317799997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 23.70037822000006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 23.75038501100005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 23.800376345000018,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 23.850391469999977,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 23.900380595,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 23.95038592800006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 24.000241886000026,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00400e300946",
+      "strength": 3648,
+      "t": 24.05024172000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 24.100217637000014,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003a0e30093f",
+      "strength": 3642,
+      "t": 24.150213095000026,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 24.200217303000045,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 24.250215678000018,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 24.300218719999975,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 24.350210678000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d004b0e300951",
+      "strength": 3659,
+      "t": 24.40021634499999,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003b0e300940",
+      "strength": 3643,
+      "t": 24.45021151200001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 24.500217470000052,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003c0e300941",
+      "strength": 3644,
+      "t": 24.55021001199998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 24.600410512000053,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 24.650382844999967,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 24.70038622000004,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 24.750609970000028,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 24.800386054,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 24.85038505400007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 24.900386636999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00380e30093d",
+      "strength": 3640,
+      "t": 24.95038492900005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 25.000385637000022,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 25.050384804000032,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 25.10038122000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 25.150387554000076,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 25.200384470000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 25.250383469999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 25.300382594999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 25.350386637000042,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 25.40038167900002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00480e30094e",
+      "strength": 3656,
+      "t": 25.450384221000036,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 25.500384346000033,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 25.550161512000045,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 25.600216429000056,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 25.650383928999986,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 25.700385428999994,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 25.75038530400002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 25.80038455400006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 25.850383179000005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 25.90038459599998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 25.950383929000054,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 26.00030822100007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 26.050157554000066,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 26.10022884600005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 26.15018959600002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 26.200161138,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 26.250155429000074,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 26.300211846000025,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 26.350212263000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 26.400212678999992,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 26.450210762999973,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 26.50021205400003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 26.550211012999966,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00470e30094d",
+      "strength": 3655,
+      "t": 26.600212304000024,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00410e300947",
+      "strength": 3649,
+      "t": 26.650371346000043,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 26.700209221000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 26.750385721000043,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 26.800395971000057,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 26.85038368000005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00440e30094a",
+      "strength": 3652,
+      "t": 26.900384262999978,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 26.950460930000077,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 27.000388846000078,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00390e30093e",
+      "strength": 3641,
+      "t": 27.050385720999998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00500e300955",
+      "strength": 3664,
+      "t": 27.100385555000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 27.150363846000005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 27.200384221000036,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 27.250304304999986,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 27.300383970999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 27.350382930000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 27.400384262999978,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 27.45037813800002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 27.500385805000064,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 27.550376304999986,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 27.600384888000008,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 27.650225055000078,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 27.700373763000016,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 27.750240347000044,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 27.800386513000035,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 27.850384512999995,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 27.900384722000013,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 27.950386138,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 28.000386221999975,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 28.050220972000034,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 28.100376347000065,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 28.150386097000023,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 28.20038105499998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 28.250384888999974,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 28.30038459700006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 28.350383264000016,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003e0e300943",
+      "strength": 3646,
+      "t": 28.400386679999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003c0e300941",
+      "strength": 3644,
+      "t": 28.450387222000018,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 28.500383846999966,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 28.550383805000024,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004a0e30094f",
+      "strength": 3658,
+      "t": 28.600382264000018,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 28.650383222000073,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00470e30094c",
+      "strength": 3655,
+      "t": 28.70038197200006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00550e30095a",
+      "strength": 3669,
+      "t": 28.750382055000046,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00450e30094a",
+      "strength": 3653,
+      "t": 28.800382388999992,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 28.850385972000026,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 28.90038443000003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 28.95038738900007,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00440e300949",
+      "strength": 3652,
+      "t": 29.000384806000056,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003e0e300944",
+      "strength": 3646,
+      "t": 29.05013976400005,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00420e300947",
+      "strength": 3650,
+      "t": 29.100388306000013,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004b0e300950",
+      "strength": 3659,
+      "t": 29.150384013999997,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 29.20038493100003,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004c0e300951",
+      "strength": 3660,
+      "t": 29.250386555999967,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00400e300946",
+      "strength": 3648,
+      "t": 29.300385972000072,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c004e0e300953",
+      "strength": 3662,
+      "t": 29.35038247199998,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 29.40039459700006,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00450e30094b",
+      "strength": 3653,
+      "t": 29.450385889000017,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00460e30094b",
+      "strength": 3654,
+      "t": 29.500383722000038,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00400e300945",
+      "strength": 3648,
+      "t": 29.55038213900002,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003d0e300942",
+      "strength": 3645,
+      "t": 29.600384555999995,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00490e30094e",
+      "strength": 3657,
+      "t": 29.650384098000018,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c003f0e300944",
+      "strength": 3647,
+      "t": 29.700384348000057,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d00440e30094a",
+      "strength": 3652,
+      "t": 29.750382389000038,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00430e300948",
+      "strength": 3651,
+      "t": 29.80038447300001,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 13,
+      "hex": "59590d003f0e300945",
+      "strength": 3647,
+      "t": 29.850384264000013,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00410e300946",
+      "strength": 3649,
+      "t": 29.900239139000064,
+      "temperature_c": 38.0,
+      "valid": true
+    },
+    {
+      "distance_cm": 12,
+      "hex": "59590c00480e30094d",
+      "strength": 3656,
+      "t": 29.950384514000007,
+      "temperature_c": 38.0,
+      "valid": true
+    }
+  ],
+  "start_utc": "2026-10-27T13:14:24.072462+00:00",
+  "summary": {
+    "hz": 20.00215645552836,
+    "max_cm": 13,
+    "max_gap": 0.05482808300007491,
+    "mean_cm": 12.121666666666666,
+    "min_cm": 12,
+    "std_cm": 0.32690042656577994,
+    "total": 600,
+    "valid": 600
+  }
+}

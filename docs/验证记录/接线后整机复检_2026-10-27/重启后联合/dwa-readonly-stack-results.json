@@ -1,0 +1,4451 @@
+{
+  "checks": {
+    "annotated_image_stream": true, 
+    "camera_continuous": true, 
+    "dwa_config_and_loaded": true, 
+    "fcu_connected_unarmed_stable_mode": true, 
+    "images_valid": true, 
+    "imu_continuous": true, 
+    "inference_ready_observed": true, 
+    "location_range_blocked": true, 
+    "mavros_readonly": true, 
+    "model_loaded": true, 
+    "multiple_real_inferences": true, 
+    "no_setpoints_gpio_or_vision": true, 
+    "real_range_reaches_uncalibrated_gate": true, 
+    "safe_gate": true, 
+    "scaled_image_dimensions_consistent": true, 
+    "scan_continuous": true
+  }, 
+  "errors": [], 
+  "fcu_modes": [
+    "MANUAL"
+  ], 
+  "flight_acceptance": false, 
+  "image_window_edges": {
+    "camera": {
+      "first_delay": 0.013185665999998264, 
+      "last_age": -0.011272249999990436
+    }, 
+    "output": {
+      "first_delay": 0.03369745800000601, 
+      "last_age": 0.008275166999993644
+    }
+  }, 
+  "images": {
+    "annotation_red_changed_pixels": 0, 
+    "image_errors": [], 
+    "saved_images": {
+      "camera": "camera-last.jpg", 
+      "output": "output-last.jpg"
+    }, 
+    "streams": {
+      "camera": {
+        "count": 618, 
+        "hz": 29.998521391356224, 
+        "max_gap": 0.07542879100000732, 
+        "shapes": [
+          {
+            "count": 618, 
+            "encoding": "rgb8", 
+            "height": 720, 
+            "width": 1280
+          }
+        ]
+      }, 
+      "output": {
+        "count": 165, 
+        "hz": 7.999248636038518, 
+        "max_gap": 0.15003741699999296, 
+        "shapes": [
+          {
+            "count": 165, 
+            "encoding": "bgr8", 
+            "height": 360, 
+            "width": 640
+          }
+        ]
+      }
+    }
+  }, 
+  "inference_log": {
+    "flammable_detections": 0, 
+    "inference_ok": 4, 
+    "model_open_error": false, 
+    "model_ready": true
+  }, 
+  "inference_log_scope": "whole process lifetime, including warm-up; read after child exit and log close", 
+  "location_mode": "real I2C6 TFmini, height uncalibrated", 
+  "map_observation": {
+    "explanation": "Observed mapping only; no valid flight localization or flight acceptance inferred", 
+    "frame": "map", 
+    "free_cells": 0, 
+    "height": 190, 
+    "known_cells": 18318, 
+    "occupied_cells": 587, 
+    "received": true, 
+    "required_for_readonly_pass": false, 
+    "resolution": 0.05000000074505806, 
+    "system_slam_acceptance": false, 
+    "width": 442
+  }, 
+  "normal_cleanup": true, 
+  "observation_seconds": 20.543898176, 
+  "orphan_group_stop_signals": [], 
+  "output_hz_is_inference_hz": false, 
+  "parameters": {
+    "/location/height_reference_calibrated": false, 
+    "/location/tf_mini_type": "i2c", 
+    "/location/use_tf_mini": true, 
+    "/mavros/plugin_blacklist": [
+      "*"
+    ], 
+    "/mavros/plugin_whitelist": [
+      "sys_status", 
+      "imu", 
+      "global_position", 
+      "local_position"
+    ], 
+    "/mavros/startup_px4_usb_quirk": false, 
+    "/move_base/base_local_planner": "dwa_local_planner/DWAPlannerROS", 
+    "/shoot_with_move_base_node/auto_start": false, 
+    "/shoot_with_move_base_node/backend": "rknn", 
+    "/shoot_with_move_base_node/enable_actuation": false, 
+    "/shoot_with_move_base_node/model_file": "best.rknn", 
+    "/shoot_with_move_base_node/publish_scale": 0.5
+  }, 
+  "passed": true, 
+  "private_master": "http://127.0.0.1:11333", 
+  "processes": [
+    {
+      "arguments": [
+        "roscore", 
+        "-p", 
+        "11333"
+      ], 
+      "exit_code": 0, 
+      "log": "master.log", 
+      "name": "master", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "usb_cam", 
+        "rk_usb_camera.launch"
+      ], 
+      "exit_code": 0, 
+      "log": "camera.log", 
+      "name": "camera", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "location", 
+        "rk_mavros_bench.launch"
+      ], 
+      "exit_code": 0, 
+      "log": "mavros.log", 
+      "name": "mavros", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "location", 
+        "rplidar.launch"
+      ], 
+      "exit_code": 0, 
+      "log": "lidar.log", 
+      "name": "lidar", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "rosrun", 
+        "tf", 
+        "static_transform_publisher", 
+        "0", 
+        "0", 
+        "0", 
+        "3.14159", 
+        "0", 
+        "0", 
+        "base_link", 
+        "laser_link", 
+        "30"
+      ], 
+      "exit_code": 0, 
+      "log": "laser-tf.log", 
+      "name": "laser-tf", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "location", 
+        "cartographer_2d.launch"
+      ], 
+      "exit_code": 0, 
+      "log": "cartographer.log", 
+      "name": "cartographer", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "rosrun", 
+        "location", 
+        "location_node", 
+        "_use_tf_mini:=true", 
+        "_tf_mini_type:=i2c", 
+        "_range_topic:=/shell_readonly_unconnected_range", 
+        "_bus:=6", 
+        "_address:=16", 
+        "_height_reference_calibrated:=false"
+      ], 
+      "exit_code": 0, 
+      "log": "location.log", 
+      "name": "location", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "navigation_2d", 
+        "navigation_2d.launch", 
+        "enable_actuation:=false", 
+        "auto_start:=false", 
+        "use_real_servos:=false", 
+        "target_hazard:=flammable", 
+        "detect_backend:=rknn"
+      ], 
+      "exit_code": 0, 
+      "log": "navigation.log", 
+      "name": "navigation", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }
+  ], 
+  "readiness_health": {
+    "first_sample_delay_seconds": 0.12322975000000724, 
+    "inference_ready_true_count": 206, 
+    "inference_ready_true_ratio": 1.0, 
+    "is_inference_fps": false, 
+    "last_sample_age_seconds": 0.022668624999994336, 
+    "max_bad_gap_seconds": 0.32695395799999005, 
+    "max_continuous_false_seconds": 0.0, 
+    "max_message_gap_seconds": 0.32695395799999005, 
+    "maximum_bad_gap_limit_seconds": 1.0, 
+    "minimum_samples": 10, 
+    "minimum_true_ratio": 0.95, 
+    "passed": true, 
+    "sample_count": 206
+  }, 
+  "remaining_owned_processes": [], 
+  "resources": {
+    "dwa_library_pids": [
+      1650
+    ], 
+    "minimum_system_mem_available_kib": 3088140, 
+    "peak_aggregate_rss_kib": 1021264, 
+    "peak_sampled_cpu_percent_one_core_100": 543.4104999428454, 
+    "processes": [
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/roscore -p 11333", 
+        "peak_rss_kib": 61872, 
+        "pgid": 1090, 
+        "pid": 1090, 
+        "start": "18634"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/rosmaster --core -p 11333 -w 3 __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/master.log", 
+        "peak_rss_kib": 61396, 
+        "pgid": 1104, 
+        "pid": 1104, 
+        "start": "18795"
+      }, 
+      {
+        "command": "/opt/ros/melodic/lib/rosout/rosout __name:=rosout __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/rosout-1.log", 
+        "peak_rss_kib": 17360, 
+        "pgid": 1118, 
+        "pid": 1118, 
+        "start": "18883"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/roslaunch usb_cam rk_usb_camera.launch", 
+        "peak_rss_kib": 62020, 
+        "pgid": 1179, 
+        "pid": 1179, 
+        "start": "19158"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/roslaunch location rk_mavros_bench.launch", 
+        "peak_rss_kib": 61508, 
+        "pgid": 1180, 
+        "pid": 1180, 
+        "start": "19174"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/roslaunch location rplidar.launch", 
+        "peak_rss_kib": 61632, 
+        "pgid": 1183, 
+        "pid": 1183, 
+        "start": "19185"
+      }, 
+      {
+        "command": "bash /opt/ros/melodic/bin/rosrun tf static_transform_publisher 0 0 0 3.14159 0 0 base_link laser_link 30", 
+        "peak_rss_kib": 18532, 
+        "pgid": 1184, 
+        "pid": 1184, 
+        "start": "19193"
+      }, 
+      {
+        "command": "bash /opt/ros/melodic/bin/rosrun tf static_transform_publisher 0 0 0 3.14159 0 0 base_link laser_link 30", 
+        "peak_rss_kib": 1372, 
+        "pgid": 1184, 
+        "pid": 1185, 
+        "start": "19196"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/catkin_find --without-underlays --libexec --share tf", 
+        "peak_rss_kib": 12292, 
+        "pgid": 1184, 
+        "pid": 1186, 
+        "start": "19196"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/roslaunch location cartographer_2d.launch", 
+        "peak_rss_kib": 61552, 
+        "pgid": 1191, 
+        "pid": 1191, 
+        "start": "19205"
+      }, 
+      {
+        "command": "bash /opt/ros/melodic/bin/rosrun location location_node _use_tf_mini:=true _tf_mini_type:=i2c _range_topic:=/shell_readonly_unconnected_range _bus:=6 _address:=16 _height_reference_calibrated:=false", 
+        "peak_rss_kib": 18988, 
+        "pgid": 1192, 
+        "pid": 1192, 
+        "start": "19221"
+      }, 
+      {
+        "command": "bash /opt/ros/melodic/bin/rosrun location location_node _use_tf_mini:=true _tf_mini_type:=i2c _range_topic:=/shell_readonly_unconnected_range _bus:=6 _address:=16 _height_reference_calibrated:=false", 
+        "peak_rss_kib": 1268, 
+        "pgid": 1192, 
+        "pid": 1193, 
+        "start": "19224"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/catkin_find --without-underlays --libexec --share location", 
+        "peak_rss_kib": 12264, 
+        "pgid": 1192, 
+        "pid": 1194, 
+        "start": "19226"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/roslaunch navigation_2d navigation_2d.launch enable_actuation:=false auto_start:=false use_real_servos:=false target_hazard:=flammable detect_backend:=rknn", 
+        "peak_rss_kib": 62868, 
+        "pgid": 1195, 
+        "pid": 1195, 
+        "start": "19235"
+      }, 
+      {
+        "command": "bash /opt/ros/melodic/bin/rosrun tf static_transform_publisher 0 0 0 3.14159 0 0 base_link laser_link 30", 
+        "peak_rss_kib": 1312, 
+        "pgid": 1184, 
+        "pid": 1198, 
+        "start": "19241"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/catkin_find --without-underlays --libexec --share tf", 
+        "peak_rss_kib": 10688, 
+        "pgid": 1184, 
+        "pid": 1199, 
+        "start": "19241"
+      }, 
+      {
+        "command": "bash /opt/ros/melodic/bin/rosrun location location_node _use_tf_mini:=true _tf_mini_type:=i2c _range_topic:=/shell_readonly_unconnected_range _bus:=6 _address:=16 _height_reference_calibrated:=false", 
+        "peak_rss_kib": 1272, 
+        "pgid": 1192, 
+        "pid": 1204, 
+        "start": "19273"
+      }, 
+      {
+        "command": "/usr/bin/python /opt/ros/melodic/bin/catkin_find --without-underlays --libexec --share location", 
+        "peak_rss_kib": 11096, 
+        "pgid": 1192, 
+        "pid": 1205, 
+        "start": "19273"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion roslaunch", 
+        "peak_rss_kib": 18560, 
+        "pgid": 1179, 
+        "pid": 1214, 
+        "start": "19300"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion roslaunch", 
+        "peak_rss_kib": 18488, 
+        "pgid": 1180, 
+        "pid": 1228, 
+        "start": "19315"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion roslaunch", 
+        "peak_rss_kib": 18536, 
+        "pgid": 1183, 
+        "pid": 1237, 
+        "start": "19328"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion roslaunch", 
+        "peak_rss_kib": 18736, 
+        "pgid": 1191, 
+        "pid": 1314, 
+        "start": "19364"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion -d", 
+        "peak_rss_kib": 16976, 
+        "pgid": 1180, 
+        "pid": 1329, 
+        "start": "19378"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion roslaunch", 
+        "peak_rss_kib": 17180, 
+        "pgid": 1195, 
+        "pid": 1333, 
+        "start": "19390"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion -d", 
+        "peak_rss_kib": 16564, 
+        "pgid": 1183, 
+        "pid": 1339, 
+        "start": "19420"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion -d", 
+        "peak_rss_kib": 18276, 
+        "pgid": 1179, 
+        "pid": 1352, 
+        "start": "19437"
+      }, 
+      {
+        "command": "/opt/ros/melodic/lib/mavros/mavros_node __name:=mavros __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/mavros-1.log", 
+        "peak_rss_kib": 47960, 
+        "pgid": 1358, 
+        "pid": 1358, 
+        "start": "19462"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion -d", 
+        "peak_rss_kib": 12836, 
+        "pgid": 1195, 
+        "pid": 1359, 
+        "start": "19470"
+      }, 
+      {
+        "command": "/usr/bin/python2 /usr/bin/rosversion -d", 
+        "peak_rss_kib": 16464, 
+        "pgid": 1191, 
+        "pid": 1398, 
+        "start": "19487"
+      }, 
+      {
+        "command": "/home/jcfh/catkin_ws/devel/lib/rplidar_ros/rplidarNode __name:=rplidarNode __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/rplidarNode-1.log", 
+        "peak_rss_kib": 18036, 
+        "pgid": 1425, 
+        "pid": 1425, 
+        "start": "19508"
+      }, 
+      {
+        "command": "/home/jcfh/catkin_ws/devel/lib/usb_cam/usb_cam_node __name:=camera __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/camera-1.log", 
+        "peak_rss_kib": 64076, 
+        "pgid": 1572, 
+        "pid": 1572, 
+        "start": "19557"
+      }, 
+      {
+        "command": "bash -c sleep 6.0; $0 $@ /opt/ros/melodic/lib/cartographer_ros/cartographer_node -configuration_directory /home/jcfh/catkin_ws/src/location/param/ROSSLAM -configuration_basename cartographer_2Dlidar_mapping_location_params.lua scan:=/scan imu:=/mavros/imu/data __name:=cartographer_node __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/cartographer_node-1.log", 
+        "peak_rss_kib": 2712, 
+        "pgid": 1636, 
+        "pid": 1636, 
+        "start": "19580"
+      }, 
+      {
+        "command": "sleep 6.0", 
+        "peak_rss_kib": 424, 
+        "pgid": 1636, 
+        "pid": 1640, 
+        "start": "19581"
+      }, 
+      {
+        "command": "bash -c sleep 6.0; $0 $@ /opt/ros/melodic/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 __name:=cartographer_occupancy_grid_node __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/cartographer_occupancy_grid_node-2.log", 
+        "peak_rss_kib": 2760, 
+        "pgid": 1644, 
+        "pid": 1644, 
+        "start": "19582"
+      }, 
+      {
+        "command": "sleep 6.0", 
+        "peak_rss_kib": 452, 
+        "pgid": 1644, 
+        "pid": 1648, 
+        "start": "19583"
+      }, 
+      {
+        "command": "/opt/ros/melodic/lib/move_base/move_base scan:=/scan __name:=move_base __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/move_base-1.log", 
+        "peak_rss_kib": 32656, 
+        "pgid": 1650, 
+        "pid": 1650, 
+        "start": "19590"
+      }, 
+      {
+        "command": "/home/jcfh/catkin_ws/devel/lib/navigation_2d/shoot_with_move_base_node __name:=shoot_with_move_base_node __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/shoot_with_move_base_node-2.log", 
+        "peak_rss_kib": 155528, 
+        "pgid": 1651, 
+        "pid": 1651, 
+        "start": "19592"
+      }, 
+      {
+        "command": "/opt/ros/melodic/lib/cartographer_ros/cartographer_node -configuration_directory /home/jcfh/catkin_ws/src/location/param/ROSSLAM -configuration_basename cartographer_2Dlidar_mapping_location_params.lua scan:=/scan imu:=/mavros/imu/data __name:=cartographer_node __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/cartographer_node-1.log", 
+        "peak_rss_kib": 32288, 
+        "pgid": 1636, 
+        "pid": 2085, 
+        "start": "20181"
+      }, 
+      {
+        "command": "/opt/ros/melodic/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 __name:=cartographer_occupancy_grid_node __log:=/home/jcfh/shell_acceptance_20261027/joint-after-reboot/ros-logs/0bb40fde-d20a-11f1-a0b7-14f5f9e6cd08/cartographer_occupancy_grid_node-2.log", 
+        "peak_rss_kib": 24900, 
+        "pgid": 1644, 
+        "pid": 2086, 
+        "start": "20183"
+      }
+    ]
+  }, 
+  "telemetry": {
+    "map": {
+      "frame": "map", 
+      "free_cells": 0, 
+      "height": 190, 
+      "known_cells": 18318, 
+      "occupied_cells": 587, 
+      "received": true, 
+      "resolution": 0.05000000074505806, 
+      "width": 442
+    }, 
+    "states": [
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 203.206392886
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 204.287138678
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 205.212333929
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 206.278115721
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 207.310341263
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 208.32807768
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 209.143909014
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 210.233578348
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 211.259684432
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 212.185240766
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 213.184099641
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 214.209681017
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 215.1931781
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 216.283029893
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 217.146995851
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 218.25434481
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 219.253925852
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 220.222133478
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 221.243040312
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 222.207136604
+      }, 
+      {
+        "armed": false, 
+        "connected": true, 
+        "mode": "MANUAL", 
+        "time": 223.274081354
+      }
+    ], 
+    "status": {
+      "location": [
+        {
+          "time": 202.720730011, 
+          "value": "HEIGHT_REFERENCE_UNCALIBRATED"
+        }
+      ], 
+      "mission": [], 
+      "readiness": [
+        {
+          "time": 203.20594109500001, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.20994247, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.303038428, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.403154428, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.503233178, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.60337397, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.70313272, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.804401137, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 203.90316997, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.003242262, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.281116345, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.290944053, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.303777928, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.404144554, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.503049554, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.603921012, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.713815512, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.803093179, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 204.902905637, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.003133345, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.212443554, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.215525304, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.303079846, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.412200846, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.503241929, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.603265554, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.703237471, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.803240054, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 205.910749596, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.006155513, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.278277888, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.288153388, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.315878638, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.403358263, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.503151096, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.603299263, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.70323943, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.803361888, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 206.903081555, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.009544846, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.310589763, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.327171013, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.327336388, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.40292968, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.503193305, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.606494638, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.703460388, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.803223222, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 207.91678568, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.003746097, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.330700055, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.330936305, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.331032847, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.403139847, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.503113264, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.604779806, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.703567889, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.803013097, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 208.902917097, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.003211056, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.143769889, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.204739306, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.303184389, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.403366348, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.503575431, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.605237306, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.705339931, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.803300848, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 209.903069806, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.00328039, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.23138939, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.234923806, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.303042223, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.40306264, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.503184515, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.603220306, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.704547098, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.803107682, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 210.903487098, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.003092723, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.261182098, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.262779265, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.308891515, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.403343974, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.50507439, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.603271849, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.703308849, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.80359989, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 211.903848932, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.003171057, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.184922266, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.204803724, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.308897224, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.405854516, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.503356057, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.603215141, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.702961932, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.807261349, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 212.903075599, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.003152849, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.183403724, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.203127974, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.302893724, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.403120016, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.503086725, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.603299016, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.70633435, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.803117808, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 213.903466308, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.02713735, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.208024933, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.211060017, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.303537017, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.403217308, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.503317017, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.606773808, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.705892642, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.8048811, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 214.903148559, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.003030684, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.193267059, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.203397809, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.303317267, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.403377309, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.514110309, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.603038601, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.703173017, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.803036767, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 215.903126851, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.003086559, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.281415518, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.283948059, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.303094809, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.415936351, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.503372184, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.604064851, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.712878893, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.803257643, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 216.903144226, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.004245726, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.154922185, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.20318406, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.303286685, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.403199143, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.503111226, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.604125685, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.703082352, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.803048977, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 217.90381056, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.003342893, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.265424435, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.268801268, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.302940268, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.40335856, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.503101477, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.603431394, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.703264227, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.803362477, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 218.903145727, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.009053102, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.251654644, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.254344102, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.303411561, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.403263936, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.503033686, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.603659352, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.703452727, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.804353644, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 219.903215894, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.003968353, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.222389853, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.223571394, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.303637186, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.403169894, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.503386561, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.603183728, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.703413603, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.803072228, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 220.903422561, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.003087311, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.24338777, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.244045978, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.303612562, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.404145978, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.503285728, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.605406478, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.710202312, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.803387187, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 221.903318604, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.003122187, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.20745452, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.207993229, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.302977395, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.403081187, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.503891187, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.603778854, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.703287854, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.803095312, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 222.902961687, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 223.006465729, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 223.270913563, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 223.274777771, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 223.303152563, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 223.403927771, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 223.503233938, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }, 
+        {
+          "time": 223.603940896, 
+          "value": {
+            "abort_reason": "", 
+            "actuation_enabled": false, 
+            "fcu_fresh": true, 
+            "flight_authority": false, 
+            "frame_fresh": true, 
+            "hazard_detection": "pending", 
+            "inference_ready": true, 
+            "mission_aborted": false, 
+            "model_loaded": true, 
+            "person_detection": "pending", 
+            "phase": 0, 
+            "pose_fresh": false, 
+            "tf_fresh": false
+          }
+        }
+      ]
+    }, 
+    "streams": {
+      "imu": {
+        "count": 1024, 
+        "first_delay": 0.12309999999999377, 
+        "hz": 50.09921221188166, 
+        "last_age": 0.001315417000000707, 
+        "max_gap": 0.2930162079999832
+      }, 
+      "readiness": {
+        "count": 206, 
+        "first_delay": 0.12322975000000724, 
+        "hz": 10.050005000487843, 
+        "last_age": 0.022668624999994336, 
+        "max_gap": 0.32695395799999005
+      }, 
+      "scan": {
+        "count": 205, 
+        "first_delay": 0.12504275000000575, 
+        "hz": 10.0283539373687, 
+        "last_age": 0.07653391700000611, 
+        "max_gap": 0.3669776250000041
+      }, 
+      "state": {
+        "count": 21, 
+        "first_delay": 0.12368154099999629, 
+        "hz": 0.9966269922862349, 
+        "last_age": 0.35252816700000267, 
+        "max_gap": 1.107348958999978
+      }
+    }, 
+    "violation": null, 
+    "zero_expected_topics": {
+      "/gpio_ack": 0, 
+      "/gpio_cmd": 0, 
+      "/gpio_debug_cmd": 0, 
+      "/mavros/setpoint_position/local": 0, 
+      "/mavros/setpoint_raw/local": 0, 
+      "/mavros/setpoint_velocity/cmd_vel": 0, 
+      "/mavros/vision_pose/pose": 0
+    }
+  }
+}

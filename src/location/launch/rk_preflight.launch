@@ -1,0 +1,34 @@
+<launch>
+  <!-- 2026-10-27 measured ground profile. Publishes real vision, never actuates. -->
+  <arg name="height_profile" default="$(find location)/param/rk_height_reference_20261027.yaml" />
+  <arg name="target_hazard" default="" />
+  <arg name="start_navigation" default="true" />
+  <arg name="lidar_serial_port" default="/dev/serial/by-id/usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_909394b23877ed11907beefafdf7b791-if00-port0" />
+  <include file="$(find location)/launch/rk_mavros_vision.launch" />
+  <include file="$(find location)/launch/rplidar.launch">
+    <arg name="serial_port" value="$(arg lidar_serial_port)" />
+  </include>
+  <include file="$(find location)/launch/cartographer_2d.launch" />
+  <include file="$(find usb_cam)/launch/rk_usb_camera.launch" />
+  <node pkg="tf" type="static_transform_publisher" name="preflight_laser_tf"
+        args="0 0 0 3.14159 0 0 base_link laser_link 30" />
+  <node pkg="location" type="location_node" name="location" output="screen">
+    <rosparam command="load" file="$(arg height_profile)" />
+    <param name="use_tf_mini" value="true" />
+    <param name="tf_mini_type" value="i2c" />
+    <param name="bus" value="6" />
+    <param name="address" value="16" />
+    <param name="imu_topic" value="/mavros/imu/data" />
+    <param name="source_frame_id" value="base_link" />
+    <param name="target_frame_id" value="odom" />
+  </node>
+  <group if="$(arg start_navigation)">
+    <include file="$(find navigation_2d)/launch/navigation_2d.launch">
+      <arg name="enable_actuation" value="false" />
+      <arg name="auto_start" value="false" />
+      <arg name="use_real_servos" value="false" />
+      <arg name="target_hazard" value="$(arg target_hazard)" />
+      <arg name="detect_backend" value="rknn" />
+    </include>
+  </group>
+</launch>

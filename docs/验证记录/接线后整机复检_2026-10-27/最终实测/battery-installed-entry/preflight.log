@@ -1,0 +1,1313 @@
+... logging to /home/jcfh/shell_acceptance_20261027/battery-installed-entry/ros-logs/9555c4c6-d20f-11f1-8ce1-14f5f9e6cd08/roslaunch-toybrick-1904.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/location/launch/rk_preflight.launch
+[1mstarted roslaunch server http://127.0.0.1:46484/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /camera/autofocus: False
+ * /camera/camera_frame_id: camera
+ * /camera/camera_info_url: 
+ * /camera/framerate: 30
+ * /camera/image_height: 720
+ * /camera/image_width: 1280
+ * /camera/io_method: mmap
+ * /camera/pixel_format: mjpeg
+ * /camera/video_device: /dev/v4l/by-id/us...
+ * /location/address: 16
+ * /location/bus: 6
+ * /location/height_reference_calibrated: True
+ * /location/imu_topic: /mavros/imu/data
+ * /location/sensor_beam_x: 0.0
+ * /location/sensor_beam_y: 0.0
+ * /location/sensor_beam_z: -1.0
+ * /location/sensor_offset_x: 0.0
+ * /location/sensor_offset_y: 0.0
+ * /location/sensor_offset_z: 0.0
+ * /location/source_frame_id: base_link
+ * /location/target_frame_id: odom
+ * /location/tf_mini_height: 0.12
+ * /location/tf_mini_type: i2c
+ * /location/use_tf_mini: True
+ * /mavros/component_id: 240
+ * /mavros/conn/heartbeat_rate: 1.0
+ * /mavros/conn/system_time_rate: 1.0
+ * /mavros/conn/timeout: 5.0
+ * /mavros/conn/timesync_rate: 10.0
+ * /mavros/fcu_protocol: v2.0
+ * /mavros/fcu_url: /dev/serial/by-id...
+ * /mavros/gcs_url: 
+ * /mavros/local_position/tf/send: False
+ * /mavros/plugin_blacklist: ['*']
+ * /mavros/plugin_whitelist: ['sys_status', 'i...
+ * /mavros/startup_px4_usb_quirk: False
+ * /mavros/system_id: 255
+ * /mavros/target_component_id: 1
+ * /mavros/target_system_id: 1
+ * /move_base/DWAPlannerROS/acc_lim_theta: 3.2
+ * /move_base/DWAPlannerROS/acc_lim_x: 4.0
+ * /move_base/DWAPlannerROS/acc_lim_y: 4.0
+ * /move_base/DWAPlannerROS/controller_frequency: 15.0
+ * /move_base/DWAPlannerROS/forward_point_distance: 0.2
+ * /move_base/DWAPlannerROS/goal_distance_bias: 24.0
+ * /move_base/DWAPlannerROS/latch_xy_goal_tolerance: False
+ * /move_base/DWAPlannerROS/max_scaling_factor: 1.0
+ * /move_base/DWAPlannerROS/max_vel_theta: 0
+ * /move_base/DWAPlannerROS/max_vel_trans: 0.45
+ * /move_base/DWAPlannerROS/max_vel_x: 0.4
+ * /move_base/DWAPlannerROS/max_vel_y: 0.4
+ * /move_base/DWAPlannerROS/min_vel_theta: 0
+ * /move_base/DWAPlannerROS/min_vel_trans: 0.1
+ * /move_base/DWAPlannerROS/min_vel_x: -0.4
+ * /move_base/DWAPlannerROS/min_vel_y: -0.4
+ * /move_base/DWAPlannerROS/occdist_scale: 0.02
+ * /move_base/DWAPlannerROS/odom_topic: /mavros/local_pos...
+ * /move_base/DWAPlannerROS/oscillation_reset_dist: 0.05
+ * /move_base/DWAPlannerROS/path_distance_bias: 32.0
+ * /move_base/DWAPlannerROS/publish_cost_grid_pc: False
+ * /move_base/DWAPlannerROS/publish_traj_pc: False
+ * /move_base/DWAPlannerROS/scaling_speed: 1.0
+ * /move_base/DWAPlannerROS/sim_granularity: 0.025
+ * /move_base/DWAPlannerROS/sim_time: 2.0
+ * /move_base/DWAPlannerROS/stop_time_buffer: 0.2
+ * /move_base/DWAPlannerROS/vth_samples: 40
+ * /move_base/DWAPlannerROS/vx_samples: 20
+ * /move_base/DWAPlannerROS/vy_samples: 20
+ * /move_base/DWAPlannerROS/xy_goal_tolerance: 0.1
+ * /move_base/DWAPlannerROS/yaw_goal_tolerance: 0.2
+ * /move_base/base_local_planner: dwa_local_planner...
+ * /move_base/conservative_reset_dist: 3.0
+ * /move_base/controller_frequency: 10
+ * /move_base/controller_patience: 15.0
+ * /move_base/global_costmap/cost_scaling_factor: 3.0
+ * /move_base/global_costmap/default_tolerance: 1
+ * /move_base/global_costmap/footprint: [[0.16, 0.16], [0...
+ * /move_base/global_costmap/global_frame: map
+ * /move_base/global_costmap/inflation_radius: 0.25
+ * /move_base/global_costmap/map_type: costmap
+ * /move_base/global_costmap/observation_sources: scan
+ * /move_base/global_costmap/obstacle_range: 3.0
+ * /move_base/global_costmap/publish_frequency: 10.0
+ * /move_base/global_costmap/raytrace_range: 3.5
+ * /move_base/global_costmap/robot_base_frame: base_link
+ * /move_base/global_costmap/scan/clearing: True
+ * /move_base/global_costmap/scan/data_type: LaserScan
+ * /move_base/global_costmap/scan/marking: True
+ * /move_base/global_costmap/scan/sensor_frame: laser_link
+ * /move_base/global_costmap/scan/topic: scan
+ * /move_base/global_costmap/static_map: True
+ * /move_base/global_costmap/transform_tolerance: 0.5
+ * /move_base/global_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/cost_scaling_factor: 3.0
+ * /move_base/local_costmap/footprint: [[0.16, 0.16], [0...
+ * /move_base/local_costmap/global_frame: map
+ * /move_base/local_costmap/height: 6.0
+ * /move_base/local_costmap/inflation_radius: 0.25
+ * /move_base/local_costmap/map_type: costmap
+ * /move_base/local_costmap/observation_sources: scan
+ * /move_base/local_costmap/obstacle_range: 3.0
+ * /move_base/local_costmap/publish_frequency: 10.0
+ * /move_base/local_costmap/raytrace_range: 3.5
+ * /move_base/local_costmap/resolution: 0.05
+ * /move_base/local_costmap/robot_base_frame: base_link
+ * /move_base/local_costmap/rolling_window: True
+ * /move_base/local_costmap/scan/clearing: True
+ * /move_base/local_costmap/scan/data_type: LaserScan
+ * /move_base/local_costmap/scan/marking: True
+ * /move_base/local_costmap/scan/sensor_frame: laser_link
+ * /move_base/local_costmap/scan/topic: scan
+ * /move_base/local_costmap/static_map: False
+ * /move_base/local_costmap/transform_tolerance: 0.5
+ * /move_base/local_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/width: 6.0
+ * /move_base/oscillation_distance: 0.1
+ * /move_base/oscillation_timeout: 10.0
+ * /move_base/planner_frequency: 10
+ * /move_base/planner_patience: 5.0
+ * /move_base/shutdown_costmaps: False
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+ * /rplidarNode/angle_compensate: True
+ * /rplidarNode/frame_id: laser_link
+ * /rplidarNode/inverted: False
+ * /rplidarNode/scan_mode: DenseBoost
+ * /rplidarNode/serial_baudrate: 1000000
+ * /rplidarNode/serial_port: /dev/serial/by-id...
+ * /shoot_with_move_base_node/ack_timeout: 3.0
+ * /shoot_with_move_base_node/alignment_tolerance: 0.2
+ * /shoot_with_move_base_node/annotate_hold: 6.0
+ * /shoot_with_move_base_node/auto_start: False
+ * /shoot_with_move_base_node/backend: rknn
+ * /shoot_with_move_base_node/body_frame: base_link
+ * /shoot_with_move_base_node/camera_hfov_deg: 54.0
+ * /shoot_with_move_base_node/camera_yaw_deg: 0.0
+ * /shoot_with_move_base_node/confidence_threshold: 0.5
+ * /shoot_with_move_base_node/detect_confirmation_window: 6.0
+ * /shoot_with_move_base_node/detect_height: 1.2
+ * /shoot_with_move_base_node/detect_timeout: 8.0
+ * /shoot_with_move_base_node/detect_times: 5
+ * /shoot_with_move_base_node/drop_align_mode: vision_with_fallback
+ * /shoot_with_move_base_node/drop_height: 0.6
+ * /shoot_with_move_base_node/drop_settle_time: 0.8
+ * /shoot_with_move_base_node/enable_actuation: False
+ * /shoot_with_move_base_node/enforce_safe_field: True
+ * /shoot_with_move_base_node/field_max_x: 3.25
+ * /shoot_with_move_base_node/field_max_y: 0.55
+ * /shoot_with_move_base_node/field_min_x: -0.55
+ * /shoot_with_move_base_node/field_min_y: -3.25
+ * /shoot_with_move_base_node/field_yaw_deg: -90
+ * /shoot_with_move_base_node/fly_height: 1.5
+ * /shoot_with_move_base_node/goal_timeout: 25.0
+ * /shoot_with_move_base_node/hazard_detect_num: 2
+ * /shoot_with_move_base_node/hazard_point0_x: 0.0
+ * /shoot_with_move_base_node/hazard_point0_y: -1.95
+ * /shoot_with_move_base_node/hazard_point1_x: 1.4
+ * /shoot_with_move_base_node/hazard_point1_y: -1.95
+ * /shoot_with_move_base_node/hazard_point2_x: 1.4
+ * /shoot_with_move_base_node/hazard_point2_y: 0.0
+ * /shoot_with_move_base_node/hazard_point3_x: 1.4
+ * /shoot_with_move_base_node/hazard_point3_y: -0.45
+ * /shoot_with_move_base_node/hazard_route_num: 4
+ * /shoot_with_move_base_node/input_image_topic: /camera/image_raw
+ * /shoot_with_move_base_node/input_size: 416
+ * /shoot_with_move_base_node/labels_file: labels.txt
+ * /shoot_with_move_base_node/land_settle_time: 2.0
+ * /shoot_with_move_base_node/map_frame: map
+ * /shoot_with_move_base_node/max_align_offset: 0.35
+ * /shoot_with_move_base_node/max_center_offset: 0.35
+ * /shoot_with_move_base_node/max_vel: 0.35
+ * /shoo[33m[ WARN] [1793109988.425944630]: Camera calibration file /home/jcfh/shell_acceptance_20261027/battery-installed-entry/ros-home/camera_info/head_camera.yaml not found.[0m
+[33m[ WARN] [1793109988.503581505]: location: STARTING; vision pose withheld[0m
+[33m[ WARN] [1793109988.676100880]: location: WAIT_TF; vision pose withheld[0m
+[33m[ WARN] [1793109988.765292088]: unknown control 'focus_auto'
+[0m
+[swscaler @ 0x55a59921e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5981480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5981050] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5981840] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5981840] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[0m[ INFO] [1793109988.365159713]: FCU URL: /dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200[0m
+[0m[ INFO] [1793109988.438595672]: serial0: device: /dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00 @ 115200 bps[0m
+[0m[ INFO] [1793109988.440019880]: GCS bridge disabled[0m
+[0m[ INFO] [1793109988.530727213]: Plugin 3dr_radio blacklisted[0m
+[0m[ INFO] [1793109988.530797213]: Plugin actuator_control blacklisted[0m
+[0m[ INFO] [1793109988.530833380]: Plugin adsb blacklisted[0m
+[0m[ INFO] [1793109988.530861963]: Plugin altitude blacklisted[0m
+[0m[ INFO] [1793109988.530889672]: Plugin cam_imu_sync blacklisted[0m
+[0m[ INFO] [1793109988.530916797]: Plugin camera blacklisted[0m
+[0m[ INFO] [1793109988.530958213]: Plugin cellular_status blacklisted[0m
+[0m[ INFO] [1793109988.530986213]: Plugin command blacklisted[0m
+[0m[ INFO] [1793109988.531015088]: Plugin companion_process_status blacklisted[0m
+[0m[ INFO] [1793109988.531046297]: Plugin debug_value blacklisted[0m
+[0m[ INFO] [1793109988.531072838]: Plugin distance_sensor blacklisted[0m
+[0m[ INFO] [1793109988.531098797]: Plugin esc_status blacklisted[0m
+[0m[ INFO] [1793109988.531125338]: Plugin esc_telemetry blacklisted[0m
+[0m[ INFO] [1793109988.531151297]: Plugin fake_gps blacklisted[0m
+[0m[ INFO] [1793109988.531178130]: Plugin ftp blacklisted[0m
+[0m[ INFO] [1793109988.531203797]: Plugin geofence blacklisted[0m
+[0m[ INFO] [1793109988.577537672]: Plugin global_position loaded[0m
+[0m[ INFO] [1793109988.753419672]: Plugin global_position initialized[0m
+[0m[ INFO] [1793109988.753516797]: Plugin gps_input blacklisted[0m
+[0m[ INFO] [1793109988.753549463]: Plugin gps_rtk blacklisted[0m
+[0m[ INFO] [1793109988.753580380]: Plugin gps_status blacklisted[0m
+[0m[ INFO] [1793109988.753611005]: Plugin guided_target blacklisted[0m
+[0m[ INFO] [1793109988.753669630]: Plugin hil blacklisted[0m
+[0m[ INFO] [1793109988.753702880]: Plugin home_position blacklisted[0m
+[0m[ INFO] [1793109988.753885172]: Plugin imu loaded[0m
+[0m[ INFO] [1793109988.842366338]: Plugin imu initialized[0m
+[0m[ INFO] [1793109988.842450630]: Plugin landing_target blacklisted[0m
+[0m[ INFO] [1793109988.842625047]: Plugin local_position loaded[0m
+[0m[ INFO] [1793109988.914252380]: Plugin local_position initialized[0m
+[0m[ INFO] [1793109988.914398214]: Plugin log_transfer blacklisted[0m
+[0m[ INFO] [1793109988.914484255]: Plugin mag_calibration_status blacklisted[0m
+[0m[ INFO] [1793109988.914572630]: Plugin manual_control blacklisted[0m
+[0m[ INFO] [1793109988.914628339]: Plugin mocap_pose_estimate blacklisted[0m
+[0m[ INFO] [1793109988.914729255]: Plugin mount_control blacklisted[0m
+[0m[ INFO] [1793109988.915138630]: Plugin nav_controller_output blacklisted[0m
+[0m[ INFO] [1793109988.915201630]: Plugin obstacle_distance blacklisted[0m
+[0m[ INFO] [1793109988.915237214]: Plugin odom blacklisted[0m
+[0m[ INFO] [1793109988.915269005]: Plugin onboard_computer_status blacklisted[0m
+[0m[ INFO] [1793109988.915303714]: Plugin param blacklisted[0m
+[0m[ INFO] [1793109988.915334922]: Plugin play_tune blacklisted[0m
+[0m[ INFO] [1793109988.915366422]: Plugin px4flow blacklisted[0m
+[0m[ INFO] [1793109988.915406672]: Plugin rallypoint blacklisted[0m
+[0m[ INFO] [1793109988.915442839]: Plugin rangefinder blacklisted[0m
+[0m[ INFO] [1793109988.915657797]: Plugin rc_io loaded[0m
+[0m[ INFO] [1793109988.952173005]: Plugin rc_io initialized[0m
+[0m[ INFO] [1793109988.952293464]: Plugin safety_area blacklisted[0m
+[0m[ INFO] [1793109988.952339547]: Plugin setpoint_accel blacklisted[0m
+[0m[ INFO] [1793109988.952370755]: Plugin setpoint_attitude blacklisted[0m
+[0m[ INFO] [1793109988.952397005]: Plugin setpoint_position blacklisted[0m
+[0m[ INFO] [1793109988.952422964]: Plugin setpoint_raw blacklisted[0m
+[0m[ INFO] [1793109988.952491214]: Plugin setpoint_trajectory blacklisted[0m
+[0m[ INFO] [1793109988.952815839]: Plugin setpoint_velocity blacklisted[0m
+[0m[ INFO] [1793109988.953224172]: Plugin sys_status loaded[0m
+[0m[ INFO] [1793109989.043431714]:[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59981d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c3cca0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c3cca0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c3cca0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5999c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ac70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b460] No accelerated colorspace conversion found from yuv422p to rgb24.
+[0m[ INFO] [1793109988.815677672]: Detect: 4 labels from /home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/labels.txt[0m
+[0m[ INFO] [1793109988.881231338]: Detect: backend=rknn (model_path=/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26)[0m
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599acc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c3e4f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c3e4f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c3e4f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b4b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[33m[ WARN] [1793109992.333723007]: TM : RTT too high for timesync: 1651.08 ms.[0m
+[33m[ WARN] [1793109992.334542298]: TM : RTT too high for timesync: 1049.68 ms.[0m
+[33m[ WARN] [1793109992.335162673]: TM : RTT too high for timesync: 452.74 ms.[0m
+[swscaler @ 0x55a599b4e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[33m[ WARN] [1793109992.337614715]: GP: No GPS fix[0m
+[swscaler @ 0x55a599b530] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b580] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b5d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b620] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599aeb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599bec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b6a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b6a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b6a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[33m[ WARN] [1793109993.633104632]: Timed out waiting for transform from base_link to map to become available before running costmap, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.. canTransform returned after 0.100354 timeout was 0.1.[0m
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c3f6f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c6b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599b6d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ced0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599cef0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599cf40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[31m[ERROR] [1793109994.337210258]: VER: command plugin service call failed![0m
+[swscaler @ 0x55a599cf90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599cfe0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d030] No accelerated colorspace conversion found from yuv422p to rgb24.
+[33m[ WARN] [1793109994.451221883]: [mission] move_base action server is not up yet; will keep waiting[0m
+[swscaler @ 0x55a599d080] No accelerated colorspace conversion found from yuv422p to rgb24.
+[33m[ WARN] [1793109994.488414508]: global_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters[0m
+[swscaler @ 0x55a5c410d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c40190] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ca00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c40a50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599c2d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c40320] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a5c40320] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[31m[ERROR] [1793109995.340961842]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793109995.341427633]: VER: broadcast request timeout, retries left 4[0m
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d2e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[33m[ WARN] [1793109995.953016342]: local_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters[0m
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[31m[ERROR] [1793109996.336525925]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793109996.336710550]: VER: broadcast request timeout, retries left 3[0m
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599db00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599db50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dba0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599dbf0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599d480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[31m[ERROR] [1793109997.339142926]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793109997.339422634]: VER: unicast request timeout, retries left 2[0m
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599e490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ec80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f470] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[31m[ERROR] [1793109998.333425968]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793109998.334108760]: VER: unicast request timeout, retries left 1[0m
+[swscaler @ 0x55a599f4e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f530] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f580] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f5d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f620] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f670] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f6c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f710] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f790] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f7b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f800] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f850] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f8a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f8f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f940] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f990] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599f9e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fa30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fa80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fb20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fb70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fbc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fc10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fc60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fcb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fd00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fd80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fda0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fdf0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[31m[ERROR] [1793109999.335459052]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793109999.335857177]: VER: unicast request timeout, retries left 0[0m
+[swscaler @ 0x55a599fe40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599fe90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ff10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ff30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ff80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a599ffd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0020] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0070] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a00c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0110] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0160] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a01b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0250] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a02a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a02f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0340] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0390] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a03e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0430] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a04d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0520] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0570] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a05c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0610] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0660] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a06b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0700] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0750] No accelerated colorspace conversion found from yuv422p to rgb24.
+[31m[ERROR] [1793110000.337041802]: VER: command plugin service call failed![0m
+[33m[ WARN] [1793110000.337519844]: VER: your FCU don't support AUTOPILOT_VERSION, switched to default capabilities[0m
+[swscaler @ 0x55a59a07a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0850] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a08a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a08c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0910] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0960] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a09b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0a00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0a50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0aa0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0af0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0b40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0b90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0be0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0c30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0c80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0cd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0d20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0d70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0dc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0e10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0e60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0eb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0f00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0f50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0fa0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a0ff0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1040] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1090] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a10e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1130] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1180] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a11d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1220] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1270] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a12c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1310] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1360] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a13b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1430] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a14a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1520] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1540] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1590] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a15e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1630] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1680] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a16d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1720] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a17a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a17c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1810] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1860] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a18b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1900] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1950] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a19a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a19f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1a40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1a90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1ae0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1b30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1b80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1bd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1c20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1c70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1cc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1d10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1d60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1db0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1e00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1e50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1ea0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1ef0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1f40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1f90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a1fe0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2030] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2080] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a20d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2120] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2170] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a21c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2210] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2290] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a22b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2300] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2350] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a23a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a23f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2470] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a24c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2510] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2530] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2580] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a25d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2620] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2670] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a26c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2710] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2760] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a27b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2800] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2850] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a28a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a28f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2940] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a29c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2a10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2a30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2a80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2ad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2b20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2b70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2bc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2c10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2cb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2d00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2d50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2da0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2df0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2e40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2e90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2ee0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2f30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2f80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a2fd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3020] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3070] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a30c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3110] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3160] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a31b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3250] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a32d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a32f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3340] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3390] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3410] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3430] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a34d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3520] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3570] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a35c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3610] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3660] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a36b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3730] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3750] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a37a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a37f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3840] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3890] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a38e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3930] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3980] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a39d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3a20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3a70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3ac0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3b10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3b60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3bb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3c00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3c50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3ca0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3cf0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3d40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3d90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3e10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3e30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3e80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3ed0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3f20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3f70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a3fc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4010] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4060] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a40b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4100] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4150] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a41a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a41f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4240] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4290] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a42e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4360] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a43b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4400] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4420] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4470] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a44c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4510] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4590] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a45b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4600] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4650] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a46a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a46f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4740] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4790] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a47e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4830] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4880] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a48d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4920] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4970] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a49c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4a10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4a60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4ab0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4b00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4b50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4ba0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4bf0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4c40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4c90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4ce0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4d30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4d80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4dd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4e20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4e70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4ec0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4f10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4f60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a4fb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5000] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5080] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a50a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5120] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5140] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5190] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5210] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5230] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5280] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a52d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5320] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5370] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a53c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5410] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5460] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a54b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5500] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5550] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a55a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5620] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5640] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5690] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a56e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5730] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5780] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a57d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5850] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a58a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a58c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5910] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5960] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a59b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5a30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5a80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5aa0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5af0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5b40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5b90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5be0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5c30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5c80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5cd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5d20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5d70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5dc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5e10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5e60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5eb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5f00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5f50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a5fd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6020] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6040] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6090] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a60e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6130] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6180] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a61d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6220] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6270] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a62c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6310] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6360] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a63b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6400] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6450] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a64a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a64f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6540] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6590] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a65e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6630] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6680] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a66d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6720] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6770] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a67c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6810] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6860] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a68b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6900] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6950] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a69a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a69f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6a40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6a90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6ae0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6b30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6b80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6bd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6c20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6c70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6cc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6d10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6d60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6db0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6e00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6e50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6ea0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6ef0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6f40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6fc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a6fe0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7030] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7080] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a70d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7120] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7170] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a71c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7210] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7260] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a72b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7300] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7350] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a73a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a73f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7470] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7490] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a74e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7530] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7580] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a75d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7620] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7670] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a76c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7710] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7760] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a77b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7800] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7850] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a78a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a78f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7940] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7990] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a79e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7a60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7a80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7ad0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7b20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7b70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7bc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7c10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7c60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7cb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7d00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7d50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7da0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7df0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7e40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7e90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7ee0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7f30] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7f80] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a7fd0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8020] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8070] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a80c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8110] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8160] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a81b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8250] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a82a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a82f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8340] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8390] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a83e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8430] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8480] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a84d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8520] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8570] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a85c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8610] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8660] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a86b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8700] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8750] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a87a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a87f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8840] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8890] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a88e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8930] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8980] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a89d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8a20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8a70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8ac0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8b10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8b60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8bb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8c00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8c50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8ca0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8cf0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8d40] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8d90] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8de0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8e60] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8eb0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8ed0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8f20] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8f70] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8fc0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9010] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9060] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a90b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9130] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9180] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a91a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a91f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9240] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9290] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a92e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9330] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9380] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a93d0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9420] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9470] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a94f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9510] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9560] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a95e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9600] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9650] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a96a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a96f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9740] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9790] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a97e0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9830] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9880] No accelerated colorspace conversion found from yuv422p to rgb24.
+[33m[ WARN] [1793110015.827580560]: location: range sample rejected (range, jump, or repeated timestamp)[0m
+[swscaler @ 0x55a59a9880] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9880] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a98a0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a98c0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9910] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9960] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a99b0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9a00] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a9a50] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8a10] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[0m[ INFO] [1793109994.476180841]: location: READY[0m
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[swscaler @ 0x55a59a8200] No accelerated colorspace conversion found from yuv422p to rgb24.
+[0m[ INFO] [1793109988.373070880]: using default calibration URL[0m
+[0m[ INFO] [1793109988.424742672]: camera calibration URL: file:///home/jcfh/shell_acceptance_20261027/battery-installed-entry/ros-home/camera_info/head_camera.yaml[0m
+[0m[ INFO] [1793109988.425486422]: Unable to open camera calibration file [/home/jcfh/shell_acceptance_20261027/battery-installed-entry/ros-home/camera_info/head_camera.yaml][0m
+[0m[ INFO] [1793109988.426455922]: Starting 'head_camera' (/dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0) at 1280x720 via mmap (mjpeg) at 30 FPS[0m
+[0m[ INFO] [1793109993.867185341]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/home/jcfh/catkin_ws/src/location/param/ROSSLAM/cartographer_2Dlidar_mapping_location_params.lua' for 'cartographer_2Dlidar_mapping_location_params.lua'.[0m
+[0m[ INFO] [1793109993.882088799]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/map_builder.lua' for 'map_builder.lua'.[0m
+[0m[ INFO] [1793109993.882484299]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/map_builder.lua' for 'map_builder.lua'.[0m
+[0m[ INFO] [1793109993.884704299]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/pose_graph.lua' for 'pose_graph.lua'.[0m
+[0m[ INFO] [1793109993.884949591]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/pose_graph.lua' for 'pose_graph.lua'.[0m
+[0m[ INFO] [1793109993.886048174]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder.lua' for 'trajectory_builder.lua'.[0m
+[0m[ INFO] [1793109993.886200716]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder.lua' for 'trajectory_builder.lua'.[0m
+[0m[ INFO] [1793109993.886736508]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.[0m
+[0m[ INFO] [1793109993.886846174]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.[0m
+[0m[ INFO] [1793109993.887477633]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.[0m
+[0m[ INFO] [1793109993.887584674]: I1027 22:06:33.000000  2823 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.[0m
+[0m[ INFO] [1793109993.936730799]: I1027 22:06:33.000000  2823 submap_2d.cc:187] Added submap 1[0m
+[0m[ INFO] [1793109993.937131549]: I1027 22:06:33.000000  2823 map_builder_bridge.cc:130] Added trajectory with ID '0'.[0m
+[0m[ INFO] [1793109994.272677841]: I1027 22:06:34.000000  2823 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639287067942691748'.[0m
+[0m[ INFO] [1793109994.296819674]: I1027 22:06:34.000000  2823 local_trajectory_builder_2d.cc:138] Extrapolator is still initializing.[0m
+[0m[ INFO] [1793110008.955095765]: I1027 22:06:48.000000  2823 collated_trajectory_builder.cc:72] imu rate: 49.99 Hz 2.00e-02 s +/- 1.78e-03 s (pulsed at 99.58% real time)[0m
+[0m[ INFO] [1793110008.955247723]: I1027 22:06:48.000000  2823 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.22e-03 s (pulsed at 100.05% real time)[0m
+[KOptimizing: Done.     
+[KOptimizing: Done.     
+[0m[ INFO] [1793109994.756612633]: global_costmap: Using plugin "static_layer"[0m
+[0m[ INFO] [1793109994.853307716]: Requesting the map...[0m
+[0m[ INFO] [1793109995.087819675]: Resizing costmap to 173 X 431 at 0.050000 m/pix[0m
+[0m[ INFO] [1793109995.187205383]: Received a 173 X 431 map at 0.050000 m/pix[0m
+[0m[ INFO] [1793109995.217467842]: global_costmap: Using plugin "obstacle_layer"[0m
+[0m[ INFO] [1793109995.255124508]:     Subscribed to Topics: scan[0m
+[0m[ INFO] [1793109995.451744717]: global_costmap: Using plugin "inflation_layer"[0m
+[0m[ INFO] [1793109996.126665634]: local_costmap: Using plugin "obstacle_layer"[0m
+[0m[ INFO] [1793109996.153776175]:     Subscribed to Topics: scan[0m
+[0m[ INFO] [1793109996.306579925]: local_costmap: Using plugin "inflation_layer"[0m
+[0m[ INFO] [1793109996.705200592]: Created local_planner dwa_local_planner/DWAPlannerROS[0m
+[0m[ INFO] [1793109996.742269676]: Sim period is set to 0.07[0m
+[0m[ INFO] [1793109997.597470759]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[ INFO] [1793109997.658330093]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[ INFO] [1793109998.028162093]: Resizing costmap to 174 X 431 at 0.050000 m/pix[0m
+[0m[ INFO] [1793109998.032056135]: odom received![0m
+[0m[ INFO] [1793110002.826816387]: Resizing costmap to 174 X 434 at 0.050000 m/pix[0m
+ Plugin sys_status initialized[0m
+[0m[ INFO] [1793109989.044053547]: Plugin sys_time loaded[0m
+[0m[ INFO] [1793109989.071531755]: TM: Timesync mode: MAVLINK[0m
+[0m[ INFO] [1793109989.075720380]: TM: Not publishing sim time[0m
+[0m[ INFO] [1793109989.082269755]: Plugin sys_time initialized[0m
+[0m[ INFO] [1793109989.082363380]: Plugin terrain blacklisted[0m
+[0m[ INFO] [1793109989.082396047]: Plugin trajectory blacklisted[0m
+[0m[ INFO] [1793109989.082427547]: Plugin tunnel blacklisted[0m
+[0m[ INFO] [1793109989.082457005]: Plugin vfr_hud blacklisted[0m
+[0m[ INFO] [1793109989.082488214]: Plugin vibration blacklisted[0m
+[0m[ INFO] [1793109989.103296880]: Plugin vision_pose_estimate loaded[0m
+[0m[ INFO] [1793109989.161483214]: Plugin vision_pose_estimate initialized[0m
+[0m[ INFO] [1793109989.161739005]: Plugin vision_speed_estimate blacklisted[0m
+[0m[ INFO] [1793109989.161784505]: Plugin waypoint blacklisted[0m
+[0m[ INFO] [1793109989.161838755]: Plugin wheel_odometry blacklisted[0m
+[0m[ INFO] [1793109989.161872297]: Plugin wind_estimation blacklisted[0m
+[0m[ INFO] [1793109989.162040880]: Built-in SIMD instructions: ARM NEON[0m
+[0m[ INFO] [1793109989.162088130]: Built-in MAVLink package version: 2022.12.30[0m
+[0m[ INFO] [1793109989.162125172]: Known MAVLink dialects: common ardupilotmega ASLUAV AVSSUAS all cubepilot development icarous matrixpilot paparazzi standard storm32 uAvionix ualberta[0m
+[0m[ INFO] [1793109989.162156672]: MAVROS started. MY ID 255.240, TARGET ID 1.1[0m
+[0m[ INFO] [1793109992.330591298]: VER: 1.1: Capabilities         0x000000000000e4ff[0m
+[0m[ INFO] [1793109992.330746757]: VER: 1.1: Flight software:     010d03ff (1c8ab2a0d7000000)[0m
+[0m[ INFO] [1793109992.330794298]: VER: 1.1: Middleware software: 010d03ff (1c8ab2a0d7000000)[0m
+[0m[ INFO] [1793109992.330849423]: VER: 1.1: OS software:         0b0000ff (4a1dd8680cd29f51)[0m
+[0m[ INFO] [1793109992.331427590]: VER: 1.1: Board hardware:      00000038[0m
+[0m[ INFO] [1793109992.331524715]: VER: 1.1: VID/PID:             3185:0038[0m
+[0m[ INFO] [1793109992.331600257]: VER: 1.1: UID:                 3133510f32373636[0m
+[0m[ INFO] [1793109992.350472840]: IMU: Attitude quaternion IMU detected![0m
+[0m[ INFO] [1793109992.351194423]: IMU: High resolution IMU detected![0m
+[0m[ INFO] [1793109993.330599049]: CON: Got HEARTBEAT, connected. FCU: PX4 Autopilot[0m
+[0m[ INFO] [1793109993.331084674]: IMU: Attitude quaternion IMU detected![0m
+[0m[ INFO] [1793109993.331606757]: IMU: High resolution IMU detected![0m
+[0m[ INFO] [1793109990.678453339]: Detect: RKNN model /home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/best.rknn: 1 input(s), 3 output(s)[0m
+[0m[ INFO] [1793109990.678612881]: Detect: input 'images_169' dims=[416,416,3,1] fmt=0 type=3[0m
+[0m[ INFO] [1793109990.678705631]: Detect: input_size=416[0m
+[0m[ INFO] [1793109990.678761048]: Detect: output[0] 'Transpose_/model.24/Transpose/out0_0' rank=5 dims=[9,52,52,3,1] fmt=0 type=3 n_elems=73008[0m
+[0m[ INFO] [1793109990.678819381]: Detect: output[1] 'Transpose_/model.24/Transpose_1/out0_1' rank=5 dims=[9,26,26,3,1] fmt=0 type=3 n_elems=18252[0m
+[0m[ INFO] [1793109990.678891131]: Detect: output[2] 'Transpose_/model.24/Transpose_2/out0_2' rank=5 dims=[9,13,13,3,1] fmt=0 type=3 n_elems=4563[0m
+[0m[ INFO] [1793109990.678942173]: Detect: RKNN ready (/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/best.rknn)[0m
+[0m[ INFO] [1793109991.296707631]: [mission] hazard route (4 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793109991.296948548]: [mission]   hazard[0] field=(  0.00, -1.95) map=(  1.95, -0.00)[0m
+[0m[ INFO] [1793109991.297102840]: [mission]   hazard[1] field=(  1.40, -1.95) map=(  1.95,  1.40)[0m
+[0m[ INFO] [1793109991.297314298]: [mission]   hazard[2] field=(  1.40,  0.00) map=(  0.00,  1.40)  <- detect[0m
+[0m[ INFO] [1793109991.297568631]: [mission]   hazard[3] field=(  1.40, -0.45) map=(  0.45,  1.40)  <- detect[0m
+[0m[ INFO] [1793109991.297710090]: [mission] person route (5 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793109991.297808090]: [mission]   person[0] field=(  1.40, -0.95) map=(  0.95,  1.40)[0m
+[0m[ INFO] [1793109991.297920965]: [mission]   person[1] field=(  2.70, -0.95) map=(  0.95,  2.70)[0m
+[0m[ INFO] [1793109991.298050756]: [mission]   person[2] field=(  2.70, -1.05) map=(  1.05,  2.70)  <- detect[0m
+[0m[ INFO] [1793109991.298170340]: [mission]   person[3] field=(  2.70, -1.85) map=(  1.85,  2.70)  <- detect[0m
+[0m[ INFO] [1793109991.298277090]: [mission]   person[4] field=(  2.70, -2.65) map=(  2.65,  2.70)  <- detect[0m
+[0m[ INFO] [1793109991.298393465]: [mission] return route (5 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793109991.298561756]: [mission]   return[0] field=(  2.70, -0.95) map=(  0.95,  2.70)[0m
+[0m[ INFO] [1793109991.298711673]: [mission]   return[1] field=(  1.40, -0.95) map=(  0.95,  1.40)[0m
+[0m[ INFO] [1793109991.298832131]: [mission]   return[2] field=(  1.40, -1.95) map=(  1.95,  1.40)[0m
+[0m[ INFO] [1793109991.299571506]: [mission]   return[3] field=(  0.00, -1.95) map=(  1.95, -0.00)[0m
+[0m[ INFO] [1793109991.300131506]: [mission]   return[4] field=(  0.00,  0.00) map=(  0.00,  0.00)[0m
+[0m[ INFO] [1793109994.451705758]: [mission] status: WAIT_FCU[0m
+[0m[ INFO] [1793109994.451909341]: [mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no[0m
+[0m[ INFO] [1793109994.452058091]: [mission] hazard target: flammable[0m
+[0m[ INFO] [1793109994.460190799]: [mission] FCU mode: MANUAL[0m
+[0m[ INFO] [1793109994.461869758]: [mission] status: BLOCKED_CAMERA_STALE[0m
+[0m[ INFO] [1793109994.562497841]: [mission] status: BLOCKED_MODEL_INFERENCE[0m
+[0m[ INFO] [1793109994.667433508]: [mission] first pose: (0.00, 0.00, -0.00), yaw -0.0 deg -> holding this heading[0m
+[0m[ INFO] [1793109995.172879466]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793109995.262691633]: [mission] status: INPUTS_RECOVERED[0m
+[0m[ INFO] [1793109995.262838050]: [mission] status: DRY_RUN_READY[0m
+[0m[ INFO] [1793110000.500201594]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793110005.832404347]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793110011.175809474]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793109987.791132546]: RPLIDAR running on ROS package rplidar_ros, SDK Version:2.1.0[0m
+[0m[ INFO] [1793109987.820285213]: RPLIDAR MODE:S2M1[0m
+[0m[ INFO] [1793109987.820432505]: RPLIDAR S/N: B397E18BC7E49CCCA3EB9AF4274A4C72[0m
+[0m[ INFO] [1793109987.820481505]: Firmware Ver: 1.02[0m
+[0m[ INFO] [1793109987.820533130]: Hardware Rev: 18[0m
+[0m[ INFO] [1793109987.822579463]: RPLidar health status : OK.[0m
+[0m[ INFO] [1793109988.008095505]: current scan mode: DenseBoost, sample rate: 32 Khz, max_distance: 30.0 m, scan frequency:10.0 Hz, [0m
+[0m[ INFO] [1793109990.274919964]: set lidar scan frequency to 10.0 Hz(600.0 Rpm) [0m
+t_with_move_base_node/model_file: best.rknn
+ * /shoot_with_move_base_node/model_path: /home/jcfh/catkin...
+ * /shoot_with_move_base_node/nms_iou: 0.45
+ * /shoot_with_move_base_node/onnx_file: best.onnx
+ * /shoot_with_move_base_node/person_detect_num: 3
+ * /shoot_with_move_base_node/person_point0_x: 1.4
+ * /shoot_with_move_base_node/person_point0_y: -0.95
+ * /shoot_with_move_base_node/person_point1_x: 2.7
+ * /shoot_with_move_base_node/person_point1_y: -0.95
+ * /shoot_with_move_base_node/person_point2_x: 2.7
+ * /shoot_with_move_base_node/person_point2_y: -1.05
+ * /shoot_with_move_base_node/person_point3_x: 2.7
+ * /shoot_with_move_base_node/person_point3_y: -1.85
+ * /shoot_with_move_base_node/person_point4_x: 2.7
+ * /shoot_with_move_base_node/person_point4_y: -2.65
+ * /shoot_with_move_base_node/person_route_num: 5
+ * /shoot_with_move_base_node/planner_timeout: 0.5
+ * /shoot_with_move_base_node/pose_timeout: 0.5
+ * /shoot_with_move_base_node/pub_rate: 50
+ * /shoot_with_move_base_node/publish_rate: 8.0
+ * /shoot_with_move_base_node/publish_scale: 0.5
+ * /shoot_with_move_base_node/rescue_drop_enabled: False
+ * /shoot_with_move_base_node/rescue_drop_x: 999.0
+ * /shoot_with_move_base_node/rescue_drop_y: 999.0
+ * /shoot_with_move_base_node/return_point0_x: 2.7
+ * /shoot_with_move_base_node/return_point0_y: -0.95
+ * /shoot_with_move_base_node/return_point1_x: 1.4
+ * /shoot_with_move_base_node/return_point1_y: -0.95
+ * /shoot_with_move_base_node/return_point2_x: 1.4
+ * /shoot_with_move_base_node/return_point2_y: -1.95
+ * /shoot_with_move_base_node/return_point3_x: 0.0
+ * /shoot_with_move_base_node/return_point3_y: -1.95
+ * /shoot_with_move_base_node/return_point4_x: 0.0
+ * /shoot_with_move_base_node/return_point4_y: 0.0
+ * /shoot_with_move_base_node/return_route_num: 5
+ * /shoot_with_move_base_node/settle_time: 1.0
+ * /shoot_with_move_base_node/stage: 1
+ * /shoot_with_move_base_node/state_timeout: 3.0
+ * /shoot_with_move_base_node/takeoff_height_tolerance: 0.12
+ * /shoot_with_move_base_node/takeoff_timeout: 20.0
+ * /shoot_with_move_base_node/target_hazard: flammable
+ * /shoot_with_move_base_node/target_person: person
+ * /shoot_with_move_base_node/target_topic: /mission/target_h...
+ * /shoot_with_move_base_node/tf_timeout: 0.5
+ * /shoot_with_move_base_node/wait_for_target: True
+ * /shoot_with_move_base_node/xy_gain_p: 1.2
+ * /shoot_with_move_base_node/yolo_anchors: 10,13,16,30,33,23...
+ * /shoot_with_move_base_node/yolo_reg_max: 16
+ * /shoot_with_move_base_node/yolo_strides: 8,16,32
+ * /shoot_with_move_base_node/yolo_style: v5-interleaved
+ * /shoot_with_move_base_node/z_gain_p: 1.0
+
+NODES
+  /
+    camera (usb_cam/usb_cam_node)
+    cartographer_node (cartographer_ros/cartographer_node)
+    cartographer_occupancy_grid_node (cartographer_ros/cartographer_occupancy_grid_node)
+    location (location/location_node)
+    mavros (mavros/mavros_node)
+    move_base (move_base/move_base)
+    preflight_laser_tf (tf/static_transform_publisher)
+    rplidarNode (rplidar_ros/rplidarNode)
+    shoot_with_move_base_node (navigation_2d/shoot_with_move_base_node)
+
+[1mROS_MASTER_URI=http://127.0.0.1:11333[0m
+]2;/home/jcfh/catkin_ws/src/location/launch/rk_preflight.launch http://127.0.0.1:11333
+[1mprocess[mavros-1]: started with pid [1958][0m
+[1mprocess[rplidarNode-2]: started with pid [1959][0m
+[1mprocess[cartographer_node-3]: started with pid [1960][0m
+[1mprocess[cartographer_occupancy_grid_node-4]: started with pid [1963][0m
+[1mprocess[camera-5]: started with pid [1971][0m
+[1mprocess[preflight_laser_tf-6]: started with pid [1978][0m
+[1mprocess[location-7]: started with pid [1984][0m
+[1mprocess[move_base-8]: started with pid [1994][0m
+[1mprocess[shoot_with_move_base_node-9]: started with pid [2000][0m
+[shoot_with_move_base_node-9] killing on exit
+[move_base-8] killing on exit
+[location-7] killing on exit
+[cartographer_occupancy_grid_node-4] killing on exit
+[camera-5] killing on exit
+[preflight_laser_tf-6] killing on exit
+[cartographer_node-3] killing on exit
+[rplidarNode-2] killing on exit
+[mavros-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

@@ -1,0 +1,135 @@
+{
+  "commands": [
+    {
+      "ack_delay": 0.8056719589999943, 
+      "acknowledgement": "CAMERA_FRONT_DONE", 
+      "angle": 90, 
+      "channel": 0, 
+      "command": "CAMERA_FRONT", 
+      "expected_registers": [
+        0, 
+        0, 
+        51, 
+        1
+      ], 
+      "registers": [
+        0, 
+        0, 
+        51, 
+        1
+      ], 
+      "registers_match": true
+    }, 
+    {
+      "ack_delay": 0.8046942919999935, 
+      "acknowledgement": "CAMERA_DOWN_DONE", 
+      "angle": 80, 
+      "channel": 0, 
+      "command": "CAMERA_DOWN", 
+      "expected_registers": [
+        0, 
+        0, 
+        34, 
+        1
+      ], 
+      "registers": [
+        0, 
+        0, 
+        34, 
+        1
+      ], 
+      "registers_match": true
+    }, 
+    {
+      "ack_delay": 0.8050050829999975, 
+      "acknowledgement": "CAMERA_FRONT_DONE", 
+      "angle": 90, 
+      "channel": 0, 
+      "command": "CAMERA_FRONT", 
+      "expected_registers": [
+        0, 
+        0, 
+        51, 
+        1
+      ], 
+      "registers": [
+        0, 
+        0, 
+        51, 
+        1
+      ], 
+      "registers_match": true
+    }
+  ], 
+  "errors": [], 
+  "flight_acceptance": false, 
+  "load_voltage_acceptance": false, 
+  "mechanical_acceptance": false, 
+  "outputs_disabled_after": {
+    "mode1_after": 176, 
+    "mode1_before": 32, 
+    "motion_or_voltage_acceptance": false, 
+    "oe_level_not_measured": true, 
+    "off_high": [
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16, 
+      16
+    ], 
+    "passed": true, 
+    "utc": "2026-10-27T13:38:30.228773+00:00"
+  }, 
+  "prescale": 121, 
+  "processes": [
+    {
+      "arguments": [
+        "roscore", 
+        "-p", 
+        "11336"
+      ], 
+      "exit_code": 0, 
+      "log": "master.log", 
+      "name": "master", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }, 
+    {
+      "arguments": [
+        "roslaunch", 
+        "servo_control", 
+        "servo_bench.launch", 
+        "front_angle:=90", 
+        "down_angle:=80", 
+        "drop_safe_angle:=90", 
+        "fire_drop_angle:=100", 
+        "rescue_drop_angle:=80", 
+        "restore_after_drop:=false"
+      ], 
+      "exit_code": 0, 
+      "log": "servo.log", 
+      "name": "servo", 
+      "process_group_empty": true, 
+      "stop_signals": [
+        2
+      ]
+    }
+  ], 
+  "selected_servo": "camera", 
+  "software_passed": true, 
+  "start_utc": "2026-10-27T13:38:17Z", 
+  "temporary_angles": true
+}

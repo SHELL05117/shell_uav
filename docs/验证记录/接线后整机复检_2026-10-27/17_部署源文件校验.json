@@ -1,0 +1,80 @@
+[
+  {
+    "path": "src/location/CMakeLists.txt",
+    "local_sha256": "d146109e1f5b9ca1d983fb83eb1960da10b881328ee018b53d094fd86a1f400b",
+    "board_sha256": "d146109e1f5b9ca1d983fb83eb1960da10b881328ee018b53d094fd86a1f400b",
+    "match": true
+  },
+  {
+    "path": "src/location/include/i2c.h",
+    "local_sha256": "6b2d10dede40b723530d4aee6846067aae449c05e6468520e887d1eb230ba7db",
+    "board_sha256": "6b2d10dede40b723530d4aee6846067aae449c05e6468520e887d1eb230ba7db",
+    "match": true
+  },
+  {
+    "path": "src/location/include/tf_mini_i2c.h",
+    "local_sha256": "42ca33c9e9492f9bbfb61bb884caeea2ad1ff89f2a892b4b1b289cd9ee887f08",
+    "board_sha256": "42ca33c9e9492f9bbfb61bb884caeea2ad1ff89f2a892b4b1b289cd9ee887f08",
+    "match": true
+  },
+  {
+    "path": "src/location/src/i2c.cpp",
+    "local_sha256": "9c7064715fe2eb2fe4a041c3c6a40309fc8e01cabf81f4e0f5f7bffaccf935e6",
+    "board_sha256": "9c7064715fe2eb2fe4a041c3c6a40309fc8e01cabf81f4e0f5f7bffaccf935e6",
+    "match": true
+  },
+  {
+    "path": "src/location/src/tf_mini_i2c.cpp",
+    "local_sha256": "83c1dd3dbdde01b285bd796876fba00e0c5cd201926ee14d99463941511b4ede",
+    "board_sha256": "83c1dd3dbdde01b285bd796876fba00e0c5cd201926ee14d99463941511b4ede",
+    "match": true
+  },
+  {
+    "path": "src/location/test/tfmini_i2c_protocol_test.cpp",
+    "local_sha256": "75df7e01236bcbf96509d751bee89d8c549198e5362db1aaf22949aacee2462d",
+    "board_sha256": "75df7e01236bcbf96509d751bee89d8c549198e5362db1aaf22949aacee2462d",
+    "match": true
+  },
+  {
+    "path": "src/location/launch/location.launch",
+    "local_sha256": "f314d2bcdfaaa9b3d9711aa1ace84fb18270a8f94c6fc2acb069818179e7b6ef",
+    "board_sha256": "f314d2bcdfaaa9b3d9711aa1ace84fb18270a8f94c6fc2acb069818179e7b6ef",
+    "match": true
+  },
+  {
+    "path": "src/location/README.md",
+    "local_sha256": "143fb26680738be81ba8e4e9cf9e9a3bc08497a53aa06175c7d0e8af01c110c1",
+    "board_sha256": "143fb26680738be81ba8e4e9cf9e9a3bc08497a53aa06175c7d0e8af01c110c1",
+    "match": true
+  },
+  {
+    "path": "tools/rk_i2c_acceptance.py",
+    "local_sha256": "ea0c41e1a8898ec1d72a7b13fe7683a1d72bde7cc538737688c8df08d66611c5",
+    "board_sha256": "ea0c41e1a8898ec1d72a7b13fe7683a1d72bde7cc538737688c8df08d66611c5",
+    "match": true
+  },
+  {
+    "path": "tools/rk_dwa_readonly_stack_check.py",
+    "local_sha256": "c36d8b6c292d68fd8729d8379418ff77023969627e3ab685116ef41545e50cd6",
+    "board_sha256": "c36d8b6c292d68fd8729d8379418ff77023969627e3ab685116ef41545e50cd6",
+    "match": true
+  },
+  {
+    "path": "tools/rk_fourclass_camera_check.py",
+    "local_sha256": "d73f08351bee950ffee9014e1741e3458e24f7a636494ec89206073f56b949ec",
+    "board_sha256": "d73f08351bee950ffee9014e1741e3458e24f7a636494ec89206073f56b949ec",
+    "match": true
+  },
+  {
+    "path": "tools/rk_pca_disable.py",
+    "local_sha256": "db91ae897567ca6ff581afa10824883f52d8b45435009660cda496cdcee4a9a7",
+    "board_sha256": "db91ae897567ca6ff581afa10824883f52d8b45435009660cda496cdcee4a9a7",
+    "match": true
+  },
+  {
+    "path": "tools/rk_servo_bench_check.py",
+    "local_sha256": "ddd213e529069e516f096e7be828d68219f91c80630929b2002da3180e5d74bf",
+    "board_sha256": "ddd213e529069e516f096e7be828d68219f91c80630929b2002da3180e5d74bf",
+    "match": true
+  }
+]

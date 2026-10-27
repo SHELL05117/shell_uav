@@ -1,12 +1,16 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-"""Bounded real-hardware observation; never starts a flight or commands a servo.
+"""Bounded real-hardware checks; never starts a flight or commands a servo.
 
 Source the RK catkin workspace, place rk_fourclass_camera_check.py beside this
 file, then run: python2 rk_dwa_readonly_stack_check.py OUTPUT_DIR
 Uses ROS/Melodic system packages and cv2/numpy already used by the camera check.
-No SSH, ROS service calls, FCU parameter writes, synthetic sensor messages,
-goals, setpoints, range publishers, or I2C devices are used by this observer.
+Default observation sends no vision. --i2c-range reads the production TFmini
+with height_reference_calibrated=false. --fuse-vision explicitly measures a real
+relative zero and forwards vision to the unarmed FCU. --installed-preflight
+checks the deployed measured profile. Fusion changes estimator inputs; it is
+not a receive-only mode. No service calls, FCU parameter writes, synthetic
+sensor messages, goals, setpoints or servo commands are used in any mode.
 """
 from __future__ import print_function
 import argparse
@@ -19,6 +23,7 @@ import sys
 import threading
 import time
 import traceback
+import xml.etree.ElementTree as ET
 
 from rk_fourclass_camera_check import Children, Images, steady, text_file, log_evidence
 
@@ -137,15 +142,20 @@ class Resources(object):
 
 
 class Telemetry(object):
-    def __init__(self, rospy):
+    def __init__(self, rospy, allow_vision=False):
         from sensor_msgs.msg import LaserScan, Imu
-        from mavros_msgs.msg import State
+        from mavros_msgs.msg import State, EstimatorStatus, RCIn
+        from geometry_msgs.msg import PoseStamped
         from std_msgs.msg import String
         from nav_msgs.msg import OccupancyGrid
         self.rospy = rospy
         self.lock = threading.Lock()
         self.begin = None
-        self.times = dict(scan=[],imu=[],state=[],readiness=[])
+        self.times = dict(scan=[],imu=[],state=[],readiness=[],vision=[],pose=[])
+        self.imu_orientation = None
+        self.positions = dict(vision=[],pose=[])
+        self.estimators = []
+        self.rc = []
         self.states = []
         self.strings = dict(mission=[],readiness=[],location=[])
         self.forbidden = {}
@@ -159,11 +169,16 @@ class Telemetry(object):
             rospy.Subscriber('/mission/status',String,self.string,callback_args='mission',queue_size=20),
             rospy.Subscriber('/mission/readiness',String,self.string,callback_args='readiness',queue_size=20),
             rospy.Subscriber('/location/status',String,self.string,callback_args='location',queue_size=20),
-            rospy.Subscriber('/map',OccupancyGrid,self.mapping,queue_size=1)]
+            rospy.Subscriber('/map',OccupancyGrid,self.mapping,queue_size=1),
+            rospy.Subscriber('/mavros/vision_pose/pose',PoseStamped,self.position,callback_args='vision',queue_size=5),
+            rospy.Subscriber('/mavros/local_position/pose',PoseStamped,self.position,callback_args='pose',queue_size=5),
+            rospy.Subscriber('/mavros/estimator_status',EstimatorStatus,self.estimator,queue_size=5),
+            rospy.Subscriber('/mavros/rc/in',RCIn,self.receiver,queue_size=5)]
         for topic in ['/gpio_cmd','/gpio_ack','/gpio_debug_cmd',
                 '/mavros/setpoint_raw/local','/mavros/setpoint_position/local',
                 '/mavros/setpoint_velocity/cmd_vel','/mavros/vision_pose/pose']:
-            self.watch(topic)
+            if not (allow_vision and topic=='/mavros/vision_pose/pose'):
+                self.watch(topic)
 
     def watch(self, topic):
         if topic not in self.forbidden_subs:
@@ -184,6 +199,26 @@ class Telemetry(object):
     def sensor(self, message, name):
         with self.lock:
             self.times[name].append(steady())
+            if name=='imu':
+                q=message.orientation
+                self.imu_orientation=(q.x,q.y,q.z,q.w,steady())
+
+    def position(self, message, name):
+        with self.lock:
+            now=steady(); self.times[name].append(now)
+            p=message.pose.position
+            self.positions[name].append(dict(time=now,x=p.x,y=p.y,z=p.z,
+                stamp=message.header.stamp.to_sec(),frame=message.header.frame_id))
+
+    def estimator(self, message):
+        with self.lock:
+            self.estimators.append(dict(time=steady(),attitude=message.attitude_status_flag,
+                local_xy=message.pos_horiz_rel_status_flag,vertical=message.pos_vert_abs_status_flag,
+                const_position=message.const_pos_mode_status_flag))
+
+    def receiver(self, message):
+        with self.lock:
+            self.rc.append(dict(time=steady(),rssi=message.rssi,channels=list(message.channels)))
 
     def state(self, message):
         with self.lock:
@@ -240,6 +275,10 @@ class Telemetry(object):
             if not strings['location'] and self.strings['location']:
                 strings['location'] = [self.strings['location'][-1]]
             return dict(streams=streams,states=states,status=strings,
+                positions={name:[r for r in values if began<=r['time']<=ended]
+                           for name,values in self.positions.items()},
+                estimators=[r for r in self.estimators if began<=r['time']<=ended],
+                rc=[r for r in self.rc if began<=r['time']<=ended],
                 zero_expected_topics=dict(self.forbidden),map=dict(self.map),violation=self.violation)
 
 
@@ -282,6 +321,63 @@ def readiness_health(records, began, ended):
         passed=len(samples)>=10 and ratio>=.95 and maximum_bad_gap<=1.0)
 
 
+def measured_ground_reference(telemetry):
+    """Real static range/IMU zero, accepting isolated corrupt frames (never reused).
+
+    SHELL confirmed vertical mounting and permits centimetre-level geometry
+    approximations. Zero sensor lever-arm is an explicit approximation here.
+    This datum belongs to the current support height; re-zero after moving it.
+    """
+    import fcntl
+    deadline=steady()+20
+    while steady()<deadline:
+        telemetry.check()
+        with telemetry.lock:
+            orientation=telemetry.imu_orientation
+            connected=bool(telemetry.states) and telemetry.states[-1]['connected']
+        if connected and orientation and steady()-orientation[4]<.3:
+            break
+        time.sleep(.05)
+    else:
+        raise RuntimeError('Ground zero needs connected disarmed FCU and fresh IMU')
+    fd=os.open('/dev/i2c-6',os.O_RDWR); fcntl.ioctl(fd,0x0703,0x10)
+    values=[]; errors=0; began=steady()
+    try:
+        for index in range(80):
+            time.sleep(max(0,began+index*.05-steady()))
+            telemetry.check()
+            try:
+                if os.write(fd,b'\x5a\x05\x00\x01\x60')!=5:
+                    raise ValueError('short command')
+                time.sleep(.001)
+                frame=bytearray(os.read(fd,9))
+                if len(frame)!=9 or list(frame[:2])!=[89,89] or sum(frame[:8])&255!=frame[8]:
+                    raise ValueError('invalid frame')
+                distance=(frame[2]+256*frame[3])*.01
+                flux=frame[4]+256*frame[5]
+                with telemetry.lock:
+                    q=telemetry.imu_orientation
+                norm=sum(v*v for v in q[:4])
+                down=1-2*(q[0]*q[0]+q[1]*q[1])/norm
+                if steady()-q[4]>.3 or down<.82 or not .10<=distance<=6 or not 100<=flux<65535:
+                    raise ValueError('invalid range, tilt, signal or stale IMU')
+                values.append(dict(t=steady()-began,range=distance,down=down,height=distance*down))
+            except (OSError,ValueError,ZeroDivisionError):
+                errors+=1
+    finally:
+        os.close(fd)
+    heights=sorted(item['height'] for item in values)
+    if len(values)<72:
+        raise RuntimeError('Insufficient real ground-zero samples')
+    median=heights[len(heights)//2]
+    deviation=math.sqrt(sum((v-median)**2 for v in heights)/len(heights))
+    if deviation>.03 or max(b['t']-a['t'] for a,b in zip(values,values[1:]))>.30:
+        raise RuntimeError('Ground zero moved or lost range freshness')
+    return dict(height_reference_metres=median,standard_deviation_metres=deviation,
+        valid=len(values),rejected=errors,samples=values,sensor_offset_approximation=[0,0,0],
+        relative_zero_for_current_support_only=True)
+
+
 def run(arguments):
     directory = os.path.abspath(arguments.output_dir)
     if not os.path.isdir(directory):
@@ -300,7 +396,9 @@ def run(arguments):
     resources = Resources(children)
     report = dict(passed=False,flight_acceptance=False,private_master=os.environ['ROS_MASTER_URI'],
         observation_seconds=20.0,output_hz_is_inference_hz=False,
-        location_mode='unconnected topic range: no I2C access, no SLAM-z fallback',errors=[])
+        location_mode=('real I2C6, measured zero, FCU vision fusion' if arguments.fuse_vision else
+                       'real I2C6 TFmini, height uncalibrated' if arguments.i2c_range else
+                       'unconnected topic range: no I2C access, no SLAM-z fallback'),errors=[])
     rospy = None
     images = None
     telemetry = None
@@ -323,22 +421,46 @@ def run(arguments):
             raise RuntimeError('Private master startup timed out')
         import rospy
         rospy.init_node('shell_dwa_readonly_observer',disable_signals=True)
-        telemetry = Telemetry(rospy)
+        telemetry = Telemetry(rospy,allow_vision=arguments.fuse_vision)
         images = Images(rospy,dict(camera='/camera/image_raw',output='/detect_result'))
+        mavros_command=['roslaunch','location','rk_mavros_bench.launch']
+        allowed_plugins=['global_position','imu','local_position','sys_status']
+        if arguments.fuse_vision:
+            allowed_plugins+=['vision_pose_estimate','sys_time','rc_io']
+            import rospkg
+            launch=ET.parse(os.path.join(rospkg.RosPack().get_path('location'),
+                'launch','rk_mavros_bench.launch'))
+            launch.find(".//rosparam[@param='plugin_whitelist']").text=str(allowed_plugins)
+            node=launch.find('node')
+            ET.SubElement(node,'param',name='conn/timesync_rate',value='10.0')
+            ET.SubElement(node,'param',name='conn/system_time_rate',value='1.0')
+            generated=os.path.join(directory,'mavros-vision-only.launch')
+            launch.write(generated)
+            mavros_command=['roslaunch',generated]
         commands = [
             ('camera',['roslaunch','usb_cam','rk_usb_camera.launch']),
-            ('mavros',['roslaunch','location','rk_mavros_bench.launch']),
+            ('mavros',mavros_command),
             ('lidar',['roslaunch','location','rplidar.launch']),
             ('laser-tf',['rosrun','tf','static_transform_publisher','0','0','0','3.14159','0','0',
                          'base_link','laser_link','30']),
             ('cartographer',['roslaunch','location','cartographer_2d.launch']),
             ('location',['rosrun','location','location_node','_use_tf_mini:=true',
-                '_tf_mini_type:=topic','_range_topic:=/shell_readonly_unconnected_range',
+                '_tf_mini_type:='+('i2c' if arguments.i2c_range else 'topic'),
+                '_range_topic:=/shell_readonly_unconnected_range','_bus:=6','_address:=16',
                 '_height_reference_calibrated:=false']),
             ('navigation',['roslaunch','navigation_2d','navigation_2d.launch',
                 'enable_actuation:=false','auto_start:=false','use_real_servos:=false',
                 'target_hazard:=flammable','detect_backend:=rknn'])]
+        if arguments.installed_preflight:
+            commands=[('preflight',['roslaunch','location','rk_preflight.launch','target_hazard:=flammable'])]
+            report['ground_reference']=dict(persistent_measured_profile=
+                'location/param/rk_height_reference_20261027.yaml',height_reference_metres=.12)
         for name,command in commands:
+            if name=='location' and arguments.fuse_vision:
+                report['ground_reference']=measured_ground_reference(telemetry)
+                command=[arg for arg in command if not arg.startswith('_height_reference_calibrated:=')]
+                command+=['_height_reference_calibrated:=true','_tf_mini_height:='+
+                    str(report['ground_reference']['height_reference_metres'])]
             active.append(children.start(name,command))
             resources.sample()
         # Start observation only after the actual sensor and model chains warm up;
@@ -417,13 +539,31 @@ def run(arguments):
                 and all(value.get('actuation_enabled') is False for value in readies)
                 and not any('servo_controller_node' in value['command'] for value in resources.owned.values()),
             mavros_readonly=params['/mavros/startup_px4_usb_quirk'] is False
-                and sorted(params['/mavros/plugin_whitelist'] or [])==['global_position','imu','local_position','sys_status']
+                and sorted(params['/mavros/plugin_whitelist'] or [])==sorted(allowed_plugins)
                 and params['/mavros/plugin_blacklist']==['*'],
             no_setpoints_gpio_or_vision=all(value==0 for value in data['zero_expected_topics'].values()),
             scaled_image_dimensions_consistent=shape_ok,images_valid=not report['images']['image_errors'],
             annotated_image_stream=img['output']['count']>=60 and img['output']['hz']>=5.0,
             location_range_blocked=bool(data['status']['location']) and
                 all(item['value']!='READY' for item in data['status']['location']))
+        if arguments.i2c_range and not arguments.fuse_vision:
+            report['checks']['real_range_reaches_uncalibrated_gate'] = (
+                params['/location/tf_mini_type']=='i2c' and
+                params['/location/height_reference_calibrated'] is False and
+                any(item['value']=='HEIGHT_REFERENCE_UNCALIBRATED'
+                    for item in data['status']['location']) and
+                not any(item['value'] in ('WAIT_RANGE','RANGE_STALE','IMU_STALE')
+                    for item in data['status']['location']))
+        if arguments.fuse_vision:
+            report['checks']['mavros_fusion_plugins_only']=report['checks'].pop('mavros_readonly')
+            report['checks']['no_setpoints_or_gpio']=report['checks'].pop('no_setpoints_gpio_or_vision')
+            report['checks'].pop('location_range_blocked')
+            report['checks']['location_ready']=bool(data['status']['location']) and all(
+                item['value']=='READY' for item in data['status']['location'])
+            report['checks']['real_vision_and_fcu_pose']=continuous('vision',5,1) and continuous('pose',5,1)
+            report['checks']['fcu_estimator_local_position']=bool(data['estimators']) and all(
+                r['local_xy'] and r['vertical'] for r in data['estimators'][-5:])
+            report['receiver_observation']=data['rc'][-1] if data['rc'] else None
         report['fcu_modes'] = modes
         report['map_observation'] = dict(data['map'],required_for_readonly_pass=False,
             system_slam_acceptance=False,
@@ -454,7 +594,7 @@ def run(arguments):
         report['processes'] = children.report()
         report['resources'] = resources.report()
         report['remaining_owned_processes'] = resources.remaining()
-        navigation = next((child for child in children.children if child['name']=='navigation'),None)
+        navigation = next((child for child in children.children if child['name'] in ('navigation','preflight')),None)
         if navigation is not None:
             try:
                 report['inference_log'] = log_evidence(navigation['log'])
@@ -476,7 +616,17 @@ def run(arguments):
 if __name__=='__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('output_dir')
+    parser.add_argument('--i2c-range', action='store_true',
+        help='Read the connected TFmini on I2C6 while withholding uncalibrated vision pose')
+    parser.add_argument('--fuse-vision',action='store_true',
+        help='Explicit unarmed ground check: measure relative zero then send real vision to FCU; no actuation')
+    parser.add_argument('--installed-preflight',action='store_true',
+        help='Validate the deployed rk_preflight.launch and saved measured height profile')
     args = parser.parse_args()
+    if args.installed_preflight:
+        args.fuse_vision=True
+    if args.fuse_vision:
+        args.i2c_range=True
     try:
         sys.exit(run(args))
     except Exception as error:

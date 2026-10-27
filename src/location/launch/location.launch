@@ -23,7 +23,7 @@
   <arg name="sensor_beam_y" default="0.0" />
   <arg name="sensor_beam_z" default="-1.0" />
   <arg name="imu_topic" default="/mavros/imu/data" />
-  <!-- I2C6 maps to /dev/i2c-6 in the checked ProD BSP; wiring is still pending. -->
+  <!-- I2C6 / 0x10 real ranging verified 2026-10-27; height geometry stays uncalibrated. -->
   <arg name="bus" default="6" />
   <arg name="address" default="16" />
   <arg name="serial_port" default="/dev/ttyUSB0" />

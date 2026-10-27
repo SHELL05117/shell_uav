@@ -1,0 +1,30 @@
+... logging to /home/jcfh/shell_acceptance_20261027/battery-installed-entry/ros-logs/9555c4c6-d20f-11f1-8ce1-14f5f9e6cd08/roslaunch-toybrick-1739.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+[1mstarted roslaunch server http://127.0.0.1:37980/[0m
+ros_comm version 1.14.13
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [1778][0m
+[1mROS_MASTER_URI=http://127.0.0.1:11333/[0m
+]2;roscore http://127.0.0.1:11333/
+[1msetting /run_id to 9555c4c6-d20f-11f1-8ce1-14f5f9e6cd08[0m
+[1mprocess[rosout-1]: started with pid [1802][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

@@ -1,0 +1,54 @@
+[33m[ WARN] [1793109310.552582733]: angle_debug is ON: /servo_debug_cmd accepts "SET_DROP <deg>", "SET_CAMERA <deg>", "PARK", "STATUS"; replies come back on /servo_debug_ack. This is a bench setting - it must never be on for a competition run.[0m
+[0m[ INFO] [1793109310.479065358]: Drop servo: channel 1 parked at 30.0 deg; DROP_FIRE -> 90.0 deg, DROP_RESCUE -> 140.0 deg, hold 1.00 s[0m
+[0m[ INFO] [1793109310.521432733]: PCA9685 initialized; camera is front-facing while waiting for servo settle[0m
+[0m[ INFO] [1793109311.522501941]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109312.084781567]: DROP_FIRE: drop servo 1 -> 90.0 deg (was 30.0), releasing, ack in 1.00 s[0m
+[0m[ INFO] [1793109312.523853150]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109313.086091734]: DROP_FIRE complete; drop servo held at 90.0 deg[0m
+[0m[ INFO] [1793109313.525075692]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109313.704201984]: DROP_RESCUE: drop servo 1 -> 140.0 deg (was 90.0), releasing, ack in 1.00 s[0m
+[0m[ INFO] [1793109314.526242068]: Servo controller ready; startup camera position is front-facing[0m
+[0m[ INFO] [1793109314.705692443]: DROP_RESCUE complete; drop servo held at 140.0 deg[0m
+... logging to /home/jcfh/shell_acceptance_20261027/drop-source-angles/ros-logs/03d90d56-d20e-11f1-a561-14f5f9e6cd08/roslaunch-toybrick-2716.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/servo_control/launch/servo_bench.launch
+[1mstarted roslaunch server http://127.0.0.1:40216/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+ * /servo_controller_node/angle_debug: True
+ * /servo_controller_node/camera_channel: 0
+ * /servo_controller_node/down_angle: 55.0
+ * /servo_controller_node/drop_action_seconds: 1.0
+ * /servo_controller_node/drop_channel: 1
+ * /servo_controller_node/drop_safe_angle: 30.0
+ * /servo_controller_node/fire_drop_angle: 90.0
+ * /servo_controller_node/front_angle: 170.0
+ * /servo_controller_node/i2c_address: 64
+ * /servo_controller_node/i2c_device: /dev/i2c-6
+ * /servo_controller_node/max_pulse_us: 2250
+ * /servo_controller_node/min_pulse_us: 750
+ * /servo_controller_node/pwm_frequency: 50
+ * /servo_controller_node/rescue_drop_angle: 140.0
+ * /servo_controller_node/restore_after_drop: False
+ * /servo_controller_node/servo_motion_seconds: 0.8
+ * /servo_controller_node/servo_seconds_per_degree: 0.006
+ * /servo_controller_node/startup_settle_seconds: 1.0
+
+NODES
+  /
+    servo_controller_node (servo_control/servo_controller_node)
+
+[1mROS_MASTER_URI=http://127.0.0.1:11336[0m
+]2;/home/jcfh/catkin_ws/src/servo_control/launch/servo_bench.launch http://127.0.0.1:11336
+[1mprocess[servo_controller_node-1]: started with pid [2739][0m
+[servo_controller_node-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
