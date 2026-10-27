@@ -1,0 +1,156 @@
+{
+  "utc": "2026-10-27T23:47:32.451122+08:00",
+  "scope": "Local document syntax/source checks only; no flight or hardware commands executed",
+  "bash_blocks": [
+    {
+      "block": 1,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 2,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 3,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 4,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 5,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 6,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 7,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 8,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 9,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 10,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 11,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 12,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 13,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 14,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 15,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 16,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "block": 17,
+      "passed": true,
+      "stderr": ""
+    }
+  ],
+  "launch_commands": [
+    {
+      "package": "location",
+      "file": "rk_preflight.launch",
+      "arguments": [],
+      "passed": true
+    },
+    {
+      "package": "location",
+      "file": "location.launch",
+      "arguments": [
+        "open_rviz",
+        "lidar_serial_port",
+        "fcu_url",
+        "gcs_url",
+        "tf_mini_type",
+        "bus",
+        "address",
+        "tf_mini_height",
+        "height_reference_calibrated"
+      ],
+      "passed": true
+    },
+    {
+      "package": "usb_cam",
+      "file": "rk_usb_camera.launch",
+      "arguments": [],
+      "passed": true
+    },
+    {
+      "package": "navigation_2d",
+      "file": "navigation_2d.launch",
+      "arguments": [
+        "detect_backend",
+        "target_hazard",
+        "stage",
+        "field_yaw_deg",
+        "fly_height",
+        "detect_height",
+        "drop_height",
+        "enable_actuation",
+        "auto_start",
+        "use_real_servos"
+      ],
+      "passed": true
+    },
+    {
+      "package": "location",
+      "file": "lichtblick_bridge_readonly.launch",
+      "arguments": [
+        "jpeg_relay"
+      ],
+      "passed": true
+    }
+  ],
+  "missing_links": [],
+  "first_default_waypoint_map": [
+    1.95,
+    -1.1940306291686693E-16
+  ],
+  "automatic_arming_not_enabled": true,
+  "passed": true,
+  "powershell_blocks": 2,
+  "powershell_syntax_passed": true,
+  "guide_sha256": "4b6cd879577d887de04a6ca90ec814900178043e4633f0f843dd75bea2510998"
+}
