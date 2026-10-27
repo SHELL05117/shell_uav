@@ -5,6 +5,7 @@
  * Description: 见 mission_with_move_base.h。
  ***************************************************************************************************************************/
 #include "mission_with_move_base.h"
+#include "audit_json.h"
 
 #include <algorithm>
 #include <cctype>
@@ -63,6 +64,7 @@ MoveBaseMission::MoveBaseMission(const ros::NodeHandle &nh_private, int argc, ch
 
   status_pub_ = nh_private_.advertise<std_msgs::String>("/mission/status", 4, true);
   readiness_pub_ = nh_private_.advertise<std_msgs::String>("/mission/readiness", 4, true);
+  audit_pub_ = nh_private_.advertise<std_msgs::String>("/mission/audit", 4);
   gpio_cmd_pub_ = nh_private_.advertise<std_msgs::String>("/gpio_cmd", 4);
 
   control_timer_ = nh_private_.createTimer(ros::Duration(1.0 / std::max(1.0, pub_rate_)),
@@ -499,6 +501,33 @@ void MoveBaseMission::publishReadiness(bool model_ok, bool pose_ok, bool state_o
   std_msgs::String message;
   message.data = json.str();
   readiness_pub_.publish(message);
+  if (audit_pub_.getNumSubscribers())
+  {
+    const auto now = ros::Time::now();
+    const auto pose = poseSnapshot(); const auto state = stateSnapshot();
+    const auto age = [&](const ros::Time &stamp) {
+      return stamp.isZero() ? std::string("null") : uav_audit::number((now-stamp).toSec());
+    };
+    std::ostringstream audit;
+    audit << "{\"stamp\":" << uav_audit::number(now.toSec())
+      << ",\"phase\":" << static_cast<int>(phase_) << ",\"task\":" << static_cast<int>(task_)
+      << ",\"leg\":" << leg_ << ",\"waypoint\":" << uav_audit::quote(current_waypoint_.name)
+      << ",\"status\":" << uav_audit::quote(last_status_)
+      << ",\"phase_elapsed_s\":" << uav_audit::number((now-phase_start_).toSec())
+      << ",\"pose_age_s\":" << age(pose.header.stamp)
+      << ",\"fcu_age_s\":" << age(state.header.stamp)
+      << ",\"tf_age_s\":" << age(alignment_stamp_)
+      << ",\"planner_age_s\":" << age(planner_command_stamp_)
+      << ",\"hits\":" << hits_.size() << ",\"hits_required\":" << detect_times_
+      << ",\"detection_sequence\":" << last_detection_sequence_
+      << ",\"goal_active\":" << value(goal_active_)
+      << ",\"drop_sent\":" << value(drop_sent_) << ",\"ack_received\":" << value(ack_received_)
+      << ",\"target_local\":[" << uav_audit::number(target_position_.x) << ','
+      << uav_audit::number(target_position_.y) << ',' << uav_audit::number(target_position_.z) << ']'
+      << ",\"control_max_gap_ms\":" << uav_audit::number(audit_control_max_gap_*1000)
+      << ",\"control_delay_ms\":" << uav_audit::number(audit_control_delay_*1000) << '}';
+    message.data=audit.str(); audit_pub_.publish(message); audit_control_max_gap_=0;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -509,6 +538,13 @@ void MoveBaseMission::ControlLoop(const ros::TimerEvent &event)
 {
   (void)event;
   std::lock_guard<std::recursive_mutex> runtime_lock(runtime_mutex_);
+  if (audit_pub_.getNumSubscribers())
+  {
+    const double current=std::chrono::duration<double>(std::chrono::steady_clock::now().time_since_epoch()).count();
+    if (audit_control_last_>0) audit_control_max_gap_=std::max(audit_control_max_gap_,current-audit_control_last_);
+    audit_control_last_=current;
+    audit_control_delay_=(event.current_real-event.current_expected).toSec();
+  }
   if (!enable_actuation_ || !checkFlightAuthority() || phase_ == Phase::DONE ||
       control_mode_ == ControlMode::IDLE)
     return;
@@ -836,8 +872,12 @@ void MoveBaseMission::TickLoop(const ros::TimerEvent &event)
           now - phase_start_ > ros::Duration(10.0))
       {
         if (now - phase_start_ > ros::Duration(10.0))
+        {
           ROS_WARN("[mission] descent timeout at z=%.2f xy_err=%.2f; settling anyway",
                    pose.pose.position.z, xy_error);
+          setStatus("DESCENT_TIMEOUT_PROCEED_DROP");
+        }
+        else setStatus("DESCENT_POSITION_REACHED");
         phase_ = Phase::DROP;
         phase_start_ = now;
         drop_sent_ = false;
@@ -871,6 +911,7 @@ void MoveBaseMission::TickLoop(const ros::TimerEvent &event)
       else if (now - drop_cmd_time_ > ros::Duration(ack_timeout_))
       {
         ROS_WARN("[mission] no /gpio_ack within %.1f s; climbing anyway", ack_timeout_);
+        setStatus("ACK_TIMEOUT_PROCEED_CLIMB");
         beginClimb();
       }
       break;

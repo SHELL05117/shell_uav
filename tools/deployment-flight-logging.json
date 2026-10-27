@@ -1,0 +1,21 @@
+{
+  "git_base": "8aa597c5e4a3c02ec72ef1da9f648f8622cce6db",
+  "branch": "codex/flight-logging-20261027",
+  "timestamp": "2026-10-28T05:29:58.2380546+08:00",
+  "scope": "flight-logging candidate; file hashes identify uncommitted deployment",
+  "files": {
+    "tools/uav": "994bb60f6acd2edd7c3eb9336bfacf28e8958c43731d53731eda5b0994c1c009",
+    "tools/uav_start.py": "faf702a3e187779249ebe28a8f3ececd58dc96c9688d9921db933281ca7009aa",
+    "tools/uav_log.py": "4891b5d11bb6d9d4449089a07025fcc5cc8b098c9794604dd49c0f4a0de42844",
+    "tools/uav_perf.py": "7cf2b50aabb109306cdcd733ea36d592eed50b894db32734cafd5ae22f993610",
+    "tools/uav_log_report.py": "f3abde38e93169148601cf58732d93cf89c8a12e3a6392df2966eaf210b1a0db",
+    "tools/install_uav_commands.sh": "80656defb41c1e90c5a19a1523519e13175cfb4f4109f1741fcf64dbb05b2be1",
+    "src/navigation_2d/include/audit_json.h": "1e4d6be8276afd4d6ef09d4b7d119c3078c47ab2e8c3183f5cc0a676d5d26af7",
+    "src/navigation_2d/include/detect.h": "4aa06a754d0b25b9bddddec855a5fc1adfc637f8134a507ac3d6a56a467092c1",
+    "src/navigation_2d/include/mission_with_move_base.h": "e97cfee10dea55fa4c6d2b554d5ba8104e3bda965b32e859ae0103f9ca732106",
+    "src/navigation_2d/src/detect.cpp": "72348798d5cf374459cd3b63dd3dc45c886d71c64a80de7fa7b88b0c97fc66b1",
+    "src/navigation_2d/src/shoot_with_move_base.cpp": "990de208092c28214cc91b4d7ae7b029eb412fb26eb920508bf5fa20f1e7aa70",
+    "src/location/src/location_with_ftmini.cpp": "f46056759da3a5e1a107cdd67f6aeb4218b02e6c8c3732a186e283818d199e0b",
+    "src/location/scripts/monitor_jpeg.py": "8f66a18133ca3e1a5555077526341eccb91a6f31dcc89b5f05aee05e6f71f581"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "control_max_gap_ms": 30.9653750000507, 
+  "control_p99_gap_ms": 24.63208399990435, 
+  "cpu_busy_mean": 76.75962163997474, 
+  "end_wall": 1793136325.469752, 
+  "forbidden_outputs": [], 
+  "ground_only": true, 
+  "inference_mean_s": 0.6702888876102943, 
+  "inference_p99_s": 0.691244459, 
+  "inference_rejected": 0, 
+  "iowait_p99": 0.15748031496062992, 
+  "logging": true, 
+  "max_temperature_c": 46.875, 
+  "min_available_mib": 2761.25, 
+  "passed": true, 
+  "readiness_healthy_fraction": 1.0, 
+  "seconds": 90, 
+  "session": {
+    "directory": "/home/jcfh/uav_flight_logs/20261028-052319-4ed74725", 
+    "process": {
+      "boot": "de97daab-4cf8-4f4e-a336-8386b8f33152", 
+      "pid": 14751, 
+      "start": "84794"
+    }
+  }, 
+  "start_wall": 1793136234.528635, 
+  "topics": {
+    "/camera/image_raw": {
+      "count": 2726, 
+      "hz": 30.0011009578333, 
+      "max_gap": 0.08000000000004093, 
+      "p99_gap": 0.05999999999994543
+    }, 
+    "/mavros/imu/data": {
+      "count": 4542, 
+      "hz": 49.9944952108334, 
+      "max_gap": 0.05000000000006821, 
+      "p99_gap": 0.030000000000086402
+    }, 
+    "/mavros/local_position/pose": {
+      "count": 2726, 
+      "hz": 29.997798326728304, 
+      "max_gap": 0.05000000000006821, 
+      "p99_gap": 0.04000000000007731
+    }, 
+    "/mavros/vision_pose/pose": {
+      "count": 1817, 
+      "hz": 19.999999999999986, 
+      "max_gap": 0.06000000000005912, 
+      "p99_gap": 0.05999999999994543
+    }, 
+    "/mission/audit": {
+      "count": 908, 
+      "hz": 9.999999999999995, 
+      "max_gap": 0.12999999999999545, 
+      "p99_gap": 0.11000000000001364
+    }, 
+    "/mission/inference": {
+      "count": 136, 
+      "hz": 1.4899017768458225, 
+      "max_gap": 0.7000000000000455, 
+      "p99_gap": 0.6999999999999318
+    }, 
+    "/mission/readiness": {
+      "count": 908, 
+      "hz": 9.999999999999995, 
+      "max_gap": 0.12000000000000455, 
+      "p99_gap": 0.11000000000001364
+    }, 
+    "/scan": {
+      "count": 909, 
+      "hz": 10.008818342151685, 
+      "max_gap": 0.12000000000000455, 
+      "p99_gap": 0.11000000000001364
+    }
+  }
+}

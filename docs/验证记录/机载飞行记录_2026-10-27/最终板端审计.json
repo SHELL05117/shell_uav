@@ -1,0 +1,30 @@
+{
+  "active_ros_processes": [],
+  "backup_files_match": true,
+  "devices": {
+    "busy": [],
+    "errors": [],
+    "missing": [],
+    "opens_hardware": false,
+    "passed": true
+  },
+  "disk_free_gib": 23.64957046508789,
+  "local_archives_sha256_verified": true,
+  "passed": true,
+  "recording_deployment_retained": false,
+  "removed_cli_returncode": 2,
+  "removed_directories": [
+    "/home/jcfh/uav_flight_logs",
+    "/home/jcfh/.local/state/uav-log",
+    "/home/jcfh/logging-benchmark"
+  ],
+  "restored_observation_passed": true,
+  "services": [
+    "active",
+    "active",
+    "active",
+    "active",
+    "active"
+  ],
+  "wall": 1793137384.3690603
+}

@@ -5,6 +5,9 @@
  * Description: RKNN (RK3399Pro) 版 detect。见 detect.h 顶部的说明。
  ***************************************************************************************************************************/
 #include "detect.h"
+#include "audit_json.h"
+#include <sensor_msgs/CompressedImage.h>
+#include <std_msgs/String.h>
 
 #include <algorithm>
 #include <cmath>
@@ -179,6 +182,8 @@ void Detect::loadParams()
   }
 
   image_pub_ = nh_.advertise<sensor_msgs::Image>("/detect_result", 1);
+  audit_pub_ = nh_.advertise<std_msgs::String>("/mission/inference", 4);
+  audit_frame_pub_ = nh_.advertise<sensor_msgs::CompressedImage>("/mission/inference_frame/compressed", 1);
   image_sub_ = nh_.subscribe(input_topic_, 1, &Detect::imageCallback, this,
                              ros::TransportHints().tcpNoDelay());
   publish_timer_ = nh_.createTimer(ros::Duration(1.0 / std::max(1.0, publish_rate_)),
@@ -241,6 +246,7 @@ bool Detect::startAsync()
   std::lock_guard<std::mutex> lifecycle(worker_mutex_);
   if (async_running_.load()) return true;
   if (worker_.joinable()) worker_.join();
+  if (audit_worker_.joinable()) audit_worker_.join();
   if (!ready()) return false;
   async_results_.clear();
   {
@@ -252,6 +258,7 @@ bool Detect::startAsync()
   try
   {
     worker_ = std::thread(&Detect::asyncLoop, this);
+    audit_worker_ = std::thread(&Detect::auditLoop, this);
   }
   catch (const std::exception &error)
   {
@@ -266,7 +273,9 @@ void Detect::stopAsync()
 {
   std::lock_guard<std::mutex> lifecycle(worker_mutex_);
   async_running_ = false;
+  audit_condition_.notify_all();
   if (worker_.joinable()) worker_.join();
+  if (audit_worker_.joinable()) audit_worker_.join();
   async_results_.clear();
   std::lock_guard<std::mutex> lock(mutex_);
   last_inference_ok_ = false;
@@ -664,6 +673,7 @@ std::vector<Detect::Detection> Detect::inferImpl(AsyncResult *completed_result)
   ros::Time source_stamp;
   std::chrono::steady_clock::time_point source_received;
   double source_age_at_receipt = 0.0;
+  uint64_t source_generation=0;
   {
     std::lock_guard<std::mutex> lock(mutex_);
     if (!ready_ || frame_.empty() ||
@@ -679,34 +689,44 @@ std::vector<Detect::Detection> Detect::inferImpl(AsyncResult *completed_result)
     source_received = frame_received_;
     source_age_at_receipt = frame_source_age_at_receipt_;
     last_inferred_generation_ = frame_generation_;
+    source_generation=frame_generation_;
   }
+  const auto inference_began=std::chrono::steady_clock::now();
   try
   {
     results = inferYolo(frame);
     if (!ready_) return {};
     const auto completed = std::chrono::steady_clock::now();
     const double elapsed = std::chrono::duration<double>(completed-source_received).count();
-    std::lock_guard<std::mutex> lock(mutex_);
-    if (!navigation_yolo::freshDetectionSource(source_stamp.toSec(),ros::Time::now().toSec(),
-                                              source_age_at_receipt,elapsed,inference_timeout_))
+    const bool accepted=navigation_yolo::freshDetectionSource(source_stamp.toSec(),ros::Time::now().toSec(),
+                                              source_age_at_receipt,elapsed,inference_timeout_);
     {
-      last_inference_ok_ = false;
+      std::lock_guard<std::mutex> lock(mutex_);
+      last_inference_ok_=accepted;
+      if (accepted)
+      {
+        inference_source_stamp_ = source_stamp;
+        inference_source_received_ = source_received;
+        inference_source_age_at_receipt_ = source_age_at_receipt;
+        inference_received_ = completed;
+        if (completed_result)
+        {
+          completed_result->source_stamp = source_stamp;
+          completed_result->source_received = source_received;
+          completed_result->source_age_at_receipt = source_age_at_receipt;
+          completed_result->completed = completed;
+          completed_result->success = true;
+        }
+      }
+    }
+    queueAudit(frame,results,source_stamp,source_generation,
+        std::chrono::duration<double>(completed-inference_began).count(),
+        source_age_at_receipt+elapsed,accepted,accepted ? "" : "SOURCE_STALE");
+    if (!accepted)
+    {
       ROS_WARN_THROTTLE(2.0, "Detect: completed inference rejected: source stale (age=%.3fs limit=%.3fs)",
                         source_age_at_receipt+elapsed,inference_timeout_);
       return {};
-    }
-    inference_source_stamp_ = source_stamp;
-    inference_source_received_ = source_received;
-    inference_source_age_at_receipt_ = source_age_at_receipt;
-    inference_received_ = completed;
-    last_inference_ok_ = true;
-    if (completed_result)
-    {
-      completed_result->source_stamp = source_stamp;
-      completed_result->source_received = source_received;
-      completed_result->source_age_at_receipt = source_age_at_receipt;
-      completed_result->completed = completed;
-      completed_result->success = true;
     }
     ROS_INFO_THROTTLE(5.0, "Detect: inference OK backend=%s input=%d heads=3 detections=%zu",
                       backend_.c_str(),input_size_,results.size());
@@ -714,6 +734,9 @@ std::vector<Detect::Detection> Detect::inferImpl(AsyncResult *completed_result)
   }
   catch (const std::exception &error)
   {
+    queueAudit(frame,results,source_stamp,source_generation,
+        std::chrono::duration<double>(std::chrono::steady_clock::now()-inference_began).count(),
+        source_age_at_receipt,false,"INFERENCE_EXCEPTION");
     ready_ = false;
     std::lock_guard<std::mutex> lock(mutex_);
     last_inference_ok_ = false;
@@ -723,6 +746,67 @@ std::vector<Detect::Detection> Detect::inferImpl(AsyncResult *completed_result)
 #else
   return results;
 #endif
+}
+
+void Detect::queueAudit(const cv::Mat &frame, const std::vector<Detection> &results,
+    const ros::Time &stamp, uint64_t generation, double duration, double age,
+    bool accepted, const std::string &error)
+{
+  if (!audit_pub_.getNumSubscribers() && !audit_frame_pub_.getNumSubscribers()) return;
+  // Audit failures must never become inference failures. Only a shallow Mat
+  // reference is queued; the image callback owns immutable source snapshots.
+  try
+  {
+    AuditFrame item; item.frame=frame; item.stamp=stamp; item.sequence=++audit_sequence_;
+    std::ostringstream out;
+    out << "{\"sequence\":" << item.sequence << ",\"generation\":" << generation
+        << ",\"source_stamp\":" << uav_audit::number(stamp.toSec())
+        << ",\"completed_stamp\":" << uav_audit::number(ros::Time::now().toSec())
+        << ",\"inference_s\":" << uav_audit::number(duration)
+        << ",\"source_age_s\":" << uav_audit::number(age)
+        << ",\"accepted\":" << (accepted ? "true" : "false")
+        << ",\"error\":" << uav_audit::quote(error)
+        << ",\"width\":" << frame.cols << ",\"height\":" << frame.rows << ",\"detections\":[";
+    for (size_t i=0;i<results.size();++i)
+    {
+      const auto &d=results[i]; if (i) out << ',';
+      out << "{\"label\":" << uav_audit::quote(d.label) << ",\"class_id\":" << d.class_id
+          << ",\"confidence\":" << uav_audit::number(d.confidence)
+          << ",\"box\":[" << uav_audit::number(d.box.x) << ',' << uav_audit::number(d.box.y)
+          << ',' << uav_audit::number(d.box.width) << ',' << uav_audit::number(d.box.height) << "]}";
+    }
+    std::lock_guard<std::mutex> lock(audit_mutex_);
+    if (audit_pending_valid_) ++audit_overwritten_;
+    out << "],\"audit_overwritten\":" << audit_overwritten_ << '}'; item.json=out.str();
+    audit_pending_=std::move(item); audit_pending_valid_=true; audit_condition_.notify_one();
+  }
+  catch (const std::exception &error) { ROS_WARN_THROTTLE(5.0,"Audit enqueue failed: %s",error.what()); }
+}
+
+void Detect::auditLoop()
+{
+  while (async_running_.load())
+  {
+    AuditFrame item;
+    {
+      std::unique_lock<std::mutex> lock(audit_mutex_);
+      audit_condition_.wait_for(lock,std::chrono::milliseconds(200),[&]{
+        return audit_pending_valid_ || !async_running_.load(); });
+      if (!audit_pending_valid_) continue;
+      item=std::move(audit_pending_); audit_pending_valid_=false;
+    }
+    try
+    {
+      std_msgs::String metadata; metadata.data=item.json; audit_pub_.publish(metadata);
+      if (audit_frame_pub_.getNumSubscribers() && !item.frame.empty())
+      {
+        sensor_msgs::CompressedImage image; image.header.stamp=item.stamp;
+        image.header.seq=item.sequence; image.header.frame_id=frame_id_; image.format="bgr8; jpeg compressed bgr8";
+        if (cv::imencode(".jpg",item.frame,image.data,{cv::IMWRITE_JPEG_QUALITY,75})) audit_frame_pub_.publish(image);
+      }
+    }
+    catch (const std::exception &error) { ROS_WARN_THROTTLE(5.0,"Audit output failed: %s",error.what()); }
+  }
 }
 
 std::vector<Detect::Detection> Detect::inferYolo(const cv::Mat &frame)

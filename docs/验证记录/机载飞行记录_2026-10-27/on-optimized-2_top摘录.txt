@@ -1,0 +1,554 @@
+Selected first/middle/last top frames within the formal measurement window, excluding 10s at each edge. Full output is in the raw archive.
+
+top - 05:24:05 up 14 min,  0 users,  load average: 7.32, 6.44, 3.69
+Tasks: 175 total,   2 running, 173 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 43.8 us, 28.2 sy,  3.7 ni, 22.2 id,  0.0 wa,  0.0 hi,  2.1 si,  0.0 st
+KiB Mem :  3935960 total,  2331248 free,  1047732 used,   556980 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  2843464 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+15992 jcfh      20   0  756580  32688  18552 S  60.6  0.8   0:22.37 cartograph+
+16139 jcfh      20   0 1421320 153748  55892 S  60.6  3.9   0:21.82 python2
+16261 jcfh      20   0 1700968 153992  38900 S  59.6  3.9   0:17.36 shoot_with+
+16138 jcfh      20   0  504300  55064  31904 S  57.6  1.4   0:20.77 usb_cam_no+
+14633 jcfh      20   0 1493924  99296  11860 S  54.7  2.5   0:21.73 python2
+14632 jcfh      20   0 1331628  80108  10476 S  42.4  2.0   0:14.33 python2
+15532 jcfh      30  10 1174460  26996  13620 S  23.2  0.7   0:09.03 record
+14783 jcfh      20   0 1048716  50288  19028 S  20.7  1.3   0:08.72 mavros_node
+14782 jcfh      20   0  494416  18160   8996 S  16.7  0.5   0:06.86 rplidarNode
+16260 jcfh      20   0  744624  33412  16460 S  12.3  0.8   0:04.41 move_base
+14751 jcfh      30  10  526356  68236  10216 S  11.8  1.7   0:05.92 python2
+15740 jcfh      20   0  643016  18856   9664 S   8.9  0.5   0:03.60 location_n+
+  289 root      20   0       0      0      0 S   7.4  0.0   0:30.89 RTW_CMD_TH+
+  611 root      20   0  324428  11996   2508 S   3.9  0.3   0:28.07 npu_transf+
+  157 root      20   0       0      0      0 S   3.0  0.0   0:08.64 kworker/u1+
+10548 root       0 -20       0      0      0 S   2.5  0.0   0:06.41 kworker/u1+
+  162 root      20   0       0      0      0 S   2.0  0.0   0:09.68 kworker/u1+
+  194 root      19  -1   59032  29068  28308 S   2.0  0.7   0:09.01 systemd-jo+
+ 7272 root      20   0       0      0      0 S   2.0  0.0   0:07.36 kworker/u1+
+14800 jcfh      20   0  282548  18552   9368 S   2.0  0.5   0:01.06 static_tra+
+15993 jcfh      20   0  367460  25400  14112 S   1.5  0.6   0:00.55 cartograph+
+    7 root      20   0       0      0      0 R   1.0  0.0   0:05.25 rcu_sched
+14634 jcfh      20   0    9140   3164   2596 R   1.0  0.1   0:00.76 top
+14714 jcfh      20   0  666140  61748   9844 S   1.0  1.6   0:09.45 rosmaster
+15517 jcfh      30  10 1174356  26192  13660 S   1.0  0.7   0:00.43 record
+   17 root      rt   0       0      0      0 S   0.5  0.0   0:00.40 migration/2
+   48 root      rt   0       0      0      0 S   0.5  0.0   0:01.93 cfinteract+
+  103 root     -51   0       0      0      0 S   0.5  0.0   0:01.41 irq/46-ff6+
+  141 root      -2   0       0      0      0 S   0.5  0.0   0:02.19 mmcqd/1
+  266 systemd+  20   0   10428   4596   4040 S   0.5  0.1   0:02.53 systemd-re+
+14698 jcfh      20   0  299696  62696  10416 S   0.5  1.6   0:01.40 roslaunch
+14731 jcfh      20   0  272900  17416   8488 S   0.5  0.4   0:00.33 rosout
+15973 jcfh      20   0  298836  62052  10580 S   0.5  1.6   0:01.12 roslaunch
+15975 jcfh      20   0  298836  61392   9904 S   0.5  1.6   0:01.11 roslaunch
+    1 root      20   0   13056   7324   5612 S   0.0  0.2   0:02.34 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kthreadd
+    3 root      20   0       0      0      0 S   0.0  0.0   0:00.24 ksoftirqd/0
+    4 root      20   0       0      0      0 S   0.0  0.0   0:00.98 kworker/0:0
+    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+
+    6 root      20   0       0      0      0 S   0.0  0.0   0:06.90 kworker/u1+
+    8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh
+    9 root      rt   0       0      0      0 S   0.0  0.0   0:00.50 migration/0
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 watchdog/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/1
+   12 root      rt   0       0      0      0 S   0.0  0.0   0:00.42 migration/1
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.04 ksoftirqd/1
+   14 root      20   0       0      0      0 S   0.0  0.0   0:00.05 kworker/1:0
+   15 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:+
+   16 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/2
+   18 root      20   0       0      0      0 S   0.0  0.0   0:00.03 ksoftirqd/2
+   20 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+
+   21 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/3
+   22 root      rt   0       0      0      0 S   0.0  0.0   0:00.40 migration/3
+   23 root      20   0       0      0      0 S   0.0  0.0   0:00.03 ksoftirqd/3
+   25 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:+
+   26 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/4
+   27 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/4
+   28 root      20   0       0      0      0 S   0.0  0.0   0:00.08 ksoftirqd/4
+   30 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/4:+
+   31 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/5
+   32 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/5
+   33 root      20   0       0      0      0 S   0.0  0.0   0:00.09 ksoftirqd/5
+   35 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/5:+
+   36 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs
+   37 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 netns
+   38 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 perf
+   39 root      20   0       0      0      0 S   0.0  0.0   0:00.00 khungtaskd
+   40 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 writeback
+   41 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 crypto
+   42 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   43 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kblockd
+   45 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ata_sff
+   46 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 devfreq_wq
+   47 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 cfg80211
+   50 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 rpciod
+   65 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kswapd0
+   66 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vmstat
+   67 root      20   0       0      0      0 S   0.0  0.0   0:00.00 fsnotify_m+
+   68 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 SquashFS r+
+   69 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 nfsiod
+   70 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 xfsalloc
+   71 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 xfs_mru_ca+
+  101 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vcodec
+  102 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/47-ff6+
+  104 root      20   0       0      0      0 S   0.0  0.0   0:00.10 kworker/4:1
+  105 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vcodec
+  106 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/49-ff6+
+  107 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hpd_queue
+  108 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/64-ff9+
+  109 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cec-dw_hdmi
+  110 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/64-dw-+
+  111 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  112 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  113 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  114 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  115 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  116 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  117 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  118 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  119 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  120 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  121 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 nvme
+  122 root      20   0       0      0      0 S   0.0  0.0   0:00.00 spi32766
+  125 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 libertastf
+  126 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 uether
+  127 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 goodix_wq
+  128 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/120-rk+
+  129 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 fusb302_wq
+  130 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/104-fu+
+  131 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/39-roc+
+  132 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 btudpwork
+  133 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 btfwwork
+  134 root      20   0       0      0      0 S   0.0  0.0   0:00.34 kworker/5:2
+  135 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/26-mmc1
+  137 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/1:2
+  138 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kworker/2:1
+  139 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kworker/3:1
+  140 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  142 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  143 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1boo+
+  144 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  145 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1boo+
+  146 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  147 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1rpmb
+  148 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ipv6_addrc+
+  149 root      10 -10       0      0      0 S   0.0  0.0   0:00.00 krfcommd
+  151 root     -51   0       0      0      0 S   0.0  0.0   0:00.80 irq/52-rga
+  152 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 deferwq
+  153 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/258-ro+
+  154 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/259-ro+
+  155 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/260-ro+
+  156 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/261-ro+
+  158 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 gpu_power_+
+  159 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/u1+
+  161 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kbase_job_+
+  165 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/83-hea+
+  168 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hci0
+  169 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hci0
+  171 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kworker/4:2
+  173 root       0 -20       0      0      0 S   0.0  0.0   0:00.15 kworker/1:+
+  174 root      20   0       0      0      0 S   0.0  0.0   0:00.16 jbd2/mmcbl+
+  175 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ext4-rsv-c+
+  199 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+
+  200 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/4:+
+  209 root      20   0   14116   3324   2368 S   0.0  0.1   0:00.30 systemd-ud+
+  216 systemd+  20   0   19836   5152   4432 S   0.0  0.1   0:00.34 systemd-ne+
+  235 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/5:+
+  236 root       0 -20       0      0      0 S   0.0  0.0   0:00.01 kworker/0:+
+  237 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:+
+  262 root      20   0    9548   5712   5100 S   0.0  0.1   0:00.09 wpa_suppli+
+  267 62583     20   0   83744   2608   2080 S   0.0  0.1   0:00.22 systemd-ti+
+  272 root      20   0    7064   2516   2288 S   0.0  0.1   0:00.00 cron
+  274 message+  20   0    6436   3652   3132 S   0.0  0.1   0:00.06 dbus-daemon
+  276 root      20   0    9800   4716   4136 S   0.0  0.1   0:00.03 systemd-lo+
+  277 root      20   0    9412   2196   1720 S   0.0  0.1   0:00.05 wpa_suppli+
+  290 root     -51   0       0      0      0 S   0.0  0.0   0:00.81 irq/232-dw+
+  300 root      20   0    5956   1568   1440 S   0.0  0.0   0:00.01 agetty
+  301 root      20   0    5732   1996   1864 S   0.0  0.1   0:00.00 agetty
+  303 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/3:3
+  305 root      20   0   10412   5496   4776 S   0.0  0.1   0:00.10 sshd
+ 4637 root      20   0       0      0      0 S   0.0  0.0   0:00.20 kworker/5:0
+ 4678 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/0:2
+ 7227 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/2:0
+10648 root      20   0       0      0      0 S   0.0  0.0   0:00.13 kworker/5:1
+13096 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/0:1
+14560 root      20   0   11488   5756   4848 S   0.0  0.1   0:00.09 sshd
+14577 jcfh      20   0   11488   2904   1996 S   0.0  0.1   0:00.00 sshd
+14579 jcfh      20   0    7244   3372   2480 S   0.0  0.1   0:00.05 bash
+14637 jcfh      20   0    7576   1016    836 S   0.0  0.0   0:00.05 vmstat
+14784 jcfh      20   0    6584   2752   2520 S   0.0  0.1   0:00.00 bash
+14786 jcfh      20   0    6584   2860   2628 S   0.0  0.1   0:00.01 bash
+14793 jcfh      20   0    6584   2760   2528 S   0.0  0.1   0:00.01 bash
+15130 jcfh      30  10   79880  59792  10796 S   0.0  1.5   0:00.95 rosbag
+15139 jcfh      30  10   79884  59692  10700 S   0.0  1.5   0:00.88 rosbag
+16203 jcfh      20   0  299860  62412  10056 S   0.0  1.6   0:01.49 roslaunch
+
+top - 05:24:40 up 15 min,  0 users,  load average: 8.42, 6.85, 3.94
+Tasks: 177 total,   4 running, 173 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 42.8 us, 26.8 sy,  2.9 ni, 25.4 id,  0.1 wa,  0.0 hi,  2.0 si,  0.0 st
+KiB Mem :  3935960 total,  2307992 free,  1051820 used,   576148 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  2839420 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+15992 jcfh      20   0  822276  32688  18552 S  61.8  0.8   0:43.83 cartograph+
+16139 jcfh      20   0 1421320 154800  55892 S  61.8  3.9   0:42.81 python2
+16261 jcfh      20   0 1700968 153992  38900 S  56.9  3.9   0:38.08 shoot_with+
+16138 jcfh      20   0  504300  55120  31904 S  56.4  1.4   0:41.47 usb_cam_no+
+14633 jcfh      20   0 1493924  99296  11860 S  53.9  2.5   0:40.58 python2
+14632 jcfh      20   0 1334188  83252  10476 S  38.2  2.1   0:27.78 python2
+15532 jcfh      30  10 1174836  27012  13620 S  23.0  0.7   0:17.08 record
+14783 jcfh      20   0 1048716  50288  19028 R  19.6  1.3   0:15.64 mavros_node
+14782 jcfh      20   0  494416  18160   8996 S  17.6  0.5   0:12.66 rplidarNode
+16260 jcfh      20   0  744624  33412  16460 S  12.7  0.8   0:08.72 move_base
+15740 jcfh      20   0  643016  18856   9664 S   8.8  0.5   0:06.72 location_n+
+14751 jcfh      30  10  526356  68236  10216 S   6.4  1.7   0:09.62 python2
+  611 root      20   0  324428  11996   2508 S   3.9  0.3   0:29.51 npu_transf+
+  157 root      20   0       0      0      0 S   2.9  0.0   0:09.48 kworker/u1+
+ 7272 root      20   0       0      0      0 R   2.9  0.0   0:08.04 kworker/u1+
+10548 root       0 -20       0      0      0 S   2.5  0.0   0:07.30 kworker/u1+
+14800 jcfh      20   0  282548  18552   9368 S   2.5  0.5   0:01.89 static_tra+
+14634 jcfh      20   0    9140   3164   2596 R   2.0  0.1   0:01.30 top
+  194 root      19  -1   59032  29732  28968 S   1.5  0.8   0:09.62 systemd-jo+
+15993 jcfh      20   0  367460  25400  14112 S   1.5  0.6   0:00.94 cartograph+
+    7 root      20   0       0      0      0 R   1.0  0.0   0:05.52 rcu_sched
+  162 root      20   0       0      0      0 S   1.0  0.0   0:10.42 kworker/u1+
+15517 jcfh      30  10 1174356  26192  13660 S   1.0  0.7   0:00.75 record
+    4 root      20   0       0      0      0 S   0.5  0.0   0:01.05 kworker/0:0
+   17 root      rt   0       0      0      0 S   0.5  0.0   0:00.43 migration/2
+  103 root     -51   0       0      0      0 S   0.5  0.0   0:01.52 irq/46-ff6+
+  151 root     -51   0       0      0      0 S   0.5  0.0   0:00.86 irq/52-rga
+  266 systemd+  20   0   10428   4596   4040 S   0.5  0.1   0:02.62 systemd-re+
+  289 root      20   0       0      0      0 S   0.5  0.0   0:31.85 RTW_CMD_TH+
+14637 jcfh      20   0    7576   1016    836 S   0.5  0.0   0:00.07 vmstat
+14698 jcfh      20   0  299696  62696  10416 S   0.5  1.6   0:01.55 roslaunch
+14714 jcfh      20   0  666140  61748   9844 S   0.5  1.6   0:09.83 rosmaster
+14731 jcfh      20   0  272900  17416   8488 S   0.5  0.4   0:00.45 rosout
+15973 jcfh      20   0  298836  62052  10580 S   0.5  1.6   0:01.26 roslaunch
+15975 jcfh      20   0  298836  61392   9904 S   0.5  1.6   0:01.25 roslaunch
+16203 jcfh      20   0  299860  62412  10056 S   0.5  1.6   0:01.63 roslaunch
+    1 root      20   0   13056   7324   5612 S   0.0  0.2   0:02.35 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kthreadd
+    3 root      20   0       0      0      0 S   0.0  0.0   0:00.25 ksoftirqd/0
+    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+
+    6 root      20   0       0      0      0 S   0.0  0.0   0:06.90 kworker/u1+
+    8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh
+    9 root      rt   0       0      0      0 S   0.0  0.0   0:00.53 migration/0
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 watchdog/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/1
+   12 root      rt   0       0      0      0 S   0.0  0.0   0:00.45 migration/1
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.05 ksoftirqd/1
+   14 root      20   0       0      0      0 S   0.0  0.0   0:00.05 kworker/1:0
+   15 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:+
+   16 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/2
+   18 root      20   0       0      0      0 S   0.0  0.0   0:00.03 ksoftirqd/2
+   20 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+
+   21 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/3
+   22 root      rt   0       0      0      0 S   0.0  0.0   0:00.43 migration/3
+   23 root      20   0       0      0      0 S   0.0  0.0   0:00.03 ksoftirqd/3
+   25 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:+
+   26 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/4
+   27 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/4
+   28 root      20   0       0      0      0 S   0.0  0.0   0:00.09 ksoftirqd/4
+   30 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/4:+
+   31 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/5
+   32 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/5
+   33 root      20   0       0      0      0 S   0.0  0.0   0:00.09 ksoftirqd/5
+   35 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/5:+
+   36 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs
+   37 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 netns
+   38 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 perf
+   39 root      20   0       0      0      0 S   0.0  0.0   0:00.00 khungtaskd
+   40 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 writeback
+   41 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 crypto
+   42 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   43 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kblockd
+   45 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ata_sff
+   46 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 devfreq_wq
+   47 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 cfg80211
+   48 root      rt   0       0      0      0 S   0.0  0.0   0:01.98 cfinteract+
+   50 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 rpciod
+   65 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kswapd0
+   66 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vmstat
+   67 root      20   0       0      0      0 S   0.0  0.0   0:00.00 fsnotify_m+
+   68 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 SquashFS r+
+   69 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 nfsiod
+   70 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 xfsalloc
+   71 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 xfs_mru_ca+
+  101 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vcodec
+  102 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/47-ff6+
+  104 root      20   0       0      0      0 S   0.0  0.0   0:00.10 kworker/4:1
+  105 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vcodec
+  106 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/49-ff6+
+  107 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hpd_queue
+  108 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/64-ff9+
+  109 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cec-dw_hdmi
+  110 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/64-dw-+
+  111 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  112 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  113 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  114 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  115 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  116 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  117 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  118 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  119 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  120 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  121 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 nvme
+  122 root      20   0       0      0      0 S   0.0  0.0   0:00.00 spi32766
+  125 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 libertastf
+  126 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 uether
+  127 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 goodix_wq
+  128 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/120-rk+
+  129 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 fusb302_wq
+  130 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/104-fu+
+  131 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/39-roc+
+  132 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 btudpwork
+  133 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 btfwwork
+  134 root      20   0       0      0      0 S   0.0  0.0   0:00.34 kworker/5:2
+  135 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/26-mmc1
+  137 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/1:2
+  138 root      20   0       0      0      0 S   0.0  0.0   0:00.03 kworker/2:1
+  139 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kworker/3:1
+  140 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  141 root      -2   0       0      0      0 S   0.0  0.0   0:02.23 mmcqd/1
+  142 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  143 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1boo+
+  144 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  145 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1boo+
+  146 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  147 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1rpmb
+  148 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ipv6_addrc+
+  149 root      10 -10       0      0      0 S   0.0  0.0   0:00.00 krfcommd
+  152 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 deferwq
+  153 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/258-ro+
+  154 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/259-ro+
+  155 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/260-ro+
+  156 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/261-ro+
+  158 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 gpu_power_+
+  159 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/u1+
+  161 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kbase_job_+
+  165 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/83-hea+
+  168 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hci0
+  169 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hci0
+  171 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kworker/4:2
+  173 root       0 -20       0      0      0 S   0.0  0.0   0:00.15 kworker/1:+
+  174 root      20   0       0      0      0 S   0.0  0.0   0:00.16 jbd2/mmcbl+
+  175 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ext4-rsv-c+
+  199 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+
+  200 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/4:+
+  209 root      20   0   14116   3324   2368 S   0.0  0.1   0:00.30 systemd-ud+
+  216 systemd+  20   0   19836   5152   4432 S   0.0  0.1   0:00.34 systemd-ne+
+  235 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/5:+
+  236 root       0 -20       0      0      0 S   0.0  0.0   0:00.01 kworker/0:+
+  237 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:+
+  262 root      20   0    9548   5712   5100 S   0.0  0.1   0:00.09 wpa_suppli+
+  267 62583     20   0   83744   2608   2080 S   0.0  0.1   0:00.22 systemd-ti+
+  272 root      20   0    7064   2516   2288 S   0.0  0.1   0:00.00 cron
+  274 message+  20   0    6436   3652   3132 S   0.0  0.1   0:00.07 dbus-daemon
+  276 root      20   0    9800   4716   4136 S   0.0  0.1   0:00.03 systemd-lo+
+  277 root      20   0    9412   2196   1720 S   0.0  0.1   0:00.05 wpa_suppli+
+  290 root     -51   0       0      0      0 S   0.0  0.0   0:00.82 irq/232-dw+
+  300 root      20   0    5956   1568   1440 S   0.0  0.0   0:00.01 agetty
+  301 root      20   0    5732   1996   1864 S   0.0  0.1   0:00.00 agetty
+  303 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/3:3
+  305 root      20   0   10412   5496   4776 S   0.0  0.1   0:00.10 sshd
+ 4637 root      20   0       0      0      0 S   0.0  0.0   0:00.20 kworker/5:0
+ 4678 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/0:2
+ 7227 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/2:0
+10648 root      20   0       0      0      0 S   0.0  0.0   0:00.15 kworker/5:1
+13096 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/0:1
+14560 root      20   0   11488   5756   4848 S   0.0  0.1   0:00.09 sshd
+14577 jcfh      20   0   11488   2904   1996 S   0.0  0.1   0:00.00 sshd
+14579 jcfh      20   0    7244   3372   2480 S   0.0  0.1   0:00.05 bash
+14784 jcfh      20   0    6584   2752   2520 S   0.0  0.1   0:00.00 bash
+14786 jcfh      20   0    6584   2860   2628 S   0.0  0.1   0:00.01 bash
+14793 jcfh      20   0    6584   2760   2528 S   0.0  0.1   0:00.01 bash
+15130 jcfh      30  10   79880  59792  10796 S   0.0  1.5   0:00.95 rosbag
+15139 jcfh      30  10   79884  59692  10700 S   0.0  1.5   0:00.88 rosbag
+17280 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/3:0
+17281 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/3:2
+
+top - 05:25:15 up 16 min,  0 users,  load average: 8.76, 7.13, 4.14
+Tasks: 176 total,   3 running, 173 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 42.7 us, 27.3 sy,  3.9 ni, 24.0 id,  0.0 wa,  0.0 hi,  2.1 si,  0.0 st
+KiB Mem :  3935960 total,  2283368 free,  1055136 used,   597456 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  2836104 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+16261 jcfh      20   0 1700968 153992  38900 S  61.2  3.9   0:58.88 shoot_with+
+16138 jcfh      20   0  504300  55176  31904 S  58.7  1.4   1:02.37 usb_cam_no+
+14633 jcfh      20   0 1493924  99336  11860 S  57.3  2.5   0:59.19 python2
+15992 jcfh      20   0  822408  32952  18552 S  57.3  0.8   1:04.88 cartograph+
+16139 jcfh      20   0 1421320 153748  55892 S  56.3  3.9   1:03.69 python2
+14632 jcfh      20   0 1337576  87740  10476 S  38.3  2.2   0:40.96 python2
+15532 jcfh      30  10 1174836  27156  13620 S  22.8  0.7   0:25.04 record
+14783 jcfh      20   0 1048716  50288  19028 S  19.9  1.3   0:22.54 mavros_node
+14782 jcfh      20   0  494416  18160   8996 S  17.0  0.5   0:18.43 rplidarNode
+16260 jcfh      20   0  744624  33412  16460 S  12.1  0.8   0:13.00 move_base
+14751 jcfh      30  10  526356  68236  10216 S  11.2  1.7   0:13.44 python2
+15740 jcfh      20   0  643016  18856   9664 S   8.7  0.5   0:09.79 location_n+
+  611 root      20   0  324428  11996   2508 S   4.9  0.3   0:30.97 npu_transf+
+  162 root      20   0       0      0      0 R   2.4  0.0   0:11.12 kworker/u1+
+10548 root       0 -20       0      0      0 S   2.4  0.0   0:08.18 kworker/u1+
+14800 jcfh      20   0  282548  18552   9368 S   2.4  0.5   0:02.73 static_tra+
+  157 root      20   0       0      0      0 S   1.9  0.0   0:10.36 kworker/u1+
+  194 root      19  -1   67224  31936  31172 S   1.9  0.8   0:10.23 systemd-jo+
+ 7272 root      20   0       0      0      0 S   1.9  0.0   0:08.75 kworker/u1+
+14714 jcfh      20   0  666140  61748   9844 S   1.9  1.6   0:10.30 rosmaster
+14634 jcfh      20   0    9140   3164   2596 R   1.5  0.1   0:01.89 top
+  266 systemd+  20   0   10428   4596   4040 S   1.0  0.1   0:02.74 systemd-re+
+15993 jcfh      20   0  367460  25400  14112 S   1.0  0.6   0:01.35 cartograph+
+    7 root      20   0       0      0      0 S   0.5  0.0   0:05.79 rcu_sched
+  103 root     -51   0       0      0      0 S   0.5  0.0   0:01.60 irq/46-ff6+
+  151 root     -51   0       0      0      0 S   0.5  0.0   0:00.91 irq/52-rga
+  267 62583     20   0   83744   2608   2080 S   0.5  0.1   0:00.24 systemd-ti+
+  289 root      20   0       0      0      0 S   0.5  0.0   0:32.88 RTW_CMD_TH+
+14698 jcfh      20   0  299696  62696  10416 S   0.5  1.6   0:01.72 roslaunch
+14731 jcfh      20   0  272900  17416   8488 S   0.5  0.4   0:00.56 rosout
+15517 jcfh      30  10 1174356  26192  13660 S   0.5  0.7   0:01.05 record
+15975 jcfh      20   0  298836  61392   9904 S   0.5  1.6   0:01.40 roslaunch
+    1 root      20   0   13056   7324   5612 S   0.0  0.2   0:02.35 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kthreadd
+    3 root      20   0       0      0      0 S   0.0  0.0   0:00.27 ksoftirqd/0
+    4 root      20   0       0      0      0 S   0.0  0.0   0:01.11 kworker/0:0
+    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+
+    6 root      20   0       0      0      0 S   0.0  0.0   0:06.90 kworker/u1+
+    8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh
+    9 root      rt   0       0      0      0 S   0.0  0.0   0:00.57 migration/0
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 watchdog/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/1
+   12 root      rt   0       0      0      0 S   0.0  0.0   0:00.48 migration/1
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.05 ksoftirqd/1
+   14 root      20   0       0      0      0 S   0.0  0.0   0:00.05 kworker/1:0
+   15 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:+
+   16 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/2
+   17 root      rt   0       0      0      0 S   0.0  0.0   0:00.45 migration/2
+   18 root      20   0       0      0      0 S   0.0  0.0   0:00.04 ksoftirqd/2
+   20 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+
+   21 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/3
+   22 root      rt   0       0      0      0 S   0.0  0.0   0:00.46 migration/3
+   23 root      20   0       0      0      0 S   0.0  0.0   0:00.04 ksoftirqd/3
+   25 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:+
+   26 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/4
+   27 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/4
+   28 root      20   0       0      0      0 S   0.0  0.0   0:00.09 ksoftirqd/4
+   30 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/4:+
+   31 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/5
+   32 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/5
+   33 root      20   0       0      0      0 S   0.0  0.0   0:00.09 ksoftirqd/5
+   35 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/5:+
+   36 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs
+   37 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 netns
+   38 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 perf
+   39 root      20   0       0      0      0 S   0.0  0.0   0:00.00 khungtaskd
+   40 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 writeback
+   41 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 crypto
+   42 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   43 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kblockd
+   45 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ata_sff
+   46 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 devfreq_wq
+   47 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 cfg80211
+   48 root      rt   0       0      0      0 R   0.0  0.0   0:02.04 cfinteract+
+   50 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 rpciod
+   65 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kswapd0
+   66 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vmstat
+   67 root      20   0       0      0      0 S   0.0  0.0   0:00.00 fsnotify_m+
+   68 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 SquashFS r+
+   69 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 nfsiod
+   70 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 xfsalloc
+   71 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 xfs_mru_ca+
+  101 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vcodec
+  102 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/47-ff6+
+  104 root      20   0       0      0      0 S   0.0  0.0   0:00.10 kworker/4:1
+  105 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vcodec
+  106 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/49-ff6+
+  107 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hpd_queue
+  108 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/64-ff9+
+  109 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cec-dw_hdmi
+  110 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/64-dw-+
+  111 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  112 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  113 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  114 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  115 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  116 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  117 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  118 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  119 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  120 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  121 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 nvme
+  122 root      20   0       0      0      0 S   0.0  0.0   0:00.00 spi32766
+  125 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 libertastf
+  126 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 uether
+  127 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 goodix_wq
+  128 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/120-rk+
+  129 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 fusb302_wq
+  130 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/104-fu+
+  131 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/39-roc+
+  132 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 btudpwork
+  133 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 btfwwork
+  134 root      20   0       0      0      0 S   0.0  0.0   0:00.34 kworker/5:2
+  135 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/26-mmc1
+  137 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/1:2
+  138 root      20   0       0      0      0 S   0.0  0.0   0:00.03 kworker/2:1
+  139 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kworker/3:1
+  140 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  141 root      -2   0       0      0      0 S   0.0  0.0   0:02.29 mmcqd/1
+  142 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  143 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1boo+
+  144 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  145 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1boo+
+  146 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  147 root      -2   0       0      0      0 S   0.0  0.0   0:00.00 mmcqd/1rpmb
+  148 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ipv6_addrc+
+  149 root      10 -10       0      0      0 S   0.0  0.0   0:00.00 krfcommd
+  152 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 deferwq
+  153 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/258-ro+
+  154 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/259-ro+
+  155 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/260-ro+
+  156 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/261-ro+
+  158 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 gpu_power_+
+  159 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/u1+
+  161 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kbase_job_+
+  165 root     -51   0       0      0      0 S   0.0  0.0   0:00.00 irq/83-hea+
+  168 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hci0
+  169 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 hci0
+  171 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kworker/4:2
+  173 root       0 -20       0      0      0 S   0.0  0.0   0:00.15 kworker/1:+
+  174 root      20   0       0      0      0 S   0.0  0.0   0:00.17 jbd2/mmcbl+
+  175 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ext4-rsv-c+
+  199 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+
+  200 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/4:+
+  209 root      20   0   14116   3324   2368 S   0.0  0.1   0:00.30 systemd-ud+
+  216 systemd+  20   0   19836   5152   4432 S   0.0  0.1   0:00.34 systemd-ne+
+  235 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/5:+
+  236 root       0 -20       0      0      0 S   0.0  0.0   0:00.01 kworker/0:+
+  237 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:+
+  262 root      20   0    9548   5712   5100 S   0.0  0.1   0:00.09 wpa_suppli+
+  272 root      20   0    7064   2516   2288 S   0.0  0.1   0:00.00 cron
+  274 message+  20   0    6436   3652   3132 S   0.0  0.1   0:00.07 dbus-daemon
+  276 root      20   0    9800   4716   4136 S   0.0  0.1   0:00.03 systemd-lo+
+  277 root      20   0    9412   2196   1720 S   0.0  0.1   0:00.05 wpa_suppli+
+  290 root     -51   0       0      0      0 S   0.0  0.0   0:00.83 irq/232-dw+
+  300 root      20   0    5956   1568   1440 S   0.0  0.0   0:00.01 agetty
+  301 root      20   0    5732   1996   1864 S   0.0  0.1   0:00.00 agetty
+  303 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/3:3
+  305 root      20   0   10412   5496   4776 S   0.0  0.1   0:00.10 sshd
+ 4678 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/0:2
+ 7227 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/2:0
+10648 root      20   0       0      0      0 S   0.0  0.0   0:00.17 kworker/5:1
+13096 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/0:1
+14560 root      20   0   11488   5756   4848 S   0.0  0.1   0:00.09 sshd
+14577 jcfh      20   0   11488   2904   1996 S   0.0  0.1   0:00.00 sshd
+14579 jcfh      20   0    7244   3372   2480 S   0.0  0.1   0:00.05 bash
+14637 jcfh      20   0    7576   1016    836 S   0.0  0.0   0:00.10 vmstat
+14784 jcfh      20   0    6584   2752   2520 S   0.0  0.1   0:00.00 bash
+14786 jcfh      20   0    6584   2860   2628 S   0.0  0.1   0:00.01 bash
+14793 jcfh      20   0    6584   2760   2528 S   0.0  0.1   0:00.01 bash
+15130 jcfh      30  10   79880  59792  10796 S   0.0  1.5   0:00.95 rosbag
+15139 jcfh      30  10   79884  59692  10700 S   0.0  1.5   0:00.88 rosbag
+15973 jcfh      20   0  298836  62052  10580 S   0.0  1.6   0:01.39 roslaunch
+16203 jcfh      20   0  299860  62412  10056 S   0.0  1.6   0:01.76 roslaunch
+17280 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/3:0
+17281 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/3:2
+

@@ -1,0 +1,12 @@
+{
+  "bags_closed": true, 
+  "core_failure_recorded": true, 
+  "master_kept_running": true, 
+  "media_failure_kept_core": true, 
+  "passed": true, 
+  "private_master": "127.0.0.1:11339", 
+  "session": "/home/jcfh/logging-benchmark/fault-probe/sessions/20261028-053207-2544814b", 
+  "synthetic_setpoints_only": true, 
+  "synthetic_setpoints_recorded": 220, 
+  "unrelated_process_kept_running": true
+}

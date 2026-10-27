@@ -34,9 +34,11 @@ def checksum(data):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--device', default='/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00')
-    parser.add_argument('--mode', choices=['status', 'preflight', 'buzzer', 'gps-persist', 'reboot'], default='status')
+    parser.add_argument('--mode', choices=['status', 'preflight', 'buzzer', 'logging', 'gps-persist', 'reboot'], default='status')
     args = parser.parse_args()
     commands = {
+        'logging': ['\n', 'ver all\n', 'logger status\n', 'param show SDLOG_MODE\n',
+                    'param show SDLOG_PROFILE\n', 'ls /fs/microsd/log\n'],
         'buzzer': ['\n', 'listener tune_control -n 1\n', 'commander check\n',
             'listener battery_status -n 1\n', 'listener vehicle_status -n 1\n',
             'listener vehicle_status_flags -n 1\n', 'listener input_rc -n 1\n',

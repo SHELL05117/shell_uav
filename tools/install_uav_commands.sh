@@ -4,7 +4,7 @@ set -eo pipefail
 uav_tools="$(cd -- "$(dirname -- "$0")" && pwd)"
 uav_dest="$HOME/.local/share/uav"
 mkdir -p "$uav_dest" "$HOME/.local/bin" "$HOME/.config/uav"
-install -m 755 "$uav_tools/uav" "$uav_tools/uav_start.py" "$uav_dest/"
+install -m 755 "$uav_tools/uav" "$uav_tools/uav_start.py" "$uav_tools/uav_log.py" "$uav_tools/uav_perf.py" "$uav_tools/uav_log_report.py" "$uav_dest/"
 install -m 644 "$uav_tools/uav_env.sh" "$uav_dest/"
 ln -sfn "$uav_dest/uav" "$HOME/.local/bin/uav"
 python3 - <<'PY'

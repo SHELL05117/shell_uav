@@ -1,0 +1,43 @@
+{
+  "backup_files_match": true,
+  "function_files_absent": true,
+  "removed": [
+    "/home/jcfh/catkin_ws/src/navigation_2d/include/audit_json.h",
+    "/home/jcfh/catkin_ws/tools/uav_log.py",
+    "/home/jcfh/catkin_ws/tools/uav_log.pyc",
+    "/home/jcfh/catkin_ws/tools/uav_perf.py",
+    "/home/jcfh/catkin_ws/tools/uav_perf.pyc",
+    "/home/jcfh/catkin_ws/tools/uav_log_report.py",
+    "/home/jcfh/catkin_ws/tools/uav_logging_benchmark.py",
+    "/home/jcfh/catkin_ws/tools/uav_logging_fault_probe.py",
+    "/home/jcfh/catkin_ws/tools/test_uav_logging.py",
+    "/home/jcfh/catkin_ws/tools/dwa_mission_probe.py",
+    "/home/jcfh/catkin_ws/tools/deployment-flight-logging.json",
+    "/home/jcfh/catkin_ws/tools/run_uav_logging_verification.sh",
+    "/home/jcfh/.local/share/uav/uav_log.py",
+    "/home/jcfh/.local/share/uav/uav_log.pyc",
+    "/home/jcfh/.local/share/uav/uav_perf.py",
+    "/home/jcfh/.local/share/uav/uav_perf.pyc",
+    "/home/jcfh/.local/share/uav/uav_log_report.py",
+    "/home/jcfh/catkin_ws/tools/__pycache__/uav_log.cpython-36.pyc",
+    "/home/jcfh/catkin_ws/tools/__pycache__/uav_perf.cpython-36.pyc",
+    "/home/jcfh/catkin_ws/tools/__pycache__/uav_log_report.cpython-36.pyc"
+  ],
+  "restored": {
+    ".local/share/uav/uav": "dd2e7b2683f41dc4f7115c645b968e24002791317d81590ceceaf03797edb5cd",
+    ".local/share/uav/uav_env.sh": "70ee98d1c3f38e01cb58701e81d8ae3fb13f25b1687e7726a2904d8844f1b788",
+    ".local/share/uav/uav_start.py": "7d349fd8a8dd7aa48f2f788aa98fe5f857d4dfd062eb526495930507b8efab1d",
+    "catkin_ws/devel/lib/location/location_node": "3c883c87df8d528bf0dd00f82fba6e6fa9ff022560ccb42a818833c782a24b12",
+    "catkin_ws/devel/lib/navigation_2d/shoot_with_move_base_node": "e1c5e29da9ce687f067867a3c3c12a1eeee83080a0d3d3f0a4da7dd3eb5a5d28",
+    "catkin_ws/src/location/scripts/monitor_jpeg.py": "49cb2d5942b257617347c8ef14e8721268defcb7de4de2adaa376d6408c3f84d",
+    "catkin_ws/src/location/src/location_with_ftmini.cpp": "7017f0415f5395c5f15bf90f0f9124e47e5bd8d885e7c1d4bd8b19a3c9e61a2c",
+    "catkin_ws/src/navigation_2d/include/detect.h": "397711fc142f8ab673a6d39771454ad5d4f8ff74a15b5cfaa45330f02b587664",
+    "catkin_ws/src/navigation_2d/include/mission_with_move_base.h": "0dc01d0722f485f9403d679a207235f4dc4e861109b2a355421544297abf9155",
+    "catkin_ws/src/navigation_2d/src/detect.cpp": "9d95aab82f6976850f3cfae78ad039f43b55e6b50448e1cb6bd5a946c5e80251",
+    "catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp": "01eab407cc619db1be18f5689dff54a35123c708528810462d7591d2e1c9577b",
+    "catkin_ws/tools/install_uav_commands.sh": "688dc259618d3f7730acb8165e737a74172f58b31526bf2d46fa88bb8b06ea3e",
+    "catkin_ws/tools/uav": "dd2e7b2683f41dc4f7115c645b968e24002791317d81590ceceaf03797edb5cd",
+    "catkin_ws/tools/uav_start.py": "7d349fd8a8dd7aa48f2f788aa98fe5f857d4dfd062eb526495930507b8efab1d"
+  },
+  "source": "USB trial backup"
+}

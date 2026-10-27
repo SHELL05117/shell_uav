@@ -1,0 +1,313 @@
+{
+  "retain_onboard": false,
+  "reasons": [
+    "Whole-system mean CPU increase exceeds 5 percentage points",
+    "Available-memory decrease exceeds 150 MiB"
+  ],
+  "rows": {
+    "off-1": {
+      "control_max_gap_ms": 31.14533399997299,
+      "control_p99_gap_ms": 24.51849999999922,
+      "cpu_busy_mean": 66.67254959118019,
+      "end_wall": 1793135877.232629,
+      "forbidden_outputs": [],
+      "ground_only": true,
+      "inference_mean_s": 0.668485331794118,
+      "inference_p99_s": 0.683281375,
+      "inference_rejected": 0,
+      "iowait_p99": 0.1607717041800643,
+      "logging": false,
+      "max_temperature_c": 45.625,
+      "min_available_mib": 2961.5234375,
+      "passed": true,
+      "readiness_healthy_fraction": 1.0,
+      "seconds": 90,
+      "session": null,
+      "start_wall": 1793135786.266097,
+      "topics": {
+        "/camera/image_raw": {
+          "count": 2727,
+          "hz": 30.002201188641862,
+          "max_gap": 0.06999999999999318,
+          "p99_gap": 0.05000000000001137
+        },
+        "/mavros/imu/data": {
+          "count": 4545,
+          "hz": 50.0,
+          "max_gap": 0.030000000000086402,
+          "p99_gap": 0.029999999999972715
+        },
+        "/mavros/local_position/pose": {
+          "count": 2727,
+          "hz": 29.99889952679652,
+          "max_gap": 0.05000000000001137,
+          "p99_gap": 0.040000000000020464
+        },
+        "/mavros/vision_pose/pose": {
+          "count": 1818,
+          "hz": 19.999999999999996,
+          "max_gap": 0.06999999999999318,
+          "p99_gap": 0.05000000000006821
+        },
+        "/mission/audit": {
+          "count": 909,
+          "hz": 10.000000000000005,
+          "max_gap": 0.11000000000001364,
+          "p99_gap": 0.11000000000001364
+        },
+        "/mission/inference": {
+          "count": 136,
+          "hz": 1.4951821907187945,
+          "max_gap": 0.6900000000000546,
+          "p99_gap": 0.6899999999999977
+        },
+        "/mission/readiness": {
+          "count": 909,
+          "hz": 10.000000000000005,
+          "max_gap": 0.11000000000001364,
+          "p99_gap": 0.11000000000001364
+        },
+        "/scan": {
+          "count": 910,
+          "hz": 10.009910802775025,
+          "max_gap": 0.11000000000001364,
+          "p99_gap": 0.11000000000001364
+        }
+      }
+    },
+    "on-optimized-1": {
+      "control_max_gap_ms": 28.48849999998038,
+      "control_p99_gap_ms": 24.74320799990437,
+      "cpu_busy_mean": 77.0952933226784,
+      "end_wall": 1793136183.736135,
+      "forbidden_outputs": [],
+      "ground_only": true,
+      "inference_mean_s": 0.6714560139111112,
+      "inference_p99_s": 0.691118167,
+      "inference_rejected": 0,
+      "iowait_p99": 0.31695721077654515,
+      "logging": true,
+      "max_temperature_c": 46.25,
+      "min_available_mib": 2760.7890625,
+      "passed": true,
+      "readiness_healthy_fraction": 1.0,
+      "seconds": 90,
+      "session": {
+        "directory": "/home/jcfh/uav_flight_logs/20261028-052057-5703768c",
+        "process": {
+          "boot": "de97daab-4cf8-4f4e-a336-8386b8f33152",
+          "pid": 11387,
+          "start": "70627"
+        }
+      },
+      "start_wall": 1793136092.980931,
+      "topics": {
+        "/camera/image_raw": {
+          "count": 2719,
+          "hz": 30.003311623799526,
+          "max_gap": 0.06000000000005912,
+          "p99_gap": 0.05000000000006821
+        },
+        "/mavros/imu/data": {
+          "count": 4532,
+          "hz": 50.0,
+          "max_gap": 0.03999999999996362,
+          "p99_gap": 0.030000000000086402
+        },
+        "/mavros/local_position/pose": {
+          "count": 2720,
+          "hz": 30.00110338739932,
+          "max_gap": 0.05000000000006821,
+          "p99_gap": 0.04000000000007731
+        },
+        "/mavros/vision_pose/pose": {
+          "count": 1813,
+          "hz": 19.999999999999996,
+          "max_gap": 0.06000000000005912,
+          "p99_gap": 0.06000000000005912
+        },
+        "/mission/audit": {
+          "count": 907,
+          "hz": 9.999999999999998,
+          "max_gap": 0.11000000000001364,
+          "p99_gap": 0.10000000000002274
+        },
+        "/mission/inference": {
+          "count": 135,
+          "hz": 1.4878969575838321,
+          "max_gap": 0.7099999999999227,
+          "p99_gap": 0.6999999999999318
+        },
+        "/mission/readiness": {
+          "count": 907,
+          "hz": 9.999999999999998,
+          "max_gap": 0.11000000000001364,
+          "p99_gap": 0.10000000000002274
+        },
+        "/scan": {
+          "count": 907,
+          "hz": 10.008837825894831,
+          "max_gap": 0.11000000000001364,
+          "p99_gap": 0.11000000000001364
+        }
+      }
+    },
+    "on-optimized-2": {
+      "control_max_gap_ms": 30.9653750000507,
+      "control_p99_gap_ms": 24.63208399990435,
+      "cpu_busy_mean": 76.75962163997474,
+      "end_wall": 1793136325.469752,
+      "forbidden_outputs": [],
+      "ground_only": true,
+      "inference_mean_s": 0.6702888876102943,
+      "inference_p99_s": 0.691244459,
+      "inference_rejected": 0,
+      "iowait_p99": 0.15748031496062992,
+      "logging": true,
+      "max_temperature_c": 46.875,
+      "min_available_mib": 2761.25,
+      "passed": true,
+      "readiness_healthy_fraction": 1.0,
+      "seconds": 90,
+      "session": {
+        "directory": "/home/jcfh/uav_flight_logs/20261028-052319-4ed74725",
+        "process": {
+          "boot": "de97daab-4cf8-4f4e-a336-8386b8f33152",
+          "pid": 14751,
+          "start": "84794"
+        }
+      },
+      "start_wall": 1793136234.528635,
+      "topics": {
+        "/camera/image_raw": {
+          "count": 2726,
+          "hz": 30.0011009578333,
+          "max_gap": 0.08000000000004093,
+          "p99_gap": 0.05999999999994543
+        },
+        "/mavros/imu/data": {
+          "count": 4542,
+          "hz": 49.9944952108334,
+          "max_gap": 0.05000000000006821,
+          "p99_gap": 0.030000000000086402
+        },
+        "/mavros/local_position/pose": {
+          "count": 2726,
+          "hz": 29.997798326728304,
+          "max_gap": 0.05000000000006821,
+          "p99_gap": 0.04000000000007731
+        },
+        "/mavros/vision_pose/pose": {
+          "count": 1817,
+          "hz": 19.999999999999986,
+          "max_gap": 0.06000000000005912,
+          "p99_gap": 0.05999999999994543
+        },
+        "/mission/audit": {
+          "count": 908,
+          "hz": 9.999999999999995,
+          "max_gap": 0.12999999999999545,
+          "p99_gap": 0.11000000000001364
+        },
+        "/mission/inference": {
+          "count": 136,
+          "hz": 1.4899017768458225,
+          "max_gap": 0.7000000000000455,
+          "p99_gap": 0.6999999999999318
+        },
+        "/mission/readiness": {
+          "count": 908,
+          "hz": 9.999999999999995,
+          "max_gap": 0.12000000000000455,
+          "p99_gap": 0.11000000000001364
+        },
+        "/scan": {
+          "count": 909,
+          "hz": 10.008818342151685,
+          "max_gap": 0.12000000000000455,
+          "p99_gap": 0.11000000000001364
+        }
+      }
+    },
+    "off-2": {
+      "control_max_gap_ms": 39.35283300006631,
+      "control_p99_gap_ms": 24.378833000128,
+      "cpu_busy_mean": 67.78454418923921,
+      "end_wall": 1793136455.996881,
+      "forbidden_outputs": [],
+      "ground_only": true,
+      "inference_mean_s": 0.6685468697777778,
+      "inference_p99_s": 0.678806626,
+      "inference_rejected": 0,
+      "iowait_p99": 0.16051364365971107,
+      "logging": false,
+      "max_temperature_c": 46.875,
+      "min_available_mib": 2901.46484375,
+      "passed": true,
+      "readiness_healthy_fraction": 1.0,
+      "seconds": 90,
+      "session": null,
+      "start_wall": 1793136365.743819,
+      "topics": {
+        "/camera/image_raw": {
+          "count": 2705,
+          "hz": 29.997781229199067,
+          "max_gap": 0.09999999999990905,
+          "p99_gap": 0.0500000000001819
+        },
+        "/mavros/imu/data": {
+          "count": 4508,
+          "hz": 50.00000000000007,
+          "max_gap": 0.049999999999954525,
+          "p99_gap": 0.029999999999972715
+        },
+        "/mavros/local_position/pose": {
+          "count": 2705,
+          "hz": 30.00110950848778,
+          "max_gap": 0.0500000000001819,
+          "p99_gap": 0.040000000000190994
+        },
+        "/mavros/vision_pose/pose": {
+          "count": 1803,
+          "hz": 20.00000000000002,
+          "max_gap": 0.060000000000172804,
+          "p99_gap": 0.0500000000001819
+        },
+        "/mission/audit": {
+          "count": 902,
+          "hz": 10.00000000000001,
+          "max_gap": 0.12000000000011823,
+          "p99_gap": 0.11000000000012733
+        },
+        "/mission/inference": {
+          "count": 135,
+          "hz": 1.4950351444828742,
+          "max_gap": 0.6899999999998272,
+          "p99_gap": 0.6800000000000637
+        },
+        "/mission/readiness": {
+          "count": 902,
+          "hz": 9.99889024525581,
+          "max_gap": 0.11000000000012733,
+          "p99_gap": 0.11000000000012733
+        },
+        "/scan": {
+          "count": 902,
+          "hz": 10.007775186049098,
+          "max_gap": 0.12000000000011823,
+          "p99_gap": 0.11000000000012733
+        }
+      }
+    }
+  },
+  "off_cpu_mean": 67.2285468902097,
+  "on_cpu_mean": 76.92745748132657,
+  "cpu_delta_percentage_points": 9.69891059111687,
+  "available_memory_decrease_mib": 170.474609375,
+  "control_p99_gap_delta_ms": 0.22470799990514934,
+  "limitations": [
+    "Top/vmstat and ROS observer were present in both arms",
+    "Static disarmed ground scene; no airborne or active-navigation load certification",
+    "High load is a screening rejection; no airborne failure was induced"
+  ]
+}

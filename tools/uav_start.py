@@ -11,13 +11,34 @@ import socket
 import subprocess
 import sys
 import time
+import threading
 
 children = []
+log_directory = None
+log_streams = []
+
+
+def mirror_log(path):
+    # Mirroring can block on a disconnected terminal; child processes write
+    # directly to files and never depend on this expendable daemon thread.
+    with open(path,'rb') as stream:
+        while True:
+            data=stream.read(4096)
+            if data:
+                try: os.write(sys.stdout.fileno(),data)
+                except OSError: return
+            else: time.sleep(.1)
 
 
 def start(args):
     print('+ '+ ' '.join(args)); sys.stdout.flush()
-    p = subprocess.Popen(args, preexec_fn=os.setsid)
+    if log_directory:
+        path=os.path.join(log_directory,'launch-%02d-%d.stdout.log'%(len(children),os.getpid()))
+        stream=open(path,'ab'); log_streams.append(stream)
+        p = subprocess.Popen(args, preexec_fn=os.setsid,stdout=stream,stderr=subprocess.STDOUT)
+        thread=threading.Thread(target=mirror_log,args=(path,)); thread.daemon=True; thread.start()
+    else:
+        p = subprocess.Popen(args, preexec_fn=os.setsid)
     children.append(p)
     return p
 
@@ -117,6 +138,7 @@ def navigation(args, flight=False):
 
 
 def main():
+    global log_directory
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('mode',choices=['a','b','c','check','mission','status','bridge'])
     parser.add_argument('--target',choices=['explosive','flammable','toxic'],default='')
@@ -147,11 +169,24 @@ def main():
         lidar=device('UAV_LIDAR','/dev/serial/by-id/*CP2102*')
         camera=device('UAV_CAMERA','/dev/v4l/by-id/*Camera*video-index0')
         profile=os.environ.get('UAV_HEIGHT_PROFILE',root+'/param/rk_height_reference_20261027.yaml')
+        if os.environ.get('UAV_LOG_DISABLED','0')!='1':
+            try:
+                import uav_log
+                if uav_log.active(): raise RuntimeError('Previous recorder still active')
+                log_directory=uav_log.prepare(args.mode)
+                os.environ['ROS_LOG_DIR']=log_directory+'/ros-logs'
+                print('UAV logs: '+log_directory)
+            except Exception as error:
+                print('UAV LOGGING UNAVAILABLE: '+str(error),file=sys.stderr)
         start(['roslaunch','location','location.launch','open_rviz:=false',
                'fcu_url:='+fcu+':115200','lidar_serial_port:='+lidar,'height_profile:='+profile])
         deadline=time.time()+12
         while time.time()<deadline and not active_nodes(): time.sleep(.2)
         if not active_nodes(): raise RuntimeError('ROS master startup timed out')
+        if log_directory:
+            try: uav_log.launch(log_directory)
+            except Exception as error:
+                print('UAV LOGGING UNAVAILABLE: '+str(error),file=sys.stderr)
         start(['roslaunch','usb_cam','rk_usb_camera.launch','video_device:='+camera,
                'mjpeg_backend:='+os.environ.get('UAV_CAMERA_BACKEND','mpp_rga')])
         start(['roslaunch','location','lichtblick_bridge_readonly.launch','jpeg_relay:=true',
@@ -159,12 +194,23 @@ def main():
         wait_ready()
         print('Foxglove native ROS 1: '+os.environ['ROS_MASTER_URI']+
               '; set client ROS_HOSTNAME to the computer LAN IP; map fixed/display frame=map')
-        if args.mode=='check': navigation(args)
+        if args.mode=='check':
+            navigation(args)
+            if log_directory:
+                try: uav_log.attach('check',vars(args))
+                except Exception as error: print('UAV LOG SNAPSHOT FAILED: '+str(error),file=sys.stderr)
     elif args.mode in ('c','mission'):
         if not nodes: raise RuntimeError('Start uav a first')
         if '/shoot_with_move_base_node' in nodes or '/move_base' in nodes:
             raise RuntimeError('Navigation already running')
         wait_ready(12)
+        try:
+            import uav_log
+            log_directory=uav_log.attach(args.mode,vars(args))
+            if log_directory: os.environ['ROS_LOG_DIR']=log_directory+'/ros-logs'
+            else: print('UAV WARNING: no active flight recorder',file=sys.stderr)
+        except Exception as error:
+            print('UAV LOG ATTACH FAILED: '+str(error),file=sys.stderr)
         navigation(args,args.mode=='mission')
     elif args.mode=='bridge':
         if not nodes: raise RuntimeError('Start data sources first')

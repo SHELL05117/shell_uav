@@ -21,6 +21,7 @@
 
 #include <atomic>
 #include <chrono>
+#include <condition_variable>
 #include <deque>
 #include <map>
 #include <mutex>
@@ -101,6 +102,10 @@ private:
   };
   int expectedChannels() const;
   void asyncLoop();
+  void auditLoop();
+  void queueAudit(const cv::Mat &frame, const std::vector<Detection> &results,
+                  const ros::Time &stamp, uint64_t generation, double duration,
+                  double age, bool accepted, const std::string &error);
   std::vector<Detection> inferImpl(AsyncResult *completed_result);
 
   void imageCallback(const sensor_msgs::ImageConstPtr &msg);
@@ -125,6 +130,14 @@ private:
   ros::NodeHandle nh_;
   ros::Subscriber image_sub_;
   ros::Publisher image_pub_;
+  ros::Publisher audit_pub_, audit_frame_pub_;
+  struct AuditFrame { cv::Mat frame; ros::Time stamp; uint32_t sequence=0; std::string json; };
+  AuditFrame audit_pending_;
+  std::mutex audit_mutex_;
+  std::condition_variable audit_condition_;
+  std::thread audit_worker_;
+  bool audit_pending_valid_=false;
+  uint64_t audit_sequence_=0, audit_overwritten_=0;
   ros::Timer publish_timer_;
 
   mutable std::mutex mutex_;

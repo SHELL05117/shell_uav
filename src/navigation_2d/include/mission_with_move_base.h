@@ -167,6 +167,9 @@ private:
   ros::Subscriber state_sub_, pose_sub_, cmd_vel_sub_, ack_sub_, target_sub_;
   ros::Publisher status_pub_, gpio_cmd_pub_;
   ros::Publisher readiness_pub_;
+  ros::Publisher audit_pub_;
+  double audit_control_last_ = 0.0, audit_control_max_gap_ = 0.0;
+  double audit_control_delay_ = 0.0;
   ros::Timer control_timer_, tick_timer_;
 
   MoveBaseClient move_base_;

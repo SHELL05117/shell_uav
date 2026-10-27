@@ -5,6 +5,7 @@
 #include <mutex>
 #include <stdexcept>
 #include <string>
+#include <sstream>
 #include <ros/ros.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <sensor_msgs/Imu.h>
@@ -53,6 +54,7 @@ public:
     if (!validConfiguration()) throw std::runtime_error("Invalid localization limits or geometry");
     position_pub_ = nh_.advertise<geometry_msgs::PoseStamped>("/mavros/vision_pose/pose", 1);
     status_pub_ = nh_.advertise<std_msgs::String>("status", 1, true);
+    range_audit_pub_ = nh_.advertise<std_msgs::String>("range_audit", 4);
     status("STARTING");
     if (use_range_)
     {
@@ -114,8 +116,18 @@ private:
   {
     if (!location_guard::fresh(stamp.toSec(), ros::Time::now().toSec(), range_timeout_)) return;
     std::lock_guard<std::mutex> lock(input_mutex_);
-    if (!range_gate_.observe(range, stamp.toSec()))
+    const bool accepted=range_gate_.observe(range, stamp.toSec());
+    if (!accepted)
       ROS_WARN_THROTTLE(2.0, "location: range sample rejected (range, jump, or repeated timestamp)");
+    if (range_audit_pub_.getNumSubscribers())
+    {
+      std::ostringstream out; out.precision(16);
+      out << "{\"stamp\":" << stamp.toSec() << ",\"range_m\":";
+      if (std::isfinite(range)) out << range; else out << "null";
+      out << ",\"accepted\":" << (accepted ? "true" : "false")
+          << ",\"accepted_stamp\":" << range_gate_.stamp() << '}';
+      std_msgs::String message; message.data=out.str(); range_audit_pub_.publish(message);
+    }
   }
   void rangeCallback(const sensor_msgs::RangeConstPtr &message)
   {
@@ -203,7 +215,7 @@ private:
   ros::NodeHandle nh_;
   tf2_ros::Buffer buffer_;
   tf2_ros::TransformListener listener_;
-  ros::Publisher position_pub_, status_pub_;
+  ros::Publisher position_pub_, status_pub_, range_audit_pub_;
   ros::Subscriber imu_sub_, range_sub_;
   ros::Timer height_timer_, pose_timer_;
   std::unique_ptr<TFMiniPro> i2c_;

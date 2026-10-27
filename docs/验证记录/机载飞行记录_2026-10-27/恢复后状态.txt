@@ -1,0 +1,11 @@
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+data: "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\"\
+  :true,\"fcu_fresh\":true,\"tf_fresh\":true,\"actuation_enabled\":false,\"flight_authority\"\
+  :false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\"\
+  :\"pending\",\"person_detection\":\"pending\"}"
+---
+data: "DRY_RUN_READY"
+---
+ROS_MASTER_URI=http://192.168.77.1:11311 ROS_IP=192.168.77.1
+READY: unarmed FCU, live IMU/scan, map, location and TF.
+Nodes: /camera, /cartographer_node, /cartographer_occupancy_grid_node, /location_node, /mavros, /monitor_jpeg, /move_base, /rosout, /rplidarNode, /shoot_with_move_base_node, /tf_baselink_to_laserlink, /uav_start_gate_32241_1793137152218
