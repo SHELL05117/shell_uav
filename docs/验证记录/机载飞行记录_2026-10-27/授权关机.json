@@ -1,0 +1,15 @@
+{
+  "requested_at": "2026-10-28T05:45:55.5076645+08:00",
+  "connection": "USB SSH rk-uav / 192.168.77.1",
+  "command": "sudo -n shutdown -h now",
+  "command_exit_code": 255,
+  "command_output": [
+    "client_loop: send disconnect: Connection reset"
+  ],
+  "check_at": "2026-10-28T05:46:04.0398069+08:00",
+  "ssh_check_exit_code": 255,
+  "ssh_check_output": [
+    "ssh: connect to host 192.168.77.1 port 22: Connection timed out"
+  ],
+  "physical_power_measurement": false
+}
