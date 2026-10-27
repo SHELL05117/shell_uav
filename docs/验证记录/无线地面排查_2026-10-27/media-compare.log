@@ -1,0 +1,12 @@
+media compare starting
+reference 1280x720
+[0m[ INFO] [1793127428.445253921]: MPP context created[0m
+[0m[ INFO] [1793127428.447594838]: MPP MJPEG initialized[0m
+[0m[ INFO] [1793127428.447796380]: MPP DRM group created[0m
+[0m[ INFO] [1793127428.453319671]: camera backend=mpp_rga: hardware MJPEG -> NV12 -> RGA RGB8 (BT.601 full range)[0m
+librga fail to get driver version! Compatibility mode will be enabled.
+
+61  21983  21983 E im2d_rga_impl: The driver may be compatible, but it is best to update the driver to version 1.2.4. You can try to update the SDK or update the <SDK>/kernel/drivers/video/rockchip/rga3 directory individually. current version: librga 1.10.5, driver e010.
+current rga_api version 1.10.5_[11]. The called RockchipRga API is deprecated and will be removed in a future release, currently using the legacy API for compatibility. Please refer to the latest IM2D API documentation to update your implementation.
+[0m[ INFO] [1793127428.467353171]: MPP/RGA frame 1: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+RGB_MAE=[0.328094, 0.502637, 0.345776, 0] frames=60 seconds=0.838034 fps=71.5961

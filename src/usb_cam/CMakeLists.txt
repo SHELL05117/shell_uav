@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(usb_cam)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -40,7 +41,19 @@ include_directories(include
 )
 
 ## Build the USB camera library
-add_library(${PROJECT_NAME} src/usb_cam.cpp)
+add_library(${PROJECT_NAME} src/usb_cam.cpp src/rockchip_mjpeg.cpp)
+
+# Optional, isolated RK runtime; other platforms retain the FFmpeg backend.
+find_path(MPP_INCLUDE_DIR rk_mpi.h PATHS /opt/shell-media/include/rockchip)
+find_path(RGA_INCLUDE_DIR RgaApi.h PATHS /opt/shell-media/include /opt/shell-media/include/rga)
+find_library(MPP_LIBRARY rockchip_mpp PATHS /opt/shell-media/lib)
+find_library(RGA_LIBRARY rga PATHS /opt/shell-media/lib)
+if(MPP_INCLUDE_DIR AND RGA_INCLUDE_DIR AND MPP_LIBRARY AND RGA_LIBRARY)
+  target_compile_definitions(${PROJECT_NAME} PRIVATE USB_CAM_ROCKCHIP_MEDIA)
+  target_include_directories(${PROJECT_NAME} PRIVATE ${MPP_INCLUDE_DIR} ${RGA_INCLUDE_DIR})
+  target_link_libraries(${PROJECT_NAME} ${MPP_LIBRARY} ${RGA_LIBRARY})
+  message(STATUS "usb_cam: MPP/RGA backend enabled")
+endif()
 target_link_libraries(${PROJECT_NAME}
   ${avcodec_LIBRARIES}
   ${avutil_LIBRARIES}

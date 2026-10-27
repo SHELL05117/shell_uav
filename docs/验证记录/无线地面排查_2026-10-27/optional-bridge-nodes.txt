@@ -1,0 +1,2 @@
+/foxglove_nodelet_manager
+/foxglove_bridge

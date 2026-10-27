@@ -167,6 +167,9 @@ public:
     }
 
     // start the camera
+    std::string mjpeg_backend;
+    node_.param("mjpeg_backend", mjpeg_backend, std::string("ffmpeg"));
+    cam_.set_mjpeg_backend(mjpeg_backend);
     cam_.start(video_device_name_.c_str(), io_method, pixel_format, color_format, image_width_,
 		     image_height_, framerate_);
 
@@ -240,7 +243,7 @@ public:
   bool take_and_send_image()
   {
     // grab the image
-    cam_.grab_image(&img_);
+    if (!cam_.grab_image(&img_)) return false;
 
     // grab the camera info
     sensor_msgs::CameraInfoPtr ci(new sensor_msgs::CameraInfo(cinfo_->getCameraInfo()));
@@ -259,7 +262,7 @@ public:
     while (node_.ok())
     {
       if (cam_.is_capturing()) {
-        if (!take_and_send_image()) ROS_WARN("USB camera did not respond in time.");
+        if (!take_and_send_image()) ROS_WARN_THROTTLE(2, "USB camera frame discarded.");
       }
       ros::spinOnce();
       loop_rate.sleep();

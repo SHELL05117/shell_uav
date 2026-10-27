@@ -5,6 +5,7 @@
 /.catkin_tools/
 /.catkin
 /.ros/
+/tmp/
 /log/
 
 # Python bytecode, caches and local virtual environments.

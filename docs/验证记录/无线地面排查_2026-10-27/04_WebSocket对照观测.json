@@ -1,0 +1,46 @@
+{
+  "host": "192.168.1.102",
+  "capabilities": [],
+  "map": {
+    "width": 204,
+    "height": 431,
+    "resolution": 0.05000000074505806
+  },
+  "topics": [
+    "/location_node/status",
+    "/map",
+    "/mavros/battery",
+    "/mavros/imu/data",
+    "/mavros/local_position/odom",
+    "/mavros/local_position/pose",
+    "/mavros/state",
+    "/mission/readiness",
+    "/mission/status",
+    "/monitor/camera/image/compressed",
+    "/monitor/camera/raw/compressed",
+    "/move_base/DWAPlannerROS/global_plan",
+    "/move_base/DWAPlannerROS/local_plan",
+    "/move_base/NavfnROS/plan",
+    "/scan",
+    "/tf",
+    "/tf_static"
+  ],
+  "messages": {
+    "/tf": 2357,
+    "/monitor/camera/image/compressed": 119,
+    "/map": 16,
+    "/monitor/camera/raw/compressed": 219
+  },
+  "bytes": {
+    "/tf": 408128,
+    "/monitor/camera/image/compressed": 2411034,
+    "/map": 1408576,
+    "/monitor/camera/raw/compressed": 8272608
+  },
+  "camera_age_ms": {
+    "samples": 219,
+    "median": 1930.6710596444093,
+    "max": 2446.162796803589
+  },
+  "passed": true
+}

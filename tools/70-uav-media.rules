@@ -1,0 +1,4 @@
+# Restricted camera acceleration access for existing video group members.
+KERNEL=="rga", GROUP="video", MODE="0660"
+KERNEL=="vpu_service", GROUP="video", MODE="0660"
+KERNEL=="mpp_service", GROUP="video", MODE="0660"

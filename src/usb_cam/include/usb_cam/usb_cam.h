@@ -59,6 +59,7 @@ extern "C"
 #include <sensor_msgs/Image.h>
 
 namespace usb_cam {
+class RockchipMjpeg;
 
 class UsbCam {
  public:
@@ -87,7 +88,8 @@ class UsbCam {
   void shutdown(void);
 
   // grabs a new image from the camera
-  void grab_image(sensor_msgs::Image* image);
+  bool grab_image(sensor_msgs::Image* image);
+  void set_mjpeg_backend(const std::string& backend);
 
   // enables/disable auto focus
   void set_auto_focus(int value);
@@ -126,8 +128,8 @@ class UsbCam {
       color_format color_format, AVCodecID codec_id, const char *codec_name);
   int init_mjpeg_decoder(int image_width, int image_height, color_format color_format);
   int init_h264_decoder(int image_width, int image_height, color_format color_format);
-  void mjpeg2rgb(char *MJPEG, int len, char *RGB, int NumPixels);
-  void process_image(const void * src, int len, camera_image_t *dest);
+  bool mjpeg2rgb(char *MJPEG, int len, char *RGB, int NumPixels);
+  bool process_image(const void * src, int len, camera_image_t *dest);
   int read_frame();
   void uninit_device(void);
   void init_read(unsigned int buffer_size);
@@ -136,7 +138,7 @@ class UsbCam {
   void init_device(int image_width, int image_height, int framerate);
   void close_device(void);
   void open_device(void);
-  void grab_image();
+  bool grab_image();
   bool is_capturing_;
 
 
@@ -156,6 +158,8 @@ class UsbCam {
   int avframe_camera_size_;
   int avframe_rgb_size_;
   struct SwsContext *video_sws_;
+  std::string mjpeg_backend_;
+  RockchipMjpeg *rockchip_;
   camera_image_t *image_;
 
 };

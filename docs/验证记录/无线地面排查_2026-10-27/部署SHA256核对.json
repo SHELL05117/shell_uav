@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "src/location/launch/location.launch",
+      "local_sha256": "582ba836b77d723248cbd4b5dfd328bb551932c6727c5391efd43093e8f26375",
+      "rk_sha256": "582ba836b77d723248cbd4b5dfd328bb551932c6727c5391efd43093e8f26375",
+      "match": true
+    },
+    {
+      "path": "src/location/launch/lichtblick_bridge_readonly.launch",
+      "local_sha256": "6cda0e9df12a6802ed62ec71586ccb8409c2b73d792d0be40c032d6dbc3d6250",
+      "rk_sha256": "6cda0e9df12a6802ed62ec71586ccb8409c2b73d792d0be40c032d6dbc3d6250",
+      "match": true
+    },
+    {
+      "path": "src/location/scripts/monitor_jpeg.py",
+      "local_sha256": "49cb2d5942b257617347c8ef14e8721268defcb7de4de2adaa376d6408c3f84d",
+      "rk_sha256": "49cb2d5942b257617347c8ef14e8721268defcb7de4de2adaa376d6408c3f84d",
+      "match": true
+    },
+    {
+      "path": "src/usb_cam/CMakeLists.txt",
+      "local_sha256": "d4306d41813c01d24c706d27f051be185caadfefc8ecd4596ad41e9524f59b4a",
+      "rk_sha256": "d4306d41813c01d24c706d27f051be185caadfefc8ecd4596ad41e9524f59b4a",
+      "match": true
+    },
+    {
+      "path": "src/usb_cam/include/usb_cam/usb_cam.h",
+      "local_sha256": "bd665ad0a21f794c2e759c84c0f2257f7a1a15f340598f5b4eeb8c830322a37b",
+      "rk_sha256": "bd665ad0a21f794c2e759c84c0f2257f7a1a15f340598f5b4eeb8c830322a37b",
+      "match": true
+    },
+    {
+      "path": "src/usb_cam/include/usb_cam/rockchip_mjpeg.h",
+      "local_sha256": "4f36e9a4e505d6ce88f729b59fdac20519f35f20c824d09ae9aad5a4338cc4cb",
+      "rk_sha256": "4f36e9a4e505d6ce88f729b59fdac20519f35f20c824d09ae9aad5a4338cc4cb",
+      "match": true
+    },
+    {
+      "path": "src/usb_cam/src/usb_cam.cpp",
+      "local_sha256": "d6f1c5a008bfd069a6dc1dd4165a3c3cd6eff7375c653aeb6ed75c24ea76f653",
+      "rk_sha256": "d6f1c5a008bfd069a6dc1dd4165a3c3cd6eff7375c653aeb6ed75c24ea76f653",
+      "match": true
+    },
+    {
+      "path": "src/usb_cam/src/rockchip_mjpeg.cpp",
+      "local_sha256": "823d66bf6452887f44374d90d4209f759fefe14be1b96ac40ad4b9c498a0daea",
+      "rk_sha256": "823d66bf6452887f44374d90d4209f759fefe14be1b96ac40ad4b9c498a0daea",
+      "match": true
+    },
+    {
+      "path": "src/usb_cam/nodes/usb_cam_node.cpp",
+      "local_sha256": "73c78643eb9c243e14a492276bb70ddf56f93b2e6887ed302d2f89d4f640726d",
+      "rk_sha256": "73c78643eb9c243e14a492276bb70ddf56f93b2e6887ed302d2f89d4f640726d",
+      "match": true
+    },
+    {
+      "path": "src/usb_cam/launch/rk_usb_camera.launch",
+      "local_sha256": "18944ad8e3aab4aa6163160b898f3d253c150570c49ad484a3acb10c70610815",
+      "rk_sha256": "18944ad8e3aab4aa6163160b898f3d253c150570c49ad484a3acb10c70610815",
+      "match": true
+    },
+    {
+      "path": "tools/uav",
+      "local_sha256": "dd2e7b2683f41dc4f7115c645b968e24002791317d81590ceceaf03797edb5cd",
+      "rk_sha256": "dd2e7b2683f41dc4f7115c645b968e24002791317d81590ceceaf03797edb5cd",
+      "match": true
+    },
+    {
+      "path": "tools/uav_env.sh",
+      "local_sha256": "70ee98d1c3f38e01cb58701e81d8ae3fb13f25b1687e7726a2904d8844f1b788",
+      "rk_sha256": "70ee98d1c3f38e01cb58701e81d8ae3fb13f25b1687e7726a2904d8844f1b788",
+      "match": true
+    },
+    {
+      "path": "tools/uav_start.py",
+      "local_sha256": "7d349fd8a8dd7aa48f2f788aa98fe5f857d4dfd062eb526495930507b8efab1d",
+      "rk_sha256": "7d349fd8a8dd7aa48f2f788aa98fe5f857d4dfd062eb526495930507b8efab1d",
+      "match": true
+    },
+    {
+      "path": "tools/install_uav_commands.sh",
+      "local_sha256": "688dc259618d3f7730acb8165e737a74172f58b31526bf2d46fa88bb8b06ea3e",
+      "rk_sha256": "688dc259618d3f7730acb8165e737a74172f58b31526bf2d46fa88bb8b06ea3e",
+      "match": true
+    },
+    {
+      "path": "tools/70-uav-media.rules",
+      "local_sha256": "0f6e9e8832d7e38dbe76108b78139bf4b5a0b49812ab8d576538ee625dc4d707",
+      "rk_sha256": "0f6e9e8832d7e38dbe76108b78139bf4b5a0b49812ab8d576538ee625dc4d707",
+      "match": true
+    },
+    {
+      "path": "tools/rk_media_compare.cpp",
+      "local_sha256": "486707bd18d5402dbe61def3c0f4e1f1cd6b0ca2e145fb01162352582b6d2112",
+      "rk_sha256": "486707bd18d5402dbe61def3c0f4e1f1cd6b0ca2e145fb01162352582b6d2112",
+      "match": true
+    },
+    {
+      "path": "tools/rk_wireless_observe.py",
+      "local_sha256": "8e9ac37a031d174afbf039f37d5ffb40b4151df83a1c802911a1b83da6017f75",
+      "rk_sha256": "8e9ac37a031d174afbf039f37d5ffb40b4151df83a1c802911a1b83da6017f75",
+      "match": true
+    },
+    {
+      "path": "tools/rk_px4_serial_shell.py",
+      "local_sha256": "27dc71d145ed2fd4ce46fc7c4fef5ee2c8dc9d528717ad192f0e0794a1b6dc96",
+      "rk_sha256": "27dc71d145ed2fd4ce46fc7c4fef5ee2c8dc9d528717ad192f0e0794a1b6dc96",
+      "match": true
+    },
+    {
+      "path": "tools/rk_pca_disable.py",
+      "local_sha256": "db91ae897567ca6ff581afa10824883f52d8b45435009660cda496cdcee4a9a7",
+      "rk_sha256": "db91ae897567ca6ff581afa10824883f52d8b45435009660cda496cdcee4a9a7",
+      "match": true
+    },
+    {
+      "path": "tools/build_rk_media_runtime.sh",
+      "local_sha256": "77b054ab0fffce3178cfacf44095f6e26ced7fbd717abd40307c47e1140818b4",
+      "rk_sha256": "77b054ab0fffce3178cfacf44095f6e26ced7fbd717abd40307c47e1140818b4",
+      "match": true
+    }
+  ]
+}

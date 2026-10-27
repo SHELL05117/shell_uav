@@ -1,0 +1,13 @@
+{
+  "no_hardware_opened": true, 
+  "checks": {
+    "formal_mission_action_flags": true, 
+    "height_profile_loaded": true, 
+    "formal_servo_node_params": true, 
+    "optional_bridge_no_duplicate_jpeg": true, 
+    "native_only_jpeg_relay": true
+  }, 
+  "passed": true, 
+  "mission_was_not_launched": true
+}
+Final syntax, launch expansion and camera lifecycle checks passed.

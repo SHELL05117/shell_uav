@@ -54,6 +54,8 @@
 #include <opencv2/opencv.hpp>
 
 #include <usb_cam/usb_cam.h>
+#include <usb_cam/rockchip_mjpeg.h>
+#include <stdexcept>
 
 #define CLEAR(x) memset (&(x), 0, sizeof (x))
 
@@ -381,7 +383,7 @@ UsbCam::UsbCam()
     io_(IO_METHOD_MMAP), fd_(-1), buffers_(NULL), n_buffers_(0), avframe_camera_(NULL),
     avframe_rgb_(NULL), avcodec_(NULL), avoptions_(NULL), avcodec_context_(NULL),
     avparser_context_(NULL), avframe_camera_size_(0), avframe_rgb_size_(0),
-    video_sws_(NULL), image_(NULL) {
+    video_sws_(NULL), mjpeg_backend_("ffmpeg"), rockchip_(NULL), image_(NULL) {
 }
 UsbCam::~UsbCam()
 {
@@ -476,6 +478,10 @@ int UsbCam::init_decoder(int image_width, int image_height,
 
 int UsbCam::init_mjpeg_decoder(int image_width, int image_height, color_format color_format)
 {
+  if (mjpeg_backend_ == "mpp_rga") {
+    rockchip_=new RockchipMjpeg(image_width,image_height);
+    return 1;
+  }
   return init_decoder(image_width, image_height, color_format, AV_CODEC_ID_MJPEG, "MJPEG");
 }
 
@@ -484,94 +490,48 @@ int UsbCam::init_h264_decoder(int image_width, int image_height, color_format co
   return init_decoder(image_width, image_height, color_format, AV_CODEC_ID_H264, "H264");
 }
 
-void UsbCam::mjpeg2rgb(char *MJPEG, int len, char *RGB, int NumPixels)
+void UsbCam::set_mjpeg_backend(const std::string& backend)
 {
-  int got_picture;
-
-  memset(RGB, 0, avframe_rgb_size_);
-
-#if LIBAVCODEC_VERSION_MAJOR > 52
-  int decoded_len;
-  AVPacket avpkt;
-  //av_init_packet(&avpkt);
-
-  //avpkt.size = len;
-  //avpkt.data = (unsigned char*)MJPEG;
-  av_init_packet(&avpkt);
-  av_packet_from_data (&avpkt, (unsigned char*)MJPEG, len);
-  decoded_len = avcodec_send_packet(avcodec_context_, &avpkt);
-  //decoded_len = avcodec_decode_video2(avcodec_context_, avframe_camera_, &got_picture, &avpkt);
-  if (decoded_len < 0)
-  {
-    ROS_ERROR("Error while decoding frame.");
-    return;
-  }
-#else
-  avcodec_decode_video(avcodec_context_, avframe_camera_, &got_picture, (uint8_t *) MJPEG, len);
-  if (!got_picture)
-  {
-    ROS_ERROR("Webcam: expected picture but didn't get it...");
-    return;
-  }
-#endif
-  int error_code = avcodec_receive_frame(avcodec_context_, avframe_camera_);
-  if (error_code < 0)
-  {
-    ROS_ERROR("Error while returning frame.");
-    return;
-  }
-  
-  
-  if(avcodec_context_->codec_id == AV_CODEC_ID_MJPEG)
-  {
-    switch(avcodec_context_->pix_fmt)
-    {
-    case AV_PIX_FMT_YUVJ420P:
-      avcodec_context_->pix_fmt = AV_PIX_FMT_YUV420P;
-      avcodec_context_->color_range = AVCOL_RANGE_JPEG;
-      break;
-    case AV_PIX_FMT_YUVJ422P:
-      avcodec_context_->pix_fmt = AV_PIX_FMT_YUV422P;
-      avcodec_context_->color_range = AVCOL_RANGE_JPEG;
-      break;
-    case AV_PIX_FMT_YUVJ444P:
-      avcodec_context_->pix_fmt = AV_PIX_FMT_YUV444P;
-      avcodec_context_->color_range = AVCOL_RANGE_JPEG;
-      break;
-    default:
-      break;
-    }
-  }
-
-  int xsize = avcodec_context_->width;
-  int ysize = avcodec_context_->height;
-  int pic_size = av_image_get_buffer_size(avcodec_context_->pix_fmt, xsize, ysize, 32);
-  if (pic_size != avframe_camera_size_)
-  {
-    ROS_ERROR("outbuf size mismatch.  pic_size: %d bufsize: %d", pic_size, avframe_camera_size_);
-    return;
-  }
-  //avframe_rgb_size_ = av_image_get_buffer_size(AV_PIX_FMT_RGB24, avcodec_context_->width, avcodec_context_->height, 32);
-  //unsigned char* frame_buffer = (uint8_t*)av_malloc(avframe_rgb_size_);
-  //av_image_fill_arrays(avframe_rgb_->data, avframe_rgb_->linesize, frame_buffer, AV_PIX_FMT_RGB24, avframe_rgb_->width, avframe_rgb_->height, 32);         
-
-  video_sws_ = sws_getContext(xsize, ysize, avcodec_context_->pix_fmt, xsize, ysize, AV_PIX_FMT_RGB24, SWS_FAST_BILINEAR, NULL, NULL,  NULL);
-  sws_scale(video_sws_, avframe_camera_->data, avframe_camera_->linesize, 0, ysize, avframe_rgb_->data, avframe_rgb_->linesize);
-  sws_freeContext(video_sws_);
-  video_sws_ = NULL;
-  
-  //int size = avpicture_layout((AVPicture *)avframe_rgb_, AV_PIX_FMT_RGB24, xsize, ysize, (uint8_t *)RGB, avframe_rgb_size_);
-  int size = av_image_copy_to_buffer((uint8_t *)RGB, avframe_rgb_size_, avframe_rgb_->data, avframe_rgb_->linesize, AV_PIX_FMT_RGB24, xsize, ysize, 32);
-  if (size != avframe_rgb_size_)
-  {
-    ROS_ERROR("webcam: avpicture_layout error: %d", size);
-    return;
-  }
+  if (backend != "ffmpeg" && backend != "mpp_rga")
+    throw std::runtime_error("Unknown mjpeg_backend: " + backend);
+  mjpeg_backend_ = backend;
 }
 
+bool UsbCam::mjpeg2rgb(char *MJPEG, int len, char *RGB, int NumPixels)
+{
+  if (rockchip_) return rockchip_->decode(MJPEG, len, RGB);
+  // V4L2 buffers are borrowed and not padded. Own the packet and zero padding
+  // through FFmpeg; never hand av_packet_from_data a borrowed mmap pointer.
+  AVPacket packet;
+  av_init_packet(&packet);
+  packet.data = NULL; packet.size = 0;
+  if (len <= 0 || av_new_packet(&packet, len) < 0) return false;
+  memcpy(packet.data, MJPEG, len);
+  int result = avcodec_send_packet(avcodec_context_, &packet);
+  av_packet_unref(&packet);
+  if (result < 0 || avcodec_receive_frame(avcodec_context_, avframe_camera_) < 0) {
+    ROS_ERROR_THROTTLE(2, "FFmpeg decode failed; frame discarded"); return false;
+  }
+  const int w=avframe_camera_->width, h=avframe_camera_->height;
+  if (w*h != NumPixels || w != avframe_rgb_->width || h != avframe_rgb_->height) {
+    ROS_ERROR_THROTTLE(2, "Unexpected decoded image dimensions; frame discarded"); return false;
+  }
+  // Use the decoder's actual format/plane strides/range; do not assume 422P
+  // or mutate codec pix_fmt after decode. JPEG sources commonly use full range.
+  const AVPixelFormat format=static_cast<AVPixelFormat>(avframe_camera_->format);
+  video_sws_=sws_getCachedContext(video_sws_,w,h,format,w,h,AV_PIX_FMT_RGB24,
+                                SWS_FAST_BILINEAR,NULL,NULL,NULL);
+  if (!video_sws_) return false;
+  const int full=avframe_camera_->color_range==AVCOL_RANGE_JPEG ||
+      format==AV_PIX_FMT_YUVJ420P || format==AV_PIX_FMT_YUVJ422P || format==AV_PIX_FMT_YUVJ444P;
+  const int *coeff=sws_getCoefficients(avframe_camera_->colorspace==AVCOL_SPC_BT709 ? SWS_CS_ITU709 : SWS_CS_ITU601);
+  sws_setColorspaceDetails(video_sws_,coeff,full,coeff,1,0,1<<16,1<<16);
+  uint8_t *planes[4]={reinterpret_cast<uint8_t*>(RGB),NULL,NULL,NULL};
+  int strides[4]={w*3,0,0,0};
+  return sws_scale(video_sws_,avframe_camera_->data,avframe_camera_->linesize,0,h,planes,strides)==h;
+}
 
-
-void UsbCam::process_image(const void * src, int len, camera_image_t *dest)
+bool UsbCam::process_image(const void * src, int len, camera_image_t *dest)
 {
   if (pixelformat_ == V4L2_PIX_FMT_YUYV)
   {
@@ -587,9 +547,9 @@ void UsbCam::process_image(const void * src, int len, camera_image_t *dest)
   else if (pixelformat_ == V4L2_PIX_FMT_UYVY)
     uyvy2rgb((char*)src, dest->image, dest->width * dest->height);
   else if (pixelformat_ == V4L2_PIX_FMT_MJPEG)
-    mjpeg2rgb((char*)src, len, dest->image, dest->width * dest->height);
+    return mjpeg2rgb((char*)src, len, dest->image, dest->width * dest->height);
   else if (pixelformat_ == V4L2_PIX_FMT_H264) // libav handles the decoding, so reusing the same function is fine
-    mjpeg2rgb((char*)src, len, dest->image, dest->width * dest->height);
+    return mjpeg2rgb((char*)src, len, dest->image, dest->width * dest->height);
   else if (pixelformat_ == V4L2_PIX_FMT_RGB24)
     rgb242rgb((char*)src, dest->image, dest->width * dest->height);
   else if (pixelformat_ == V4L2_PIX_FMT_YUV420)
@@ -598,6 +558,7 @@ void UsbCam::process_image(const void * src, int len, camera_image_t *dest)
     memcpy(dest->image, (char*)src, dest->width * dest->height);
   else if (pixelformat_ == V4L2_PIX_FMT_BGR24)
     dest->image = (char*)src;
+  return true;
 }
 
 int UsbCam::read_frame()
@@ -605,6 +566,7 @@ int UsbCam::read_frame()
   struct v4l2_buffer buf;
   unsigned int i;
   int len;
+  bool valid=false;
 
   switch (io_)
   {
@@ -627,7 +589,7 @@ int UsbCam::read_frame()
         }
       }
 
-      process_image(buffers_[0].start, len, image_);
+      valid=process_image(buffers_[0].start, len, image_);
 
       break;
 
@@ -656,7 +618,7 @@ int UsbCam::read_frame()
 
       assert(buf.index < n_buffers_);
       len = buf.bytesused;
-      process_image(buffers_[buf.index].start, len, image_);
+      valid=process_image(buffers_[buf.index].start, len, image_);
 
       if (-1 == xioctl(fd_, VIDIOC_QBUF, &buf))
         errno_exit("VIDIOC_QBUF");
@@ -692,7 +654,7 @@ int UsbCam::read_frame()
 
       assert(i < n_buffers_);
       len = buf.bytesused;
-      process_image((void *)buf.m.userptr, len, image_);
+      valid=process_image((void *)buf.m.userptr, len, image_);
 
       if (-1 == xioctl(fd_, VIDIOC_QBUF, &buf))
         errno_exit("VIDIOC_QBUF");
@@ -700,7 +662,7 @@ int UsbCam::read_frame()
       break;
   }
 
-  return 1;
+  return valid ? 1 : 0;
 }
 
 bool UsbCam::is_capturing() {
@@ -1218,6 +1180,9 @@ void UsbCam::start(const std::string& dev, io_method io_method,
 void UsbCam::shutdown(void)
 {
   stop_capturing();
+  delete rockchip_; rockchip_=NULL;
+  if (video_sws_) sws_freeContext(video_sws_);
+  video_sws_=NULL;
   uninit_device();
   close_device();
 
@@ -1238,10 +1203,10 @@ void UsbCam::shutdown(void)
   image_ = NULL;
 }
 
-void UsbCam::grab_image(sensor_msgs::Image* msg)
+bool UsbCam::grab_image(sensor_msgs::Image* msg)
 {
   // grab the image
-  grab_image();
+  if (!grab_image()) return false;
   // stamp the image
   msg->header.stamp = ros::Time::now();
   // fill the info
@@ -1260,9 +1225,10 @@ void UsbCam::grab_image(sensor_msgs::Image* msg)
     fillImage(*msg, "rgb8", image_->height, image_->width, 3 * image_->width,
         image_->image);
   }
+  return true;
 }
 
-void UsbCam::grab_image()
+bool UsbCam::grab_image()
 {
   fd_set fds;
   struct timeval tv;
@@ -1280,7 +1246,7 @@ void UsbCam::grab_image()
   if (-1 == r)
   {
     if (EINTR == errno)
-      return;
+      return false;
 
     errno_exit("select");
   }
@@ -1291,8 +1257,8 @@ void UsbCam::grab_image()
     exit(EXIT_FAILURE);
   }
 
-  read_frame();
-  image_->is_new = 1;
+  image_->is_new = read_frame();
+  return image_->is_new != 0;
 }
 
 // enables/disables auto focus

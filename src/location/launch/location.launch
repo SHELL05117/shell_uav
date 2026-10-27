@@ -8,6 +8,7 @@
   <!-- RPLIDAR S2：USB 转串口，S2 固定 1 Mbaud -->
   <arg name="lidar_serial_port" default="/dev/ttyUSB0" />
   <arg name="node_start_delay" default="3.0" />
+  <arg name="height_profile" default="" />
 
   <!-- Clearance and body-FLU sensor geometry must be measured before marking
        the reference calibrated. IMU tilt projects the beam onto vertical.
@@ -51,19 +52,20 @@
 
     <param name="use_tf_mini" value="$(arg use_tf_mini)" />
     <param name="tf_mini_type" value="$(arg tf_mini_type)" />
-    <param name="tf_mini_height" value="$(arg tf_mini_height)" />
-    <param name="height_reference_calibrated" value="$(arg height_reference_calibrated)" />
-    <param name="sensor_offset_x" value="$(arg sensor_offset_x)" />
-    <param name="sensor_offset_y" value="$(arg sensor_offset_y)" />
-    <param name="sensor_offset_z" value="$(arg sensor_offset_z)" />
-    <param name="sensor_beam_x" value="$(arg sensor_beam_x)" />
-    <param name="sensor_beam_y" value="$(arg sensor_beam_y)" />
-    <param name="sensor_beam_z" value="$(arg sensor_beam_z)" />
+    <param if="$(eval arg('height_profile') == '')" name="tf_mini_height" value="$(arg tf_mini_height)" />
+    <param if="$(eval arg('height_profile') == '')" name="height_reference_calibrated" value="$(arg height_reference_calibrated)" />
+    <param if="$(eval arg('height_profile') == '')" name="sensor_offset_x" value="$(arg sensor_offset_x)" />
+    <param if="$(eval arg('height_profile') == '')" name="sensor_offset_y" value="$(arg sensor_offset_y)" />
+    <param if="$(eval arg('height_profile') == '')" name="sensor_offset_z" value="$(arg sensor_offset_z)" />
+    <param if="$(eval arg('height_profile') == '')" name="sensor_beam_x" value="$(arg sensor_beam_x)" />
+    <param if="$(eval arg('height_profile') == '')" name="sensor_beam_y" value="$(arg sensor_beam_y)" />
+    <param if="$(eval arg('height_profile') == '')" name="sensor_beam_z" value="$(arg sensor_beam_z)" />
     <param name="imu_topic" value="$(arg imu_topic)" />
     <param name="bus" value="$(arg bus)" />
     <param name="address" value="$(arg address)" />
     <param name="serial_port" value="$(arg serial_port)" />
     <param name="baud_rate" value="$(arg baud_rate)" />
+    <rosparam if="$(eval arg('height_profile') != '')" command="load" file="$(arg height_profile)" />
   </node>
 
   <include file="$(find location)/launch/cartographer_2d.launch" />

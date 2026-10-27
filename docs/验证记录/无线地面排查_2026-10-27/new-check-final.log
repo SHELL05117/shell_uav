@@ -1,0 +1,853 @@
+ROS_MASTER_URI=http://192.168.1.102:11311 ROS_IP=192.168.1.102
++ roslaunch location location.launch open_rviz:=false fcu_url:=/dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200 lidar_serial_port:=/dev/serial/by-id/usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_909394b23877ed11907beefafdf7b791-if00-port0 height_profile:=/home/jcfh/catkin_ws/src/location/param/rk_height_reference_20261027.yaml
+... logging to /home/jcfh/.ros/log/88b375be-d238-11f1-aa25-14f5f9e6cd08/roslaunch-toybrick-23944.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/location/launch/location.launch
+[1mstarted roslaunch server http://192.168.1.102:33621/[0m
+
+SUMMARY
+========
+
+CLEAR PARAMETERS
+ * /mavros/
+
+PARAMETERS
+ * /location_node/address: 16
+ * /location_node/baud_rate: 115200
+ * /location_node/bus: 6
+ * /location_node/height_reference_calibrated: True
+ * /location_node/imu_topic: /mavros/imu/data
+ * /location_node/publish_rate: 20
+ * /location_node/sensor_beam_x: 0.0
+ * /location_node/sensor_beam_y: 0.0
+ * /location_node/sensor_beam_z: -1.0
+ * /location_node/sensor_offset_x: 0.0
+ * /location_node/sensor_offset_y: 0.0
+ * /location_node/sensor_offset_z: 0.0
+ * /location_node/serial_port: /dev/ttyUSB0
+ * /location_node/source_frame_id: base_link
+ * /location_node/target_frame_id: odom
+ * /location_node/tf_mini_height: 0.12
+ * /location_node/tf_mini_type: i2c
+ * /location_node/use_tf_mini: True
+ * /mavros/camera/frame_id: base_link
+ * /mavros/cmd/use_comp_id_system_control: False
+ * /mavros/conn/heartbeat_rate: 1.0
+ * /mavros/conn/system_time_rate: 1.0
+ * /mavros/conn/timeout: 10.0
+ * /mavros/conn/timesync_rate: 10.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/field_of_view: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/frame_id: hrlv_ez4_sonar
+ * /mavros/distance_sensor/hrlv_ez4_pub/id: 0
+ * /mavros/distance_sensor/hrlv_ez4_pub/orientation: PITCH_270
+ * /mavros/distance_sensor/hrlv_ez4_pub/send_tf: True
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/x: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/y: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/z: -0.1
+ * /mavros/distance_sensor/laser_1_sub/id: 3
+ * /mavros/distance_sensor/laser_1_sub/orientation: PITCH_270
+ * /mavros/distance_sensor/laser_1_sub/subscriber: True
+ * /mavros/distance_sensor/lidarlite_pub/field_of_view: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/frame_id: lidarlite_laser
+ * /mavros/distance_sensor/lidarlite_pub/id: 1
+ * /mavros/distance_sensor/lidarlite_pub/orientation: PITCH_270
+ * /mavros/distance_sensor/lidarlite_pub/send_tf: True
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/x: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/y: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/z: -0.1
+ * /mavros/distance_sensor/sonar_1_sub/horizontal_fov_ratio: 1.0
+ * /mavros/distance_sensor/sonar_1_sub/id: 2
+ * /mavros/distance_sensor/sonar_1_sub/orientation: PITCH_270
+ * /mavros/distance_sensor/sonar_1_sub/subscriber: True
+ * /mavros/distance_sensor/sonar_1_sub/vertical_fov_ratio: 1.0
+ * /mavros/fake_gps/eph: 2.0
+ * /mavros/fake_gps/epv: 2.0
+ * /mavros/fake_gps/fix_type: 3
+ * /mavros/fake_gps/geo_origin/alt: 408.0
+ * /mavros/fake_gps/geo_origin/lat: 47.3667
+ * /mavros/fake_gps/geo_origin/lon: 8.55
+ * /mavros/fake_gps/gps_rate: 5.0
+ * /mavros/fake_gps/mocap_transform: True
+ * /mavros/fake_gps/satellites_visible: 5
+ * /mavros/fake_gps/tf/child_frame_id: fix
+ * /mavros/fake_gps/tf/frame_id: map
+ * /mavros/fake_gps/tf/listen: False
+ * /mavros/fake_gps/tf/rate_limit: 10.0
+ * /mavros/fake_gps/tf/send: False
+ * /mavros/fake_gps/use_mocap: True
+ * /mavros/fake_gps/use_vision: False
+ * /mavros/fcu_protocol: v2.0
+ * /mavros/fcu_url: /dev/serial/by-id...
+ * /mavros/gcs_url: tcp-l://0.0.0.0:5760
+ * /mavros/global_position/child_frame_id: base_link
+ * /mavros/global_position/frame_id: map
+ * /mavros/global_position/gps_uere: 1.0
+ * /mavros/global_position/rot_covariance: 99999.0
+ * /mavros/global_position/tf/child_frame_id: base_link
+ * /mavros/global_position/tf/frame_id: map
+ * /mavros/global_position/tf/global_frame_id: earth
+ * /mavros/global_position/tf/send: False
+ * /mavros/global_position/use_relative_alt: True
+ * /mavros/image/frame_id: px4flow
+ * /mavros/imu/angular_velocity_stdev: 0.0003490659 // 0...
+ * /mavros/imu/frame_id: base_link
+ * /mavros/imu/linear_acceleration_stdev: 0.0003
+ * /mavros/imu/magnetic_stdev: 0.0
+ * /mavros/imu/orientation_stdev: 1.0
+ * /mavros/landing_target/camera/fov_x: 2.0071286398
+ * /mavros/landing_target/camera/fov_y: 2.0071286398
+ * /mavros/landing_target/image/height: 480
+ * /mavros/landing_target/image/width: 640
+ * /mavros/landing_target/land_target_type: VISION_FIDUCIAL
+ * /mavros/landing_target/listen_lt: False
+ * /mavros/landing_target/mav_frame: LOCAL_NED
+ * /mavros/landing_target/target_size/x: 0.3
+ * /mavros/landing_target/target_size/y: 0.3
+ * /mavros/landing_target/tf/child_frame_id: camera_center
+ * /mavros/landing_target/tf/frame_id: landing_target
+ * /mavros/landing_target/tf/listen: False
+ * /mavros/landing_target/tf/rate_limit: 10.0
+ * /mavros/landing_target/tf/send: True
+ * /mavros/local_position/frame_id: map
+ * /mavros/local_position/tf/child_frame_id: base_link
+ * /mavros/local_position/tf/frame_id: map
+ * /mavros/local_position/tf/send: False
+ * /mavros/local_position/tf/send_fcu: False
+ * /mavros/mission/pull_after_gcs: True
+ * /mavros/mission/use_mission_item_int: True
+ * /mavros/mocap/use_pose: True
+ * /mavros/mocap/use_tf: False
+ * /mavros/mount/debounce_s: 4.0
+ * /mavros/mount/err_threshold_deg: 10.0
+ * /mavros/mount/negate_measured_pitch: False
+ * /mavros/mount/negate_measured_roll: False
+ * /mavros/mount/negate_measured_yaw: False
+ * /mavros/odometry/fcu/odom_child_id_des: base_link
+ * /mavros/odometry/fcu/odom_parent_id_des: map
+ * /mavros/plugin_blacklist: ['safety_area', '...
+ * /mavros/plugin_whitelist: []
+ * /mavros/px4flow/frame_id: px4flow
+ * /mavros/px4flow/ranger_fov: 0.118682
+ * /mavros/px4flow/ranger_max_range: 5.0
+ * /mavros/px4flow/ranger_min_range: 0.3
+ * /mavros/safety_area/p1/x: 1.0
+ * /mavros/safety_area/p1/y: 1.0
+ * /mavros/safety_area/p1/z: 1.0
+ * /mavros/safety_area/p2/x: -1.0
+ * /mavros/safety_area/p2/y: -1.0
+ * /mavros/safety_area/p2/z: -1.0
+ * /mavros/setpoint_accel/send_force: False
+ * /mavros/setpoint_attitude/reverse_thrust: False
+ * /mavros/setpoint_attitude/tf/child_frame_id: target_attitude
+ * /mavros/setpoint_attitude/tf/frame_id: map
+ * /mavros/setpoint_attitude/tf/listen: False
+ * /mavros/setpoint_attitude/tf/rate_limit: 50.0
+ * /mavros/setpoint_attitude/use_quaternion: False
+ * /mavros/setpoint_position/mav_frame: LOCAL_NED
+ * /mavros/setpoint_position/tf/child_frame_id: target_position
+ * /mavros/setpoint_position/tf/frame_id: map
+ * /mavros/setpoint_position/tf/listen: False
+ * /mavros/setpoint_position/tf/rate_limit: 50.0
+ * /mavros/setpoint_raw/thrust_scaling: 1.0
+ * /mavros/setpoint_velocity/mav_frame: LOCAL_NED
+ * /mavros/startup_px4_usb_quirk: False
+ * /mavros/sys/disable_diag: False
+ * /mavros/sys/min_voltage: 10.0
+ * /mavros/target_component_id: 1
+ * /mavros/target_system_id: 1
+ * /mavros/tdr_radio/low_rssi: 40
+ * /mavros/time/time_ref_source: fcu
+ * /mavros/time/timesync_avg_alpha: 0.6
+ * /mavros/time/timesync_mode: MAVLINK
+ * /mavros/vibration/frame_id: base_link
+ * /mavros/vision_pose/tf/child_frame_id: vision_estimate
+ * /mavros/vision_pose/tf/frame_id: odom
+ * /mavros/vision_pose/tf/listen: False
+ * /mavros/vision_pose/tf/rate_limit: 10.0
+ * /mavros/vision_speed/listen_twist: True
+ * /mavros/vision_speed/twist_cov: True
+ * /mavros/wheel_odometry/child_frame_id: base_link
+ * /mavros/wheel_odometry/count: 2
+ * /mavros/wheel_odometry/frame_id: odom
+ * /mavros/wheel_odometry/send_raw: True
+ * /mavros/wheel_odometry/send_twist: False
+ * /mavros/wheel_odometry/tf/child_frame_id: base_link
+ * /mavros/wheel_odometry/tf/frame_id: odom
+ * /mavros/wheel_odometry/tf/send: False
+ * /mavros/wheel_odometry/use_rpm: False
+ * /mavros/wheel_odometry/vel_error: 0.1
+ * /mavros/wheel_odometry/wheel0/radius: 0.05
+ * /mavros/wheel_odometry/wheel0/x: 0.0
+ * /mavros/wheel_odometry/wheel0/y: -0.15
+ * /mavros/wheel_odometry/wheel1/radius: 0.05
+ * /mavros/wheel_odometry/wheel1/x: 0.0
+ * /mavros/wheel_odometry/wheel1/y: 0.15
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+ * /rplidarNode/angle_compensate: True
+ * /rplidarNode/frame_id: laser_link
+ * /rplidarNode/inverted: False
+ * /rplidarNode/scan_mode: DenseBoost
+ * /rplidarNode/serial_ba+ roslaunch usb_cam rk_usb_camera.launch video_device:=/dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0 mjpeg_backend:=mpp_rga
++ roslaunch location lichtblick_bridge_readonly.launch jpeg_relay:=true
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+[0m[ INFO] [1793127570.687653614]: FCU URL: /dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00:115200[0m
+[0m[ INFO] [1793127570.704325864]: serial0: device: /dev/serial/by-id/usb-Auterion_PX4_FMU_v6C.x_0-if00 @ 115200 bps[0m
+[0m[ INFO] [1793127570.705595198]: GCS URL: tcp-l://0.0.0.0:5760[0m
+[0m[ INFO] [1793127570.706366073]: tcp1: Bind address: 0.0.0.0:5760[0m
+[0m[ INFO] [1793127570.771403656]: Plugin 3dr_radio loaded[0m
+[0m[ INFO] [1793127570.782524323]: Plugin 3dr_radio initialized[0m
+[0m[ INFO] [1793127570.782984573]: Plugin actuator_control loaded[0m
+[0m[ INFO] [1793127570.808083073]: Plugin actuator_control initialized[0m
+[0m[ INFO] [1793127570.831762906]: Plugin adsb loaded[0m
+[0m[ INFO] [1793127570.856409614]: Plugin adsb initialized[0m
+[0m[ INFO] [1793127570.857165031]: Plugin altitude loaded[0m
+[0m[ INFO] [1793127570.864212573]: Plugin altitude initialized[0m
+[0m[ INFO] [1793127570.864888656]: Plugin cam_imu_sync loaded[0m
+[0m[ INFO] [1793127570.869008156]: Plugin cam_imu_sync initialized[0m
+[0m[ INFO] [1793127570.869614823]: Plugin camera loaded[0m
+[0m[ INFO] [1793127570.873877823]: Plugin camera initialized[0m
+[0m[ INFO] [1793127570.874456781]: Plugin cellular_status loaded[0m
+[0m[ INFO] [1793127570.893397906]: Plugin cellular_status initialized[0m
+[0m[ INFO] [1793127570.894070781]: Plugin command loaded[0m
+[0m[ INFO] [1793127570.943617948]: Plugin command initialized[0m
+[0m[ INFO] [1793127570.944184948]: Plugin companion_process_status loaded[0m
+[0m[ INFO] [1793127570.961486906]: Plugin companion_process_status initialized[0m
+[0m[ INFO] [1793127570.962067323]: Plugin debug_value loaded[0m
+[0m[ INFO] [1793127571.002193948]: Plugin debug_value initialized[0m
+[0m[ INFO] [1793127571.002604323]: Plugin distance_sensor blacklisted[0m
+[0m[ INFO] [1793127571.003152656]: Plugin esc_status loaded[0m
+[0m[ INFO] [1793127571.011293948]: Plugin esc_status initialized[0m
+[0m[ INFO] [1793127571.011989573]: Plugin esc_telemetry loaded[0m
+[0m[ INFO] [1793127571.016839406]: Plugin esc_telemetry initialized[0m
+[0m[ INFO] [1793127571.017605031]: Plugin fake_gps loaded[0m
+[0m[ INFO] [1793127571.140458239]: Plugin fake_gps initialized[0m
+[0m[ INFO] [1793127571.141126156]: Plugin ftp loaded[0m
+[0m[ INFO] [1793127571.189934531]: Plugin ftp initialized[0m
+[0m[ INFO] [1793127571.190804573]: Plugin geofence loaded[0m
+[0m[ INFO] [1793127571.213625739]: Plugin geofence initialized[0m
+[0m[ INFO] [1793127571.214356656]: Plugin global_position loaded[0m
+[0m[ INFO] [1793127571.336642573]: Plugin global_position initialized[0m
+[0m[ INFO] [1793127571.337344906]: Plugin gps_input loaded[0m
+[0m[ INFO] [1793127571.356971156]: Plugin gps_input initialized[0m
+[0m[ INFO] [1793127571.357655990]: Plugin gps_rtk loaded[0m
+[0m[ INFO] [1793127571.381641198]: Plugin gps_rtk initialized[0m
+[0m[ INFO] [1793127571.382401865]: Plugin gps_status loaded[0m
+[0m[ INFO] [1793127571.399443073]: Plugin gps_status initialized[0m
+[0m[ INFO] [1793127571.400193823]: Plugin guided_target loaded[0m
+[0m[ INFO] [1793127571.435526031]: Plugin guided_target initialized[0m
+[0m[ INFO] [1793127571.436276198]: Plugin hil loaded[0m
+[0m[ INFO] [1793127571.537909490]: Plugin hil initialized[0m
+[0m[ INFO] [1793127571.538761448]: Plugin home_position loaded[0m
+[0m[ INFO] [1793127571.564979656]: Plugin home_position initialized[0m
+[0m[ INFO] [1793127571.565839781]: Plugin imu loaded[0m
+[0m[ INFO] [1793127571.624960031]: Plugin imu initialized[0m
+[0m[ INFO] [1793127571.625658573]: Plugin landing_target loaded[0m
+[0m[ INFO] [1793127571.742790448]: Plugin landing_target initialized[0m
+[0m[ INFO] [1793127571.743609740]: Plugin local_position loaded[0m
+[0m[ INFO] [1793127571.796755781]: Plugin local_position initialized[0m
+[0m[ INFO] [1793127571.797433323]: Plugin log_transfer loaded[0m
+[0m[ INFO] [1793127571.821244990]: Plugin log_transfer initialized[0m
+[0m[ INFO] [1793127571.821897740]: Plugin mag_calibration_status loaded[0m
+[0m[ INFO] [1793127571.830526990]: Plugin mag_[33m[ WARN] [1793127571.932486656]: Could not retrive negate_measured_roll parameter value, using default (0)[0m
+[33m[ WARN] [1793127571.935943490]: Could not retrive negate_measured_pitch parameter value, using default (0)[0m
+[33m[ WARN] [1793127571.939378156]: Could not retrive negate_measured_yaw parameter value, using default (0)[0m
+[33m[ WARN] [1793127571.951725865]: Could not retrive debounce_s parameter value, using default (4.000000)[0m
+[33m[ WARN] [1793127571.955336406]: Could not retrive err_threshold_deg parameter value, using default (10.000000)[0m
+calibration_status initialized[0m
+[0m[ INFO] [1793127571.831504656]: Plugin manual_control loaded[0m
+[0m[ INFO] [1793127571.855374365]: Plugin manual_control initialized[0m
+[0m[ INFO] [1793127571.856222823]: Plugin mocap_pose_estimate loaded[0m
+[0m[ INFO] [1793127571.888174615]: Plugin mocap_pose_estimate initialized[0m
+[0m[ INFO] [1793127571.888958906]: Plugin mount_control loaded[0m
+[0m[ INFO] [1793127571.955834865]: Plugin mount_control initialized[0m
+[0m[ INFO] [1793127571.956543031]: Plugin nav_controller_output loaded[0m
+[0m[ INFO] [1793127571.961681615]: Plugin nav_controller_output initialized[0m
+[0m[ INFO] [1793127571.962395323]: Plugin obstacle_distance loaded[0m
+[0m[ INFO] [1793127571.986629615]: Plugin obstacle_distance initialized[0m
+[0m[ INFO] [1793127571.987318532]: Plugin odom loaded[0m
+[0m[ INFO] [1793127572.022535532]: Plugin odom initialized[0m
+[0m[ INFO] [1793127572.023200532]: Plugin onboard_computer_status loaded[0m
+[0m[ INFO] [1793127572.042295657]: Plugin onboard_computer_status initialized[0m
+[0m[ INFO] [1793127572.043040573]: Plugin param loaded[0m
+[0m[ INFO] [1793127572.058038615]: Plugin param initialized[0m
+[0m[ INFO] [1793127572.058355365]: Plugin play_tune loaded[0m
+[0m[ INFO] [1793127572.071667323]: Plugin play_tune initialized[0m
+[0m[ INFO] [1793127572.071975615]: Plugin px4flow loaded[0m
+[0m[ INFO] [1793127572.118614907]: Plugin px4flow initialized[0m
+[0m[ INFO] [1793127572.119290115]: Plugin rallypoint loaded[0m
+[0m[ INFO] [1793127572.138815448]: Plugin rallypoint initialized[0m
+[0m[ INFO] [1793127572.139028073]: Plugin rangefinder blacklisted[0m
+[0m[ INFO] [1793127572.139631240]: Plugin rc_io loaded[0m
+[0m[ INFO] [1793127572.176870948]: Plugin rc_io initialized[0m
+[0m[ INFO] [1793127572.177042448]: Plugin safety_area blacklisted[0m
+[0m[ INFO] [1793127572.177615865]: Plugin setpoint_accel loaded[0m
+[0m[ INFO] [1793127572.215713948]: Plugin setpoint_accel initialized[0m
+[0m[ INFO] [1793127572.216511365]: Plugin setpoint_attitude loaded[0m
+[0m[ INFO] [1793127572.348063823]: Plugin setpoint_attitude initialized[0m
+[0m[ INFO] [1793127572.348971198]: Plugin setpoint_position loaded[0m
+[0m[ INFO] [1793127572.491710532]: Plugin setpoint_position initialized[0m
+[0m[ INFO] [1793127572.492511157]: Plugin setpoint_raw loaded[0m
+[0m[ INFO] [1793127572.577716032]: Plugin setpoint_raw initialized[0m
+[0m[ INFO] [1793127572.578792282]: Plugin setpoint_trajectory loaded[0m
+[0m[ INFO] [1793127572.629380698]: Plugin setpoint_trajectory initialized[0m
+[0m[ INFO] [1793127572.630376740]: Plugin setpoint_velocity loaded[0m
+[0m[ INFO] [1793127572.754821532]: Plugin setpoint_velocity initialized[0m
+[0m[ INFO] [1793127572.755494699]: Plugin sys_status loaded[0m
+[0m[ INFO] [1793127572.884847740]: Plugin sys_status initialized[0m
+[0m[ INFO] [1793127572.885649532]: Plugin sys_time loaded[0m
+[0m[ INFO] [1793127572.925039990]: TM: Timesync mode: MAVLINK[0m
+[0m[ INFO] [1793127572.928076532]: TM: Not publishing sim time[0m
+[0m[ INFO] [1793127572.936832365]: Plugin sys_time initialized[0m
+[0m[ INFO] [1793127572.937444865]: Plugin terrain loaded[0m
+[0m[ INFO] [1793127572.941966574]: Plugin terrain initialized[0m
+[0m[ INFO] [1793127572.942684074]: Plugin trajectory loaded[0m
+[0m[ INFO] [1793127572.995449157]: Plugin trajectory initialized[0m
+[0m[ INFO] [1793127572.995795365]: Plugin tunnel loaded[0m
+[0m[ INFO] [1793127573.019654615]: Plugin tunnel initialized[0m
+[0m[ INFO] [1793127573.020799115]: Plugin vfr_hud loaded[0m
+[0m[ INFO] [1793127573.031983074]: Plugin vfr_hud initialized[0m
+[0m[ INFO] [1793127573.032239449]: Plugin vibration blacklisted[0m
+[0m[ INFO] [1793127573.032928074]: Plugin vision_pose_estimate loaded[0m
+[0m[ INFO] [1793127573.172480657]: Plugin vision_pose_estimate initialized[0m
+[0m[ INFO] [1793127573.173179199]: Plugin vision_speed_estimate loaded[0m
+[0m[ INFO] [1793127573.229405824]: Plugin vision_speed_estimate initialized[0m
+[0m[ INFO] [1793127573.230179615]: Plugin waypoint loaded[0[33m[ WARN] [1793127573.354355824]: GP: No GPS fix[0m
+[33m[ WARN] [1793127573.575883907]: Camera calibration file /home/jcfh/.ros/camera_info/head_camera.yaml not found.[0m
+[33m[ WARN] [1793127573.734799449]: location: STARTING; vision pose withheld[0m
+[33m[ WARN] [1793127573.831253324]: location: WAIT_TF; vision pose withheld[0m
+[33m[ WARN] [1793127573.879702866]: unknown control 'focus_auto'
+[0m
+[33m[ WARN] [1793127574.410641283]: CMD: Unexpected command 520, result 0[0m
+[33m[ WARN] [1793127574.431821241]: location: range sample rejected (range, jump, or repeated timestamp)[0m
+READY: unarmed FCU, live IMU/scan, map, location and TF.
+Foxglove/Lichtblick: ws://192.168.1.102:8765; 3D fixed frame=map
++ roslaunch navigation_2d navigation_2d.launch detect_backend:=rknn target_hazard:=flammable stage:=1 field_yaw_deg:=-90 auto_start:=false enable_actuation:=false use_real_servos:=false
+... logging to /home/jcfh/.ros/log/88b375be-d238-11f1-aa25-14f5f9e6cd08/roslaunch-toybrick-25190.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/navigation_2d/launch/navigation_2d.launch
+[1mstarted roslaunch server http://192.168.1.102:41977/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /move_base/DWAPlannerROS/acc_lim_theta: 3.2
+ * /move_base/DWAPlannerROS/acc_lim_x: 4.0
+ * /move_base/DWAPlannerROS/acc_lim_y: 4.0
+ * /move_base/DWAPlannerROS/controller_frequency: 15.0
+ * /move_base/DWAPlannerROS/forward_point_distance: 0.2
+ * /move_base/DWAPlannerROS/goal_distance_bias: 24.0
+ * /move_base/DWAPlannerROS/latch_xy_goal_tolerance: False
+ * /move_base/DWAPlannerROS/max_scaling_factor: 1.0
+ * /move_base/DWAPlannerROS/max_vel_theta: 0
+ * /move_base/DWAPlannerROS/max_vel_trans: 0.45
+ * /move_base/DWAPlannerROS/max_vel_x: 0.4
+ * /move_base/DWAPlannerROS/max_vel_y: 0.4
+ * /move_base/DWAPlannerROS/min_vel_theta: 0
+ * /move_base/DWAPlannerROS/min_vel_trans: 0.1
+ * /move_base/DWAPlannerROS/min_vel_x: -0.4
+ * /move_base/DWAPlannerROS/min_vel_y: -0.4
+ * /move_base/DWAPlannerROS/occdist_scale: 0.02
+ * /move_base/DWAPlannerROS/odom_topic: /mavros/local_pos...
+ * /move_base/DWAPlannerROS/oscillation_reset_dist: 0.05
+ * /move_base/DWAPlannerROS/path_distance_bias: 32.0
+ * /move_base/DWAPlannerROS/publish_cost_grid_pc: False
+ * /move_base/DWAPlannerROS/publish_traj_pc: False
+ * /move_base/DWAPlannerROS/scaling_speed: 1.0
+ * /move_base/DWAPlannerROS/sim_granularity: 0.025
+ * /move_base/DWAPlannerROS/sim_time: 2.0
+ * /move_base/DWAPlannerROS/stop_time_buffer: 0.2
+ * /move_base/DWAPlannerROS/vth_samples: 40
+ * /move_base/DWAPlannerROS/vx_samples: 20
+ * /move_base/DWAPlannerROS/vy_samples: 20
+ * /move_base/DWAPlannerROS/xy_goal_tolerance: 0.1
+ * /move_base/DWAPlannerROS/yaw_goal_tolerance: 0.2
+ * /move_base/base_local_planner: dwa_local_planner...
+ * /move_base/conservative_reset_dist: 3.0
+ * /move_base/controller_frequency: 10
+ * /move_base/controller_patience: 15.0
+ * /move_base/global_costmap/cost_scaling_factor: 3.0
+ * /move_base/global_costmap/default_tolerance: 1
+ * /move_base/global_costmap/footprint: [[0.16, 0.16], [0...
+ * /move_base/global_costmap/global_frame: map
+ * /move_base/global_costmap/inflation_radius: 0.25
+ * /move_base/global_costmap/map_type: costmap
+ * /move_base/global_costmap/observation_sources: scan
+ * /move_base/global_costmap/obstacle_range: 3.0
+ * /move_base/global_costmap/publish_frequency: 10.0
+ * /move_base/global_costmap/raytrace_range: 3.5
+ * /move_base/global_costmap/robot_base_frame: base_link
+ * /move_base/global_costmap/scan/clearing: True
+ * /move_base/global_costmap/scan/data_type: LaserScan
+ * /move_base/global_costmap/scan/marking: True
+ * /move_base/global_costmap/scan/sensor_frame: laser_link
+ * /move_base/global_costmap/scan/topic: scan
+ * /move_base/global_costmap/static_map: True
+ * /move_base/global_costmap/transform_tolerance: 0.5
+ * /move_base/global_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/cost_scaling_factor: 3.0
+ * /move_base/local_costmap/footprint: [[0.16, 0.16], [0...
+ * /move_base/local_costmap/global_frame: map
+ * /move_base/local_costmap/height: 6.0
+ * /move_base/local_costmap/inflation_radius: 0.25
+ * /move_base/local_costmap/map_type: costmap
+ * /move_base/local_costmap/observation_sources: scan
+ * /move_base/local_costmap/obstacle_range: 3.0
+ * /move_base/local_costmap/publish_frequency: 10.0
+ * /move_base/local_costmap/raytrace_range: 3.5
+ * /move_base/local_costmap/resolution: 0.05
+ * /move_base/local_costmap/robot_base_frame: base_link
+ * /move_base/local_costmap/rolling_window: True
+ * /move_base/local_costmap/scan/clearing: True
+ * /move_base/local_costmap/scan/data_type: LaserScan
+ * /move_base/local_costmap/scan/marking: True
+ * /move_base/local_costmap/scan/sensor_frame: laser_link
+ * /move_base/local_costmap/scan/topic: scan
+ * /move_base/local_costmap/static_map: False
+ * /move_base/local_costmap/transform_tolerance: 0.5
+ * /move_base/local_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/width: 6.0
+ * /move_base/oscillation_distance: 0.1
+ * /move_base/oscillation_timeout: 10.0
+ * /move_base/planner_frequency: 10
+ * /move_base/planner_patience: 5.0
+ * /move_base/shutdown_costmaps: False
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+ * /shoot_with_move_base_node/ack_timeout: 3.0
+ * /shoot_with_move_base_node/alignment_tolerance: 0.2
+ * /shoot_with_move_base_node/annotate_hold: 6.0
+ * /shoot_with_move_base_node/auto_start: False
+ * /shoot_with_move_base_node/backend: rknn
+ * /shoot_with_move_base_node/body_frame: base_link
+ * /shoot_with_move_base_node/camera_hfov_deg: 54.0
+ * /shoot_with_move_base_node/camera_yaw_deg: 0.0
+ * /shoot_with_move_base_node/confidence_threshold: 0.5
+ * /shoot_with_move_base_node/detect_confirmation_window: 6.0
+ * /shoot_with_move_base_node/detect_height: 1.2
+ * /shoot_with_move_base_node/detect_timeout: 8.0
+ * /shoot_with_move_base_node/detect_times: 5
+ * /shoot_with_move_base_node/drop_align_mode: vision_with_fallback
+ * /shoot_with_move_base_node/drop_height: 0.6
+ * /shoot_with_move_base_node/drop_settle_time: 0.8
+ * /shoot_with_move_base_node/enable_actuation: False
+ * /shoot_with_move_base_node/enforce_safe_field: True
+ * /shoot_with_move_base_node/field_max_x: 3.25
+ * /shoot_with_move_base_node/field_max_y: 0.55
+ * /shoot_with_move_base_node/field_min_x: -0.55
+ * /shoot_with_move_base_node/field_min_y: -3.25
+ * /shoot_with_move_base_node/field_yaw_deg: -90
+ * /shoot_with_move_base_node/fly_height: 1.5
+ * /shoot_with_move_base_node/goal_timeout: 25.0
+ * /shoot_with_move_base_node/hazard_detect_num: 2
+ * /shoot_with_move_base_node/hazard_point0_x: 0.0
+ * /shoot_with_move_base_node/hazard_point0_y: -1.95
+ * /shoot_with_move_base_node/hazard_point1_x: 1.4
+ * /shoot_with_move_base_node/hazard_point1_y: -1.95
+ * /shoot_with_move_base_node/hazard_point2_x: 1.4
+ * /shoot_with_move_base_node/hazard_point2_y: 0.0
+ * /shoot_with_move_base_node/hazard_point3_x: 1.4
+ * /shoot_with_move_base_node/hazard_point3_y: -0.45
+ * /shoot_with_move_base_node/hazard_route_num: 4
+ * /shoot_with_move_base_node/input_image_topic: /camera/image_raw
+ * /shoot_with_move_base_node/input_size: 416
+ * /shoot_with_move_base_node/labels_file: labels.txt
+ * /shoot_with_move_base_node/land_settle_time: 2.0
+ * /shoot_with_move_base_node/map_frame: map
+ * /shoot_with_move_base_node/max_align_offset: 0.35
+ * /shoot_with_move_base_node/max_center_offset: 0.35
+ * /shoot_with_move_base_node/max_vel: 0.35
+ * /shoot_with_move_base_node/model_file: best.rknn
+ * /shoot_with_move_base_node/model_path: /home/jcfh/catkin...
+ * /shoot_with_move_base_node/nms_iou: 0.45
+ * /shoot_with_move_base_node/onnx_file: best.onnx
+ * /shoot_with_move_base_node/person_detect_num: 3
+ * /shoot_with_move_base_node/person_point0_x: 1.4
+ * /shoot_with_move_base_node/person_point0_y: -0.95
+ * /shoot_with_move_base_node/person_point1_x: 2.7
+ * /shoot_with_move_base_node/person_point1_y: -0.95
+ * /shoot_with_move_base_node/person_point2_x: 2.7
+ * /shoot_with_move_base_node/person_point2_y: -1.05
+ * /shoot_with_move_base_node/person_point3_x: 2.7
+ * /shoot_with_move_base_node/person_point3_y: -1.85
+ * /shoot_with_move_base_node/person_point4_x: 2.7
+ * /shoot_with_move_base_node/person_point4_y: -2.65
+ * /shoot_with_move_base_node/person_route_num: 5
+ * /shoot_with_move_base_node/planner_timeout: 0.5
+ * /shoot_with_move_base_node/pose_timeout: 0.5
+ * /shoot_with_move_base_node/pub_rate: 50
+ * /shoot_with_move_base_node/publish_rate: 8.0
+ * /shoot_with_move_base_node/publish_scale: 0.5
+ * /shoot_with_move_base_node/rescue_drop_enabled: False
+ * /shoot_with_move_base_node/rescue_drop_x: 999.0
+ * /shoot_with_move_base_node/rescue_drop_y: 999.0
+ * /shoot_with_move_base_node/return_point0_x: 2.7
+ * /shoot_with_move_base_node/return_point0_y: -0.95
+ * /shoot_with_move_base_node/return_point1_x: 1.4
+ * /shoot_with_move_base_node/return_point1_y: -0.95
+ * /shoot_with_move_base_node/return_point2_x: 1.4
+ * /shoot_with_move_base_node/return_point2_y: -1.95
+ * /shoot_with_move_base_node/return_point[33m[ WARN] [1793127580.673953286]: global_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters[0m
+[33m[ WARN] [1793127581.952598370]: local_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters[0m
+[0m[ INFO] [1793127580.980525577]: Detect: 4 labels from /home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/labels.txt[0m
+[0m[ INFO] [1793127581.044103077]: Detect: backend=rknn (model_path=/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26)[0m
+D RKNNAPI: ==============================================
+D RKNNAPI: RKNN VERSION:
+D RKNNAPI:   API: 1.7.5 (bb79b30 build: 2023-07-18 16:49:12)
+D RKNNAPI:   DRV: 1.7.5 (bb79b30 build: 2023-07-18 10:49:14)
+D RKNNAPI: ==============================================
+[33m[ WARN] [1793127603.398455838]: GP: No GPS fix[0m
+[31m[ERROR] [1793127609.741083216]: [WS] handle_read_frame error: asio.system:104 (Connection reset by peer)[0m
+[0m[ INFO] [1793127582.783368078]: Detect: RKNN model /home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/best.rknn: 1 input(s), 3 output(s)[0m
+[0m[ INFO] [1793127582.783436620]: Detect: input 'images_169' dims=[416,416,3,1] fmt=0 type=3[0m
+[0m[ INFO] [1793127582.783464037]: Detect: input_size=416[0m
+[0m[ INFO] [1793127582.783495537]: Detect: output[0] 'Transpose_/model.24/Transpose/out0_0' rank=5 dims=[9,52,52,3,1] fmt=0 type=3 n_elems=73008[0m
+[0m[ INFO] [1793127582.783529662]: Detect: output[1] 'Transpose_/model.24/Transpose_1/out0_1' rank=5 dims=[9,26,26,3,1] fmt=0 type=3 n_elems=18252[0m
+[0m[ INFO] [1793127582.783660828]: Detect: output[2] 'Transpose_/model.24/Transpose_2/out0_2' rank=5 dims=[9,13,13,3,1] fmt=0 type=3 n_elems=4563[0m
+[0m[ INFO] [1793127582.783747745]: Detect: RKNN ready (/home/jcfh/catkin_ws/src/navigation_2d/detect_mode/26/best.rknn)[0m
+[0m[ INFO] [1793127583.653582037]: [mission] hazard route (4 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793127583.653742745]: [mission]   hazard[0] field=(  0.00, -1.95) map=(  1.95, -0.00)[0m
+[0m[ INFO] [1793127583.653809245]: [mission]   hazard[1] field=(  1.40, -1.95) map=(  1.95,  1.40)[0m
+[0m[ INFO] [1793127583.653865245]: [mission]   hazard[2] field=(  1.40,  0.00) map=(  0.00,  1.40)  <- detect[0m
+[0m[ INFO] [1793127583.653915412]: [mission]   hazard[3] field=(  1.40, -0.45) map=(  0.45,  1.40)  <- detect[0m
+[0m[ INFO] [1793127583.653964995]: [mission] person route (5 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793127583.654034704]: [mission]   person[0] field=(  1.40, -0.95) map=(  0.95,  1.40)[0m
+[0m[ INFO] [1793127583.654100912]: [mission]   person[1] field=(  2.70, -0.95) map=(  0.95,  2.70)[0m
+[0m[ INFO] [1793127583.654167704]: [mission]   person[2] field=(  2.70, -1.05) map=(  1.05,  2.70)  <- detect[0m
+[0m[ INFO] [1793127583.654216412]: [mission]   person[3] field=(  2.70, -1.85) map=(  1.85,  2.70)  <- detect[0m
+[0m[ INFO] [1793127583.654265120]: [mission]   person[4] field=(  2.70, -2.65) map=(  2.65,  2.70)  <- detect[0m
+[0m[ INFO] [1793127583.654323162]: [mission] return route (5 points, field_yaw=-90.0 deg):[0m
+[0m[ INFO] [1793127583.654381495]: [mission]   return[0] field=(  2.70, -0.95) map=(  0.95,  2.70)[0m
+[0m[ INFO] [1793127583.654437204]: [mission]   return[1] field=(  1.40, -0.95) map=(  0.95,  1.40)[0m
+[0m[ INFO] [1793127583.654485329]: [mission]   return[2] field=(  1.40, -1.95) map=(  1.95,  1.40)[0m
+[0m[ INFO] [1793127583.654534912]: [mission]   return[3] field=(  0.00, -1.95) map=(  1.95, -0.00)[0m
+[0m[ INFO] [1793127583.654611329]: [mission]   return[4] field=(  0.00,  0.00) map=(  0.00,  0.00)[0m
+[0m[ INFO] [1793127583.897246871]: [mission] status: WAIT_FCU[0m
+[0m[ INFO] [1793127583.897331746]: [mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no[0m
+[0m[ INFO] [1793127583.897357121]: [mission] hazard target: flammable[0m
+[0m[ INFO] [1793127583.899808871]: [mission] FCU mode: ALTCTL[0m
+[0m[ INFO] [1793127583.997417371]: [mission] status: BLOCKED_MODEL_INFERENCE[0m
+[0m[ INFO] [1793127584.600696704]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127584.697639038]: [mission] status: BLOCKED_POSE_STALE[0m
+[0m[ INFO] [1793127589.915479665]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127595.298770418]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127600.638069129]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127605.989117923]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127611.345671050]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127616.675419719]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127620.857789638]: [mission] first pose: (-0.01, -0.01, 0.04), yaw 0.1 deg -> holding this heading[0m
+[0m[ INFO] [1793127620.897578721]: [mission] status: INPUTS_RECOVERED[0m
+[0m[0m[ INFO] [1793127576.508436659]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/home/jcfh/catkin_ws/src/location/param/ROSSLAM/cartographer_2Dlidar_mapping_location_params.lua' for 'cartographer_2Dlidar_mapping_location_params.lua'.[0m
+[0m[ INFO] [1793127576.515749034]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/map_builder.lua' for 'map_builder.lua'.[0m
+[0m[ INFO] [1793127576.515870367]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/map_builder.lua' for 'map_builder.lua'.[0m
+[0m[ INFO] [1793127576.516064325]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/pose_graph.lua' for 'pose_graph.lua'.[0m
+[0m[ INFO] [1793127576.516185367]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/pose_graph.lua' for 'pose_graph.lua'.[0m
+[0m[ INFO] [1793127576.516670409]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder.lua' for 'trajectory_builder.lua'.[0m
+[0m[ INFO] [1793127576.516785325]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder.lua' for 'trajectory_builder.lua'.[0m
+[0m[ INFO] [1793127576.516938742]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.[0m
+[0m[ INFO] [1793127576.517021867]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.[0m
+[0m[ INFO] [1793127576.517357284]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.[0m
+[0m[ INFO] [1793127576.517447409]: I1028 02:59:36.000000 25111 configuration_file_resolver.cc:41] Found '/opt/ros/melodic/share/cartographer/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.[0m
+[0m[ INFO] [1793127576.589670575]: I1028 02:59:36.000000 25111 submap_2d.cc:187] Added submap 1[0m
+[0m[ INFO] [1793127576.589983242]: I1028 02:59:36.000000 25111 map_builder_bridge.cc:130] Added trajectory with ID '0'.[0m
+[0m[ INFO] [1793127576.808047742]: I1028 02:59:36.000000 25111 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639287243768019058'.[0m
+[0m[ INFO] [1793127576.813081409]: I1028 02:59:36.000000 25111 local_trajectory_builder_2d.cc:138] Extrapolator is still initializing.[0m
+[0m[ INFO] [1793127591.590843041]: I1028 02:59:51.000000 25111 collated_trajectory_builder.cc:72] imu rate: 50.00 Hz 2.00e-02 s +/- 1.75e-03 s (pulsed at 99.61% real time)[0m
+[0m[ INFO] [1793127591.591044874]: I1028 02:59:51.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.35e-03 s (pulsed at 99.92% real time)[0m
+[0m[ INFO] [1793127606.677459131]: I1028 03:00:06.000000 25111 collated_trajectory_builder.cc:72] imu rate: 50.00 Hz 2.00e-02 s +/- 1.81e-03 s (pulsed at 99.95% real time)[0m
+[0m[ INFO] [1793127606.677607590]: I1028 03:00:06.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.79e-03 s (pulsed at 100.05% real time)[0m
+[0m[ INFO] [1793127621.766611514]: I1028 03:00:21.000000 25111 collated_trajectory_builder.cc:72] imu rate: 50.00 Hz 2.00e-02 s +/- 1.84e-03 s (pulsed at 99.99% real time)[0m
+[0m[ INFO] [1793127621.766953639]: I1028 03:00:21.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.64e-03 s (pulsed at 100.05% real time)[0m
+[0m[ INFO] [1793127626.903667224]: I1028 03:00:26.000000 2[33m[ WARN] [1793127629.233039725]: location: range sample rejected (range, jump, or repeated timestamp)[0m
+[33m[ WARN] [1793127633.522050228]: GP: No GPS fix[0m
+[33m[ WARN] [1793127663.653217742]: GP: No GPS fix[0m
+[33m[ WARN] [1793127693.654986173]: GP: No GPS fix[0m
+[33m[ WARN] [1793127699.431976759]: location: range sample rejected (range, jump, or repeated timestamp)[0m
+[33m[ WARN] [1793127702.583482052]: location: range sample rejected (range, jump, or repeated timestamp)[0m
+[0m[ INFO] [1793127573.558073866]: using default calibration URL[0m
+[0m[ INFO] [1793127573.575691116]: camera calibration URL: file:///home/jcfh/.ros/camera_info/head_camera.yaml[0m
+[0m[ INFO] [1793127573.575842491]: Unable to open camera calibration file [/home/jcfh/.ros/camera_info/head_camera.yaml][0m
+[0m[ INFO] [1793127573.575996491]: Starting 'head_camera' (/dev/v4l/by-id/usb-RYS_USB_Camera_200901010001-video-index0) at 1280x720 via mmap (mjpeg) at 30 FPS[0m
+[0m[ INFO] [1793127573.591282449]: MPP context created[0m
+[0m[ INFO] [1793127573.593910949]: MPP MJPEG initialized[0m
+[0m[ INFO] [1793127573.594370324]: MPP DRM group created[0m
+[0m[ INFO] [1793127573.602066824]: camera backend=mpp_rga: hardware MJPEG -> NV12 -> RGA RGB8 (BT.601 full range)[0m
+librga fail to get driver version! Compatibility mode will be enabled.
+
+838  24773  24773 E im2d_rga_impl: The driver may be compatible, but it is best to update the driver to version 1.2.4. You can try to update the SDK or update the <SDK>/kernel/drivers/video/rockchip/rga3 directory individually. current version: librga 1.10.5, driver 0010.
+current rga_api version 1.10.5_[11]. The called RockchipRga API is deprecated and will be removed in a future release, currently using the legacy API for compatibility. Please refer to the latest IM2D API documentation to update your implementation.
+[0m[ INFO] [1793127573.932663699]: MPP/RGA frame 1: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127583.928990412]: MPP/RGA frame 301: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127593.927034084]: MPP/RGA frame 601: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127603.928537838]: MPP/RGA frame 901: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127613.930536552]: MPP/RGA frame 1201: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127623.935368515]: MPP/RGA frame 1501: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127633.937597644]: MPP/RGA frame 1801: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127643.926130524]: MPP/RGA frame 2101: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127653.930448154]: MPP/RGA frame 2401: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127663.931368284]: MPP/RGA frame 2701: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127673.930668413]: MPP/RGA frame 3001: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127683.928109585]: MPP/RGA frame 3301: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127693.927938631]: MPP/RGA frame 3601: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127703.927160386]: MPP/RGA frame 3901: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127713.931732183]: MPP/RGA frame 4201: 1280x720 NV12 stride=1280x720 -> RGB8[0m
+[0m[ INFO] [1793127577.030322034]: location: READY[0m
+... logging to /home/jcfh/.ros/log/88b375be-d238-11f1-aa25-14f5f9e6cd08/roslaunch-toybrick-23993.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/usb_cam/launch/rk_usb_camera.launch
+[1mstarted roslaunch server http://192.168.1.102:42194/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /camera/autofocus: False
+ * /camera/camera_frame_id: camera
+ * /camera/camera_info_url: 
+ * /camera/framerate: 30
+ * /camera/image_height: 720
+ * /camera/image_width: 1280
+ * /camera/io_method: mmap
+ * /camera/mjpeg_backend: mpp_rga
+ * /camera/pixel_format: mjpeg
+ * /camera/video_device: /dev/v4l/by-id/us...
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+
+NODES
+  /
+    camera (usb_cam/usb_cam_node)
+
+[1mROS_MASTER_URI=http://192.168.1.102:11311[0m
+]2;/home/jcfh/catkin_ws/src/usb_cam/launch/rk_usb_camera.launch http://192.168.1.102:11311
+[1mprocess[camera-1]: started with pid [24773][0m
+[camera-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+5111 motion_filter.cc:42] Motion filter reduced the number of nodes to 2%.[0m
+[0m[ INFO] [1793127636.769083896]: I1028 03:00:36.000000 25111 collated_trajectory_builder.cc:72] imu rate: 50.00 Hz 2.00e-02 s +/- 2.54e-03 s (pulsed at 100.58% real time)[0m
+[0m[ INFO] [1793127636.769208437]: I1028 03:00:36.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.36e-03 s (pulsed at 99.91% real time)[0m
+[0m[ INFO] [1793127651.843122445]: I1028 03:00:51.000000 25111 collated_trajectory_builder.cc:72] imu rate: 50.00 Hz 2.00e-02 s +/- 2.65e-03 s (pulsed at 99.96% real time)[0m
+[0m[ INFO] [1793127651.843333611]: I1028 03:00:51.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 2.68e-03 s (pulsed at 100.06% real time)[0m
+[0m[ INFO] [1793127666.932978785]: I1028 03:01:06.000000 25111 collated_trajectory_builder.cc:72] imu rate: 49.98 Hz 2.00e-02 s +/- 2.86e-03 s (pulsed at 99.99% real time)[0m
+[0m[ INFO] [1793127666.933355618]: I1028 03:01:06.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.22e-03 s (pulsed at 100.03% real time)[0m
+[0m[ INFO] [1793127676.884820998]: I1028 03:01:16.000000 25111 motion_filter.cc:42] Motion filter reduced the number of nodes to 2%.[0m
+[0m[ INFO] [1793127681.947317542]: I1028 03:01:21.000000 25111 collated_trajectory_builder.cc:72] imu rate: 50.01 Hz 2.00e-02 s +/- 2.78e-03 s (pulsed at 99.88% real time)[0m
+[0m[ INFO] [1793127681.947884251]: I1028 03:01:21.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.66e-03 s (pulsed at 99.94% real time)[0m
+[0m[ INFO] [1793127697.009976424]: I1028 03:01:37.000000 25111 collated_trajectory_builder.cc:72] imu rate: 50.00 Hz 2.00e-02 s +/- 2.84e-03 s (pulsed at 99.95% real time)[0m
+[0m[ INFO] [1793127697.010174174]: I1028 03:01:37.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 1.97e-03 s (pulsed at 100.09% real time)[0m
+[0m[ INFO] [1793127712.011476890]: I1028 03:01:52.000000 25111 collated_trajectory_builder.cc:72] imu rate: 49.99 Hz 2.00e-02 s +/- 2.77e-03 s (pulsed at 99.97% real time)[0m
+[0m[ INFO] [1793127712.014087890]: I1028 03:01:52.000000 25111 collated_trajectory_builder.cc:72] scan rate: 10.01 Hz 9.99e-02 s +/- 2.02e-03 s (pulsed at 99.77% real time)[0m
+[KOptimizing: Done.     
+[KOptimizing: Done.     
+... logging to /home/jcfh/.ros/log/88b375be-d238-11f1-aa25-14f5f9e6cd08/roslaunch-toybrick-23994.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/jcfh/catkin_ws/src/location/launch/lichtblick_bridge_readonly.launch
+[1mstarted roslaunch server http://192.168.1.102:34465/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /foxglove_bridge/address: 0.0.0.0
+ * /foxglove_bridge/capabilities: []
+ * /foxglove_bridge/certfile: 
+ * /foxglove_bridge/client_topic_whitelist: []
+ * /foxglove_bridge/keyfile: 
+ * /foxglove_bridge/max_update_ms: 5000
+ * /foxglove_bridge/param_whitelist: []
+ * /foxglove_bridge/port: 8765
+ * /foxglove_bridge/send_buffer_limit: 10000000
+ * /foxglove_bridge/service_whitelist: []
+ * /foxglove_bridge/tls: False
+ * /foxglove_bridge/topic_whitelist: ['^/map$', '^/sca...
+ * /foxglove_nodelet_manager/num_worker_threads: 0
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+
+NODES
+  /
+    foxglove_bridge (nodelet/nodelet)
+    foxglove_nodelet_manager (nodelet/nodelet)
+    monitor_jpeg (location/monitor_jpeg.py)
+
+[1mROS_MASTER_URI=http://192.168.1.102:11311[0m
+]2;/home/jcfh/catkin_ws/src/location/launch/lichtblick_bridge_readonly.launch http://192.168.1.102:11311
+[1mprocess[monitor_jpeg-1]: started with pid [24760][0m
+[1mprocess[foxglove_nodelet_manager-2]: started with pid [24765][0m
+[1mprocess[foxglove_bridge-3]: started with pid [24769][0m
+[foxglove_bridge-3] killing on exit
+[foxglove_nodelet_manager-2] killing on exit
+[monitor_jpeg-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[0m[ INFO] [1793127580.915197494]: global_costmap: Using plugin "static_layer"[0m
+[0m[ INFO] [1793127580.991855369]: Requesting the map...[0m
+[0m[ INFO] [1793127581.242992036]: Resizing costmap to 204 X 420 at 0.050000 m/pix[0m
+[0m[ INFO] [1793127581.342914119]: Received a 204 X 420 map at 0.050000 m/pix[0m
+[0m[ INFO] [1793127581.385726494]: global_costmap: Using plugin "obstacle_layer"[0m
+[0m[ INFO] [1793127581.427457869]:     Subscribed to Topics: scan[0m
+[0m[ INFO] [1793127581.616974411]: global_costmap: Using plugin "inflation_layer"[0m
+[0m[ INFO] [1793127582.062380036]: local_costmap: Using plugin "obstacle_layer"[0m
+[0m[ INFO] [1793127582.087617953]:     Subscribed to Topics: scan[0m
+[0m[ INFO] [1793127582.227652286]: local_costmap: Using plugin "inflation_layer"[0m
+[0m[ INFO] [1793127582.538814620]: Created local_planner dwa_local_planner/DWAPlannerROS[0m
+[0m[ INFO] [1793127582.554268870]: Sim period is set to 0.07[0m
+[0m[ INFO] [1793127583.448951037]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[ INFO] [1793127583.531613829]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[ INFO] [1793127584.026369162]: Resizing costmap to 204 X 421 at 0.050000 m/pix[0m
+[0m[ INFO] [1793127587.509525914]: Resizing costmap to 204 X 431 at 0.050000 m/pix[0m
+[0m[ INFO] [1793127620.855586096]: odom received![0m
+[ INFO] [1793127620.897665346]: [mission] status: DRY_RUN_READY[0m
+[0m[ INFO] [1793127621.972079597]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127627.284213725]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127632.665643727]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127637.987895688]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127643.316799232]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127648.697949485]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127654.018627737]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127659.409518157]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127664.740814159]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127670.103921912]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127675.445385081]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127680.832917583]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127686.170655253]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127691.470708880]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127696.748134299]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127702.091202427]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127707.417292096]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127712.763879307]: Detect: inference OK backend=rknn input=416 heads=3 detections=0[0m
+[0m[ INFO] [1793127570.260938239]: RPLIDAR running on ROS package rplidar_ros, SDK Version:2.1.0[0m
+[0m[ INFO] [1793127570.284089031]: RPLIDAR MODE:S2M1[0m
+[0m[ INFO] [1793127570.284238072]: RPLIDAR S/N: B397E18BC7E49CCCA3EB9AF4274A4C72[0m
+[0m[ INFO] [1793127570.284307781]: Firmware Ver: 1.02[0m
+[0m[ INFO] [1793127570.284352406]: Hardware Rev: 18[0m
+[0m[ INFO] [1793127570.289830489]: RPLidar health status : OK.[0m
+[0m[ INFO] [1793127570.481810447]: current scan mode: DenseBoost, sample rate: 32 Khz, max_distance: 30.0 m, scan frequency:10.0 Hz, [0m
+[0m[ INFO] [1793127572.722032115]: set lidar scan frequency to 10.0 Hz(600.0 Rpm) [0m
+m
+[0m[ INFO] [1793127573.339236074]: Plugin waypoint initialized[0m
+[0m[ INFO] [1793127573.339364699]: Plugin wheel_odometry blacklisted[0m
+[0m[ INFO] [1793127573.339702449]: Plugin wind_estimation loaded[0m
+[0m[ INFO] [1793127573.352115532]: Plugin wind_estimation initialized[0m
+[0m[ INFO] [1793127573.352896324]: Built-in SIMD instructions: ARM NEON[0m
+[0m[ INFO] [1793127573.353140157]: Built-in MAVLink package version: 2022.12.30[0m
+[0m[ INFO] [1793127573.353332074]: Known MAVLink dialects: common ardupilotmega ASLUAV AVSSUAS all cubepilot development icarous matrixpilot paparazzi standard storm32 uAvionix ualberta[0m
+[0m[ INFO] [1793127573.353453407]: MAVROS started. MY ID 1.240, TARGET ID 1.1[0m
+[0m[ INFO] [1793127573.357066865]: IMU: Attitude quaternion IMU detected![0m
+[0m[ INFO] [1793127573.357655740]: IMU: High resolution IMU detected![0m
+[0m[ INFO] [1793127573.360600657]: RC_CHANNELS message detected![0m
+[0m[ INFO] [1793127573.367476782]: CON: Got HEARTBEAT, connected. FCU: PX4 Autopilot[0m
+[0m[ INFO] [1793127573.404904824]: IMU: Attitude quaternion IMU detected![0m
+[0m[ INFO] [1793127573.405057074]: IMU: High resolution IMU detected![0m
+[0m[ INFO] [1793127573.405144866]: RC_CHANNELS message detected![0m
+[0m[ INFO] [1793127574.407354199]: GF: Using MISSION_ITEM_INT[0m
+[0m[ INFO] [1793127574.407898741]: RP: Using MISSION_ITEM_INT[0m
+[0m[ INFO] [1793127574.408204991]: WP: Using MISSION_ITEM_INT[0m
+[0m[ INFO] [1793127574.408613908]: VER: 1.1: Capabilities         0x000000000000e4ff[0m
+[0m[ INFO] [1793127574.408915199]: VER: 1.1: Flight software:     010d03ff (1c8ab2a0d7000000)[0m
+[0m[ INFO] [1793127574.409106533]: VER: 1.1: Middleware software: 010d03ff (1c8ab2a0d7000000)[0m
+[0m[ INFO] [1793127574.409325866]: VER: 1.1: OS software:         0b0000ff (4a1dd8680cd29f51)[0m
+[0m[ INFO] [1793127574.409522158]: VER: 1.1: Board hardware:      00000038[0m
+[0m[ INFO] [1793127574.409772991]: VER: 1.1: VID/PID:             3185:0038[0m
+[0m[ INFO] [1793127574.410134074]: VER: 1.1: UID:                 3133510f32373636[0m
+[0m[ INFO] [1793127583.380361245]: HP: requesting home position[0m
+[0m[ INFO] [1793127588.369371206]: GF: mission received[0m
+[0m[ INFO] [1793127588.381643373]: RP: mission received[0m
+[0m[ INFO] [1793127588.394777123]: WP: mission received[0m
+[0m[ INFO] [1793127593.380425083]: HP: requesting home position[0m
+[0m[ INFO] [1793127603.380635296]: HP: requesting home position[0m
+[0m[ INFO] [1793127613.380866010]: HP: requesting home position[0m
+[0m[ INFO] [1793127623.380123264]: HP: requesting home position[0m
+[0m[ INFO] [1793127633.380071186]: HP: requesting home position[0m
+[0m[ INFO] [1793127643.379896649]: HP: requesting home position[0m
+[0m[ INFO] [1793127653.380025029]: HP: requesting home position[0m
+[0m[ INFO] [1793127663.380016950]: HP: requesting home position[0m
+[0m[ INFO] [1793127673.380613372]: HP: requesting home position[0m
+[0m[ INFO] [1793127683.379894960]: HP: requesting home position[0m
+[0m[ INFO] [1793127693.380010506]: HP: requesting home position[0m
+[0m[ INFO] [1793127703.380082969]: HP: requesting home position[0m
+[0m[ INFO] [1793127713.379967849]: HP: requesting home position[0m
+3_x: 0.0
+ * /shoot_with_move_base_node/return_point3_y: -1.95
+ * /shoot_with_move_base_node/return_point4_x: 0.0
+ * /shoot_with_move_base_node/return_point4_y: 0.0
+ * /shoot_with_move_base_node/return_route_num: 5
+ * /shoot_with_move_base_node/settle_time: 1.0
+ * /shoot_with_move_base_node/stage: 1
+ * /shoot_with_move_base_node/state_timeout: 3.0
+ * /shoot_with_move_base_node/takeoff_height_tolerance: 0.12
+ * /shoot_with_move_base_node/takeoff_timeout: 20.0
+ * /shoot_with_move_base_node/target_hazard: flammable
+ * /shoot_with_move_base_node/target_person: person
+ * /shoot_with_move_base_node/target_topic: /mission/target_h...
+ * /shoot_with_move_base_node/tf_timeout: 0.5
+ * /shoot_with_move_base_node/wait_for_target: True
+ * /shoot_with_move_base_node/xy_gain_p: 1.2
+ * /shoot_with_move_base_node/yolo_anchors: 10,13,16,30,33,23...
+ * /shoot_with_move_base_node/yolo_reg_max: 16
+ * /shoot_with_move_base_node/yolo_strides: 8,16,32
+ * /shoot_with_move_base_node/yolo_style: v5-interleaved
+ * /shoot_with_move_base_node/z_gain_p: 1.0
+
+NODES
+  /
+    move_base (move_base/move_base)
+    shoot_with_move_base_node (navigation_2d/shoot_with_move_base_node)
+
+[1mROS_MASTER_URI=http://192.168.1.102:11311[0m
+]2;/home/jcfh/catkin_ws/src/navigation_2d/launch/navigation_2d.launch http://192.168.1.102:11311
+[1mprocess[move_base-1]: started with pid [25212][0m
+[1mprocess[shoot_with_move_base_node-2]: started with pid [25213][0m
+[shoot_with_move_base_node-2] killing on exit
+[move_base-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+udrate: 1000000
+ * /rplidarNode/serial_port: /dev/serial/by-id...
+
+NODES
+  /
+    cartographer_node (cartographer_ros/cartographer_node)
+    cartographer_occupancy_grid_node (cartographer_ros/cartographer_occupancy_grid_node)
+    location_node (location/location_node)
+    mavros (mavros/mavros_node)
+    rplidarNode (rplidar_ros/rplidarNode)
+    tf_baselink_to_laserlink (tf/static_transform_publisher)
+
+auto-starting new master
+[1mprocess[master]: started with pid [23958][0m
+[1mROS_MASTER_URI=http://192.168.1.102:11311[0m
+]2;/home/jcfh/catkin_ws/src/location/launch/location.launch http://192.168.1.102:11311
+[1msetting /run_id to 88b375be-d238-11f1-aa25-14f5f9e6cd08[0m
+[1mprocess[rosout-1]: started with pid [23973][0m
+started core service [/rosout]
+[1mprocess[rplidarNode-2]: started with pid [23995][0m
+[1mprocess[mavros-3]: started with pid [23996][0m
+[1mprocess[location_node-4]: started with pid [24011][0m
+[1mprocess[cartographer_node-5]: started with pid [24031][0m
+[1mprocess[cartographer_occupancy_grid_node-6]: started with pid [24043][0m
+[1mprocess[tf_baselink_to_laserlink-7]: started with pid [24050][0m
+[cartographer_occupancy_grid_node-6] killing on exit
+[tf_baselink_to_laserlink-7] killing on exit
+[mavros-3] killing on exit
+[location_node-4] killing on exit
+[rplidarNode-2] killing on exit
+[cartographer_node-5] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

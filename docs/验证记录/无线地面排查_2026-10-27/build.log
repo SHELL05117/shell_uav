@@ -1,0 +1,7 @@
+Scanning dependencies of target usb_cam
+[ 20%] Building CXX object usb_cam/CMakeFiles/usb_cam.dir/src/rockchip_mjpeg.cpp.o
+[ 40%] Linking CXX shared library /home/jcfh/catkin_ws/devel/lib/libusb_cam.so
+[ 60%] Built target usb_cam
+[ 80%] Linking CXX executable /home/jcfh/catkin_ws/devel/lib/usb_cam/usb_cam_node
+[100%] Built target usb_cam_node
+[100%] Built target location_node

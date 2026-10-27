@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -eo pipefail
+uav_dir="$(cd -- "$(dirname -- "$(readlink -f -- "$0")")" && pwd)"
+source "$uav_dir/uav_env.sh"
+exec python2 "$uav_dir/uav_start.py" "$@"
