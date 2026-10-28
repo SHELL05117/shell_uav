@@ -1,0 +1,283 @@
+17f2b16 2026-10-28 Release idle JPEG source subscriptions and document wall-separated Wi-Fi ground checks
+
+17	2	src/location/scripts/monitor_jpeg.py
+83	0	tools/monitor_jpeg_probe.py
+167	0	tools/wifi_ground_probe.py
+28a178e 2026-10-28 Fix startup gate subscription lifetime; verify USB no-actuation checks and document takeoff incidents
+
+4	2	tools/uav_arm.py
+28	20	tools/uav_start.py
+146	0	tools/uav_start_gate_probe.py
+7e287d3 2026-10-28 Archive current UAV project, organize logs and document paused flight logging
+
+1	1	src/navigation_2d/README.md
+1	1	src/usb_cam/UPSTREAM.md
+190	0	tools/check_doc_links.ps1
+22	0	tools/doc_links_known_missing.json
+e3a1d97 2026-10-28 Validate RK lightweight logging and add AGENTS field diagnostics overview
+
+70	0	tools/finalize_uav_lite.py
+6	0	tools/uav_arm.py
+58	0	tools/uav_lite_compare.py
+12	1	tools/uav_log_lite.py
+f253060 2026-10-28 Add lightweight flight logging and guarded OFFBOARD arming; RK validation pending repair
+
+1	1	tools/install_uav_commands.sh
+65	0	tools/test_uav_arm.py
+64	0	tools/test_uav_log_lite.py
+5	1	tools/uav
+156	0	tools/uav_arm.py
+169	0	tools/uav_lite_benchmark.py
+149	0	tools/uav_lite_integration.py
+411	0	tools/uav_log_lite.py
+6	2	tools/uav_start.py
+68e6cba 2026-10-28 Analyze takeoff vibration, vision gaps and AUTO.TAKEOFF control path
+
+197	0	tools/analyze_px4_takeoff.py
+e4882bd 2026-10-28 Add local flight logging and USB performance evidence; roll back RK deployment
+
+20	5	src/location/scripts/monitor_jpeg.py
+14	2	src/location/src/location_with_ftmini.cpp
+22	0	src/navigation_2d/include/audit_json.h
+13	0	src/navigation_2d/include/detect.h
+3	0	src/navigation_2d/include/mission_with_move_base.h
+101	17	src/navigation_2d/src/detect.cpp
+41	0	src/navigation_2d/src/shoot_with_move_base.cpp
+21	0	tools/deployment-flight-logging.json
+59	0	tools/finalize_uav_logging.py
+1	1	tools/install_uav_commands.sh
+3	1	tools/rk_px4_serial_shell.py
+98	0	tools/rollback_uav_logging.py
+23	0	tools/run_uav_logging_verification.sh
+61	0	tools/test_uav_logging.py
+5	0	tools/uav
+323	0	tools/uav_log.py
+124	0	tools/uav_log_report.py
+163	0	tools/uav_logging_benchmark.py
+43	0	tools/uav_logging_compare.py
+85	0	tools/uav_logging_fault_probe.py
+96	0	tools/uav_perf.py
+48	2	tools/uav_start.py
+22	0	tools/verify_uav_logging_rollback.sh
+8aa597c 2026-10-28 Fix RK wireless monitoring and accelerate MJPEG with MPP/RGA
+
+3	2	src/location/launch/lichtblick_bridge_readonly.launch
+10	8	src/location/launch/location.launch
+29	14	src/location/scripts/monitor_jpeg.py
+14	1	src/usb_cam/CMakeLists.txt
+18	0	src/usb_cam/include/usb_cam/rockchip_mjpeg.h
+8	4	src/usb_cam/include/usb_cam/usb_cam.h
+3	1	src/usb_cam/launch/rk_usb_camera.launch
+5	2	src/usb_cam/nodes/usb_cam_node.cpp
+134	0	src/usb_cam/src/rockchip_mjpeg.cpp
+61	95	src/usb_cam/src/usb_cam.cpp
+4	0	tools/70-uav-media.rules
+36	0	tools/build_rk_media_runtime.sh
+91	0	tools/foxglove_wire_check.py
+27	0	tools/install_uav_commands.sh
+30	0	tools/rk_media_compare.cpp
+5	1	tools/rk_px4_serial_shell.py
+92	0	tools/rk_wireless_observe.py
+5	0	tools/uav
+21	0	tools/uav_env.sh
+202	0	tools/uav_start.py
+a765be7 2026-10-27 Fix TFmini I2C frames and verify RK preflight fusion
+
+2	0	src/location/CMakeLists.txt
+2	2	src/location/README.md
+3	0	src/location/include/i2c.h
+1	1	src/location/include/tf_mini_i2c.h
+1	1	src/location/launch/location.launch
+21	0	src/location/launch/rk_mavros_vision.launch
+34	0	src/location/launch/rk_preflight.launch
+12	0	src/location/param/rk_height_reference_20261027.yaml
+17	0	src/location/src/i2c.cpp
+23	24	src/location/src/tf_mini_i2c.cpp
+73	0	src/location/test/tfmini_i2c_protocol_test.cpp
+164	14	tools/rk_dwa_readonly_stack_check.py
+105	0	tools/rk_i2c_acceptance.py
+51	0	tools/rk_pca_disable.py
+6	1	tools/rk_px4_serial_shell.py
+160	0	tools/rk_servo_bench_check.py
+9cd127c 2026-10-27 Complete Lichtblick capture, replay and shutdown handoff
+
+21	1	tools/lichtblick_readonly_observe.py
+40	0	tools/monitor_device_handles.py
+9	6	tools/start_lichtblick_monitor.sh
+95	0	tools/verify_lichtblick_runtime.py
+fd7821a 2026-10-27 Add Lichtblick teaching guide and isolated ground preview
+
+3	0	src/location/CMakeLists.txt
+17	0	src/location/launch/lichtblick_bridge_readonly.launch
+17	0	src/location/launch/lichtblick_ground_preview.launch
+4	0	src/location/package.xml
+42	0	src/location/scripts/monitor_jpeg.py
+2	1	src/navigation_2d/launch/detect.launch
+62	0	tools/lichtblick_readonly_observe.py
+27	0	tools/render_monitor_guide.cjs
+43	0	tools/start_lichtblick_monitor.sh
+a965a7c 2026-10-26 完成DWA障碍配置与严格联合验收并记录断连邮件提醒
+
+1	1	src/navigation_2d/launch/navigation_2d.launch
+4	1	src/navigation_2d/param/dwa_local_planner_params.yaml
+26	9	tools/dwa_planner_probe.py
+4	2	tools/rk_dwa_readonly_stack_check.py
+1a3aa1a 2026-10-26 修正DWA隔离测试时序并记录USB枚举故障
+
+149	35	tools/dwa_planner_probe.py
+18cd805 2026-10-26 迁移四类RKNN与DWA并补齐任务保护
+
+41	82	src/location/CMakeLists.txt
+82	0	src/location/README.md
+6	5	src/location/include/TFplus.h
+54	63	src/location/include/i2c.h
+120	0	src/location/include/localization_guard.h
+71	71	src/location/include/tf_mini_i2c.h
+17	28	src/location/launch/cartographer_2d.launch
+13	0	src/location/launch/localization_guard_bench.launch
+79	123	src/location/launch/location.launch
+11	32	src/location/launch/rplidar.launch
+14	25	src/location/package.xml
+2	2	src/location/rviz/ros_navigation.rviz
+81	139	src/location/src/TFplus.cpp
+11	34	src/location/src/i2c.cpp
+233	353	src/location/src/location_with_ftmini.cpp
+7	7	src/location/src/tf_mini_i2c.cpp
+60	82	src/location/src/tfmini_test.cpp
+143	0	src/location/test/localization_bridge_probe.py
+105	0	src/location/test/localization_guard_test.cpp
+128	0	src/location/test/tfmini_uart_pty_test.cpp
+84	58	src/navigation_2d/CMakeLists.txt
+48	244	src/navigation_2d/README.md
+56	0	src/navigation_2d/detect_mode/26/README.md
+3	0	src/navigation_2d/detect_mode/26/SHA256SUMS
+-	-	src/navigation_2d/detect_mode/26/best.onnx
+-	-	src/navigation_2d/detect_mode/26/best.rknn
+4	0	src/navigation_2d/detect_mode/26/labels.txt
+-	-	src/navigation_2d/docs/field_route_preview.png
+189	0	src/navigation_2d/include/detect.h
+20	0	src/navigation_2d/include/detection_freshness.h
+101	0	src/navigation_2d/include/dwa_control_math.h
+58	0	src/navigation_2d/include/dwa_mission_policy.h
+5	2	src/navigation_2d/include/flight_control.h
+41	0	src/navigation_2d/include/latest_result_cache.h
+258	471	src/navigation_2d/include/mission_with_move_base.h
+122	0	src/navigation_2d/include/yolo_tensor_layout.h
+40	0	src/navigation_2d/launch/detect.launch
+20	0	src/navigation_2d/launch/move_base.launch
+254	597	src/navigation_2d/launch/navigation_2d.launch
+27	46	src/navigation_2d/package.xml
+16	0	src/navigation_2d/param/costmap_common_params.yaml
+50	0	src/navigation_2d/param/dwa_local_planner_params.yaml
+9	0	src/navigation_2d/param/global_costmap_params.yaml
+13	0	src/navigation_2d/param/local_costmap_params.yaml
+8	0	src/navigation_2d/param/move_base_params.yaml
+1171	0	src/navigation_2d/src/detect.cpp
+53	0	src/navigation_2d/src/detect_main.cpp
+70	28	src/navigation_2d/src/flight_control.cpp
+1520	0	src/navigation_2d/src/shoot_with_move_base.cpp
+129	0	src/navigation_2d/test/dwa_control_math_test.cpp
+5	0	src/navigation_2d/test/gtest_main.cpp
+163	0	src/navigation_2d/test/yolo_tensor_layout_test.cpp
+2	2	src/servo_control/launch/servo_bench.launch
+457	0	src/servo_control/script/servo_debug.py
+1	1	src/servo_control/src/servo_controller_node.cpp
+57	0	tools/compare_fourclass_probe.py
+458	0	tools/dwa_mission_probe.py
+402	0	tools/dwa_planner_probe.py
+32	0	tools/fetch_dwa_deps.py
+49	0	tools/prepare_fourclass_cases.py
+482	0	tools/rk_dwa_readonly_stack_check.py
+444	0	tools/rk_fourclass_camera_check.py
+56	0	tools/rk_fourclass_probe.cpp
+34	0	tools/rk_model_metadata.cpp
+bdd7955 2026-10-25 docs: assess incoming NPU and ROS packages for selective integration
+
+139	0	tools/inspect_1025_packages.py
+ec4c6d7 2026-10-25 fix: bind NPU autostart to internal USB topology
+
+6	4	tools/rk_npu_autostart.py
+10	28	tools/rk_npu_boot.sh
+98	0	tools/rk_npu_usb.py
+10	7	tools/test_rk_npu_autostart.py
+96	0	tools/test_rk_npu_usb.py
+f40ffb9 2026-10-25 feat(sim): package 1024 source and materials for cross-PC simulation
+
+114	0	tools/package_sim_handoff.py
+14	0	tools/sim_handoff/Dockerfile.base
+66	0	tools/sim_handoff/README_先读.md
+24	0	tools/sim_handoff/apt-common.txt
+18	0	tools/sim_handoff/apt-ros-common.txt
+7	0	tools/sim_handoff/apt-simulation.txt
+20	0	tools/sim_handoff/inspect_host.ps1
+24	0	tools/sim_handoff/inspect_linux.sh
+7	0	tools/sim_handoff/requirements-yolo-cpu.txt
+72	0	tools/sim_handoff/verify_package.py
+62	0	tools/sim_handoff/另一台电脑执行提示词.md
+75	0	tools/sim_handoff/环境与外部依赖.md
+2f1853b 2026-10-25 chore: archive pending project assets for 1024 milestone
+
+293	0	tools/inspect_rk_firmware.py
+18	0	tools/rk-usb-ssh.service
+92	0	tools/rk_usb_ssh.sh
+1aae3e7 2026-10-25 feat(rk): enable ordered NPU startup on boot
+
+100	0	tools/rk_npu_autostart.py
+4	2	tools/rk_npu_boot.sh
+12	0	tools/shell-npu-firmware.service
+14	0	tools/shell-npu-power.service
+9	6	tools/shell-npu-proxy.service
+7	0	tools/shell-npu.target
+54	0	tools/test_rk_npu_autostart.py
+84da31c 2026-10-25 fix(rk): restore NPU boot and validate six-class YOLO on hardware
+
+71	0	tools/rk_npu_boot.sh
+6	2	tools/rk_npu_power.py
+101	0	tools/rk_sixclass_probe.cpp
+12	0	tools/shell-npu-proxy.service
+14	1	tools/test_rk_npu_power.py
+104	0	tools/verify_rk_sixclass.py
+b95932c 2026-10-25 feat(rk): add guarded manual NPU power control
+
+416	0	tools/rk_npu_power.py
+269	0	tools/test_rk_npu_power.py
+fcbeec3 2026-10-25 docs(vision): audit returned YOLO training artifacts
+
+390	0	tools/verify_yolo_delivery.py
+31a9aa0 2026-10-24 fix(rk): enable PX4 USB and repair camera shutdown
+
+19	0	src/location/launch/rk_mavros_bench.launch
+28	0	src/usb_cam/.github/workflows/main.yml
+3	0	src/usb_cam/.gitignore
+43	0	src/usb_cam/.travis.yml
+20	0	src/usb_cam/AUTHORS.md
+426	0	src/usb_cam/CHANGELOG.rst
+89	0	src/usb_cam/CMakeLists.txt
+31	0	src/usb_cam/LICENSE
+24	0	src/usb_cam/README.md
+11	0	src/usb_cam/UPSTREAM.md
+166	0	src/usb_cam/include/usb_cam/usb_cam.h
+20	0	src/usb_cam/launch/rk_usb_camera.launch
+15	0	src/usb_cam/launch/usb_cam-test.launch
+5	0	src/usb_cam/mainpage.dox
+286	0	src/usb_cam/nodes/usb_cam_node.cpp
+38	0	src/usb_cam/package.xml
+14	0	src/usb_cam/src/LICENSE
+1427	0	src/usb_cam/src/usb_cam.cpp
+16	0	src/usb_cam/test/lifecycle_test.cpp
+53	0	tools/elf_dwarf_layout.py
+24	0	tools/rk_build_cdc_acm.sh
+112	0	tools/rk_camera_lifecycle_check.py
+55	0	tools/rk_kernel_export_check.py
+100	0	tools/rk_peripheral_bench_check.py
+137	0	tools/rk_px4_serial_shell.py
+195	0	tools/rk_px4_usb_diagnostics.cpp
+b1cbd46 2026-10-24 fix(rk): validate ROS migration and timer shutdown
+
+3	2	src/location/src/location_with_ftmini.cpp
+6	0	src/navigation_2d/test/ego_path_tracking_test.cpp
+425	0	tools/rk_application_loopback_test.py
+235	0	tools/rk_dependency_audit.sh
+378	0	tools/rk_mavros_loopback_test.py
+321	0	tools/rk_ros_loopback_test.py
+86	0	tools/rk_run_validation.sh

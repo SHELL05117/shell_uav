@@ -1,0 +1,117 @@
+diff --git a/temp1025/inspection_20261025/pack/src/navigation_2d/launch/navigation_2d.launch b/src/navigation_2d/launch/navigation_2d.launch
+index 5cddb04..6ccb166 100644
+--- a/temp1025/inspection_20261025/pack/src/navigation_2d/launch/navigation_2d.launch
++++ b/src/navigation_2d/launch/navigation_2d.launch
+@@ -5,8 +5,10 @@
+   <!-- 兼容旧参数：stage=2 或 rescue_drop_enabled=true 任一成立就投救助物资 -->
+   <arg name="rescue_drop_enabled" default="false" />
+ 
+-  <arg name="auto_start" default="true" />
+-  <arg name="use_real_servos" default="true" />
++  <!-- Explicit action gate: default launch is observation/readiness only. -->
++  <arg name="enable_actuation" default="false" />
++  <arg name="auto_start" default="false" />
++  <arg name="use_real_servos" default="false" />
+   <arg name="enforce_safe_field" default="true" />
+ 
+   <!-- 场地系 -> map 系的旋转：机头相对场地系 +x 的航向（度，逆时针为正） -->
+@@ -17,13 +19,22 @@
+   <arg name="fly_height" default="1.5" />
+   <arg name="detect_height" default="1.2" />
+   <arg name="drop_height" default="0.6" />
++  <arg name="takeoff_timeout" default="20.0" />
+ 
+   <arg name="input_image_topic" default="/camera/image_raw" />
+   <arg name="scan_topic" default="/scan" />
++  <arg name="odom_topic" default="/mavros/local_position/odom" />
++  <arg name="pose_timeout" default="0.5" />
++  <arg name="state_timeout" default="3.0" />
++  <arg name="tf_timeout" default="0.5" />
++  <arg name="planner_timeout" default="0.5" />
++  <arg name="alignment_tolerance" default="0.2" />
++  <arg name="map_frame" default="map" />
++  <arg name="body_frame" default="base_link" />
+   <arg name="start_foxglove_bridge" default="false" />
+ 
+   <!-- 识别：危险品标志每轮随机分配，正确类别必须在本轮起飞前给出。
+-       新模型（YOLOv5n，4 类）的类名是 explosive / flammable / toxic / person。
++       新模型（YOLO raw-head，4 类）的类名是 explosive / flammable / toxic / person。
+        两条路任选：launch 参数 target_hazard:=flammable（或中文“易燃”），
+        或者节点起来后、起飞前向 /mission/target_hazard 发一条 std_msgs/String
+        （rostopic pub -l /mission/target_hazard std_msgs/String "data: '易燃'"）。
+@@ -38,10 +49,12 @@
+   <arg name="confidence_threshold" default="0.50" />
+   <arg name="detect_times" default="5" />
+   <arg name="detect_timeout" default="8.0" />
++  <!-- Original RKNN takes about 0.66s/image; require five distinct results. -->
++  <arg name="detect_confirmation_window" default="6.0" />
+   <arg name="annotate_hold" default="6.0" />
+   <!-- 识别后端与模型，含义见下面任务节点里的注释 -->
+   <arg name="detect_backend" default="auto" />
+-  <arg name="onnx_file" default="gc-yolo-raw-416.onnx" />
++  <arg name="onnx_file" default="best.onnx" />
+   <arg name="detect_input_size" default="416" />
+   <arg name="labels_file" default="labels.txt" />
+   <!-- yolo 模型（raw head）的三项元数据，由 tools/export_yolo_raw.py 打印/写成
+@@ -58,7 +71,8 @@
+   <arg name="rescue_drop_y" default="999.0" />
+ 
+   <!-- 舵机（PCA9685）：0 号通道相机俯仰，1 号通道两仓投放 -->
+-  <arg name="i2c_device" default="/dev/i2c-1" />
++  <!-- RK BSP maps the planned header I2C6 pins to /dev/i2c-6; wiring remains unverified. -->
++  <arg name="i2c_device" default="/dev/i2c-6" />
+   <arg name="i2c_address" default="64" />
+   <arg name="camera_channel" default="0" />
+   <arg name="drop_channel" default="1" />
+@@ -78,12 +92,21 @@
+   <!-- move_base：与任务节点共用 scan 话题 -->
+   <include file="$(find navigation_2d)/launch/move_base.launch">
+     <arg name="scan_topic" value="$(arg scan_topic)" />
++    <arg name="odom_topic" value="$(arg odom_topic)" />
+   </include>
+ 
+   <node pkg="navigation_2d" type="shoot_with_move_base_node"
+         name="shoot_with_move_base_node" output="screen" required="true">
+ 
+     <param name="auto_start" value="$(arg auto_start)" />
++    <param name="enable_actuation" value="$(arg enable_actuation)" />
++    <param name="pose_timeout" value="$(arg pose_timeout)" />
++    <param name="state_timeout" value="$(arg state_timeout)" />
++    <param name="tf_timeout" value="$(arg tf_timeout)" />
++    <param name="planner_timeout" value="$(arg planner_timeout)" />
++    <param name="alignment_tolerance" value="$(arg alignment_tolerance)" />
++    <param name="map_frame" value="$(arg map_frame)" />
++    <param name="body_frame" value="$(arg body_frame)" />
+     <param name="stage" value="$(arg stage)" />
+     <param name="rescue_drop_enabled" value="$(arg rescue_drop_enabled)" />
+ 
+@@ -91,6 +114,7 @@
+     <param name="detect_height" value="$(arg detect_height)" />
+     <param name="drop_height" value="$(arg drop_height)" />
+     <param name="takeoff_height_tolerance" value="0.12" />
++    <param name="takeoff_timeout" value="$(arg takeoff_timeout)" />
+     <param name="settle_time" value="1.0" />
+     <param name="goal_timeout" value="25.0" />
+     <param name="drop_settle_time" value="0.8" />
+@@ -116,6 +140,7 @@
+     <param name="wait_for_target" value="$(arg wait_for_target)" />
+     <param name="detect_times" value="$(arg detect_times)" />
+     <param name="detect_timeout" value="$(arg detect_timeout)" />
++    <param name="detect_confirmation_window" value="$(arg detect_confirmation_window)" />
+     <param name="annotate_hold" value="$(arg annotate_hold)" />
+     <param name="max_center_offset" value="0.35" />
+ 
+@@ -201,6 +226,7 @@
+   </node>
+ 
+   <!-- 舵机节点：真机才起。仿真里 gc_2026_sim 的 rig 会代答 /gpio_ack。 -->
++  <group if="$(arg enable_actuation)">
+   <group if="$(arg use_real_servos)">
+     <node pkg="servo_control" type="servo_controller_node"
+           name="servo_controller_node" output="screen">
+@@ -224,4 +250,5 @@
+       <param name="angle_debug" value="false" />
+     </node>
+   </group>
++  </group>
+ </launch>

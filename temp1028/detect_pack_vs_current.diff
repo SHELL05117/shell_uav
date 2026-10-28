@@ -1,0 +1,686 @@
+diff --git a/temp1025/inspection_20261025/pack/src/navigation_2d/src/detect.cpp b/src/navigation_2d/src/detect.cpp
+index 2d54b65..120f9e9 100644
+--- a/temp1025/inspection_20261025/pack/src/navigation_2d/src/detect.cpp
++++ b/src/navigation_2d/src/detect.cpp
+@@ -5,12 +5,18 @@
+  * Description: RKNN (RK3399Pro) 版 detect。见 detect.h 顶部的说明。
+  ***************************************************************************************************************************/
+ #include "detect.h"
++#include "audit_json.h"
++#include <sensor_msgs/CompressedImage.h>
++#include <std_msgs/String.h>
+ 
+ #include <algorithm>
+ #include <cmath>
+ #include <cstdlib>
+ #include <cstring>
++#include <exception>
+ #include <fstream>
++#include <limits>
++#include <set>
+ #include <sstream>
+ 
+ #include <cv_bridge/cv_bridge.h>
+@@ -83,6 +89,7 @@ Detect::Detect(int argc, char **argv)
+ 
+ Detect::~Detect()
+ {
++  stopAsync();
+   releaseRknn();
+   releaseOnnx();
+ }
+@@ -93,10 +100,11 @@ void Detect::loadParams()
+ 
+   nh_.param<std::string>("input_image_topic", input_topic_, "/camera/image_raw");
+   nh_.param<std::string>("model_path", model_path_, "");
+-  nh_.param<std::string>("model_file", model_file_, "gc-yolo-raw-416.rknn");
++  ready_ = false;
++  nh_.param<std::string>("model_file", model_file_, "best.rknn");
+   nh_.param<std::string>("labels_file", labels_file_, "labels.txt");
+   nh_.param<std::string>("backend", backend_, "auto");
+-  nh_.param<std::string>("onnx_file", onnx_file_, "gc-yolo-raw-416.onnx");
++  nh_.param<std::string>("onnx_file", onnx_file_, "best.onnx");
+   nh_.param<int>("yolo_reg_max", yolo_reg_max_, 16);
+   nh_.param<std::string>("yolo_style", yolo_style_, "v5-interleaved");
+   nh_.param<std::string>("yolo_anchors", yolo_anchors_csv_, "");
+@@ -109,10 +117,20 @@ void Detect::loadParams()
+              "falling back to v5-interleaved", yolo_style_.c_str());
+     yolo_style_ = "v5-interleaved";
+   }
+-  if (yolo_style_ != "v8-dfl" && anchors_.size() < 18)
+-    ROS_WARN("Detect: ~yolo_anchors has %zu value(s), yolov5 needs 18 (3 levels x 3 "
+-             "anchors x 2) -- paste the yolo_anchors line printed by "
+-             "tools/export_yolo_raw.py", anchors_.size());
++  if (yolo_style_ != "v8-dfl" &&
++      (anchors_.size() != 18 || !std::all_of(anchors_.begin(), anchors_.end(),
++          [](float value) { return std::isfinite(value) && value > 0.0f; })))
++  {
++    ROS_ERROR("Detect: YOLOv5 requires the model's 18 positive anchor values");
++    return;
++  }
++  if (strides_.size() != 3 ||
++      !std::all_of(strides_.begin(), strides_.end(), [](int value) { return value > 0; }) ||
++      std::set<int>(strides_.begin(), strides_.end()).size() != 3)
++  {
++    ROS_ERROR("Detect: model requires three distinct positive strides");
++    return;
++  }
+   int input_size_param = 0;
+   nh_.param<int>("input_size", input_size_param, 0);
+   if (input_size_param > 0)
+@@ -125,6 +143,16 @@ void Detect::loadParams()
+   nh_.param<double>("camera_yaw_deg", camera_yaw_deg_, 0.0);
+   nh_.param<double>("publish_scale", publish_scale_, 0.5);
+   nh_.param<double>("publish_rate", publish_rate_, 8.0);
++  nh_.param<double>("frame_timeout", frame_timeout_, 1.0);
++  nh_.param<double>("inference_timeout", inference_timeout_, 3.0);
++  if (!std::isfinite(frame_timeout_) || frame_timeout_ <= 0.0 ||
++      !std::isfinite(inference_timeout_) || inference_timeout_ <= 0.0 ||
++      !std::isfinite(confidence_threshold_) || confidence_threshold_ < 0.0 || confidence_threshold_ > 1.0 ||
++      !std::isfinite(nms_iou_) || nms_iou_ < 0.0 || nms_iou_ > 1.0)
++  {
++    ROS_ERROR("Detect: invalid frame timeout, confidence or NMS threshold");
++    return;
++  }
+ 
+   // labels.txt: 一行一类，顺序 = 训练时的 class id（**没有 BACKGROUND**，
+   // 因为 raw head 的类别 logits 就是 nc 个）。
+@@ -154,6 +182,8 @@ void Detect::loadParams()
+   }
+ 
+   image_pub_ = nh_.advertise<sensor_msgs::Image>("/detect_result", 1);
++  audit_pub_ = nh_.advertise<std_msgs::String>("/mission/inference", 4);
++  audit_frame_pub_ = nh_.advertise<sensor_msgs::CompressedImage>("/mission/inference_frame/compressed", 1);
+   image_sub_ = nh_.subscribe(input_topic_, 1, &Detect::imageCallback, this,
+                              ros::TransportHints().tcpNoDelay());
+   publish_timer_ = nh_.createTimer(ros::Duration(1.0 / std::max(1.0, publish_rate_)),
+@@ -165,8 +195,7 @@ void Detect::loadParams()
+     return;
+ 
+   // 后端：auto = 编译进去的那个（板上是 rknn，x86/仿真上是 onnx）。显式指定一个
+-  // 没编进来的后端时，它自己的 stub 会打警告并保持 ready_=false，任务照常按固定
+-  // 投放点飞，不会崩。
++  // 没编进来的后端保持 ready_=false，由调用者阻断任务。
+   if (backend_ == "auto")
+     backend_ = defaultBackend();
+   ROS_INFO("Detect: backend=%s (model_path=%s)", backend_.c_str(),
+@@ -176,8 +205,7 @@ void Detect::loadParams()
+   else if (backend_ == "onnx")
+     initOnnx(onnx_path);
+   else if (backend_ == "none")
+-    ROS_WARN("Detect: backend=none -- no inference; waypoints still fly, drops fall back to "
+-             "the fixed positions");
++    ROS_ERROR("Detect: backend=none -- detector unavailable; mission must stay blocked");
+   else
+     ROS_ERROR("Detect: unknown ~backend '%s' (auto|rknn|onnx|none); no inference",
+               backend_.c_str());
+@@ -186,7 +214,120 @@ void Detect::loadParams()
+ bool Detect::hasFrame() const
+ {
+   std::lock_guard<std::mutex> lock(mutex_);
+-  return !frame_.empty();
++  return !frame_.empty() &&
++      navigation_yolo::freshDetectionSource(frame_stamp_.toSec(), ros::Time::now().toSec(),
++          frame_source_age_at_receipt_,
++          std::chrono::duration<double>(std::chrono::steady_clock::now()-frame_received_).count(),
++          frame_timeout_);
++}
++
++bool Detect::lastInferenceSucceeded() const
++{
++  std::lock_guard<std::mutex> lock(mutex_);
++  return last_inference_ok_;
++}
++
++bool Detect::inferenceReady() const
++{
++  std::lock_guard<std::mutex> lock(mutex_);
++  const auto now = std::chrono::steady_clock::now();
++  const double ros_now = ros::Time::now().toSec();
++  return ready_.load() && last_inference_ok_ && !frame_.empty() &&
++      navigation_yolo::freshDetectionSource(frame_stamp_.toSec(), ros_now,
++          frame_source_age_at_receipt_, std::chrono::duration<double>(now-frame_received_).count(), frame_timeout_) &&
++      navigation_yolo::freshDetectionSource(inference_source_stamp_.toSec(), ros_now,
++          inference_source_age_at_receipt_,
++          std::chrono::duration<double>(now-inference_source_received_).count(), inference_timeout_) &&
++      std::chrono::duration<double>(now-inference_received_).count() <= inference_timeout_;
++}
++
++bool Detect::startAsync()
++{
++  std::lock_guard<std::mutex> lifecycle(worker_mutex_);
++  if (async_running_.load()) return true;
++  if (worker_.joinable()) worker_.join();
++  if (audit_worker_.joinable()) audit_worker_.join();
++  if (!ready()) return false;
++  async_results_.clear();
++  {
++    std::lock_guard<std::mutex> lock(mutex_);
++    last_inference_ok_ = false;
++    last_inferred_generation_ = 0;
++  }
++  async_running_ = true;
++  try
++  {
++    worker_ = std::thread(&Detect::asyncLoop, this);
++    audit_worker_ = std::thread(&Detect::auditLoop, this);
++  }
++  catch (const std::exception &error)
++  {
++    async_running_ = false;
++    ROS_ERROR("Detect: cannot start inference worker: %s", error.what());
++    return false;
++  }
++  return true;
++}
++
++void Detect::stopAsync()
++{
++  std::lock_guard<std::mutex> lifecycle(worker_mutex_);
++  async_running_ = false;
++  audit_condition_.notify_all();
++  if (worker_.joinable()) worker_.join();
++  if (audit_worker_.joinable()) audit_worker_.join();
++  async_results_.clear();
++  std::lock_guard<std::mutex> lock(mutex_);
++  last_inference_ok_ = false;
++}
++
++bool Detect::pollAsync(std::vector<Detection> &detections, uint64_t &sequence) const
++{
++  if (!async_running_.load() || !inferenceReady()) return false;
++  AsyncResult result;
++  uint64_t candidate_sequence = sequence;
++  if (!async_results_.poll(result,candidate_sequence)) return false;
++  const auto now = std::chrono::steady_clock::now();
++  if (!result.success ||
++      !navigation_yolo::freshDetectionSource(result.source_stamp.toSec(),ros::Time::now().toSec(),
++          result.source_age_at_receipt,
++          std::chrono::duration<double>(now-result.source_received).count(),inference_timeout_) ||
++      std::chrono::duration<double>(now-result.completed).count()>inference_timeout_)
++    return false;
++  detections = std::move(result.detections);
++  sequence = candidate_sequence;
++  return true;
++}
++
++void Detect::asyncLoop()
++{
++  while (async_running_.load())
++  {
++    if (!ready()) break;
++    bool have_new_frame = false;
++    {
++      std::lock_guard<std::mutex> lock(mutex_);
++      have_new_frame = frame_generation_ != last_inferred_generation_;
++    }
++    if (!have_new_frame || !hasFrame())
++    {
++      std::this_thread::sleep_for(std::chrono::milliseconds(20));
++      continue;
++    }
++    AsyncResult result;
++    result.detections = inferImpl(&result);
++    if (result.success && async_running_.load())
++      async_results_.publish(std::move(result));
++  }
++  async_running_ = false;
++}
++
++int Detect::expectedChannels() const
++{
++  const int classes = static_cast<int>(labels_.size());
++  if (yolo_style_ == "v8-dfl") return 4 * std::max(1, yolo_reg_max_) + classes;
++  if (yolo_style_ == "v5-split") return 3 * (4 + classes);
++  return 3 * (5 + classes);
+ }
+ 
+ bool Detect::hasLabel(const std::string &label) const
+@@ -202,6 +343,15 @@ cv::Size Detect::frameSize() const
+ 
+ void Detect::imageCallback(const sensor_msgs::ImageConstPtr &msg)
+ {
++  const auto received = std::chrono::steady_clock::now();
++  const double received_ros = ros::Time::now().toSec();
++  const double source_age = received_ros-msg->header.stamp.toSec();
++  if (!navigation_yolo::freshDetectionSource(msg->header.stamp.toSec(),received_ros,
++                                            source_age,0.0,frame_timeout_))
++  {
++    ROS_WARN_THROTTLE(2.0, "Detect: image rejected: zero, future or stale source header");
++    return;
++  }
+   cv_bridge::CvImagePtr cv_ptr;
+   try
+   {
+@@ -215,8 +365,22 @@ void Detect::imageCallback(const sensor_msgs::ImageConstPtr &msg)
+   }
+ 
+   std::lock_guard<std::mutex> lock(mutex_);
+-  frame_ = cv_ptr->image.clone();
+-  frame_stamp_ = msg->header.stamp.isZero() ? ros::Time::now() : msg->header.stamp;
++  if (!frame_stamp_.isZero() && msg->header.stamp <= frame_stamp_)
++  {
++    ROS_WARN_THROTTLE(2.0, "Detect: image rejected: repeated or out-of-order source header");
++    return;
++  }
++  if (!navigation_yolo::freshDetectionSource(msg->header.stamp.toSec(),ros::Time::now().toSec(),
++          source_age,std::chrono::duration<double>(std::chrono::steady_clock::now()-received).count(),
++          frame_timeout_))
++    return;
++  // toCvCopy owns this image; immutable ref-counted snapshots keep the control
++  // thread from waiting on a full image clone while it checks readiness.
++  frame_ = cv_ptr->image;
++  ++frame_generation_;
++  frame_received_ = received;
++  frame_source_age_at_receipt_ = source_age;
++  frame_stamp_ = msg->header.stamp;
+   frame_id_ = msg->header.frame_id.empty() ? "camera" : msg->header.frame_id;
+ }
+ 
+@@ -226,12 +390,16 @@ bool Detect::initRknn(const std::string &model_file)
+   std::ifstream stream(model_file.c_str(), std::ios::binary | std::ios::ate);
+   if (!stream.is_open())
+   {
+-    ROS_ERROR("Detect: cannot open RKNN model %s (run tools/convert_onnx2rknn.py first, "
+-              "or set ~model_path/~model_file); falling back to fixed drop positions",
++    ROS_ERROR("Detect: cannot open RKNN model %s; set the deployed model path/file",
+               model_file.c_str());
+     return false;
+   }
+   const std::streamsize size = stream.tellg();
++  if (size <= 0 || static_cast<uint64_t>(size) > std::numeric_limits<uint32_t>::max())
++  {
++    ROS_ERROR("Detect: invalid RKNN model size");
++    return false;
++  }
+   stream.seekg(0, std::ios::beg);
+   std::vector<char> data(static_cast<size_t>(size));
+   if (!stream.read(data.data(), size))
+@@ -263,7 +431,7 @@ bool Detect::initRknn(const std::string &model_file)
+     ROS_ERROR("Detect: expected 1 input, got %u", io_num_.n_input);
+     return false;
+   }
+-  if (io_num_.n_output < 3)
++  if (io_num_.n_output != 3)
+   {
+     ROS_ERROR("Detect: raw-head 模型应该有 3 个输出 (p3,p4,p5)，这个只有 %u 个",
+               io_num_.n_output);
+@@ -283,20 +451,23 @@ bool Detect::initRknn(const std::string &model_file)
+            input_attr_.dims[0], input_attr_.dims[1], input_attr_.dims[2], input_attr_.dims[3],
+            input_attr_.fmt, input_attr_.type);
+ 
+-  // 正方形输入：NCHW 取 dims[2]，NHWC 取 dims[1]
+-  if (input_attr_.dims[2] == input_attr_.dims[3] && input_attr_.dims[2] > 1)
+-    input_size_ = static_cast<int>(input_attr_.dims[2]);
+-  else if (input_attr_.dims[1] == input_attr_.dims[2] && input_attr_.dims[1] > 1)
+-    input_size_ = static_cast<int>(input_attr_.dims[1]);
+-  else
++  // The audited RK3399Pro 1.7.5 API reports dimensions in reverse order.
++  // This model: {416,416,3,1} -> logical [1,3,416,416].
++  const auto input_shape = navigation_yolo::reversedDimensions(input_attr_.dims, input_attr_.n_dims);
++  if (input_attr_.n_dims != 4 || input_shape[0] != 1 || input_shape[1] != 3 ||
++      input_shape[2] != input_shape[3] || input_shape[2] == 0 ||
++      input_shape[2] > 4096 || input_attr_.fmt != RKNN_TENSOR_NCHW ||
++      input_attr_.n_elems != 3 * input_shape[2] * input_shape[3])
+   {
+-    ROS_ERROR("Detect: unsupported input shape [%u,%u,%u,%u] (want 1x3xSxS)",
++    ROS_ERROR("Detect: unsupported legacy input shape [%u,%u,%u,%u] (want reversed 1x3xSxS)",
+               input_attr_.dims[0], input_attr_.dims[1], input_attr_.dims[2],
+               input_attr_.dims[3]);
+     return false;
+   }
++  input_size_ = static_cast<int>(input_shape[2]);
+   ROS_INFO("Detect: input_size=%d", input_size_);
+ 
++  std::set<int> output_strides;
+   for (int i = 0; i < n_outputs_; ++i)
+   {
+     memset(&output_attr_[i], 0, sizeof(output_attr_[i]));
+@@ -307,10 +478,24 @@ bool Detect::initRknn(const std::string &model_file)
+       ROS_ERROR("Detect: rknn_query(OUTPUT_ATTR %d) failed: %d", i, ret);
+       return false;
+     }
+-    ROS_INFO("Detect: output[%d] '%s' dims=[%u,%u,%u,%u] fmt=%d type=%d n_elems=%u", i,
+-             output_attr_[i].name, output_attr_[i].dims[0], output_attr_[i].dims[1],
+-             output_attr_[i].dims[2], output_attr_[i].dims[3], output_attr_[i].fmt,
++    ROS_INFO("Detect: output[%d] '%s' rank=%u dims=[%u,%u,%u,%u,%u] fmt=%d type=%d n_elems=%u", i,
++             output_attr_[i].name, output_attr_[i].n_dims, output_attr_[i].dims[0], output_attr_[i].dims[1],
++             output_attr_[i].dims[2], output_attr_[i].dims[3], output_attr_[i].dims[4], output_attr_[i].fmt,
+              output_attr_[i].type, output_attr_[i].n_elems);
++    Tensor head;
++    std::string error;
++    const auto shape = navigation_yolo::reversedDimensions(output_attr_[i].dims, output_attr_[i].n_dims);
++    if ((output_attr_[i].n_dims != 4 && output_attr_[i].n_dims != 5) ||
++        output_attr_[i].fmt != RKNN_TENSOR_NCHW ||
++        (shape.size() == 5 && yolo_style_ != "v5-interleaved") ||
++        !navigation_yolo::describeHead(shape, expectedChannels(), output_attr_[i].n_elems, head, error) ||
++        head.width != head.height || input_size_ % head.height != 0 ||
++        std::find(strides_.begin(), strides_.end(), input_size_ / head.height) == strides_.end() ||
++        !output_strides.insert(input_size_ / head.height).second)
++    {
++      ROS_ERROR("Detect: unsupported/duplicate RKNN head %d: %s", i, error.c_str());
++      return false;
++    }
+   }
+ 
+   ready_ = true;
+@@ -331,8 +516,7 @@ void Detect::releaseRknn()
+ bool Detect::initRknn(const std::string &model_file)
+ {
+   (void)model_file;
+-  ROS_WARN("Detect: built without USE_RKNN; no inference. Waypoints still fly, drops fall "
+-           "back to the fixed positions.");
++  ROS_ERROR("Detect: built without USE_RKNN; mission detection is unavailable");
+   ready_ = false;
+   return false;
+ }
+@@ -436,7 +620,7 @@ bool Detect::initOnnx(const std::string &model_file)
+   out_names_ = net_.getUnconnectedOutLayersNames();
+   for (size_t i = 0; i < out_names_.size(); ++i)
+     ROS_INFO("Detect: ONNX output[%zu] '%s'", i, out_names_[i].c_str());
+-  if (out_names_.size() < 3)
++  if (out_names_.size() != 3)
+   {
+     ROS_ERROR("Detect: raw-head 模型应该有 3 个输出 (p3,p4,p5)，这个 onnx 只有 %zu 个",
+               out_names_.size());
+@@ -476,22 +660,155 @@ void Detect::releaseOnnx() { ready_ = false; }
+ // 两个后端拿到的东西一模一样，解码/阈值/NMS/letterbox 全在 inferYolo() 里共用。
+ // ---------------------------------------------------------------------------
+ std::vector<Detect::Detection> Detect::infer()
++{
++  return inferImpl(nullptr);
++}
++
++std::vector<Detect::Detection> Detect::inferImpl(AsyncResult *completed_result)
+ {
+   std::vector<Detection> results;
+ #if defined(USE_RKNN) || defined(USE_ONNX)
++  std::lock_guard<std::mutex> inference_lock(inference_mutex_);
+   cv::Mat frame;
++  ros::Time source_stamp;
++  std::chrono::steady_clock::time_point source_received;
++  double source_age_at_receipt = 0.0;
++  uint64_t source_generation=0;
+   {
+     std::lock_guard<std::mutex> lock(mutex_);
+-    if (!ready_ || frame_.empty())
++    if (!ready_ || frame_.empty() ||
++        !navigation_yolo::freshDetectionSource(frame_stamp_.toSec(),ros::Time::now().toSec(),
++            frame_source_age_at_receipt_,
++            std::chrono::duration<double>(std::chrono::steady_clock::now()-frame_received_).count(),frame_timeout_))
++    {
++      last_inference_ok_ = false;
+       return results;
+-    frame = frame_.clone();
++    }
++    frame = frame_;
++    source_stamp = frame_stamp_;
++    source_received = frame_received_;
++    source_age_at_receipt = frame_source_age_at_receipt_;
++    last_inferred_generation_ = frame_generation_;
++    source_generation=frame_generation_;
++  }
++  const auto inference_began=std::chrono::steady_clock::now();
++  try
++  {
++    results = inferYolo(frame);
++    if (!ready_) return {};
++    const auto completed = std::chrono::steady_clock::now();
++    const double elapsed = std::chrono::duration<double>(completed-source_received).count();
++    const bool accepted=navigation_yolo::freshDetectionSource(source_stamp.toSec(),ros::Time::now().toSec(),
++                                              source_age_at_receipt,elapsed,inference_timeout_);
++    {
++      std::lock_guard<std::mutex> lock(mutex_);
++      last_inference_ok_=accepted;
++      if (accepted)
++      {
++        inference_source_stamp_ = source_stamp;
++        inference_source_received_ = source_received;
++        inference_source_age_at_receipt_ = source_age_at_receipt;
++        inference_received_ = completed;
++        if (completed_result)
++        {
++          completed_result->source_stamp = source_stamp;
++          completed_result->source_received = source_received;
++          completed_result->source_age_at_receipt = source_age_at_receipt;
++          completed_result->completed = completed;
++          completed_result->success = true;
++        }
++      }
++    }
++    queueAudit(frame,results,source_stamp,source_generation,
++        std::chrono::duration<double>(completed-inference_began).count(),
++        source_age_at_receipt+elapsed,accepted,accepted ? "" : "SOURCE_STALE");
++    if (!accepted)
++    {
++      ROS_WARN_THROTTLE(2.0, "Detect: completed inference rejected: source stale (age=%.3fs limit=%.3fs)",
++                        source_age_at_receipt+elapsed,inference_timeout_);
++      return {};
++    }
++    ROS_INFO_THROTTLE(5.0, "Detect: inference OK backend=%s input=%d heads=3 detections=%zu",
++                      backend_.c_str(),input_size_,results.size());
++    return results;
++  }
++  catch (const std::exception &error)
++  {
++    queueAudit(frame,results,source_stamp,source_generation,
++        std::chrono::duration<double>(std::chrono::steady_clock::now()-inference_began).count(),
++        source_age_at_receipt,false,"INFERENCE_EXCEPTION");
++    ready_ = false;
++    std::lock_guard<std::mutex> lock(mutex_);
++    last_inference_ok_ = false;
++    ROS_ERROR("Detect: inference exception: %s", error.what());
++    return results;
+   }
+-  return inferYolo(frame);
+ #else
+   return results;
+ #endif
+ }
+ 
++void Detect::queueAudit(const cv::Mat &frame, const std::vector<Detection> &results,
++    const ros::Time &stamp, uint64_t generation, double duration, double age,
++    bool accepted, const std::string &error)
++{
++  if (!audit_pub_.getNumSubscribers() && !audit_frame_pub_.getNumSubscribers()) return;
++  // Audit failures must never become inference failures. Only a shallow Mat
++  // reference is queued; the image callback owns immutable source snapshots.
++  try
++  {
++    AuditFrame item; item.frame=frame; item.stamp=stamp; item.sequence=++audit_sequence_;
++    std::ostringstream out;
++    out << "{\"sequence\":" << item.sequence << ",\"generation\":" << generation
++        << ",\"source_stamp\":" << uav_audit::number(stamp.toSec())
++        << ",\"completed_stamp\":" << uav_audit::number(ros::Time::now().toSec())
++        << ",\"inference_s\":" << uav_audit::number(duration)
++        << ",\"source_age_s\":" << uav_audit::number(age)
++        << ",\"accepted\":" << (accepted ? "true" : "false")
++        << ",\"error\":" << uav_audit::quote(error)
++        << ",\"width\":" << frame.cols << ",\"height\":" << frame.rows << ",\"detections\":[";
++    for (size_t i=0;i<results.size();++i)
++    {
++      const auto &d=results[i]; if (i) out << ',';
++      out << "{\"label\":" << uav_audit::quote(d.label) << ",\"class_id\":" << d.class_id
++          << ",\"confidence\":" << uav_audit::number(d.confidence)
++          << ",\"box\":[" << uav_audit::number(d.box.x) << ',' << uav_audit::number(d.box.y)
++          << ',' << uav_audit::number(d.box.width) << ',' << uav_audit::number(d.box.height) << "]}";
++    }
++    std::lock_guard<std::mutex> lock(audit_mutex_);
++    if (audit_pending_valid_) ++audit_overwritten_;
++    out << "],\"audit_overwritten\":" << audit_overwritten_ << '}'; item.json=out.str();
++    audit_pending_=std::move(item); audit_pending_valid_=true; audit_condition_.notify_one();
++  }
++  catch (const std::exception &error) { ROS_WARN_THROTTLE(5.0,"Audit enqueue failed: %s",error.what()); }
++}
++
++void Detect::auditLoop()
++{
++  while (async_running_.load())
++  {
++    AuditFrame item;
++    {
++      std::unique_lock<std::mutex> lock(audit_mutex_);
++      audit_condition_.wait_for(lock,std::chrono::milliseconds(200),[&]{
++        return audit_pending_valid_ || !async_running_.load(); });
++      if (!audit_pending_valid_) continue;
++      item=std::move(audit_pending_); audit_pending_valid_=false;
++    }
++    try
++    {
++      std_msgs::String metadata; metadata.data=item.json; audit_pub_.publish(metadata);
++      if (audit_frame_pub_.getNumSubscribers() && !item.frame.empty())
++      {
++        sensor_msgs::CompressedImage image; image.header.stamp=item.stamp;
++        image.header.seq=item.sequence; image.header.frame_id=frame_id_; image.format="bgr8; jpeg compressed bgr8";
++        if (cv::imencode(".jpg",item.frame,image.data,{cv::IMWRITE_JPEG_QUALITY,75})) audit_frame_pub_.publish(image);
++      }
++    }
++    catch (const std::exception &error) { ROS_WARN_THROTTLE(5.0,"Audit output failed: %s",error.what()); }
++  }
++}
++
+ std::vector<Detect::Detection> Detect::inferYolo(const cv::Mat &frame)
+ {
+   std::vector<Detection> results;
+@@ -516,8 +833,12 @@ std::vector<Detect::Detection> Detect::inferYolo(const cv::Mat &frame)
+ 
+   std::vector<Tensor> tensors;
+   if (!runYoloInference(canvas, tensors))
++  {
++    ready_ = false;
++    std::lock_guard<std::mutex> lock(mutex_);
++    last_inference_ok_ = false;
+     return results;
+-
++  }
+   std::vector<Detection> candidates;
+   candidates.reserve(256);
+   const bool v8 = (yolo_style_ == "v8-dfl");
+@@ -654,15 +975,10 @@ std::vector<Detect::Detection> Detect::inferYolo(const cv::Mat &frame)
+           if (confidence < confidence_threshold_)
+             continue;
+ 
+-          const float tx = 1.0f / (1.0f + std::exp(-t.data[at]));
+-          const float ty = 1.0f / (1.0f + std::exp(-t.data[at + plane]));
+-          const float tw = 1.0f / (1.0f + std::exp(-t.data[at + 2 * plane]));
+-          const float th = 1.0f / (1.0f + std::exp(-t.data[at + 3 * plane]));
+-
+-          const float cx = (2.0f * tx - 0.5f + x) * stride;
+-          const float cy = (2.0f * ty - 0.5f + y) * stride;
+-          const float bw = (2.0f * tw) * (2.0f * tw) * aw;
+-          const float bh = (2.0f * th) * (2.0f * th) * ah;
++          const auto box = navigation_yolo::decodeV5Box(t.data[at], t.data[at + plane],
++              t.data[at + 2 * plane], t.data[at + 3 * plane], x, y, stride, aw, ah);
++          const float cx = box.center_x, cy = box.center_y;
++          const float bw = box.width, bh = box.height;
+           if (bw < 1.0f || bh < 1.0f)
+             continue;
+ 
+@@ -753,36 +1069,36 @@ bool Detect::runYoloInference(const cv::Mat &canvas, std::vector<Tensor> &tensor
+   bool ok = true;
+   for (int i = 0; i < n_outputs_ && ok; ++i)
+   {
+-    const uint32_t *d = output_attr_[i].dims;
+-    if (d[1] < 1 || d[2] < 1 || d[3] < 1)
++    if (outs[i].size != output_attr_[i].n_elems * sizeof(float))
+     {
++      ROS_ERROR("Detect: RKNN output %d byte count differs from the queried tensor", i);
+       ok = false;
+       break;
+     }
+     Tensor t;
+-    t.channels = static_cast<int>(d[1]);
+-    t.height = static_cast<int>(d[2]);
+-    t.width = static_cast<int>(d[3]);
+-    const size_t elems = static_cast<size_t>(t.channels) * t.height * t.width;
+     const float *src = static_cast<const float *>(outs[i].buf);
+-    if (src == nullptr || elems == 0)
++    const auto shape = navigation_yolo::reversedDimensions(output_attr_[i].dims, output_attr_[i].n_dims);
++    std::string error;
++    if (!navigation_yolo::normalizeHead(shape, expectedChannels(), src,
++                                       output_attr_[i].n_elems, t, error))
+     {
++      ROS_ERROR("Detect: RKNN output %d cannot be decoded: %s", i, error.c_str());
+       ok = false;
+       break;
+     }
+-    t.data.assign(src, src + elems);
+-    tensors.push_back(t);
++    tensors.push_back(std::move(t));
+   }
+-  rknn_outputs_release(ctx_, n_outputs_, outs.data());
+-  return ok;
++  if (rknn_outputs_release(ctx_, n_outputs_, outs.data()) < 0)
++    ok = false;
++  return ok && tensors.size() == 3;
+ #elif defined(USE_ONNX)
+   cv::Mat blob;
+   cv::dnn::blobFromImage(canvas, blob, 1.0 / 255.0, cv::Size(), cv::Scalar(), true, false,
+                          CV_32F);
+-  net_.setInput(blob);
+   std::vector<cv::Mat> outs;
+   try
+   {
++    net_.setInput(blob);
+     net_.forward(outs, out_names_);
+   }
+   catch (const cv::Exception &e)
+@@ -790,20 +1106,31 @@ bool Detect::runYoloInference(const cv::Mat &canvas, std::vector<Tensor> &tensor
+     ROS_ERROR_THROTTLE(2.0, "Detect: ONNX forward failed (yolo): %s", e.what());
+     return false;
+   }
++  std::set<int> output_strides;
+   for (size_t i = 0; i < outs.size(); ++i)
+   {
+     const cv::Mat &m = outs[i];
+-    if (m.dims != 4 || m.type() != CV_32F || m.size[1] < 1 || m.size[2] < 1 || m.size[3] < 1)
+-      continue;
++    if ((m.dims != 4 && m.dims != 5) || m.type() != CV_32F || !m.isContinuous() ||
++        (m.dims == 5 && yolo_style_ != "v5-interleaved"))
++    {
++      ROS_ERROR("Detect: unexpected ONNX output %zu rank/type/layout", i);
++      return false;
++    }
++    std::vector<std::size_t> shape;
++    for (int d = 0; d < m.dims; ++d) shape.push_back(static_cast<std::size_t>(m.size[d]));
+     Tensor t;
+-    t.channels = m.size[1];
+-    t.height = m.size[2];
+-    t.width = m.size[3];
+-    const size_t elems = static_cast<size_t>(t.channels) * t.height * t.width;
+-    t.data.assign(m.ptr<float>(), m.ptr<float>() + elems);
+-    tensors.push_back(t);
+-  }
+-  return !tensors.empty();
++    std::string error;
++    if (!navigation_yolo::normalizeHead(shape, expectedChannels(), m.ptr<float>(), m.total(), t, error) ||
++        t.height != t.width || input_size_ % t.height != 0 ||
++        std::find(strides_.begin(), strides_.end(), input_size_ / t.height) == strides_.end() ||
++        !output_strides.insert(input_size_ / t.height).second)
++    {
++      ROS_ERROR("Detect: ONNX output %zu cannot be decoded: %s", i, error.c_str());
++      return false;
++    }
++    tensors.push_back(std::move(t));
++  }
++  return tensors.size() == 3;
+ #else
+   (void)canvas;
+   (void)tensors;
+@@ -874,7 +1201,7 @@ void Detect::publishCallback(const ros::TimerEvent &event)
+     std::lock_guard<std::mutex> lock(mutex_);
+     if (frame_.empty())
+       return;
+-    frame = frame_.clone();
++    frame = frame_;
+     frame_id = frame_id_;
+     const ros::Time now = ros::Time::now();
+     for (auto it = annotations_.begin(); it != annotations_.end();)
+@@ -889,6 +1216,7 @@ void Detect::publishCallback(const ros::TimerEvent &event)
+     }
+   }
+ 
++  frame = frame.clone();  // Annotation writes must not modify inference snapshots.
+   const cv::Size size = frame.size();
+   const cv::Point2f center(size.width * 0.5f, size.height * 0.5f);
+   cv::drawMarker(frame, center, cv::Scalar(0, 255, 255), cv::MARKER_CROSS, 18, 1);
