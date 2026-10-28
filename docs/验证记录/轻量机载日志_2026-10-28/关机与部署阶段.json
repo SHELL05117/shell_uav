@@ -1,0 +1,31 @@
+{
+  "date_timezone": "2026-10-28 Asia/Shanghai",
+  "shutdown_board_time": "2026-10-28T14:20:34.106704062+08:00",
+  "command": "sudo -n shutdown -h now",
+  "response": "client_loop: send disconnect: Connection reset",
+  "recheck": "192.168.77.1:22 connection timed out with 5 second limit",
+  "physical_power_measurement": false,
+  "reason": "SHELL confirmed damaged landing gear and requested whether power could be disconnected for repair",
+  "installed_before_shutdown": [
+    "uav logs dispatcher to lightweight recorder",
+    "uav_start.py lightweight logging import",
+    "uav_log_lite.py initial version",
+    "uav_lite_benchmark.py",
+    "test_uav_log_lite.py"
+  ],
+  "not_deployed_before_shutdown": [
+    "uav_arm.py",
+    "uav arm dispatcher and startup warning",
+    "uav_lite_integration.py"
+  ],
+  "backup": {
+    "path": "/home/jcfh/shell_backups/lite-logging-20261028/before.tar.gz",
+    "sha256": "4ab385ce066dfefde8f48128ab6d33b49075c34649579101a779fcb108659d6f"
+  },
+  "unchanged_readback_before_benchmark": {
+    "catkin_ws/devel/lib/location/location_node": "3c883c87df8d528bf0dd00f82fba6e6fa9ff022560ccb42a818833c782a24b12",
+    "catkin_ws/devel/lib/navigation_2d/shoot_with_move_base_node": "e1c5e29da9ce687f067867a3c3c12a1eeee83080a0d3d3f0a4da7dd3eb5a5d28",
+    "catkin_ws/src/location/src/location_with_ftmini.cpp": "7017f0415f5395c5f15bf90f0f9124e47e5bd8d885e7c1d4bd8b19a3c9e61a2c",
+    "catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp": "01eab407cc619db1be18f5689dff54a35123c708528810462d7591d2e1c9577b"
+  }
+}

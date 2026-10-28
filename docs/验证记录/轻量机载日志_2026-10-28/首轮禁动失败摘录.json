@@ -1,0 +1,31 @@
+{
+  "source": "USB SSH terminal outputs before 2026-10-28 14:20 shutdown; remote originals await copy",
+  "remote_result": "/home/jcfh/lite-benchmark-20261028/off-1/result.json",
+  "result": {
+    "error": "No stable readiness",
+    "ground_only": true,
+    "logging": false,
+    "passed": false,
+    "seconds": 90
+  },
+  "entered_formal_90s_measurement": false,
+  "observed_location_status": "RANGE_STALE",
+  "observed_readiness": {
+    "model_loaded": true,
+    "frame_fresh": true,
+    "inference_ready": true,
+    "pose_fresh": false,
+    "fcu_fresh": true,
+    "tf_fresh": false,
+    "actuation_enabled": false,
+    "flight_authority": false,
+    "mission_aborted": false,
+    "phase": 0
+  },
+  "observed_fcu": {
+    "connected": true,
+    "armed": false,
+    "mode": "MANUAL"
+  },
+  "safety": "No real arming, mode change, takeoff, GPIO, servo or motor command sent"
+}

@@ -131,6 +131,10 @@ def wait_ready(timeout=65):
 def navigation(args, flight=False):
     if flight and args.target not in ('explosive','flammable','toxic'):
         raise RuntimeError('mission requires --target explosive|flammable|toxic')
+    if flight:
+        print('OFFBOARD mission: select OFFBOARD, then use uav arm (normal arming only).')
+        print('QGC Takeoff switches PX4 to AUTO.TAKEOFF and does not start this mission.')
+        sys.stdout.flush()
     start(['roslaunch','navigation_2d','navigation_2d.launch','detect_backend:=rknn',
            'target_hazard:='+args.target,'stage:='+str(args.stage),
            'field_yaw_deg:='+str(args.yaw),'auto_start:=false',
@@ -171,7 +175,7 @@ def main():
         profile=os.environ.get('UAV_HEIGHT_PROFILE',root+'/param/rk_height_reference_20261027.yaml')
         if os.environ.get('UAV_LOG_DISABLED','0')!='1':
             try:
-                import uav_log
+                import uav_log_lite as uav_log
                 if uav_log.active(): raise RuntimeError('Previous recorder still active')
                 log_directory=uav_log.prepare(args.mode)
                 os.environ['ROS_LOG_DIR']=log_directory+'/ros-logs'
@@ -205,7 +209,7 @@ def main():
             raise RuntimeError('Navigation already running')
         wait_ready(12)
         try:
-            import uav_log
+            import uav_log_lite as uav_log
             log_directory=uav_log.attach(args.mode,vars(args))
             if log_directory: os.environ['ROS_LOG_DIR']=log_directory+'/ros-logs'
             else: print('UAV WARNING: no active flight recorder',file=sys.stderr)

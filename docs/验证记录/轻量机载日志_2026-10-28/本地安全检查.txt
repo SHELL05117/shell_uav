@@ -1,0 +1,16 @@
+tools/test_uav_log_lite.py
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+OK
+
+tools/test_uav_arm.py
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK
+
+PASS: Python AST; arming helper only exposes normal arming service; no ROS publishers in logger/helper.
+Hardware arming/mode/takeoff not executed.
