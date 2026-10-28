@@ -1,0 +1,355 @@
+{
+  "passed": true,
+  "seconds": 60.53341197967529,
+  "actuation": false,
+  "max_receive_gap_s": {
+    "map": 1.3331539630889893,
+    "state": 1.0071098804473877,
+    "camera": 0.07348012924194336,
+    "imu": 0.05016803741455078,
+    "scan": 0.12307500839233398
+  },
+  "cpu_system_mean_percent": 49.864726528019894,
+  "range_disabled": true,
+  "real_servos": false,
+  "hardware": true,
+  "services": [
+    [
+      "/move_base/DWAPlannerROS/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/usb_readonly_observer/set_logger_level",
+      [
+        "/usb_readonly_observer"
+      ]
+    ],
+    [
+      "/move_base/global_costmap/static_layer/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/location_node/set_logger_level",
+      [
+        "/location_node"
+      ]
+    ],
+    [
+      "/move_base/global_costmap/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/mavros/set_stream_rate",
+      [
+        "/mavros"
+      ]
+    ],
+    [
+      "/camera/get_loggers",
+      [
+        "/camera"
+      ]
+    ],
+    [
+      "/move_base/get_loggers",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/move_base/NavfnROS/make_plan",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/shoot_with_move_base_node/get_loggers",
+      [
+        "/shoot_with_move_base_node"
+      ]
+    ],
+    [
+      "/mavros/vehicle_info_get",
+      [
+        "/mavros"
+      ]
+    ],
+    [
+      "/move_base/local_costmap/obstacle_layer/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/move_base/global_costmap/obstacle_layer/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/cartographer_node/get_loggers",
+      [
+        "/cartographer_node"
+      ]
+    ],
+    [
+      "/usb_readonly_observer/get_loggers",
+      [
+        "/usb_readonly_observer"
+      ]
+    ],
+    [
+      "/move_base/make_plan",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/start_motor",
+      [
+        "/rplidarNode"
+      ]
+    ],
+    [
+      "/move_base/local_costmap/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/move_base/set_logger_level",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/rplidarNode/get_loggers",
+      [
+        "/rplidarNode"
+      ]
+    ],
+    [
+      "/mavros/get_loggers",
+      [
+        "/mavros"
+      ]
+    ],
+    [
+      "/location_node/get_loggers",
+      [
+        "/location_node"
+      ]
+    ],
+    [
+      "/camera/stop_capture",
+      [
+        "/camera"
+      ]
+    ],
+    [
+      "/submap_query",
+      [
+        "/cartographer_node"
+      ]
+    ],
+    [
+      "/camera/set_logger_level",
+      [
+        "/camera"
+      ]
+    ],
+    [
+      "/rosout/set_logger_level",
+      [
+        "/rosout"
+      ]
+    ],
+    [
+      "/mavros/set_message_interval",
+      [
+        "/mavros"
+      ]
+    ],
+    [
+      "/static_transform_publisher_1792779548017872910/get_loggers",
+      [
+        "/static_transform_publisher_1792779548017872910"
+      ]
+    ],
+    [
+      "/cartographer_occupancy_grid_node/set_logger_level",
+      [
+        "/cartographer_occupancy_grid_node"
+      ]
+    ],
+    [
+      "/rplidarNode/set_logger_level",
+      [
+        "/rplidarNode"
+      ]
+    ],
+    [
+      "/shoot_with_move_base_node/set_logger_level",
+      [
+        "/shoot_with_move_base_node"
+      ]
+    ],
+    [
+      "/static_transform_publisher_1792779548017872910/set_logger_level",
+      [
+        "/static_transform_publisher_1792779548017872910"
+      ]
+    ],
+    [
+      "/finish_trajectory",
+      [
+        "/cartographer_node"
+      ]
+    ],
+    [
+      "/usb_readonly_observer/tf2_frames",
+      [
+        "/usb_readonly_observer"
+      ]
+    ],
+    [
+      "/start_trajectory",
+      [
+        "/cartographer_node"
+      ]
+    ],
+    [
+      "/move_base/global_costmap/inflation_layer/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/write_state",
+      [
+        "/cartographer_node"
+      ]
+    ],
+    [
+      "/camera/start_capture",
+      [
+        "/camera"
+      ]
+    ],
+    [
+      "/stop_motor",
+      [
+        "/rplidarNode"
+      ]
+    ],
+    [
+      "/mavros/set_mode",
+      [
+        "/mavros"
+      ]
+    ],
+    [
+      "/cartographer_occupancy_grid_node/get_loggers",
+      [
+        "/cartographer_occupancy_grid_node"
+      ]
+    ],
+    [
+      "/move_base/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/camera/set_camera_info",
+      [
+        "/camera"
+      ]
+    ],
+    [
+      "/rosout/get_loggers",
+      [
+        "/rosout"
+      ]
+    ],
+    [
+      "/cartographer_node/set_logger_level",
+      [
+        "/cartographer_node"
+      ]
+    ],
+    [
+      "/move_base/local_costmap/inflation_layer/set_parameters",
+      [
+        "/move_base"
+      ]
+    ],
+    [
+      "/mavros/set_logger_level",
+      [
+        "/mavros"
+      ]
+    ],
+    [
+      "/move_base/clear_costmaps",
+      [
+        "/move_base"
+      ]
+    ]
+  ],
+  "auto_start": false,
+  "no_servo_node": true,
+  "nodes": [
+    "/camera",
+    "/cartographer_node",
+    "/cartographer_occupancy_grid_node",
+    "/location_node",
+    "/mavros",
+    "/move_base",
+    "/rosout",
+    "/rplidarNode",
+    "/shoot_with_move_base_node",
+    "/static_transform_publisher_1792779548017872910",
+    "/usb_readonly_observer"
+  ],
+  "no_setpoints_or_gpio": true,
+  "counts": {
+    "map": 61,
+    "state": 60,
+    "camera": 1832,
+    "imu": 3048,
+    "scan": 610
+  },
+  "latest": {
+    "state": {
+      "armed": false,
+      "connected": true,
+      "mode": "MANUAL"
+    },
+    "location": "HEIGHT_DISABLED",
+    "mission": "BLOCKED_POSE_STALE"
+  },
+  "tf_age_s": {
+    "samples": 120,
+    "maximum": 0.071351528,
+    "mean": 0.02007387429166667
+  },
+  "rates_hz": {
+    "map": 1.00770794186327,
+    "state": 0.9911881395376426,
+    "camera": 30.264277860549353,
+    "imu": 50.35235748851225,
+    "scan": 10.0770794186327
+  },
+  "limitations": [
+    "No physical direction or height-fusion verification; vehicle cannot stand level",
+    "No servo node, arming, mode or setpoint service; all owned diagnostic sources stopped",
+    "CPU includes Python image observer; not Wi-Fi or in-flight workload acceptance"
+  ]
+}

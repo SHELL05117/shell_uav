@@ -1,0 +1,4618 @@
+[
+  {
+    "run": "629137b6-cf10-11f1-9d4f-14f5f9e6cd08",
+    "events": [
+      {
+        "wall": 1792780477.2015984,
+        "message": "location: STARTING; vision pose withheld"
+      },
+      {
+        "wall": 1792780477.361103,
+        "message": "location: WAIT_TF; vision pose withheld"
+      },
+      {
+        "wall": 1792780480.110916,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780492.1114979,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780492.1627913,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780495.161658,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780495.2112439,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780495.4111013,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780495.4609876,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780495.9609807,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780496.0628726,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780496.3114889,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780496.4110496,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780496.6610303,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780496.962102,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780497.2116084,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780497.4610138,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780497.6609602,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780498.3609226,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780498.6108682,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780499.8110616,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780500.0613384,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780500.7780871,
+        "message": "[mission] status: WAIT_FCU"
+      },
+      {
+        "wall": 1792780500.7781873,
+        "message": "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no"
+      },
+      {
+        "wall": 1792780500.787965,
+        "message": "[mission] FCU mode: POSCTL"
+      },
+      {
+        "wall": 1792780500.7882526,
+        "message": "[mission] status: BLOCKED_CAMERA_STALE"
+      },
+      {
+        "wall": 1792780500.7884285,
+        "message": "[mission] first pose: (0.01, -0.01, -0.01), yaw 0.2 deg -> holding this heading"
+      },
+      {
+        "wall": 1792780500.8503125,
+        "message": "[mission] status: BLOCKED_MODEL_INFERENCE"
+      },
+      {
+        "wall": 1792780501.162279,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780501.411099,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780501.62915,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780502.6110559,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780502.688954,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780502.8610637,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780502.8891346,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780503.7613475,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780503.7888322,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780503.989428,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780504.013329,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780504.7673202,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780504.7889166,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780504.9931474,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780505.011492,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780505.5890594,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780505.6111495,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780505.8609319,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780505.8929365,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780506.4113271,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780506.4887621,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780506.6609318,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780506.6888006,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780507.1614773,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780507.1889398,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780507.3887577,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780507.4131413,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780507.910951,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780507.990312,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780508.1631324,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780508.1889007,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780508.7109692,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780508.768196,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780508.7893343,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780508.961504,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780508.989024,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780509.3610768,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780509.3886847,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780509.591974,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780509.611004,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780510.0654016,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780510.090612,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780510.2895775,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780510.3113906,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780511.1632836,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780511.1911051,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780511.3891451,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780511.4109523,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780512.2921424,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780512.3115773,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780512.560889,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780512.5898333,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780513.6886547,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780513.7108634,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780513.9610248,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780513.990103,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780514.8109076,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780514.890508,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780515.060893,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780515.089014,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780515.710999,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780515.7909584,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780515.8909006,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780515.911355,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780516.3891473,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780516.4121165,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780516.6108098,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780516.6936157,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780516.9108975,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780516.989197,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780517.1611872,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780517.1904733,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780517.289144,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780517.3120522,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780517.560831,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780517.5887527,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780517.6609867,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780517.6889112,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780517.8900092,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780517.9888675,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780518.161083,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780518.1912053,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780518.3886771,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780518.4110458,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780518.662507,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780518.689961,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780519.1612263,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780519.188865,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780519.3892379,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780519.4113457,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780519.7150276,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780519.789113,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780519.9631586,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780519.9887094,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780520.2900753,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780520.3146963,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780520.4952753,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792780520.5610774,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780520.5886981,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780520.8902123,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780520.9113154,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780521.1608696,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780521.1912234,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780521.7112188,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780521.7915518,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780521.9610672,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780521.9890625,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780522.5611005,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780522.5889444,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780522.7892184,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780522.812053,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780523.4109128,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780523.4905674,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780523.6641874,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780523.6893735,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780524.31103,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780524.3921697,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780524.5636902,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780524.59022,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780525.1890924,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780525.2148077,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780525.4613378,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780525.4891465,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780526.0899801,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780526.1111991,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780526.3615372,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780526.3891397,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780526.9608808,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780526.9892802,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780527.1887553,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780527.2108562,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780527.663515,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780527.690194,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780527.8912435,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780527.9112818,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780528.1634347,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780528.1887505,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780528.3887086,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780528.4138305,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780528.8614695,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780528.8921895,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780529.0895238,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780529.1115026,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780529.3114457,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780529.388667,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780529.5620875,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780529.5894415,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780529.7609549,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780529.7906551,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780529.9921339,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780530.0130575,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780530.3120914,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780530.388703,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780530.560935,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780530.5890086,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780530.8118176,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780530.8890138,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780531.0628495,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780531.0900664,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780531.4887545,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780531.5115116,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780531.7612445,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780531.7888565,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780532.260996,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780532.2886353,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780532.489494,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780532.5115006,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780533.2609527,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780533.289925,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780533.5108457,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780533.5887723,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780534.5112357,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780534.5891087,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780534.7615302,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780534.7887273,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780535.4886782,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780535.512886,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780535.7613883,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780535.7893875,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780536.4141555,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780536.4901543,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780536.6615517,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780536.6896448,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780537.3124757,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780537.3890946,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780537.5610158,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780537.5891893,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780537.9892707,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780538.0116267,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780538.2611082,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780538.3030286,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780538.8609912,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780538.888657,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780539.0887759,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780539.112459,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780539.6623108,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780539.6905982,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780539.891378,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780539.9122837,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780540.3618226,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780540.389724,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780540.592802,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780540.6109421,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780541.361135,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780541.3887603,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780541.590647,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780541.6130233,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780542.6132066,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780542.689407,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780542.861209,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780542.8888526,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780544.5609128,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780544.5886662,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780544.7887058,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780544.8109453,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780546.5610301,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780546.5891056,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780546.789076,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780546.8173077,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780548.5108693,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780548.5886917,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780548.7608733,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780548.7897625,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780550.2109509,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780550.293925,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780550.4608846,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780550.4889843,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780551.5609941,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780551.588812,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780551.7904606,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780551.811399,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780552.988822,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780553.0111384,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780553.2118196,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780553.2904365,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780554.3888779,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780554.4111855,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780554.6609159,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780554.6898339,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780555.7113395,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780555.7896793,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780555.9614568,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780555.9888284,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780557.0622306,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780557.090074,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780557.289203,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780557.3108895,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780558.461027,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780558.489225,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780558.6897633,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780558.7111022,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780559.9621205,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780559.9889088,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780560.1891222,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780560.212915,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780561.1637254,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780561.1886294,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780561.38924,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780561.4110296,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780562.411453,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780562.4891706,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780562.6618562,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780562.688712,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780563.7622385,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780563.7888691,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780563.9891777,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780564.011137,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780565.162073,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780565.1886764,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780565.3888047,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780565.4108636,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780566.4618406,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780566.4887767,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780566.6892662,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780566.7109828,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780568.311866,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780568.3905756,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780568.5610266,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780568.5890315,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780570.689472,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780570.7109082,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780570.961023,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780570.991374,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780573.1195116,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780573.2639866,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780573.2891402,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780573.488655,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780573.5112553,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780575.5124593,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780575.5886464,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780575.7623267,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780575.788769,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780577.8608482,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780577.8915627,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780578.111071,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780578.090688,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780579.9608555,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780579.988808,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780580.2112794,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780580.1890173,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780582.5630383,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780582.5675294,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780582.5888064,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780582.7888982,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780582.81116,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780585.2124593,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780585.2908103,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780585.4608734,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780585.4893847,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780587.7888587,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780587.8114448,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780588.0612607,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780588.0892785,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780590.1886773,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780590.211163,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780590.3948088,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780590.413911,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780592.761841,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780592.7886882,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780592.9889193,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780593.0108469,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780595.7108905,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780595.78868,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780595.962567,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780595.9888492,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780598.8117907,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780598.8886561,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780599.0611007,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780599.0892565,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780602.0616324,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780602.0888865,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780602.269507,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780602.290728,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780602.318507,
+        "message": "FCU: Armed by external command\t"
+      },
+      {
+        "wall": 1792780602.42127,
+        "message": "FCU: [logger] /fs/microsd/log/2026-10-27/23_41_50.ulg\t"
+      },
+      {
+        "wall": 1792780602.4991415,
+        "message": "[mission] FCU mode: AUTO.TAKEOFF"
+      },
+      {
+        "wall": 1792780604.1309948,
+        "message": "FCU: Takeoff detected\t"
+      },
+      {
+        "wall": 1792780605.3121982,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780605.3890905,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780605.499218,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792780605.5609436,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780605.588726,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780608.5611784,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780608.5889413,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780608.589059,
+        "message": "[mission] status: TAKEOFF"
+      },
+      {
+        "wall": 1792780608.7686477,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780608.7906408,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780610.0845227,
+        "message": "FCU: Kill-switch engaged\t"
+      },
+      {
+        "wall": 1792780610.3624928,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780611.5616639,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780611.5899754,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780611.7890887,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780611.811039,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780612.3644085,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780612.9430776,
+        "message": "FCU: Kill-switch disengaged\t"
+      },
+      {
+        "wall": 1792780613.2948,
+        "message": "FCU: Kill-switch engaged\t"
+      },
+      {
+        "wall": 1792780613.9126565,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780614.0747938,
+        "message": "[mission] status: BLOCKED_POSE_STALE"
+      },
+      {
+        "wall": 1792780614.161023,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780614.5125005,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780615.5082006,
+        "message": "[mission] status: BLOCKED_FLIGHT_AUTHORITY_LOST"
+      },
+      {
+        "wall": 1792780615.508694,
+        "message": "[mission] aborted: FLIGHT_AUTHORITY_LOST; no automatic restart, arming, mode or task output"
+      },
+      {
+        "wall": 1792780615.530928,
+        "message": "[mission] FCU mode: ALTCTL"
+      },
+      {
+        "wall": 1792780615.7608707,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780616.0109336,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780616.567112,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780616.6619911,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780616.9131067,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780617.360841,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780617.611372,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780617.711094,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780617.9612198,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780618.0110028,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780618.1323311,
+        "message": "FCU: Kill-switch disengaged\t"
+      },
+      {
+        "wall": 1792780618.2595265,
+        "message": "FCU: Kill-switch engaged\t"
+      },
+      {
+        "wall": 1792780618.4612818,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780618.6139617,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780620.5011773,
+        "message": "[mission] FCU mode: POSCTL"
+      },
+      {
+        "wall": 1792780620.6661153,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780620.8108783,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780620.8614352,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780622.8708634,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780623.2633367,
+        "message": "FCU: Disarmed by kill-switch\t"
+      },
+      {
+        "wall": 1792780623.7108893,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780623.9111814,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780624.212156,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780624.5108802,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780624.8608394,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780624.9122822,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780625.010926,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780625.6006184,
+        "message": "FCU: Kill-switch disengaged\t"
+      },
+      {
+        "wall": 1792780625.861576,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780625.9608912,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780626.2616444,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780626.3109856,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780626.861673,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780626.9126039,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780627.2115896,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780627.8623474,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780628.0121307,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780628.3111055,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780628.4614747,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780628.9635375,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780629.2609606,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780629.3111162,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780629.96306,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780630.0114763,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780630.963717,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780631.3644805,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780631.4625745,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780632.966032,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780634.661156,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780634.7110312,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780635.0130227,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780637.1128626,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780639.213594,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780641.3181083,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780643.3640313,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780645.36412,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780647.5631948,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780649.9297252,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780652.264869,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780654.5624306,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780656.5638893,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780658.6629727,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780660.6642425,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780662.7140048,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780664.8136652,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780666.862637,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780668.9149518,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780670.1109488,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780670.161128,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780670.918441,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780673.3660936,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780675.46448,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      }
+    ],
+    "counts": {
+      "location: STARTING; vision pose withheld": 1,
+      "location: WAIT_TF; vision pose withheld": 1,
+      "location: READY": 109,
+      "location: TF_STALE; vision pose withheld": 100,
+      "[mission] status: WAIT_FCU": 1,
+      "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no": 1,
+      "[mission] FCU mode: POSCTL": 2,
+      "[mission] status: BLOCKED_CAMERA_STALE": 1,
+      "[mission] first pose: (0.01, -0.01, -0.01), yaw 0.2 deg -> holding this heading": 1,
+      "[mission] status: BLOCKED_MODEL_INFERENCE": 1,
+      "[mission] status: BLOCKED_TF_STALE": 86,
+      "[mission] status: INPUTS_RECOVERED": 85,
+      "location: range sample rejected (range, jump, or repeated timestamp)": 35,
+      "[mission] FCU mode: OFFBOARD": 2,
+      "FCU: Armed by external command\t": 1,
+      "FCU: [logger] /fs/microsd/log/2026-10-27/23_41_50.ulg\t": 1,
+      "[mission] FCU mode: AUTO.TAKEOFF": 1,
+      "FCU: Takeoff detected\t": 1,
+      "[mission] status: TAKEOFF": 1,
+      "FCU: Kill-switch engaged\t": 3,
+      "location: TF_JUMP; vision pose withheld": 7,
+      "FCU: Kill-switch disengaged\t": 3,
+      "[mission] status: BLOCKED_POSE_STALE": 1,
+      "[mission] status: BLOCKED_FLIGHT_AUTHORITY_LOST": 1,
+      "[mission] aborted: FLIGHT_AUTHORITY_LOST; no automatic restart, arming, mode or task output": 1,
+      "[mission] FCU mode: ALTCTL": 1,
+      "location: RANGE_STALE; vision pose withheld": 14,
+      "FCU: Disarmed by kill-switch\t": 1
+    }
+  },
+  {
+    "run": "748af070-cf0f-11f1-839b-14f5f9e6cd08",
+    "events": [
+      {
+        "wall": 1792780076.7993312,
+        "message": "location: STARTING; vision pose withheld"
+      },
+      {
+        "wall": 1792780076.921047,
+        "message": "location: WAIT_TF; vision pose withheld"
+      },
+      {
+        "wall": 1792780077.272396,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780080.3211396,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780106.2763488,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780107.2210612,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780107.2720976,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780109.2722611,
+        "message": "[mission] status: WAIT_FCU"
+      },
+      {
+        "wall": 1792780109.2724102,
+        "message": "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no"
+      },
+      {
+        "wall": 1792780109.2973974,
+        "message": "[mission] FCU mode: POSCTL"
+      },
+      {
+        "wall": 1792780109.2977195,
+        "message": "[mission] first pose: (0.00, -0.00, -0.01), yaw 0.3 deg -> holding this heading"
+      },
+      {
+        "wall": 1792780109.29797,
+        "message": "[mission] status: BLOCKED_CAMERA_STALE"
+      },
+      {
+        "wall": 1792780109.3431308,
+        "message": "[mission] status: BLOCKED_MODEL_INFERENCE"
+      },
+      {
+        "wall": 1792780109.6724293,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792780109.9218812,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780110.0586586,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780110.2724717,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780110.2986186,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780110.498487,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780110.5211236,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780111.1991754,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780111.2209058,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780111.3989203,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780111.4711356,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780112.1985383,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780112.2209861,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780112.421052,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780112.4986215,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780113.0710402,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780113.099051,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780113.3023143,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780113.3215609,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780114.0709145,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780114.0986419,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780114.2992108,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780114.3221815,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780115.1988466,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780115.2211313,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780115.4722006,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780115.4991262,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780116.3709874,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780116.4004636,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780116.598619,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780116.623038,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780117.2986405,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780117.3244426,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780117.5708768,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780117.5990741,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780117.8761048,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780118.2710664,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780118.2985532,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780118.4985242,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780118.5214458,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780119.1986902,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780119.2215948,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780119.3992994,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780119.4709353,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780120.071192,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780120.0995111,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780120.2997262,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780120.3209398,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780120.7217784,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780120.8001375,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780120.972836,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780120.9988666,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780121.60117,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780121.6209037,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780121.7985983,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780121.8713617,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780121.9766622,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780122.6989386,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780122.7271924,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780122.898976,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780122.9721396,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780124.0233293,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780124.0999966,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780124.270885,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780124.2987735,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780125.0269613,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780125.1000266,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780125.2710183,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780125.2990825,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780126.271058,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780126.2990763,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780126.5284102,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780126.4991546,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780127.798984,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780127.8254058,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780127.9987814,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780128.0231702,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780129.8230653,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780129.9007,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780129.9989233,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780130.0757272,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780131.9711564,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780131.998919,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780132.1716793,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780132.1991615,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780134.3213918,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780134.3992069,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780134.5179973,
+        "message": "FCU: Armed by external command\t"
+      },
+      {
+        "wall": 1792780134.5708756,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780134.5987742,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780134.6189046,
+        "message": "FCU: [logger] /fs/microsd/log/2026-10-27/23_34_02.ulg\t"
+      },
+      {
+        "wall": 1792780134.6782386,
+        "message": "[mission] FCU mode: AUTO.TAKEOFF"
+      },
+      {
+        "wall": 1792780136.3440301,
+        "message": "FCU: Takeoff detected\t"
+      },
+      {
+        "wall": 1792780136.7990568,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780136.8213708,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780137.020961,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780137.0988069,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780139.5711968,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780139.5998082,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780139.6897767,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792780139.717434,
+        "message": "[mission] status: TAKEOFF"
+      },
+      {
+        "wall": 1792780139.7994902,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780139.8212445,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780141.9739532,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780141.999071,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780142.2044866,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780142.2268975,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780144.0710752,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780144.1043868,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780144.299111,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780144.323201,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780145.702584,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780145.721536,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780145.9730568,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780145.9996078,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780147.0709012,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780147.098858,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780147.3010013,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780147.321638,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780148.3710737,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780148.3987052,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780148.5993805,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780148.6251101,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780149.1211848,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780149.2004411,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780149.3720477,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780149.3993235,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780149.6713505,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780149.6988614,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780149.8985448,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780149.9242642,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780150.3217878,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780150.3986452,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780150.4990594,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780150.571324,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780150.5909848,
+        "message": "FCU: Kill-switch engaged\t"
+      },
+      {
+        "wall": 1792780150.920834,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780150.9988828,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780151.1733546,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780151.198658,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780151.5718925,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780151.59846,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780151.7990203,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780151.820891,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780152.1715782,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780152.1984432,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780152.4210832,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780152.6388187,
+        "message": "[mission] status: BLOCKED_POSE_STALE"
+      },
+      {
+        "wall": 1792780152.7210598,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780152.9720051,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780153.0711224,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780153.323877,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780153.3712668,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780153.6209257,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780153.672133,
+        "message": "location: TF_JUMP; vision pose withheld"
+      },
+      {
+        "wall": 1792780153.674946,
+        "message": "[mission] status: BLOCKED_FLIGHT_AUTHORITY_LOST"
+      },
+      {
+        "wall": 1792780153.6753955,
+        "message": "[mission] aborted: FLIGHT_AUTHORITY_LOST; no automatic restart, arming, mode or task output"
+      },
+      {
+        "wall": 1792780153.67552,
+        "message": "[mission] FCU mode: ALTCTL"
+      },
+      {
+        "wall": 1792780154.571041,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780155.6048665,
+        "message": "FCU: Disarmed by kill-switch\t"
+      },
+      {
+        "wall": 1792780156.6823392,
+        "message": "[mission] FCU mode: POSCTL"
+      },
+      {
+        "wall": 1792780157.471009,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780157.523086,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780158.2141862,
+        "message": "FCU: Kill-switch disengaged\t"
+      },
+      {
+        "wall": 1792780159.7236362,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780159.7728558,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780161.771652,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780161.8214967,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780161.9735231,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780162.0721338,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780162.12145,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780167.474556,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780167.522847,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780167.7709854,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780168.0209017,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780168.2708476,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780168.6208737,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780168.8710048,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780168.9728184,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780169.220965,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780169.4216278,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780169.6718953,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780169.7714045,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780173.3731892,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780173.420907,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780175.7218413,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780175.7763717,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780176.0325909,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780176.0724542,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780177.0709248,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780177.1209521,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780177.3709252,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780177.4209049,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780177.6721652,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780177.7215116,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780177.971249,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780178.1209376,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780178.371967,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780178.5210385,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780178.5239115,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780179.5712035,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780179.7221038,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780179.9714732,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780180.0730946,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780180.3210022,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780180.371523,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780181.4771018,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780181.5722854,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780181.821496,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780181.9709377,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780182.2210515,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780182.3710055,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780182.6211782,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780182.6720939,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780183.3709228,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780183.4740953,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780184.3710306,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780184.470918,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780187.9212403,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780187.9711528,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780188.2208352,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780188.4210865,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780188.6722572,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780188.9208944,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780189.1729958,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780189.3712652,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780191.870931,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780191.9252312,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780192.1708634,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780192.3212128,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780192.5708625,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780192.6210148,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780193.1213818,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780193.1712608,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780193.4212425,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780193.6709876,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780195.2209249,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780195.2711833,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780197.9210422,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780198.0222948,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780198.273298,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780198.3246439,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780198.571437,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780198.8211737,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780199.0708363,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780199.2741392,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780199.5709734,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780199.9211152,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780200.171691,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780200.4219027,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780200.6718605,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780200.9211447,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780201.1751897,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780201.420906,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780201.671996,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780201.921112,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780202.172251,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780202.2228408,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780202.4737601,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780202.521127,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780202.7727668,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780202.870919,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780203.1214955,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780203.2249644,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780203.6715138,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780203.8211944,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780204.0741029,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780204.1214144,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780204.370987,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780204.4208767,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780206.0729008,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780223.8208761,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780223.8708982,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780224.5708983,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780224.9726691,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780228.9758654,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780229.2723985,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780229.6767654,
+        "message": "[mission] FCU mode: ALTCTL"
+      },
+      {
+        "wall": 1792780229.971163,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780232.8230796,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780233.1208267,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780234.6709874,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780244.3726907,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780244.8757231,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780245.574396,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780252.2233944,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780259.2228758,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780259.520978,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780260.971065,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780266.922796,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780267.371115,
+        "message": "location: RANGE_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780268.121623,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780270.272097,
+        "message": "location: READY"
+      }
+    ],
+    "counts": {
+      "location: STARTING; vision pose withheld": 1,
+      "location: WAIT_TF; vision pose withheld": 1,
+      "location: range sample rejected (range, jump, or repeated timestamp)": 14,
+      "location: READY": 84,
+      "location: TF_STALE; vision pose withheld": 93,
+      "[mission] status: WAIT_FCU": 1,
+      "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no": 1,
+      "[mission] FCU mode: POSCTL": 2,
+      "[mission] first pose: (0.00, -0.00, -0.01), yaw 0.3 deg -> holding this heading": 1,
+      "[mission] status: BLOCKED_CAMERA_STALE": 1,
+      "[mission] status: BLOCKED_MODEL_INFERENCE": 1,
+      "[mission] FCU mode: OFFBOARD": 2,
+      "[mission] status: BLOCKED_TF_STALE": 34,
+      "[mission] status: INPUTS_RECOVERED": 34,
+      "FCU: Armed by external command\t": 1,
+      "FCU: [logger] /fs/microsd/log/2026-10-27/23_34_02.ulg\t": 1,
+      "[mission] FCU mode: AUTO.TAKEOFF": 1,
+      "FCU: Takeoff detected\t": 1,
+      "[mission] status: TAKEOFF": 1,
+      "location: TF_JUMP; vision pose withheld": 12,
+      "FCU: Kill-switch engaged\t": 1,
+      "[mission] status: BLOCKED_POSE_STALE": 1,
+      "[mission] status: BLOCKED_FLIGHT_AUTHORITY_LOST": 1,
+      "[mission] aborted: FLIGHT_AUTHORITY_LOST; no automatic restart, arming, mode or task output": 1,
+      "[mission] FCU mode: ALTCTL": 2,
+      "FCU: Disarmed by kill-switch\t": 1,
+      "FCU: Kill-switch disengaged\t": 1,
+      "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld": 6,
+      "location: RANGE_STALE; vision pose withheld": 5
+    }
+  },
+  {
+    "run": "acff1fce-cf0c-11f1-96d2-14f5f9e6cd08",
+    "events": [
+      {
+        "wall": 1792778883.936587,
+        "message": "location: STARTING; vision pose withheld"
+      },
+      {
+        "wall": 1792778884.0547583,
+        "message": "location: WAIT_TF; vision pose withheld"
+      },
+      {
+        "wall": 1792778887.6020293,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778895.7367446,
+        "message": "[mission] status: WAIT_FCU"
+      },
+      {
+        "wall": 1792778895.736813,
+        "message": "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no"
+      },
+      {
+        "wall": 1792778895.7385979,
+        "message": "[mission] FCU mode: POSCTL"
+      },
+      {
+        "wall": 1792778895.7388484,
+        "message": "[mission] status: BLOCKED_POSE_STALE"
+      },
+      {
+        "wall": 1792778895.7392738,
+        "message": "[mission] status: BLOCKED_CAMERA_STALE"
+      },
+      {
+        "wall": 1792778895.7396915,
+        "message": "[mission] first pose: (0.00, 0.00, 0.00), yaw 0.2 deg -> holding this heading"
+      },
+      {
+        "wall": 1792778895.7794175,
+        "message": "[mission] status: BLOCKED_MODEL_INFERENCE"
+      },
+      {
+        "wall": 1792778896.5396752,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778920.1396642,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778920.2010455,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778920.2405083,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778920.2511995,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778920.500921,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778920.5416133,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778920.5521662,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778920.640646,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778920.8014357,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778920.8515067,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778921.1016724,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778921.1404576,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778921.24092,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778921.2511897,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778921.5010843,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778921.5401766,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778921.6012156,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778921.640287,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778923.1144452,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792778924.0399127,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778924.0515344,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778924.102198,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778924.1397955,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778925.2407672,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778925.2513895,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778925.301275,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778925.3396604,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778925.6407864,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778925.741244,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778926.2443993,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778926.2526288,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778926.3010273,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778926.339805,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778929.8537545,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792778933.003764,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792778970.104078,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792778971.8510954,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792778982.1401572,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778982.150854,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778982.2009342,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778982.2436385,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778982.4434683,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778982.4510477,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778982.5515592,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778982.6411164,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778982.8031864,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778982.841614,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778983.0400364,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778983.0512881,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778983.3008935,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778983.340447,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778983.8398511,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778983.8528214,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778984.1018126,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778984.1404202,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778984.701367,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778984.7440727,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778984.9396076,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778984.9516242,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778985.2411478,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778985.2511396,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778985.5022323,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778985.5401006,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778985.740451,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778985.7539692,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778993.0409236,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778993.1404502,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779001.1167781,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792779004.1038947,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792779005.4365776,
+        "message": "FCU: Armed by external command\t"
+      },
+      {
+        "wall": 1792779005.5367548,
+        "message": "FCU: [logger] /fs/microsd/log/2026-10-27/21_26_53.ulg\t"
+      },
+      {
+        "wall": 1792779005.8505542,
+        "message": "[mission] FCU mode: AUTO.TAKEOFF"
+      },
+      {
+        "wall": 1792779007.2614517,
+        "message": "FCU: Takeoff detected\t"
+      },
+      {
+        "wall": 1792779014.039644,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779014.1011043,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779014.207188,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779014.2157137,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792779014.2409866,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779014.4396708,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779014.4519544,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779014.6509166,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779014.7415507,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779014.9012268,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779014.940741,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779015.1402323,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779015.1512446,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779015.400853,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779015.4511676,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779015.4398608,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779015.5417507,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779017.9466386,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779017.9511423,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779018.1012228,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779018.1413743,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779018.3405325,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779018.351586,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779018.5014048,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779018.5412672,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779018.7401009,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779018.7511654,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779018.9398072,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779018.95099,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779019.1396787,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779019.2028785,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779019.403339,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779019.4397886,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779019.6402752,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779019.6541142,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779020.201289,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779020.2399704,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779020.4398017,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779020.450847,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779020.9407744,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779020.9509764,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779021.2011173,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779021.2424183,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779022.108694,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779022.1404707,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779022.3405485,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779022.3531904,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779023.1016257,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779023.1399498,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779023.3403857,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792779023.351016,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779024.1536074,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792779024.2418659,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792779024.4012032,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792779024.4403892,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      }
+    ],
+    "counts": {
+      "location: STARTING; vision pose withheld": 1,
+      "location: WAIT_TF; vision pose withheld": 1,
+      "location: READY": 29,
+      "[mission] status: WAIT_FCU": 1,
+      "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no": 1,
+      "[mission] FCU mode: POSCTL": 1,
+      "[mission] status: BLOCKED_POSE_STALE": 1,
+      "[mission] status: BLOCKED_CAMERA_STALE": 1,
+      "[mission] first pose: (0.00, 0.00, 0.00), yaw 0.2 deg -> holding this heading": 1,
+      "[mission] status: BLOCKED_MODEL_INFERENCE": 1,
+      "[mission] status: INPUTS_RECOVERED": 30,
+      "[mission] status: BLOCKED_TF_STALE": 30,
+      "location: TF_STALE; vision pose withheld": 29,
+      "location: range sample rejected (range, jump, or repeated timestamp)": 7,
+      "[mission] FCU mode: OFFBOARD": 1,
+      "FCU: Armed by external command\t": 1,
+      "FCU: [logger] /fs/microsd/log/2026-10-27/21_26_53.ulg\t": 1,
+      "[mission] FCU mode: AUTO.TAKEOFF": 1,
+      "FCU: Takeoff detected\t": 1
+    }
+  },
+  {
+    "run": "b8dae576-cf0c-11f1-933f-14f5f9e6cd08",
+    "events": [
+      {
+        "wall": 1792778903.8418112,
+        "message": "location: STARTING; vision pose withheld"
+      },
+      {
+        "wall": 1792778904.047715,
+        "message": "location: WAIT_TF; vision pose withheld"
+      },
+      {
+        "wall": 1792778907.1964433,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778915.4783955,
+        "message": "[mission] status: WAIT_FCU"
+      },
+      {
+        "wall": 1792778915.4785688,
+        "message": "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no"
+      },
+      {
+        "wall": 1792778915.4822457,
+        "message": "[mission] status: BLOCKED_POSE_STALE"
+      },
+      {
+        "wall": 1792778915.482634,
+        "message": "[mission] FCU mode: ALTCTL"
+      },
+      {
+        "wall": 1792778915.4828217,
+        "message": "[mission] first pose: (0.01, 0.01, -0.00), yaw 0.0 deg -> holding this heading"
+      },
+      {
+        "wall": 1792778915.483031,
+        "message": "[mission] status: BLOCKED_CAMERA_STALE"
+      },
+      {
+        "wall": 1792778915.522948,
+        "message": "[mission] status: BLOCKED_MODEL_INFERENCE"
+      },
+      {
+        "wall": 1792778916.283807,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778926.318949,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792778939.3498514,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792778943.099297,
+        "message": "FCU: Armed by external command\t"
+      },
+      {
+        "wall": 1792778943.2023528,
+        "message": "FCU: [logger] /fs/microsd/log/2026-10-27/20_10_42.ulg\t"
+      },
+      {
+        "wall": 1792778943.320637,
+        "message": "[mission] FCU mode: AUTO.TAKEOFF"
+      },
+      {
+        "wall": 1792778944.924566,
+        "message": "FCU: Takeoff detected\t"
+      },
+      {
+        "wall": 1792778960.7961228,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778960.8971903,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778961.1461484,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778961.1967058,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778962.6846664,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778962.69632,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778962.7472055,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778962.783777,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778962.9468415,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792778962.984448,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792778962.9970849,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792778963.084526,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792778963.3320515,
+        "message": "[mission] FCU mode: AUTO.LAND"
+      },
+      {
+        "wall": 1792778971.3789747,
+        "message": "FCU: Disarmed by landing\t"
+      }
+    ],
+    "counts": {
+      "location: STARTING; vision pose withheld": 1,
+      "location: WAIT_TF; vision pose withheld": 1,
+      "location: READY": 5,
+      "[mission] status: WAIT_FCU": 1,
+      "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no": 1,
+      "[mission] status: BLOCKED_POSE_STALE": 1,
+      "[mission] FCU mode: ALTCTL": 1,
+      "[mission] first pose: (0.01, 0.01, -0.00), yaw 0.0 deg -> holding this heading": 1,
+      "[mission] status: BLOCKED_CAMERA_STALE": 1,
+      "[mission] status: BLOCKED_MODEL_INFERENCE": 1,
+      "[mission] status: INPUTS_RECOVERED": 3,
+      "[mission] FCU mode: OFFBOARD": 1,
+      "location: range sample rejected (range, jump, or repeated timestamp)": 1,
+      "FCU: Armed by external command\t": 1,
+      "FCU: [logger] /fs/microsd/log/2026-10-27/20_10_42.ulg\t": 1,
+      "[mission] FCU mode: AUTO.TAKEOFF": 1,
+      "FCU: Takeoff detected\t": 1,
+      "location: TF_STALE; vision pose withheld": 4,
+      "[mission] status: BLOCKED_TF_STALE": 2,
+      "[mission] FCU mode: AUTO.LAND": 1,
+      "FCU: Disarmed by landing\t": 1
+    }
+  },
+  {
+    "run": "e89920a8-cf10-11f1-966a-14f5f9e6cd08",
+    "events": [
+      {
+        "wall": 1792780701.2610512,
+        "message": "location: STARTING; vision pose withheld"
+      },
+      {
+        "wall": 1792780701.3661554,
+        "message": "location: WAIT_TF; vision pose withheld"
+      },
+      {
+        "wall": 1792780704.665575,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780722.3172817,
+        "message": "[mission] status: WAIT_FCU"
+      },
+      {
+        "wall": 1792780722.317364,
+        "message": "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no"
+      },
+      {
+        "wall": 1792780722.324121,
+        "message": "[mission] FCU mode: POSCTL"
+      },
+      {
+        "wall": 1792780722.3243146,
+        "message": "[mission] status: BLOCKED_POSE_STALE"
+      },
+      {
+        "wall": 1792780722.3280685,
+        "message": "[mission] first pose: (0.01, -0.01, -0.01), yaw 0.4 deg -> holding this heading"
+      },
+      {
+        "wall": 1792780722.3282816,
+        "message": "[mission] status: BLOCKED_CAMERA_STALE"
+      },
+      {
+        "wall": 1792780722.3482878,
+        "message": "[mission] status: BLOCKED_MODEL_INFERENCE"
+      },
+      {
+        "wall": 1792780723.1307576,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780723.2992198,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792780723.968087,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780728.6678216,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780756.6308997,
+        "message": "FCU: Armed by external command\t"
+      },
+      {
+        "wall": 1792780756.7432737,
+        "message": "FCU: [logger] /fs/microsd/log/2026-10-27/23_44_24.ulg\t"
+      },
+      {
+        "wall": 1792780757.2970755,
+        "message": "[mission] FCU mode: AUTO.TAKEOFF"
+      },
+      {
+        "wall": 1792780758.432173,
+        "message": "FCU: Takeoff detected\t"
+      },
+      {
+        "wall": 1792780761.929946,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780761.9658296,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780762.074049,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780762.1303184,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780762.3152885,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780762.3304539,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780762.5172088,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780762.5323079,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780762.7653642,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780762.8321002,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780763.0167644,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780763.0304825,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780763.235224,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780763.2655258,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780763.6161642,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780763.6301672,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780763.8304374,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780763.8678892,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780764.26537,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780764.3300166,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780764.5186398,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780764.5306852,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780764.8688116,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780764.933215,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780765.115249,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780765.1300147,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780765.4300764,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780765.4655879,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780765.718167,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780765.7339485,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780765.8654306,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780765.9301758,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780766.115585,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780766.1341,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780766.5157201,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780766.5298731,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780766.7300544,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780766.7668693,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780767.2162645,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780767.2301269,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780767.4300427,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780767.465206,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780768.0655062,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780768.1300762,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780768.3157272,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780768.3304048,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780768.9652708,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780769.0310502,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780769.2153277,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780769.2333777,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780769.3027954,
+        "message": "[mission] FCU mode: OFFBOARD"
+      },
+      {
+        "wall": 1792780769.5152464,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780769.5303557,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780769.530558,
+        "message": "[mission] status: TAKEOFF"
+      },
+      {
+        "wall": 1792780769.7303274,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780769.766954,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780769.9655068,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780770.030698,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780770.21529,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780770.2299392,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780770.2652342,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780770.3304331,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780770.5211759,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780770.530705,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780770.765337,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780770.829976,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780771.0156207,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780771.0302756,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780771.1656666,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780771.2312336,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780771.4156091,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780771.4331152,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780771.9162362,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780771.929914,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780772.130941,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780772.1652277,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780772.516261,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780772.5310926,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780772.716361,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780772.7302876,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780773.2656288,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780773.3301122,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780773.5154445,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780773.5320747,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780773.9658804,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780774.0302737,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780774.2229173,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780774.230034,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780774.5155287,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780774.5305126,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780774.730276,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780774.7652793,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780774.9301896,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780774.9310157,
+        "message": "[mission] status: TASK_HAZARD"
+      },
+      {
+        "wall": 1792780774.949645,
+        "message": "[mission] status: HOLD_PLANNER_STALE"
+      },
+      {
+        "wall": 1792780774.968096,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780775.0326233,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780775.2174559,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780775.2306132,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780775.430167,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780775.4306133,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780775.4665196,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780775.6677215,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780775.730009,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780776.0652175,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780776.132069,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780776.1321914,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780776.3153183,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780776.3303075,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780776.8158183,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780776.8302536,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780776.8305132,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780777.0303533,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780777.0654254,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780777.4161289,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780777.4301457,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780777.4304984,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780777.4508786,
+        "message": "[mission] status: HOLD_PLANNER_STALE"
+      },
+      {
+        "wall": 1792780777.6652148,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780777.7303138,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780778.0672824,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780778.1299827,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780778.1301055,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780778.3165781,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780778.3300984,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780778.865778,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780778.9300847,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780778.9303026,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780779.1180382,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780779.1303291,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780779.567504,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780779.635694,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780779.6361115,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780779.8157825,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780779.8302827,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780780.26526,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780780.3305957,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780780.3310044,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780780.3932474,
+        "message": "FCU: Kill-switch engaged\t"
+      },
+      {
+        "wall": 1792780780.5156457,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780780.5332856,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780781.0654857,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780781.130007,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780781.1304133,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780781.217074,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780781.3163052,
+        "message": "location: TF_STALE; vision pose withheld"
+      },
+      {
+        "wall": 1792780781.331517,
+        "message": "[mission] status: BLOCKED_TF_STALE"
+      },
+      {
+        "wall": 1792780781.618218,
+        "message": "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld"
+      },
+      {
+        "wall": 1792780781.630552,
+        "message": "[mission] status: INPUTS_RECOVERED"
+      },
+      {
+        "wall": 1792780781.6306982,
+        "message": "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)"
+      },
+      {
+        "wall": 1792780782.4676838,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780782.7655926,
+        "message": "location: READY"
+      },
+      {
+        "wall": 1792780785.4102056,
+        "message": "FCU: Disarmed by kill-switch\t"
+      },
+      {
+        "wall": 1792780785.7168715,
+        "message": "location: range sample rejected (range, jump, or repeated timestamp)"
+      },
+      {
+        "wall": 1792780786.3036003,
+        "message": "[mission] status: BLOCKED_FLIGHT_AUTHORITY_LOST"
+      },
+      {
+        "wall": 1792780786.304004,
+        "message": "[mission] aborted: FLIGHT_AUTHORITY_LOST; no automatic restart, arming, mode or task output"
+      },
+      {
+        "wall": 1792780788.3017147,
+        "message": "[mission] FCU mode: POSCTL"
+      }
+    ],
+    "counts": {
+      "location: STARTING; vision pose withheld": 1,
+      "location: WAIT_TF; vision pose withheld": 1,
+      "location: READY": 34,
+      "[mission] status: WAIT_FCU": 1,
+      "[mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no": 1,
+      "[mission] FCU mode: POSCTL": 2,
+      "[mission] status: BLOCKED_POSE_STALE": 1,
+      "[mission] first pose: (0.01, -0.01, -0.01), yaw 0.4 deg -> holding this heading": 1,
+      "[mission] status: BLOCKED_CAMERA_STALE": 1,
+      "[mission] status: BLOCKED_MODEL_INFERENCE": 1,
+      "[mission] status: INPUTS_RECOVERED": 34,
+      "[mission] FCU mode: OFFBOARD": 2,
+      "location: range sample rejected (range, jump, or repeated timestamp)": 4,
+      "FCU: Armed by external command\t": 1,
+      "FCU: [logger] /fs/microsd/log/2026-10-27/23_44_24.ulg\t": 1,
+      "[mission] FCU mode: AUTO.TAKEOFF": 1,
+      "FCU: Takeoff detected\t": 1,
+      "[mission] status: BLOCKED_TF_STALE": 33,
+      "location: TF_STALE; vision pose withheld": 33,
+      "[mission] status: TAKEOFF": 1,
+      "[mission] status: TASK_HAZARD": 1,
+      "[mission] status: HOLD_PLANNER_STALE": 2,
+      "[mission] goal hazard0: field (0.00, -1.95) -> map (1.95, -0.00)": 11,
+      "FCU: Kill-switch engaged\t": 1,
+      "location: HEIGHT_GEOMETRY_OR_LIMIT; vision pose withheld": 2,
+      "FCU: Disarmed by kill-switch\t": 1,
+      "[mission] status: BLOCKED_FLIGHT_AUTHORITY_LOST": 1,
+      "[mission] aborted: FLIGHT_AUTHORITY_LOST; no automatic restart, arming, mode or task output": 1
+    }
+  }
+]

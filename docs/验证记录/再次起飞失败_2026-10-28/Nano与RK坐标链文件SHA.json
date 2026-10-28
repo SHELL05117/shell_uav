@@ -1,0 +1,56 @@
+[
+  {
+    "file": "location/param/ROSSLAM/cartographer_2Dlidar_mapping_location_params.lua",
+    "sha256": {
+      "nano_export": "6c58aabb669ccee6cf3accc28c4f5b7860f90fb7bbdba7cf58c3ac233ce51ff9",
+      "old_development": "6c58aabb669ccee6cf3accc28c4f5b7860f90fb7bbdba7cf58c3ac233ce51ff9",
+      "current_local": "6c58aabb669ccee6cf3accc28c4f5b7860f90fb7bbdba7cf58c3ac233ce51ff9",
+      "actual_rk": "6c58aabb669ccee6cf3accc28c4f5b7860f90fb7bbdba7cf58c3ac233ce51ff9"
+    }
+  },
+  {
+    "file": "location/launch/location.launch",
+    "sha256": {
+      "nano_export": "b51f399f532526dfc24da81c65a9331a83c32288951854753b87690079f7b0eb",
+      "old_development": "b51f399f532526dfc24da81c65a9331a83c32288951854753b87690079f7b0eb",
+      "current_local": "582ba836b77d723248cbd4b5dfd328bb551932c6727c5391efd43093e8f26375",
+      "actual_rk": "582ba836b77d723248cbd4b5dfd328bb551932c6727c5391efd43093e8f26375"
+    }
+  },
+  {
+    "file": "location/src/location_with_ftmini.cpp",
+    "sha256": {
+      "nano_export": "f3ffa42cef3332224fb96cfc4b3dfa47936ce8071abf2ba62866cf95e19120ef",
+      "old_development": "f3ffa42cef3332224fb96cfc4b3dfa47936ce8071abf2ba62866cf95e19120ef",
+      "current_local": "f46056759da3a5e1a107cdd67f6aeb4218b02e6c8c3732a186e283818d199e0b",
+      "actual_rk": "7017f0415f5395c5f15bf90f0f9124e47e5bd8d885e7c1d4bd8b19a3c9e61a2c"
+    }
+  },
+  {
+    "file": "navigation_2d/src/flight_control.cpp",
+    "sha256": {
+      "nano_export": "a4e0cedc72111ba6b48046af21b8f0887c8e3b4c9028f6616e320712830a3f76",
+      "old_development": "a4e0cedc72111ba6b48046af21b8f0887c8e3b4c9028f6616e320712830a3f76",
+      "current_local": "aa11b3f4eb4e8387630779e507f404136865a23c1e7ca33100d46e7e6b9418e0",
+      "actual_rk": "aa11b3f4eb4e8387630779e507f404136865a23c1e7ca33100d46e7e6b9418e0"
+    }
+  },
+  {
+    "file": "navigation_2d/include/flight_control.h",
+    "sha256": {
+      "nano_export": "469abdb66d12cafb4200b96e6305fc72b5fc3e05ab2aadc122263ea0536feacf",
+      "old_development": "469abdb66d12cafb4200b96e6305fc72b5fc3e05ab2aadc122263ea0536feacf",
+      "current_local": "74ef92f2909c75aea048acaa789ecbf4dc3874c88322c59e266eb4b6ce84becf",
+      "actual_rk": null
+    }
+  },
+  {
+    "file": "navigation_2d/launch/navigation_2d.launch",
+    "sha256": {
+      "nano_export": "3b9a1c7e4606e87e10eae6879bae86b95a0c06d0b60c162ba0aa8cacdd56c2b3",
+      "old_development": "3b9a1c7e4606e87e10eae6879bae86b95a0c06d0b60c162ba0aa8cacdd56c2b3",
+      "current_local": "52cd18d7dcbd3af255005f2a22f1c59a4a9bac5f15d0b17aa4285b77ea91e8f6",
+      "actual_rk": "52cd18d7dcbd3af255005f2a22f1c59a4a9bac5f15d0b17aa4285b77ea91e8f6"
+    }
+  }
+]

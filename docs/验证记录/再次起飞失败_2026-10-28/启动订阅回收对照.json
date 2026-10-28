@@ -1,0 +1,32 @@
+{
+  "hardware": false, 
+  "private_master": "http://127.0.0.1:11341", 
+  "flight_services": false, 
+  "cases": [
+    {
+      "case": "before", 
+      "outcome": {
+        "result": "ready"
+      }, 
+      "camera_connections_after_gate": 1, 
+      "cpu_one_core_percent": 51.84344357004188
+    }, 
+    {
+      "case": "after", 
+      "outcome": {
+        "result": "ready"
+      }, 
+      "camera_connections_after_gate": 0, 
+      "cpu_one_core_percent": 0.5997143627685302
+    }, 
+    {
+      "case": "after_timeout", 
+      "outcome": {
+        "result": "Startup timed out; missing vision"
+      }, 
+      "camera_connections_after_gate": 0, 
+      "cpu_one_core_percent": 0.5993295968366912
+    }
+  ], 
+  "passed": true
+}

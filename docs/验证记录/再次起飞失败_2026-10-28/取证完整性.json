@@ -1,0 +1,12 @@
+{
+  "archive_sha256": "734690486d4a9a56fdc747f6b45dd5a86f80ace0d8fc773be96aeba7ccd54018",
+  "regular_files": 611,
+  "mismatch": [],
+  "skipped_symlinks": [
+    ".ros/log/latest",
+    "uav_flight_logs/20261028-145304-lite-dd027f6a/ros-logs/latest",
+    "uav_flight_logs/20261028-145053-lite-efd5fb59/ros-logs/latest",
+    "uav_flight_logs/20261028-150037-lite-5171d9e0/ros-logs/latest",
+    "uav_flight_logs/20261024-020834-lite-7def300c/ros-logs/latest"
+  ]
+}

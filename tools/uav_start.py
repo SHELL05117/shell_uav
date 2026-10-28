@@ -106,26 +106,34 @@ def wait_ready(timeout=65):
         ('location','/location_node/status',String),
         ('vision','/mavros/vision_pose/pose',PoseStamped),('camera','/camera/image_raw',Image)]]
     buffer=tf2_ros.Buffer(); listener=tf2_ros.TransformListener(buffer)
-    deadline=time.time()+timeout; pending=[]
-    while time.time()<deadline:
-        if any(p.poll() is not None for p in children):
-            raise RuntimeError('A launched process exited before readiness')
-        now=time.time()
-        pending=[key for key in ('state','imu','scan','vision','camera') if key not in values or now-values[key][0]>2]
-        state=values.get('state',(None,None))[1]
-        if state and state.armed:
-            raise RuntimeError('Ground startup refused: FCU armed')
-        if not state or not state.connected: pending.append('FCU connection')
-        loc=values.get('location',(None,None))[1]
-        if not loc or loc.data!='READY': pending.append('location READY')
-        m=values.get('map',(None,None))[1]
-        if not m or not m.info.width or not m.info.height: pending.append('map')
-        if not buffer.can_transform('map','base_link',rospy.Time(0),rospy.Duration(.1)):
-            pending.append('map -> base_link')
-        if not pending:
-            print('READY: unarmed FCU, live IMU/scan, map, location and TF.'); return
-        time.sleep(.2)
-    raise RuntimeError('Startup timed out; missing '+', '.join(pending))
+    try:
+        deadline=time.time()+timeout; pending=[]
+        while time.time()<deadline:
+            if any(p.poll() is not None for p in children):
+                raise RuntimeError('A launched process exited before readiness')
+            now=time.time()
+            pending=[key for key in ('state','imu','scan','vision','camera') if key not in values or now-values[key][0]>2]
+            state=values.get('state',(None,None))[1]
+            if state and state.armed:
+                raise RuntimeError('Ground startup refused: FCU armed')
+            if not state or not state.connected: pending.append('FCU connection')
+            loc=values.get('location',(None,None))[1]
+            if not loc or loc.data!='READY': pending.append('location READY')
+            m=values.get('map',(None,None))[1]
+            if not m or not m.info.width or not m.info.height: pending.append('map')
+            if not buffer.can_transform('map','base_link',rospy.Time(0),rospy.Duration(.1)):
+                pending.append('map -> base_link')
+            if not pending:
+                print('READY: unarmed FCU, live IMU/scan, map, location and TF.'); return
+            time.sleep(.2)
+        raise RuntimeError('Startup timed out; missing '+', '.join(pending))
+    finally:
+        # This is a one-shot startup gate. rospy retains live callbacks even
+        # after this function returns; without explicit cleanup every A/C
+        # launcher keeps deserializing full camera frames and map/TF traffic.
+        for subscription in subs:
+            subscription.unregister()
+        listener.unregister()
 
 
 def navigation(args, flight=False):

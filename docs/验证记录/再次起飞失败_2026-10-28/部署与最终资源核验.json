@@ -1,0 +1,40 @@
+{
+  "boot": "7e413f5c-5e6d-4a7a-b524-6496bfb337e9",
+  "board_date": {
+    "returncode": 0,
+    "output": "2026-10-24T02:27:47,815446575+08:00"
+  },
+  "hashes": {
+    ".local/share/uav/uav_start.py": "75f77b1b1b61a3c1d1267da2104988b3606fedf320b5a91dda12c2adbb8f4d50",
+    ".local/share/uav/uav_arm.py": "b3695e0eac7d76c81a1f2d1ada17a5c1453fd767d425e76d8e2914777991b76a",
+    "catkin_ws/tools/uav_start.py": "75f77b1b1b61a3c1d1267da2104988b3606fedf320b5a91dda12c2adbb8f4d50",
+    "catkin_ws/tools/uav_arm.py": "b3695e0eac7d76c81a1f2d1ada17a5c1453fd767d425e76d8e2914777991b76a",
+    "catkin_ws/devel/lib/navigation_2d/shoot_with_move_base_node": "e1c5e29da9ce687f067867a3c3c12a1eeee83080a0d3d3f0a4da7dd3eb5a5d28",
+    "catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp": "01eab407cc619db1be18f5689dff54a35123c708528810462d7591d2e1c9577b",
+    ".config/uav/env.sh": "109f47b3af990a7ad342cec3d84f313962b396dac162f86968199f5c6f7c9566"
+  },
+  "processes": {
+    "returncode": 0,
+    "output": "PID  PPID STAT %CPU %MEM COMMAND\n    1     0 Ss    0.2  0.1 /sbin/init\n    2     0 S     0.0  0.0 [kthreadd]\n    3     2 S     0.0  0.0 [ksoftirqd/0]\n    4     2 S     0.0  0.0 [kworker/0:0]\n    5     2 S<    0.0  0.0 [kworker/0:0H]\n    7     2 S     0.1  0.0 [rcu_sched]\n    8     2 S     0.0  0.0 [rcu_bh]\n    9     2 S     0.0  0.0 [migration/0]\n   10     2 S     0.0  0.0 [watchdog/0]\n   11     2 S     0.0  0.0 [watchdog/1]\n   12     2 S     0.0  0.0 [migration/1]\n   13     2 S     0.0  0.0 [ksoftirqd/1]\n   14     2 S     0.1  0.0 [kworker/1:0]\n   15     2 S<    0.0  0.0 [kworker/1:0H]\n   16     2 S     0.0  0.0 [watchdog/2]\n   17     2 S     0.0  0.0 [migration/2]\n   18     2 S     0.0  0.0 [ksoftirqd/2]\n   20     2 S<    0.0  0.0 [kworker/2:0H]\n   21     2 S     0.0  0.0 [watchdog/3]\n   22     2 S     0.0  0.0 [migration/3]\n   23     2 S     0.0  0.0 [ksoftirqd/3]\n   24     2 S     0.0  0.0 [kworker/3:0]\n   25     2 S<    0.0  0.0 [kworker/3:0H]\n   26     2 S     0.0  0.0 [watchdog/4]\n   27     2 S     0.0  0.0 [migration/4]\n   28     2 S     0.0  0.0 [ksoftirqd/4]\n   30     2 S<    0.0  0.0 [kworker/4:0H]\n   31     2 S     0.0  0.0 [watchdog/5]\n   32     2 S     0.0  0.0 [migration/5]\n   33     2 S     0.0  0.0 [ksoftirqd/5]\n   35     2 S<    0.0  0.0 [kworker/5:0H]\n   36     2 S     0.0  0.0 [kdevtmpfs]\n   37     2 S<    0.0  0.0 [netns]\n   38     2 S<    0.0  0.0 [perf]\n   39     2 S     0.0  0.0 [khungtaskd]\n   40     2 S<    0.0  0.0 [writeback]\n   41     2 S<    0.0  0.0 [crypto]\n   42     2 S<    0.0  0.0 [bioset]\n   43     2 S<    0.0  0.0 [kblockd]\n   45     2 S<    0.0  0.0 [ata_sff]\n   46     2 S<    0.0  0.0 [devfreq_wq]\n   47     2 S<    0.0  0.0 [cfg80211]\n   48     2 S     0.1  0.0 [cfinteractive]\n   50     2 S<    0.0  0.0 [rpciod]\n   65     2 S     0.0  0.0 [kswapd0]\n   66     2 S<    0.0  0.0 [vmstat]\n   67     2 S     0.0  0.0 [fsnotify_mark]\n   68     2 S<    0.0  0.0 [SquashFS read w]\n   69     2 S<    0.0  0.0 [nfsiod]\n   70     2 S<    0.0  0.0 [xfsalloc]\n   71     2 S<    0.0  0.0 [xfs_mru_cache]\n  100     2 S     0.0  0.0 [kworker/4:1]\n  102     2 S<    0.0  0.0 [vcodec]\n  103     2 S     0.0  0.0 [irq/47-ff650000]\n  104     2 S     0.0  0.0 [irq/46-ff650000]\n  105     2 S<    0.0  0.0 [vcodec]\n  106     2 S     0.0  0.0 [irq/49-ff660000]\n  107     2 S<    0.0  0.0 [hpd_queue]\n  108     2 S     0.0  0.0 [irq/64-ff940000]\n  109     2 S     0.0  0.0 [cec-dw_hdmi]\n  110     2 S     0.0  0.0 [irq/64-dw-hdmi-]\n  111     2 S<    0.0  0.0 [bioset]\n  112     2 S<    0.0  0.0 [bioset]\n  113     2 S<    0.0  0.0 [bioset]\n  114     2 S<    0.0  0.0 [bioset]\n  115     2 S<    0.0  0.0 [bioset]\n  116     2 S<    0.0  0.0 [bioset]\n  117     2 S<    0.0  0.0 [bioset]\n  118     2 S<    0.0  0.0 [bioset]\n  119     2 S<    0.0  0.0 [bioset]\n  120     2 S<    0.0  0.0 [bioset]\n  121     2 S<    0.0  0.0 [nvme]\n  122     2 S     0.0  0.0 [spi32766]\n  126     2 S<    0.0  0.0 [libertastf]\n  127     2 S<    0.0  0.0 [uether]\n  128     2 S<    0.0  0.0 [goodix_wq]\n  129     2 S     0.0  0.0 [irq/120-rk817]\n  130     2 S<    0.0  0.0 [fusb302_wq]\n  131     2 S     0.0  0.0 [irq/104-fusb302]\n  132     2 S     0.0  0.0 [irq/39-rockchip]\n  133     2 S<    0.0  0.0 [btudpwork]\n  134     2 S<    0.0  0.0 [btfwwork]\n  135     2 S     0.0  0.0 [irq/26-mmc1]\n  138     2 S     0.0  0.0 [kworker/2:1]\n  139     2 S<    0.0  0.0 [ipv6_addrconf]\n  140     2 S<    0.0  0.0 [krfcommd]\n  142     2 S     0.0  0.0 [irq/52-rga]\n  143     2 S<    0.0  0.0 [deferwq]\n  144     2 S     0.0  0.0 [irq/258-rockchi]\n  145     2 S     0.0  0.0 [irq/259-rockchi]\n  146     2 S     0.0  0.0 [irq/260-rockchi]\n  147     2 S     0.0  0.0 [irq/261-rockchi]\n  148     2 S<    0.0  0.0 [gpu_power_off_w]\n  149     2 S<    0.0  0.0 [kworker/u13:0]\n  150     2 S<    0.0  0.0 [kbase_job_fault]\n  153     2 S     0.2  0.0 [kworker/u12:3]\n  155     2 S     0.0  0.0 [irq/83-headset_]\n  159     2 S<    0.0  0.0 [hci0]\n  160     2 S<    0.0  0.0 [hci0]\n  162     2 S<    0.0  0.0 [bioset]\n  163     2 S     0.1  0.0 [mmcqd/1]\n  164     2 S<    0.0  0.0 [bioset]\n  165     2 S     0.0  0.0 [mmcqd/1boot0]\n  166     2 S<    0.0  0.0 [bioset]\n  167     2 S     0.0  0.0 [mmcqd/1boot1]\n  168     2 S<    0.0  0.0 [bioset]\n  169     2 S     0.0  0.0 [mmcqd/1rpmb]\n  170     2 S     0.0  0.0 [kworker/4:2]\n  171     2 S<    0.0  0.0 [kworker/3:1H]\n  172     2 S<    0.0  0.0 [kworker/0:1H]\n  173     2 S     0.0  0.0 [jbd2/mmcblk1p4-]\n  174     2 S<    0.0  0.0 [ext4-rsv-conver]\n  175     2 S<    0.0  0.0 [kworker/1:1H]\n  193     1 S<s   0.2  0.3 /lib/systemd/systemd-journald\n  199     2 S<    0.0  0.0 [kworker/5:1H]\n  203     1 Ss    0.0  0.0 /lib/systemd/systemd-udevd\n  231     1 Ss    0.0  0.1 /lib/systemd/systemd-networkd\n  232     2 S     0.0  0.0 [kworker/3:3]\n  234     2 S<    0.0  0.0 [kworker/4:1H]\n  277     1 Ss    2.8  0.1 /sbin/wpa_supplicant -c /run/netplan/wpa-wlan0.conf -iwlan0\n  279     2 S<    0.0  0.0 [kworker/2:1H]\n  286     1 Ss    0.0  0.1 /lib/systemd/systemd-resolved\n  287     1 Ssl   0.0  0.0 /lib/systemd/systemd-timesyncd\n  292     1 Ss    0.0  0.0 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only\n  294     1 Ss    0.0  0.0 /usr/sbin/cron -f\n  297     1 Ss    0.0  0.1 /lib/systemd/systemd-logind\n  298     1 Ss    0.0  0.0 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant\n  312     2 S     1.1  0.0 [RTW_CMD_THREAD]\n  313     2 S     0.0  0.0 [irq/232-dwc3]\n  325     1 Ss+   0.0  0.0 /sbin/agetty -o -p -- \\u --keep-baud 115200,38400,9600 ttyFIQ0 vt220\n  326     2 S     0.0  0.0 [kworker/2:3]\n  327     1 Ss+   0.0  0.0 /sbin/agetty -o -p -- \\u --noclear tty1 linux\n  331     1 Ss    0.0  0.1 /usr/sbin/sshd -D\n  436     1 Ssl   1.8  0.2 /usr/local/bin/npu_transfer_proxy\n  782     2 S     0.0  0.0 [kworker/5:0]\n 2142     2 S     0.1  0.0 [kworker/u12:1]\n 5215     2 S<    0.1  0.0 [kworker/u13:3]\n 5222     2 S     0.0  0.0 [kworker/5:2]\n 5532     2 S     0.0  0.0 [kworker/1:1]\n 5830     2 S     0.0  0.0 [kworker/0:3]\n 5831     2 S     0.1  0.0 [kworker/5:1]\n 5990   331 Ss    8.0  0.1 sshd: jcfh [priv]\n 6007  5990 S     0.0  0.0 sshd: jcfh@notty\n 6009  6007 Ss    0.0  0.3 python3 /tmp/final_audit_1640.py\n 6011  6009 R     0.0  0.0 ps -eo pid,ppid,stat,pcpu,pmem,args"
+  },
+  "handles": {
+    "returncode": 0,
+    "output": "[]"
+  },
+  "services": {
+    "returncode": 0,
+    "output": "active\nactive\nactive\nactive"
+  },
+  "logging": {
+    "returncode": 0,
+    "output": "{\n  \"root\": \"/home/jcfh/uav_flight_logs\", \n  \"state\": \"INACTIVE\"\n}"
+  },
+  "log_disabled": true,
+  "idle_system_cpu_percent": [
+    0.6802721088435382,
+    0.6779661016949157,
+    0.1686340640809414,
+    0.16835016835017313,
+    0.33670033670033517
+  ]
+}

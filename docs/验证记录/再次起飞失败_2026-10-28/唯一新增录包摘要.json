@@ -1,0 +1,102 @@
+{
+  "errors": [], 
+  "events": [
+    {
+      "time": 1792778923.0288954, 
+      "topic": "/location_node/status", 
+      "value": "WAIT_TF"
+    }
+  ], 
+  "limitations": [
+    "No images, scan, map, full TF, inference source frames or raw TFmini samples", 
+    "ROS header/bag times do not prove sensor latency or true flight trajectory", 
+    "PX4 ULog is independent and must be retrieved separately"
+  ], 
+  "missing_topics": [
+    "/mavros/vision_pose/pose", 
+    "/mavros/local_position/pose", 
+    "/mavros/local_position/velocity_local", 
+    "/mavros/setpoint_raw/local", 
+    "/mavros/setpoint_raw/target_local", 
+    "/mavros/statustext/recv", 
+    "/mavros/rc/in", 
+    "/mission/status", 
+    "/mission/readiness", 
+    "/cmd_vel", 
+    "/move_base/goal", 
+    "/move_base/result", 
+    "/gpio_cmd", 
+    "/gpio_ack", 
+    "/servo_ready"
+  ], 
+  "profile": "lite", 
+  "recording_closed_without_writer_errors": true, 
+  "states": [
+    {
+      "time": 1792778923.571771, 
+      "value": [
+        false, 
+        "", 
+        false
+      ]
+    }, 
+    {
+      "time": 1792778927.3727903, 
+      "value": [
+        false, 
+        "CMODE(65536)", 
+        true
+      ]
+    }, 
+    {
+      "time": 1792778928.3426049, 
+      "value": [
+        false, 
+        "MANUAL", 
+        true
+      ]
+    }
+  ], 
+  "topics": {
+    "/location_node/status": {
+      "count": 1, 
+      "first": 1792778923.0288954, 
+      "header_age_max_s": null, 
+      "hz": null, 
+      "last": 1792778923.0288954, 
+      "max_gap_s": null
+    }, 
+    "/mavros/battery": {
+      "count": 18, 
+      "first": 1792778927.3866584, 
+      "header_age_max_s": 0.012071847915649414, 
+      "hz": 0.5156871721680738, 
+      "last": 1792778960.3523805, 
+      "max_gap_s": 2.008251667022705
+    }, 
+    "/mavros/estimator_status": {
+      "count": 174, 
+      "first": 1792778926.5514004, 
+      "header_age_max_s": 0.012130260467529297, 
+      "hz": 5.000317075472039, 
+      "last": 1792778961.1492064, 
+      "max_gap_s": 0.22811341285705566
+    }, 
+    "/mavros/extended_state": {
+      "count": 69, 
+      "first": 1792778926.847691, 
+      "header_age_max_s": 0.011795520782470703, 
+      "hz": 1.9999894114662222, 
+      "last": 1792778960.847871, 
+      "max_gap_s": 0.529221773147583
+    }, 
+    "/mavros/state": {
+      "count": 35, 
+      "first": 1792778923.571771, 
+      "header_age_max_s": 0.23261404037475586, 
+      "hz": 0.9244206093101524, 
+      "last": 1792778960.3515654, 
+      "max_gap_s": 3.8010194301605225
+    }
+  }
+}

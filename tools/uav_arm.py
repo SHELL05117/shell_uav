@@ -38,7 +38,8 @@ def reasons(values, now, ros_now, parameters):
         if state.mode != 'OFFBOARD': pending.append('select OFFBOARD; do not click QGC Takeoff')
     readiness = fresh('readiness', .5)
     if readiness:
-        if not all(readiness.get(k) is True for k in GATES): pending.append('mission inputs not ready')
+        missing = [k for k in GATES if readiness.get(k) is not True]
+        if missing: pending.append('mission inputs not ready ('+', '.join(missing)+')')
         if readiness.get('actuation_enabled') is not True: pending.append('mission actuation disabled')
         if readiness.get('mission_aborted') is not False: pending.append('mission aborted/unknown')
         if readiness.get('phase') != 0: pending.append('mission is not waiting for initial takeoff')
@@ -46,7 +47,8 @@ def reasons(values, now, ros_now, parameters):
         message = fresh(key, timeout)
         if message and not (0 <= ros_now-message.header.stamp.to_sec() <= timeout):
             pending.append(key+' source timestamp stale/future')
-    if values.get('location', (None,None))[1] != 'READY': pending.append('location not READY')
+    location = values.get('location', (None,None))[1]
+    if location != 'READY': pending.append('location not READY ('+str(location or 'missing')+')')
     stamps = [t for t in values.get('setpoints', []) if now-1.5 <= t <= now]
     if len(stamps) < 30 or now-stamps[-1] > .15:
         pending.append('setpoint stream missing/stale')
