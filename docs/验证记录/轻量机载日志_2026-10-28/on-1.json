@@ -1,0 +1,54 @@
+{
+  "cpu_busy_mean": 60.262604303624585, 
+  "end_wall": 1793170378.212977, 
+  "forbidden_outputs": [], 
+  "ground_only": true, 
+  "iowait_p99": 0.16339869281045752, 
+  "logging": true, 
+  "min_available_mib": 2950.30859375, 
+  "passed": true, 
+  "readiness_healthy_fraction": 1.0, 
+  "seconds": 90, 
+  "session": {
+    "directory": "/home/jcfh/uav_flight_logs/20261028-145053-lite-efd5fb59", 
+    "process": {
+      "boot": "033e782c-fed4-4bcb-9673-9f8f4715ade4", 
+      "pid": 4950, 
+      "start": "44057"
+    }, 
+    "profile": "lite"
+  }, 
+  "start_wall": 1793170287.517745, 
+  "topics": {
+    "/mavros/imu/data": {
+      "count": 4535, 
+      "hz": 49.99448671297825, 
+      "max_gap_s": 0.04000000000007731, 
+      "p99_gap_s": 0.03000000000002956
+    }, 
+    "/mavros/local_position/pose": {
+      "count": 2721, 
+      "hz": 29.99889709937134, 
+      "max_gap_s": 0.05000000000006821, 
+      "p99_gap_s": 0.04000000000007731
+    }, 
+    "/mavros/vision_pose/pose": {
+      "count": 1814, 
+      "hz": 19.999999999999993, 
+      "max_gap_s": 0.06000000000005912, 
+      "p99_gap_s": 0.06000000000005912
+    }, 
+    "/mission/readiness": {
+      "count": 907, 
+      "hz": 9.999999999999998, 
+      "max_gap_s": 0.12000000000000455, 
+      "p99_gap_s": 0.10000000000002274
+    }, 
+    "/scan": {
+      "count": 908, 
+      "hz": 10.008828073273014, 
+      "max_gap_s": 0.11000000000001364, 
+      "p99_gap_s": 0.11000000000001364
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "actuation_enabled": false, 
+  "auto_start": false, 
+  "c_uses_a_session": true, 
+  "forbidden": [], 
+  "ground_only": true, 
+  "passed": true, 
+  "read_only_check_exit": 2, 
+  "servo_node_present": false, 
+  "session": "/home/jcfh/uav_flight_logs/20261028-150037-lite-5171d9e0"
+}

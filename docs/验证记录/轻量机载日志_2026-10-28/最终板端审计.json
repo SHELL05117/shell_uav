@@ -1,0 +1,58 @@
+{
+  "files": {
+    "uav": {
+      "installed_sha256": "8866e359bb7670687fcf5f19b01000fe2c073a0b27ac1397715b42b8a9f29aea",
+      "tools_sha256": "8866e359bb7670687fcf5f19b01000fe2c073a0b27ac1397715b42b8a9f29aea",
+      "equal": true
+    },
+    "uav_env.sh": {
+      "installed_sha256": "70ee98d1c3f38e01cb58701e81d8ae3fb13f25b1687e7726a2904d8844f1b788",
+      "tools_sha256": "70ee98d1c3f38e01cb58701e81d8ae3fb13f25b1687e7726a2904d8844f1b788",
+      "equal": true
+    },
+    "uav_start.py": {
+      "installed_sha256": "1c5701c10002a47d27b9c2a42d2d36a4627daba27086731bff2aab67db7e4c4a",
+      "tools_sha256": "1c5701c10002a47d27b9c2a42d2d36a4627daba27086731bff2aab67db7e4c4a",
+      "equal": true
+    },
+    "uav_log_lite.py": {
+      "installed_sha256": "ddc75a7a298082bae3fa16ea869c67925678b81bedf5eab3739cd4471f271f92",
+      "tools_sha256": "ddc75a7a298082bae3fa16ea869c67925678b81bedf5eab3739cd4471f271f92",
+      "equal": true
+    },
+    "uav_arm.py": {
+      "installed_sha256": "08f9ba462042c8622f45244ad2fcfdffa419ec4e3568c2905614cb2e6b77515e",
+      "tools_sha256": "08f9ba462042c8622f45244ad2fcfdffa419ec4e3568c2905614cb2e6b77515e",
+      "equal": true
+    }
+  },
+  "source_and_executables_unchanged": {
+    "src/location/src/location_with_ftmini.cpp": {
+      "sha256": "7017f0415f5395c5f15bf90f0f9124e47e5bd8d885e7c1d4bd8b19a3c9e61a2c",
+      "matches_baseline": true
+    },
+    "src/navigation_2d/src/shoot_with_move_base.cpp": {
+      "sha256": "01eab407cc619db1be18f5689dff54a35123c708528810462d7591d2e1c9577b",
+      "matches_baseline": true
+    },
+    "devel/lib/location/location_node": {
+      "sha256": "3c883c87df8d528bf0dd00f82fba6e6fa9ff022560ccb42a818833c782a24b12",
+      "matches_baseline": true
+    },
+    "devel/lib/navigation_2d/shoot_with_move_base_node": {
+      "sha256": "e1c5e29da9ce687f067867a3c3c12a1eeee83080a0d3d3f0a4da7dd3eb5a5d28",
+      "matches_baseline": true
+    }
+  },
+  "services": {
+    "shell-npu.target": "active",
+    "shell-npu-power.service": "active",
+    "shell-npu-firmware.service": "active",
+    "shell-npu-proxy.service": "active",
+    "rk-usb-ssh.service": "active"
+  },
+  "processes": [],
+  "device_handles": [],
+  "disk_available_gib": 23.620712280273438,
+  "passed": true
+}

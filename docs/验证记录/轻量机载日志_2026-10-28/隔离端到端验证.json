@@ -1,0 +1,36 @@
+{
+  "all_fcu_messages_synthetic": true, 
+  "cases": [
+    {
+      "case": "record_close_report", 
+      "control_messages": 194, 
+      "passed": true, 
+      "session": "/home/jcfh/lite-benchmark-20261028/isolated-2/sessions/20261028-144716-lite-33ae087e"
+    }, 
+    {
+      "case": "writer_failure_isolation", 
+      "errors": [
+        "writer_exit_0"
+      ], 
+      "passed": true, 
+      "source_still_running": true
+    }, 
+    {
+      "arm_calls": [
+        true
+      ], 
+      "case": "offboard_normal_arm_only", 
+      "mode_calls": [], 
+      "passed": true, 
+      "takeoff_calls": []
+    }, 
+    {
+      "case": "wrong_mode_and_repeated_arm_refused", 
+      "passed": true
+    }
+  ], 
+  "master": "127.0.0.1:11340", 
+  "passed": true, 
+  "real_mavros": false, 
+  "real_sensors": false
+}

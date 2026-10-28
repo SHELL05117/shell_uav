@@ -1,0 +1,11 @@
+{
+  "archive": "lite-logging-20261028-evidence.tar.gz",
+  "bytes": 2168759,
+  "sha256": "e922eacf89ddef2572f1a8872fd9f15ee2103ba28b92f4c13817ce87da9c15ca",
+  "sessions": [
+    "uav_flight_logs/20261028-145053-lite-efd5fb59",
+    "uav_flight_logs/20261028-145304-lite-dd027f6a",
+    "uav_flight_logs/20261028-150037-lite-5171d9e0"
+  ],
+  "master_boundary": "11340 probes synthetic; real 11311 runs all unarmed dry-run"
+}

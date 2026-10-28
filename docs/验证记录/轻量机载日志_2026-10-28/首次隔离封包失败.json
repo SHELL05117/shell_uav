@@ -1,0 +1,9 @@
+{
+  "all_fcu_messages_synthetic": true, 
+  "cases": [], 
+  "error": "Synthetic control recording incomplete", 
+  "master": "127.0.0.1:11340", 
+  "passed": false, 
+  "real_mavros": false, 
+  "real_sensors": false
+}

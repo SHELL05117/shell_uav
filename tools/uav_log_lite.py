@@ -253,6 +253,7 @@ class Recorder(object):
 
     def run(self):
         import rosgraph
+        import roslib.packages
         os.nice(10); socket.setdefaulttimeout(2)
         self.lock = open(STATE_DIR+'/lock', 'a')
         fcntl.flock(self.lock, fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -265,7 +266,12 @@ class Recorder(object):
         self.event('start')
         try:
             writer_log = open(self.directory+'/writer.stdout.log', 'ab')
-            self.writer = subprocess.Popen(['rosbag', 'record', '--split', '--duration=60',
+            recorders = roslib.packages.find_node('rosbag', 'record')
+            if not recorders:
+                raise RuntimeError('Native rosbag record executable not found')
+            # Own the actual C++ process. The Python rosbag CLI can exit before
+            # its child finishes indexing/renaming the final active segment.
+            self.writer = subprocess.Popen([recorders[0], '--split', '--duration=60',
                 '--buffsize=16', '--chunksize=256', '-O', self.directory+'/core']+
                 TOPICS+['__name:=uav_lite_recorder'], stdout=writer_log, stderr=subprocess.STDOUT,
                 stdin=open(os.devnull, 'rb'), preexec_fn=child_session)
@@ -314,7 +320,12 @@ class Recorder(object):
             self.errors.append(str(error)); raise
         finally:
             self.stop_child(self.params); self.stop_child(self.writer)
+            deadline = steady()+3
+            while glob.glob(self.directory+'/*.bag.active') and steady() < deadline:
+                time.sleep(.05)
             unclosed = glob.glob(self.directory+'/*.bag.active')
+            if unclosed:
+                self.errors.append('unclosed_bag_segments')
             atomic_json(self.directory+'/closed.json', dict(wall=time.time(), steady=steady(),
                 profile='lite', errors=self.errors, unclosed_bags=unclosed,
                 writer_returncode=self.writer.returncode if self.writer else None))

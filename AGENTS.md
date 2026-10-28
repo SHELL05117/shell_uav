@@ -16,6 +16,17 @@ SHELL于2026-10-22要求把 `logs/2026-10-21_RK板采购与迁移路线.md` 原�
 - `docs/`：技术文档。`docs/技术文档.md` 为总技术指南；`docs/源码分析/` 为五篇逐模块源码解析（EGO 规划、定位建图与视觉、电脑编译与实时可视化、飞行任务与舵机、Gazebo 仿真与场地）；`docs/项目资料/` 为任务状态、执行计划、待确认事项与开发规范；`docs/监看/` 为 Lichtblick 只读桥、相机预览与显示布局；`docs/验证记录/` 为文件完整性与隔离核验证据；`docs/参考资料/` 为赛题命题与起飞控制指南原图。
 - `nanooutput_origin/`：Nano 原始导出与补充导出归档（`nanooutput_origin/Nano导出/`、`nanooutput_origin/Nano补充导出/`），保留原件、清单与校验记录，修改代码请到 `src/`。恢复仍依赖原始 tar.gz。
 
+## 机载轻量日志与实机排查入口（2026-10-28）
+
+- **当前部署：** RK的`uav a`／`uav check`默认启动独立轻量记录，`uav c`／`uav mission`关联A的同一轮。实际入口为`~/.local/share/uav/`，工作区脚本在`~/catkin_ws/tools/`；本地实现是`tools/uav_log_lite.py`、`tools/uav_start.py`、`tools/uav_arm.py`。先读[当前日志功能与验证](docs/验证记录/轻量机载日志_2026-10-28/README.md)、[起飞指南](起飞指南.md)及[10月28日日志](logs/2026-10-28_起飞摇晃与偏移排查.md)。不要仅凭本地候选源码判断板端已部署；对照实际入口及版本哈希。
+- **先找已有证据：** USB用`ssh rk-uav`，已配置无线用`ssh rk-uav-wifi`；先读`uav logs status`和当前进程，已有飞行／定位任务不重启、不重复开A。日志根目录默认`~/uav_flight_logs/`，每轮为`<时间>-lite-<ID>/`；活动身份在`~/.local/state/uav-log-lite/active.json`。`UAV_LOG_ROOT`可覆盖目录，`UAV_LOG_DISABLED=1`会关闭自动记录，须核对是否实际RECORDING；源码存在不等于录制成功。
+- **每轮文件定位：** `session.json`为模式／话题／boot ID／墙钟与单调时间；`command-*.json`及`arm-result-*.json`为任务参数与正常解锁请求结果；`versions.json`为源码／可执行文件／模型／标定哈希，`parameters-*.yaml`为ROS参数快照（不替代飞控完整参数）；`core_*.bag`为关键ROS数据；`launch-*.stdout.log`、`ros-logs/`为启动及节点文本；`performance.jsonl`每5秒保存系统／关键进程资源；`events.jsonl`、`status.json`、`closed.json`为录制状态、错误和封包结果。
+- **记录范围与缺口：** 保存vision pose、PX4本地pose／velocity、设定值／反馈、模式／RC／电池／estimator状态、任务与定位status/readiness、DWA速度／目标／结果、GPIO命令／ACK。**不保存图像／推理源帧、地图、scan、全量TF或原始TFmini距离。** 无对应话题不能伪造其数据；话题没出现不自动等于零动作。只有PX4本地pose持续发布也不能证明外部定位正常，须结合vision更新、定位状态、时间年龄与ULog。
+- **落地后分析：** `uav logs stop`只停记录器，不停飞行来源；仅在落地解除武装后运行`uav logs report /home/jcfh/uav_flight_logs/某轮目录`。活动`.bag.active`禁止当完整包扫描；`closed.json`或“正常封包”不代表所有飞行阶段数据齐全。原生record进程独立写入，60秒分包、16MiB缓冲、不压缩；启动需3GiB空闲，运行低于约1.1GiB停记录，不自动删旧日志，故障不杀定位／导航。先取回并校验原件再改程序或清理；原始录制放本地`recordings/`（Git忽略），精选报告放`docs/验证记录/`并写当天日志。
+- **飞控证据独立保留：** PX4 SD卡ULog不由ROS录包替代，也不会被本工具自动下载。RK／飞控断电后日期可能错误，ROS启动前核时，运行中不跳改时钟；按boot ID、命令／模式和事件关联，不能仅按文件时间挑事故日志。先后顺序必须区分锁桨前与锁桨后。本次原始ROS／ULog在本地`recordings/incident_20261028/`，关联与SHA见[事故分析](docs/验证记录/起飞摇晃偏航排查_2026-10-28/README.md)；离线ULog工具为`tools/analyze_px4_takeoff.py`。
+- **模式与动作边界：** QGC的Takeoff发送NAV_TAKEOFF，会主动切AUTO.TAKEOFF，不能用于本任务的OFFBOARD起飞。`uav arm --check`只检查；`uav arm`会**真实正常解锁并立即开始任务**，仅在已选OFFBOARD、正式任务／定位稳定就绪后由SHELL明确执行，不用于agent的实机排查测试。它不发Takeoff、不自动抢回模式、不强制解锁；人工接管／中止锁存保留。`uav check`才是禁动联查入口，但启动传感器联查也须属于当次授权范围。
+- **验证边界：** 本次轻量版真实禁动四轮对照通过，关闭／开启CPU均值约60.53%／60.41%，内存差约26MiB，关键健康100%；差值属于测量波动，不声称零开销或降低CPU。197条合成控制消息及模拟解锁／写入故障验证在独立`127.0.0.1:11340`，不等同真实飞行／投放／空中控制节拍验收。旧`tools/uav_log.py`／`uav_log_report.py`及完整图像／C++诊断方案只作本地历史候选，昨夜因开销撤下，不按“恢复日志”直接重新部署；后续增录内容须重新评估负载。
+
 ## 记录维护
 
 - 每天沿用已有当天日志，追加目标、操作、实际结果、问题及下一步，并同步更新 `logs/低空消防无人机工程日志.md` 索引与 `docs/项目资料/任务状态.md`。

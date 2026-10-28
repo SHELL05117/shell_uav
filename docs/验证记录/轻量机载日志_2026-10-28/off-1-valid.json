@@ -1,0 +1,46 @@
+{
+  "cpu_busy_mean": 60.288867617675244, 
+  "end_wall": 1793170248.64368, 
+  "forbidden_outputs": [], 
+  "ground_only": true, 
+  "iowait_p99": 0.1631321370309951, 
+  "logging": false, 
+  "min_available_mib": 2979.1328125, 
+  "passed": true, 
+  "readiness_healthy_fraction": 1.0, 
+  "seconds": 90, 
+  "session": null, 
+  "start_wall": 1793170158.378957, 
+  "topics": {
+    "/mavros/imu/data": {
+      "count": 4513, 
+      "hz": 49.99999999999999, 
+      "max_gap_s": 0.03000000000002956, 
+      "p99_gap_s": 0.03000000000002956
+    }, 
+    "/mavros/local_position/pose": {
+      "count": 2707, 
+      "hz": 30.000000000000004, 
+      "max_gap_s": 0.060000000000002274, 
+      "p99_gap_s": 0.040000000000020464
+    }, 
+    "/mavros/vision_pose/pose": {
+      "count": 1806, 
+      "hz": 20.0, 
+      "max_gap_s": 0.06999999999999318, 
+      "p99_gap_s": 0.060000000000002274
+    }, 
+    "/mission/readiness": {
+      "count": 903, 
+      "hz": 10.000000000000002, 
+      "max_gap_s": 0.12000000000000455, 
+      "p99_gap_s": 0.1099999999999568
+    }, 
+    "/scan": {
+      "count": 903, 
+      "hz": 10.011098779134294, 
+      "max_gap_s": 0.12000000000000455, 
+      "p99_gap_s": 0.11000000000001364
+    }
+  }
+}

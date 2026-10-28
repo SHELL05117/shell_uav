@@ -125,6 +125,12 @@ def main():
         directory = uav_log_lite.attach('arm', dict(request='normal arming only', mode='OFFBOARD'))
     except Exception as error:
         print('Arming log unavailable: '+str(error), file=sys.stderr)
+    # Terminal/file IO above may block. Revalidate after it, adjacent to the
+    # actual request, so a mode change or stale input during IO cannot arm.
+    parameters = params()
+    with lock:
+        pending = reasons(values, steady(), rospy.Time.now().to_sec(), parameters)
+    if pending: raise RuntimeError('Arming refused: '+', '.join(pending))
     # This service has only bool value; there is no force parameter or mode call.
     response = rospy.ServiceProxy('/mavros/cmd/arming', CommandBool)(CommandBoolRequest(value=True))
     if directory:
