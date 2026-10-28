@@ -1,0 +1,39 @@
+{
+  "collected_date": "2026-10-28 Asia/Shanghai",
+  "board_clock_incorrect": true,
+  "board_boot_id_at_read": "e9729f5b-a62d-4c4d-935c-88f10ed28b69",
+  "transport": "rk-uav USB 192.168.77.1",
+  "raw_files": [
+    {
+      "path": "recordings/incident_20261028/deployed_uav_start.py",
+      "size": 8907,
+      "sha256": "7d349fd8a8dd7aa48f2f788aa98fe5f857d4dfd062eb526495930507b8efab1d"
+    },
+    {
+      "path": "recordings/incident_20261028/deployed_location/src/location_with_ftmini.cpp",
+      "size": 11524,
+      "sha256": "7017f0415f5395c5f15bf90f0f9124e47e5bd8d885e7c1d4bd8b19a3c9e61a2c"
+    },
+    {
+      "path": "recordings/incident_20261028/navigation_baseline_8aa597c.cpp",
+      "size": 54491,
+      "sha256": "01eab407cc619db1be18f5689dff54a35123c708528810462d7591d2e1c9577b"
+    },
+    {
+      "path": "recordings/incident_20261028/ulog/log_226.ulg",
+      "size": 1420582,
+      "sha256": "f775b7d57a4a37ddf36eff369298902b3baf50b5987675cd44a73d42a176cf2a"
+    },
+    {
+      "path": "recordings/incident_20261028/ulog/log_227.ulg",
+      "size": 1357134,
+      "sha256": "c5cbab8d2fdc88366aa69a8e42dc28f66359d5e24afda2c0733b6929fe27d15a"
+    },
+    {
+      "path": "recordings/incident_20261028/ros-log/acff1fce-cf0c-11f1-96d2-14f5f9e6cd08/rosout.log",
+      "size": 1097728,
+      "sha256": "6449a3a6ba8b19bf33d6b8a59462e9f7687c4022cc6a9c5e4b9260a73e3e8753"
+    }
+  ],
+  "navigation_source_note": "Git baseline recovered offline after disconnect; hash matches previous rollback evidence; not freshly copied from board"
+}

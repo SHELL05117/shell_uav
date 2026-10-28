@@ -1,0 +1,6 @@
+Verified disarmed FCU
+Log entries 228 newest [220, 221, 222, 223, 224, 225, 226, 227]
+download 227 0 / 1357134
+SAVED /tmp/shell_incident_ulog/log_227.ulg 1357134 c5cbab8d2fdc88366aa69a8e42dc28f66359d5e24afda2c0733b6929fe27d15a
+download 226 32760 / 1420582
+SAVED /tmp/shell_incident_ulog/log_226.ulg 1420582 f775b7d57a4a37ddf36eff369298902b3baf50b5987675cd44a73d42a176cf2a

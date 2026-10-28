@@ -1,0 +1,160 @@
+1792778883.936587135 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: STARTING; vision pose withheld
+1792778884.054758385 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: WAIT_TF; vision pose withheld
+1792778886.836548053 INFO /mavros [/tmp/binarydeb/ros-melodic-mavros-1.16.0/src/lib/mavros.cpp:400(MavRos::log_connect_change)] CON: Got HEARTBEAT, connected. FCU: PX4 Autopilot
+1792778887.602029429 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778894.993158224 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1495(logRoute)] [mission] hazard route (4 points, field_yaw=-90.0 deg):
+1792778894.993232891 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   hazard[0] field=(  0.00, -1.95) map=(  1.95, -0.00)
+1792778894.993265849 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   hazard[1] field=(  1.40, -1.95) map=(  1.95,  1.40)
+1792778894.993340807 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   hazard[2] field=(  1.40,  0.00) map=(  0.00,  1.40)  <- detect
+1792778894.993377557 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   hazard[3] field=(  1.40, -0.45) map=(  0.45,  1.40)  <- detect
+1792778894.993430641 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1495(logRoute)] [mission] person route (5 points, field_yaw=-90.0 deg):
+1792778894.993472349 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   person[0] field=(  1.40, -0.95) map=(  0.95,  1.40)
+1792778894.993512599 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   person[1] field=(  2.70, -0.95) map=(  0.95,  2.70)
+1792778894.993549932 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   person[2] field=(  2.70, -1.05) map=(  1.05,  2.70)  <- detect
+1792778894.993593099 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   person[3] field=(  2.70, -1.85) map=(  1.85,  2.70)  <- detect
+1792778894.993644432 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   person[4] field=(  2.70, -2.65) map=(  2.65,  2.70)  <- detect
+1792778894.993691974 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1495(logRoute)] [mission] return route (5 points, field_yaw=-90.0 deg):
+1792778894.993728141 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   return[0] field=(  2.70, -0.95) map=(  0.95,  2.70)
+1792778894.993764016 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   return[1] field=(  1.40, -0.95) map=(  0.95,  1.40)
+1792778894.993793474 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   return[2] field=(  1.40, -1.95) map=(  1.95,  1.40)
+1792778894.993822641 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   return[3] field=(  0.00, -1.95) map=(  1.95, -0.00)
+1792778894.993855307 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1500(logRoute)] [mission]   return[4] field=(  0.00,  0.00) map=(  0.00,  0.00)
+1792778895.736744599 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: WAIT_FCU
+1792778895.736813141 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:79(MoveBaseMission)] [mission] stage=1 rescue_drop=no field_yaw=-90.0 deg auto_start=no
+1792778895.736849016 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:82(MoveBaseMission)] [mission] hazard target: flammable
+1792778895.738597974 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:253(StateCallback)] [mission] FCU mode: POSCTL
+1792778895.738848516 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_POSE_STALE
+1792778895.739273766 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_CAMERA_STALE
+1792778895.739691433 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:278(PoseCallback)] [mission] first pose: (0.00, 0.00, 0.00), yaw 0.2 deg -> holding this heading
+1792778895.779417474 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_MODEL_INFERENCE
+1792778896.539675225 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778920.139664236 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778920.201045611 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778920.240508403 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778920.251199444 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778920.500921111 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778920.541613278 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778920.552166195 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778920.640645903 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778920.801435611 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778920.851506778 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778921.101672486 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778921.140457570 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778921.240920112 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778921.251189695 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778921.501084445 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778921.540176528 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778921.601215653 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778921.640286903 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778923.114445321 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:118(observeRange)] location: range sample rejected (range, jump, or repeated timestamp)
+1792778924.039912696 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778924.051534321 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778924.102197988 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778924.139795571 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778925.240767238 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778925.251389572 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778925.301274947 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778925.339660322 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778925.640786447 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778925.741244030 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778926.244399239 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778926.252628906 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778926.301027197 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778926.339804864 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778929.853754407 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:118(observeRange)] location: range sample rejected (range, jump, or repeated timestamp)
+1792778933.003763867 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:118(observeRange)] location: range sample rejected (range, jump, or repeated timestamp)
+1792778970.104078010 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:118(observeRange)] location: range sample rejected (range, jump, or repeated timestamp)
+1792778971.851095427 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:253(StateCallback)] [mission] FCU mode: OFFBOARD
+1792778982.140157141 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778982.150854182 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778982.200934224 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778982.243638599 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778982.443468307 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778982.451047724 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778982.551559266 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778982.641116391 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778982.803186349 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778982.841614016 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778983.040036474 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778983.051288224 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778983.300893516 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778983.340447016 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778983.839851225 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778983.852821350 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778984.101812516 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778984.140420141 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778984.701367017 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778984.744072558 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778984.939607517 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778984.951624184 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778985.241147684 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778985.251139725 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778985.502232350 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792778985.540100600 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778985.740451101 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792778985.753969267 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792778993.040923479 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792778993.140450354 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779001.116778150 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:118(observeRange)] location: range sample rejected (range, jump, or repeated timestamp)
+1792779004.103894693 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:118(observeRange)] location: range sample rejected (range, jump, or repeated timestamp)
+1792779005.436577610 INFO /mavros [/tmp/binarydeb/ros-melodic-mavros-1.16.0/src/plugins/sys_status.cpp:676(std_plugins::SystemStatusPlugin::process_statustext_normal)] FCU: Armed by external command	
+1792779005.487477527 INFO /mavros [/tmp/binarydeb/ros-melodic-mavros-1.16.0/src/plugins/sys_status.cpp:676(std_plugins::SystemStatusPlugin::process_statustext_normal)] FCU: Using minimum takeoff altitude: 1.50 m	
+1792779005.536754735 INFO /mavros [/tmp/binarydeb/ros-melodic-mavros-1.16.0/src/plugins/sys_status.cpp:676(std_plugins::SystemStatusPlugin::process_statustext_normal)] FCU: [logger] /fs/microsd/log/2026-10-27/21_26_53.ulg	
+1792779005.850421819 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:251(StateCallback)] [mission] FCU armed=1
+1792779005.850554235 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:253(StateCallback)] [mission] FCU mode: AUTO.TAKEOFF
+1792779007.261451653 INFO /mavros [/tmp/binarydeb/ros-melodic-mavros-1.16.0/src/plugins/sys_status.cpp:676(std_plugins::SystemStatusPlugin::process_statustext_normal)] FCU: Takeoff detected	
+1792779014.039644114 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779014.101104239 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779014.207187948 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779014.215713781 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:118(observeRange)] location: range sample rejected (range, jump, or repeated timestamp)
+1792779014.240986573 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779014.439670781 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779014.451954323 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779014.650916489 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779014.741550739 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779014.901226864 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779014.940740990 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779015.140232240 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779015.151244531 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779015.400853031 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779015.451167698 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779015.439860823 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779015.541750781 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779017.946638699 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779017.951142324 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779018.101222741 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779018.141374324 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779018.340532491 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779018.351586074 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779018.501404741 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779018.541267116 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779018.740100783 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779018.751165450 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779018.939807283 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779018.950989950 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779019.139678742 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779019.202878367 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779019.403338825 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779019.439788575 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779019.640275283 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779019.654114283 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779020.201288825 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779020.239970367 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779020.439801575 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779020.450846992 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779020.940774367 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779020.950976284 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779021.201117326 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779021.242418368 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779022.108694160 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779022.140470660 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779022.340548618 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779022.353190451 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779023.101625660 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779023.139949910 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779023.340385744 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE
+1792779023.351015952 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779024.153607369 INFO /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:110(status)] location: READY
+1792779024.241865869 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: INPUTS_RECOVERED
+1792779024.401203077 WARN /location_node [/home/jcfh/catkin_ws/src/location/src/location_with_ftmini.cpp:111(status)] location: TF_STALE; vision pose withheld
+1792779024.440389077 INFO /shoot_with_move_base_node [/home/jcfh/catkin_ws/src/navigation_2d/src/shoot_with_move_base.cpp:1395(setStatus)] [mission] status: BLOCKED_TF_STALE

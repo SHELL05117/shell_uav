@@ -1,0 +1,581 @@
+{
+  "file": "log_226.ulg",
+  "sha256": "f775b7d57a4a37ddf36eff369298902b3baf50b5987675cd44a73d42a176cf2a",
+  "duration_s": 29.233344,
+  "takeoff_s": 1.789065,
+  "kill_switch_s": null,
+  "pre_stop_window_s": [
+    1.789065,
+    29.233344
+  ],
+  "positions": "PX4 NED, estimated; not ground truth",
+  "dropouts": [],
+  "messages": [
+    {
+      "time_s": -0.029591,
+      "message": "[navigator] Using minimum takeoff altitude: 1.50 m\t"
+    },
+    {
+      "time_s": -0.019362,
+      "message": "[logger] Start file log (type: full)"
+    },
+    {
+      "time_s": -0.011715,
+      "message": "[logger] [logger] /fs/microsd/log/2026-10-27/20_10_42.ulg\t"
+    },
+    {
+      "time_s": -4e-06,
+      "message": "[logger] Opened full log file: /fs/microsd/log/2026-10-27/20_10_42.ulg"
+    },
+    {
+      "time_s": 1.789065,
+      "message": "[commander] Takeoff detected\t"
+    },
+    {
+      "time_s": 26.236079,
+      "message": "[commander] Landing detected\t"
+    },
+    {
+      "time_s": 28.239081,
+      "message": "[commander] Disarmed by landing\t"
+    }
+  ],
+  "modes": [
+    {
+      "time_s": -0.034633,
+      "nav_state": 17,
+      "arming_state": 2,
+      "failsafe": 0,
+      "rc_signal_lost": 0
+    },
+    {
+      "time_s": 20.186052,
+      "nav_state": 18,
+      "arming_state": 2,
+      "failsafe": 0,
+      "rc_signal_lost": 0
+    },
+    {
+      "time_s": 28.239119,
+      "nav_state": 18,
+      "arming_state": 1,
+      "failsafe": 0,
+      "rc_signal_lost": 0
+    }
+  ],
+  "controls": [
+    {
+      "time_s": -0.034634,
+      "flag_control_auto_enabled": 1,
+      "flag_control_offboard_enabled": 0,
+      "flag_armed": 1
+    },
+    {
+      "time_s": 28.239118,
+      "flag_control_auto_enabled": 1,
+      "flag_control_offboard_enabled": 0,
+      "flag_armed": 0
+    }
+  ],
+  "estimator_selection": [
+    {
+      "time_s": -0.312893,
+      "primary_instance": 1,
+      "instance_changed_count": 2
+    }
+  ],
+  "attitude_before_stop_deg": {
+    "roll": {
+      "actual": {
+        "min": -0.12960408742327034,
+        "max": 0.13876829657357395,
+        "mean": -0.007014389661994066,
+        "std": 0.0650290188904949,
+        "first": 0.11037132456820466,
+        "last": 0.13583676821904275
+      },
+      "error_rms": 17.0399926680486,
+      "error_abs_max": 37.61807862110669
+    },
+    "pitch": {
+      "actual": {
+        "min": -1.495645142876391,
+        "max": -0.9692921054113405,
+        "mean": -1.274380179480495,
+        "std": 0.15201349000960016,
+        "first": -1.015479618385664,
+        "last": -1.1644228867212576
+      },
+      "error_rms": 7.472776262020437,
+      "error_abs_max": 16.691231628741548
+    },
+    "yaw": {
+      "actual": {
+        "min": 89.53309938198852,
+        "max": 89.81642558786281,
+        "mean": 89.60238990094534,
+        "std": 0.059885963573307686,
+        "first": 89.81642558786281,
+        "last": 89.70972512107993
+      },
+      "error_rms": 0.1950322944316887,
+      "error_abs_max": 0.29129856484848915
+    }
+  },
+  "position_before_stop": {
+    "x": {
+      "min": 0.004049574490636587,
+      "max": 0.02107265032827854,
+      "mean": 0.009715859778225422,
+      "std": 0.003507806221023202,
+      "first": 0.00887326616793871,
+      "last": 0.008292211219668388
+    },
+    "y": {
+      "min": -0.004787472542375326,
+      "max": 0.03663306310772896,
+      "mean": 0.008771147578954697,
+      "std": 0.007240482605993748,
+      "first": 0.008060409687459469,
+      "last": 0.0050680991262197495
+    },
+    "z": {
+      "min": -0.029833031818270683,
+      "max": 0.00196401821449399,
+      "mean": -0.007199197541922331,
+      "std": 0.005454590078443289,
+      "first": -0.004159572999924421,
+      "last": -0.004221741110086441
+    },
+    "vx": {
+      "min": -0.007846132852137089,
+      "max": 0.03612807020545006,
+      "mean": 0.008900905027985573,
+      "std": 0.00701439194381237,
+      "first": 0.00682222843170166,
+      "last": 0.006109687965363264
+    },
+    "vy": {
+      "min": -0.017289167270064354,
+      "max": 0.06069504842162132,
+      "mean": 0.003818639786913991,
+      "std": 0.012040920555591583,
+      "first": 0.009486645460128784,
+      "last": -0.0011476060608401895
+    },
+    "vz": {
+      "min": -0.05009343847632408,
+      "max": 0.015078520402312279,
+      "mean": -0.0009519726736471057,
+      "std": 0.009621814824640751,
+      "first": -0.0011706347577273846,
+      "last": 0.005108601879328489
+    }
+  },
+  "commands": [
+    {
+      "time_s": -20.218781,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 1.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 521,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": -18.739783,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 0.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 401,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": -17.719298,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 1.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 521,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": -17.240853,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 81.0,
+      "param2": 6.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 176,
+      "target_system": 1,
+      "target_component": 0,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 1,
+      "from_external": 1
+    },
+    {
+      "time_s": -13.513906,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 1.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 521,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": -5.393859,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 1.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 521,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": -0.146016,
+      "param5": null,
+      "param6": null,
+      "param1": -1.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": null,
+      "param7": -116.61780548095703,
+      "command": 22,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": -0.048358,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 1.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 400,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": 10.841935,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 1.0,
+      "param2": 0.0,
+      "param3": 0.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 521,
+      "target_system": 1,
+      "target_component": 1,
+      "source_system": 255,
+      "source_component": 190,
+      "confirmation": 0,
+      "from_external": 1
+    },
+    {
+      "time_s": 20.182605,
+      "param5": 0.0,
+      "param6": 0.0,
+      "param1": 129.0,
+      "param2": 4.0,
+      "param3": 6.0,
+      "param4": 0.0,
+      "param7": 0.0,
+      "command": 176,
+      "target_system": 1,
+      "target_component": 0,
+      "source_system": 1,
+      "source_component": 240,
+      "confirmation": 1,
+      "from_external": 1
+    }
+  ],
+  "external_vision": [
+    {
+      "instance": 0,
+      "note": "Aligned odometry logged at reduced rate; gaps are corroborated with EKF flags",
+      "gaps_over_400ms": [],
+      "age_since_last_logged_update_at_stop_s": 0.1648069999999997
+    },
+    {
+      "instance": 1,
+      "note": "Aligned odometry logged at reduced rate; gaps are corroborated with EKF flags",
+      "gaps_over_400ms": [],
+      "age_since_last_logged_update_at_stop_s": 0.16401499999999913
+    },
+    {
+      "instance": 2,
+      "note": "Aligned odometry logged at reduced rate; gaps are corroborated with EKF flags",
+      "gaps_over_400ms": [],
+      "age_since_last_logged_update_at_stop_s": 0.1645399999999988
+    },
+    {
+      "instance": 3,
+      "note": "Aligned odometry logged at reduced rate; gaps are corroborated with EKF flags",
+      "gaps_over_400ms": [],
+      "age_since_last_logged_update_at_stop_s": 0.16376400000000046
+    }
+  ],
+  "imu": [
+    {
+      "instance": 0,
+      "pre_stop": {
+        "accel_clipping[0]": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "accel_clipping[1]": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "accel_clipping[2]": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "accel_vibration_metric": {
+          "min": 0.6702971458435059,
+          "max": 4.029570579528809,
+          "mean": 2.778210401535034,
+          "std": 0.8692673444747925,
+          "first": 1.0174665451049805,
+          "last": 0.6702971458435059
+        },
+        "gyro_vibration_metric": {
+          "min": 0.018810153007507324,
+          "max": 0.07498183846473694,
+          "mean": 0.056780751794576645,
+          "std": 0.01528530940413475,
+          "first": 0.028353437781333923,
+          "last": 0.018810153007507324
+        },
+        "accel_error_count": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "gyro_error_count": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        }
+      }
+    },
+    {
+      "instance": 1,
+      "pre_stop": {
+        "accel_clipping[0]": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "accel_clipping[1]": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "accel_clipping[2]": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "accel_vibration_metric": {
+          "min": 0.816117525100708,
+          "max": 4.919816017150879,
+          "mean": 2.9184086322784424,
+          "std": 0.9043314456939697,
+          "first": 2.310183525085449,
+          "last": 0.816117525100708
+        },
+        "gyro_vibration_metric": {
+          "min": 0.01667690835893154,
+          "max": 0.09010735899209976,
+          "mean": 0.058460600674152374,
+          "std": 0.017276538535952568,
+          "first": 0.038396384567022324,
+          "last": 0.01667690835893154
+        },
+        "accel_error_count": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        },
+        "gyro_error_count": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "std": 0.0,
+          "first": 0.0,
+          "last": 0.0
+        }
+      }
+    }
+  ],
+  "estimator_flags": [
+    {
+      "instance": 0,
+      "events": [
+        {
+          "time_s": -0.633989,
+          "cs_ev_pos": 1,
+          "cs_ev_yaw": 1,
+          "cs_ev_hgt": 1,
+          "cs_inertial_dead_reckoning": 0,
+          "reject_yaw": 0,
+          "reject_ver_pos": 0
+        }
+      ]
+    },
+    {
+      "instance": 1,
+      "events": [
+        {
+          "time_s": -0.65181,
+          "cs_ev_pos": 1,
+          "cs_ev_yaw": 1,
+          "cs_ev_hgt": 1,
+          "cs_inertial_dead_reckoning": 0,
+          "reject_yaw": 0,
+          "reject_ver_pos": 0
+        }
+      ]
+    },
+    {
+      "instance": 2,
+      "events": [
+        {
+          "time_s": -0.633664,
+          "cs_ev_pos": 1,
+          "cs_ev_yaw": 1,
+          "cs_ev_hgt": 1,
+          "cs_inertial_dead_reckoning": 0,
+          "reject_yaw": 0,
+          "reject_ver_pos": 0
+        }
+      ]
+    },
+    {
+      "instance": 3,
+      "events": [
+        {
+          "time_s": -0.651696,
+          "cs_ev_pos": 1,
+          "cs_ev_yaw": 1,
+          "cs_ev_hgt": 1,
+          "cs_inertial_dead_reckoning": 0,
+          "reject_yaw": 0,
+          "reject_ver_pos": 0
+        }
+      ]
+    }
+  ],
+  "accelerometer_before_stop_ms2": {
+    "accelerometer_m_s2[0]": {
+      "min": -4.30158805847168,
+      "max": 3.1485989093780518,
+      "mean": -0.21179476380348206,
+      "std": 0.9298796653747559,
+      "first": 1.4988428354263306,
+      "last": -0.1493062973022461
+    },
+    "accelerometer_m_s2[1]": {
+      "min": -5.70521354675293,
+      "max": 5.3200507164001465,
+      "mean": -0.008165878243744373,
+      "std": 1.2537521123886108,
+      "first": -1.0751214027404785,
+      "last": 0.035588912665843964
+    },
+    "accelerometer_m_s2[2]": {
+      "min": -14.402161598205566,
+      "max": -5.5404438972473145,
+      "mean": -9.76540470123291,
+      "std": 1.09346342086792,
+      "first": -10.054900169372559,
+      "last": -9.612607955932617
+    }
+  }
+}
