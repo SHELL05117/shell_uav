@@ -1,0 +1,35 @@
+<launch>
+  <!-- Optional stationary camera preview only. This does not start the bridge. -->
+  <!-- The camera must not already be owned by usb_cam or MissionVision. -->
+  <arg name="video_device" default="/dev/video0" />
+  <arg name="image_width" default="640" />
+  <arg name="image_height" default="480" />
+  <arg name="framerate" default="5" />
+  <arg name="pixel_format" default="mjpeg" />
+  <arg name="io_method" default="mmap" />
+  <arg name="jpeg_quality" default="50" />
+
+  <node pkg="usb_cam" type="usb_cam_node" name="monitor_usb_cam" output="screen">
+    <!-- usb_cam 0.3.7 uses a private node handle for image_raw. -->
+    <remap from="monitor_usb_cam/image_raw" to="/monitor/camera/image_raw" />
+    <remap from="image_raw" to="/monitor/camera/image_raw" />
+    <remap from="monitor_usb_cam/camera_info" to="/monitor/camera/camera_info" />
+    <param name="video_device" value="$(arg video_device)" />
+    <param name="image_width" value="$(arg image_width)" />
+    <param name="image_height" value="$(arg image_height)" />
+    <param name="framerate" value="$(arg framerate)" />
+    <param name="pixel_format" value="$(arg pixel_format)" />
+    <param name="io_method" value="$(arg io_method)" />
+    <param name="camera_frame_id" value="camera_link" />
+    <param name="camera_name" value="monitor_camera" />
+  </node>
+
+  <!-- compressed_image_transport 1.9.6 reads settings under the output topic. -->
+  <param name="/monitor/camera/image/compressed/format" value="jpeg" />
+  <param name="/monitor/camera/image/compressed/jpeg_quality" value="$(arg jpeg_quality)" />
+  <node pkg="image_transport" type="republish" name="monitor_image_compressor"
+        args="raw compressed" output="screen">
+    <remap from="in" to="/monitor/camera/image_raw" />
+    <remap from="out" to="/monitor/camera/image" />
+  </node>
+</launch>

@@ -1,0 +1,22 @@
+<launch>
+  <!-- Independent display bridge. No mission, localization, camera, or servo node. -->
+  <arg name="address" default="0.0.0.0" />
+  <arg name="port" default="8765" />
+  <!-- Exactly one JPEG channel: preview, mission, or ssd. Invalid keys fail launch. -->
+  <arg name="jpeg_source" default="preview" />
+  <arg name="jpeg_pattern"
+       value="$(eval {'preview': '^/monitor/camera/image/compressed$', 'mission': '^/mission/video/compressed$', 'ssd': '^/ssd_detection/debug_image/compressed$'}[arg('jpeg_source')])" />
+
+  <!-- Arguments verified against the archived ROS Melodic foxglove_bridge 0.6.3. -->
+  <include file="$(find foxglove_bridge)/launch/foxglove_bridge.launch">
+    <arg name="address" value="$(arg address)" />
+    <arg name="port" value="$(arg port)" />
+    <arg name="tls" value="false" />
+    <arg name="capabilities" value="[]" />
+    <arg name="client_topic_whitelist" value="[]" />
+    <arg name="param_whitelist" value="[]" />
+    <arg name="service_whitelist" value="[]" />
+    <arg name="topic_whitelist"
+         value="['^/map$', '^/scan$', '^/tf$', '^/tf_static$', '^/visual_global_path$', '^/visual_local_trajectory$', '^/trajectories$', '^/visual_obstacles$', '^/visual_local_obstacles$', '$(arg jpeg_pattern)', '^/ssd_detection/detections$', '^/mission/vision/detection$', '^/mavros/local_position/pose$', '^/mavros/local_position/odom$', '^/mavros/state$', '^/servo_ready$', '^/gpio_ack$']" />
+  </include>
+</launch>

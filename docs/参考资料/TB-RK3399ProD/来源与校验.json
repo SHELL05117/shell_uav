@@ -1,0 +1,41 @@
+{
+  "checked_on": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "scope": "原始PDF下载、页数与封面核对；位号图ref_top视觉核对；无实板接线或负载测试",
+  "documents": [
+    {
+      "path": "1629270722351_4011.pdf",
+      "title": "Toybrick TB-RK3399ProD Specification V1.0",
+      "pages": 23,
+      "printed_main_document_pages": 22,
+      "bytes": 1974699,
+      "sha256": "31bf6601ee182b3392b4470e8f88437e5f0c8df4c672a4567eac28fa8768183a",
+      "source_url": "https://uploadcdn.oneyac.com/upload/document/1629270722351_4011.pdf"
+    },
+    {
+      "path": "SMT_REF_TB-RK3399ProD_33101_20181217YWQ.pdf",
+      "pages": 2,
+      "bytes": 1246400,
+      "sha256": "51b8f70dc29e3321b0cc8eb336538723065edfc7c3165e644082fb9f7f19a74c",
+      "verified_github_blob_sha1": "4edb6ce4dba2af053372336fc95623ee9eb54350",
+      "source_url": "https://raw.githubusercontent.com/SeeedDocument/Outsourcing/master/TB-RK3399Pro/SMT_REF_TB-RK3399ProD_33101_20181217YWQ.pdf"
+    },
+    {
+      "path": "Rockchip RK3399Pro Datasheet V1.0_20181109.pdf",
+      "pages": 68,
+      "bytes": 3280148,
+      "sha256": "9f706fabbbca25488b3db8a238858fe7f8fb7a9d00e434f58cd874eef588e2e9",
+      "verified_github_blob_sha1": "1f35be18ce5c74784ef9e59b29b326daefb952fe",
+      "source_url": "https://raw.githubusercontent.com/SeeedDocument/Outsourcing/master/TB-RK3399Pro/Rockchip%20RK3399Pro%20Datasheet%20V1.0_20181109.pdf"
+    },
+    {
+      "path": "../../验证记录/RK板资料核查_2026-10-21/TB-RK3399ProD_原理图_20181217.pdf",
+      "note": "沿用既有副本，未重复下载或修改",
+      "pages": 36,
+      "bytes": 512106,
+      "sha256": "b56dc2c2275c71e98e76d0854e2e4682f660de73ad4ae0a956c04fc72a1a04b0",
+      "verified_github_blob_sha1": "0f3217cbfaa2aaa29f4e5ae0ab7f6a5c81f421f8",
+      "source_url": "https://raw.githubusercontent.com/SeeedDocument/Outsourcing/master/TB-RK3399Pro/tb-rk3399prod_33101_20181217.pdf"
+    }
+  ]
+}

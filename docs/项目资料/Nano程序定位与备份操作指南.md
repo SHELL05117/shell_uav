@@ -4,14 +4,14 @@
 
 ## 当前结果
 
-电脑副本 SHA256 与 Nano 端校验值一致；六个 ROS 包、默认 ONNX/标签/engine、构建资料和主要外部依赖已保存，38 项权限缺失已另补。证据见 [补档核验](Nano补档下载与完整性核验_2026-10-11.md)。既有目录/入口分析见 [归档分析报告](Nano程序归档检查与项目分析_2026-10-11.md)，本轮需求修订见 [2026-10-11 日志末尾](../../logs/2026-10-11_Nano程序导出与归档分析.md)。环境采集不再作为新待办。
+电脑副本 SHA256 与 Nano 端校验值一致；六个 ROS 包、默认 ONNX/标签/engine、构建资料和主要外部依赖已保存，38 项权限缺失已另补。证据见 [补档核验](Nano补档下载与完整性核验_2026-10-11.md)。既有目录/入口分析见 [归档分析报告](Nano程序归档检查与项目分析_2026-10-11.md)，本轮需求修订见 [2026-10-11 日志末尾](../../logs/2026-10-11_程序导出、补档与项目隔离基线.md)。环境采集不再作为新待办。
 
 下方排障与拷贝步骤保留历史阶段状态，其中“尚未下载/验证”和“下一步”描述当时情况；最新任务范围以本节和当前需求文档为准。
 
 ## 已知信息与边界
 
 - SHELL本次确认：电脑没有网线接口；Nano 可以连接显示器、进入 Ubuntu；账户是 `jcfh`。
-- [2026-10-01 的连接日志](../../logs/2026-10-01_Nano连接与舵机测试准备.md)记录：Micro-USB 虚拟网卡曾经连接成功，Nano 地址 `192.168.55.1`，电脑 USB 端 `192.168.55.100/24`，SSH 登录成功。它是历史验证结果，下次连接仍需复查。
+- [2026-10-01 的连接日志](../../logs/2026-10-01_Nano连接排障与双舵机空载测试.md)记录：Micro-USB 虚拟网卡曾经连接成功，Nano 地址 `192.168.55.1`，电脑 USB 端 `192.168.55.100/24`，SSH 登录成功。它是历史验证结果，下次连接仍需复查。
 - 同一日志记录过舵机程序路径 `/home/jcfh/catkin_ws/src/servo_control/script/servo_controller.py`。因此 `/home/jcfh/catkin_ws` 是优先检查的工作空间，但不能据此认定定位、导航和所有依赖都在这里。
 - 2026-10-11 本次 Windows 检查：已有 `ssh.exe`、`scp.exe`，WLAN 正在使用；网卡列表没有显示 Nano USB 网络接口。
 - 学长截图给出 `location`、`navigation_2d` 两个 ROS 包名，以及 Cartographer、IMU、TensorRT、Offboard、QGC 等线索。包的具体功能、依赖和实际启动行为需要读取程序确认。
@@ -293,7 +293,7 @@ SSH 是远程终端连接；`scp`/SFTP 是经 SSH 传输文件。电脑已有相
 
 ## 参考依据
 
-- [既有项目连接日志](../../logs/2026-10-01_Nano连接与舵机测试准备.md)：本设备历史 USB 接入和程序路径，当前仍需复查。
+- [既有项目连接日志](../../logs/2026-10-01_Nano连接排障与双舵机空载测试.md)：本设备历史 USB 接入和程序路径，当前仍需复查。
 - [NVIDIA JetBot USB 设备网络说明](https://raw.githubusercontent.com/NVIDIA-AI-IOT/jetbot/master/docs/software_setup/wifi_setup.md)：支持 USB 虚拟以太网的机制说明，不保证任意载板/镜像均支持。
 - [Microsoft OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_overview)：SSH、SFTP、SCP 的用途。
 - [ROS 官方命令速查](https://github.com/ros/cheatsheet/blob/master/ROScheatsheet.tex)：`rospack find` 定位包。

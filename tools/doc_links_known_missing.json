@@ -1,0 +1,22 @@
+{
+  "_说明": "check_doc_links.ps1 的已知历史缺失清单：目标为 2026-10-22 建仓前的旧工作区文件，未纳入本仓库。仅精确匹配下列 file+target 组合时不算失败；新增断链仍需修复，不得在此追加新的业务路径。",
+  "generated": "2026-10-28",
+  "entries": [
+    { "file": "docs/项目资料/Nano补档下载与完整性核验_2026-10-11.md", "target": "../../tools/backup_nano_protected_files.sh", "reason": "建仓前补备份脚本，未纳入本仓库" },
+    { "file": "docs/项目资料/Nano补档下载与完整性核验_2026-10-11.md", "target": "../../tools/verify_nano_supplement_archives.py", "reason": "建仓前校验脚本，未纳入本仓库" },
+    { "file": "docs/项目资料/Nano程序分析与再编译材料评估_2026-10-11.md", "target": "../../nanooutput_origin/Nano补充导出/2026-10-11/源码分析副本/jetson-inference", "reason": "外部视觉库只读分析副本，未纳入本仓库" },
+    { "file": "docs/项目资料/Nano环境核验与补备份_2026-10-11.md", "target": "../../nanooutput_origin/Nano导出/2026-10-11/nano_catkin_ws_20251024_201602.tar.gz", "reason": "原始 catkin_ws 归档体积大，按约定单独保存，未纳入本仓库" },
+    { "file": "docs/项目资料/Nano环境核验与补备份_2026-10-11.md", "target": "../../nanooutput_origin/Nano补充导出/2026-10-11/环境采集/nano_inventory_20251024_195237_8acNSP.tar.gz", "reason": "环境采集归档未纳入本仓库" },
+    { "file": "docs/项目资料/Nano环境核验与补备份_2026-10-11.md", "target": "../../nanooutput_origin/Nano补充导出/2026-10-11/环境采集/analysis_copy/nano_inventory_20251024_195237_8acNSP/dpkg_packages.tsv", "reason": "环境采集分析副本未纳入本仓库" },
+    { "file": "docs/项目资料/Nano环境核验与补备份_2026-10-11.md", "target": "../../tools/backup_nano_software.sh", "reason": "建仓前补备份脚本，未纳入本仓库" },
+    { "file": "docs/项目资料/Nano环境核验与补备份_2026-10-11.md", "target": "../../tools/backup_nano_software_v2.sh", "reason": "建仓前补备份脚本 v2，未纳入本仓库" },
+    { "file": "docs/项目资料/Nano环境核验与补备份_2026-10-11.md", "target": "../../nanooutput_origin/Nano补充导出/2026-10-11/中断诊断/attempt_204331_collection.log", "reason": "中断诊断原始日志未纳入本仓库" },
+    { "file": "logs/2026-10-11_程序导出、补档与项目隔离基线.md", "target": "../tools/create_development_copy.py", "reason": "建仓前一次性工具，2026-10-22 整理时未纳入" },
+    { "file": "logs/2026-10-11_程序导出、补档与项目隔离基线.md", "target": "../tools/verify_project_isolation.py", "reason": "建仓前一次性工具，2026-10-22 整理时未纳入" },
+    { "file": "logs/2026-10-11_程序导出、补档与项目隔离基线.md", "target": "../tools/verify_git_baseline.py", "reason": "建仓前一次性工具，2026-10-22 整理时未纳入" },
+    { "file": "logs/2026-10-11_程序导出、补档与项目隔离基线.md", "target": "../tools/inspect_nano_inventory.py", "reason": "建仓前一次性工具，2026-10-22 整理时未纳入" },
+    { "file": "logs/2026-10-11_程序导出、补档与项目隔离基线.md", "target": "../tools/backup_nano_software.sh", "reason": "建仓前补备份脚本，2026-10-22 整理时未纳入" },
+    { "file": "logs/2026-10-11_程序导出、补档与项目隔离基线.md", "target": "../nanooutput_origin/Nano补充导出/2026-10-11/中断诊断/attempt_204331_collection.log", "reason": "中断诊断原始日志未纳入本仓库" },
+    { "file": "logs/2026-10-11_程序导出、补档与项目隔离基线.md", "target": "../tools/backup_nano_software_v2.sh", "reason": "建仓前补备份脚本 v2，2026-10-22 整理时未纳入" }
+  ]
+}

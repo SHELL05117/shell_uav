@@ -1,0 +1,28 @@
+{
+  "board_time": "2026-10-24T02:19:20+0800",
+  "configuration": {
+    "after_sha256": "109f47b3af990a7ad342cec3d84f313962b396dac162f86968199f5c6f7c9566",
+    "backup": "/home/jcfh/shell_backups/logging-disabled-20261028-wifi-01",
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "board_time": "2026-10-24T02:18:40+0800",
+    "boot_id": "e5526256-751c-40a0-aee8-956cd69c93c4",
+    "config": "/home/jcfh/.config/uav/env.sh",
+    "existing_config": false,
+    "setting": "UAV_LOG_DISABLED=1"
+  },
+  "connection": "rk-uav-wifi",
+  "engineering_date": "2026-10-28",
+  "fresh_source_overrides_inherited_enable": {
+    "exit_code": 0,
+    "output": "UAV_LOG_DISABLED=1\n{\n  \"root\": \"/home/jcfh/uav_flight_logs\", \n  \"state\": \"INACTIVE\"\n}"
+  },
+  "no_existing_logs_deleted": true,
+  "no_flight_or_servo_commands": true,
+  "no_sources_started": true,
+  "pc_verified_at": "2026-10-28T16:36:09+08:00",
+  "relevant_processes": [],
+  "scope": "Existing UAV_LOG_DISABLED switch in per-user configuration only; ROS native logs and PX4 ULog unchanged.",
+  "status": "DISABLED_PERSISTENTLY_AND_INACTIVE",
+  "time_note": "Board date is incorrect and was not changed. Use PC verification time and boot ID.",
+  "validation_limit": "No hardware workload restarted and no new CPU A/B comparison performed."
+}
