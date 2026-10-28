@@ -1,0 +1,53 @@
+{
+  "scope": "read-only exact copies of received pack sources, no algorithms modified",
+  "files": [
+    {
+      "source": "temp1025/inspection_20261025/pack/src/location/include/TFplus.h",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/location/include/TFplus.h",
+      "bytes": 599,
+      "sha256": "caca0309d69ee0d0ce938330d9bd5704dc606bde20f6ddd6358bb4ea96d5b0e2"
+    },
+    {
+      "source": "temp1025/inspection_20261025/pack/src/location/src/TFplus.cpp",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/location/src/TFplus.cpp",
+      "bytes": 3326,
+      "sha256": "8ecd5b23082167e08a327e8528373c3acae458d0a01fdc7987f3b2b6ff568a0d"
+    },
+    {
+      "source": "temp1025/inspection_20261025/pack/src/location/src/i2c.cpp",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/location/src/i2c.cpp",
+      "bytes": 3194,
+      "sha256": "eac369e479e94ac00163f84d893f14154afa35923a33473c0e0e16f6c18048c6"
+    },
+    {
+      "source": "temp1025/inspection_20261025/pack/src/location/src/tf_mini_i2c.cpp",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/location/src/tf_mini_i2c.cpp",
+      "bytes": 4553,
+      "sha256": "7d9141498d2f86ff1e559b751208e0c4b4f14538c4b9396a0e5e1e71ea366ffb"
+    },
+    {
+      "source": "temp1025/inspection_20261025/pack/src/navigation_2d/param/dwa_local_planner_params.yaml",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/navigation_2d/param/dwa_local_planner_params.yaml",
+      "bytes": 1143,
+      "sha256": "1a1e586cc9aa507bb3e9b86fe073e031842dd1e5659fe93dd64eb998f548bcab"
+    },
+    {
+      "source": "temp1025/inspection_20261025/pack/src/navigation_2d/src/flight_control.cpp",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/navigation_2d/src/flight_control.cpp",
+      "bytes": 10055,
+      "sha256": "59aeae04958df3332fd9ad7ad17201fb8cdd6ab9be2b14e41bf02ed7306a55a7"
+    },
+    {
+      "source": "temp1025/inspection_20261025/pack/src/servo_control/launch/servo_bench.launch",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/servo_control/launch/servo_bench.launch",
+      "bytes": 4811,
+      "sha256": "c4a4ade411de94c656b0cab2f11f00297db71d3eec540b4457a2cb579a29d5f0"
+    },
+    {
+      "source": "temp1025/inspection_20261025/pack/src/servo_control/src/servo_controller_node.cpp",
+      "copy": "docs/验证记录/非学长算法审查_2026-10-28/原包补充文本/src/servo_control/src/servo_controller_node.cpp",
+      "bytes": 19810,
+      "sha256": "b7a1027fea3b2a080366aeef085cd1a06f4e5d38cb1879d8b8ed433922a917fc"
+    }
+  ]
+}
