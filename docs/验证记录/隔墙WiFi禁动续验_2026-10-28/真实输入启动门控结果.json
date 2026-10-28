@@ -1,0 +1,5 @@
+{
+  "expected": "vision/location refused because height is disabled", 
+  "pid": 6598, 
+  "result": "Startup timed out; missing vision, location READY"
+}

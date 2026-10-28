@@ -19,8 +19,8 @@ class Relay(object):
         self.publisher = rospy.Publisher(destination, CompressedImage, queue_size=1)
         self.archive = rospy.Publisher(archive_destination, CompressedImage, queue_size=1) if archive_destination else None
         self.archive_last = 0.0
-        self.subscriber = rospy.Subscriber(source, Image, self.receive,
-                                          queue_size=1, buff_size=16777216)
+        self.source = source
+        self.subscriber = None
         self.timer = rospy.Timer(rospy.Duration(1.0/fps), self.publish)
 
     def receive(self, message):
@@ -30,6 +30,21 @@ class Relay(object):
     def publish(self, event):
         live = bool(self.publisher.get_num_connections())
         archive = bool(self.archive and self.archive.get_num_connections())
+        # Idle display helpers must not keep deserializing full RGB frames.
+        # Only this timer owns the subscription; receive() only owns latest.
+        if not live and not archive:
+            if self.subscriber is not None:
+                self.subscriber.unregister()
+                self.subscriber = None
+            with self.lock:
+                self.latest = None
+            return
+        if self.subscriber is None:
+            with self.lock:
+                self.latest = None
+            self.subscriber = rospy.Subscriber(self.source, Image, self.receive,
+                                               queue_size=1, buff_size=16777216)
+            return
         now = rospy.Time.now().to_sec()
         archive_due = archive and now-self.archive_last >= .5
         # A recorder alone must not activate the 15fps display encoder.

@@ -1,0 +1,23 @@
+--------------------------------------------------------------------------------
+Node [/monitor_jpeg]
+Publications: 
+ * /monitor/camera/image/compressed [sensor_msgs/CompressedImage]
+ * /monitor/camera/log/compressed [sensor_msgs/CompressedImage]
+ * /monitor/camera/raw/compressed [sensor_msgs/CompressedImage]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: None
+
+Services: 
+ * /monitor_jpeg/get_loggers
+ * /monitor_jpeg/set_logger_level
+
+
+contacting node http://192.168.1.102:32802/ ...
+Pid: 6444
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (33809 - 192.168.1.102:37996) [14]
+    * transport: TCPROS
+

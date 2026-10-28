@@ -1,0 +1,441 @@
+[
+  {
+    "run": "staged",
+    "stage": "warmup",
+    "samples": 48,
+    "elapsed_window_s": [
+      11.746003866195679,
+      62.90281891822815
+    ],
+    "system_cpu_mean_percent": 23.105705114433704,
+    "tf_age_max_s": 0.071640491,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.02014666728167757,
+    "process_one_core_cpu_mean_percent": {
+      "mavros_node": 10.931900775907254,
+      "rplidarNode": 13.606072539422897,
+      "cartographer_node": 35.05532216573301
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.9969346205022152,
+      "state": 0.9969346205022152,
+      "imu": 49.9835651887091,
+      "location": 0.0,
+      "scan": 10.008441680335965
+    },
+    "latest": {
+      "map": {
+        "width": 330,
+        "height": 183
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "location": "HEIGHT_DISABLED"
+    },
+    "violations": []
+  },
+  {
+    "run": "staged",
+    "stage": "camera_only",
+    "samples": 35,
+    "elapsed_window_s": [
+      74.80248093605042,
+      112.21961402893066
+    ],
+    "system_cpu_mean_percent": 26.689401736301406,
+    "tf_age_max_s": 0.065737009,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.0524066090421583,
+    "process_one_core_cpu_mean_percent": {
+      "mavros_node": 11.45108437836323,
+      "rplidarNode": 13.74687868174004,
+      "cartographer_node": 34.78615706529603,
+      "usb_cam_node": 14.122096802051026
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.9888518157752813,
+      "state": 1.0155775405259646,
+      "imu": 50.003831008528415,
+      "location": 0.0,
+      "scan": 10.02214678150623
+    },
+    "latest": {
+      "map": {
+        "width": 330,
+        "height": 183
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "location": "HEIGHT_DISABLED"
+    },
+    "violations": []
+  },
+  {
+    "run": "staged",
+    "stage": "dry_inference",
+    "samples": 42,
+    "elapsed_window_s": [
+      124.60549688339233,
+      171.1898958683014
+    ],
+    "system_cpu_mean_percent": 42.495145875002024,
+    "tf_age_max_s": 0.054858446,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.06803367308485082,
+    "process_one_core_cpu_mean_percent": {
+      "mavros_node": 12.215025063789051,
+      "rplidarNode": 14.341126381359178,
+      "usb_cam_node": 32.805013233681336,
+      "cartographer_node": 32.00472693944882,
+      "shoot_with_move_base_node": 50.5820948732052
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.987455049380408,
+      "state": 1.0089214634973733,
+      "readiness": 9.981882564388906,
+      "imu": 49.97381206429543,
+      "location": 0.0,
+      "scan": 10.003348978505873,
+      "mission": 0.0
+    },
+    "latest": {
+      "map": {
+        "width": 330,
+        "height": 183
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "mission": "BLOCKED_POSE_STALE",
+      "location": "HEIGHT_DISABLED",
+      "readiness": "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\":false,\"fcu_fresh\":true,\"tf_fresh\":false,\"actuation_enabled\":false,\"flight_authority\":false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\":\"pending\",\"person_detection\":\"pending\"}"
+    },
+    "violations": []
+  },
+  {
+    "run": "staged",
+    "stage": "relay_no_viewer",
+    "samples": 30,
+    "elapsed_window_s": [
+      183.9725739955902,
+      216.84168887138367
+    ],
+    "system_cpu_mean_percent": 52.89688238011321,
+    "tf_age_max_s": 0.088506698,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.13501225927564048,
+    "process_one_core_cpu_mean_percent": {
+      "mavros_node": 11.936877456454528,
+      "rplidarNode": 15.343154892181019,
+      "usb_cam_node": 44.529377459694125,
+      "cartographer_node": 30.58007044045446,
+      "shoot_with_move_base_node": 56.03411428343506,
+      "monitor_jpeg.py": 45.63601386620768
+    },
+    "observed_topic_rates_hz": {
+      "map": 1.0039820093939595,
+      "state": 0.9735583121395971,
+      "readiness": 10.009396396685233,
+      "imu": 49.955710891663074,
+      "location": 0.0,
+      "scan": 10.009396396685233,
+      "mission": 0.0
+    },
+    "latest": {
+      "map": {
+        "width": 330,
+        "height": 183
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "mission": "BLOCKED_POSE_STALE",
+      "location": "HEIGHT_DISABLED",
+      "readiness": "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\":false,\"fcu_fresh\":true,\"tf_fresh\":false,\"actuation_enabled\":false,\"flight_authority\":false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\":\"pending\",\"person_detection\":\"pending\"}"
+    },
+    "violations": []
+  },
+  {
+    "run": "staged",
+    "stage": "native_viewer_before_fix",
+    "samples": 144,
+    "elapsed_window_s": [
+      228.7907009124756,
+      386.86434507369995
+    ],
+    "system_cpu_mean_percent": 60.58490355965175,
+    "tf_age_max_s": 0.092146396,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 6.052253601818865,
+    "process_one_core_cpu_mean_percent": {
+      "mavros_node": 10.788267616441205,
+      "rplidarNode": 14.288873738201042,
+      "usb_cam_node": 45.07689466845568,
+      "cartographer_node": 25.19644762504078,
+      "shoot_with_move_base_node": 51.026468638843426,
+      "monitor_jpeg.py": 116.22282491540862
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.9995341148638969,
+      "state": 0.9995341148638969,
+      "readiness": 10.001667313922917,
+      "imu": 50.00201040433064,
+      "location": 0.0,
+      "scan": 10.007993479206867,
+      "mission": 0.0
+    },
+    "latest": {
+      "map": {
+        "width": 331,
+        "height": 183
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "mission": "BLOCKED_POSE_STALE",
+      "location": "HEIGHT_DISABLED",
+      "readiness": "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\":false,\"fcu_fresh\":true,\"tf_fresh\":false,\"actuation_enabled\":false,\"flight_authority\":false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\":\"pending\",\"person_detection\":\"pending\"}"
+    },
+    "violations": []
+  },
+  {
+    "run": "after",
+    "stage": "warmup",
+    "samples": 38,
+    "elapsed_window_s": [
+      11.85040807723999,
+      51.92268109321594
+    ],
+    "system_cpu_mean_percent": 22.994181339972886,
+    "tf_age_max_s": 0.074586152,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.004724632590204583,
+    "process_one_core_cpu_mean_percent": {
+      "cartographer_node": 35.03301329964167,
+      "rplidarNode": 13.158808971940767,
+      "mavros_node": 10.705366818393793
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.9981964333306689,
+      "state": 0.9981964333306689,
+      "imu": 49.984686399033244,
+      "location": 0.0,
+      "scan": 10.006919244139954
+    },
+    "latest": {
+      "map": {
+        "width": 334,
+        "height": 182
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "location": "HEIGHT_DISABLED"
+    },
+    "violations": []
+  },
+  {
+    "run": "after",
+    "stage": "dry_inference_after",
+    "samples": 27,
+    "elapsed_window_s": [
+      64.01484489440918,
+      93.72382307052612
+    ],
+    "system_cpu_mean_percent": 42.184165445138646,
+    "tf_age_max_s": 0.055996417,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.06659127816826764,
+    "process_one_core_cpu_mean_percent": {
+      "rplidarNode": 14.39475857983937,
+      "mavros_node": 12.255204835204319,
+      "shoot_with_move_base_node": 49.803226456334386,
+      "usb_cam_node": 31.905766542211342,
+      "cartographer_node": 31.98354765778417
+    },
+    "observed_topic_rates_hz": {
+      "map": 1.009795753396763,
+      "state": 0.9761358949502043,
+      "readiness": 9.996977958627953,
+      "imu": 49.98488979313977,
+      "location": 0.0,
+      "scan": 9.996977958627953,
+      "mission": 0.0
+    },
+    "latest": {
+      "map": {
+        "width": 334,
+        "height": 182
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "mission": "BLOCKED_POSE_STALE",
+      "location": "HEIGHT_DISABLED",
+      "readiness": "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\":false,\"fcu_fresh\":true,\"tf_fresh\":false,\"actuation_enabled\":false,\"flight_authority\":false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\":\"pending\",\"person_detection\":\"pending\"}"
+    },
+    "violations": []
+  },
+  {
+    "run": "after",
+    "stage": "relay_idle_after_fix",
+    "samples": 103,
+    "elapsed_window_s": [
+      105.83206391334534,
+      231.20463299751282
+    ],
+    "system_cpu_mean_percent": 42.84370052826995,
+    "tf_age_max_s": 0.070664167,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.04878771759438615,
+    "process_one_core_cpu_mean_percent": {
+      "rplidarNode": 14.336218722691196,
+      "mavros_node": 12.183713135213658,
+      "shoot_with_move_base_node": 50.706309407534306,
+      "usb_cam_node": 32.497136383984,
+      "cartographer_node": 32.070080773613945,
+      "monitor_jpeg.py": 2.956677503052612,
+      "gate_live_worker": 0.21810996551956632
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.9970283046212656,
+      "state": 0.9970283046212656,
+      "readiness": 10.002187951960536,
+      "imu": 50.002963533365715,
+      "location": 0.0,
+      "scan": 10.010164178397506,
+      "mission": 0.0
+    },
+    "latest": {
+      "map": {
+        "width": 334,
+        "height": 182
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "mission": "BLOCKED_POSE_STALE",
+      "location": "HEIGHT_DISABLED",
+      "readiness": "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\":false,\"fcu_fresh\":true,\"tf_fresh\":false,\"actuation_enabled\":false,\"flight_authority\":false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\":\"pending\",\"person_detection\":\"pending\"}"
+    },
+    "violations": []
+  },
+  {
+    "run": "after",
+    "stage": "native_viewer_after_fix",
+    "samples": 83,
+    "elapsed_window_s": [
+      243.80686593055725,
+      334.1208019256592
+    ],
+    "system_cpu_mean_percent": 59.042236252001636,
+    "tf_age_max_s": 0.078850745,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 5.873385183136598,
+    "process_one_core_cpu_mean_percent": {
+      "rplidarNode": 13.90818630353877,
+      "mavros_node": 10.652500727866597,
+      "shoot_with_move_base_node": 48.83205169100457,
+      "usb_cam_node": 45.95707889331438,
+      "cartographer_node": 25.73889347629349,
+      "monitor_jpeg.py": 111.60638274195811
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.9965239473660084,
+      "state": 0.9965239473660084,
+      "readiness": 9.998456938572284,
+      "imu": 49.99228469286142,
+      "location": 0.0,
+      "scan": 10.00952942687635,
+      "mission": 0.0
+    },
+    "latest": {
+      "map": {
+        "width": 334,
+        "height": 182
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "mission": "BLOCKED_POSE_STALE",
+      "location": "HEIGHT_DISABLED",
+      "readiness": "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\":false,\"fcu_fresh\":true,\"tf_fresh\":false,\"actuation_enabled\":false,\"flight_authority\":false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\":\"pending\",\"person_detection\":\"pending\"}"
+    },
+    "violations": []
+  },
+  {
+    "run": "after",
+    "stage": "viewer_disconnected_idle",
+    "samples": 65,
+    "elapsed_window_s": [
+      425.7949969768524,
+      498.87187099456787
+    ],
+    "system_cpu_mean_percent": 43.64409216683783,
+    "tf_age_max_s": 0.065851688,
+    "tf_invalid_samples": 0,
+    "tf_over_250ms_samples": 0,
+    "tx_mbit_s_mean": 0.16725519982630468,
+    "process_one_core_cpu_mean_percent": {
+      "rplidarNode": 14.255048230221686,
+      "mavros_node": 12.052051583776283,
+      "shoot_with_move_base_node": 50.468421259995495,
+      "usb_cam_node": 33.08434716895258,
+      "cartographer_node": 31.797744017353626,
+      "monitor_jpeg.py": 3.060478787965239
+    },
+    "observed_topic_rates_hz": {
+      "map": 0.9989480390513582,
+      "state": 0.9989480390513582,
+      "readiness": 10.003164610226614,
+      "imu": 49.97477039199397,
+      "location": 0.0,
+      "scan": 10.003164610226614,
+      "mission": 0.0
+    },
+    "latest": {
+      "map": {
+        "width": 334,
+        "height": 182
+      },
+      "state": {
+        "armed": false,
+        "connected": true,
+        "mode": "MANUAL"
+      },
+      "mission": "BLOCKED_POSE_STALE",
+      "location": "HEIGHT_DISABLED",
+      "readiness": "{\"model_loaded\":true,\"frame_fresh\":true,\"inference_ready\":true,\"pose_fresh\":false,\"fcu_fresh\":true,\"tf_fresh\":false,\"actuation_enabled\":false,\"flight_authority\":false,\"mission_aborted\":false,\"abort_reason\":\"\",\"phase\":0,\"hazard_detection\":\"pending\",\"person_detection\":\"pending\"}"
+    },
+    "violations": []
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "hardware": false, 
+  "cases": [
+    "idle_has_no_raw_subscriber", 
+    "live_encodes_real_jpeg_preserving_source_header", 
+    "last_viewer_disconnect_releases_source", 
+    "reconnect_resumes_fresh_frames", 
+    "stale_frames_withheld_without_retimestamping", 
+    "archive_only_keeps_two_hz_limit_and_original_header", 
+    "archive_disconnect_releases_source"
+  ], 
+  "passed": true
+}

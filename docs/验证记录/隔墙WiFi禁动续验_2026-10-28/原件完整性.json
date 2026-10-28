@@ -1,0 +1,10 @@
+{
+  "archive_sha256": "bd18df8d8a30afbe38d89ee4818552af1a52d906326b100ca8c9377c90c9bb8c",
+  "mismatches": [],
+  "regular_files": 162,
+  "symlinks_preserved_in_tar": [
+    "wifi-wall/staged/ros-logs/latest",
+    "wifi-wall/after/ros-logs/latest",
+    "wifi-wall/relay-test/ros-logs/latest"
+  ]
+}
